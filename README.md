@@ -19,7 +19,7 @@ can build Application on top of
 ## Objective
 
 
-The goal of CKP is to provide a simple and easy way to develop pentaho plugins
+The goal of CPK is to provide a simple and easy way to develop pentaho plugins
 that behave like packaged applications, simplifying it's structure. 
 
 The UI is built using [CDE](http://cde.webdetails.org), with a simple
@@ -43,7 +43,17 @@ not requiring specific java knowledge.
 
 ## Structure
 
+This is the initial structure 
 
+_to be completed_
+
+
+	CPK_Plugin
+	|-- conf
+	|-- dashboards
+	|-- endpoints
+	|-- lib
+	`-- plugin.xml
 
 
 ## CPK administrative features
@@ -67,11 +77,12 @@ Here's a list of stretch goals / nice to have
 * Generate distribution zip package
 
 
-
-## Registering plugins
-
-
 ## Updates
+
+As the CPK framework or any of it's dependencies gets improved, the plugins
+themselves can't stay outdated. There will be a version information attached to
+the _CPK plugin version_ so that it's possible to upgrade to the latest version.
+
 
 
 ## Dependencies
@@ -79,7 +90,7 @@ Here's a list of stretch goals / nice to have
 CPK will have as little code as possible, making it as simple as possible to
 develop plugins. However, it will need a few dependencies:
 
-* Pentaho (*duh!*)
+* Pentaho
 * [CPF](https://github.com/webdetails/cpf) - Community Plugin Framework, with
   the common set of code for the plugins
 * [CDE](https://github.com/webdetails/cde) - Community Dashboard Editor
@@ -87,8 +98,16 @@ develop plugins. However, it will need a few dependencies:
 * [CDA](https://github.com/webdetails/cda) - Community Data Access
 
 
-
 ## Link with Pentaho Marketplace
+
+Once a plugin is developed, and the authors think it's in a state that can be
+shared, CPK will be able to generate a packaged plugin and metadata information
+so it can be integrated into Pentaho's marketplace. 
+
+Pentaho will then be able to categorize / approve the plugin so that it becomes
+available to other users through the marketplace
+
+
 
 ## License
 
