@@ -1,0 +1,4 @@
+CKP
+===
+
+Community Kickstart Plugin
