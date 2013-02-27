@@ -43,7 +43,10 @@ not requiring specific java knowledge.
 
 ## Structure
 
-This is the initial structure 
+This is the resulting plugin structure. Ideally, no compilation is necessary, so
+everything except maybe the lib directory could be stored in a _VCS_ system.
+
+This is the proposed stub configuration
 
 _to be completed_
 
