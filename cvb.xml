@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvbConfig>
+	<vfsLocations>
+		<vfsLocation name="Mango/Metrics" topLevel="hdfs://admin1.mango.metrics.scl3.mozilla.com:8020">
+			<access type="deny">.*rfradinho/fhr.*</access>
+			<access type="allow">.*user/rfradinho.*</access>
+			<access type="allow">.*user/pedroalves.*</access>
+			<access type="deny">.*user/.*</access>
+			<access type="allow">.*</access>
+		</vfsLocation>
+        <vfsLocation name="Home" topLevel="file://">
+            <access type="allow">.*</access>
+    		<access type="deny">.*/Applications/*</access>
+    		<access type="allow">/[A-Z].*</access>
+		</vfsLocation>
+	</vfsLocations>
+</cvbConfig>

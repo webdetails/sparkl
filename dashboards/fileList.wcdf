@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdf>
+        <title>File List Dashboard</title>
+        <author></author>
+        <description>File List</description>
+        <icon/>
+		<style>cvbCpk - (cvb)</style>
+<rendererType>blueprint</rendererType><widget>false</widget></cdf>

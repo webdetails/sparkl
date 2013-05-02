@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdf>
+        <title>Settings</title>
+        <author></author>
+        <description>Settings</description>
+        <icon/>
+		<style>cvbCpk - (CVB)</style>
+<rendererType>blueprint</rendererType><widget>false</widget></cdf>

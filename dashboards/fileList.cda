@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="filesQuery" type="kettle.TransFromFile">
+         <KtrFile>../endpoints/kettle/listFiles.ktr</KtrFile>
+         <variables datarow-name="uri" variable-name="URI"/>
+      </Connection>
+      <Connection id="locationsQuery" type="kettle.TransFromFile">
+         <KtrFile>../endpoints/kettle/getLocations.ktr</KtrFile>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="filesQuery"
+               id="filesQuery"
+               type="kettle">
+      <Columns/>
+      <Parameters>
+         <Parameter default="hdfs://admin1.mango.metrics.scl3.mozilla.com:8020" name="uri"
+                    type="String"/>
+      </Parameters>
+      <Query>OUTPUT</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="locationsQuery"
+               id="locationsQuery"
+               type="kettle">
+      <Columns/>
+      <Parameters/>
+      <Query>OUTPUT</Query>
+   </DataAccess>
+</CDADescriptor>

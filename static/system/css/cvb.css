@@ -1,0 +1,427 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+/*
+ * WDStyleGuide Template CSS  
+ *
+ * Use this as a template to format the styles of specific projects. Most of 
+ * the most commonly used classes/rules are already written here. The file is
+ * divided in the following sections:
+ *
+ *    Fonts
+ *    Style Resets
+ *    1. BACKGROUND 
+ *    2. HEADER 
+ *    3. FILTER CELLS
+ *    4. DATA CELLS
+ *    5. TABLES
+ *    6. CHARTS 
+ *    7. SELECTORS AND BUTTONS 
+ *    Other 
+ *    Project Specific Items  
+ *
+*/
+
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+/* =============================================================================
+   Style Resets
+   ========================================================================== */
+
+/* =============================================================================
+   1. BACKGROUND 
+   ========================================================================== */
+
+/* =============================================================================
+   2. HEADER 
+   ========================================================================== */
+
+/* =============================================================================
+   3. FILTER CELLS
+   ========================================================================== */
+
+.WDfilterCell {
+	margin-top:20px;
+}
+
+.WDfilterCellHeader {
+    font-size: 20px;
+}
+
+/* Global filter */
+.WDfilterCellBody {
+    background-color: #FCFDFD;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #E9EEF0), color-stop(0.5, white));
+    background-image: -webkit-linear-gradient(center bottom, #E9EEF0 0%, white 50%);
+    background-image: -moz-linear-gradient(center bottom, #E9EEF0 0%, white 50%);
+    background-image: -o-linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    background-image: -ms-linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    background-image: linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E9EEF0', endColorstr='#FCFDFD',GradientType=0 );
+    border: 1px solid #bbb;
+    margin-left: -1px;
+    margin-right: -1px;
+    border-radius: 5px;
+		min-height: 32px;
+    height:32px;
+    margin-bottom: 20px;
+    position:relative;
+}
+
+.WDfilterCellBody input[type="text"]:focus, 
+.WDfilterCellBody input[type="password"]:focus, 
+.WDfilterCellBody input.text:focus, 
+.WDfilterCellBody input.title:focus, 
+.WDfilterCellBody textarea:focus {
+    border: 1px solid #57A32B;
+    border-left:none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.WDfilterCellBody input[type="text"] {
+	font-family: 'Trebuchet MS',Arial,Sans;
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+	width: 100%;
+	margin-left: 5px;
+	margin-top: 4px;
+	text-indent: 5px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.WDfilterCellBody .WDbuttonContainer {
+	width:32px;
+	display:inline-block;
+	padding-left:5px;
+	float:left;
+	margin-right:0px;
+}
+
+.WDfilterCellBody button {
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #839298 250%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(250%,#839298));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#839298 250%);
+	background: -o-linear-gradient(top, #ffffff 0%,#839298 250%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#839298 250%);
+	background: linear-gradient(top, #ffffff 0%,#839298 250%);
+	border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	border: 1px solid #bbb;
+	height: 22px;
+	line-height: 22px;
+	margin-top: 4px;
+	font-size: 10px;
+	color: #000;
+	font-weight: normal;
+	width: 84%;
+	cursor:default;
+
+	padding:0px;
+}
+
+.WDfilterCellBody button:hover {
+	border-color: #57A32B;
+	cursor: pointer;
+}
+
+.WDfilterCellBody .disabled button,
+.WDfilterCellBody .disabled button:hover {
+	color:#999;
+	border-color: #bbb;
+	cursor: default;
+}
+
+.WDfilterCellBody .selectorLocalLabel {
+    font-size: 9px;
+    font-weight: normal;
+    text-indent: 15px;
+    line-height: 27px;
+}
+
+.WDfilterCellBody .WDurlBar {
+  display:table;
+  width:100%;
+  height:100%;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+.WDfilterCellBody .WDurlBar > div {
+  display:table-cell;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+.WDfilterCellBody .WDurlBar input {
+  max-height:100%;
+  height:22px;
+  line-height:22px;
+  padding:0;
+  margin:0;
+  -webkit-border-radius: 0px 4px 4px 0px;
+  border-radius: 0px 4px 4px 0px;
+  border-left:none;
+}
+.WDfilterCellBody .WDurlBar  td:first-child {
+  width:1px;
+}
+.WDfilterCellBody .WDurlBar td {
+  padding:0;
+}
+.WDfilterCellBody .WDurlBar td > div{
+  height:26px;
+  padding-top:2px;
+}
+
+
+.WDfilterCellBody .WDurlBar .chzn-container {
+  width:auto !important;
+  max-height:100%;
+  height:22px;
+  line-height:22px;
+  margin:0;
+  padding:0;
+  font-size:12px;
+}
+.WDfilterCellBody .WDurlBar .chzn-single {
+  padding:0px 5px;
+  height:100%;
+  line-height:22px;
+  background: #57A32B;
+  border:none;
+  -webkit-border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 0px 0px 4px;
+}
+.WDfilterCellBody .WDurlBar .chzn-single-with-drop {
+    line-height:22px;
+  background: ##57A32B;
+    border:none;
+  -webkit-border-radius: 4px 0px 0px 0px;
+    border-radius: 4px 0px 0px 0px;
+    top:0px;
+    z-index:1000;
+}
+.WDfilterCellBody .WDurlBar .chzn-single span{
+  margin-right:0;
+  height:100%;
+  line-height:22px;
+  border:none;
+}
+.WDfilterCellBody .WDurlBar .chzn-single div {
+  display:none;
+}
+.WDfilterCellBody .WDurlBar .chzn-drop {
+    border: 1px solid #bbb ;
+    border-top: solid 1px #bbb;
+}
+.WDfilterCellBody .WDurlBar .chzn-search {
+  display:none;
+}
+
+/* =============================================================================
+   4. DATA CELLS
+   ========================================================================== */
+
+
+
+
+
+
+.WDdataCell {
+    background-color: #fff;
+    margin-bottom: 30px;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 10px 0px 10px 0px;
+    border: 0px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px; 
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+
+
+/* =============================================================================
+   5. TABLES
+   ========================================================================== */
+
+.WDdataCellBody .dataTables_wrapper {
+    min-height: 0px;
+    padding:10px;
+}
+
+.WDdataCellBody tr {
+    text-align: left;
+        height: 35px;
+}
+.WDdataCellBody tbody tr.odd,
+.WDdataCellBody tbody tr.even {
+    background-color: transparent;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.WDdataCellBody tbody tr:hover {
+	cursor: pointer;
+	background: #57A32B;
+}
+.WDdataCellBody tbody tr:hover .dataTables_empty {
+	background: #FFFFFF;
+	cursor: default;
+}
+
+
+.WDdataCellBody thead th,
+.WDdataCellBody tr.odd td,
+.WDdataCellBody tr.even td,
+.WDdataCellBody tr.odd td.sorting_1,
+.WDdataCellBody tr.even td.sorting_1 {
+    background: none;
+    border-bottom: 1px solid #ccd8dd;
+    border-top: 1px solid transparent;
+}
+
+.WDdataCellBody .column0 {
+	padding-left:5px;
+}
+
+.WDdataCellBody th.column3,
+.WDdataCellBody td.column3 {
+	padding-right: 10px;
+}
+
+.WDdataCellBody thead th:not(.sorting_disabled) {
+    cursor: pointer;
+}
+
+.WDdataCellBody thead th {
+    background-color: transparent;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 0;
+    text-align: left;  
+ }
+
+/* sorting */
+
+.WDdataCellBody th.sorting:hover,
+.WDdataCellBody th.sorting_asc:hover,
+.WDdataCellBody th.sorting_desc:hover{
+	color: #006CD8;
+}
+
+.WDdataCellBody th.sorting_asc,
+.WDdataCellBody th.sorting_desc{
+	color: #006CD8;
+}
+
+
+.WDdataCellBody td,
+.WDdataCellBody td.string,
+.WDdataCellBody td.numeric {
+    min-height:100%;
+    font-size: 10px;
+    font-weight: normal;
+    padding:0;
+    padding-left:5px;
+    padding-right:5px;
+
+}
+
+
+
+.WDdataCellBody .formattedText .downloadContainer {
+  position:relative;
+  min-height:35px;
+  line-height:35px;
+}
+.WDdataCellBody .formattedText .downloadContainer > div {
+  height:100%;
+}
+.WDdataCellBody .formattedText .downloadContainer .action {
+  display:none;
+
+  font-weight:bold;
+  width: 100px;
+  float:right;
+  text-align:right;
+  padding-right:5px;
+}
+.WDdataCellBody .formattedText .downloadContainer .link {
+  max-width:300px;
+  float:left;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.WDdataCellBody tr:hover .formattedText .downloadContainer .action {
+  display:block;
+}
+.WDdataCellBody tr:hover .formattedText .downloadContainer .action.WDhidden {
+  display:none;
+}
+.WDdataCellBody .formattedText .downloadContainer .urlButton {
+  display:none;
+  height:100%;
+  display:none;
+  float:right;
+  font-size:9px;
+}
+.WDdataCellBody tr:hover .formattedText .downloadContainer .urlButton {
+  display:block;
+}
+.WDdataCellBody  .formattedText .downloadContainer .urlButton {
+  cursor:default;
+}
+.WDdataCellBody  .formattedText .downloadContainer .urlButton button {
+  cursor:pointer;
+  font-size:9px;
+  height:12px;
+  line-height: 12px;
+  width:auto;
+  padding:0;
+}
+.WDdataCellBody  .formattedText .downloadContainer .urlCopy textarea {
+  resize: none;
+  height:100%;
+  max-width:350px;
+}
+/* =============================================================================
+   6. CHARTS 
+   ========================================================================== */
+
+/* =============================================================================
+   7. SELECTORS AND BUTTONS 
+   ========================================================================== */
+
+
+
+
+/* =============================================================================
+   Other 
+   ========================================================================== */
+
+
+/* =============================================================================
+   Project Specific Items 
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
