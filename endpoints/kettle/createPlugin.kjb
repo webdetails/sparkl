@@ -13,7 +13,7 @@
     <parameters>
         <parameter>
             <name>NULL_VALUE</name>
-            <default_value/>
+            <default_value>not defined</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -22,9 +22,19 @@
             <description/>
         </parameter>
         <parameter>
+            <name>download</name>
+            <default_value>false</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>instalationFolder</name>
             <default_value>${pluginFolder}&#47;..&#47;${plugin_id}</default_value>
             <description>Valid in the Java Virtual Machine</description>
+        </parameter>
+        <parameter>
+            <name>install</name>
+            <default_value>true</default_value>
+            <description/>
         </parameter>
         <parameter>
             <name>overwrite</name>
@@ -38,37 +48,37 @@
         </parameter>
         <parameter>
             <name>plugin_company</name>
-            <default_value>Test Company</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_company_url</name>
-            <default_value>www.test.ing</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_description</name>
-            <default_value>This is a test</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>test</default_value>
+            <default_value>cenas</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_name</name>
-            <default_value/>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_package_name</name>
-            <default_value>trunkTest</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_package_url</name>
-            <default_value>www.test.ing&#47;trunkTestUrl</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -126,18 +136,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>49</xloc>
-      <yloc>41</yloc>
+      <xloc>56</xloc>
+      <yloc>85</yloc>
       </entry>
     <entry>
-      <name>Success</name>
+      <name>OUTPUT</name>
       <description/>
       <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>691</xloc>
-      <yloc>41</yloc>
+      <xloc>1046</xloc>
+      <yloc>85</yloc>
       </entry>
     <entry>
       <name>Load Stub file</name>
@@ -205,38 +215,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>364</xloc>
-      <yloc>41</yloc>
-      </entry>
-    <entry>
-      <name>Config Plugin Files</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_configPluginFiles.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>530</xloc>
-      <yloc>41</yloc>
+      <xloc>624</xloc>
+      <yloc>85</yloc>
       </entry>
     <entry>
       <name>Set variables</name>
@@ -286,12 +266,22 @@
           <variable_value>${defaultElement}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
+        <field>
+          <variable_name>install</variable_name>
+          <variable_value>${install}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>download</variable_name>
+          <variable_value>${download}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>203</xloc>
-      <yloc>41</yloc>
+      <xloc>452</xloc>
+      <yloc>36</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -301,8 +291,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>449</xloc>
-      <yloc>393</yloc>
+      <xloc>624</xloc>
+      <yloc>437</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -314,22 +304,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>364</xloc>
-      <yloc>153</yloc>
-      </entry>
-    <entry>
-      <name>Write To Log 2</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>Problem configuring plugin files!
-Deleting instalation folder!</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>530</xloc>
-      <yloc>153</yloc>
+      <xloc>624</xloc>
+      <yloc>197</yloc>
       </entry>
     <entry>
       <name>Delete folders</name>
@@ -349,38 +325,152 @@ Deleting instalation folder!</logmessage>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>449</xloc>
-      <yloc>268</yloc>
+      <xloc>624</xloc>
+      <yloc>312</yloc>
+      </entry>
+    <entry>
+      <name>Plugin ID not null?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>${plugin_id}</fieldname>
+      <variablename>${plugin_id}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>${NULL_VALUE}</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>different</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>183</xloc>
+      <yloc>85</yloc>
+      </entry>
+    <entry>
+      <name>DUMMY</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>183</xloc>
+      <yloc>437</yloc>
+      </entry>
+    <entry>
+      <name>Plugin Name not null?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>${plugin_name}</fieldname>
+      <variablename>${plugin_name}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>${NULL_VALUE}</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>different</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>295</xloc>
+      <yloc>85</yloc>
+      </entry>
+    <entry>
+      <name>Set variables 2</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>plugin_id</variable_name>
+          <variable_value>${plugin_id}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_description</variable_name>
+          <variable_value>${plugin_description}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_company</variable_name>
+          <variable_value>${plugin_company}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_company_url</variable_name>
+          <variable_value>${plugin_company_url}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_name</variable_name>
+          <variable_value>${plugin_id}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_package_name</variable_name>
+          <variable_value>${plugin_package_name}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_package_url</variable_name>
+          <variable_value>${plugin_package_url}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>plugin_defaultElement</variable_name>
+          <variable_value>${defaultElement}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>452</xloc>
+      <yloc>134</yloc>
+      </entry>
+    <entry>
+      <name>download?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>${download}</fieldname>
+      <variablename>${download}</variablename>
+      <fieldtype>boolean</fieldtype>
+      <mask/>
+      <comparevalue/>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>true</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>795</xloc>
+      <yloc>85</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Load Stub file</from>
-      <to>Config Plugin Files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Config Plugin Files</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>Set variables</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>Set variables</from>
       <to>Load Stub file</to>
@@ -391,15 +481,6 @@ Deleting instalation folder!</logmessage>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>Set variables</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Load Stub file</from>
       <to>Write To Log</to>
       <from_nr>0</from_nr>
@@ -407,24 +488,6 @@ Deleting instalation folder!</logmessage>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Config Plugin Files</from>
-      <to>Write To Log 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Write To Log 2</from>
-      <to>Delete folders</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Delete folders</from>
@@ -443,6 +506,87 @@ Deleting instalation folder!</logmessage>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Plugin ID not null?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin ID not null?</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin ID not null?</from>
+      <to>Plugin Name not null?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin Name not null?</from>
+      <to>Set variables</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin Name not null?</from>
+      <to>Set variables 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables 2</from>
+      <to>Load Stub file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>download?</from>
+      <to>OUTPUT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Load Stub file</from>
+      <to>download?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

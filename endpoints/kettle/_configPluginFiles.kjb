@@ -165,7 +165,7 @@
       <description/>
       <type>WRITE_TO_LOG</type>
       <logmessage>Problem getting files list!</logmessage>
-      <loglevel/>
+      <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>

@@ -112,7 +112,7 @@
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${instalationFolder}</name>
+      <name>${unzipFolder}</name>
       <filemask>.*</filemask>
       <exclude_filemask>.*\.(jar|bin|zip|class|png|jpg|jpeg|bmp)</exclude_filemask>
       <file_required>N</file_required>
