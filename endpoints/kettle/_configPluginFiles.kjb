@@ -93,7 +93,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>42</xloc>
+      <xloc>44</xloc>
       <yloc>49</yloc>
       </entry>
     <entry>
@@ -164,7 +164,7 @@
       <name>Write To Log</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>Problem getting files list!</logmessage>
+      <logmessage>ERROR - Problem getting files list!</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
@@ -177,7 +177,7 @@
       <name>Write To Log 2</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>Problem configuring a plugin file!</logmessage>
+      <logmessage>ERROR - Problem configuring a plugin file!</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
