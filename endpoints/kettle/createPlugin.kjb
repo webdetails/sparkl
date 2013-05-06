@@ -23,7 +23,7 @@
         </parameter>
         <parameter>
             <name>download</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value/>
             <description/>
         </parameter>
         <parameter>
@@ -33,12 +33,12 @@
         </parameter>
         <parameter>
             <name>install</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value/>
             <description/>
         </parameter>
         <parameter>
             <name>overwrite</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value/>
             <description/>
         </parameter>
         <parameter>
@@ -63,7 +63,7 @@
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>asd</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -93,7 +93,7 @@
         </parameter>
         <parameter>
             <name>unzipFolder</name>
-            <default_value>${stubFolder}&#47;.plugin</default_value>
+            <default_value>${stubFolder}&#47;.${plugin_id}</default_value>
             <description>Valid in the Java Virtual Machine</description>
         </parameter>
     </parameters>
@@ -136,8 +136,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>56</xloc>
-      <yloc>85</yloc>
+      <xloc>46</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>OUTPUT</name>
@@ -146,8 +146,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1092</xloc>
-      <yloc>85</yloc>
+      <xloc>1082</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>Load Stub file</name>
@@ -215,8 +215,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>670</xloc>
-      <yloc>85</yloc>
+      <xloc>660</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>Set variables</name>
@@ -295,8 +295,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>498</xloc>
-      <yloc>36</yloc>
+      <xloc>488</xloc>
+      <yloc>86</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -306,8 +306,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>670</xloc>
-      <yloc>437</yloc>
+      <xloc>660</xloc>
+      <yloc>487</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -319,8 +319,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>670</xloc>
-      <yloc>197</yloc>
+      <xloc>660</xloc>
+      <yloc>247</yloc>
       </entry>
     <entry>
       <name>Delete folders</name>
@@ -340,8 +340,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>670</xloc>
-      <yloc>312</yloc>
+      <xloc>660</xloc>
+      <yloc>362</yloc>
       </entry>
     <entry>
       <name>Plugin ID not null?</name>
@@ -362,8 +362,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>183</xloc>
-      <yloc>85</yloc>
+      <xloc>173</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>DUMMY</name>
@@ -382,8 +382,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>183</xloc>
-      <yloc>437</yloc>
+      <xloc>173</xloc>
+      <yloc>487</yloc>
       </entry>
     <entry>
       <name>Plugin Name not null?</name>
@@ -404,8 +404,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>341</xloc>
-      <yloc>85</yloc>
+      <xloc>331</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>Set variables 2</name>
@@ -484,8 +484,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>498</xloc>
-      <yloc>134</yloc>
+      <xloc>488</xloc>
+      <yloc>184</yloc>
       </entry>
     <entry>
       <name>download?</name>
@@ -506,8 +506,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>841</xloc>
-      <yloc>85</yloc>
+      <xloc>829</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>Delete filenames from result</name>
@@ -520,8 +520,45 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>965</xloc>
-      <yloc>165</yloc>
+      <xloc>829</xloc>
+      <yloc>253</yloc>
+      </entry>
+    <entry>
+      <name>Delete Unzip Folder</name>
+      <description/>
+      <type>DELETE_FOLDERS</type>
+      <arg_from_previous>N</arg_from_previous>
+      <success_condition>success_if_no_errors</success_condition>
+      <limit_folders>10</limit_folders>
+      <fields>
+        <field>
+          <name>${unzipFolder}</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>951</xloc>
+      <yloc>135</yloc>
+      </entry>
+    <entry>
+      <name>Add filenames to result</name>
+      <description/>
+      <type>ADD_RESULT_FILENAMES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>Y</include_subfolders>
+      <delete_all_before>N</delete_all_before>
+      <fields>
+        <field>
+          <name>${unzipFolder}</name>
+          <filemask>.*</filemask>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>826</xloc>
+      <yloc>18</yloc>
       </entry>
   </entries>
   <hops>
@@ -639,7 +676,52 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>download?</from>
+      <to>Add filenames to result</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete Unzip Folder</from>
+      <to>OUTPUT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Add filenames to result</from>
+      <to>Delete Unzip Folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Delete filenames from result</from>
+      <to>Delete Unzip Folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Add filenames to result</from>
+      <to>OUTPUT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
@@ -648,17 +730,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>download?</from>
-      <to>OUTPUT</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

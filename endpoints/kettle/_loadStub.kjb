@@ -137,24 +137,6 @@
       <yloc>161</yloc>
       </entry>
     <entry>
-      <name>Delete Unzip Folder</name>
-      <description/>
-      <type>DELETE_FOLDERS</type>
-      <arg_from_previous>N</arg_from_previous>
-      <success_condition>success_if_no_errors</success_condition>
-      <limit_folders>10</limit_folders>
-      <fields>
-        <field>
-          <name>${unzipFolder}</name>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1181</xloc>
-      <yloc>161</yloc>
-      </entry>
-    <entry>
       <name>Copy Files</name>
       <description/>
       <type>COPY_FILES</type>
@@ -346,44 +328,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1181</xloc>
+      <xloc>1442</xloc>
       <yloc>306</yloc>
-      </entry>
-    <entry>
-      <name>Delete filenames from result</name>
-      <description/>
-      <type>DELETE_RESULT_FILENAMES</type>
-      <foldername/>
-      <specify_wildcard>N</specify_wildcard>
-      <wildcard/>
-      <wildcardexclude/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1373</xloc>
-      <yloc>59</yloc>
-      </entry>
-    <entry>
-      <name>download?</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>${overwrite}</fieldname>
-      <variablename>${download}</variablename>
-      <fieldtype>boolean</fieldtype>
-      <mask/>
-      <comparevalue>true</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>true</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1308</xloc>
-      <yloc>161</yloc>
       </entry>
   </entries>
   <hops>
@@ -541,57 +487,21 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>download?</from>
-      <to>Delete filenames from result</to>
+      <from>Copy Files</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>DUMMY 4 2</from>
-      <to>Delete Unzip Folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Copy Files</from>
-      <to>Delete Unzip Folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Delete Unzip Folder</from>
-      <to>download?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>download?</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Delete filenames from result</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
   </hops>
