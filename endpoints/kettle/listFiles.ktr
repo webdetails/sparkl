@@ -107,8 +107,8 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>206</xloc>
-      <yloc>121</yloc>
+      <xloc>295</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -125,8 +125,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>599</xloc>
-      <yloc>121</yloc>
+      <xloc>892</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -146,8 +146,8 @@
       </remove>      <remove>        <name>_wildcard</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>303</xloc>
-      <yloc>122</yloc>
+      <xloc>458</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -185,8 +185,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>500</xloc>
-      <yloc>121</yloc>
+      <xloc>749</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -228,8 +228,8 @@
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>402</xloc>
-      <yloc>121</yloc>
+      <xloc>612</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -260,8 +260,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>51</xloc>
-      <yloc>122</yloc>
+      <xloc>48</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -285,8 +285,8 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>131</xloc>
-      <yloc>122</yloc>
+      <xloc>170</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
