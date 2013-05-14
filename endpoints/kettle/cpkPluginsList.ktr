@@ -69,10 +69,10 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get Variables</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Dummy (do nothing) 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>Build JSON</to><enabled>Y</enabled> </hop>  <hop> <from>Build JSON</from><to>JSON</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows 2</from><to>PluginXML</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Concat path+version</to><enabled>Y</enabled> </hop>  <hop> <from>Concat path+version</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>  <hop> <from>PluginXML</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows 2</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows 2</from><to>VersionXML</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Join</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>VersionXML</from><to>Sort rows 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows 2 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Sort by plugin_id</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by plugin_id</from><to>Build JSON</to><enabled>Y</enabled> </hop>  <hop> <from>Build JSON</from><to>JSON</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by filename</from><to>PluginXML</to><enabled>Y</enabled> </hop>  <hop> <from>Concat path+version</from><to>Sort by filename</to><enabled>Y</enabled> </hop>  <hop> <from>Get plugin filenames</from><to>Concat path+version</to><enabled>Y</enabled> </hop>  <hop> <from>PluginXML</from><to>cpk plugins</to><enabled>Y</enabled> </hop>  <hop> <from>exists?</from><to>VersionXML</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>exists?</to><enabled>Y</enabled> </hop>  <hop> <from>cpk plugins</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>exists?</from><to>version null</to><enabled>Y</enabled> </hop>  <hop> <from>version null</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>VersionXML</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Sort by plugin_id</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>Dummy (do nothing) 2</name>
-    <type>Dummy</type>
+    <name>Build JSON</name>
+    <type>JsonOutput</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -80,17 +80,54 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+    <outputValue>outputValue</outputValue>
+    <jsonBloc>resultset</jsonBloc>
+    <nrRowsInBloc>1000000</nrRowsInBloc>
+    <operation_type>outputvalue</operation_type>
+    <compatibility_mode>N</compatibility_mode>
+    <encoding>UTF-8</encoding>
+    <addtoresult>N</addtoresult>
+    <file>
+      <name/>
+      <extention>js</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <create_parent_folder>N</create_parent_folder>
+      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
+      <servlet_output>N</servlet_output>
+      </file>
+    <fields>
+      <field>
+        <name>plugin_name</name>
+        <element>name</element>
+    </field>
+      <field>
+        <name>plugin_id</name>
+        <element>id</element>
+    </field>
+      <field>
+        <name>plugin_description</name>
+        <element>description</element>
+    </field>
+      <field>
+        <name>version</name>
+        <element>version</element>
+    </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>520</xloc>
-      <yloc>81</yloc>
+      <xloc>669</xloc>
+      <yloc>497</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
+    <name>Concat path+version</name>
+    <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -98,26 +135,46 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>File exists</send_true_to>
-<send_false_to>Dummy (do nothing) 2</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>plugin_content_generator</leftvalue>
- <function>=</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>pt.webdetails.cpk.CpkContentGenerator</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
+       <formula><field_name>versionFilename</field_name>
+<formula_string>path+&quot;&#47;version.xml&quot;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>520</xloc>
-      <yloc>170</yloc>
+      <xloc>175</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get File Names</name>
+    <name>File exists</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>versionFilename</filenamefield>
+    <resultfieldname>versionFilename exists?</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>669</xloc>
+      <yloc>49</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get plugin filenames</name>
     <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
@@ -140,7 +197,7 @@
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${system_directory}</name>
+      <name>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..</name>
       <filemask>plugin.xml</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -148,28 +205,49 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>126</xloc>
-      <yloc>170</yloc>
+      <xloc>55</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get Variables</name>
-    <type>GetVariable</type>
+    <name>JSON</name>
+    <type>SelectValues</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-    </fields>
+    <fields>      <field>        <name>outputValue</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>786</xloc>
+      <yloc>497</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>OUTPUT</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>28</xloc>
-      <yloc>170</yloc>
+      <xloc>771</xloc>
+      <yloc>385</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -178,7 +256,7 @@
     <name>PluginXML</name>
     <type>getXMLData</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -282,26 +360,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>427</xloc>
-      <yloc>170</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>OUTPUT</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1410</xloc>
-      <yloc>170</yloc>
+      <xloc>415</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -335,127 +395,17 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1178</xloc>
-      <yloc>170</yloc>
+      <xloc>669</xloc>
+      <yloc>273</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows</name>
+    <name>Sort by filename</name>
     <type>SortRows</type>
     <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>plugin_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1292</xloc>
-      <yloc>170</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Build JSON</name>
-    <type>JsonOutput</type>
-    <description/>
     <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <outputValue>outputValue</outputValue>
-    <jsonBloc>resultset</jsonBloc>
-    <nrRowsInBloc>1000000</nrRowsInBloc>
-    <operation_type>outputvalue</operation_type>
-    <compatibility_mode>N</compatibility_mode>
-    <encoding>UTF-8</encoding>
-    <addtoresult>N</addtoresult>
-    <file>
-      <name/>
-      <extention>js</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>N</create_parent_folder>
-      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
-      <servlet_output>N</servlet_output>
-      </file>
-    <fields>
-      <field>
-        <name>plugin_name</name>
-        <element>name</element>
-    </field>
-      <field>
-        <name>plugin_id</name>
-        <element>id</element>
-    </field>
-      <field>
-        <name>plugin_description</name>
-        <element>description</element>
-    </field>
-      <field>
-        <name>version</name>
-        <element>version</element>
-    </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1292</xloc>
-      <yloc>270</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>JSON</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>outputValue</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1410</xloc>
-      <yloc>270</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -477,33 +427,40 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>344</xloc>
-      <yloc>170</yloc>
+      <xloc>295</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Concat path+version</name>
-    <type>Janino</type>
+    <name>Sort by plugin_id</name>
+    <type>SortRows</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>versionFilename</field_name>
-<formula_string>path+&quot;&#47;version.xml&quot;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>plugin_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>242</xloc>
-      <yloc>170</yloc>
+      <xloc>669</xloc>
+      <yloc>385</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -512,7 +469,7 @@
     <name>VersionXML</name>
     <type>getXMLData</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -571,38 +528,15 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>728</xloc>
-      <yloc>270</yloc>
+      <xloc>577</xloc>
+      <yloc>217</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>File exists</name>
-    <type>FileExists</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filenamefield>versionFilename</filenamefield>
-    <resultfieldname>versionFilename exists?</resultfieldname>
-    <includefiletype>N</includefiletype>
-    <filetypefieldname/>
-    <addresultfilenames>N</addresultfilenames>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>603</xloc>
-      <yloc>170</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy (do nothing)</name>
-    <type>Dummy</type>
+    <name>cpk plugins</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -610,16 +544,26 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>plugin_content_generator</leftvalue>
+ <function>=</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>pt.webdetails.cpk.CpkContentGenerator</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>603</xloc>
-      <yloc>381</yloc>
+      <xloc>524</xloc>
+      <yloc>53</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows 2</name>
+    <name>exists?</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -629,26 +573,26 @@
            <schema_name/>
            </partitioning>
 <send_true_to>VersionXML</send_true_to>
-<send_false_to>Dummy (do nothing)</send_false_to>
+<send_false_to>version null</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>versionFilename exists?</leftvalue>
  <function>=</function>
  <rightvalue/>
- <value><name>constant</name><type>String</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>603</xloc>
-      <yloc>270</yloc>
+      <xloc>669</xloc>
+      <yloc>161</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
+    <name>version null</name>
+    <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -656,88 +600,23 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<join_type>RIGHT OUTER</join_type>
-<step1>File exists</step1>
-<step2>Sort rows 2 2</step2>
-    <keys_1>
-      <key>filename</key>
-      <key>short_filename</key>
-      <key>path</key>
-      <key>type</key>
-      <key>exists</key>
-      <key>ishidden</key>
-      <key>isreadable</key>
-      <key>iswriteable</key>
-      <key>lastmodifiedtime</key>
-      <key>size</key>
-      <key>extension</key>
-      <key>uri</key>
-      <key>rooturi</key>
-      <key>versionFilename</key>
-      <key>plugin_name</key>
-      <key>plugin_id</key>
-      <key>plugin_content_generator</key>
-      <key>plugin_description</key>
-      <key>versionFilename exists?</key>
-    </keys_1>
-    <keys_2>
-      <key>filename</key>
-      <key>short_filename</key>
-      <key>path</key>
-      <key>type</key>
-      <key>exists</key>
-      <key>ishidden</key>
-      <key>isreadable</key>
-      <key>iswriteable</key>
-      <key>lastmodifiedtime</key>
-      <key>size</key>
-      <key>extension</key>
-      <key>uri</key>
-      <key>rooturi</key>
-      <key>versionFilename</key>
-      <key>plugin_name</key>
-      <key>plugin_id</key>
-      <key>plugin_content_generator</key>
-      <key>plugin_description</key>
-      <key>versionFilename exists?</key>
-      <key>version</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>886</xloc>
-      <yloc>170</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows 2 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>filename</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
+        <name>version</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>886</xloc>
-      <yloc>270</yloc>
+      <xloc>754</xloc>
+      <yloc>217</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -745,7 +624,7 @@
   <step_error_handling>
       <error>
         <source_step>File exists</source_step>
-        <target_step>Dummy (do nothing)</target_step>
+        <target_step/>
         <is_enabled>Y</is_enabled>
         <nr_valuename/>
         <descriptions_valuename/>
