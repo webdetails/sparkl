@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>listKettleDependencies</name>
+  <name>listDependencies</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -12,9 +12,14 @@
   <modified_date>2013&#47;05&#47;22 11:02:11.596</modified_date>
     <parameters>
         <parameter>
-            <name>kettleFile</name>
+            <name>mainFile</name>
             <default_value/>
             <description/>
+        </parameter>
+        <parameter>
+            <name>which</name>
+            <default_value/>
+            <description>D=Dashboard &#47; K=Kettle</description>
         </parameter>
     </parameters>
     <slaveservers>
@@ -140,12 +145,12 @@
       <yloc>73</yloc>
       </entry>
     <entry>
-      <name>listKettleDependencies - sub.ktr&amp;jobs</name>
+      <name>listDependencies </name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_listKettleDependencies.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_list_${which}_Dependencies.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -172,12 +177,12 @@
       <yloc>73</yloc>
       </entry>
     <entry>
-      <name>listKettleMain</name>
+      <name>listDependenciesMain</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_listKettleMain.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_listDependenciesMain.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>Y</params_from_previous>
@@ -200,16 +205,16 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>386</xloc>
-      <yloc>77</yloc>
+      <xloc>419</xloc>
+      <yloc>73</yloc>
       </entry>
     <entry>
-      <name>listKettleCleanList</name>
+      <name>listCleanList</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_listKettleCleanList.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_listCleanList.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -256,7 +261,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>listKettleDependencies - sub.ktr&amp;jobs</from>
+      <from>listDependencies </from>
       <to>continue?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -284,7 +289,7 @@
     </hop>
     <hop>
       <from>set ${CONTINUE} = 0</from>
-      <to>listKettleDependencies - sub.ktr&amp;jobs</to>
+      <to>listDependencies </to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -292,8 +297,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>listKettleMain</from>
-      <to>listKettleDependencies - sub.ktr&amp;jobs</to>
+      <from>listDependenciesMain</from>
+      <to>listDependencies </to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -302,7 +307,7 @@
     </hop>
     <hop>
       <from>No more dependencies</from>
-      <to>listKettleCleanList</to>
+      <to>listCleanList</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -311,7 +316,7 @@
     </hop>
     <hop>
       <from>Delete dependencies file</from>
-      <to>listKettleMain</to>
+      <to>listDependenciesMain</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

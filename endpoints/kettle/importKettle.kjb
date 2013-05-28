@@ -149,12 +149,12 @@
       <yloc>62</yloc>
       </entry>
     <entry>
-      <name>listKettleDependencies</name>
+      <name>listDependencies</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_listKettleDependencies.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_listDependencies.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -171,9 +171,12 @@
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>kettleFile</name>
+            <parameter>            <name>mainFile</name>
             <stream_name/>
             <value>${kettleFile}</value>
+            </parameter>            <parameter>            <name>which</name>
+            <stream_name/>
+            <value>K</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -326,7 +329,7 @@
     </hop>
     <hop>
       <from>Checks if ${pluginFolder} exist</from>
-      <to>listKettleDependencies</to>
+      <to>listDependencies</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -334,7 +337,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>listKettleDependencies</from>
+      <from>listDependencies</from>
       <to>set_kettlePath</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

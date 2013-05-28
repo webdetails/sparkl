@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_listKettleMain</name>
+    <name>_listDependenciesMain</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -10,7 +10,7 @@
     <directory>&#47;</directory>
     <parameters>
         <parameter>
-            <name>kettleFile</name>
+            <name>mainFile</name>
             <default_value/>
             <description/>
         </parameter>
@@ -74,7 +74,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>create dependencies</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Copy row to result</to><enabled>Y</enabled> </hop>  <hop> <from>main</from><to>create dependencies</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${kettleFile}</from><to>Replace \ with &#47;</to><enabled>Y</enabled> </hop>  <hop> <from>Replace \ with &#47;</from><to>main</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>create dependencies</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Copy row to result</to><enabled>Y</enabled> </hop>  <hop> <from>main</from><to>create dependencies</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${mainFile}</from><to>Replace \ with &#47;</to><enabled>Y</enabled> </hop>  <hop> <from>Replace \ with &#47;</from><to>main</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Copy row to result</name>
     <type>RowsToResult</type>
@@ -94,7 +94,7 @@
     </step>
 
   <step>
-    <name>Get ${kettleFile}</name>
+    <name>Get ${mainFile}</name>
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
@@ -106,7 +106,7 @@
     <fields>
       <field>
         <name>dependency_filename</name>
-        <variable>${kettleFile}</variable>
+        <variable>${mainFile}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -120,6 +120,36 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>69</xloc>
+      <yloc>55</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace \ with &#47;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>dependency_filename</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>\</replace_string>
+        <replace_by_string>&#47;</replace_by_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>201</xloc>
       <yloc>55</yloc>
       <draw>Y</draw>
       </GUI>
@@ -249,36 +279,6 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>335</xloc>
-      <yloc>55</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Replace \ with &#47;</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>dependency_filename</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>\</replace_string>
-        <replace_by_string>&#47;</replace_by_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>201</xloc>
       <yloc>55</yloc>
       <draw>Y</draw>
       </GUI>
