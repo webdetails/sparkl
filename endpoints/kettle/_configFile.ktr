@@ -69,7 +69,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get rows from listFiles</from><to>Text file input</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Get rows from listFiles</to><enabled>Y</enabled> </hop>  <hop> <from>Generate Rows</from><to>Text file input</to><enabled>N</enabled> </hop>  <hop> <from>Text file input</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>Text file output</to><enabled>Y</enabled> </hop>  <hop> <from>Text file output</from><to>Write to log</to><enabled>Y</enabled> </hop>  <hop> <from>Get rows from listFiles</from><to>Fixed file input</to><enabled>N</enabled> </hop>  <hop> <from>Fixed file input</from><to>Replace in string</to><enabled>N</enabled> </hop>  <hop> <from>Text file output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get rows from listFiles</from><to>Text file input</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Get rows from listFiles</to><enabled>Y</enabled> </hop>  <hop> <from>Generate Rows</from><to>Text file input</to><enabled>N</enabled> </hop>  <hop> <from>Text file input</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Text file output</from><to>Write to log</to><enabled>Y</enabled> </hop>  <hop> <from>Get rows from listFiles</from><to>Fixed file input</to><enabled>N</enabled> </hop>  <hop> <from>Fixed file input</from><to>Replace in string</to><enabled>N</enabled> </hop>  <hop> <from>Text file output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>Block until Text file input finishes</to><enabled>Y</enabled> </hop>  <hop> <from>Block until Text file input finishes</from><to>Text file output</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Fixed file input</name>
     <type>FixedInput</type>
@@ -277,6 +277,24 @@
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>147</xloc>
+      <yloc>140</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>OUTPUT</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>819</xloc>
       <yloc>140</yloc>
       <draw>Y</draw>
       </GUI>
@@ -574,8 +592,8 @@ WAWAWAWAWUBWUBWUBWUB</logmessage>
     </step>
 
   <step>
-    <name>OUTPUT</name>
-    <type>Dummy</type>
+    <name>Block until Text file input finishes</name>
+    <type>BlockUntilStepsFinish</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -583,10 +601,16 @@ WAWAWAWAWUBWUBWUBWUB</logmessage>
            <method>none</method>
            <schema_name/>
            </partitioning>
+    <steps>
+      <step>
+        <name>Text file input</name>
+        <CopyNr>0</CopyNr>
+        </step>
+      </steps>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>819</xloc>
-      <yloc>140</yloc>
+      <xloc>596</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
