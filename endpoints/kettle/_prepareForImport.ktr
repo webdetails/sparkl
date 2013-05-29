@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_prepareForImportDashboard</name>
+    <name>_prepareForImport</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>&#47;</directory>
     <parameters>
+        <parameter>
+            <name>mainFilePath</name>
+            <default_value/>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -69,7 +74,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>valid?</from><to>Replace paths</to><enabled>N</enabled> </hop>  <hop> <from>Replace paths</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>wildcard</to><enabled>Y</enabled> </hop>  <hop> <from>wildcard</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>dependencies_clean</from><to>valid?</to><enabled>N</enabled> </hop>  <hop> <from>wcdf</from><to>all files</to><enabled>Y</enabled> </hop>  <hop> <from>cdfde</from><to>all files</to><enabled>Y</enabled> </hop>  <hop> <from>cda</from><to>all files</to><enabled>Y</enabled> </hop>  <hop> <from>index</from><to>all files</to><enabled>Y</enabled> </hop>  <hop> <from>all files</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>file exists?</to><enabled>Y</enabled> </hop>  <hop> <from>file exists?</from><to>Replace paths</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Replace paths</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>wildcard</to><enabled>Y</enabled> </hop>  <hop> <from>wildcard</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>dependencies_clean</from><to>valid?</to><enabled>Y</enabled> </hop>  <hop> <from>valid?</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>exists?</to><enabled>Y</enabled> </hop>  <hop> <from>exists?</from><to>Replace paths</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Copy rows to result</name>
     <type>RowsToResult</type>
@@ -82,8 +87,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>926</xloc>
-      <yloc>106</yloc>
+      <xloc>955</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -103,7 +108,7 @@
         <in_stream_name>dependency_filename</in_stream_name>
         <out_stream_name>destination</out_stream_name>
         <use_regex>no</use_regex>
-        <replace_string>${dashboardPath}</replace_string>
+        <replace_string>${mainFilePath}</replace_string>
         <replace_by_string>${endpointPath}</replace_by_string>
         <replace_field_by_string/>
         <whole_word>no</whole_word>
@@ -112,8 +117,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>581</xloc>
-      <yloc>106</yloc>
+      <xloc>571</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -139,90 +144,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>696</xloc>
-      <yloc>106</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>all files</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>236</xloc>
-      <yloc>106</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>cda</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>dependency_filename</name>
-        <variable>${dashboardPath}&#47;${dashboardShortFileNameNoExtension}.cda</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>182</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>cdfde</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>dependency_filename</name>
-        <variable>${dashboardPath}&#47;${dashboardShortFileNameNoExtension}.cdfde</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>106</yloc>
+      <xloc>699</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -348,40 +271,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>332</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>index</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>dependency_filename</name>
-        <variable>${dashboardPath}&#47;index.xml</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>257</yloc>
+      <xloc>59</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -408,40 +299,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>142</xloc>
-      <yloc>294</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>wcdf</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>dependency_filename</name>
-        <variable>${dashboardPath}&#47;${dashboardShortFileNameNoExtension}.wcdf</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>32</yloc>
+      <xloc>187</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -471,8 +330,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>811</xloc>
-      <yloc>106</yloc>
+      <xloc>827</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -494,14 +353,14 @@
     <addresultfilenames>N</addresultfilenames>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>351</xloc>
-      <yloc>106</yloc>
+      <xloc>315</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>file exists?</name>
+    <name>exists?</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -522,8 +381,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>466</xloc>
-      <yloc>106</yloc>
+      <xloc>443</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
