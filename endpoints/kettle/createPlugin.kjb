@@ -359,8 +359,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>951</xloc>
-      <yloc>135</yloc>
+      <xloc>1007</xloc>
+      <yloc>247</yloc>
       </entry>
     <entry>
       <name>Add filenames to result</name>
@@ -517,31 +517,13 @@
       <to>OUTPUT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Add filenames to result</from>
-      <to>Delete Unzip Folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Delete filenames from result</from>
       <to>Delete Unzip Folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Add filenames to result</from>
-      <to>OUTPUT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -549,7 +531,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Delete filenames from result</from>
+      <from>Add filenames to result</from>
       <to>OUTPUT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
