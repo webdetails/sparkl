@@ -200,11 +200,11 @@ _reload_ : Reloads all the configurations, endpoints and dashboards, _also clear
 
 _refresh_ : Does the same as _reload_ for now
 
-_version_ : Returns the plugin version (_Defined on the plugins "version.xml" file_ or through the _Control Panel_)
+_version_ : Returns the plugin version (Defined on the plugins "version.xml" file or through the Control Panel)
 
-_getSitemapJson_ : Returns a [JSON](http://www.json.org/) with the plugins sitemap (_Dashboards only!_)
+_getSitemapJson_ : Returns a [JSON](http://www.json.org/) with the plugins sitemap (Dashboards only!)
 
-_getElementsList_ : Returns a [JSON](http://www.json.org/) with the whole list of elements present on the plugin (_dashboards and kettle endpoints_)
+_getElementsList_ : Returns a [JSON](http://www.json.org/) with the whole list of elements present on the plugin (dashboards and kettle endpoints)
 
 #####_As before, using the commands is really - really - simple!_
 Assuming we're working on _CPK_ all we have to do is type:
