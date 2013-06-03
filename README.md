@@ -111,10 +111,8 @@ Pentaho will then be able to categorize / approve the plugin so that it becomes
 available to other users through the marketplace
 
 
-#How to use CPK Plugin 
-## (Community Plugin Kick-Starter)
+#How to use a CPK Plugin 
 
--------------------------------------------
 ###CPK main concepts
 
 _Elements_ are both Kettle (transformations and jobs) and Dashboards (CDE)
