@@ -111,7 +111,7 @@ Pentaho will then be able to categorize / approve the plugin so that it becomes
 available to other users through the marketplace
 
 
-#How to use a CPK Plugin 
+##How to use a CPK Plugin 
 
 ###CPK main concepts
 
@@ -213,6 +213,7 @@ Assuming we're working on _CPK_ all we have to do is type:
 
 _Following this logic, all you have to do to use the other commands is just replace "status" with any of the other commands listed above!_
 
+------
 
 ## License
 
