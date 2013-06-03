@@ -113,20 +113,6 @@ available to other users through the marketplace
 
 ##How to use a CPK Plugin 
 
-###CPK main concepts
-
-_Elements_ are both Kettle (transformations and jobs) and Dashboards (CDE)
-
-_Endpoints_ are kettle transformations and jobs.
- These accept external parameters and stepnames (How to specify these parameters and stepnames will be explained ahead)
-
-_Dashboards_ are CDE format pages built on CDE that may have interactions or just simply show data
- Dashboards accept the parameter "mode" that you can use to specify between "edit" or "render"
-
-_Commands_ can be called whether or not you have dashboards or endpoints on your CPK-Plugin (The list will be down bellow)
-
-#####Note that the elements have unique names therefore there can only be one element called "Home" per instance!
-
 ###How to use an endpoint:
 
 It's really simple, to use an endpoint you can just type this on your browser address bar:
