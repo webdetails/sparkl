@@ -107,7 +107,7 @@ The **CPK UI** dashboard gives access to:
 
 ### Visual mockup
 
-![alt text](/img/CPK-UI_handMadeMockups1.pdf "CPK-UI mockup")
+![alt text](https://github.com/webdetails/cpk/documentation/img/CPK-UI_handMadeMockups1.jpg "CPK-UI mockup")
 
 ### Endpoints
 
