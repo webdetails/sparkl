@@ -9,7 +9,7 @@
 		<content-type>
 			<title>CPK - (Community Plugin Kick-starter)</title>
 			<description>This plugin makes life easier building other plugins!</description>
-			<company name="Webdetails" url="http://www.webdetails.pt"></company>
+			<company name="Webdetails" url="http://www.webdetails.pt" logo="http://www.webdetails.pt/images/wdlogo.png"></company>
 		</content-type>
 	</content-types>
 	<content-generator
