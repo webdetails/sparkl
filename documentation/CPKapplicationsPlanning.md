@@ -79,7 +79,7 @@ CPK UI dashboard
 
 The CPK UI dashboard must give user access to the existing CPK plugins. Mainly it consists on a list of existing plugins, a set of global options and a set of plugin-specific options.
 
-### Description, actions and visual mockup
+### Description and actions
 
 The dashboard contains a set of four *global options*:
 
@@ -104,6 +104,10 @@ The **CPK UI** dashboard gives access to:
 * the **View Plugin** dashboard, whenever the user chooses the "View" option, for a specific item on the plugins table or the "New Plugin" option;
 
 * a **form** to be filled with the url/localization of the plugin to be imported, whenever the user chooses the "Import Plugin" option.
+
+### Visual mockup
+
+![alt text](/img/CPK-UI_handMadeMockups1.pdf "CPK-UI mockup")
 
 ### Endpoints
 
@@ -265,17 +269,17 @@ Endpoints
 
 These endpoints were mentioned in the previous section. Here, we have a "detailed" description of each one of them:
 
-* List plugins
+* listPlugins
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* New plugin
+* newPlugin
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Refresh list
+* refreshList
 	* Description:
 	* Parameters: 
 	* Output: 
