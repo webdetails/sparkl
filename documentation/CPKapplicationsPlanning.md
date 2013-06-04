@@ -130,7 +130,7 @@ View Plugin dashboard
 
 The View Plugin dashboard must give full infomation about the selected plugin and allow the user to edit it by adding/deleting/changing plugin elements.
 
-### Description, actions and visual mockup
+### Description and actions
 
 The dashboard contains a set of *global options*:
 
@@ -222,7 +222,7 @@ New Element dashboard
 ### Goal
 The New Element dashboard allows the user to add new elements (both Dashboards and Endpoints) to the plugin by creating new ones from scratch or importing elements from templates or other existing plugins.
 
-### Description, actions and visual mockup
+### Description and actions
 
 The dashboard contains a set of *options*:
 
