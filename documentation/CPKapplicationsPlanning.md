@@ -89,7 +89,7 @@ The dashboard contains a set of four *global options*:
 
 * **Refresh List**: updates the list of plugins;
 
-* **Request Pentaho Services**: send email requesting Pentaho services/support.
+* **Request Pentaho Services**: sends email requesting Pentaho services/support.
 
 The dasbhboard also contains a *table* listing the existing plugins, each with a small description, and a set of *plugin options* accessible to each item in the table:
 
@@ -103,21 +103,23 @@ The **CPK UI** dashboard gives access to:
 
 * the **View Plugin** dashboard, whenever the user chooses the "View" option, for a specific item on the plugins table or the "New Plugin" option;
 
-* a **form** to be filled with the url/localization of the plugin to be imported, whenever the user chooses the "Import Plugin" option.
+* a **form** to be filled with the url/localization of the plugin to be imported, whenever the user chooses the "Import Plugin" option;
+
+* the **email** default application, whenever the user chooses the "Request Pentaho Services" option;
 
 ### Visual mockup
 
-![alt text](https://github.com/webdetails/cpk/documentation/img/CPK-UI_handMadeMockups1.jpg "CPK-UI mockup")
+![CPK-UI Mockup](img/CPK_Dashboard1.png "CPK_UI Mockup")
 
 ### Endpoints
 
 The set of Endpoints for the **CPK UI** dashboard are:
 
-* List plugins;
-* New plugin;
-* Refresh list;
-* Import plugin;
-* Plugin description.
+* listPlugins;
+* newPlugin;
+* refreshList;
+* importPlugin;
+* pluginDescription.
 	
 
 
@@ -197,18 +199,22 @@ The **View Plugin** dashboard gives access to:
 
 * the **CPK UI** dashboard, whenever the user chooses the "Back to CPK plugins list" option.
 
+### Visual mockup
+
+![View Plugin Mockup](img/CPK_Dashboard2.png "View Plugin Mockup")
+
 ### Endpoints
 
 The set of Endpoints for the **View Plugin** dashboard are:
 
-* Submit changes to author;
-* Delete plugin;
-* Edit Metadata;
-* Update CPK libraries;
-* Pack/download;
-* send as email;
-* delete endpoint;
-* duplicate endpoint.
+* submitChangesToAuthor;
+* deletePlugin;
+* editMetadata;
+* updateCPKlibraries;
+* pack;
+* sendAsEmail;
+* deleteElement;
+* duplicateElement.
 
 New Element dashboard
 ----------------------
@@ -254,15 +260,18 @@ The **View Plugin** dashboard gives access to:
 
 * the **View Plugin** dashboard, whenever the user chooses the "Back to plugin view" option.
 
+### Visual mockup
+
+![New Element mockup](img/CPK_Dashboard3.png "New Element Mockup")
 
 ### Endpoints
 
 The set of Endpoints for the **New Elements** dashboard are:
 
-* Import element;
-* Import from template;
-* List elements from all plugins;
-* List templates.
+* importElement;
+* importFromTemplate;
+* listElementsFromAllPlugins;
+* listTemplates.
 
 Endpoints
 =========
@@ -284,72 +293,72 @@ These endpoints were mentioned in the previous section. Here, we have a "detaile
 	* Parameters: 
 	* Output: 
 
-* Import plugin
+* importPlugin
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Plugin description
+* pluginDescription
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Submit changes to author
+* submitChangesToAuthor
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Delete plugin
+* deletePlugin
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Edit Metadata
+* editMetadata
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Update CPK libraries
+* updateCPKlibraries
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* Pack/download
+* pack
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* send as email
+* sendAsEmail
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* delete endpoint
+* deleteElement
 	* Description:
 	* Parameters: 
 	* Output: 
 
-* duplicate endpoint
+* duplicateElement
 	* Description:
 	* Parameters: 
 	* Output:
 	
-* Import endpoint
+* importElement
 	* Description:
 	* Parameters: 
 	* Output: 
 	
-* Import from template
+* importFromTemplate
 	* Description:
 	* Parameters: 
 	* Output: 
 	
-* List endpoints from all plugins
+* listElementFrom AllPlugins
 	* Description:
 	* Parameters: 
 	* Output: 
 	
-* List templates
+* listTemplates
  	* Description:
 	* Parameters: 
 	* Output: 
