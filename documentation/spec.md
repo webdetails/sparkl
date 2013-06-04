@@ -22,7 +22,11 @@ the application dashboards.
 
 This subsection has a description of the goal of dashboard 1
 
-### Description, actions and visual mockup
+### Mockup
+
+A screenshot of the mockup in mind
+
+### Actions 
 
 This subsection has a more detailed description of dashboard, including a list
 of actions allowed on this dashboard, along with a mockup to give a visual
@@ -68,9 +72,9 @@ The Community Plugin Kick-starter (CPK) is a tool that allows you to create and
 manage Business Intelligence applications based on the Pentaho-Ctools framework.
 These applications (or Plugins) are basically a set of dashboards and Kettle
 Endpoints organized in a way to accomplish the application's goal. These
-Dashboards and Endpoints (Kettle) are the plugins building blocks and are
-referred to as the plugin "Elements".  The CPK User Interface is itself a CPK
-application and thus it follows the same planning roadmap as any other CPK
+Dashboards and Endpoints (implemented in Kettle) are the plugins building blocks
+and are referred to as the plugin "Elements".  The CPK User Interface is itself
+a CPK application and thus it follows the same planning roadmap as any other CPK
 application. The present document consists on the planning of the CPK User
 Interface. At the end it should be clear to the reader what are the
 application's Dashboards and Kettle Endpoints, their goals, logic, actions and
@@ -84,7 +88,7 @@ managing CPK plugins and creating new ones.
 Dashboards
 ==========
 
-The CPK UI is constituted by three dashboards: 
+The CPK UI is made of three main dashboards: 
 
 * The main dashboard, that we call "CPK UI", which lists the existing plugins
   and offers several global and plugin-specific options;
@@ -106,7 +110,12 @@ it consists on a list of existing plugins, a set of global options and a set of
 plugin-specific options.
 
 
-### Description and actions
+### Mock-up
+
+![CPK-UI Mockup](img/CPK_Dashboard1.png "CPK_UI Mockup")
+
+
+### Actions
 
 
 The dashboard contains a set of four *global options*:
@@ -145,10 +154,6 @@ The _CPK UI_ dashboard gives access to:
   Pentaho Services" option;
 
 
-### Visual mockup
-
-![CPK-UI Mockup](img/CPK_Dashboard1.png "CPK_UI Mockup")
-
 
 ### Endpoints
 
@@ -170,7 +175,13 @@ View Plugin dashboard
 The View Plugin dashboard must give full information about the selected plugin
 and allow the user to edit it by adding/deleting/changing plugin elements.
 
-### Description and actions
+
+### Mock-up
+
+![View Plugin Mockup](img/CPK_Dashboard2.png "View Plugin Mockup")
+
+
+### Actions
 
 The dashboard contains a set of *global options*:
 
@@ -236,14 +247,10 @@ The _View Plugin_ dashboard gives access to:
   list" option.
 
 
-### Visual mockup
-
-![View Plugin Mockup](img/CPK_Dashboard2.png "View Plugin Mockup")
-
-
 ### Endpoints
 
 The set of Endpoints for the _View Plugin_ dashboard are:
+
 
 * submitChangesToAuthor;
 * deletePlugin;
@@ -265,13 +272,19 @@ and Endpoints) to the plugin by creating new ones from scratch or importing
 elements from templates or other existing plugins.
 
 
-### Description and actions
+### Mock-up
+
+![New Element mockup](img/CPK_Dashboard3.png "New Element Mockup")
+
+
+### Actions
+
 
 The dashboard contains a set of *options*:
 
+
 * _Import from plugin_: allows to import a copy of an element from any other
   plugin. If chosen, the list of endpoints from all plugins will show up;
-
 * _Import from template_: allows to import a copy from a set of templates
   organized in a hierarchical structure. If chosen, a file browsing window will
   show up, allowing the user to navigate over this templates structure. And
@@ -290,23 +303,21 @@ The dashboard will also contain either:
 
 or
 
+
 * a windows with a *file browser*, for the user to choose an item to import from
   several templates. 
 
 
 ### Navigation
 
+
 The _View Plugin_ dashboard gives access to:
- 
+
+
 * a _Browsing window_ with the elements templates, whenever the user chooses the
   "Import from template" option;
 * the _View Plugin_ dashboard, whenever the user chooses the "Back to plugin
   view" option.
-
-
-### Visual mockup
-
-![New Element mockup](img/CPK_Dashboard3.png "New Element Mockup")
 
 
 ### Endpoints
@@ -322,89 +333,75 @@ The set of Endpoints for the _New Elements_ dashboard are:
 Endpoints
 =========
 
+
 These endpoints were mentioned in the previous section. Here, we have a
 "detailed" description of each one of them:
+
 
 * listPlugins
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * newPlugin
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * refreshList
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * importPlugin
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * pluginDescription
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * submitChangesToAuthor
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * deletePlugin
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * editMetadata
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * updateCPKlibraries
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * pack
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * sendAsEmail
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * deleteElement
 	* Description:
 	* Parameters: 
 	* Output: 
-
 * duplicateElement
 	* Description:
 	* Parameters: 
 	* Output:
-	
 * importElement
 	* Description:
 	* Parameters: 
 	* Output: 
-	
 * importFromTemplate
 	* Description:
 	* Parameters: 
 	* Output: 
-	
 * listElementFrom AllPlugins
 	* Description:
 	* Parameters: 
 	* Output: 
-	
 * listTemplates
  	* Description:
 	* Parameters: 
