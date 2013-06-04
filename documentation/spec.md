@@ -30,12 +30,12 @@ A screenshot of the mockup in mind
 
 This subsection has a more detailed description of dashboard, including a list
 of actions allowed on this dashboard, along with a mockup to give a visual
-insigh.
+insight.
 
 ### Navigation
 
 Here should be the information regarding the dashboard navigation restrictions
-(eg. if there should be a link to a contextual help page or where/when the user
+(e.g. if there should be a link to a contextual help page or where/when the user
 should navigate to dashboard 2).
 
 
@@ -71,7 +71,7 @@ CPK
 The Community Plugin Kick-starter (CPK) is a tool that allows you to create and
 manage Business Intelligence applications based on the Pentaho-Ctools framework.
 These applications (or Plugins) are basically a set of dashboards and Kettle
-Endpoints organized in a way to accomplish the application's goal. These
+Endpoints organised in a way to accomplish the application's goal. These
 Dashboards and Endpoints (implemented in Kettle) are the plugins building blocks
 and are referred to as the plugin "Elements".  The CPK User Interface is itself
 a CPK application and thus it follows the same planning roadmap as any other CPK
@@ -126,7 +126,7 @@ The dashboard contains a set of four *global options*:
   may then be edited via the "Edit" global option on this same "View Plugin"
   dashboard;
 * _Import Plugin_: allows to import a remotely hosted plugin to the local CPK
-  plugins folder. Opens a form to be filled with the plugin url/localization;
+  plugins folder. Opens a form to be filled with the plugin url/localisation;
 * _Refresh List_: updates the list of plugins;
 * _Request Pentaho Services_: sends email requesting Pentaho services/support.
 
@@ -148,7 +148,7 @@ The _CPK UI_ dashboard gives access to:
 
 * the _View Plugin_ dashboard, whenever the user chooses the "View" option,
   for a specific item on the plugins table or the "New Plugin" option;
-* a _form_ to be filled with the url/localization of the plugin to be
+* a _form_ to be filled with the url/localisation of the plugin to be
   imported, whenever the user chooses the "Import Plugin" option;
 * the _email_ default application, whenever the user chooses the "Request
   Pentaho Services" option;
@@ -287,7 +287,7 @@ The dashboard contains a set of *options*:
 * _Import from plugin_: allows to import a copy of an element from any other
   plugin. If chosen, the list of endpoints from all plugins will show up;
 * _Import from template_: allows to import a copy from a set of templates
-  organized in a hierarchical structure. If chosen, a file browsing window will
+  organised in a hierarchical structure. If chosen, a file browsing window will
   show up, allowing the user to navigate over this templates structure. And
   example of such a structure can be:
 	* Template
