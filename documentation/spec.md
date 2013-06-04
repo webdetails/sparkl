@@ -255,7 +255,8 @@ The set of Endpoints for the _View Plugin_ dashboard are:
 * submitChangesToAuthor;
 * deletePlugin;
 * editMetadata;
-* updateCPKlibraries;
+* updateCPKlibs;
+* listPluginElements;
 * pack;
 * sendAsEmail;
 * deleteElement;
@@ -339,41 +340,45 @@ These endpoints were mentioned in the previous section. Here, we have a
 
 
 * listPlugins
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: identify all CPK plugins locally available
+	* Parameters: (none)
+	* Output: table with all plugins and respective small description
 * newPlugin
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: create new plugin with metadata inserted by users on a blank "view plugin" dashboard
+	* Parameters: (none)
+	* Output: (operation status)
 * refreshList
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: refresh list of plugins
+	* Parameters: (none)
+	* Output: (operation status)
 * importPlugin
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: copy plugin
+	* Parameters: url/path of the plugin to be imported
+	* Output: (operation status) 
 * pluginDescription
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: get plugin small description to add to each item on the plugin list 
+	* Parameters: plugin Id
+	* Output: plugin small description 
 * submitChangesToAuthor
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: pack plugin and open email default application with zip file already attached and author/pentaho/ctools email address already inserted
+	* Parameters: plugin Id, 
+	* Output: (operation status)
 * deletePlugin
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: delete selected plugin
+	* Parameters: plugin Id
+	* Output: (operation status)
 * editMetadata
-	* Description:
-	* Parameters: 
-	* Output: 
-* updateCPKlibraries
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: save metadata values inserted by user 
+	* Parameters: plugin Id, table with metadata changed keys and corresponding new values
+	* Output: (operation status)
+* updateCPKlibs
+	* Description: override the plugin's CPK libs with the current version of the CPK libs
+	* Parameters: plugin Id
+	* Output: (operation status)
+* listPluginElements
+	* Description: list the plugin elements (dashboards and Endpoints), each with a small description
+	* Parameters: plugin Id
+	* Output: table listing the plugin elements and corresponding description
 * pack
 	* Description:
 	* Parameters: 
