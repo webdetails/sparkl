@@ -248,7 +248,7 @@ The set of Endpoints for the _View Plugin_ dashboard are:
 * submitChangesToAuthor;
 * deletePlugin;
 * editMetadata;
-* updateCPKlibraries;
+* updateCPKlibs;
 * pack;
 * sendAsEmail;
 * deleteElement;
@@ -326,24 +326,24 @@ These endpoints were mentioned in the previous section. Here, we have a
 "detailed" description of each one of them:
 
 * listPlugins
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: identify all CPK plugins locally available
+	* Parameters: (none)
+	* Output: table with all plugins
 
 * newPlugin
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: create new plugin with metadata inserted by users on a blank "view plugin" dashboard
+	* Parameters: (none)
+	* Output: (operation status)
 
 * refreshList
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: refresh list of plugins
+	* Parameters: (none)
+	* Output: (operation status)
 
 * importPlugin
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: copy plugin
+	* Parameters: url/path of the plugin to be imported
+	* Output: (operation status)
 
 * pluginDescription
 	* Description:
@@ -365,7 +365,7 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Parameters: 
 	* Output: 
 
-* updateCPKlibraries
+* updateCPKlibs
 	* Description:
 	* Parameters: 
 	* Output: 
