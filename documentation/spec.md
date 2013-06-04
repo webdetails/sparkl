@@ -22,7 +22,11 @@ the application dashboards.
 
 This subsection has a description of the goal of dashboard 1
 
-### Description, actions and visual mockup
+### Mockup
+
+A screenshot of the mockup in mind
+
+### Actions 
 
 This subsection has a more detailed description of dashboard, including a list
 of actions allowed on this dashboard, along with a mockup to give a visual
@@ -106,7 +110,7 @@ it consists on a list of existing plugins, a set of global options and a set of
 plugin-specific options.
 
 
-### Visual mockup
+### Mock-up
 
 ![CPK-UI Mockup](img/CPK_Dashboard1.png "CPK_UI Mockup")
 
@@ -268,7 +272,7 @@ and Endpoints) to the plugin by creating new ones from scratch or importing
 elements from templates or other existing plugins.
 
 
-### Visual mockup
+### Mock-up
 
 ![New Element mockup](img/CPK_Dashboard3.png "New Element Mockup")
 
