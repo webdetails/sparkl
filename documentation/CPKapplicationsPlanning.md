@@ -279,8 +279,8 @@ Endpoints
 These endpoints were mentioned in the previous section. Here, we have a "detailed" description of each one of them:
 
 * listPlugins
-	* Description:
-	* Parameters: 
+	* Description: list plugins in the local CPK plugins folder;
+	* Parameters: (none)
 	* Output: 
 
 * newPlugin
