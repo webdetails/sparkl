@@ -10,7 +10,7 @@
   <import file="build-res/subfloor-pkg.xml" id="subfloor"/>
 
   <property name="plugin.name"
-            value="cvb"
+            value="cpk"
             description="Name of the plugin"/>
 
   <property name="resource.dir"
