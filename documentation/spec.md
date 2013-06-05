@@ -380,34 +380,33 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Parameters: plugin Id
 	* Output: table listing the plugin elements and corresponding description
 * pack
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: create a zip file with the plugin current version
+	* Parameters: plugin Id
+	* Output: (operation status)
 * sendAsEmail
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: pack plugin and open email default application with zip file already attached
+	* Parameters: plugin Id
+	* Output: (operation status)
 * deleteElement
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: delete element from plugin
+	* Parameters: plugin Id, element Id
+	* Output: (operation status)
 * duplicateElement
-	* Description:
-	* Parameters: 
-	* Output:
+	* Description: duplicate element on plugin
+	* Parameters: plugin Id, element Id
+	* Output:(operation status)
 * importElement
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: duplicate element from the original plugin and save it on the target plugin
+	* Parameters: original pluin Id, target plugin Id, element Id
+	* Output: (operation status)
 * importFromTemplate
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: duplicate element template and save it on the target plugin 
+	* Parameters: template Id, target plugin Id
+	* Output: (operation status)
 * listElementFrom AllPlugins
-	* Description:
-	* Parameters: 
-	* Output: 
+	* Description: identify and list the elements available from all plugins	* Parameters: (none)
+	* Output: table with all elements available from plugins and a corresponding small description
 * listTemplates
- 	* Description:
-	* Parameters: 
-	* Output: 
+ 	* Description: identify and list the elements available from all templates
+	* Parameters: (none) 
+	* Output: table with all elements available from templates and a corresponding small description
