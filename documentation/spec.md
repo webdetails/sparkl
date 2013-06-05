@@ -159,7 +159,7 @@ The _CPK UI_ dashboard gives access to:
 
 The set of Endpoints for the _CPK UI_ dashboard are:
 
-* listPlugins;
+* pluginsList;
 * newPlugin;
 * refreshList;
 * importPlugin;
@@ -339,10 +339,10 @@ These endpoints were mentioned in the previous section. Here, we have a
 "detailed" description of each one of them:
 
 
-* listPlugins
+* pluginsList
 	* Description: identify all CPK plugins locally available
 	* Parameters: (none)
-	* Output: table with all plugins and respective small description
+	* Output: table with four columns: name, id, description and version
 * newPlugin
 	* Description: create new plugin with metadata inserted by users on a blank "view plugin" dashboard
 	* Parameters: (none)
