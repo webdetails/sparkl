@@ -917,7 +917,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "pluginsTable",
       "type": "Id"
      },
      {
@@ -1052,7 +1052,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "",
+      "value": "${p:pluginsTableObj}",
       "type": "HtmlObject"
      },
      {
@@ -1115,12 +1115,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "newPluginButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "",
+      "value": "button",
       "type": "String"
      },
      {
@@ -1150,7 +1150,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "",
+      "value": "${p:newPluginButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -1193,12 +1193,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "importPluginButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "",
+      "value": "button",
       "type": "String"
      },
      {
@@ -1228,7 +1228,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "",
+      "value": "${p:importPluginButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -1276,7 +1276,7 @@
      },
      {
       "name": "label",
-      "value": "",
+      "value": "button",
       "type": "String"
      },
      {
@@ -1424,5 +1424,5 @@
  "datasources": {
   "rows": []
  },
- "filename": "/CPK UI/Dashboards/Main.cdfde"
+ "filename": "/system/cpk/dashboards/Main.cdfde"
 }

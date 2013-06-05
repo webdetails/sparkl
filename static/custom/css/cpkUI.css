@@ -69,6 +69,7 @@ div.container  {
    2. HEADER 
    ========================================================================== */
 .WDheader {
+  height: 100px;
 }
 
 .WDheader .title{
