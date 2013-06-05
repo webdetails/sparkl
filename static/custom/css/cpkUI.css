@@ -50,7 +50,9 @@ border: 0;
   }
 
 
-
+.WDhidden{
+  display:none;
+}
 
 
 /* =============================================================================
@@ -62,20 +64,15 @@ body{
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-
+  background: #FFFFFF
 }
 
 /* =============================================================================
    2. HEADER 
    ========================================================================== */
 .WDheader {
-  height: 100px;
-}
-
-.WDheader .title{
 
 }
-.WDheader .description{
 
 }
 .WDh1 {}
@@ -89,6 +86,7 @@ div.container  {
 
 /* Filter Cells */
 .WDfilterCell {
+  padding: 20px 0px 20px 0px;
 }
 
 /* Filter Cells header */
@@ -107,6 +105,9 @@ div.container  {
 .WDfilterCellBody *{
 }
 
+.WDfilterCellBody .globalOptButtonPH{
+  padding-left: 10px;
+}
 
 /********** FILTER ELEMENTS *********/
 
@@ -274,22 +275,32 @@ div.container  {
 
 /* Data Cells body */
 .WDdataCellBody {
+  padding: 0px 10px 0px 10px;
 }
 
 /* =============================================================================
    5. TABLES
    ========================================================================== */
 
-.WDdataCellBody table {}
-
+.WDdataCellBody table{
+  border: 1px solid #9C9C9C;
+}
+.WDdataCellBody table tr{
+  background: #FFFFFF;
+}
 
 /* Header */
 .WDdataCellBody  thead {}
 .WDdataCellBody thead tr {
-
 }
 .WDdataCellBody  thead th {
-
+  background: #FFFFFF;
+  color: #9C9C9C;
+  font-size: 15px;
+  text-align: left;
+}
+.WDdataCellBody  thead th:last-child {
+  text-align: center;
 }
 .WDdataCellBody thead th.sorting{
 }
@@ -305,6 +316,10 @@ div.container  {
 .WDdataCellBody  tbody tr {
 }
 .WDdataCellBody  tbody td{
+  text-align: left;
+}
+.WDdataCellBody  tbody td:last-child {
+  text-align: center;
 }
 .WDdataCellBody  tbody td,
   .WDdataCellBody  tbody td.numeric, 
@@ -426,6 +441,7 @@ button {
 }
 
 button:hover {
+cursor: pointer;
 }
 button span {
 }

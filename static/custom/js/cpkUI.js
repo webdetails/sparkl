@@ -1,7 +1,7 @@
 /********************************** Project namespace *******************************************/
 
 /********************************** Project namespace *******************************************/
-var sampleNamespace = (function () {
+var cpkUI = (function () {
 
 /************************************* Site Map Settings and Functions ******************************************/
 var siteMap = function () {
@@ -25,5 +25,17 @@ return { siteMap: siteMap,
          settings: settings  } ;
 })();
 
+/*********************************** Functions ******************************************/
 
-
+cpkUI.configViewPluginOp = function() {
+	var $tableBodyTrArray = $('#'+this.htmlObject).find('table tbody tr');
+	$tableBodyTrArray.each(function(){
+		var $tdArray = $(this).find('td');
+		/* */
+		var $placeHolder = $($tdArray[$tdArray.length - 1]);
+		var pluginId = $placeHolder.text();
+		$placeHolder.empty().addClass('viewPluginButtonContainer');
+		var $viewPluginButton = $("<button type='button'>View plugin</button>").addClass('button');
+		$placeHolder.append($viewPluginButton);
+	});
+}

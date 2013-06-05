@@ -15,7 +15,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "${res:../files/cpkUI.js}",
+      "value": "static/custom/js/cpkUI.js",
       "type": "ResourceFile"
      },
      {
@@ -38,7 +38,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "${res:../files/cpkUI.css}",
+      "value": "static/custom/css/cpkUI.css",
       "type": "ResourceFile"
      },
      {
@@ -81,7 +81,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDheader",
+      "value": "WDheader WDhidden",
       "type": "String"
      }
     ]
@@ -337,10 +337,159 @@
     ]
    },
    {
-    "id": "6c4daf4b-b022-36ed-d01b-647b6e246d34",
+    "id": "bee6d63a-91c9-e1d8-ce8f-941858345d08",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e3970ac8-7843-5f68-7432-a841f97ee45c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "bee6d63a-91c9-e1d8-ce8f-941858345d08",
+    "properties": [
+     {
+      "name": "name",
+      "value": "globalOptionsCellHeader",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCellHeader WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "bee6d63a-91c9-e1d8-ce8f-941858345d08",
+    "properties": [
+     {
+      "name": "name",
+      "value": "globalOptionsCellBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c48e2f8e-1b6f-8227-3268-6de04933b3ec",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
     "properties": [
      {
       "name": "name",
@@ -349,7 +498,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -410,10 +559,10 @@
     ]
    },
    {
-    "id": "820483e3-34c0-36b8-44f8-0824a51af0c1",
+    "id": "77ac2a57-e565-87df-ac7c-85c94f61740a",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "6c4daf4b-b022-36ed-d01b-647b6e246d34",
+    "parent": "c48e2f8e-1b6f-8227-3268-6de04933b3ec",
     "properties": [
      {
       "name": "name",
@@ -448,10 +597,10 @@
     ]
    },
    {
-    "id": "f8136b81-1d4a-972e-5bf3-74eef75a0152",
+    "id": "69e0b365-acf0-d736-157f-6de0cf486b30",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
     "properties": [
      {
       "name": "name",
@@ -460,7 +609,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -521,10 +670,10 @@
     ]
    },
    {
-    "id": "d9b2e48f-e542-ec02-217d-b6d5a8101d57",
+    "id": "500bf3ab-dd3a-ffb3-09ee-6796eb697d67",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "f8136b81-1d4a-972e-5bf3-74eef75a0152",
+    "parent": "69e0b365-acf0-d736-157f-6de0cf486b30",
     "properties": [
      {
       "name": "name",
@@ -559,10 +708,10 @@
     ]
    },
    {
-    "id": "2acd75f4-050d-f925-2728-71621adb19ae",
+    "id": "bc016616-be1b-cc9c-7d40-26fffa9fcc1a",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
     "properties": [
      {
       "name": "name",
@@ -571,7 +720,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -632,10 +781,10 @@
     ]
    },
    {
-    "id": "f2bb7fb9-cfc7-4219-f647-ebf31dd3879f",
+    "id": "cc0d1497-80f2-a478-398f-58fd7d55fd73",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "2acd75f4-050d-f925-2728-71621adb19ae",
+    "parent": "bc016616-be1b-cc9c-7d40-26fffa9fcc1a",
     "properties": [
      {
       "name": "name",
@@ -670,10 +819,10 @@
     ]
    },
    {
-    "id": "dab824d5-0883-3007-b84d-29341d60f1e8",
+    "id": "4c367b69-3e6b-9100-34bb-746cc585c0d8",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
     "properties": [
      {
       "name": "name",
@@ -682,7 +831,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -743,10 +892,10 @@
     ]
    },
    {
-    "id": "c89a7835-898f-aaae-30f5-b054c2365c6b",
+    "id": "8f400410-8cd1-1c09-79ad-dff9cd13c7b0",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "dab824d5-0883-3007-b84d-29341d60f1e8",
+    "parent": "4c367b69-3e6b-9100-34bb-746cc585c0d8",
     "properties": [
      {
       "name": "name",
@@ -826,12 +975,161 @@
     "properties": [
      {
       "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b2307eda-7684-b5e9-a180-309c21b31d63",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f70a380b-6dd2-8e17-148b-4a51fd3622a0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PluginsListCellHeader",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellHeader WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5e7989d5-3910-0118-8093-6d68afea44fa",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f70a380b-6dd2-8e17-148b-4a51fd3622a0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginsListCellBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "1a9ddf23-2a35-8cf0-8f73-f93e532f1589",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "5e7989d5-3910-0118-8093-6d68afea44fa",
+    "properties": [
+     {
+      "name": "name",
       "value": "pluginsTableObj",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "24",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -947,12 +1245,12 @@
      },
      {
       "name": "colTypes",
-      "value": "[]",
+      "value": "[\"string\",\"string\",\"string\",\"string\"]",
       "type": "colTypesCustom"
      },
      {
       "name": "colFormats",
-      "value": "[]",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
      },
      {
@@ -972,22 +1270,22 @@
      },
      {
       "name": "paginate",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
       "name": "filter",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
       "name": "info",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
       "name": "sort",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -997,7 +1295,7 @@
      },
      {
       "name": "lengthChange",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -1018,7 +1316,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": ""
+      "value": "pluginsTableQuery"
      },
      {
       "name": "sortBy",
@@ -1042,12 +1340,12 @@
      },
      {
       "name": "paginationType",
-      "value": "two_button",
+      "value": "",
       "type": "PaginationType"
      },
      {
       "name": "tableStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
@@ -1077,7 +1375,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    cpkUI.configViewPluginOp.call(this);\n}",
       "type": "JavaScript"
      },
      {
@@ -1120,7 +1418,7 @@
      },
      {
       "name": "label",
-      "value": "button",
+      "value": "New Plugin",
       "type": "String"
      },
      {
@@ -1145,7 +1443,7 @@
      },
      {
       "name": "tableStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
@@ -1198,7 +1496,7 @@
      },
      {
       "name": "label",
-      "value": "button",
+      "value": "Import Plugin",
       "type": "String"
      },
      {
@@ -1223,7 +1521,7 @@
      },
      {
       "name": "tableStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
@@ -1276,7 +1574,7 @@
      },
      {
       "name": "label",
-      "value": "button",
+      "value": "Refresh List",
       "type": "String"
      },
      {
@@ -1301,7 +1599,7 @@
      },
      {
       "name": "tableStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
@@ -1354,7 +1652,7 @@
      },
      {
       "name": "label",
-      "value": "button",
+      "value": "Request Pentaho Service",
       "type": "String"
      },
      {
@@ -1379,7 +1677,7 @@
      },
      {
       "name": "tableStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
@@ -1422,7 +1720,93 @@
   ]
  },
  "datasources": {
-  "rows": []
+  "rows": [
+   {
+    "id": "SCRIPTING",
+    "name": "SCRIPTING Queries",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "SCRIPTING Queries",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "b7e8668a-f2ee-bb60-fe97-f254d7560f9e",
+    "type": "Componentsscriptable_scripting",
+    "typeDesc": "scriptable over scripting",
+    "meta": "CDA",
+    "meta_conntype": "scripting.scripting",
+    "meta_datype": "scriptable",
+    "parent": "SCRIPTING",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginsTableQuery",
+      "type": "Id"
+     },
+     {
+      "name": "language",
+      "value": "beanshell",
+      "type": "String"
+     },
+     {
+      "name": "initscript",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "query",
+      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"Name\",\n\"ID\",\n\"Description\",\n\"Version\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"plugin1_name\")\n, new String(\"plugin1_Id\") , new String(\"plugin1_description\") , new String(\"plugin1_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin2_name\")\n, new String(\"plugin2_Id\") , new String(\"plugin2_description\") , new String(\"plugin2_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin3_name\")\n, new String(\"plugin3_Id\") , new String(\"plugin3_description\") , new String(\"plugin3_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin4_name\")\n, new String(\"plugin4_Id\") , new String(\"plugin4_description\") , new String(\"plugin4_version\") });\n\nreturn model;\n",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[\"0\",\"2\",\"3\",\"1\"]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   }
+  ]
  },
  "filename": "/system/cpk/dashboards/Main.cdfde"
 }
