@@ -3164,12 +3164,12 @@
      },
      {
       "name": "colTypes",
-      "value": "[]",
+      "value": "[\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
       "name": "colFormats",
-      "value": "[]",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
      },
      {
@@ -3284,7 +3284,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"editElementButton\",\n        buttonTitle: \"Edit\"\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -3294,7 +3294,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    cpkUI.configViewPluginOp.call(this);\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {

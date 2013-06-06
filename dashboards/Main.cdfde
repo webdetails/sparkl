@@ -1033,7 +1033,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"string\"]",
+      "value": "[\"string\",\"string\",\"string\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
@@ -1153,7 +1153,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\"\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -1163,7 +1163,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    cpkUI.configViewPluginOp.call(this);\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {

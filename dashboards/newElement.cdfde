@@ -922,7 +922,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"string\"]",
+      "value": "[\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
@@ -1042,7 +1042,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"importElementButton\",\n        buttonTitle: \"Import\"\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -1052,7 +1052,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    cpkUI.configViewPluginOp.call(this);\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
