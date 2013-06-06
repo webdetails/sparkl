@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cdf>
-        <title>Settings</title>
+        <title>CPK UI Main dashboard</title>
         <author></author>
-        <description>Settings</description>
+        <description>Main dashboard for CPK User Interface</description>
         <icon/>
-		<style>cvbCpk - (CVB)</style>
+		<style>cpk - (CPK)</style>
 <rendererType>blueprint</rendererType><widget>false</widget></cdf>

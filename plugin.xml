@@ -6,6 +6,11 @@
 		<static-path url="/cpk/resources" localFolder="resources"/>
 	</static-paths>
 	<content-types>
+		<content-type>
+			<title>CPK - (Community Plugin Kick-starter)</title>
+			<description>This plugin makes life easier building other plugins!</description>
+			<company name="Webdetails" url="http://www.webdetails.pt" logo="http://www.webdetails.pt/images/wdlogo.png"></company>
+		</content-type>
 	</content-types>
 	<content-generator
 		id="cpk"

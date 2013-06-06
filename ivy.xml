@@ -23,9 +23,13 @@
 	<dependencies defaultconf="runtime->default">
 
 
+ <dependency org="pt.webdetails" name="cpf-core"
+		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
 
-		<dependency org="pentaho" name="cpf"
-			rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>                   
+
+	  <dependency org="pt.webdetails" name="cpf-pentaho"
+		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
+                  
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
 
 		<!--dependency org="pentaho" name="pentaho-hdfs-vfs" rev="TRUNK-SNAPSHOT" conf='default->default'/>

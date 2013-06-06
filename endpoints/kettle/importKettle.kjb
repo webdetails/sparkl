@@ -149,12 +149,12 @@
       <yloc>62</yloc>
       </entry>
     <entry>
-      <name>listKettleDependencies</name>
+      <name>listDependencies</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_listKettleDependencies.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_listDependencies.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -171,9 +171,12 @@
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>kettleFile</name>
+            <parameter>            <name>mainFile</name>
             <stream_name/>
             <value>${kettleFile}</value>
+            </parameter>            <parameter>            <name>which</name>
+            <stream_name/>
+            <value>K</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -222,7 +225,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_prepareForImportKettle.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_prepareForImport.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -242,7 +245,10 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+            <parameter>            <name>mainFilePath</name>
+            <stream_name/>
+            <value>${kettlePath}</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>776</xloc>
@@ -286,6 +292,30 @@
       <xloc>637</xloc>
       <yloc>169</yloc>
       </entry>
+    <entry>
+      <name>Delete dependencies file</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;.tmp&#47;dependencies.txt</filename>
+      <fail_if_file_not_exists>N</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>834</xloc>
+      <yloc>285</yloc>
+      </entry>
+    <entry>
+      <name>Delete dependencies_clean file</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;.tmp&#47;dependencies_clean.txt</filename>
+      <fail_if_file_not_exists>N</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1006</xloc>
+      <yloc>285</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -326,7 +356,7 @@
     </hop>
     <hop>
       <from>Checks if ${pluginFolder} exist</from>
-      <to>listKettleDependencies</to>
+      <to>listDependencies</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -334,7 +364,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>listKettleDependencies</from>
+      <from>listDependencies</from>
       <to>set_kettlePath</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -368,6 +398,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Import</from>
+      <to>Delete dependencies file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Import</from>
+      <to>Delete dependencies_clean file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_prepareForImportKettle</name>
+    <name>_prepareForImport</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>&#47;</directory>
     <parameters>
+        <parameter>
+            <name>mainFilePath</name>
+            <default_value/>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -69,7 +74,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get rows from result</from><to>valid?</to><enabled>N</enabled> </hop>  <hop> <from>Data Grid</from><to>valid?</to><enabled>N</enabled> </hop>  <hop> <from>valid?</from><to>Replace paths</to><enabled>Y</enabled> </hop>  <hop> <from>Replace paths</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>wildcard</to><enabled>Y</enabled> </hop>  <hop> <from>wildcard</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>dependencies_clean</from><to>valid?</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Replace paths</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>wildcard</to><enabled>Y</enabled> </hop>  <hop> <from>wildcard</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>dependencies_clean</from><to>valid?</to><enabled>Y</enabled> </hop>  <hop> <from>valid?</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>exists?</to><enabled>Y</enabled> </hop>  <hop> <from>exists?</from><to>Replace paths</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Copy rows to result</name>
     <type>RowsToResult</type>
@@ -82,84 +87,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>744</xloc>
-      <yloc>51</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Data Grid</name>
-    <type>DataGrid</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>main</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>dependency_filename</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>valid</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group>.</group>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-    <data>
-      <line> <item>0</item><item>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;cpk&#47;endpoints&#47;kettle&#47;_configFile.ktr</item><item>1</item> </line>
-      <line> <item>0</item><item>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;cpk&#47;endpoints&#47;kettle&#47;_configPluginFiles.kjb</item><item>1</item> </line>
-      <line> <item>0</item><item>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;cpk&#47;endpoints&#47;kettle&#47;_createPluginListFiles.ktr</item><item>1</item> </line>
-      <line> <item>0</item><item>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;cpk&#47;endpoints&#47;kettle&#47;_loadStub.kjb</item><item>1</item> </line>
-      <line> <item>0</item><item>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;cpk&#47;endpoints&#47;kettle&#47;updatePlugin.kjb</item><item>1</item> </line>
-      <line> <item>1</item><item>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;cpk&#47;endpoints&#47;kettle&#47;createPlugin.kjb</item><item>1</item> </line>
-    </data>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>54</xloc>
-      <yloc>141</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get rows from result</name>
-    <type>RowsFromResult</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>54</xloc>
-      <yloc>51</yloc>
+      <xloc>955</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -179,7 +108,7 @@
         <in_stream_name>dependency_filename</in_stream_name>
         <out_stream_name>destination</out_stream_name>
         <use_regex>no</use_regex>
-        <replace_string>${kettlePath}</replace_string>
+        <replace_string>${mainFilePath}</replace_string>
         <replace_by_string>${endpointPath}</replace_by_string>
         <replace_field_by_string/>
         <whole_word>no</whole_word>
@@ -188,8 +117,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>330</xloc>
-      <yloc>51</yloc>
+      <xloc>571</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -215,8 +144,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>468</xloc>
-      <yloc>51</yloc>
+      <xloc>699</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -342,8 +271,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>60</xloc>
-      <yloc>229</yloc>
+      <xloc>59</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -370,8 +299,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>51</yloc>
+      <xloc>187</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -401,8 +330,59 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>606</xloc>
-      <yloc>51</yloc>
+      <xloc>827</xloc>
+      <yloc>50</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>File exists</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>dependency_filename</filenamefield>
+    <resultfieldname>result</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>315</xloc>
+      <yloc>50</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>exists?</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>result</leftvalue>
+ <function>=</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>443</xloc>
+      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

@@ -10,7 +10,7 @@
     <directory>&#47;</directory>
     <parameters>
         <parameter>
-            <name>kettleFile</name>
+            <name>dashboardFile</name>
             <default_value/>
             <description/>
         </parameter>

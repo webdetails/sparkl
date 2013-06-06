@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="pluginsTableQuery" type="scripting.scripting">
+         <Initscript></Initscript>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="pluginsTableQuery"
+               id="pluginsTableQuery"
+               type="scriptable">
+      <Columns/>
+      <Output indexes="0,2,3,1" mode="include"/>
+      <Parameters/>
+      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+"Name",
+"ID",
+"Description",
+"Version"
+};
+
+
+Class[] columnTypes = new Class[]{
+String.class
+,String.class
+,String.class
+,String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+model.addRow(new Object[]{ new String("plugin1_name")
+, new String("plugin1_Id") , new String("plugin1_description") , new String("plugin1_version") });
+
+model.addRow(new Object[]{ new String("plugin2_name")
+, new String("plugin2_Id") , new String("plugin2_description") , new String("plugin2_version") });
+
+model.addRow(new Object[]{ new String("plugin3_name")
+, new String("plugin3_Id") , new String("plugin3_description") , new String("plugin3_version") });
+
+model.addRow(new Object[]{ new String("plugin4_name")
+, new String("plugin4_Id") , new String("plugin4_description") , new String("plugin4_version") });
+
+return model;</Query>
+   </DataAccess>
+</CDADescriptor>
