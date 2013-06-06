@@ -14,7 +14,7 @@
          <Initscript></Initscript>
          <Language>beanshell</Language>
       </Connection>
-      <Connection id="listElementsQuery" type="scripting.scripting">
+      <Connection id="elementsTableQuery" type="scripting.scripting">
          <Initscript></Initscript>
          <Language>beanshell</Language>
       </Connection>
@@ -96,19 +96,20 @@ model.addRow(new Object[]{ new String("CPK Version:")
 return model;</Query>
    </DataAccess>
    <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="listElementsQuery"
-               id="listElementsQuery"
+               connection="elementsTableQuery"
+               id="elementsTableQuery"
                type="scriptable">
       <Columns/>
+      <Output indexes="1,2,3,4,0" mode="include"/>
       <Parameters/>
       <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
 
 String[] columnNames = new String[]{
-"Name",
 "ID",
-"Element Type",
-"Location",
-"adminOnly"
+"Name",
+"Type",
+"location",
+"Admin"
 };
 
 
@@ -121,10 +122,17 @@ String.class
 };
 
 TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-model.addRow(new Object[]{ new String("SampleWidget")
-, new String("SampleWidget"), new String("Dashboard"), new String("D:\\Projects\\project-bare-solution\\system\\cpk\\dashboards\\Main.wcdf"), new String("false")
-});
+model.addRow(new Object[]{ new String("dashboard1_Id")
+, new String("dashboard1_name") , new String("dashboard") , new String("/dashboards/dashboard1_name.wcdf") , new String("false")});
 
+model.addRow(new Object[]{ new String("endpoint1_Id")
+, new String("endpoint1_name") , new String("Kettle") , new String("/endpoints/kettle/endpoint1_name.ktr") , new String("false")});
+model.addRow(new Object[]{ new String("dashboard2_Id")
+, new String("dashboard2_name") , new String("dashboard") , new String("/dashboards/dashboard2_name.wcdf") , new String("true")});
+model.addRow(new Object[]{ new String("dashboard3_Id")
+, new String("dashboard3_name") , new String("dashboard") , new String("/dashboards/dashboard3_name.wcdf") , new String("false")});
+model.addRow(new Object[]{ new String("dashboard4_Id")
+, new String("dashboard4_name") , new String("dashboard") , new String("/dashboards/dashboard4_name.wcdf") , new String("false")});
 return model;</Query>
    </DataAccess>
 </CDADescriptor>

@@ -49,6 +49,44 @@
     ]
    },
    {
+    "id": "8407aab8-d4b8-5366-99fe-943b40d8d7f5",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "headerCell",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDheader WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -99,7 +137,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "24",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -160,14 +198,14 @@
     ]
    },
    {
-    "id": "b8e8a342-b750-177b-fa1a-488b15329d8f",
+    "id": "7d1d1a89-7ddb-eaff-dc54-bb9341f8db2d",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "673e6cac-9e5e-c78a-7f6c-3823fad2fa2c",
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "globalOptionsCellHeader",
       "type": "Id"
      },
      {
@@ -192,7 +230,45 @@
      },
      {
       "name": "cssClass",
+      "value": "WDfilterCellHeader WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b8e8a342-b750-177b-fa1a-488b15329d8f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "673e6cac-9e5e-c78a-7f6c-3823fad2fa2c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "globalOptionsCellBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCellBody",
       "type": "String"
      }
     ]
@@ -896,7 +972,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "WDfilterCellBody",
       "type": "String"
      }
     ]
@@ -1495,19 +1571,168 @@
     ]
    },
    {
-    "id": "f70a380b-6dd2-8e17-148b-4a51fd3622a0",
+    "id": "91740f08-c2aa-2340-75d9-d0c8a5d908f3",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "70d7d37e-8e4a-7e48-bc66-068ba0ec708f",
     "properties": [
      {
       "name": "name",
-      "value": "metadataObj",
+      "value": "",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "24",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "983adbd4-8edc-ebf8-cd3b-b3261a77378f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "91740f08-c2aa-2340-75d9-d0c8a5d908f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataListCellHeader",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellHeader WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "9f61db17-452a-1e5d-8be9-d1d9839503fd",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "91740f08-c2aa-2340-75d9-d0c8a5d908f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataListCellBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a4b7056e-ddd3-7811-dcfc-0476756b0356",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "9f61db17-452a-1e5d-8be9-d1d9839503fd",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataTableObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -1575,7 +1800,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "listDataCell",
+      "value": "elementsListCell",
       "type": "Id"
      },
      {
@@ -1613,12 +1838,161 @@
     "properties": [
      {
       "name": "name",
-      "value": "listDataObj",
+      "value": "",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "24",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cab64265-f1b5-0b35-933b-082db8634514",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "23b6671a-6078-2856-4049-a1278b2464ce",
+    "properties": [
+     {
+      "name": "name",
+      "value": "elementsListCellHeader",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellHeader WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "71d67382-7743-bfd4-3ebb-c6627399b3f6",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "23b6671a-6078-2856-4049-a1278b2464ce",
+    "properties": [
+     {
+      "name": "name",
+      "value": "elementsListCellBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "71d67382-7743-bfd4-3ebb-c6627399b3f6",
+    "properties": [
+     {
+      "name": "name",
+      "value": "elementsTableObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -2697,7 +3071,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:metadataObj}",
+      "value": "${p:metadataTableObj}",
       "type": "HtmlObject"
      },
      {
@@ -2760,7 +3134,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "listTable",
+      "value": "elementsTable",
       "type": "Id"
      },
      {
@@ -2861,7 +3235,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "listElementsQuery"
+      "value": "elementsTableQuery"
      },
      {
       "name": "sortBy",
@@ -2895,7 +3269,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:listDataObj}",
+      "value": "${p:elementsTableObj}",
       "type": "HtmlObject"
      },
      {
@@ -2920,7 +3294,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    cpkUI.configViewPluginOp.call(this);\n}",
       "type": "JavaScript"
      },
      {
@@ -3206,7 +3580,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "listElementsQuery",
+      "value": "elementsTableQuery",
       "type": "Id"
      },
      {
@@ -3226,7 +3600,7 @@
      },
      {
       "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"Name\",\n\"ID\",\n\"Element Type\",\n\"Location\",\n\"adminOnly\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"SampleWidget\")\n, new String(\"SampleWidget\"), new String(\"Dashboard\"), new String(\"D:\\\\Projects\\\\project-bare-solution\\\\system\\\\cpk\\\\dashboards\\\\Main.wcdf\"), new String(\"false\")\n});\n\nreturn model;\n\n",
+      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"ID\",\n\"Name\",\n\"Type\",\n\"location\",\n\"Admin\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"dashboard1_Id\")\n, new String(\"dashboard1_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard1_name.wcdf\") , new String(\"false\")});\n\nmodel.addRow(new Object[]{ new String(\"endpoint1_Id\")\n, new String(\"endpoint1_name\") , new String(\"Kettle\") , new String(\"/endpoints/kettle/endpoint1_name.ktr\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard2_Id\")\n, new String(\"dashboard2_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard2_name.wcdf\") , new String(\"true\")});\nmodel.addRow(new Object[]{ new String(\"dashboard3_Id\")\n, new String(\"dashboard3_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard3_name.wcdf\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard4_Id\")\n, new String(\"dashboard4_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard4_name.wcdf\") , new String(\"false\")});\nreturn model;\n\n",
       "type": "SqlQuery"
      },
      {
@@ -3236,7 +3610,7 @@
      },
      {
       "name": "output",
-      "value": "[]",
+      "value": "[\"1\",\"2\",\"3\",\"4\",\"0\"]",
       "type": "IndexArray"
      },
      {
