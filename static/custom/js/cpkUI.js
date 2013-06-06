@@ -52,7 +52,6 @@ return { siteMap: siteMap,
 	    
 	    implementation: function(tgt, st, opt){
 	    	var $button = $("<button class='"+opt.buttonClass+" '>"+opt.buttonTitle+"</button>");
-	 		/* onclick='"opt.buttonAction.call(this, st)"' */
 	    	$button.click(function(){
 	    		opt.buttonAction(st.value, st);
 	    	});
