@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="packPluginQuery" type="kettle.TransFromFile">
+         <KtrFile>system/cpk/endpoints/kettle/packPlugin.kjb</KtrFile>
+         <variables datarow-name="destination" variable-name="destination"/>
+         <variables datarow-name="download" variable-name="download"/>
+         <variables datarow-name="plugin_id" variable-name="plugin_id"/>
+      </Connection>
+      <Connection id="listDashboardsQuery" type="kettle.TransFromFile">
+         <KtrFile>../endpoints/kettle/listDashboards.ktr</KtrFile>
+      </Connection>
+      <Connection id="metadataQuery" type="scripting.scripting">
+         <Initscript></Initscript>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="listElementsQuery" type="scripting.scripting">
+         <Initscript></Initscript>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="packPluginQuery"
+               id="packPluginQuery"
+               type="kettle">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="destination" type="String"/>
+         <Parameter default="false" name="download" type="String"/>
+         <Parameter default="" name="plugin_id" type="String"/>
+      </Parameters>
+      <Query></Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="listDashboardsQuery"
+               id="listDashboardsQuery"
+               type="kettle">
+      <Columns/>
+      <Parameters/>
+      <Query>OUTPUT</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="metadataQuery"
+               id="metadataQuery"
+               type="scriptable">
+      <Columns/>
+      <Parameters/>
+      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+"Property",
+"Value"
+};
+
+
+Class[] columnTypes = new Class[]{
+String.class
+,String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+model.addRow(new Object[]{ new String("Name:")
+, new String("Name")
+});
+
+model.addRow(new Object[]{ new String("Description:")
+, new String("Description")
+});
+
+model.addRow(new Object[]{ new String("Author Name:")
+, new String("Author Name")
+});
+
+model.addRow(new Object[]{ new String("Author Email:")
+, new String("Author email")
+});
+
+model.addRow(new Object[]{ new String("Company Name:")
+, new String("Company Name")
+});
+
+model.addRow(new Object[]{ new String("Company URL:")
+, new String("Company URL")
+});
+
+model.addRow(new Object[]{ new String("Creation Date:")
+, new String("Creation Date")
+});
+
+model.addRow(new Object[]{ new String("Version:")
+, new String("Version")
+});
+
+model.addRow(new Object[]{ new String("CPK Version:")
+, new String("CPK Version")
+});
+
+return model;</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="listElementsQuery"
+               id="listElementsQuery"
+               type="scriptable">
+      <Columns/>
+      <Parameters/>
+      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+"Name",
+"ID",
+"Element Type",
+"Location",
+"adminOnly"
+};
+
+
+Class[] columnTypes = new Class[]{
+String.class
+,String.class
+,String.class
+,String.class
+,String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+model.addRow(new Object[]{ new String("SampleWidget")
+, new String("SampleWidget"), new String("Dashboard"), new String("D:\\Projects\\project-bare-solution\\system\\cpk\\dashboards\\Main.wcdf"), new String("false")
+});
+
+return model;</Query>
+   </DataAccess>
+</CDADescriptor>
