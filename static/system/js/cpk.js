@@ -27,7 +27,8 @@
     implementation: function (tgt, st, opt) {
       var t = $(tgt);
 	  selectHTML = "<textarea>" + st.value + "</textarea>";
-	  $(tgt).append(selectHTML);
+	  /*t.click()
+	  t.append(selectHTML);*/
     }
   };
   Dashboards.registerAddIn("Table", "colType", new AddIn(editable));
