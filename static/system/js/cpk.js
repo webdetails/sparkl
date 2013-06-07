@@ -27,7 +27,7 @@
     implementation: function (tgt, st, opt) {
       var t = $(tgt);
 	  selectHTML = "<textarea>" + st.value + "</textarea>";
-	  /*t.click()
+	  /*t.click(function(){t.append(selectHTML);});
 	  t.append(selectHTML);*/
     }
   };
