@@ -88,18 +88,23 @@ div.container  {
 .WDfilterCell {
   padding: 20px 0px 20px 0px;
 }
-
+.popupComponent .WDfilterCell {
+  width: 49%;
+  display: inline-block;
+}
 /* Filter Cells header */
-.WDfilterCellHeader{
+.popupComponent .WDfilterCellHeader{
+  width: 100%;
 }
 
 
 /* Filter Cells body */
-.WDfilterCellBody{
+.popupComponent .WDfilterCellBody > *{
+  display: inline-block;
 }
-.no-svg .WDfilterCellBody{
+.no-svg .popupComponent .WDfilterCellBody{
 }
-.svg  .WDfilterCellBody{
+.svg .popupComponent .WDfilterCellBody{
 }
 
 .WDfilterCellBody *{
@@ -266,7 +271,9 @@ div.container  {
 
 /* Data Cells header*/
 .WDdataCellHeader{
-
+  color: #9C9C9C;
+  font-size: 20px;
+  text-align: center;
 }
 .no-svg   .WDdataCellHeader {
 }
@@ -586,6 +593,29 @@ button span {
    Other 
    ========================================================================== */
 
+.popupComponent{
+  color: #9C9C9C;
+  font-size: 18px;
+  width: 900px;
+  border:solid 1px #9C9C9C;
+  position: absolute;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+.popupComponent *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.popupComponent a{
+   display: none;
+}
+
+.popupComponent.south .arrow{
+  background-image: none;
+}
 
 
 /* =============================================================================
