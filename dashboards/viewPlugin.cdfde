@@ -3,6 +3,29 @@
   "title": "CDF - Sample structure",
   "rows": [
    {
+    "id": "9ff802de-4877-93c0-e57e-2a09c3a6f443",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "CPKJS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "static/system/js/cpk.js",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     }
+    ]
+   },
+   {
     "id": "51924ad4-7fcf-d4c4-5756-9ee31557a5ed",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
@@ -4533,7 +4556,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[]",
+      "value": "[null,\"editable\"]",
       "type": "colTypesCustom"
      },
      {
@@ -4653,7 +4676,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function(){\n    \n    this.setAddInOptions(\"colType\",\"editable\",{});\n}",
       "type": "JavaScript"
      },
      {
@@ -6030,7 +6053,7 @@
      },
      {
       "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"Property\",\n\"Value\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"Name:\")\n, new String(\"Name\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Description:\")\n, new String(\"Description\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Author Name:\")\n, new String(\"Author Name\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Author Email:\")\n, new String(\"Author email\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Company Name:\")\n, new String(\"Company Name\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Company URL:\")\n, new String(\"Company URL\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Creation Date:\")\n, new String(\"Creation Date\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Version:\")\n, new String(\"Version\")\n});\n\nmodel.addRow(new Object[]{ new String(\"CPK Version:\")\n, new String(\"CPK Version\")\n});\n\nreturn model;\n",
+      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"Property\",\n\"Value\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"Name\")\n, new String(\"Name\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Description\")\n, new String(\"Description\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Author Name\")\n, new String(\"Author Name\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Author Email\")\n, new String(\"Author email\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Company Name\")\n, new String(\"Company Name\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Company URL\")\n, new String(\"Company URL\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Creation Date\")\n, new String(\"Creation Date\")\n});\n\nmodel.addRow(new Object[]{ new String(\"Version\")\n, new String(\"Version\")\n});\n\nmodel.addRow(new Object[]{ new String(\"CPK Version\")\n, new String(\"CPK Version\")\n});\n\nreturn model;\n",
       "type": "SqlQuery"
      },
      {

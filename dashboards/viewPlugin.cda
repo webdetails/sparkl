@@ -69,39 +69,39 @@ String.class
 };
 
 TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-model.addRow(new Object[]{ new String("Name:")
+model.addRow(new Object[]{ new String("Name")
 , new String("Name")
 });
 
-model.addRow(new Object[]{ new String("Description:")
+model.addRow(new Object[]{ new String("Description")
 , new String("Description")
 });
 
-model.addRow(new Object[]{ new String("Author Name:")
+model.addRow(new Object[]{ new String("Author Name")
 , new String("Author Name")
 });
 
-model.addRow(new Object[]{ new String("Author Email:")
+model.addRow(new Object[]{ new String("Author Email")
 , new String("Author email")
 });
 
-model.addRow(new Object[]{ new String("Company Name:")
+model.addRow(new Object[]{ new String("Company Name")
 , new String("Company Name")
 });
 
-model.addRow(new Object[]{ new String("Company URL:")
+model.addRow(new Object[]{ new String("Company URL")
 , new String("Company URL")
 });
 
-model.addRow(new Object[]{ new String("Creation Date:")
+model.addRow(new Object[]{ new String("Creation Date")
 , new String("Creation Date")
 });
 
-model.addRow(new Object[]{ new String("Version:")
+model.addRow(new Object[]{ new String("Version")
 , new String("Version")
 });
 
-model.addRow(new Object[]{ new String("CPK Version:")
+model.addRow(new Object[]{ new String("CPK Version")
 , new String("CPK Version")
 });
 
