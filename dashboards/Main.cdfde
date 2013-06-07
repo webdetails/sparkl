@@ -1158,7 +1158,7 @@
      },
      {
       "name": "postFetch",
-      "value": "",
+      "value": "function f(data){\n    \nconsole.log(\"Martins\");\n    $.each(data.resultset,function(i,element){\n        var tempElement = data.resultset[i][1];\n        data.resultset[i][1] = data.resultset[i][2];\n        data.resultset[i][2] = data.resultset[i][3];\n        data.resultset[i][3] = tempElement;       \n    });\n\n    var tempObj = $.extend({},data.metadata[1]);\n    data.metadata[1] = $.extend( {} , data.metadata[2] , {colIndex: 1} );\n    data.metadata[2] = $.extend( {} , data.metadata[3] , {colIndex: 2} );    \n    data.metadata[3] = $.extend( {} , tempObj , { colIndex: 3 } );    \n\n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -1534,7 +1534,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsTableQuery",
+      "value": "pluginsTableQuery_old",
       "type": "Id"
      },
      {
@@ -1565,6 +1565,91 @@
      {
       "name": "output",
       "value": "[\"0\",\"2\",\"3\",\"1\"]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "KETTLE",
+    "name": "KETTLE Queries",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "KETTLE Queries",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "1c98441c-f302-d4b5-3aad-d60923bccc17",
+    "type": "Componentskettle_kettleTransFromFile",
+    "typeDesc": "kettle over kettleTransFromFile",
+    "meta": "CDA",
+    "meta_conntype": "kettle.TransFromFile",
+    "meta_datype": "kettle",
+    "parent": "KETTLE",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginsTableQuery",
+      "type": "Id"
+     },
+     {
+      "name": "ktrFile",
+      "value": "../endpoints/kettle/pluginsList.ktr",
+      "type": "KtrPath"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "query",
+      "value": "OUTPUT",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "variables",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[]",
       "type": "IndexArray"
      },
      {
