@@ -274,117 +274,6 @@
     ]
    },
    {
-    "id": "c48e2f8e-1b6f-8227-3268-6de04933b3ec",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPlugin",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "4",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "77ac2a57-e565-87df-ac7c-85c94f61740a",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "c48e2f8e-1b6f-8227-3268-6de04933b3ec",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "button",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "69e0b365-acf0-d736-157f-6de0cf486b30",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -392,7 +281,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "importPlugin",
+      "value": "back",
       "type": "Id"
      },
      {
@@ -465,7 +354,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "importPluginButtonObj",
+      "value": "backButtonObj",
       "type": "Id"
      },
      {
@@ -503,7 +392,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "refreshList",
+      "value": "importFromPlugin",
       "type": "Id"
      },
      {
@@ -576,7 +465,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "refreshListButtonObj",
+      "value": "importFromPluginButtonObj",
       "type": "Id"
      },
      {
@@ -614,7 +503,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "requestPentahoServices",
+      "value": "importFromTemplate",
       "type": "Id"
      },
      {
@@ -687,7 +576,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "requestPentahoServicesButtonObj",
+      "value": "importFromTemplateButtonObj",
       "type": "Id"
      },
      {
@@ -725,7 +614,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsListCell",
+      "value": "elementsListCell",
       "type": "Id"
      },
      {
@@ -836,7 +725,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "PluginsListCellHeader",
+      "value": "elementsListCellHeader",
       "type": "Id"
      },
      {
@@ -874,7 +763,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsListCellBody",
+      "value": "elementsListCellBody",
       "type": "Id"
      },
      {
@@ -912,7 +801,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsTableObj",
+      "value": "elementsTableObj",
       "type": "Id"
      },
      {
@@ -1003,7 +892,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsTable",
+      "value": "elementsTable",
       "type": "Id"
      },
      {
@@ -1033,12 +922,12 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"parameterButton\"]",
+      "value": "[\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
       "name": "colFormats",
-      "value": "[\"%s\",\"%s\",\"%s\",\"%s\"]",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
      },
      {
@@ -1104,7 +993,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "pluginsTableQuery"
+      "value": "elementsTableQuery"
      },
      {
       "name": "sortBy",
@@ -1138,7 +1027,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:pluginsTableObj}",
+      "value": "${p:elementsTableObj}",
       "type": "HtmlObject"
      },
      {
@@ -1153,7 +1042,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\"\n    });\n}",
+      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"importElementButton\",\n        buttonTitle: \"Import\"\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -1201,12 +1090,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "newPluginButton",
+      "value": "backButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "New Plugin",
+      "value": "Back",
       "type": "String"
      },
      {
@@ -1236,7 +1125,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:newPluginButtonObj}",
+      "value": "${p:backButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -1279,12 +1168,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "importPluginButton",
+      "value": "importFromPluginButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "Import Plugin",
+      "value": "Import from plugin",
       "type": "String"
      },
      {
@@ -1314,7 +1203,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:importPluginButtonObj}",
+      "value": "${p:importFromPluginButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -1357,12 +1246,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "refreshListButton",
+      "value": "importFromTemplateButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "Refresh List",
+      "value": "Import from template",
       "type": "String"
      },
      {
@@ -1392,85 +1281,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:refreshListButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "7e8cd606-ab76-e331-e688-b7ec3f82f9c8",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "requestPentahoServicesButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Request Pentaho Service",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:requestPentahoServicesButtonObj}",
+      "value": "${p:importFromTemplateButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -1534,7 +1345,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsTableQuery",
+      "value": "elementsTableQuery",
       "type": "Id"
      },
      {
@@ -1554,7 +1365,7 @@
      },
      {
       "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"Name\",\n\"ID\",\n\"Description\",\n\"Version\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"plugin1_name\")\n, new String(\"plugin1_Id\") , new String(\"plugin1_description\") , new String(\"plugin1_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin2_name\")\n, new String(\"plugin2_Id\") , new String(\"plugin2_description\") , new String(\"plugin2_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin3_name\")\n, new String(\"plugin3_Id\") , new String(\"plugin3_description\") , new String(\"plugin3_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin4_name\")\n, new String(\"plugin4_Id\") , new String(\"plugin4_description\") , new String(\"plugin4_version\") });\n\nreturn model;\n",
+      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"ID\",\n\"Name\",\n\"Type\",\n\"location\",\n\"Admin\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"dashboard1_Id\")\n, new String(\"dashboard1_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard1_name.wcdf\") , new String(\"false\")});\n\nmodel.addRow(new Object[]{ new String(\"endpoint1_Id\")\n, new String(\"endpoint1_name\") , new String(\"Kettle\") , new String(\"/endpoints/kettle/endpoint1_name.ktr\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard2_Id\")\n, new String(\"dashboard2_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard2_name.wcdf\") , new String(\"true\")});\nmodel.addRow(new Object[]{ new String(\"dashboard3_Id\")\n, new String(\"dashboard3_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard3_name.wcdf\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard4_Id\")\n, new String(\"dashboard4_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard4_name.wcdf\") , new String(\"false\")});\nreturn model;\n",
       "type": "SqlQuery"
      },
      {
@@ -1564,7 +1375,7 @@
      },
      {
       "name": "output",
-      "value": "[\"0\",\"2\",\"3\",\"1\"]",
+      "value": "[\"1\",\"2\",\"3\",\"4\",\"0\"]",
       "type": "IndexArray"
      },
      {
@@ -1596,5 +1407,5 @@
    }
   ]
  },
- "filename": "/system/cpk/dashboards/Main.cdfde"
+ "filename": "/system/cpk/dashboards/newElement.cdfde"
 }
