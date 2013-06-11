@@ -7,7 +7,9 @@
     name: "editable",
     label: "Editable",
     defaults: {
-      
+		action: function (v, st) {
+			Dashboards.log(v);
+		}
     },
     init: function(){
         
@@ -27,14 +29,17 @@
     implementation: function (tgt, st, opt) {
       var t = $(tgt);
 	  var value = st.value;
-	  selectHTML = "<textarea>" + value + "</textarea>";
+	  var text = $("<input/>").attr({value:value, type:'text'})
+		.keyup(function(event){
+			if (event.keyCode == 13) {
+				opt.action( $(this).val(), st );
+			}
+			var idx = this.parentNode.parentNode.rowIndex;
+			metadataParam[idx-1][1] = $(this).val();
+		});
+	  
 	  t.empty();
-	  t.append(selectHTML);
-	  t.keyup(function(event){
-		if (event.keyCode == 13) {
-			t.load();
-		}
-	  });
+	  t.append(text);
     }
   };
   Dashboards.registerAddIn("Table", "colType", new AddIn(editable));

@@ -4681,7 +4681,7 @@
      },
      {
       "name": "postFetch",
-      "value": "",
+      "value": "function(data){\n    /*var result = Dashboards.propertiesArrayToObject(data.resultset);*/\n    var result = data.resultset;\n    Dashboards.setParameter(\"metadataParam\",result);\n}",
       "type": "JavaScript"
      },
      {
@@ -5829,6 +5829,34 @@
      {
       "name": "name",
       "value": "newEndpointNameParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "fcc93d79-84bc-e865-83ab-683f015636be",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataParam",
       "type": "Id"
      },
      {
