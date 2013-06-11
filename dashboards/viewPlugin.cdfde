@@ -4681,7 +4681,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function(data){\n    /*var result = Dashboards.propertiesArrayToObject(data.resultset);*/\n    var result = data.resultset;\n    Dashboards.setParameter(\"metadataParam\",result);\n}",
+      "value": "function(data){\n    var result = Dashboards.propertiesArrayToObject(data.resultset);\n    //var result = data.resultset;\n    Dashboards.setParameter(\"metadataParam\",result);\n}",
       "type": "JavaScript"
      },
      {

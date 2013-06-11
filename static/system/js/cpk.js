@@ -34,8 +34,10 @@
 			if (event.keyCode == 13) {
 				opt.action( $(this).val(), st );
 			}
-			var idx = this.parentNode.parentNode.rowIndex;
-			metadataParam[idx-1][1] = $(this).val();
+			/*var idx = this.parentNode.parentNode.rowIndex;
+			metadataParam[idx-1][1] = $(this).val();*/
+			var obj = this.parentNode.parentNode.children[0].textContent;
+			metadataParam[obj.toString()] = $(this).val();
 		});
 	  
 	  t.empty();
