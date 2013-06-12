@@ -3,29 +3,6 @@
   "title": "CDF - Sample structure",
   "rows": [
    {
-    "id": "9ff802de-4877-93c0-e57e-2a09c3a6f443",
-    "type": "LayoutResourceFile",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "CPKJS",
-      "type": "Id"
-     },
-     {
-      "name": "resourceFile",
-      "value": "static/system/js/cpk.js",
-      "type": "ResourceFile"
-     },
-     {
-      "name": "resourceType",
-      "value": "Javascript",
-      "type": "Label"
-     }
-    ]
-   },
-   {
     "id": "51924ad4-7fcf-d4c4-5756-9ee31557a5ed",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
@@ -3839,7 +3816,7 @@
      },
      {
       "name": "expression",
-      "value": "function(){\n    render_updatePluginQueryComponent.update();\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -3995,7 +3972,7 @@
      },
      {
       "name": "expression",
-      "value": "function(){\n    render_packPluginQueryComponent.update();\n}",
+      "value": "function(){\n    Dashboards.log(\"ping\");\n}",
       "type": "JavaScript"
      },
      {
@@ -5347,172 +5324,6 @@
     ]
    },
    {
-    "id": "bc0a008a-b87f-a338-896b-1f0d9048235d",
-    "type": "ComponentsQuery",
-    "typeDesc": "Query Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packPluginQueryComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:Select options}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[[\"destinationParam\",\"destinationParam\"],[\"downloadParam\",\"downloadParam\"],[\"pluginIdParam\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "resultvar",
-      "value": "",
-      "type": "Result"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "packPluginQuery"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "bbca5a71-438a-373f-aedf-b048ff1c1d32",
-    "type": "ComponentsQuery",
-    "typeDesc": "Query Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "updatePluginQueryComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:Select options}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[[\"pluginIdParam\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "resultvar",
-      "value": "",
-      "type": "Result"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "updatePluginQuery"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "SELECTORS",
     "name": "Selects",
     "type": "Label",
@@ -6113,148 +5924,6 @@
       "name": "Group",
       "value": "KETTLE Queries",
       "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "c88ca6b4-bcdd-e390-fdbd-66ba86820763",
-    "type": "Componentskettle_kettleTransFromFile",
-    "typeDesc": "kettle over kettleTransFromFile",
-    "meta": "CDA",
-    "meta_conntype": "kettle.TransFromFile",
-    "meta_datype": "kettle",
-    "parent": "KETTLE",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packPluginQuery",
-      "type": "Id"
-     },
-     {
-      "name": "ktrFile",
-      "value": "../endpoints/kettle/packPlugin.kjb",
-      "type": "KtrPath"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "OUTPUT",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "variables",
-      "value": "[[\"destinationParam\",\"destination\"],[\"downloadParam\",\"download\"],[\"pluginIdParam\",\"plugin_id\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"destinationParam\",\"plugin-samples\",\"String\",\"\"],[\"downloadParam\",\"false\",\"String\",\"\"],[\"pluginIdParam\",\"cpk\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "ed740786-3a95-a9ea-486c-44f29e151e79",
-    "type": "Componentskettle_kettleTransFromFile",
-    "typeDesc": "kettle over kettleTransFromFile",
-    "meta": "CDA",
-    "meta_conntype": "kettle.TransFromFile",
-    "meta_datype": "kettle",
-    "parent": "KETTLE",
-    "properties": [
-     {
-      "name": "name",
-      "value": "updatePluginQuery",
-      "type": "Id"
-     },
-     {
-      "name": "ktrFile",
-      "value": "../endpoints/kettle/updatePlugin.kjb",
-      "type": "KtrPath"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "OUTPUT",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "variables",
-      "value": "[[\"pluginIdParam\",\"plugin_id\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"pluginIdParam\",\"cpk\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
      }
     ]
    },

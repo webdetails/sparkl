@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
-      <Connection id="packPluginQuery" type="kettle.TransFromFile">
-         <KtrFile>../endpoints/kettle/packPlugin.kjb</KtrFile>
-         <variables datarow-name="destinationParam" variable-name="destination"/>
-         <variables datarow-name="downloadParam" variable-name="download"/>
-         <variables datarow-name="pluginIdParam" variable-name="plugin_id"/>
-      </Connection>
-      <Connection id="updatePluginQuery" type="kettle.TransFromFile">
-         <KtrFile>../endpoints/kettle/updatePlugin.kjb</KtrFile>
-         <variables datarow-name="pluginIdParam" variable-name="plugin_id"/>
-      </Connection>
       <Connection id="listDashboardsQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/listDashboards.ktr</KtrFile>
       </Connection>
@@ -35,27 +25,6 @@
          <Language>beanshell</Language>
       </Connection>
    </DataSources>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="packPluginQuery"
-               id="packPluginQuery"
-               type="kettle">
-      <Columns/>
-      <Parameters>
-         <Parameter default="plugin-samples" name="destinationParam" type="String"/>
-         <Parameter default="false" name="downloadParam" type="String"/>
-         <Parameter default="cpk" name="pluginIdParam" type="String"/>
-      </Parameters>
-      <Query>OUTPUT</Query>
-   </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="updatePluginQuery"
-               id="updatePluginQuery"
-               type="kettle">
-      <Columns/>
-      <Parameters>
-         <Parameter default="cpk" name="pluginIdParam" type="String"/>
-      </Parameters>
-      <Query>OUTPUT</Query>
-   </DataAccess>
    <DataAccess access="public" cache="true" cacheDuration="3600"
                connection="listDashboardsQuery"
                id="listDashboardsQuery"

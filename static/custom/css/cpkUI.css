@@ -426,7 +426,28 @@ div.container  {
 .WDdataCellBody  thead th .trend.neutral {
 }
 
+input{
+	background-color: transparent !important;
+	border: 1px solid transparent !important;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	vertical-align: middle;
+	resize: none;
+	padding: 0;
+	margin: 0 !important;
+	width: 370px;
+}
 
+input:hover {
+    background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
+    border: 1px solid transparent !important;
+}
+
+input:focus {
+    background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
+    border: 1px solid #0F1414 !important;
+}
 
 /* =============================================================================
    6. CHARTS 
