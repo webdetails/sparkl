@@ -503,7 +503,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "updatePlugin",
+      "value": "updatePluginLibs",
       "type": "Id"
      },
      {
@@ -576,7 +576,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "updateButtonObj",
+      "value": "updateLibsButtonObj",
       "type": "Id"
      },
      {
@@ -614,7 +614,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "editPlugin",
+      "value": "savePluginMetadata",
       "type": "Id"
      },
      {
@@ -687,7 +687,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "editButtonObj",
+      "value": "saveMetadataButtonObj",
       "type": "Id"
      },
      {
@@ -3801,12 +3801,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "updateButton",
+      "value": "updateLibsButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "Update",
+      "value": "Update Libs",
       "type": "String"
      },
      {
@@ -3836,7 +3836,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "updateButtonObj",
+      "value": "${p:updateLibsButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -3879,12 +3879,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "editButton",
+      "value": "saveMetadataButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "Edit",
+      "value": "Save Metadata",
       "type": "String"
      },
      {
@@ -3914,7 +3914,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:editButtonObj}",
+      "value": "${p:saveMetadataButtonObj}",
       "type": "HtmlObject"
      },
      {
