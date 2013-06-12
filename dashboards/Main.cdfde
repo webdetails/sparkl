@@ -1158,7 +1158,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    \nconsole.log(\"Martins\");\n    $.each(data.resultset,function(i,element){\n        var tempElement = data.resultset[i][1];\n        data.resultset[i][1] = data.resultset[i][2];\n        data.resultset[i][2] = data.resultset[i][3];\n        data.resultset[i][3] = tempElement;       \n    });\n\n    var tempObj = $.extend({},data.metadata[1]);\n    data.metadata[1] = $.extend( {} , data.metadata[2] , {colIndex: 1} );\n    data.metadata[2] = $.extend( {} , data.metadata[3] , {colIndex: 2} );    \n    data.metadata[3] = $.extend( {} , tempObj , { colIndex: 3 } );    \n\n    return data;\n}",
+      "value": "function f(data){\n    \n    $.each(data.resultset,function(i,element){\n        var tempElement = data.resultset[i][1];\n        data.resultset[i][1] = data.resultset[i][2];\n        data.resultset[i][2] = data.resultset[i][3];\n        data.resultset[i][3] = tempElement;       \n    });\n\n    var tempObj = $.extend({},data.metadata[1]);\n    data.metadata[1] = $.extend( {} , data.metadata[2] , {colIndex: 1} );\n    data.metadata[2] = $.extend( {} , data.metadata[3] , {colIndex: 2} );    \n    data.metadata[3] = $.extend( {} , tempObj , { colIndex: 3 } );    \n\n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -1723,5 +1723,5 @@
    }
   ]
  },
- "filename": "/system/cpk/dashboards/Main.cdfde"
+ "filename": "/system/cpk/dashboards/main.cdfde"
 }
