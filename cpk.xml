@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cpk>
-    <elementTypes defaultElement="fileList">
+    <elementTypes defaultElement="main">
         <elementType name="Dashboard" class="pt.webdetails.cpk.elements.impl.DashboardElementType">
             <elementLocations>
                 <elementLocation path="dashboards/" isRecursive="true" pattern="^(?!admin).*\.wcdf" adminOnly="false"/>

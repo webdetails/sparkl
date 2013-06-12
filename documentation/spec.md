@@ -88,14 +88,12 @@ managing CPK plugins and creating new ones.
 Dashboards
 ==========
 
-The CPK UI is made of three main dashboards: 
+The CPK UI is made of two dashboards: 
 
 * The main dashboard, that we call "CPK UI", which lists the existing plugins
   and offers several global and plugin-specific options;
-* the "View Plugin" dashboard, which lists the plugin info (i.e., the plugin
-  metadata), its plugin elements and several global and element-specific
-  options;
-* the "New Element" dashboard, which allows the user to add new plugin elements.
+* the "View Plugin" dashboard, which lists the plugin info, including the plugin
+  metadata and its elements and offers some editing options.
 
 
 CPK UI dashboard 
@@ -122,9 +120,7 @@ The dashboard contains a set of four *global options*:
 
 
 * _New Plugin_: allows to create a new plugin. Opens the "View Plugin"
-  dashboard (see below) with the plugin info all blank. The plugin info fields
-  may then be edited via the "Edit" global option on this same "View Plugin"
-  dashboard;
+  dashboard (see below) with the plugin metadata all blank, automtically opened in edit mode;
 * _Import Plugin_: allows to import a remotely hosted plugin to the local CPK
   plugins folder. Opens a form to be filled with the plugin url/localisation;
 * _Refresh List_: updates the list of plugins;
@@ -132,8 +128,7 @@ The dashboard contains a set of four *global options*:
 
 
 The dashboard also contains a *table* listing the existing plugins, each with a
-small description, and a set of *plugin options* accessible to each item in the
-table:
+small description, the corresponding version and a set of *plugin options*:
 
 
 * _View_: Open a new dashboard with the plugin info and editing options; 
@@ -162,9 +157,7 @@ The set of Endpoints for the _CPK UI_ dashboard are:
 * pluginsList;
 * newPlugin;
 * refreshList;
-* importPlugin;
-* pluginDescription.
-	
+* importPlugin.	
 
 
 View Plugin dashboard
@@ -189,7 +182,7 @@ The dashboard contains a set of *global options*:
   the new version attached;
 * _Delete_: deletes the plugin (a pop-up asking for confirmation should
   appear);
-* _Update_: ??;
+* _Update CPK libraries_: updates the CPK libraries in the plugin;
 * _Edit_: gives the user access to the plugin metadata (see below) by editing
   its fields;
 * _Pack (zip)_: packs the plugin in a zip file;
@@ -200,8 +193,11 @@ The dashboard contains a set of *global options*:
   feedback;
 * _Report a Bug (email)_: sends email to pentaho/ctools/plugin-author
   reporting a bug;
-* _New Element_: allows to add a new element. Open a new dashboard with
-  several import options;
+* _New Element_: allows to add a new element. Opens two sets of adding options, one for new dashboards and other for new endpoints. Each set as the following:
+	* _Templates_ a list of templates to choose from;
+	* _Name_: a form to insert the name of the new element;
+	* _Admin_: a checkbox to restrict the new element's accesibility to users of type Admin;
+	* _New_: a clickable button to confirm the creation of the new element; 
 * _Back to CPK plugins list_: returns to the _CPK UI_ dashboard.
 
 
@@ -226,7 +222,9 @@ The dashboard also contains a *table* listing the plugin elements and a set of
 * _Delete_: deletes the specific table item; 
 * _Duplicate_: duplicates the specific table item; 
 * _Edit (dashboards only)_: opens the dashboard on the *Community Dashboard
-  Editor* (CDE).
+  Editor* (CDE);
+* _View Data Sources (dashboards only)_: opens the dashboard's cda file;
+* _View Endpoint (kettle only)_: (will open new endpoint viewer)
 
 
 ### Navigation
@@ -234,15 +232,15 @@ The dashboard also contains a *table* listing the plugin elements and a set of
 
 The _View Plugin_ dashboard gives access to:
 
-* the _New Element_ dashboard, whenever the user chooses the "New Element"
-  option, from the global options list;
 * the _email_ default application, whenever the user chooses the "Submit
   changes to author" option, the "Email" option, the "Feedback" option or the
   "Report a Bug" option;
 * a _Save As_ form for the user to set the location on which to save, whenever
   the user chooses the "Pack (zip)" option;
 * the _Community Dashboard Editor (CDE)_, whenever the user chooses the
-  "Edit" option, for a specific dashboard on the plugin elements table;
+  "Edit" option, for a specific dashboard on the plugin elements table;  
+* the _Community Data Access (CDA)_, whenever the user chooses the "View Data Sources" option, for a specific dashboard on the plugin elements table;
+* the endpoins viewer, whenever the user chooses the "View Endpoint" option, for a specific endpoint on the plugin elements table;
 * the _CPK UI_ dashboard, whenever the user chooses the "Back to CPK plugins
   list" option.
 
@@ -254,81 +252,16 @@ The set of Endpoints for the _View Plugin_ dashboard are:
 
 * submitChangesToAuthor;
 * deletePlugin;
-* editMetadata;
-* updateCPKlibs;
-* listPluginElements;
-* pack;
+* getMetadata;
+* updateMetadata;
+* updateLib;
+* packPlugin;
 * sendAsEmail;
 * deleteElement;
-* duplicateElement.
+* duplicateElement;
+* listElements;
+* newElement.
 
-
-New Element dashboard
-----------------------
-
-### Goal
-
-The New Element dashboard allows the user to add new elements (both Dashboards
-and Endpoints) to the plugin by creating new ones from scratch or importing
-elements from templates or other existing plugins.
-
-
-### Mock-up
-
-![New Element mockup](img/CPK_Dashboard3.png "New Element Mockup")
-
-
-### Actions
-
-
-The dashboard contains a set of *options*:
-
-
-* _Import from plugin_: allows to import a copy of an element from any other
-  plugin. If chosen, the list of endpoints from all plugins will show up;
-* _Import from template_: allows to import a copy from a set of templates
-  organised in a hierarchical structure. If chosen, a file browsing window will
-  show up, allowing the user to navigate over this templates structure. And
-  example of such a structure can be:
-	* Template
-		* Dashboards
-		* Endpoints (Kettle)
-			* Basic Input
-			* Advanced Options  
-* _Back to plugin view_: returns to the _View Plugin_ dashboard.
-
-The dashboard will also contain either:
-
-* a *list* with the elements from all plugins for the user to choose an item to
-  import;
-
-or
-
-
-* a windows with a *file browser*, for the user to choose an item to import from
-  several templates. 
-
-
-### Navigation
-
-
-The _View Plugin_ dashboard gives access to:
-
-
-* a _Browsing window_ with the elements templates, whenever the user chooses the
-  "Import from template" option;
-* the _View Plugin_ dashboard, whenever the user chooses the "Back to plugin
-  view" option.
-
-
-### Endpoints
-
-The set of Endpoints for the _New Elements_ dashboard are:
-
-* importElement;
-* importFromTemplate;
-* listElementsFromAllPlugins;
-* listTemplates.
 
 
 Endpoints
@@ -355,10 +288,10 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: copy plugin
 	* Parameters: url/path of the plugin to be imported
 	* Output: (operation status) 
-* pluginDescription
-	* Description: get plugin small description to add to each item on the plugin list 
+* getPluginMetadata
+	* Description: get Plugin Metadata
 	* Parameters: plugin Id
-	* Output: plugin small description 
+	* Output: table with plugin's metadata
 * submitChangesToAuthor
 	* Description: pack plugin and open email default application with zip file already attached and author/pentaho/ctools email address already inserted
 	* Parameters: plugin Id, 
@@ -367,19 +300,19 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: delete selected plugin
 	* Parameters: plugin Id
 	* Output: (operation status)
-* editMetadata
-	* Description: save metadata values inserted by user 
+* updateMetadata
+	* Description: save metadata values inserted by user and merge with existing values (if any)
 	* Parameters: plugin Id, table with metadata changed keys and corresponding new values
 	* Output: (operation status)
-* updateCPKlibs
-	* Description: override the plugin's CPK libs with the current version of the CPK libs
+* updateLib
+	* Description: override the plugin's CPK libs with their current version
 	* Parameters: plugin Id
 	* Output: (operation status)
 * listPluginElements
-	* Description: list the plugin elements (dashboards and Endpoints), each with a small description
+	* Description: list the plugin elements (dashboards and Endpoints)
 	* Parameters: plugin Id
-	* Output: table listing the plugin elements and corresponding description
-* pack
+	* Output: table listing the plugin elements and corresponding info
+* packPlugin
 	* Description: create a zip file with the plugin current version
 	* Parameters: plugin Id
 	* Output: (operation status)
@@ -395,18 +328,11 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: duplicate element on plugin
 	* Parameters: plugin Id, element Id
 	* Output:(operation status)
-* importElement
-	* Description: duplicate element from the original plugin and save it on the target plugin
-	* Parameters: original pluin Id, target plugin Id, element Id
+* newElement
+	* Description: duplicate element template (can be blank template) and save it on the target plugin, with the new name and user type restrictions inserted  
+	* Parameters: template Id, target plugin Id, name, Admin
 	* Output: (operation status)
-* importFromTemplate
-	* Description: duplicate element template and save it on the target plugin 
-	* Parameters: template Id, target plugin Id
-	* Output: (operation status)
-* listElementFrom AllPlugins
-	* Description: identify and list the elements available from all plugins	* Parameters: (none)
-	* Output: table with all elements available from plugins and a corresponding small description
-* listTemplates
- 	* Description: identify and list the elements available from all templates
+* listElements
+ 	* Description: lists elements templates (to feed selector)
 	* Parameters: (none) 
-	* Output: table with all elements available from templates and a corresponding small description
+	* Output: table with all available elements templates
