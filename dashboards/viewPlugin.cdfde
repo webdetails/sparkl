@@ -4463,7 +4463,7 @@
      },
      {
       "name": "expression",
-      "value": "",
+      "value": "function(){\n    window.location = '/pentaho/content/cpk/main';\n}",
       "type": "JavaScript"
      },
      {
