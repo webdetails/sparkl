@@ -1153,7 +1153,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\"\n    });\n}",
+      "value": "function f(){\n    \n    function generateHashValue (key, value) {\n        var obj = Dashboards.getHashValue(),json;\n        if (arguments.length == 1) {\n            obj = key;\n        } else {\n            obj[key] = value;\n        }\n        json = JSON.stringify(obj);\n        return json;\n    }\n    \n    function changeLocation (newLocation, params){\n        if(!newLocation){ return; }\n        var hash = (params) ? '#' + generateHashValue( \"bookmark\" , { impl: \"client\" , params: params } ) : \"\";\n        window.location = newLocation + hash;\n    }\n    \n    \n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tchangeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v  \t\n          \t});\n        }\n    });\n}\n",
       "type": "JavaScript"
      },
      {
@@ -1502,6 +1502,48 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "c62c9039-e9c0-3bd3-450b-c59347c0c267",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "testParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "45",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "true",
+      "type": "Boolean"
      }
     ]
    }
