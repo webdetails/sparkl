@@ -426,27 +426,27 @@ div.container  {
 .WDdataCellBody  thead th .trend.neutral {
 }
 
-input{
-	background-color: transparent !important;
-	border: 1px solid transparent !important;
+input.editBox{
+	background-color: transparent;
+	border: 1px solid transparent;
 	height: 20px;
 	text-align: center;
 	line-height: 20px;
 	vertical-align: middle;
 	resize: none;
 	padding: 0;
-	margin: 0 !important;
+	margin: 0;
 	width: 370px;
 }
 
-input:hover {
+input.editBox:hover {
     background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
-    border: 1px solid transparent !important;
+    border: 1px solid transparent;
 }
 
-input:focus {
+input.editBox:focus {
     background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
-    border: 1px solid #0F1414 !important;
+    border: 1px solid #0F1414;
 }
 
 /* =============================================================================

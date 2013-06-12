@@ -3816,7 +3816,7 @@
      },
      {
       "name": "expression",
-      "value": "",
+      "value": "function(){\n    /* TO DO */\n    Dashboards.log(\"cpk/updateplugin?paramplugin_id=cpk\");\n    var plug = Dashboards.getParameterValue('pluginIdParam');\n}",
       "type": "JavaScript"
      },
      {
@@ -3972,7 +3972,7 @@
      },
      {
       "name": "expression",
-      "value": "function(){\n    Dashboards.log(\"ping\");\n}",
+      "value": "function(){\n    /* TO DO */\n    Dashboards.log(\"cpk/packplugin?paramdestination=plugin-samples&paramdownload=false&paramplugin_id=cpk\");\n    var dest = Dashboards.getParameterValue('destinationParam');\n    var down = Dashboards.getParameterValue('downloadParam');\n    var plug = Dashboards.getParameterValue('pluginIdParam');\n}",
       "type": "JavaScript"
      },
      {

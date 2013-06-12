@@ -63,7 +63,7 @@
     implementation: function (tgt, st, opt) {
       var t = $(tgt);
 	  var value = st.value;
-	  var text = $("<input/>").attr({value:value, type:'text'})
+	  var text = $("<input/>").attr({value:value, type:'text', class:'editBox'})
 		.keyup(function(event){
 			if (event.keyCode == 13) {
 				opt.action( $(this).val(), st );
