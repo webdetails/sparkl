@@ -173,6 +173,30 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>TODO
+
+Replace metadata in stub
+Update plugin structure</note>
+      <xloc>294</xloc>
+      <yloc>165</yloc>
+      <width>200</width>
+      <heigth>82</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>12</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
   <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>setPluginMetadata</to><enabled>Y</enabled> </hop>  </order>
