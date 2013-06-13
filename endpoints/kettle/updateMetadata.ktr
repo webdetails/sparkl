@@ -75,6 +75,16 @@
             <description/>
         </parameter>
         <parameter>
+            <name>plugin_dir</name>
+            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>plugin_id</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>plugin_name</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>

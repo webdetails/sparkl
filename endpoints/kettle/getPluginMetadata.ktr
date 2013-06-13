@@ -34,6 +34,16 @@
             <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
             <description/>
         </parameter>
+        <parameter>
+            <name>plugin_dir</name>
+            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>plugin_id</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -137,7 +147,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>${cpk.plugin.dir}&#47;cpk.xml</name>
+      <name>${plugin_dir}&#47;cpk.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
