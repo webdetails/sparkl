@@ -252,7 +252,7 @@ The set of Endpoints for the _View Plugin_ dashboard are:
 
 * submitChangesToAuthor;
 * deletePlugin;
-* getMetadata;
+* getPluginMetadata;
 * updateMetadata;
 * updateLib;
 * packPlugin;
@@ -273,11 +273,11 @@ These endpoints were mentioned in the previous section. Here, we have a
 
 
 * pluginsList
-	* Description: identify all CPK plugins locally available
+	* Description: list CPK plugins locally available
 	* Parameters: (none)
 	* Output: table with four columns: name, id, description and version
 * newPlugin
-	* Description: create new plugin with metadata inserted by users on a blank "view plugin" dashboard
+	* Description: create new plugin (a new plugin Id) which will be feed with  metadata inserted by users on a blank "view plugin" dashboard
 	* Parameters: (none)
 	* Output: (operation status)
 * refreshList
@@ -286,10 +286,10 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Output: (operation status)
 * importPlugin
 	* Description: copy plugin
-	* Parameters: url/path of the plugin to be imported
+	* Parameters: url/path and plugin Id of the plugin to be imported
 	* Output: (operation status) 
 * getPluginMetadata
-	* Description: get Plugin Metadata
+	* Description: get Plugin Metadata to be shown in the "View plugin" dashboard
 	* Parameters: plugin Id
 	* Output: table with plugin's metadata
 * submitChangesToAuthor
@@ -308,13 +308,13 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: override the plugin's CPK libs with their current version
 	* Parameters: plugin Id
 	* Output: (operation status)
-* listPluginElements
-	* Description: list the plugin elements (dashboards and Endpoints)
+* listElements
+	* Description: list the plugin elements (dashboards and endpoints)
 	* Parameters: plugin Id
 	* Output: table listing the plugin elements and corresponding info
 * packPlugin
 	* Description: create a zip file with the plugin current version
-	* Parameters: plugin Id
+	* Parameters: plugin Id and url/path to save the pack
 	* Output: (operation status)
 * sendAsEmail
 	* Description: pack plugin and open email default application with zip file already attached
@@ -332,7 +332,7 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: duplicate element template (can be blank template) and save it on the target plugin, with the new name and user type restrictions inserted  
 	* Parameters: template Id, target plugin Id, name, Admin
 	* Output: (operation status)
-* listElements
+* listTemplates
  	* Description: lists elements templates (to feed selector)
 	* Parameters: (none) 
 	* Output: table with all available elements templates
