@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>updateMetadata</name>
+    <name>getAndCombineMetadata</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -154,8 +154,8 @@
   <notepads>
     <notepad>
       <note>Get the old and new values for the Plugin Metadata, merge the values, and update the metadata in cpk.xml        </note>
-      <xloc>57</xloc>
-      <yloc>4</yloc>
+      <xloc>66</xloc>
+      <yloc>9</yloc>
       <width>602</width>
       <heigth>24</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -173,33 +173,9 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
-    <notepad>
-      <note>TODO
-
-Replace metadata in stub
-Update plugin structure</note>
-      <xloc>294</xloc>
-      <yloc>165</yloc>
-      <width>200</width>
-      <heigth>82</heigth>
-      <fontname>Microsoft Sans Serif</fontname>
-      <fontsize>12</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <order>
-  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>setPluginMetadata</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get parameters</name>
     <type>GetVariable</type>
@@ -334,8 +310,83 @@ Update plugin structure</note>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>135</xloc>
-      <yloc>57</yloc>
+      <xloc>120</xloc>
+      <yloc>60</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>CPK_version_new</field_name>
+        <variable_name>CPK_version</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>plugin_description_new</field_name>
+        <variable_name>plugin_description</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>plugin_name_new</field_name>
+        <variable_name>plugin_name</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>author_email_new</field_name>
+        <variable_name>author_email</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>author_name_new</field_name>
+        <variable_name>author_name</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>company_name_new</field_name>
+        <variable_name>company_name</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>company_url_new</field_name>
+        <variable_name>company_url</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>creation_date_new</field_name>
+        <variable_name>creation_date</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>version_new</field_name>
+        <variable_name>version</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>608</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -372,8 +423,8 @@ Update plugin structure</note>
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>135</xloc>
-      <yloc>141</yloc>
+      <xloc>120</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -402,8 +453,8 @@ Update plugin structure</note>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>254</xloc>
-      <yloc>57</yloc>
+      <xloc>239</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -483,8 +534,8 @@ Update plugin structure</note>
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>373</xloc>
-      <yloc>57</yloc>
+      <xloc>358</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -538,55 +589,8 @@ Update plugin structure</note>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>492</xloc>
-      <yloc>57</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>setPluginMetadata</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}\_setPluginMetadata.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-       <connector><parent>CPK_version_new</parent><child>CPK_version</child></connector>
-       <connector><parent>plugin_description_new</parent><child>plugin_description</child></connector>
-       <connector><parent>plugin_name_new</parent><child>plugin_name</child></connector>
-       <connector><parent>author_email_new</parent><child>author_email</child></connector>
-       <connector><parent>author_name_new</parent><child>author_name</child></connector>
-       <connector><parent>company_name_new</parent><child>company_name</child></connector>
-       <connector><parent>company_url_new</parent><child>company_url</child></connector>
-       <connector><parent>creation_date_new</parent><child>creation_date</child></connector>
-       <connector><parent>version_new</parent><child>version</child></connector>
-    </mapping>      </input>
-      <output>
-      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>611</xloc>
-      <yloc>57</yloc>
+      <xloc>477</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

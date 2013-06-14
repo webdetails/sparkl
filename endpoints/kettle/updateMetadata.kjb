@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>updatePlugin</name>
+  <name>updateMetadata</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -181,49 +181,107 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>103</xloc>
-      <yloc>68</yloc>
+      <xloc>106</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
-      <name>Plugin ID not null?</name>
+      <name>getAndCombineMetadata</name>
       <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>${NULL_VALUE}</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>different</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;getAndCombineMetadata.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>297</xloc>
-      <yloc>68</yloc>
+      <xloc>268</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
-      <name>Abort job</name>
+      <name>setPluginMetadata</name>
       <description/>
-      <type>ABORT</type>
-      <message/>
-      <parallel>N</parallel>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;setPluginMetadata.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>CPK_version</name>
+            <stream_name/>
+            <value>${CPK_version}</value>
+            </parameter>            <parameter>            <name>author_email</name>
+            <stream_name/>
+            <value>${author_email}</value>
+            </parameter>            <parameter>            <name>author_name</name>
+            <stream_name/>
+            <value>${author_name}</value>
+            </parameter>            <parameter>            <name>company_name</name>
+            <stream_name/>
+            <value>${company_name}</value>
+            </parameter>            <parameter>            <name>company_url</name>
+            <stream_name/>
+            <value>${company_url}</value>
+            </parameter>            <parameter>            <name>creation_date</name>
+            <stream_name/>
+            <value>${creation_date}</value>
+            </parameter>            <parameter>            <name>plugin_description</name>
+            <stream_name/>
+            <value>${plugin_description}</value>
+            </parameter>            <parameter>            <name>plugin_name</name>
+            <stream_name/>
+            <value>${plugin_name}</value>
+            </parameter>            <parameter>            <name>version</name>
+            <stream_name/>
+            <value>${version}</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>408</xloc>
-      <yloc>183</yloc>
+      <xloc>592</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
-      <name>updateLibs</name>
+      <name>_loadStub</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;updateLibs.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_loadStub.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -244,60 +302,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>879</xloc>
-      <yloc>68</yloc>
-      </entry>
-    <entry>
-      <name>Checks if ${plugin_dir} exist</name>
-      <description/>
-      <type>FILES_EXIST</type>
-      <filename/>
-      <fields>
-        <field>
-          <name>${plugin_dir}</name>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>491</xloc>
-      <yloc>68</yloc>
-      </entry>
-    <entry>
-      <name>updateMetadata</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;updateMetadata.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>685</xloc>
-      <yloc>68</yloc>
+      <xloc>430</xloc>
+      <yloc>69</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>Plugin ID not null?</to>
+      <to>getAndCombineMetadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -305,17 +317,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Plugin ID not null?</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Plugin ID not null?</from>
-      <to>Checks if ${plugin_dir} exist</to>
+      <from>getAndCombineMetadata</from>
+      <to>_loadStub</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -323,26 +326,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Checks if ${plugin_dir} exist</from>
-      <to>updateMetadata</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>updateMetadata</from>
-      <to>updateLibs</to>
+      <from>_loadStub</from>
+      <to>setPluginMetadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

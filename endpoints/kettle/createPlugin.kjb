@@ -387,7 +387,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;updatePlugin.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;updateLibs.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
