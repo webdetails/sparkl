@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>updatePlugin</name>
+  <name>updateLibs</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -12,33 +12,13 @@
   <modified_date>2013&#47;05&#47;15 12:48:18.595</modified_date>
     <parameters>
         <parameter>
-            <name>CPK_version</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>NULL_VALUE</name>
             <default_value>not defined</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>author_email</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>author_name</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>company_name</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>company_url</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <name>cpk.lib.dir</name>
+            <default_value>${cpk.plugin.dir}&#47;lib</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -58,22 +38,12 @@
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.system.dir</name>
             <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>creation_date</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_description</name>
-            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -83,16 +53,6 @@
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_name</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>version</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
@@ -137,7 +97,32 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>103</xloc>
-      <yloc>68</yloc>
+      <yloc>69</yloc>
+      </entry>
+    <entry>
+      <name>Copy jar files</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>Y</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>Y</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>${cpk.lib.dir}</source_filefolder>
+          <destination_filefolder>${plugin_dir}&#47;lib</destination_filefolder>
+          <wildcard>.*\.jar</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>610</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Plugin ID not null?</name>
@@ -159,7 +144,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>272</xloc>
-      <yloc>68</yloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -169,70 +154,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>349</xloc>
-      <yloc>191</yloc>
-      </entry>
-    <entry>
-      <name>updateLibs</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;updateLibs.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>881</xloc>
-      <yloc>68</yloc>
-      </entry>
-    <entry>
-      <name>updateMetadata</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;updateMetadata.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>644</xloc>
-      <yloc>68</yloc>
+      <xloc>355</xloc>
+      <yloc>211</yloc>
       </entry>
     <entry>
       <name>Checks if ${plugin_dir} exist</name>
@@ -247,8 +170,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>419</xloc>
-      <yloc>68</yloc>
+      <xloc>441</xloc>
+      <yloc>69</yloc>
       </entry>
   </entries>
   <hops>
@@ -271,15 +194,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>updateMetadata</from>
-      <to>updateLibs</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Plugin ID not null?</from>
       <to>Checks if ${plugin_dir} exist</to>
       <from_nr>0</from_nr>
@@ -290,7 +204,7 @@
     </hop>
     <hop>
       <from>Checks if ${plugin_dir} exist</from>
-      <to>updateMetadata</to>
+      <to>Copy jar files</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -309,25 +223,20 @@
   </hops>
   <notepads>
     <notepad>
-      <note>TODO
-
-
-
-Replace metadata in stub
-Update plugin structure</note>
-      <xloc>535</xloc>
-      <yloc>44</yloc>
-      <width>200</width>
-      <heigth>119</heigth>
-      <fontname>Microsoft Sans Serif</fontname>
-      <fontsize>12</fontsize>
+      <note>delete the old libraries before copying?????</note>
+      <xloc>547</xloc>
+      <yloc>30</yloc>
+      <width>223</width>
+      <heigth>22</heigth>
+      <fontname/>
+      <fontsize>-1</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorgreen>165</backgroundcolorgreen>
       <backgroundcolorblue>0</backgroundcolorblue>
       <bordercolorred>100</bordercolorred>
       <bordercolorgreen>100</bordercolorgreen>
