@@ -58,7 +58,7 @@
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
