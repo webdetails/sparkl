@@ -338,19 +338,45 @@ div.container *{
 }
 
 .WDdataCellBody .cont{
-
+  height: 40px;
+  padding: 5px 5px 5px 5px;
+  background: #E9ECEE;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  display: inline;
+  position: relative;
+}
+.WDdataCellBody .cont *{
+  height: 100%;
 }
 
-.aboutPlugin .cont.name {}
-.aboutPlugin .cont.img {}
-.aboutPlugin .cont.cross {}
-.aboutPlugin .cont.description {}
-.aboutPlugin .cont.date {}
-.aboutPlugin .cont.version {}
-.aboutPlugin .cont.cpkVersion {}
+
+.WDdataCellBody .cont .labelPH{
+  background: #E9ECEE;
+  padding-left: 10px;
+  text-align: left;
+  float: left;
+  width: 120px;
+}
+.WDdataCellBody .cont .formPH{
+  background: #FEFEFE;
+  float: right;
+  width: 100%;
+}
+
+.aboutPlugin .cont.name {width: 60%;}
+.aboutPlugin .cont.img {width: 20%;}
+.aboutPlugin .cont.cross {width: 10%;}
+.aboutPlugin .cont.description {width: 100%;}
+.aboutPlugin .cont.date {width: 100%;}
+.aboutPlugin .cont.version {width: 45%;}
+.aboutPlugin .cont.cpkVersion {width: 45%;}
+
+
 
 /* Data Cells footer */
-
 .WDdataCellFooter {
   padding-top: 10px;
 }
