@@ -122,6 +122,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>plugin_package_url</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>stubFile</name>
             <default_value>${stubFolder}&#47;plugin.zip</default_value>
             <description/>
