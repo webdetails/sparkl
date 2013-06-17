@@ -4604,7 +4604,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "metadataQuery"
+      "value": "metadataTableQuery"
      },
      {
       "name": "sortBy",
@@ -4851,12 +4851,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"editElementButton\",\n        buttonTitle: \"Edit\"\n    });\n}",
+      "value": "function f(){\n/*\n    var opts = function (st){\n        if( false )\n            return {\n                buttonClass: \"editElementButton\",\n                buttonTitle: \"CDE\",\n                buttonAction: function (v, st) {\n                    window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n                }\n            } \n        else \n            return {\n                buttonClass: \"viewDataSourcesButton\",\n                buttonTitle: \"CDA\",\n                buttonAction: function (v, st) {\n                    console.log('/pentaho/content/cpk/'+v+'?mode=editQuery');\n                }            \n            }\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n*/    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"editElementButton\",\n        buttonTitle: \"Edit\",\n        buttonAction: function (v, st) {\n              window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n        }\n    });\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "",
+      "value": "function f(){\n    var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[2]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );\n}",
       "type": "JavaScript"
      },
      {
@@ -5168,7 +5168,7 @@
     ]
    },
    {
-    "id": "818c3474-de4a-c746-5298-e3ce1ada9ec6",
+    "id": "4e70cad9-274b-9781-0f11-17365522299c",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
@@ -5246,7 +5246,85 @@
     ]
    },
    {
-    "id": "d2e6ed46-2b74-b33c-cd59-1b199030448f",
+    "id": "818c3474-de4a-c746-5298-e3ce1ada9ec6",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newDashboardAdminCheckboxButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Admin",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newDashboardAdminCheckboxObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    $ph = $('#'+this.htmlObject);\n    $ph.empty();\n    $ph.append('<input type=\"checkbox\" value=\"true\" class=\"newElementCheckbox\"></input>');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "function f(){\n    var state = $(\"#\"+this.htmlObject).children(\"input:checked\").length;\n    console.log(state);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "ae9e5c52-7123-a1ee-410e-c057ac4cc40f",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
@@ -5350,7 +5428,7 @@
      },
      {
       "name": "parameter",
-      "value": "${p:newDashboardTypeParam}",
+      "value": "newDashboardParam.template",
       "type": "Parameter"
      },
      {
@@ -5453,7 +5531,7 @@
      },
      {
       "name": "parameter",
-      "value": "${p:newEndpointTypeParam}",
+      "value": "newEndepointParam.template",
       "type": "Parameter"
      },
      {
@@ -5556,7 +5634,7 @@
      },
      {
       "name": "parameter",
-      "value": "${p:newDashboardNameParam}",
+      "value": "newDashboardParam.name",
       "type": "Parameter"
      },
      {
@@ -5634,7 +5712,7 @@
      },
      {
       "name": "parameter",
-      "value": "${p:newEndpointNameParam}",
+      "value": "newEndepointParam.name",
       "type": "Parameter"
      },
      {
@@ -5700,6 +5778,104 @@
     ]
    },
    {
+    "id": "38643872-4112-8df3-e98b-fb3ee612f90c",
+    "type": "Componentsradio",
+    "typeDesc": "Radio button Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newEndpointAdminCheckboxButton",
+      "type": "Id"
+     },
+     {
+      "name": "separator",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameter",
+      "value": "newEndepointParam.admin",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "xActionArrayParameter",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"true\",\"Admin\"],[\"false\",\"not Admin\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newEndpointAdminCheckboxObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "GENERIC",
     "name": "Generic",
     "type": "Label",
@@ -5710,118 +5886,6 @@
       "name": "Group",
       "value": "Generic",
       "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "1a66d8b3-17d3-0f5c-1a87-7d45c8cfbe59",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newDashboardTypeParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "31242bb0-1d82-07f7-9813-ca1d984e5a99",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newDashboardNameParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "1aab88f6-7d51-de13-3710-ee01c0f0d64a",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newEndpointTypeParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "dca353c0-fd9a-8a6b-9a52-4e6c6a7ad39b",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newEndpointNameParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
      }
     ]
    },
@@ -5908,6 +5972,80 @@
       "type": "Boolean"
      }
     ]
+   },
+   {
+    "id": "4ce454c5-ff3c-a7b8-3fe1-055d3bf06fdd",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newDashboardParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "{\n    type: \"dashboard\",\n    template: \"\",\n    name: \"\",\n    admin: false\n\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "e673f46e-fbd1-7694-c936-0be6a42f28d6",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newEndepointParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "{\n    type: \"endpoint\",\n    template: \"\",\n    name: \"\",\n    admin: false\n\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "3e2d5c41-281e-968e-69c1-6543e9c1e799",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "isNewPluginParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
    }
   ]
  },
@@ -5944,6 +6082,77 @@
      {
       "name": "ktrFile",
       "value": "../endpoints/kettle/listDashboards.ktr",
+      "type": "KtrPath"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "query",
+      "value": "OUTPUT",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "variables",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "d9215148-9502-75a9-246e-c1fdf0471e5b",
+    "type": "Componentskettle_kettleTransFromFile",
+    "typeDesc": "kettle over kettleTransFromFile",
+    "meta": "CDA",
+    "meta_conntype": "kettle.TransFromFile",
+    "meta_datype": "kettle",
+    "parent": "KETTLE",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataTableQuery",
+      "type": "Id"
+     },
+     {
+      "name": "ktrFile",
+      "value": "../endpoints/kettle/getPluginMetadata.ktr",
       "type": "KtrPath"
      },
      {

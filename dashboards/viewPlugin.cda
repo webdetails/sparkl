@@ -4,6 +4,9 @@
       <Connection id="listDashboardsQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/listDashboards.ktr</KtrFile>
       </Connection>
+      <Connection id="metadataTableQuery" type="kettle.TransFromFile">
+         <KtrFile>../endpoints/kettle/getPluginMetadata.ktr</KtrFile>
+      </Connection>
       <Connection id="metadataQuery" type="scripting.scripting">
          <Initscript></Initscript>
          <Language>beanshell</Language>
@@ -28,6 +31,14 @@
    <DataAccess access="public" cache="true" cacheDuration="3600"
                connection="listDashboardsQuery"
                id="listDashboardsQuery"
+               type="kettle">
+      <Columns/>
+      <Parameters/>
+      <Query>OUTPUT</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="metadataTableQuery"
+               id="metadataTableQuery"
                type="kettle">
       <Columns/>
       <Parameters/>

@@ -309,7 +309,7 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Parameters: plugin Id
 	* Output: (operation status)
 * listElements
-	* Description: list the plugin elements (dashboards and endpoints)
+	* Description: list the plugin elements (dashboards and endpoints) with the following info: _element name_, _element description_, _element type_, _element Admin property_, _element location_, _number of queries in element (dashboards only)_, _element Id_
 	* Parameters: plugin Id
 	* Output: table listing the plugin elements and corresponding info
 * packPlugin
