@@ -309,14 +309,20 @@ div.container *{
 
 /* Data Cells */
 .WDdataCell {
-	padding: 20px 0px 20px 0px;
+  position: relative;
 }  
 
 /* Data Cells header*/
 .WDdataCellHeader{
-  color: #9C9C9C;
-  font-size: 20px;
-  text-align: center;
+  height: 50px;
+  color: #636261;
+  font-size: 18px;
+  text-align: left;
+  position: relative;
+}
+.WDdataCellHeader .title{
+  position: absolute;
+  bottom: 0px;
 }
 .no-svg   .WDdataCellHeader {
 }
@@ -325,7 +331,48 @@ div.container *{
 
 /* Data Cells body */
 .WDdataCellBody {
-  padding: 0px 10px 0px 10px;
+}
+.WDdataCellBody.aboutPlugin {
+}
+.WDdataCellBody.aboutAuthor {
+}
+
+.WDdataCellBody .cont{
+
+}
+
+.aboutPlugin .cont.name {}
+.aboutPlugin .cont.img {}
+.aboutPlugin .cont.cross {}
+.aboutPlugin .cont.description {}
+.aboutPlugin .cont.date {}
+.aboutPlugin .cont.version {}
+.aboutPlugin .cont.cpkVersion {}
+
+/* Data Cells footer */
+
+.WDdataCellFooter {
+  padding-top: 10px;
+}
+.WDdataCellFooter *{
+  height: 40px;
+}
+
+.WDdataCellFooter button {
+  border:none;
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  width: 100%;
+}
+.no-svg .WDdataCellFooter button {
+}
+.svg .WDdataCellFooter button {
+}
+
+.WDdataCellFooter button:hover {
+  cursor: pointer;
 }
 
 /* =============================================================================
@@ -348,6 +395,7 @@ div.container *{
   color: #9C9C9C;
   font-size: 15px;
   text-align: left;
+  font-weight: normal;
 }
 .WDdataCellBody  thead th:last-child {
   text-align: center;
