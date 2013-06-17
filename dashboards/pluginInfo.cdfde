@@ -1011,6 +1011,39 @@
     ]
    },
    {
+    "id": "c7c25447-d62d-7a41-5af8-7bbb1bb7f217",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "989fcc17-04ea-b821-6ae2-049161cae107",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Name ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "97657722-c8c9-25a2-0e83-620bd23c55e5",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -1263,6 +1296,39 @@
      {
       "name": "cssClass",
       "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "39c8f01f-8322-3876-d3bc-da8ee5f9a757",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "bf569ed1-0983-28db-4ce3-906cf36bfd78",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Image ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -1525,6 +1591,39 @@
     ]
    },
    {
+    "id": "2b28afbc-6159-152c-ca7e-73dfa557ea41",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "e42f68e8-ce42-07cf-09cc-71fb6f7142f2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "X ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "35ad5600-304b-f7cf-b379-e369abb8946c",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -1777,6 +1876,39 @@
      {
       "name": "cssClass",
       "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "8b976b98-76d0-7658-e76e-c81de28dbb08",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "21f02547-6988-283f-0504-e4a73179ea65",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Description ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -2039,6 +2171,39 @@
     ]
    },
    {
+    "id": "219da4f3-6b10-57b6-e721-c2906f66cd55",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "ba572aee-81f2-6887-8c84-b52b73ccf31b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Creation Date ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "c4542956-0d8b-c3a2-6b92-494b34aa1711",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -2291,6 +2456,39 @@
      {
       "name": "cssClass",
       "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fbadc049-6944-210b-2955-95c05c0142dd",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "3ccac498-6102-c09f-8f7c-914d2e84b33d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Plugin Version ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -6978,5 +7176,5 @@
    }
   ]
  },
- "filename": "/system/cpk/dashboards/pluginInfo.cdfde"
+ "filename": "/steel-wheels/dashboards/pluginInfo.cdfde"
 }
