@@ -164,6 +164,24 @@
       <xloc>509</xloc>
       <yloc>79</yloc>
       </entry>
+    <entry>
+      <name>Delete Unzip Folder</name>
+      <description/>
+      <type>DELETE_FOLDERS</type>
+      <arg_from_previous>N</arg_from_previous>
+      <success_condition>success_if_no_errors</success_condition>
+      <limit_folders>10</limit_folders>
+      <fields>
+        <field>
+          <name>${unzipFolder}</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>829</xloc>
+      <yloc>79</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -214,6 +232,15 @@
     <hop>
       <from>_configPluginFiles</from>
       <to>Copy Files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy Files</from>
+      <to>Delete Unzip Folder</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
