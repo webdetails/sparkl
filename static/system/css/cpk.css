@@ -135,9 +135,13 @@ body{
    Other 
    ========================================================================== */
 
-.container{
-	border: 2px solid #25B9ED;
+.cpkContent {
+    border: 2px solid #25B9ED;
 	border-top: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 950px;
 }
 
 .cpkNavigation {

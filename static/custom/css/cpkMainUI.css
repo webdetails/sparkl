@@ -1,0 +1,801 @@
+/*
+ * WDStyleGuide Template CSS  
+ *
+ * Use this as a template to format the styles of specific projects. Most of 
+ * the most commonly used classes/rules are already written here. The file is
+ * divided in the following sections:
+ *
+ *    Fonts
+ *    Style Resets
+ *    1. BACKGROUND 
+ *    2. HEADER 
+ *    3. FILTER CELLS
+ *    4. DATA CELLS
+ *    5. TABLES
+ *    6. CHARTS 
+ *    7. SELECTORS AND BUTTONS
+ *    8. SITE MAP
+ *    Other 
+ *    Project Specific Items  
+ *
+ */
+
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+
+
+/* =============================================================================
+   Style Resets
+   ========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+/*margin: 0;
+padding: 0;
+border: 0;
+        font-family: Open Sans, Arial, sans-serif;*/
+  }
+
+
+.WDhidden{
+  display:none;
+}
+
+
+/* =============================================================================
+   1. BACKGROUND 
+   ========================================================================== */
+
+/* Window Background */
+body{
+}
+/* Dashboard Background / Blueprint Container */
+div.container  {
+  background: #F2F2F2;
+  padding: 10px 5px 10px 5px;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+div.container *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* =============================================================================
+   2. HEADER 
+   ========================================================================== */
+.WDheader {
+}
+
+.WDh1 {}
+.WDh2 {}
+
+
+
+/* =============================================================================
+   3. FILTER CELLS
+   ========================================================================== */
+
+.globalOptText{
+	line-height: 40px;
+	text-align: middle;
+	color: #BDC0C2;
+	text-indent: 20px;
+}
+
+
+/* Filter Cells */
+.WDfilterCell *{
+  height: 40px;
+}
+
+.popupComponent .WDfilterCell {
+  width: 49%;
+  display: inline-block;
+}
+/* Filter Cells header */
+.popupComponent .WDfilterCellHeader{
+  width: 100%;
+}
+
+
+/* Filter Cells body */
+.popupComponent .WDfilterCellBody > *{
+  display: inline-block;
+}
+.no-svg .popupComponent .WDfilterCellBody{
+}
+.svg .popupComponent .WDfilterCellBody{
+}
+
+.WDfilterCellBody {
+  display: inline;
+}
+
+.WDfilterCellBody .globalOptButtonPH{
+  padding-left: 5px;
+  background: #E9ECEE;
+}
+.globalOptButtonPH.multiButton{
+  width: 75%;
+  float: left;
+  display: inline;
+  background: #E9ECEE;
+}
+.globalOptButtonPH.submitButton{
+  width: 25%;
+  float: right;
+  background: #F2F2F2;
+}
+
+/********** FILTER ELEMENTS *********/
+
+.WDfilterCellBody button {
+  border:none;
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  width: 100%;
+}
+.no-svg .WDfilterCellBody button {
+}
+.svg .WDfilterCellBody button {
+}
+
+.WDfilterCellBody button:hover {
+  cursor: pointer;
+}
+.WDfilterCellBody button span {
+}
+
+
+/* Multi Button */
+.WDfilterCellBody .pentaho-toggle-button {
+  display: inline;
+}
+.no-svg .WDfilterCellBody .pentaho-toggle-button {
+}
+.svg .WDfilterCellBody .pentaho-toggle-button {
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-first {
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-last {
+}
+.WDfilterCellBody .pentaho-toggle-button:hover,
+  .WDfilterCellBody .pentaho-toggle-button:hover button{
+  }
+.WDfilterCellBody .pentaho-toggle-button-down {
+
+}
+.no-svg .WDfilterCellBody .pentaho-toggle-button-down {
+}
+.svg .WDfilterCellBody .pentaho-toggle-button-down {
+}
+
+.WDfilterCellBody .pentaho-toggle-button button {
+  width: 30%;
+  background: #EAEDEE;
+  text-align: center;
+  font-size: 11px;
+  font-weight: normal;
+  color: #939292;
+  vertical-align: baseline;
+  border: 5px solid #EAEDEE;
+  box-shadow: none;
+  float: left;
+  margin-right: 5px;
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-last button {
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
+}
+.WDfilterCellBody .pentaho-toggle-button-down button {
+  background: #24B9EC;
+  color: #F2F2F2;
+}
+
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+.WDfilterCellBody .chzn-container{
+	height: 30px;
+	min-width: 160px;
+	margin-top: 6px;
+}
+.WDfilterCellBody .chzn-container * {
+}
+.WDfilterCellBody .chzn-container-active{
+}
+.WDfilterCellBody .chzn-container .chzn-drop {
+	background: #25BAED;
+	height: 100px;
+	min-width: 96%;
+	border: 0 none;
+	border-radius: 0px;
+	margin-left: 3px;
+}
+.WDfilterCellBody .chzn-container .chzn-results {
+	overflow: hidden;
+	height: 100px;
+	padding: 0px;
+	width: 100%;
+}
+.WDfilterCellBody .chzn-drop{
+}
+.WDfilterCellBody .chzn-drop  .chzn-search{
+	display: none;
+}
+.WDfilterCellBody .chzn-drop .chzn-search input{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results li{
+	line-height: 14px;
+	height: 25px;
+	color: #FFFFFF;
+	text-indent: 4px;
+}
+.WDfilterCellBody .chzn-drop .chzn-results em{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .active-result{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .highlighted{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .result-selected{
+	color: #EAEDEE;
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .no-results {
+}
+
+/* Single Select */
+.WDfilterCellBody .chzn-container-single .chzn-single{
+	background: #009DE2;
+	color: #EAEDEE;
+	border-radius: 0px;
+	border: 3px solid #EAEDEE;
+	height: 30px;
+	min-width: 100%;
+	line-height: 21px;
+}
+.WDfilterCellBody .chzn-container-active .chzn-single {
+    box-shadow: none;
+}
+.no-svg  .WDfilterCellBody .chzn-container-single .chzn-single{
+}
+
+.svg  .WDfilterCellBody .chzn-container-single .chzn-single{
+
+}
+.WDfilterCellBody .chzn-container-single:hover .chzn-single{
+}
+
+.WDfilterCellBody .chzn-container-single .chzn-single span{
+}
+.WDfilterCellBody .chzn-container-single .chzn-single div{ /* Arrow container */
+	background: none;
+}
+.WDfilterCellBody .chzn-container-single .chzn-single div b,
+  .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
+  }
+.WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
+  .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
+  }
+.WDfilterCellBody .chzn-container-single .chzn-single.chzn-single-with-drop{
+	box-shadow: none;
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop span{
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{
+} 
+
+
+/* Multi Select */
+.WDfilterCellBody .chzn-container-multi.chzn-container{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-drop{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-drop .selectTooltipTriangle{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-drop  .chzn-results{
+}
+
+.WDfilterCellBody .chzn-container-multi .chzn-choices {
+}
+.WDfilterCellBody .chzn-container-multi:hover .chzn-choices,
+  .WDfilterCellBody .chzn-container-multi.chzn-container-active .chzn-choices{
+  }
+.WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
+
+}
+.no-svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
+}
+.svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice span{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-field input{
+}
+
+
+
+/* =============================================================================
+   4. DATA CELLS
+   ========================================================================== */
+
+/* Data Cells */
+.WDdataCell {
+  position: relative;
+}  
+
+/* Data Cells header*/
+.WDdataCellHeader{
+  height: 50px;
+  color: #636261;
+  font-size: 18px;
+  text-align: left;
+  position: relative;
+}
+.WDdataCellHeader .title{
+  position: absolute;
+  bottom: 0px;
+}
+.no-svg   .WDdataCellHeader {
+}
+.svg   .WDdataCellHeader {
+}
+
+/* Data Cells body */
+.WDdataCellBody {
+}
+.WDdataCellBody.aboutPlugin {
+}
+.WDdataCellBody.aboutAuthor {
+}
+
+.WDdataCellBody .cont{
+  height: 40px;
+  padding: 5px 5px 5px 5px;
+  background: #E9ECEE;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  display: inline;
+  position: relative;
+}
+.WDdataCellBody .cont *{
+  height: 100%;
+}
+
+
+.WDdataCellBody .cont .labelPH{
+  background: #E9ECEE;
+  padding-left: 10px;
+  text-align: left;
+  float: left;
+  width: 120px;
+}
+.WDdataCellBody .cont .formPH{
+  background: #FEFEFE;
+  float: right;
+  width: 100%;
+}
+
+.aboutPlugin .cont.name {width: 60%;}
+.aboutPlugin .cont.img {width: 20%;}
+.aboutPlugin .cont.cross {width: 10%;}
+.aboutPlugin .cont.description {width: 100%;}
+.aboutPlugin .cont.date {width: 100%;}
+.aboutPlugin .cont.version {width: 45%;}
+.aboutPlugin .cont.cpkVersion {width: 45%;}
+
+
+
+/* Data Cells footer */
+.WDdataCellFooter {
+  padding-top: 10px;
+}
+.WDdataCellFooter *{
+  height: 40px;
+}
+
+.WDdataCellFooter button {
+  border:none;
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  width: 100%;
+}
+.no-svg .WDdataCellFooter button {
+}
+.svg .WDdataCellFooter button {
+}
+
+.WDdataCellFooter button:hover {
+  cursor: pointer;
+}
+
+/* =============================================================================
+   5. TABLES
+   ========================================================================== */
+
+.WDdataCellBody table{
+  border: 1px solid #9C9C9C;
+}
+.WDdataCellBody table tr{
+  background: #FFFFFF;
+}
+
+/* Header */
+.WDdataCellBody  thead {}
+.WDdataCellBody thead tr {
+}
+.WDdataCellBody  thead th {
+  background: #FFFFFF;
+  color: #9C9C9C;
+  font-size: 15px;
+  text-align: left;
+  font-weight: normal;
+}
+.WDdataCellBody  thead th:last-child {
+  text-align: center;
+}
+.WDdataCellBody thead th.sorting{
+}
+.WDdataCellBody thead th.sorting_asc{
+}
+.WDdataCellBody  thead th.sorting_desc{
+}
+.WDdataCellBody  thead th:first-child {
+}
+
+/* Body */
+.WDdataCellBody  tbody {}
+.WDdataCellBody  tbody tr {
+}
+.WDdataCellBody  tbody td{
+  text-align: left;
+}
+.WDdataCellBody  tbody td:last-child {
+  text-align: center;
+}
+.WDdataCellBody  tbody td,
+  .WDdataCellBody  tbody td.numeric, 
+  .WDdataCellBody  tbody td.string {
+  }
+
+/* Footer */
+.WDdataCellBody  tfoot {
+}
+.WDdataCellBody  tfoot tr {
+}
+.WDdataCellBody  tfoot td{
+}
+.WDdataCellBody  tfoot tr:first-child td{
+}
+.WDdataCellBody  tfoot tr:last-child td{
+}
+.WDdataCellBody  tfoot td{
+}
+
+
+
+/* DataTables */
+.WDdataCellBody  .dataTables_wrapper{
+}
+.WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
+  .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
+  }
+.WDdataCellBody  .dataTables_wrapper tbody tr.even td.sorting_1,
+  .WDdataCellBody  .dataTables_wrapper tbody tr.even{
+  }
+
+/* Pagination and Page Info */
+
+.WDdataCellBody   .dataTables_info{    
+}
+
+.WDdataCellBody  .dataTables_paginate{
+}
+.WDdataCellBody  .dataTables_paginate > span {
+}
+.WDdataCellBody  .dataTables_paginate > input {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_button {
+}
+.WDdataCellBody  .dataTables_paginate .paginate_button.first,
+  .WDdataCellBody   .dataTables_paginate .paginate_button.last {
+  }
+.WDdataCellBody   .dataTables_paginate .paginate_button.previous {
+}
+.WDdataCellBody  .dataTables_paginate .paginate_button.next {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_page {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_of {
+}
+
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_next {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous{
+}
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_next {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:hover {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:hover {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:active {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:active {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous,
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous, 
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_next, 
+.WDdataCellBody  .dataTables_paginate .paginate_enabled_next {
+}
+
+/* Add Ins */
+.WDdataCellBody td .trend,
+.WDdataCellBody th .trend{
+}
+.WDdataCellBody  tfoot td .trend{
+}
+.WDdataCellBody  tfoot td .trend.down,
+.WDdataCellBody  tbody td .trend.down,
+.WDdataCellBody  thead th .trend.down {
+}
+.WDdataCellBody  tfoot td .trend.up,
+.WDdataCellBody  tbody td .trend.up,
+.WDdataCellBody  thead th .trend.up {
+}
+.WDdataCellBody  tfoot td .trend.neutral,
+.WDdataCellBody  tbody td .trend.neutral,
+.WDdataCellBody  thead th .trend.neutral {
+}
+
+input.editBox{
+	background-color: transparent;
+	border: 1px solid transparent;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	vertical-align: middle;
+	resize: none;
+	padding: 0;
+	margin: 0;
+	width: 370px;
+}
+
+input.editBox:hover {
+    background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
+    border: 1px solid transparent;
+}
+
+input.editBox:focus {
+    background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
+    border: 1px solid #0F1414;
+}
+
+/* =============================================================================
+   6. CHARTS 
+   ========================================================================== */
+
+
+
+
+/* =============================================================================
+   7. SELECTORS AND BUTTONS 
+   ========================================================================== */
+.WDfilterCell select{
+}
+
+button {
+}
+.no-svg   button {
+}
+.svg   button {
+}
+
+button:hover {
+cursor: pointer;
+}
+button span {
+}
+
+
+/* Multi Button */
+.pentaho-toggle-button {
+
+}
+.no-svg .pentaho-toggle-button {
+}
+.svg .pentaho-toggle-button {
+}
+.pentaho-toggle-button-horizontal-first {
+}
+.pentaho-toggle-button-horizontal-last {
+}
+.pentaho-toggle-button:hover,
+.pentaho-toggle-button:hover button{
+  }
+.pentaho-toggle-button-down {
+
+}
+.no-svg .pentaho-toggle-button-down {
+}
+.svg .pentaho-toggle-button-down {
+}
+
+.pentaho-toggle-button button {
+}
+.pentaho-toggle-button-horizontal-last button {
+}
+.pentaho-toggle-button-horizontal-first button {
+}
+.pentaho-toggle-button-down button {
+}
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+.chzn-container{
+}
+.chzn-container * {
+}
+.chzn-container-active{
+}
+.chzn-drop{
+}
+.chzn-drop  .chzn-search{
+}
+.chzn-drop .chzn-search input{
+}
+.chzn-drop  .chzn-results{
+}
+.chzn-drop  .chzn-results li{
+
+}
+.chzn-drop .chzn-results em{
+}
+.chzn-drop  .chzn-results .active-result{
+}
+.chzn-drop  .chzn-results .highlighted{
+}
+.chzn-drop  .chzn-results .result-selected{
+}
+.chzn-drop  .chzn-results .no-results {
+}
+
+/* Single Select */
+.chzn-container-single .chzn-single{
+}
+.no-svg    .chzn-container-single .chzn-single{
+}
+
+.svg    .chzn-container-single .chzn-single{
+
+}
+.chzn-container-single:hover .chzn-single{
+}
+
+.chzn-container-single .chzn-single span{
+}
+.chzn-container-single .chzn-single div{ /* Arrow container */
+}
+.chzn-container-single .chzn-single div b,
+  .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
+  }
+.chzn-container-single:hover .chzn-single div b,
+  .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
+  }
+.chzn-container-single .chzn-single.chzn-single-with-drop{
+}
+.chzn-container-single .chzn-single-with-drop span{
+}
+.chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
+}
+.chzn-container-single .chzn-single-with-drop div b{
+} 
+
+
+/* Multi Select */
+.chzn-container-multi.chzn-container{
+}
+.chzn-container-multi .chzn-drop{
+}
+.chzn-container-multi .chzn-drop .selectTooltipTriangle{
+}
+.chzn-container-multi .chzn-drop  .chzn-results{
+}
+
+.chzn-container-multi .chzn-choices {
+}
+.chzn-container-multi:hover .chzn-choices,
+  .chzn-container-multi.chzn-container-active .chzn-choices{
+  }
+.chzn-container-multi .chzn-choices  .search-choice {
+
+}
+.no-svg    .chzn-container-multi .chzn-choices  .search-choice {
+}
+.svg    .chzn-container-multi .chzn-choices  .search-choice {
+}
+.chzn-container-multi .chzn-choices .search-choice span{
+}
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close{
+}
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+}
+.chzn-container-multi .chzn-choices .search-field input{
+}
+
+
+
+/* =============================================================================
+   8. SITE MAP
+   ========================================================================== */
+
+.WDsiteMap {}
+
+
+
+/* =============================================================================
+   Other 
+   ========================================================================== */
+
+.popupComponent{
+  color: #9C9C9C;
+  font-size: 18px;
+  width: 900px;
+  border:solid 1px #9C9C9C;
+  position: absolute;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+.popupComponent *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.popupComponent a{
+   display: none;
+}
+
+.popupComponent.south .arrow{
+  background-image: none;
+}
+
+
+/* =============================================================================
+   Project Specific Items 
+   ========================================================================== */
+
+
+
+
