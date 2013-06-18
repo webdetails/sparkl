@@ -180,7 +180,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;getAndCombineMetadata.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_getAndCombineMetadata.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -203,7 +203,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>268</xloc>
+      <xloc>267</xloc>
       <yloc>69</yloc>
       </entry>
     <entry>
