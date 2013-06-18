@@ -69,7 +69,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from cpk.xml</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from cpk.xml</from><to>remove cpk_filename</to><enabled>Y</enabled> </hop>  <hop> <from>remove cpk_filename</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>INPUT</from><to>cpk.xml exist?</to><enabled>Y</enabled> </hop>  <hop> <from>cpk.xml exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from cpk.xml</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>remove cpk_filename</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>remove cpk_filename</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get data from cpk.xml</from><to>remove cpk_filename</to><enabled>Y</enabled> </hop>  <hop> <from>remove cpk_filename</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>INPUT</from><to>cpk.xml exist?</to><enabled>Y</enabled> </hop>  <hop> <from>cpk.xml exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from cpk.xml</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from cpk.xml</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>remove cpk_filename</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Detect empty stream</name>
     <type>DetectEmptyStream</type>
@@ -82,8 +82,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>740</xloc>
-      <yloc>150</yloc>
+      <xloc>583</xloc>
+      <yloc>185</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -271,8 +271,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>566</xloc>
-      <yloc>72</yloc>
+      <xloc>583</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -298,8 +298,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>116</xloc>
-      <yloc>72</yloc>
+      <xloc>115</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -316,29 +316,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1044</xloc>
-      <yloc>72</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>remove cpk_filename</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>cpk_filename</name>
-      </remove>      <remove>        <name>exist</name>
-      </remove>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>886</xloc>
-      <yloc>72</yloc>
+      <xloc>895</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -360,8 +339,8 @@
     <addresultfilenames>N</addresultfilenames>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>266</xloc>
-      <yloc>72</yloc>
+      <xloc>271</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -388,8 +367,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>72</yloc>
+      <xloc>427</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -507,8 +486,67 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>740</xloc>
-      <yloc>263</yloc>
+      <xloc>427</xloc>
+      <yloc>269</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove cpk_filename</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>cpk_filename</name>
+      </remove>      <remove>        <name>exist</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>739</xloc>
+      <yloc>100</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dummy</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>583</xloc>
+      <yloc>269</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>1 row</name>
+    <type>SampleRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <linesrange>1</linesrange>
+    <linenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>739</xloc>
+      <yloc>269</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
