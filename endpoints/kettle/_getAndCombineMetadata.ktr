@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>setPluginMetadata</name>
+    <name>_getAndCombineMetadata</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -56,7 +56,7 @@
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -153,10 +153,10 @@
   </info>
   <notepads>
     <notepad>
-      <note>read metadata as named parameters and update the metadata in cpk.xml</note>
-      <xloc>99</xloc>
-      <yloc>39</yloc>
-      <width>400</width>
+      <note>Get the old and new values for the Plugin Metadata, merge the values, and update the metadata in cpk.xml        </note>
+      <xloc>66</xloc>
+      <yloc>9</yloc>
+      <width>602</width>
       <heigth>24</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
@@ -175,7 +175,39 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Get parameters</from><to>setPluginMetadata</to><enabled>Y</enabled> </hop>  <hop> <from>setPluginMetadata</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${cpk_filename}</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>Get ${cpk_filename}</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>cpk_filename</name>
+        <variable>${plugin_dir}&#47;cpk.xml</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>118</xloc>
+      <yloc>179</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Get parameters</name>
     <type>GetVariable</type>
@@ -188,7 +220,7 @@
            </partitioning>
     <fields>
       <field>
-        <name>CPK_version</name>
+        <name>CPK_version_param</name>
         <variable>${CPK_version}</variable>
         <type>String</type>
         <format/>
@@ -200,7 +232,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>author_email</name>
+        <name>author_email_param</name>
         <variable>${author_email}</variable>
         <type>String</type>
         <format/>
@@ -212,7 +244,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>author_name</name>
+        <name>author_name_param</name>
         <variable>${author_name}</variable>
         <type>String</type>
         <format/>
@@ -224,7 +256,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>company_name</name>
+        <name>company_name_param</name>
         <variable>${company_name}</variable>
         <type>String</type>
         <format/>
@@ -236,7 +268,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>company_url</name>
+        <name>company_url_param</name>
         <variable>${company_url}</variable>
         <type>String</type>
         <format/>
@@ -248,7 +280,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>creation_date</name>
+        <name>creation_date_param</name>
         <variable>${creation_date}</variable>
         <type>String</type>
         <format/>
@@ -260,7 +292,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>plugin_description</name>
+        <name>plugin_description_param</name>
         <variable>${plugin_description}</variable>
         <type>String</type>
         <format/>
@@ -272,7 +304,7 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>plugin_name</name>
+        <name>plugin_name_param</name>
         <variable>${plugin_name}</variable>
         <type>String</type>
         <format/>
@@ -284,8 +316,20 @@
         <trim_type>both</trim_type>
       </field>
       <field>
-        <name>version</name>
+        <name>version_param</name>
         <variable>${version}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>null_value</name>
+        <variable>${NULL_VALUE}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -298,14 +342,89 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>186</xloc>
-      <yloc>92</yloc>
+      <xloc>120</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>setPluginMetadata</name>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>CPK_version_new</field_name>
+        <variable_name>CPK_version</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>plugin_description_new</field_name>
+        <variable_name>plugin_description</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>plugin_name_new</field_name>
+        <variable_name>plugin_name</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>author_email_new</field_name>
+        <variable_name>author_email</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>author_name_new</field_name>
+        <variable_name>author_name</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>company_name_new</field_name>
+        <variable_name>company_name</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>company_url_new</field_name>
+        <variable_name>company_url</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>creation_date_new</field_name>
+        <variable_name>creation_date</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>version_new</field_name>
+        <variable_name>version</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>608</xloc>
+      <yloc>60</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>getPluginMetadata</name>
     <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
@@ -317,7 +436,7 @@
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}\_setPluginMetadata.ktr</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\_getPluginMetadata.ktr</filename>
     <directory_path/>
     <mappings>
       <input>
@@ -326,18 +445,15 @@
     <main_path>Y</main_path>
     <rename_on_output>Y</rename_on_output>
     <description/>
-       <connector><parent>CPK_version</parent><child>CPK_version</child></connector>
-       <connector><parent>author_email</parent><child>author_email</child></connector>
-       <connector><parent>author_name</parent><child>author_name</child></connector>
-       <connector><parent>company_name</parent><child>company_name</child></connector>
-       <connector><parent>company_url</parent><child>company_url</child></connector>
-       <connector><parent>creation_date</parent><child>creation_date</child></connector>
-       <connector><parent>plugin_description</parent><child>plugin_description</child></connector>
-       <connector><parent>plugin_name</parent><child>plugin_name</child></connector>
-       <connector><parent>version</parent><child>version</child></connector>
+       <connector><parent>cpk_filename</parent><child>cpk_filename</child></connector>
     </mapping>      </input>
       <output>
-      </output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
           <parameters>    <inherit_all_vars>Y</inherit_all_vars>
     </parameters>
     </mappings>
@@ -345,15 +461,15 @@
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>398</xloc>
-      <yloc>92</yloc>
+      <xloc>239</xloc>
+      <yloc>179</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>OUTPUT</name>
-    <type>Dummy</type>
+    <name>join</name>
+    <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -361,10 +477,158 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>=</function>
+ <rightvalue/>
+ </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>544</xloc>
-      <yloc>91</yloc>
+      <xloc>239</xloc>
+      <yloc>60</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>new values</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>CPK_version_new</field_name>
+<formula_string>CPK_version_param.equals(null_value)?CPK_version:CPK_version_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>plugin_description_new</field_name>
+<formula_string>plugin_description_param.equals(null_value)?plugin_description:plugin_description_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>plugin_name_new</field_name>
+<formula_string>plugin_name_param.equals(null_value)?plugin_name:plugin_name_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>author_email_new</field_name>
+<formula_string>author_email_param.equals(null_value)?author_email:author_email_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>author_name_new</field_name>
+<formula_string>author_name_param.equals(null_value)?author_name:author_name_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>company_name_new</field_name>
+<formula_string>company_name_param.equals(null_value)?company_name:company_name_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>company_url_new</field_name>
+<formula_string>company_url_param.equals(null_value)?company_url:company_url_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>creation_date_new</field_name>
+<formula_string>creation_date_param.equals(null_value)?creation_date:creation_date_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>version_new</field_name>
+<formula_string>version_param.equals(null_value)?version:version_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>358</xloc>
+      <yloc>60</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>select new values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>CPK_version_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>plugin_description_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>plugin_name_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>author_email_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>author_name_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>company_name_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>company_url_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>creation_date_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>version_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>477</xloc>
+      <yloc>60</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

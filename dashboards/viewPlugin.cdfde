@@ -76,7 +76,7 @@
      },
      {
       "name": "textAlign",
-      "value": "",
+      "value": "right",
       "type": "TextAlign"
      },
      {
