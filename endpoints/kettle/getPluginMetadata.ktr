@@ -41,7 +41,7 @@
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>cpk</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -104,7 +104,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get ${cpk_filename}</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get ${cpk_filename}</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get ${cpk_filename}</name>
     <type>GetVariable</type>
@@ -175,8 +175,26 @@
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>344</xloc>
+      <xloc>249</xloc>
       <yloc>102</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>OUTPUT</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>381</xloc>
+      <yloc>103</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
