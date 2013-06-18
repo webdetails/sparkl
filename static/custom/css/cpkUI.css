@@ -64,17 +64,23 @@ body{
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-  background: #FFFFFF
+  background: #F2F2F2;
+  padding: 10px 5px 10px 5px;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
+div.container *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /* =============================================================================
    2. HEADER 
    ========================================================================== */
 .WDheader {
-
 }
 
-}
 .WDh1 {}
 .WDh2 {}
 
@@ -85,9 +91,10 @@ div.container  {
    ========================================================================== */
 
 /* Filter Cells */
-.WDfilterCell {
-  padding: 20px 0px 20px 0px;
+.WDfilterCell *{
+  height: 40px;
 }
+
 .popupComponent .WDfilterCell {
   width: 49%;
   display: inline-block;
@@ -107,11 +114,24 @@ div.container  {
 .svg .popupComponent .WDfilterCellBody{
 }
 
-.WDfilterCellBody *{
+.WDfilterCellBody {
+  display: inline;
 }
 
 .WDfilterCellBody .globalOptButtonPH{
-  padding-left: 10px;
+  padding-left: 5px;
+  background: #E9ECEE;
+}
+.globalOptButtonPH.multiButton{
+  width: 75%;
+  float: left;
+  display: inline;
+  background: #E9ECEE;
+}
+.globalOptButtonPH.submitButton{
+  width: 25%;
+  float: right;
+  background: #F2F2F2;
 }
 
 /********** FILTER ELEMENTS *********/
@@ -120,7 +140,12 @@ div.container  {
 }
 
 .WDfilterCellBody button {
-
+  border:none;
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  width: 100%;
 }
 .no-svg .WDfilterCellBody button {
 }
@@ -128,6 +153,7 @@ div.container  {
 }
 
 .WDfilterCellBody button:hover {
+  cursor: pointer;
 }
 .WDfilterCellBody button span {
 }
@@ -135,7 +161,7 @@ div.container  {
 
 /* Multi Button */
 .WDfilterCellBody .pentaho-toggle-button {
-
+  display: inline;
 }
 .no-svg .WDfilterCellBody .pentaho-toggle-button {
 }
@@ -157,12 +183,28 @@ div.container  {
 }
 
 .WDfilterCellBody .pentaho-toggle-button button {
+  width: 25%;
+  background: #F2F2F2;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  vertical-align: baseline;
+  border-top: 5px solid #E9ECEE;
+  border-right: none;
+  border-bottom: 5px solid #E9ECEE;
+  border-left: none;
+  margin-right: 5px;
+  box-shadow: none;
+  float: left;
 }
 .WDfilterCellBody .pentaho-toggle-button-horizontal-last button {
 }
 .WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
 }
 .WDfilterCellBody .pentaho-toggle-button-down button {
+  border-bottom: 5px solid #F2F2F2;
+  color: #25B9ED;
 }
 
 
@@ -267,14 +309,20 @@ div.container  {
 
 /* Data Cells */
 .WDdataCell {
-	padding: 20px 0px 20px 0px;
+  position: relative;
 }  
 
 /* Data Cells header*/
 .WDdataCellHeader{
-  color: #9C9C9C;
-  font-size: 20px;
-  text-align: center;
+  height: 50px;
+  color: #636261;
+  font-size: 18px;
+  text-align: left;
+  position: relative;
+}
+.WDdataCellHeader .title{
+  position: absolute;
+  bottom: 0px;
 }
 .no-svg   .WDdataCellHeader {
 }
@@ -283,7 +331,74 @@ div.container  {
 
 /* Data Cells body */
 .WDdataCellBody {
-  padding: 0px 10px 0px 10px;
+}
+.WDdataCellBody.aboutPlugin {
+}
+.WDdataCellBody.aboutAuthor {
+}
+
+.WDdataCellBody .cont{
+  height: 40px;
+  padding: 5px 5px 5px 5px;
+  background: #E9ECEE;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  display: inline;
+  position: relative;
+}
+.WDdataCellBody .cont *{
+  height: 100%;
+}
+
+
+.WDdataCellBody .cont .labelPH{
+  background: #E9ECEE;
+  padding-left: 10px;
+  text-align: left;
+  float: left;
+  width: 120px;
+}
+.WDdataCellBody .cont .formPH{
+  background: #FEFEFE;
+  float: right;
+  width: 100%;
+}
+
+.aboutPlugin .cont.name {width: 60%;}
+.aboutPlugin .cont.img {width: 20%;}
+.aboutPlugin .cont.cross {width: 10%;}
+.aboutPlugin .cont.description {width: 100%;}
+.aboutPlugin .cont.date {width: 100%;}
+.aboutPlugin .cont.version {width: 45%;}
+.aboutPlugin .cont.cpkVersion {width: 45%;}
+
+
+
+/* Data Cells footer */
+.WDdataCellFooter {
+  padding-top: 10px;
+}
+.WDdataCellFooter *{
+  height: 40px;
+}
+
+.WDdataCellFooter button {
+  border:none;
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  width: 100%;
+}
+.no-svg .WDdataCellFooter button {
+}
+.svg .WDdataCellFooter button {
+}
+
+.WDdataCellFooter button:hover {
+  cursor: pointer;
 }
 
 /* =============================================================================
@@ -306,6 +421,7 @@ div.container  {
   color: #9C9C9C;
   font-size: 15px;
   text-align: left;
+  font-weight: normal;
 }
 .WDdataCellBody  thead th:last-child {
   text-align: center;
