@@ -38,7 +38,7 @@
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -121,7 +121,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>610</xloc>
+      <xloc>777</xloc>
       <yloc>69</yloc>
       </entry>
     <entry>
@@ -173,6 +173,24 @@
       <xloc>441</xloc>
       <yloc>69</yloc>
       </entry>
+    <entry>
+      <name>Delete old libs</name>
+      <description/>
+      <type>DELETE_FILES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>N</include_subfolders>
+      <fields>
+        <field>
+          <name>${plugin_dir}&#47;lib</name>
+          <filemask>.*\.jar</filemask>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>617</xloc>
+      <yloc>69</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -204,15 +222,6 @@
     </hop>
     <hop>
       <from>Checks if ${plugin_dir} exist</from>
-      <to>Copy jar files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Checks if ${plugin_dir} exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -220,28 +229,25 @@
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>Checks if ${plugin_dir} exist</from>
+      <to>Delete old libs</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete old libs</from>
+      <to>Copy jar files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
-    <notepad>
-      <note>delete the old libraries before copying?????</note>
-      <xloc>547</xloc>
-      <yloc>30</yloc>
-      <width>223</width>
-      <heigth>22</heigth>
-      <fontname/>
-      <fontsize>-1</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>165</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
 </job>
