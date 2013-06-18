@@ -4,7 +4,6 @@
   <property name="ivy.local.default.root" value="${ivy.default.ivy.user.dir}/local" override="true" />
   <property name="ivy.local.default.artifact.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact]-[revision].[ext]"
     override="false" />
-
   <settings defaultResolver="pentaho-chained-resolver" />
   <include url="${ivy.default.settings.dir}/ivysettings-local.xml" />
   <include url="${ivy.default.settings.dir}/ivysettings-public.xml" />

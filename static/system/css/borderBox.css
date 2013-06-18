@@ -4,12 +4,9 @@
  *  Sets box-sizing: border-box to all the html elements.
  *  Overrides blueprint classes to account for the border-box model.
  */
-
-
 /* Box model override for the entire window */
 .no-svg div.container * ,
 .svg div.container * { -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-sizing:border-box; }
-
 /* Blueprint override to use new box model */
 div.container .append-1 {margin-right:50px;}
 div.container .append-2 {margin-right:90px;}
@@ -80,7 +77,6 @@ div.container .prepend-20 {margin-left:800px;}
 div.container .prepend-21 {margin-left:840px;}
 div.container .prepend-22 {margin-left:880px;}
 div.container .prepend-23 {margin-left:920px;}
-
 div.container .append-1 {padding-right:0px;}
 div.container .append-2 {padding-right:0px;}
 div.container .append-3 {padding-right:0px;}
@@ -127,7 +123,3 @@ div.container .prepend-20 {padding-left:0px;}
 div.container .prepend-21 {padding-left:0px;}
 div.container .prepend-22 {padding-left:0px;}
 div.container .prepend-23 {padding-left:0px;}
-
-
-
-

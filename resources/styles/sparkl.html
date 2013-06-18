@@ -2,48 +2,51 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>CPK6</title>
+        <title>Pentaho Sparkl</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <!--link href="/pentaho-style/dashboard.css" rel="stylesheet" type="text/css" media="screen" /-->        
         @HEADER@        
-        <link rel="stylesheet" type="text/css" href="static/system/css/cpk.css" />
+        <link rel="stylesheet" type="text/css" href="static/custom/css/sparkl.css" />
+
+
+
     </head>
     <body>
-        <div class="cpkWrapper">
-            <div class="cpkHeader">
-                <div id='cpkLogo'  class='span-18 cpkLogo' >
+
+        <div class="sparklWrapper">
+            <div class="sparklHeader">
+                <div id='sparklMail'  class='span-24 sparklMail' >
+					<a href="mailto:ctools@webdetails.pt">ctools</a> 
                 </div>
-                <div id='cpkText'  class='span-4 cpkSmall' >
-                    .CPK6
-                </div>
-                <div id='cpkVersion'  class='span-3 last cpkVersion' >
-                    v TRUNK_SNAPSHOT
-                </div>
+
             </div>
-            <div id='cpkSiteMapObj' class='cpkNavigation'>
+            <!--<div id='sparklSiteMapObj' class='sparklNavigation'>
                 <script type="text/javascript">
-                    var render_cpkSiteMap = {
+                    var render_sparklSiteMap = {
                         type: "siteMap",
-                        name: "render_cpkSiteMap",
+                        name: "render_sparklSiteMap",
                         siteMapSelectedParameter: "Dashboards.context.file",
                         priority: "5",
                         parameters: [],
                         executeAtStart: true,
                         ajaxUrl:  'getSitemapJson',
-                        htmlObject: "cpkSiteMapObj",
+                        htmlObject: "sparklSiteMapObj",
                         listeners: []
                     };
-
-                    Dashboards.addComponents([render_cpkSiteMap]);
+                      
+                    Dashboards.addComponents([render_sparklSiteMap]);
                 </script>
-            </div>
-            <div id="content" class="cpkContent">
+            </div>-->
+            <div id="content" class="sparklContent">
                 @CONTENT@
             </div>
-            <div class="cpkFooter">
+            <div class="sparklFooter">
                 @FOOTER@
             </div>
         </div>
+
     </body>
 </html>
+
+
