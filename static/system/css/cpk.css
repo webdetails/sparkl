@@ -79,6 +79,7 @@ body{
 /* =============================================================================
    2. HEADER 
    ========================================================================== */
+
 .cpkHeader {
     height: 70px;
     background: url(../img/cpkHeaderBackground.png) no-repeat scroll center 36px;
@@ -97,29 +98,18 @@ body{
     
 }
 
-.cpkLogo {
+.cpkMail {
     background: url(../img/pluginLogo.png) no-repeat right bottom;
     height: 15px;
-    margin-top: 50px;
+    margin-top: 10px;
     display:inline-block;
 }
 
-.cpkSmall {
-    font-size: 11px;
-    margin-top: 52px;
-    height: 15px;
-    display:inline-block;
+#cpkMail a{
+	color: transparent;
+	position: relative;
+	left: 900px;
 }
-
-.cpkVersion {
-    font-size: 11px;
-    color: #B3BFC4;
-    margin-top: 52px;
-    height: 15px;
-    display:inline-block;
-}
-
-
 
 /* =============================================================================
    3. FILTER CELLS
@@ -145,6 +135,10 @@ body{
    Other 
    ========================================================================== */
 
+.container{
+	border: 2px solid #25B9ED;
+	border-top: none;
+}
 
 .cpkNavigation {
     display:block;
