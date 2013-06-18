@@ -12,53 +12,83 @@
   <modified_date>2013&#47;04&#47;29 15:05:24.405</modified_date>
     <parameters>
         <parameter>
+            <name>CPK_version</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>NULL_VALUE</name>
             <default_value>not defined</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>download</name>
-            <default_value>false</default_value>
+            <name>author_email</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>author_name</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>company_name</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>company_url</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.plugin.dir</name>
+            <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.plugin.id</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.plugin.system.dir</name>
+            <default_value>${cpk.plugin.dir}&#47;system&#47;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.solution.dir</name>
+            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.system.dir</name>
+            <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>creation_date</name>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
-            <default_value>${pluginFolder}&#47;..&#47;${plugin_id}</default_value>
-            <description>Valid in the Java Virtual Machine</description>
-        </parameter>
-        <parameter>
-            <name>install</name>
-            <default_value>true</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>overwrite</name>
-            <default_value>true</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>pluginFolder</name>
-            <default_value>${stubFolder}&#47;..&#47;</default_value>
-            <description>Valid in the Java Virtual Machine</description>
-        </parameter>
-        <parameter>
-            <name>plugin_company</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_company_url</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>${plugin_dir}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_defaultElement</name>
             <default_value>home</default_value>
-            <description>Default value</description>
+            <description/>
         </parameter>
         <parameter>
             <name>plugin_description</name>
             <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>plugin_dir</name>
+            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -77,24 +107,24 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_package_url</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <name>stubFile</name>
+            <default_value>${stubFolder}&#47;plugin.zip</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>stubFile</name>
-            <default_value>${stubFolder}&#47;plugin.zip</default_value>
-            <description>Valid in the Java Virtual Machine</description>
-        </parameter>
-        <parameter>
             <name>stubFolder</name>
-            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;stub</default_value>
-            <description>Valid in the Java Virtual Machine</description>
+            <default_value>${cpk.plugin.dir}&#47;stub</default_value>
+            <description/>
         </parameter>
         <parameter>
             <name>unzipFolder</name>
             <default_value>${stubFolder}&#47;.${plugin_id}</default_value>
-            <description>Valid in the Java Virtual Machine</description>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>version</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
         </parameter>
     </parameters>
     <slaveservers>
@@ -140,12 +170,12 @@
       <yloc>135</yloc>
       </entry>
     <entry>
-      <name>Load Stub file</name>
+      <name>updateMetadata</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_loadStub.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;updateMetadata.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -279,38 +309,6 @@
       <yloc>54</yloc>
       </entry>
     <entry>
-      <name>Delete filenames from result</name>
-      <description/>
-      <type>DELETE_RESULT_FILENAMES</type>
-      <foldername/>
-      <specify_wildcard>N</specify_wildcard>
-      <wildcard/>
-      <wildcardexclude/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>820</xloc>
-      <yloc>135</yloc>
-      </entry>
-    <entry>
-      <name>Delete Unzip Folder</name>
-      <description/>
-      <type>DELETE_FOLDERS</type>
-      <arg_from_previous>N</arg_from_previous>
-      <success_condition>success_if_no_errors</success_condition>
-      <limit_folders>10</limit_folders>
-      <fields>
-        <field>
-          <name>${unzipFolder}</name>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>981</xloc>
-      <yloc>135</yloc>
-      </entry>
-    <entry>
       <name>updateLibs</name>
       <description/>
       <type>JOB</type>
@@ -347,13 +345,13 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>981</xloc>
-      <yloc>249</yloc>
+      <xloc>839</xloc>
+      <yloc>135</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
-      <from>Load Stub file</from>
+      <from>updateMetadata</from>
       <to>Write To Log</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -408,25 +406,16 @@
     </hop>
     <hop>
       <from>plugin_name = plugin_id</from>
-      <to>Load Stub file</to>
+      <to>updateMetadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Delete filenames from result</from>
-      <to>Delete Unzip Folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Plugin Name not null?</from>
-      <to>Load Stub file</to>
+      <to>updateMetadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -434,17 +423,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Load Stub file</from>
+      <from>updateMetadata</from>
       <to>updateLibs</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>updateLibs</from>
-      <to>Delete filenames from result</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -461,7 +441,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete Unzip Folder</from>
+      <from>updateLibs</from>
       <to>OUTPUT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
