@@ -140,16 +140,6 @@
       <yloc>135</yloc>
       </entry>
     <entry>
-      <name>OUTPUT</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1082</xloc>
-      <yloc>135</yloc>
-      </entry>
-    <entry>
       <name>Load Stub file</name>
       <description/>
       <type>JOB</type>
@@ -187,8 +177,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>566</xloc>
-      <yloc>487</yloc>
+      <xloc>173</xloc>
+      <yloc>249</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -201,7 +191,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>566</xloc>
-      <yloc>247</yloc>
+      <yloc>249</yloc>
       </entry>
     <entry>
       <name>Delete folders</name>
@@ -221,8 +211,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>566</xloc>
-      <yloc>362</yloc>
+      <xloc>331</xloc>
+      <yloc>249</yloc>
       </entry>
     <entry>
       <name>Plugin ID not null?</name>
@@ -245,26 +235,6 @@
       <nr>0</nr>
       <xloc>173</xloc>
       <yloc>135</yloc>
-      </entry>
-    <entry>
-      <name>DUMMY</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>173</xloc>
-      <yloc>487</yloc>
       </entry>
     <entry>
       <name>Plugin Name not null?</name>
@@ -309,28 +279,6 @@
       <yloc>54</yloc>
       </entry>
     <entry>
-      <name>download?</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>${download}</fieldname>
-      <variablename>${download}</variablename>
-      <fieldtype>boolean</fieldtype>
-      <mask/>
-      <comparevalue/>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>true</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>829</xloc>
-      <yloc>135</yloc>
-      </entry>
-    <entry>
       <name>Delete filenames from result</name>
       <description/>
       <type>DELETE_RESULT_FILENAMES</type>
@@ -341,8 +289,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>829</xloc>
-      <yloc>247</yloc>
+      <xloc>820</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
       <name>Delete Unzip Folder</name>
@@ -359,30 +307,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1007</xloc>
-      <yloc>247</yloc>
+      <xloc>981</xloc>
+      <yloc>135</yloc>
       </entry>
     <entry>
-      <name>Add filenames to result</name>
-      <description/>
-      <type>ADD_RESULT_FILENAMES</type>
-      <arg_from_previous>N</arg_from_previous>
-      <include_subfolders>Y</include_subfolders>
-      <delete_all_before>N</delete_all_before>
-      <fields>
-        <field>
-          <name>${unzipFolder}</name>
-          <filemask>.*</filemask>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>826</xloc>
-      <yloc>18</yloc>
-      </entry>
-    <entry>
-      <name>updatePlugin</name>
+      <name>updateLibs</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
@@ -410,6 +339,16 @@
       <nr>0</nr>
       <xloc>694</xloc>
       <yloc>135</yloc>
+      </entry>
+    <entry>
+      <name>OUTPUT</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>981</xloc>
+      <yloc>249</yloc>
       </entry>
   </entries>
   <hops>
@@ -451,30 +390,12 @@
     </hop>
     <hop>
       <from>Plugin ID not null?</from>
-      <to>DUMMY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Plugin ID not null?</from>
       <to>Plugin Name not null?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DUMMY</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Plugin Name not null?</from>
@@ -495,44 +416,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>download?</from>
-      <to>Delete filenames from result</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>download?</from>
-      <to>Add filenames to result</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Delete Unzip Folder</from>
-      <to>OUTPUT</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Delete filenames from result</from>
       <to>Delete Unzip Folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Add filenames to result</from>
-      <to>OUTPUT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -550,7 +435,7 @@
     </hop>
     <hop>
       <from>Load Stub file</from>
-      <to>updatePlugin</to>
+      <to>updateLibs</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -558,8 +443,26 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>updatePlugin</from>
-      <to>download?</to>
+      <from>updateLibs</from>
+      <to>Delete filenames from result</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin ID not null?</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete Unzip Folder</from>
+      <to>OUTPUT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -568,5 +471,26 @@
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>What do we do if folder &#47; plugin exists?</note>
+      <xloc>543</xloc>
+      <yloc>84</yloc>
+      <width>215</width>
+      <heigth>24</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
 </job>

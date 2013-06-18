@@ -72,23 +72,8 @@
             <description/>
         </parameter>
         <parameter>
-            <name>download</name>
-            <default_value>false</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>instalationFolder</name>
             <default_value>${plugin_dir}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>install</name>
-            <default_value>true</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>overwrite</name>
-            <default_value>true</default_value>
             <description/>
         </parameter>
         <parameter>
