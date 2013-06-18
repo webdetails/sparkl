@@ -4,12 +4,9 @@
       <Connection id="listDashboardsQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/listDashboards.ktr</KtrFile>
       </Connection>
-      <Connection id="metadataTableQuery" type="kettle.TransFromFile">
+      <Connection id="metadataQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/getPluginMetadata.ktr</KtrFile>
-      </Connection>
-      <Connection id="metadataQuery" type="scripting.scripting">
-         <Initscript></Initscript>
-         <Language>beanshell</Language>
+         <variables datarow-name="plugin_id" variable-name="plugin_id"/>
       </Connection>
       <Connection id="dashboardsTableQuery" type="scripting.scripting">
          <Initscript></Initscript>
@@ -36,70 +33,14 @@
       <Parameters/>
       <Query>OUTPUT</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="metadataTableQuery"
-               id="metadataTableQuery"
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="metadataQuery"
+               id="metadataQuery"
                type="kettle">
       <Columns/>
-      <Parameters/>
+      <Parameters>
+         <Parameter default="cvb" name="plugin_id" type="String"/>
+      </Parameters>
       <Query>OUTPUT</Query>
-   </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="metadataQuery"
-               id="metadataQuery"
-               type="scriptable">
-      <Columns/>
-      <Parameters/>
-      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
-
-String[] columnNames = new String[]{
-"Property",
-"Value"
-};
-
-
-Class[] columnTypes = new Class[]{
-String.class
-,String.class
-};
-
-TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-model.addRow(new Object[]{ new String("Name")
-, new String("Name")
-});
-
-model.addRow(new Object[]{ new String("Description")
-, new String("Description")
-});
-
-model.addRow(new Object[]{ new String("Author Name")
-, new String("Author Name")
-});
-
-model.addRow(new Object[]{ new String("Author Email")
-, new String("Author email")
-});
-
-model.addRow(new Object[]{ new String("Company Name")
-, new String("Company Name")
-});
-
-model.addRow(new Object[]{ new String("Company URL")
-, new String("Company URL")
-});
-
-model.addRow(new Object[]{ new String("Creation Date")
-, new String("Creation Date")
-});
-
-model.addRow(new Object[]{ new String("Version")
-, new String("Version")
-});
-
-model.addRow(new Object[]{ new String("CPK Version")
-, new String("CPK Version")
-});
-
-return model;</Query>
    </DataAccess>
    <DataAccess access="public" cache="true" cacheDuration="3600"
                connection="dashboardsTableQuery"
