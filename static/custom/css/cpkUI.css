@@ -65,7 +65,7 @@ body{
 /* Dashboard Background / Blueprint Container */
 div.container  {
   background: #F2F2F2;
-  padding: 10px 5px 10px 5px;
+  padding: 20px 20px 20px 20px;
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -92,7 +92,7 @@ div.container *{
 
 /* Filter Cells */
 .WDfilterCell *{
-  height: 40px;
+  height: 60px;
 }
 
 .popupComponent .WDfilterCell {
@@ -116,22 +116,26 @@ div.container *{
 
 .WDfilterCellBody {
   display: inline;
+  background: #E9ECEE;
 }
 
 .WDfilterCellBody .globalOptButtonPH{
-  padding-left: 5px;
+  padding-left: 10px;
   background: #E9ECEE;
 }
 .globalOptButtonPH.multiButton{
-  width: 75%;
+  width: 73%;
   float: left;
   display: inline;
-  background: #E9ECEE;
 }
-.globalOptButtonPH.submitButton{
-  width: 25%;
+.globalOptButtonPH.saveButton{
+  width: 20%;
   float: right;
-  background: #F2F2F2;
+}
+.globalOptButtonPH.closeButton{
+  width: 7%;
+  float: right;
+  padding-right: 10px;
 }
 
 /********** FILTER ELEMENTS *********/
@@ -140,12 +144,16 @@ div.container *{
 }
 
 .WDfilterCellBody button {
-  border:none;
   background: #25B9ED;
   color: #FFFFFF;
   font-size: 20px;
   font-weight: normal;
   width: 100%;
+  border-top: 15px solid #E9ECEE;
+  border-right: none;
+  border-bottom: 10px solid #E9ECEE;
+  border-left: none;
+
 }
 .no-svg .WDfilterCellBody button {
 }
@@ -184,17 +192,17 @@ div.container *{
 
 .WDfilterCellBody .pentaho-toggle-button button {
   width: 25%;
-  background: #F2F2F2;
+  background: #E9ECEE;
   text-align: center;
   font-size: 15px;
   font-weight: normal;
   color: #939292;
   vertical-align: baseline;
-  border-top: 5px solid #E9ECEE;
+  border-top: 15px solid #E9ECEE;
   border-right: none;
-  border-bottom: 5px solid #E9ECEE;
+  border-bottom: 10px solid #E9ECEE;
   border-left: none;
-  margin-right: 5px;
+  margin-right: 10px;
   box-shadow: none;
   float: left;
 }
@@ -203,8 +211,9 @@ div.container *{
 .WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
 }
 .WDfilterCellBody .pentaho-toggle-button-down button {
-  border-bottom: 5px solid #F2F2F2;
   color: #25B9ED;
+  background: #F2F2F2;
+  border-bottom: 10px solid #F2F2F2;  
 }
 
 
