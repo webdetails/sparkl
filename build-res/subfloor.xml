@@ -1,7 +1,6 @@
 <!--===========================================================================
 Copyright (c) 2008-2009, Pentaho Engineering Team
 All rights reserved.
-
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
     * Redistributions of source code must retain the above copyright
@@ -12,7 +11,6 @@ modification, are permitted provided that the following conditions are met:
     * Neither the name of the Pentaho Corporation nor the
       names of its contributors may be used to endorse or promote products
       derived from this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY Pentaho Engineering Team ''AS IS'' AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -26,87 +24,84 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ============================================================================-->
 <!--===========================================================================
     == SUBFLOOR ==
-    
+
     $Rev: 113 $
     $Date: 2010-09-03 15:02:57 -0400 (Fri, 03 Sep 2010) $
     Project Home: http://code.google.com/p/subfloor/
-    
+
     This file contains the default implementation of the ant tasks to 
     perform a build. This file should be included by the build.xml file 
     for your particular project. That build file should redefine any task 
     that is defined in subfloor.xml IF AND ONLY IF the function of the 
     task needs to be customized.
-    
+
     FORMATTING: 
       ALIGNMENT: indent=2 spaces and wrap lines longer than 120 chars
       NAMING: targets intended for execution by a user are named single-word
               or hyphenated.  Internal targets use '.' notation.
-    
+
     TO GET STARTED with your project, you will need this file in 
           your project's root directory along with three additional files:
           1. build.xml 
           2. build.properties
           3. ivy_settings.xml
           4. ivy.xml
-          
+
           Below are some templates:
-          
+
       === build.xml
     <project name="MyProject" basedir="." default="jar" xmlns:ivy="antlib:org.apache.ivy.ant" >
       <description>
         This build file is used to create the MyProject project and works with the subfloor.xml file.
       </description>
-
       <import file="subfloor.xml"/>
     </project>
-  
+
     === build.properties
     project.revision=1.0-SNAPSHOT  #the version of your project.  This will appear in jar META-INF, dist artifact filenames and IVY revision metadata. 
     ivy.artifact.id=my-project   #IVY metadata describing the name of the artifact
     impl.title=My Project #English language version of your project name
-    
+
 ============================================================================-->
-
-
 <project name="subfloor" basedir="." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
   <description>
 -------------------------------------------------------------------------------
      subfloor.xml provides tasks needed to perform a project build. 
      It is typically not used directly but imported by each project's build.xml
      file.  The build.xml file can override tasks when customization is required. 
-      
+
 MAIN TARGETS
 ============
   * clean / clean-all : 
     remove all artifacts of the build, clean-all adds the removal
     of any library or jar dependencies downloaded as part of the build
-    
+
   * resolve :
     download/refresh library or jar dependencies needed for the build (uses Apache IVY)
-    
+
   * compile :
     run javac on the project's source
-    
+
   * jar :
     creates a jar file
-    
+
   * dist :
     creates all project distributables
-    
+
   * test :
     runs JUnit tests from your project's test source
-    
+
 SPECIAL TARGETS
 ============
   * publish-local :
     builds a jar for your project and registers it with the local artifact repository isolated 
     to your machine at $HOME/.ivy2/local.  Further executions of the the resolve target by this
     or other projects will find your published jar.
-    
+
   * ivy-clean* :
     this family of targets helps reset your IVY environment in the event that you are having
     difficulty resolving dependencies
-    
+
 TYPICAL TARGET SEQUENCE
 ============    
   * clean-all resolve dist :
@@ -116,26 +111,22 @@ TYPICAL TARGET SEQUENCE
     you will not want to get or refresh dependencies, e.g. if you are offline with no Internet
     access.  In such case, you could just run "dist" if the set of jars you already have are 
     sufficient.
-    
-  </description>
 
+  </description>
   <!-- Load the properties files in the proper order -->
   <property file="override.properties"
             description="Properties customized for your development environment belong in this file.  This file will never be checked into the SCM." />
   <property file="build.properties"
             description="Properties customized for your particular project belong in this file." />
-
   <!-- =================================================================================
        Property Defaults
        Any of these properties can be overridden in either build.properties or override.properties
        =================================================================================-->
-
   <!-- Project meta properties -->
   <property name="impl.vendor" value="Your Company Here" description="Jar file metadata describing the jar's vendor" />
   <property name="impl.productID"
             value=""
             description="Jar file metadata indicating the product ID (this is not the revision)" />
-
   <!-- Compile properties -->
   <property name="src.dir" value="${basedir}/src" description="Project source code directory" />
   <property name="bin.dir" value="${basedir}/bin" description="Base directory for all non-dist build output" />
@@ -148,7 +139,6 @@ TYPICAL TARGET SEQUENCE
   <property name="devlib.dir"
             value="${basedir}/dev-lib"
             description="Directory for developer to place development Jar files (not affected by clean targets)" />
-
   <!-- Compiler properties (passed directly to javac ant target) -->
   <property name="javac.debug"
             value="true"
@@ -159,7 +149,6 @@ TYPICAL TARGET SEQUENCE
   <property name="javac.source" value="1.5" description="Provide source compatibility with specified release" />
   <property name="javac.target" value="1.5" description="Generate class files for specific VM version" />
   <property name="javac.maxmemory" value="256M" description="Max memory alloted to java compile" />
-
   <!-- Third party Ant tasks and tools properties -->
   <property name="subfloor.resources.dir"
             value="${user.home}/.subfloor"
@@ -179,7 +168,6 @@ TYPICAL TARGET SEQUENCE
   <property name="ivy.url"
             value="http://repo2.maven.org/maven2/org/apache/ivy/ivy/2.2.0/ivy-2.2.0.jar"
             description="The URL to the current release of Apache IVY" />
-
   <!-- Test properties -->
   <property name="testsrc.dir" value="${basedir}/test-src" description="Directory that hosts the test source files" />
   <property name="testlib.dir"
@@ -203,7 +191,6 @@ TYPICAL TARGET SEQUENCE
   <property name="junit.haltonfailure" value="no" description="Fail the build if a test fails" />
   <property name="junit.maxmemory" value="256M" description="Heap size when Junit is run in fork mode" />
   <property name="headless.unittest" value="true" description="Runs the unit tests in headless mode" />
-
   <!-- Code Coverage properties -->
   <property name="instrumented.classes.dir"
             value="${testbin.dir}/instrumented-classes"
@@ -220,7 +207,6 @@ TYPICAL TARGET SEQUENCE
   <property name="coberturareports.html.dir"
             value="${coberturareports.dir}/html"
             description="Cobertura html reports are placed here" />
-
   <!-- Javadoc properties -->
   <property name="javadoc.dir"
             value="${bin.dir}/javadoc"
@@ -230,7 +216,6 @@ TYPICAL TARGET SEQUENCE
             description="This property is passed to the packagenames property of the javadoc ant task.  You should customize this for your project." />
   <property name="javadoc.zip.filename" value="${ivy.artifact.id}-${project.revision}-javadoc.zip" />
   <property name="javadoc.tar.filename" value="${ivy.artifact.id}-${project.revision}-javadoc.tar.gz" />
-
   <!-- Distribution and Assembly properties -->
   <property name="dist.dir"
             value="${basedir}/dist"
@@ -243,7 +228,6 @@ TYPICAL TARGET SEQUENCE
             description="Directory that holds resources not included in the source tree" />
   <property name="source.zip.filename" value="${ivy.artifact.id}-${project.revision}-sources.zip" />
   <property name="source.tar.filename" value="${ivy.artifact.id}-${project.revision}-sources.tar.gz" />
-
   <!-- Ivy properties -->
   <property name="ivy.settingsurl"
             value="file:${basedir}/ivysettings.xml"
@@ -267,7 +251,6 @@ TYPICAL TARGET SEQUENCE
             value="${bin.dir}/reports/ivy"
             description="Base directory that holds all IVY dependency report files" />
   <property name="ivy.configs" value="*" description="Set of configs used for IVY reporting and checking operations" />
-
   <!-- Tattletale properties -->
   <property name="tattletale.url"
             value="http://repo.pentaho.org/artifactory/repo/jboss/tattletale/1.1.2.Final/tattletale-1.1.2.Final.zip"
@@ -281,7 +264,6 @@ TYPICAL TARGET SEQUENCE
   <property name="tattletale.configfile"
             value=""
             description="The configuration file for the tattletale report" />
-
   <!-- Load the manifest file (if any) as a properties file -->
   <property name="dist.manifest.file"
             value="${dist.dir}/MANIFEST.MF"
@@ -291,7 +273,6 @@ TYPICAL TARGET SEQUENCE
             description="The location of the MANIFEST.MF file for this application." />
   <property file="${manifest.file}"
             description="Loads the manifest information from the manifest file as a properties file." />
-
   <!-- Set the project revision number to the value in the manifest file (if it has not
        been specified in the properties file -->
   <property name="project.revision"
@@ -302,7 +283,6 @@ TYPICAL TARGET SEQUENCE
       <matches string="${project.revision}" pattern="\$\{.*\}" />
     </condition>
   </fail>
-
   <!-- Set the project title to the value in the manifest file (if it has not
        been specified in the properties file -->
   <property name="impl.title"
@@ -313,10 +293,8 @@ TYPICAL TARGET SEQUENCE
       <matches string="${impl.title}" pattern="\$\{.*\}" />
     </condition>
   </fail>
-
   <!-- Build Mode properties -->
   <property name="release" value="false" description="Set this to true if you want to generate a release artifact" />
-
   <!-- Set the os property -->
   <condition property="isLinux">
     <os family="unix" />
@@ -327,7 +305,6 @@ TYPICAL TARGET SEQUENCE
   <condition property="isMac">
     <os family="mac" />
   </condition>
-
   <condition property="os.classifier" value="win">
     <os family="windows" />
   </condition>
@@ -338,7 +315,6 @@ TYPICAL TARGET SEQUENCE
     <os family="unix" />
   </condition>
   <property name="os.classifier" value="unsupported" />
-
   <!-- Setup the compile classpath -->
   <path id="classpath">
     <fileset dir="${devlib.dir}">
@@ -348,7 +324,6 @@ TYPICAL TARGET SEQUENCE
       <include name="**/*.jar" />
     </fileset>
   </path>
-
   <!-- Setup the classpath used for testing -->
   <path id="test.classpath">
     <fileset dir="${devlib.dir}">
@@ -363,18 +338,15 @@ TYPICAL TARGET SEQUENCE
     <pathelement path="${testclasses.dir}" />
     <pathelement path="${classes.dir}" />
   </path>
-
   <!--=======================================================================
       default
-      
+
       The target that is run if no target is given
       ====================================================================-->
   <target name="default" depends="clean-all,resolve,dist" />
-
-
   <!--=======================================================================
       install-antcontrib
-      
+
       (Fetches and) installs ant-contrib tasks.
       ====================================================================-->
   <target name="install-antcontrib" depends="antcontrib.download-check">
@@ -386,11 +358,9 @@ TYPICAL TARGET SEQUENCE
       </classpath>
     </taskdef>
   </target>
-
-
   <!--=======================================================================
       antcontrib.download-check
-      
+
       Fetches ant-contrib from sourceforge if it is not already present
       ====================================================================-->
   <target name="antcontrib.download-check">
@@ -408,11 +378,9 @@ TYPICAL TARGET SEQUENCE
     </condition>
     <antcall target="antcontrib.download" />
   </target>
-
-
   <!--=======================================================================
       antcontrib.download
-      
+
       Fetches ant-contrib from sourceforge
       ====================================================================-->
   <target name="antcontrib.download" unless="antcontrib.available">
@@ -431,11 +399,9 @@ TYPICAL TARGET SEQUENCE
       </fileset>
     </copy>
   </target>
-
-
   <!--=======================================================================
       init
-      
+
       Ensures that all the required directories exist before processing
       a build.
       ====================================================================-->
@@ -446,11 +412,9 @@ TYPICAL TARGET SEQUENCE
     <mkdir dir="${devlib.dir}" />
     <mkdir dir="${testlib.dir}" />
   </target>
-
-
   <!--=======================================================================
     install-svnant
-    
+
     (Fetches and) installs the SVN ANT for use by this ant script
     ====================================================================-->
   <target name="install-svnant" depends="install-ivy">
@@ -469,11 +433,9 @@ TYPICAL TARGET SEQUENCE
       </else>
     </if>
   </target>
-
-
   <!--=======================================================================
         test-svnant
-    
+
         Tests SVN by printing out the repository
         ====================================================================-->
   <target name="test-svnant" depends="install-svnant">
@@ -482,25 +444,20 @@ TYPICAL TARGET SEQUENCE
     </svn>
     <echo message="Subversion repository url: ${repository.url}" />
   </target>
-
-
   <!--=======================================================================
         svn-revision
-    
+
         Prints and sets the SVN revision for the repository at the current dir (if svn.revision is not set)
         ====================================================================-->
   <target name="svn-revision" depends="install-svnant">
-
     <svn javahl="${svnant.use-javahl}" svnkit="${svnant.use-svnkit}">
       <status path="." revisionProperty="svn.revision" />
     </svn>
     <echo message="Subversion repository revision: ${svn.revision}" />
   </target>
-
-
   <!--=======================================================================
         set-build.id
-    
+
         Sets a property build.id to the either "development" or the svn revision
         if in release mode
         ====================================================================-->
@@ -516,7 +473,6 @@ TYPICAL TARGET SEQUENCE
       </else>
     </if>
   </target>
-
   <!--=================================================================================
        version-properties: common Ant driven version file generation.  Projects that produce
        a package or packages should run this target.  Projects that produce
@@ -541,11 +497,9 @@ TYPICAL TARGET SEQUENCE
     </propertyfile>
     <property file="${basedir}/version.properties" />
   </target>
-
-
   <!--=======================================================================
       install-ivy 
-      
+
       Fetches and installs IVY ant tasks if not already installed 
       ====================================================================-->
   <target name="install-ivy" depends="install-antcontrib">
@@ -568,11 +522,9 @@ TYPICAL TARGET SEQUENCE
       </else>
     </if>
   </target>
-
-
   <!--=======================================================================
       ivy.check-releasable
-      
+
       Verifies that there are no SNAPSHOT dependencies defined in the ivy xml.
       If there are SNAPSHOTS, fail the release build.
       ====================================================================-->
@@ -582,20 +534,16 @@ TYPICAL TARGET SEQUENCE
       <then>
         <sequential>
           <ivy:artifactproperty conf="${ivy.configs}" name="dep.[module]/[artifact]-[revision]" value="[revision]" />
-
           <propertyselector property="violators" match="dep\..*SNAPSHOT.*" select="\0" casesensitive="false" />
-
           <fail if="violators"
                 message="Release not possible, you have dependencies on non-released artifacts: ${violators}" />
         </sequential>
       </then>
     </if>
   </target>
-
-
   <!--=======================================================================
       resolve
-      
+
       Using ivy and the dependencies for the project (defined in the ivy.xml
       file), this task will retrieve the needed files and place them into 
       the defined directories.
@@ -603,16 +551,13 @@ TYPICAL TARGET SEQUENCE
   <target name="resolve"
           depends="resolve-default, resolve-test, ivy.check-releasable"
           description="Retrieves all the dependent libraries" />
-
   <target name="resolve-init" unless="resolve-init.skip" depends="install-ivy">
     <!-- If this is the 1st time through resolve-init, then we need to clean up the jars
 -->
     <antcall target="clean-jars" />
     <property name="resolve-init.skip" value="" />
   </target>
-
   <target name="resolve-default" depends="resolve-default.default,resolve-default.composite"/>
-
   <!-- 
   This target resolves the default IVY configuration as a composite of child configurations.
   You should set ivy.default.sub-configs in your build.properties only if you want your default
@@ -629,31 +574,25 @@ TYPICAL TARGET SEQUENCE
       </sequential>
     </for>
   </target>
-
   <target name="resolve-default.default" depends="resolve-init" unless="ivy.default.sub-configs">
     <ivy:resolve file="${ivyfile}" conf="default" />
     <ivy:retrieve conf="default" pattern="${lib.dir}/[module]-[revision](-[classifier]).[ext]" />
   </target>
-
   <target name="resolve-test" depends="resolve-init">
     <ivy:resolve file="${ivyfile}" conf="test" />
     <ivy:retrieve conf="test" pattern="${testlib.dir}/[module]-[revision](-[classifier]).[ext]" />
   </target>
-
   <target name="resolve-codegen" depends="resolve-init">
     <ivy:resolve file="${ivyfile}" conf="codegen" />
     <ivy:retrieve conf="codegen" pattern="${lib.dir}/[module]-[revision](-[classifier]).[ext]" />
   </target>
-
   <target name="resolve-runtime" depends="resolve-init">
     <ivy:resolve file="${ivyfile}" conf="runtime" />
     <ivy:retrieve conf="runtime" pattern="${lib.dir}/[module]-[revision](-[classifier]).[ext]" />
   </target>
-
-
   <!--=======================================================================
       ivy-clean-cache
-      
+
       Cleans the IVY cache.  You are erasing IVY's memory.  Run this if you 
       want to force IVY to go fetch all your project dependencies from scratch.
       WARNING: this will affect all IVY projects, not just the current workspace
@@ -661,11 +600,9 @@ TYPICAL TARGET SEQUENCE
   <target name="ivy-clean-cache" depends="install-ivy">
     <ivy:cleancache />
   </target>
-
-
   <!--=======================================================================
       ivy-clean-local
-      
+
       Completely cleans your local repository of any files published locally
       by way of publish-local.
       WARNING: this is a global action and will affect other IVY projects
@@ -674,11 +611,9 @@ TYPICAL TARGET SEQUENCE
   <target name="ivy-clean-local" depends="install-ivy">
     <delete dir="${ivy.local.default.root}/" />
   </target>
-
-
   <!--=======================================================================
       ivy-clean-by-name
-      
+
       Cleans your IVY cache and local repository of specific files.
       WARNING: this is a global action and will affect other IVY projects
       currently referencing a locally published dependency
@@ -705,22 +640,18 @@ TYPICAL TARGET SEQUENCE
       </sequential>
     </for>
   </target>
-
-
   <!--=======================================================================
       ivy-report
-      
+
       Generates an IVY dependency report for this project. 
       ====================================================================-->
   <target name="ivy-report" depends="install-ivy">
     <ivy:resolve file="${ivyfile}" conf="${ivy.configs}" />
     <ivy:report xml="true" todir="${ivy.reports.dir}" />
   </target>
-
-
   <!--=======================================================================
       publish-local-nojar
-      
+
       Publishes the jar file for this project to the user's local repository
       for download by other projects currently being executed on the user's
       system.
@@ -735,17 +666,15 @@ TYPICAL TARGET SEQUENCE
       </then>
     </if>
   </target>
-
   <target name="publish-local-nojar.internal" depends="install-ivy">
     <ivy:resolve file="${ivy.artifact.ivyfilename}" />
     <ivy:publish resolver="local" pubrevision="${project.revision}" overwrite="true" forcedeliver="true">
       <artifacts pattern="${dist.dir}/[artifact]-[revision](-[classifier]).[ext]" />
     </ivy:publish>
   </target>
-
   <!--=======================================================================
       publish-local
-      
+
       Builds and publishes the jar file for this project to the user's 
       local repository for download by other projects currently being 
       executed on the user's system.
@@ -753,21 +682,17 @@ TYPICAL TARGET SEQUENCE
   <target name="publish-local"
           depends="dist, dist-source, publish-local-nojar"
           description="Builds and publishes the jar file to the local repository" />
-
-
   <!--=======================================================================
         publish
-    
+
         Creates and publishes the jar file for this project to a Maven2 
         repository. 
         ====================================================================-->
   <target name="publish" depends="dist, dist-source, publish-nojar">
   </target>
-
-
   <!--=======================================================================
       publish-nojar
-      
+
       Publishes the jar file for this project to a Maven2 repository.
       ====================================================================-->
   <target name="publish-nojar" depends="install-antcontrib,create-pom,ivy.deliver,publish-nojar.internal">
@@ -780,7 +705,6 @@ TYPICAL TARGET SEQUENCE
       </then>
     </if>
   </target>
-
   <target name="publish-nojar.internal" depends="install-antcontrib,create-pom,ivy.deliver">
     <antcall target="maven-publish-dependencies">
       <param name="publish.groupId" value="${ivy.artifact.group}" />
@@ -788,14 +712,12 @@ TYPICAL TARGET SEQUENCE
       <param name="publish.version" value="${project.revision}" />
       <param name="publish.file" value="${ivy.artifact.ivypathname}" />
     </antcall>
-
     <antcall target="maven-publish-sources">
       <param name="publish.groupId" value="${ivy.artifact.group}" />
       <param name="publish.artifactId" value="${ivy.artifact.id}" />
       <param name="publish.version" value="${project.revision}" />
       <param name="publish.file" value="${dist.dir}/${ivy.artifact.id}-${project.revision}-sources.jar" />
     </antcall>
-
 	<if>
 		<available file="${dist.dir}/${ivy.artifact.id}-${project.revision}.jar" />
 		<then>
@@ -806,21 +728,17 @@ TYPICAL TARGET SEQUENCE
     	</then>
     </if>
   </target>
-
-
   <!--=======================================================================
         ivy.deliver
-    
+
         Creates a publishable version of the ivy dependencies file, ivy.xml
         ====================================================================-->
   <target name="ivy.deliver" depends="resolve">
     <ivy:deliver conf="*(public)" deliverpattern="${dist.dir}/ivy.xml" />
   </target>
-
-
   <!--=======================================================================
       maven-publish-dependencies
-      
+
       A function that deploys an ivy.xml file to a maven repository
       ====================================================================-->
   <target name="maven-publish-dependencies" depends="install-antcontrib">
@@ -865,11 +783,9 @@ TYPICAL TARGET SEQUENCE
       </if>
     </sequential>
   </target>
-
-
   <!--=======================================================================
       maven-publish-artifact
-      
+
       A function that deploys an artifact to a maven repository
       ====================================================================-->
   <target name="maven-publish-artifact" depends="install-antcontrib">
@@ -907,11 +823,9 @@ TYPICAL TARGET SEQUENCE
       </if>
     </sequential>
   </target>
-
-
   <!--=======================================================================
       maven-publish-sources
-      
+
       A function that deploys a java-sources artifact to a maven repository
       ====================================================================-->
   <target name="maven-publish-sources" depends="install-antcontrib">
@@ -957,11 +871,9 @@ TYPICAL TARGET SEQUENCE
       </if>
     </sequential>
   </target>
-
-
   <!--=======================================================================
       create-pom
-      
+
       Creates the POM file for publishing the jar file to a Maven2 repository.
       ====================================================================-->
   <target name="create-pom" depends="install-ivy">
@@ -970,11 +882,9 @@ TYPICAL TARGET SEQUENCE
       <mapping conf="runtime" scope="runtime" />
     </ivy:makepom>
   </target>
-
-
   <!--=======================================================================
       clean-jars
-      
+
       Removes all the libraries that have been downloaded for this project
       using the ivy dependencies.
       ====================================================================-->
@@ -982,11 +892,9 @@ TYPICAL TARGET SEQUENCE
     <delete dir="${lib.dir}" />
     <delete dir="${testlib.dir}" />
   </target>
-
-
   <!--=======================================================================
       clean
-      
+
       Removes all the files generated from the build process.
       ====================================================================-->
   <target name="clean"
@@ -995,31 +903,25 @@ TYPICAL TARGET SEQUENCE
     <delete dir="${classes.dir}" />
     <delete dir="${bin.dir}" />
   </target>
-
-
   <!--=======================================================================
       clean-dist
-      
+
       Removes all dist artifacts
       ====================================================================-->
   <target name="clean-dist">
     <delete dir="${dist.dir}" />
   </target>
-
-
   <!--=======================================================================
       clean-all
-      
+
       Removes all the libraries that have been downloaded for this project
       in the workspace's lib dirs as well as all the files 
       generated from the build process.
       ====================================================================-->
   <target name="clean-all" depends="clean,clean-jars" description="Cleans all the generated and dependency files" />
-
-
   <!--=======================================================================
       copy-license-lgpl
-      
+
       Copies the LGPL license file into the binary directory.
       ====================================================================-->
   <target name="copy-license-lgpl" if="lgpl-license-avail">
@@ -1027,11 +929,9 @@ TYPICAL TARGET SEQUENCE
       <fileset dir="${license.dir}" includes="lgpl-2.1.txt" />
     </copy>
   </target>
-
-
   <!--=======================================================================
       copy-license-gpl-parent
-      
+
       Copies the GPL license file from the parent directory into the 
       binary directory.
       ====================================================================-->
@@ -1040,14 +940,12 @@ TYPICAL TARGET SEQUENCE
       <fileset dir="${license.dir}" includes="gpl-2.0.txt" />
     </copy>
   </target>
-
-
   <!--=======================================================================
       compile
-      
+
       Compiles the source code (using the specified options) into the 
       binary directory.
-      
+
       NOTE: This contains multiple sub-tasks which will occur in the 
             following order (this is provided for easier overriding by
             the build.xml which will include this file)...
@@ -1061,19 +959,15 @@ TYPICAL TARGET SEQUENCE
   <target name="compile"
           depends="init, compile.pre, compile.compile, compile.src_copy, compile.res_copy, compile.lic_copy, compile.post"
           description="Performs all the steps to prepare the bin directory with a complete compilation" />
-
-
   <!--=======================================================================
       compile.pre
-      
+
       Prepares to perform the compile.
       ====================================================================-->
   <target name="compile.pre" />
-
-
   <!--=======================================================================
       compile.compile
-      
+
       Performs the actual compile
       ====================================================================-->
   <target name="compile.compile" depends="init">
@@ -1090,11 +984,9 @@ TYPICAL TARGET SEQUENCE
       <src path="${src.dir}" />
     </javac>
   </target>
-
-
   <!--=======================================================================
       compile.res_copy
-      
+
       Copies any needed resources into the classes directory.  Will not
       duplicate copying of resources from src tree (handled by compile.src_copy
       if jar.include.source is set.
@@ -1108,7 +1000,6 @@ TYPICAL TARGET SEQUENCE
         </copy>
       </then>
     </if>
-
     <if>
       <not>
         <isset property="jar.include.source" />
@@ -1120,11 +1011,9 @@ TYPICAL TARGET SEQUENCE
       </then>
     </if>
   </target>
-
-
   <!--=======================================================================
       compile.src_copy
-      
+
       Copies the source files to the bin directory
       NOTE: if the dont.copy.source variable exists, this step will be
             skipped!
@@ -1134,11 +1023,9 @@ TYPICAL TARGET SEQUENCE
       <fileset dir="${src.dir}" />
     </copy>
   </target>
-
-
   <!--=======================================================================
       compile.lic_copy
-      
+
       Copies the license file(s) into the bin directory
       ====================================================================-->
   <target name="compile.lic_copy" depends="init">
@@ -1151,26 +1038,21 @@ TYPICAL TARGET SEQUENCE
     </condition>
     <antcall target="copy-license-gpl" />
   </target>
-
-
   <!--=======================================================================
       compile.post
-      
+
       Performs any needed post-compile tasks
       ====================================================================-->
   <target name="compile.post" />
-
-
   <!--=======================================================================
       jar
-      
+
       Creates a jar file from the bin directory
       ====================================================================-->
   <target name="jar"
           depends="jar.main,jar.test"
           description="Jars up the bin directory after a compile">
   </target>
-
   <!-- jar the tests ONLY IF tests.publish it true -->
   <!-- if the compile-tests target is in the dependency list for this target, -->
   <!-- it will get executed no matter what the value of tests.publish is      -->
@@ -1181,17 +1063,15 @@ TYPICAL TARGET SEQUENCE
       <fileset dir="${testclasses.dir}"/>
     </jar>
   </target>
-
   <target name="jar.main"
           depends="compile,set-build.id,generate.manifest">
     <jar destfile="${dist.dir}/${ivy.artifact.id}-${project.revision}.jar" manifest="${dist.manifest.file}">
       <fileset dir="${classes.dir}" />
     </jar>
   </target>
-
   <!--=======================================================================
       generate.manifest
-      
+
       Creates a new manifest file if one is not specified, or updates
       an existing manifest file if one is specified.
       ====================================================================-->
@@ -1199,7 +1079,6 @@ TYPICAL TARGET SEQUENCE
     <delete file="${dist.manifest.file}" />
     <touch file="${dist.manifest.file}" />
     <copy file="${manifest.file}" tofile="${dist.manifest.file}" overwrite="true" failonerror="false" />
-
     <manifest file="${dist.manifest.file}" mode="update">
       <attribute name="Implementation-Title" value="${impl.title}" />
       <attribute name="Implementation-Version" value="${project.revision}.${build.id}" />
@@ -1207,19 +1086,15 @@ TYPICAL TARGET SEQUENCE
       <attribute name="Implementation-ProductID" value="${impl.productID}" />
     </manifest>
   </target>
-
-
   <!--=======================================================================
       dist-source
-      
+
       Generates zip and targz distributions of the javadoc
       ====================================================================-->
   <target name="dist-source" depends="source.jar, source.zip, source.targz" />
-
-
   <!--=======================================================================
       source.jar
-      
+
       Creates a jar of the project source for distribution
       ====================================================================-->
   <target name="source.jar" depends="init,install-antcontrib">
@@ -1231,50 +1106,42 @@ TYPICAL TARGET SEQUENCE
       </then>
     </if>
   </target>
-
   <!--=======================================================================
 	    source.zip
-	    
+
 	    Creates a zip of the project source for distribution
 	    ====================================================================-->
   <target name="source.zip" depends="init">
     <jar jarfile="${dist.dir}/${source.zip.filename}" basedir="${src.dir}" />
   </target>
-
   <!--=======================================================================
       source.targz
-      
+
       Creates a gzipped tar of the project source for distribution
       ====================================================================-->
   <target name="source.targz" depends="init">
     <tar compression="gzip" destfile="${dist.dir}/${source.tar.filename}" basedir="${src.dir}" />
   </target>
-
-
   <!--=======================================================================
       clean-tests
-      
+
       Removes all files related to tests
       ====================================================================-->
   <target name="clean-tests">
     <delete dir="${testbin.dir}" />
   </target>
-
-
   <!--=======================================================================
       init-tests
-      
+
       Compiles project test source
       ====================================================================-->
   <target name="init-tests" depends="clean-tests">
     <mkdir dir="${testclasses.dir}" />
     <mkdir dir="${testsrc.dir}" />
   </target>
-
-
   <!--=======================================================================
       compile-tests
-      
+
       Compiles project test source
       ====================================================================-->
   <target name="compile-tests" depends="init-tests">
@@ -1287,7 +1154,6 @@ TYPICAL TARGET SEQUENCE
       <src path="${testsrc.dir}" />
       <classpath refid="test.classpath" />
     </javac>
-
     <!-- Copy the non-java files from the source directory to the test classes directory
 -->
     <copy todir="${testclasses.dir}">
@@ -1296,11 +1162,9 @@ TYPICAL TARGET SEQUENCE
       </fileset>
     </copy>
   </target>
-
-
   <!--=======================================================================
       test
-      
+
       Compiles and runs all the tests for the project
       ====================================================================-->
   <target name="test" depends="compile,compile-tests, init-test-reports" description="Compiles and runs unit tests">
@@ -1319,7 +1183,6 @@ TYPICAL TARGET SEQUENCE
         </fileset>
       </batchtest>
     </junit>
-
     <junitreport todir="${testreports.html.dir}">
       <fileset dir="${testreports.xml.dir}">
         <include name="TEST-*.xml" />
@@ -1327,40 +1190,31 @@ TYPICAL TARGET SEQUENCE
       <report format="frames" todir="${testreports.html.dir}" />
     </junitreport>
   </target>
-
-
   <!--=======================================================================
     clean-test-reports
-
     Remove all xml and html JUnit test reports
     ====================================================================-->
   <target name="clean-test-reports">
     <delete dir="${testreports.xml.dir}" />
     <delete dir="${testreports.html.dir}" />
   </target>
-
-
   <!--=======================================================================
     init-test-reports
-
     Prepare directories for JUnit test reports
     ====================================================================-->
   <target name="init-test-reports" depends="clean-test-reports">
     <mkdir dir="${testreports.xml.dir}" />
     <mkdir dir="${testreports.html.dir}" />
   </target>
-
   <!--=======================================================================
       dist
-      
+
       Creates a distribution of this project
       ====================================================================-->
   <target name="dist" depends="jar" description="Creates a distribution" />
-
-
   <!--=======================================================================
       dist-full
-      
+
       Creates a distribution of this project including all sources needed
       to build as well as the resultant jar
       ====================================================================-->
@@ -1376,29 +1230,23 @@ TYPICAL TARGET SEQUENCE
       <zipfileset dir="${dist.dir}" includes="**/*.jar"/>
     </zip>
   </target>
-
-
   <!--=======================================================================
       continuous
-      
+
       Runs a typical continuous integration build including project dist, javadoc, test, 
       and coverage artifacts
       ====================================================================-->
   <target name="continuous" depends="clean-all,resolve,cobertura,dist-source,dist" />
-
-
   <!--=======================================================================
       continuous-testless
-      
+
       Runs a typical continuous integration build including project dist, javadoc, test, 
       and coverage artifacts
       ====================================================================-->
   <target name="continuous-testless" depends="clean-all,resolve,dist-source,dist" />
-
-
   <!--=======================================================================
       javadoc
-      
+
       Generates javadoc source documentation for this project
       ====================================================================-->
   <target name="javadoc" depends="javadoc.init, compile">
@@ -1422,40 +1270,32 @@ TYPICAL TARGET SEQUENCE
       <classpath refid="classpath" />
     </javadoc>
   </target>
-
-
   <!--=======================================================================
       dist-javadoc
-      
+
       Generates zip and targz distributions of the javadoc
       ====================================================================-->
   <target name="dist-javadoc" depends="javadoc.zip, javadoc.targz" />
-
-
   <!--=======================================================================
       clean-javadoc
-      
+
       Removes generated javadoc files (note, this does not remove javadoc distributions.
       Use clean-dist to remove artifacts from the dist.dir.
       ====================================================================-->
   <target name="clean-javadoc">
     <delete dir="${javadoc.dir}" />
   </target>
-
-
   <!--=======================================================================
       javadoc.init
-      
+
       Creates directories for javadoc process
       ====================================================================-->
   <target name="javadoc.init" depends="clean-javadoc">
     <mkdir dir="${javadoc.dir}" />
   </target>
-
-
   <!--=======================================================================
       javadoc.zip
-      
+
       Creates a zip of the javadoc for distribution
       ====================================================================-->
   <target name="javadoc.zip" depends="javadoc">
@@ -1464,11 +1304,9 @@ TYPICAL TARGET SEQUENCE
          includes="**/*"
          excludes="**/Thumbs.db" />
   </target>
-
-
   <!--=======================================================================
       javadoc.targz
-      
+
       Creates a gzipped tar of the javadoc for distribution
       ====================================================================-->
   <target name="javadoc.targz" depends="javadoc">
@@ -1478,21 +1316,17 @@ TYPICAL TARGET SEQUENCE
          includes="**/*"
          excludes="**/Thumbs.db" />
   </target>
-
-
   <!--=======================================================================
       cobertura
-      
+
       Runs tests in an instrumented environment and produces Cobertura test coverage reports
       ====================================================================-->
   <target name="cobertura"
           description="Runs tests in an instrumented environment and produces Cobertura test coverage reports"
           depends="clean-cobertura,install-cobertura,compile,compile-tests,cobertura.instrument-classes,cobertura.test-instrumented,cobertura.xml-report,cobertura.html-report" />
-
-
   <!--=======================================================================
       cobertura.instrument-classes
-      
+
       Instruments the application classes used by Cobertura during cobertura.test-instrumented
       ====================================================================-->
   <target name="cobertura.instrument-classes" depends="cobertura.clean-instrumented-classes,install-cobertura,compile">
@@ -1506,45 +1340,33 @@ TYPICAL TARGET SEQUENCE
         <include name="**/*.class" />
         <exclude name="**/*Test.class" />
       </fileset>
-
     </cobertura-instrument>
   </target>
-
-
-
   <!--=======================================================================
       install-cobertura
-      
+
       Downloads and installs Cobertura ant tasks
       ====================================================================-->
   <target name="install-cobertura" depends="install-ivy">
     <taskdef-with-ivy organisation="net.sourceforge.cobertura" module="cobertura" revision="1.9.4.1" resource="tasks.properties" classname="net.sourceforge.cobertura.ant.InstrumentTask"/>
   </target>
-
-
   <!--=======================================================================
       clean-cobertura
-      
+
       Removes all files created by Cobertura code coverage utility
       ====================================================================-->
   <target name="clean-cobertura" depends="cobertura.clean-instrumented-classes,cobertura.clean-coverage-reports">
     <delete dir="${cobertura.data.dir}" />
   </target>
-
-
   <!--=======================================================================
     cobertura.clean-instrumented-classes
-
     Remove the instrumented classes used by Cobertura
     ====================================================================-->
   <target name="cobertura.clean-instrumented-classes">
     <delete dir="${instrumented.classes.dir}" />
   </target>
-
-
   <!--=======================================================================
     cobertura.clean-coverage-reports
-
     Remove all xml and html Cobertura coverage reports
     ====================================================================-->
   <target name="cobertura.clean-coverage-reports">
@@ -1552,11 +1374,9 @@ TYPICAL TARGET SEQUENCE
     <delete dir="${coberturareports.html.dir}" />
     <delete dir="${coberturareports.dir}" />
   </target>
-
-
   <!--=======================================================================
       cobertura.test-instrumented
-      
+
       Runs tests against instrumented classes and generates xml and html JUnit test reports
       ====================================================================-->
   <target name="cobertura.test-instrumented"
@@ -1572,10 +1392,8 @@ TYPICAL TARGET SEQUENCE
            failureProperty="test.failed"
            haltonfailure="${junit.haltonfailure}">
       <sysproperty key="java.awt.headless" value="${headless.unittest}" />
-
       <!-- Specify the name of the coverage data file to use. -->
       <sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.data.dir}/cobertura.ser" />
-
       <!--
         Note the classpath order: instrumented classes are before the
         original (uninstrumented) classes.  This is important.
@@ -1585,7 +1403,6 @@ TYPICAL TARGET SEQUENCE
       <classpath location="${testclasses.dir}" />
       <classpath refid="test.classpath" />
       <classpath refid="cobertura.classpath" />
-
       <formatter type="xml" />
       <test name="${testcase}" todir="${testreports.xml.dir}" if="testcase" />
       <batchtest todir="${testreports.xml.dir}" unless="testcase">
@@ -1594,7 +1411,6 @@ TYPICAL TARGET SEQUENCE
         </fileset>
       </batchtest>
     </junit>
-
     <junitreport todir="${testreports.html.dir}">
       <fileset dir="${testreports.xml.dir}">
         <include name="TEST-*.xml" />
@@ -1602,11 +1418,9 @@ TYPICAL TARGET SEQUENCE
       <report format="frames" todir="${testreports.html.dir}" />
     </junitreport>
   </target>
-
-
   <!--=======================================================================
       cobertura.xml-report
-      
+
       Produces machine-readable xml Cobertura coverage report from results of instrumented tests
       ====================================================================-->
   <target name="cobertura.xml-report" depends="cobertura.test-instrumented">
@@ -1616,11 +1430,9 @@ TYPICAL TARGET SEQUENCE
       </fileset>
     </cobertura-report>
   </target>
-
-
   <!--=======================================================================
       cobertura.html-report
-      
+
       Produces human-readable html Cobertura coverage report from results of instrumented tests
       ====================================================================-->
   <target name="cobertura.html-report" depends="cobertura.test-instrumented">
@@ -1632,19 +1444,17 @@ TYPICAL TARGET SEQUENCE
       </fileset>
     </cobertura-report>
   </target>
-
   <!--=======================================================================
         install-pentaho-ant-tasks
- 
+
         Fetches and installs Pentaho Ant tasks
       ====================================================================-->
   <target name="install-pentaho-ant-tasks" depends="install-ivy">
     <taskdef-with-ivy task-name="dot-classpath" classname="org.pentaho.anttasks.DotClasspath" organisation="pentaho" module="pentaho-ant-tasks" revision="1.1" />
   </target>
-
   <!--=======================================================================
         create-dot-classpath
- 
+
         Creates the Eclipse .classpath file from the resolved
         classpath from Ant.
       ====================================================================-->
@@ -1664,14 +1474,12 @@ TYPICAL TARGET SEQUENCE
       </classpath>
     </dot-classpath>
   </target>
-
-
   <!--=======================================================================
         MACRO: taskdef-with-ivy
         Downloads (using IVY) and defines new Ant tasks
-	    
+
 	    NOTE: any task using this macro must depend on "install-antcontrib"
-	    
+
 	    parameters:
 			task-name    - Name to give the new Ant task (only used if resource is not set)
 			organisation - Artifact organization (for artifact resolution with IVY)
@@ -1740,13 +1548,11 @@ TYPICAL TARGET SEQUENCE
       </if>
     </sequential>
   </macrodef>
-
-
   <!--=======================================================================
 	    Macro which will download the specified library. 
-	    
+
 	    NOTE: any task using this macro must depend on "install-antcontrib"
-	    
+
 	    parameters:
 			name      - The name of the library (the filename w/o extension)
 			url       - The URL from which the library will be downloaded
@@ -1799,10 +1605,9 @@ TYPICAL TARGET SEQUENCE
       </if>
     </sequential>
   </macrodef>
-
   <!--=======================================================================
     install-tattletale
-    
+
     (Fetches and) installs TATTLETALE for use by this ant script
     ====================================================================-->
   <target name="install-tattletale" depends="install-antcontrib">
@@ -1816,7 +1621,7 @@ TYPICAL TARGET SEQUENCE
                          url="${tattletale.url}"
                          classname="${tattletale.classname}" 
                          extension="zip"/>
-                          
+
         <taskdef name="tattletale.report" classname="${tattletale.classname}">
           <classpath>
             <fileset dir="${subfloor.resources.dir}/tattletale">
@@ -1824,15 +1629,14 @@ TYPICAL TARGET SEQUENCE
             </fileset>
           </classpath>
         </taskdef>
-
         <property name="tattletale.isinstalled" value="true" />
       </else>
     </if>
   </target>
-  
+
   <!--=======================================================================
     tattletale-report
-    
+
     Generates a tattletale report for this project
     ====================================================================-->
   <target name="tattletale-report" depends="install-tattletale,jar">

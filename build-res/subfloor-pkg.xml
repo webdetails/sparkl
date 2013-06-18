@@ -1,7 +1,6 @@
 <!--===========================================================================
 Copyright (c) 2009, Pentaho Engineering Team
 All rights reserved.
-
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
     * Redistributions of source code must retain the above copyright
@@ -12,7 +11,6 @@ modification, are permitted provided that the following conditions are met:
     * Neither the name of the Pentaho Corporation nor the
       names of its contributors may be used to endorse or promote products
       derived from this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY Pentaho Engineering Team ''AS IS'' AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -26,25 +24,21 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ============================================================================-->
 <!--===========================================================================
     == SUBFLOOR-PKG ==
-    
+
     $Rev: 100 $
     $Date: 2009-12-09 11:43:26 -0500 (Wed, 09 Dec 2009) $
     Project Home: http://code.google.com/p/subfloor/
-    
+
     Provides default targets for creating application archives such as zip and tar.gzip
     files.
     ============================================================================-->
-
 <project name="subfloor-pkg" basedir="." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
-
   <!-- Define the default location of the common build file -->
   <property name="subfloor.file"
             value="./subfloor.xml"
             description="This is the location of the standardized subfloor.xml file" />
-
   <!-- Import the common_build.xml file which contains all the default tasks -->
   <import file="${subfloor.file}" />
-
   <property name="stage.dir" value="${bin.dir}/stage" description="Package staging" />
   <property name="package.root.dir"
             value="${ivy.artifact.id}"
@@ -61,14 +55,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <property name="package.artifact.pomfile"
             value="package-pom.xml"
             description="The Maven pom file defining dependencies of the package" />
-
   <target name="dist" depends="jar,package" description="Builds and packages the application" />
-
   <target name="clean-dist">
     <delete dir="${dist.dir}" />
     <delete dir="${stage.dir}" />
   </target>
-
   <!-- override of jar target.. this definitely should be moved into common build -->
   <target name="jar"
           depends="compile,set-build.id,create-version-file"
@@ -83,42 +74,35 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <fileset dir="${classes.dir}" />
     </jar>
   </target>
-
   <target name="create-version-file">
     <propertyfile file="${classes.dir}/version.properties" comment="${impl.title} build information">
       <entry key="version" value="${project.revision}.${build.id}" />
       <entry key="builddate" type="date" value="now" />
     </propertyfile>
   </target>
-
   <target name="assemble.init">
     <mkdir dir="${approot.stage.dir}" />
   </target>
-
   <target name="assemble" depends="assemble.init,assemble.copy-libs">
     <copy todir="${approot.stage.dir}" overwrite="true">
       <fileset dir="${package.resdir}" />
     </copy>
     <chmod perm="a+x" dir="${stage.dir}" includes="**/*.sh" />
   </target>
-
   <target name="assemble.copy-libs">
     <copy todir="${approot.stage.dir}/lib">
       <fileset dir="${lib.dir}" />
       <fileset file="${dist.dir}/${ivy.artifact.id}-${project.revision}.jar" />
     </copy>
   </target>
-
   <target name="package"
           depends="assemble,package-zip,package-targz"
           description="Creates packaged distributable artifacts" />
-
   <target name="package-zip">
     <zip destfile="${dist.dir}/${package.basename}.zip">
       <zipfileset dir="${stage.dir}" />
     </zip>
   </target>
-
   <target name="package-targz">
     <tar destfile="${dist.dir}/${package.basename}.tar.gz" longfile="gnu" compression="gzip">
       <tarfileset dir="${stage.dir}" mode="755">
@@ -129,19 +113,17 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </tarfileset>
     </tar>
   </target>
-
   <!--=======================================================================
 	    create-pom (override)
-	    
+
 	    Creates the POM files for publishing the jar and gwt zip package to the Maven repository
 	    ====================================================================-->
   <target name="create-pom"
           depends="install-ivy,subfloor.create-pom,create-package-pom"
           description="Creates a POM file based on the ivy dependencies" />
-
   <!--=======================================================================
 	    create-package-pom 
-	    
+
 	    Creates a POM file for the package
 	    ====================================================================-->
   <target name="create-package-pom"
@@ -150,23 +132,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <ivy:makepom ivyfile="${package.artifact.ivyfile}" pomfile="${package.artifact.pomfile}" />
     <replace file="${package.artifact.pomfile}" token="jar" value="zip" />
   </target>
-
   <!--=======================================================================
       publish-nojar (override)
-      
+
       Publishes the jar and zip package to the Maven repository
       ====================================================================-->
   <target name="publish-nojar" depends="install-antcontrib,create-pom,ivy.deliver,subfloor.publish-nojar">
-
     <antcall target="maven-publish-artifact">
       <param name="publish.pomFile" value="${package.artifact.pomfile}" />
       <param name="publish.file" value="${dist.dir}/${package.basename}.zip" />
     </antcall>
   </target>
-
   <!--=======================================================================
       publish-local-nojar (override)
-      
+
       Publishes jar and zip package locally
       ====================================================================-->
   <target name="publish-local-nojar" depends="install-ivy,subfloor.publish-local-nojar">
@@ -175,5 +154,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <artifacts pattern="${dist.dir}/[artifact]-[revision].[ext]" />
     </ivy:publish>
   </target>
-
 </project>

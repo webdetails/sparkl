@@ -1,8 +1,6 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-
 /*
  * WDStyleGuide Template CSS  
  *
@@ -23,20 +21,15 @@
  *    Project Specific Items  
  *
 */
-
-
 /* =============================================================================
    Fonts
    ========================================================================== */
-
 @font-face {
     font-family: 'Gudea';
     font-style: normal;
     font-weight: 400;
     src: local('Gudea'), url('http://themes.googleusercontent.com/static/fonts/gudea/v1/kfCeUiT0HGXHQC8YVeaKy6CWcynf_cDxXwCLxiixG1c.woff') format('woff');
 }
-
-
 /* =============================================================================
    Style Resets
    ========================================================================== */
@@ -58,92 +51,72 @@ time, mark, audio, video {
     border: 0;
     font-family: Open Sans, Arial, sans-serif;*/
 }
-
 .WDhidden{
     display:none;
 }
-
-
-
-
 /* =============================================================================
    1. BACKGROUND 
    ========================================================================== */
-
 /* Window Background */
 body{
     font-family: Gudea;
     background: #dee8ec;
 }
-
 /* =============================================================================
    2. HEADER 
    ========================================================================== */
-
 .cpkHeader {
     height: 70px;
     background: url(../img/cpkHeaderBackground.png) no-repeat scroll center 36px;
     z-index: 100;
-
     margin-right:auto;
     margin-left:auto;
     width: 1018px;
-
     margin-bottom:-9px;
     padding-bottom: 10px;
     padding-left: 34px;
     padding-right:34px;
     position: relative;
     display:block;
-    
-}
 
-.cpkMail {
+}
+.cpkLogo {
     background: url(../img/pluginLogo.png) no-repeat right bottom;
     height: 15px;
-    margin-top: 10px;
+    margin-top: 50px;
     display:inline-block;
 }
-
-#cpkMail a{
-	color: transparent;
-	position: relative;
-	left: 900px;
+.cpkSmall {
+    font-size: 11px;
+    margin-top: 52px;
+    height: 15px;
+    display:inline-block;
 }
-
+.cpkVersion {
+    font-size: 11px;
+    color: #B3BFC4;
+    margin-top: 52px;
+    height: 15px;
+    display:inline-block;
+}
 /* =============================================================================
    3. FILTER CELLS
    ========================================================================== */
-
 /* =============================================================================
    4. DATA CELLS
    ========================================================================== */
-
 /* =============================================================================
    5. TABLES
    ========================================================================== */
-
 /* =============================================================================
    6. CHARTS 
    ========================================================================== */
-
 /* =============================================================================
    7. SELECTORS AND BUTTONS 
    ========================================================================== */
-
 /* =============================================================================
    Other 
    ========================================================================== */
-
-.cpkContent {
-    border: 2px solid #25B9ED;
-	border-top: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 950px;
-}
-
 .cpkNavigation {
     display:block;
     width:950px;
@@ -151,8 +124,6 @@ body{
     margin-right:auto;
     height:34px;
 }
-
-
 /*** ESSENTIAL STYLES ***/
 .cpkNavigation .siteMap, 
 .cpkNavigation .siteMap * {
@@ -203,7 +174,6 @@ body{
     top:			0;
     margin-left:    -12px;
 }
-
 /*** DEMO SKIN ***/
 .cpkNavigation .siteMap {
     float:  left;
@@ -222,7 +192,6 @@ body{
 .cpkNavigation .siteMap a { /* visited pseudo selector so IE6 applies text colour*/
     color: rgb(34, 34, 34);
     font-size: 13px;
-
 }
 .cpkNavigation .siteMap .siteMapItem {
     background: #57A32B;
@@ -236,8 +205,6 @@ body{
     background-position:86% 52%;
     outline:		0;
 }
-
-
 .cpkNavigation .siteMap > .siteMapItem > .siteMap,
 .cpkNavigation .siteMap > .siteMapItem > .siteMap a {
     background: #222;
@@ -247,7 +214,6 @@ body{
     background: #57A32B;
     color: rgb(34, 34, 34) ;
 }
-
 /*** shadows for all but IE6 ***/
 .cpkNavigation .siteMap .siteMap {
     padding: 0 0 12px 0;
@@ -260,11 +226,7 @@ body{
     -ms-border-radius: 0px 0px 12px 12px;	
     border-radius: 0px 0px 12px 12px;	
     width:250px;
-
 }
-
-
-
 /* =============================================================================
    Project Specific Items 
    ========================================================================== */
