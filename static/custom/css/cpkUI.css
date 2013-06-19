@@ -65,7 +65,7 @@ body{
 /* Dashboard Background / Blueprint Container */
 div.container  {
   background: #FFFFFF;
-  padding: 20px 20px 20px 20px;
+/*  padding: 20px 20px 20px 20px;*/
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -145,7 +145,7 @@ div.container *{
 
 .WDfilterCellBody button {
   background: #25B9ED;
-  color: #FFFFFF;
+  color: #F1F2F2;
   font-size: 25px;
   font-weight: lighter;
   width: 100%;
@@ -333,6 +333,13 @@ div.container *{
 .WDdataCellHeader .title{
   position: absolute;
   bottom: 0px;
+  cursor:default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .WDdataCellHeader .subcellHeaderUnderline{
   width: 100%;
@@ -358,7 +365,7 @@ div.container *{
 
 .WDdataCellBody .cont{
   height: 50px;
-  padding: 6px 6px 6px 6px;
+  padding: 6px 0px 6px 0px;
   background: #E9ECEE;
   text-align: left;
   font-size: 15px;
@@ -374,19 +381,28 @@ div.container *{
 }
 .WDdataCellBody .cont *{
   height: 100%;
-  width: 100%;
+/*  width: 100%;*/
   font-size: inherit;
-  float: left;
+/*  float: left;*/
 }
 
 .WDdataCellBody .cont .labelPH{
   background: inherit;
   padding-left: 10px;
-  width: 15%;
+/*  width: 15%;*/
   line-height: 30px;
+  margin-right: 4px;
+  cursor:default;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .WDdataCellBody .cont .formPH{
-  width: 85%;
+/*  width: 85%;*/
 }
 .WDdataCellBody .cont .formPH input{
   width: 100%;
@@ -402,11 +418,17 @@ div.container *{
 .WDdataCellBody .cont .formPH input:hover{
   cursor: pointer;
 }
+.WDdataCellBody .cont .formPH input:focus{
+  cursor: auto;
+}
 .WDdataCellBody .cont .formPH.readOnly input{
   background: inherit;
 }
 .WDdataCellBody .cont .formPH.readOnly input:hover{
   cursor: auto;
+}
+.WDdataCellBody .cont .uploadButton{
+  padding: 0px 6px 0px 6px;    
 }
 .WDdataCellBody .cont .uploadButton button{
   background: #F3F3F3;
@@ -416,7 +438,8 @@ div.container *{
   box-shadow: none;
   font-size: 12px;
   font-weight: normal;
-  color: #939292;    
+  color: #939292;
+  padding: 0px 6px 0px 6px;    
 }
 
 .aboutPlugin .cont.name {}
@@ -436,6 +459,7 @@ div.container *{
 }
 .WDdataCellBody table tr{
   background: #EAEDEE;
+  height: 50px;
 }
 
 /* Header */
@@ -509,8 +533,8 @@ div.container *{
   border-right: 1px solid #FFFFFF;
 }
 
-div.buttonContainer{
-  height: 27px;
+.WDdataCellBody tbody tr div.buttonContainer{
+  height: 50px;
 }
 /* Footer */
 .WDdataCellBody  tfoot {

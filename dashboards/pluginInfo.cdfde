@@ -1210,7 +1210,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "4",
+      "value": "6",
       "type": "Integer"
      },
      {
@@ -1321,7 +1321,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "12",
+      "value": "18",
       "type": "Integer"
      },
      {
@@ -1432,7 +1432,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -1538,7 +1538,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "14",
       "type": "Integer"
      },
      {
@@ -1649,7 +1649,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "9",
       "type": "Integer"
      },
      {
@@ -1760,7 +1760,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -1866,7 +1866,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -1939,7 +1939,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "9",
       "type": "Integer"
      },
      {
@@ -2050,7 +2050,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -2156,7 +2156,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -2267,7 +2267,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "3",
       "type": "Integer"
      },
      {
@@ -2373,7 +2373,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "21",
       "type": "Integer"
      },
      {
@@ -2926,7 +2926,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "3",
       "type": "Integer"
      },
      {
@@ -3032,7 +3032,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "21",
       "type": "Integer"
      },
      {
@@ -3143,7 +3143,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "10",
       "type": "Integer"
      },
      {
@@ -3254,7 +3254,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "3",
       "type": "Integer"
      },
      {
@@ -3360,7 +3360,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "7",
       "type": "Integer"
      },
      {
@@ -3433,7 +3433,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "10",
       "type": "Integer"
      },
      {
@@ -3544,7 +3544,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "3",
       "type": "Integer"
      },
      {
@@ -3650,7 +3650,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "7",
       "type": "Integer"
      },
      {
@@ -3718,8 +3718,81 @@
     "properties": [
      {
       "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4ecf959d-2552-b087-4227-002aea5baa14",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "3e04877f-5e1b-90e5-9eba-f23d0f7c844b",
+    "properties": [
+     {
+      "name": "name",
       "value": "authorCompanyUrlContainer",
       "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "10",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "height",
@@ -3749,10 +3822,48 @@
     ]
    },
    {
-    "id": "bbde46f9-60d1-69e3-549a-beb8d4dbd35a",
+    "id": "34c9b10c-32a2-e9f1-fefc-7e87b0c450b8",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "4ecf959d-2552-b087-4227-002aea5baa14",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bd98d8ec-fb8d-dbd9-c4ea-f3911232a571",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "3e04877f-5e1b-90e5-9eba-f23d0f7c844b",
+    "parent": "34c9b10c-32a2-e9f1-fefc-7e87b0c450b8",
     "properties": [
      {
       "name": "name",
@@ -3761,7 +3872,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "3",
       "type": "Integer"
      },
      {
@@ -3822,10 +3933,10 @@
     ]
    },
    {
-    "id": "1d4aba98-0a7a-0504-9ded-2cc8f64a4b0b",
+    "id": "7a328cfd-582a-acef-794a-693234f85561",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "bbde46f9-60d1-69e3-549a-beb8d4dbd35a",
+    "parent": "bd98d8ec-fb8d-dbd9-c4ea-f3911232a571",
     "properties": [
      {
       "name": "name",
@@ -3855,10 +3966,10 @@
     ]
    },
    {
-    "id": "0b3d7c06-f4f8-dc2a-b363-bd98b855aaf3",
+    "id": "5cab9a11-a0f6-a414-28c3-d7ca0fe09d10",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "3e04877f-5e1b-90e5-9eba-f23d0f7c844b",
+    "parent": "34c9b10c-32a2-e9f1-fefc-7e87b0c450b8",
     "properties": [
      {
       "name": "name",
@@ -3867,7 +3978,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "7",
       "type": "Integer"
      },
      {
@@ -7855,7 +7966,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "cpk",
+      "value": "",
       "type": "String"
      },
      {
@@ -8143,7 +8254,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"plugin_id\",\"cvb\",\"String\",\"\"]]",
+      "value": "[[\"plugin_id\",\"\",\"String\",\"\"]]",
       "type": "CdaParameters"
      },
      {
