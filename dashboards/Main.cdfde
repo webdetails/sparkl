@@ -81,7 +81,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDheader",
+      "value": "WDheader WDhidden",
       "type": "String"
      }
     ]
@@ -1169,12 +1169,12 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"parameterButton\"]",
+      "value": "[\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
       "name": "colFormats",
-      "value": "[\"%s\",\"%s\",\"%s\",\"%s\"]",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
      },
      {
@@ -1289,12 +1289,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    function generateHashValue (key, value) {\n        var obj = Dashboards.getHashValue(),json;\n        if (arguments.length == 1) {\n            obj = key;\n        } else {\n            obj[key] = value;\n        }\n        json = JSON.stringify(obj);\n        return json;\n    }\n    \n    function changeLocation (newLocation, params){\n        if(!newLocation){ return; }\n        var hash = (params) ? '#' + generateHashValue( \"bookmark\" , { impl: \"client\" , params: params } ) : \"\";\n        window.location = newLocation + hash;\n    }\n    \n    \n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tchangeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v  \t\n          \t});\n        }\n    });\n}\n",
+      "value": "function f(){\n    \n    function generateHashValue (key, value) {\n        var obj = Dashboards.getHashValue(),json;\n        if (arguments.length == 1) {\n            obj = key;\n        } else {\n            obj[key] = value;\n        }\n        json = JSON.stringify(obj);\n        return json;\n    }\n    \n    function changeLocation (newLocation, params){\n        if(!newLocation){ return; }\n        var hash = (params) ? '#' + generateHashValue( \"bookmark\" , { impl: \"client\" , params: params } ) : \"\";\n        window.location = newLocation + hash;\n    }\n    \n    \n    /*this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tchangeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v,\n                metadataReadonlyParam: true\n          \t});\n        }\n    });*/\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"deletePluginButton\",\n                title: \"Delete\",\n                action: function (v, st) {\n                    console.log(\"delete\");\n                }\n            },\n            {\n                cssClass: \"editPluginButton\",\n                title: \"Edit\",\n                action: function (v, st) {\n                    changeLocation( '/pentaho/content/cpk/pluginInfo', {\n                        pluginIdParam: v,\n                        metadataReadonlyParam: false\n                    });\n                }\n            }\n        ]\n    });\n}\n",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    \n    $.each(data.resultset,function(i,element){\n        var tempElement = data.resultset[i][1];\n        data.resultset[i][1] = data.resultset[i][2];\n        data.resultset[i][2] = data.resultset[i][3];\n        data.resultset[i][3] = tempElement;       \n    });\n\n    var tempObj = $.extend({},data.metadata[1]);\n    data.metadata[1] = $.extend( {} , data.metadata[2] , {colIndex: 1} );\n    data.metadata[2] = $.extend( {} , data.metadata[3] , {colIndex: 2} );    \n    data.metadata[3] = $.extend( {} , tempObj , { colIndex: 3 } );    \n\n    return data;\n}",
+      "value": "function f(data){\n    \n    $.each(data.resultset,function(i,element){\n        data.resultset[i].push(data.resultset[i].shift());       \n    });\n    data.metadata.push(data.metadata.shift());    \n    /* TODO: circulate colIndex in all metadata Items*/\n    $.each(data.metadata, function(i,element){\n        element.colIndex = i;\n    });\n        \n    var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[2,3,4,5,6,7,8]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );\n    \n    return(data);\n}",
       "type": "JavaScript"
      },
      {
@@ -1501,6 +1501,34 @@
      {
       "name": "bookmarkable",
       "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "69fb0a24-e79e-af0e-17ae-9477b00f3baf",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginIdParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "cpk",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "true",
       "type": "Boolean"
      }
     ]

@@ -27,7 +27,7 @@
 	    },
 	    
 	    implementation: function(tgt, st, opt){
-	    	var $cell = $(tgt).empty();
+	    	var $buttonContainer = $('<div/>').addClass('buttonContainer');
 	    	_.each(opt.buttons, function(el,idx){
 		    	var $button = $("<button/>").addClass(el.cssClass||"").text(el.title||"");
 		    	$button.click(function(){
@@ -35,8 +35,9 @@
 		    			el.action(st.value, st);
 		    		}
 		    	});
-		    	$cell.append($button);
+		    	$buttonContainer.append($button);
 	    	});
+	    	$(tgt).empty().append($buttonContainer);
 
 	    }
 
