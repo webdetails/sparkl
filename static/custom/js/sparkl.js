@@ -1,5 +1,25 @@
 /********************************** Project namespace *******************************************/
+var sparkl = {};
+(function(myself){
+	
+	myself.changeLocation = function (newLocation, params){
+        if(!newLocation){ return; }
+        var hash = (params) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: params } ) : "";
+        window.location = newLocation + hash;
+    }
 
+  	function generateHashValue (key, value) {
+        var obj = Dashboards.getHashValue(),json;
+        if (arguments.length == 1) {
+            obj = key;
+        } else {
+            obj[key] = value;
+        }
+        json = JSON.stringify(obj);
+        return json;
+    }
+
+})(sparkl);
 
 /************************************  AddIns ************************************/
 

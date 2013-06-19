@@ -101,6 +101,7 @@ div.container *{
 /* Filter Cells */
 .WDfilterCell *{
   height: 40px;
+  margin-bottom: 10px;
 }
 
 .popupComponent .WDfilterCell {
