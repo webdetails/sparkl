@@ -146,8 +146,8 @@ div.container *{
 .WDfilterCellBody button {
   background: #25B9ED;
   color: #FFFFFF;
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 25px;
+  font-weight: lighter;
   width: 100%;
   border-top: 15px solid #E9ECEE;
   border-right: none;
@@ -191,11 +191,11 @@ div.container *{
 }
 
 .WDfilterCellBody .pentaho-toggle-button button {
-  width: 25%;
+  width: 30%;
   background: #E9ECEE;
   text-align: center;
-  font-size: 15px;
-  font-weight: normal;
+  font-size: 25px;
+  font-weight: lighter;
   color: #939292;
   vertical-align: baseline;
   border-top: 15px solid #E9ECEE;
@@ -396,6 +396,12 @@ div.container *{
 }
 .WDdataCellBody .cont .formPH input:hover{
   cursor: pointer;
+}
+.WDdataCellBody .cont .formPH.readOnly input{
+  background: inherit;
+}
+.WDdataCellBody .cont .formPH.readOnly input:hover{
+  cursor: auto;
 }
 .WDdataCellBody .cont .uploadButton button{
   background: #F3F3F3;

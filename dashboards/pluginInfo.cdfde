@@ -6058,7 +6058,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n/*\n    var opts = function (st){\n        if( false )\n            return {\n                buttonClass: \"editElementButton\",\n                buttonTitle: \"CDE\",\n                buttonAction: function (v, st) {\n                    window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n                }\n            } \n        else \n            return {\n                buttonClass: \"viewDataSourcesButton\",\n                buttonTitle: \"CDA\",\n                buttonAction: function (v, st) {\n                    console.log('/pentaho/content/cpk/'+v+'?mode=editQuery');\n                }            \n            }\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n*/\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"viewElementButton\",\n                title: \"View\",\n                action: function (v, st) {\n                      window.open('/pentaho/content/' + pluginId + '/' + v);\n                }\n            },\n            {\n                cssClass: \"editElementButton\",\n                title: \"Edit\",\n                action: function (v, st) {\n                      window.open('/pentaho/content/' + pluginId + '/' + v +'?mode=edit');\n                }\n            }\n        ]\n    });\n}",
+      "value": "function f(){\n/*\n    var opts = function (st){\n        if( false ){\n            return {\n                buttonClass: \"editElementButton\",\n                buttonTitle: \"CDE\",\n                buttonAction: function (v, st) {\n                    window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n                }\n            }\n        } else { \n            return {\n                buttonClass: \"viewDataSourcesButton\",\n                buttonTitle: \"CDA\",\n                buttonAction: function (v, st) {\n                    console.log('/pentaho/content/cpk/'+v+'?mode=editQuery');\n                }            \n            }\n        }\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n*/\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"viewElementButton\",\n                title: \"View\",\n                action: function (v, st) {\n                      window.open('/pentaho/content/' + pluginId + '/' + v);\n                }\n            },\n            {\n                cssClass: \"editElementButton\",\n                title: \"Edit\",\n                action: function (v, st) {\n                      window.open('/pentaho/content/' + pluginId + '/' + v +'?mode=edit');\n                }\n            }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6546,12 +6546,12 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n/*var Bruno\n    $metadataContainersArr = $(\"#metadataDataCell\").find('.cont');\n    \n    if(Dashboards.getParameterValue(\"${p:metadataReadonlyParam}\") == \"true\"){\n        $metadataContainersArr.addClass('readOnly');\n        $metadataFormsArr.children('input').attr('readonly','readonly');        \n    } else {\n        $metadataFormsArr.removeClass('readOnly');\n        $metadataFormsArr.children('input').removeAttr('readonly');         \n    }\n*/}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n\n    var obj = {};\n    _.each( data.metadata, function(el,idx){\n        obj[el.colName] = data.resultset[0][idx];\nvar Bruno;\n    });\n    \n    Dashboards.setParameter(\"${p:pluginMetadataParam}\",obj);\n}",
+      "value": "function f(data){\n\n    var obj = {};\n    _.each( data.metadata, function(el,idx){\n        obj[el.colName] = data.resultset[0][idx];\n    });\n    \n    Dashboards.setParameter(\"${p:pluginMetadataParam}\",obj);\n}",
       "type": "JavaScript"
      },
      {
@@ -7986,6 +7986,34 @@
      {
       "name": "bookmarkable",
       "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataReadonlyParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "true",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "true",
       "type": "Boolean"
      }
     ]
