@@ -720,7 +720,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "6",
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -825,6 +825,44 @@
       "name": "columnBigBorder",
       "value": "false",
       "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "7adf9650-d636-5c94-d0c7-1a358b1c0403",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "876df028-a7a7-8832-c9f4-d1ab64de2415",
+    "properties": [
+     {
+      "name": "name",
+      "value": "refreshObj",
+      "type": "Id"
      },
      {
       "name": "height",
@@ -1149,7 +1187,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateTableEvent}']",
       "type": "Listeners"
      },
      {
@@ -1408,6 +1446,84 @@
     ]
    },
    {
+    "id": "08c82301-84e1-a5f0-ab39-7b083e67eb05",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "refreshButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "R",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function(){\n    Dashboards.fireChange(\"updateTableEvent\",0);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:refreshObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "GENERIC",
     "name": "Generic",
     "type": "Label",
@@ -1418,6 +1534,34 @@
       "name": "Group",
       "value": "Generic",
       "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "e33c7638-acfc-d072-41ff-519cf065df21",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "updateTableEvent",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
      }
     ]
    },
