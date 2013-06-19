@@ -76,23 +76,20 @@ body{
     background: #dee8ec;
 }
 
+.sparklWrapper{
+	width: 950px;
+	border: 2px solid #25B9ED;
+	margin-right:auto;
+    margin-left:auto;
+}
+
 /* =============================================================================
    2. HEADER 
    ========================================================================== */
-
+   
 .sparklHeader {
     height: 70px;
     background: #25B9ED ;
-    z-index: 100;
-
-    margin-right:auto;
-    margin-left:auto;
-    width: 1018px;
-
-    margin-bottom:-9px;
-    padding-bottom: 10px;
-    padding-left: 34px;
-    padding-right:34px;
     position: relative;
     display:block;
     
@@ -105,7 +102,8 @@ body{
 }
 
 #sparklMail a{
-	color: transparent;
+	/*color: transparent;*/
+	color: red;
 	position: relative;
 	left: 900px;
 }
@@ -135,8 +133,8 @@ body{
    ========================================================================== */
 
 .sparklContent {
-    border: 2px solid #25B9ED;
-	border-top: none;
+    /*border: 2px solid #25B9ED;
+	border-top: none;*/
     display: block;
     margin-left: auto;
     margin-right: auto;

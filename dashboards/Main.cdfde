@@ -81,7 +81,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDheader WDhidden",
+      "value": "WDheader",
       "type": "String"
      }
     ]
@@ -708,19 +708,19 @@
     ]
    },
    {
-    "id": "c48e2f8e-1b6f-8227-3268-6de04933b3ec",
+    "id": "54fc0ec1-5786-578c-c519-90849d06a51a",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
     "properties": [
      {
       "name": "name",
-      "value": "newPlugin",
+      "value": "search",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "4",
+      "value": "6",
       "type": "Integer"
      },
      {
@@ -775,21 +775,56 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "77ac2a57-e565-87df-ac7c-85c94f61740a",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "c48e2f8e-1b6f-8227-3268-6de04933b3ec",
+    "id": "876df028-a7a7-8832-c9f4-d1ab64de2415",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
     "properties": [
      {
       "name": "name",
-      "value": "newPluginButtonObj",
+      "value": "refresh",
       "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "2",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "height",
@@ -813,7 +848,7 @@
      },
      {
       "name": "cssClass",
-      "value": "button",
+      "value": "",
       "type": "String"
      }
     ]
@@ -1337,12 +1372,12 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:newPluginButtonObj}",
+      "value": "",
       "type": "HtmlObject"
      },
      {
       "name": "executeAtStart",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -1415,6 +1450,62 @@
     ]
    },
    {
+    "id": "439612e7-e2fd-44cb-c45f-c9b4737e4825",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "viewParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "a3b7efdf-d5c9-bc7f-4dfb-057c617c6b57",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sortParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "SELECTORS",
     "name": "Selects",
     "type": "Label",
@@ -1446,7 +1537,7 @@
      },
      {
       "name": "parameter",
-      "value": "",
+      "value": "${p:viewParam}",
       "type": "Parameter"
      },
      {
@@ -1544,7 +1635,7 @@
      },
      {
       "name": "parameter",
-      "value": "",
+      "value": "${p:sortParam}",
       "type": "Parameter"
      },
      {
@@ -1559,7 +1650,7 @@
      },
      {
       "name": "valueAsId",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -1753,7 +1844,7 @@
      },
      {
       "name": "ktrFile",
-      "value": "../endpoints/kettle/pluginsList.ktr",
+      "value": "../endpoints/kettle/listPlugins.ktr",
       "type": "KtrPath"
      },
      {
@@ -1803,7 +1894,7 @@
      },
      {
       "name": "cache",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      }
     ]

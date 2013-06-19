@@ -231,7 +231,7 @@ div.container *{
 }
 .WDfilterCellBody .chzn-container .chzn-results {
 	overflow: hidden;
-	height: 100px;
+	height: 99px;
 	padding: 0px;
 	width: 100%;
 }
@@ -245,10 +245,11 @@ div.container *{
 .WDfilterCellBody .chzn-drop  .chzn-results{
 }
 .WDfilterCellBody .chzn-drop  .chzn-results li{
-	line-height: 14px;
+	line-height: 10px;
 	height: 25px;
 	color: #FFFFFF;
 	text-indent: 4px;
+	border-bottom: 1px solid #FFFFFF;
 }
 .WDfilterCellBody .chzn-drop .chzn-results em{
 }
@@ -449,7 +450,9 @@ div.container *{
 }
 
 /* Header */
-.WDdataCellBody  thead {}
+.WDdataCellBody  thead {
+	display: none;
+}
 .WDdataCellBody thead tr {
 }
 .WDdataCellBody  thead th {
