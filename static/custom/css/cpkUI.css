@@ -162,6 +162,7 @@ div.container *{
 
 .WDfilterCellBody button:hover {
   cursor: pointer;
+  background: #009DE2;
 }
 .WDfilterCellBody button span {
 }
@@ -360,7 +361,7 @@ div.container *{
   padding: 6px 6px 6px 6px;
   background: #E9ECEE;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: normal;
   color: #939292;
   position: relative;
@@ -369,26 +370,30 @@ div.container *{
 }
 .WDdataCellBody .cont:hover{
   background: #25BAED;
-  cursor: pointer;
   color: #FFFFFF;
 }
 .WDdataCellBody .cont *{
   height: 100%;
+  width: 100%;
+  font-size: inherit;
+  float: left;
 }
-
 
 .WDdataCellBody .cont .labelPH{
   background: inherit;
   padding-left: 10px;
-  float: left;
-  color: 12px;
+  width: 15%;
+  line-height: 30px;
+}
+.WDdataCellBody .cont .formPH{
+  width: 85%;
 }
 .WDdataCellBody .cont .formPH input{
+  width: 100%;
   background: #F3F3F3;
-  float: right;
   border: none;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: normal;
   color: #939292;
   padding-left: 10px;
@@ -486,7 +491,7 @@ div.container *{
   background: #25BAED;
   color: #FFFFFF;
   font-size: 15px;
-  border: 4px solid #F3F3F3;
+  border: 0px none;
   box-shadow: none;
   height: 100%;
   width: 50%;
@@ -496,6 +501,17 @@ div.container *{
   background: #009DE2;
 }
 
+.WDdataCellBody tbody td.parameterButton {
+  padding: 0px;
+}
+
+.WDdataCellBody tbody td button.viewElementButton {
+  border-right: 1px solid #FFFFFF;
+}
+
+div.buttonContainer{
+  height: 27px;
+}
 /* Footer */
 .WDdataCellBody  tfoot {
 }
@@ -514,6 +530,7 @@ div.container *{
 
 /* DataTables */
 .WDdataCellBody  .dataTables_wrapper{
+  min-height: 2px;
 }
 .WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
   .WDdataCellBody  .dataTables_wrapper tbody tr.odd{

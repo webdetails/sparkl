@@ -17,7 +17,7 @@ var sparkl = {};
         }
         json = JSON.stringify(obj);
         return json;
-    }
+    }	
 
 })(sparkl);
 

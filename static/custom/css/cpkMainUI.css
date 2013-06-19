@@ -339,8 +339,6 @@ div.container *{
 .WDfilterCellBody .chzn-container-multi .chzn-choices .search-field input{
 }
 
-
-
 /* =============================================================================
    4. DATA CELLS
    ========================================================================== */
@@ -362,6 +360,14 @@ div.container *{
   position: absolute;
   bottom: 0px;
 }
+.WDdataCellHeader .subcellHeaderUnderline{
+  width: 100%;
+  height: 3px;
+  background: inherit;
+  border-top: 1px solid #6ACFF2;
+  position: absolute;
+  bottom: 0px;
+}
 .no-svg   .WDdataCellHeader {
 }
 .svg   .WDdataCellHeader {
@@ -369,6 +375,7 @@ div.container *{
 
 /* Data Cells body */
 .WDdataCellBody {
+  padding-top: 3px;
 }
 .WDdataCellBody.aboutPlugin {
 }
@@ -376,68 +383,106 @@ div.container *{
 }
 
 .WDdataCellBody .cont{
-  height: 40px;
-  padding: 5px 5px 5px 5px;
+  height: 50px;
+  padding: 6px 6px 6px 6px;
   background: #E9ECEE;
-  text-align: center;
-  font-size: 15px;
+  text-align: left;
+  font-size: 12px;
   font-weight: normal;
   color: #939292;
-  display: inline;
   position: relative;
+  border-bottom: 10px solid #FFFFFF;
+  position: relative;
+}
+.WDdataCellBody .cont:hover{
+  background: #25BAED;
+  color: #FFFFFF;
 }
 .WDdataCellBody .cont *{
   height: 100%;
 }
 
-
 .WDdataCellBody .cont .labelPH{
-  background: #E9ECEE;
+  background: inherit;
   padding-left: 10px;
-  text-align: left;
   float: left;
-  width: 120px;
+  font-size: 12px;
 }
-.WDdataCellBody .cont .formPH{
-  background: #FEFEFE;
+.WDdataCellBody .cont .formPH input{
+  background: #F3F3F3;
   float: right;
-  width: 100%;
-}
-
-.aboutPlugin .cont.name {width: 60%;}
-.aboutPlugin .cont.img {width: 20%;}
-.aboutPlugin .cont.cross {width: 10%;}
-.aboutPlugin .cont.description {width: 100%;}
-.aboutPlugin .cont.date {width: 100%;}
-.aboutPlugin .cont.version {width: 45%;}
-.aboutPlugin .cont.cpkVersion {width: 45%;}
-
-
-
-/* Data Cells footer */
-.WDdataCellFooter {
-  padding-top: 10px;
-}
-.WDdataCellFooter *{
-  height: 40px;
-}
-
-.WDdataCellFooter button {
-  border:none;
-  background: #25B9ED;
-  color: #FFFFFF;
-  font-size: 20px;
+  border: none;
+  text-align: left;
+  font-size: 12px;
   font-weight: normal;
-  width: 100%;
+  color: #939292;
+  padding-left: 10px;
+  margin: 0px 0px 0px 0px;
 }
-.no-svg .WDdataCellFooter button {
-}
-.svg .WDdataCellFooter button {
-}
-
-.WDdataCellFooter button:hover {
+.WDdataCellBody .cont .formPH input:hover{
   cursor: pointer;
 }
+.WDdataCellBody .cont .formPH.readOnly input{
+  background: inherit;
+}
+.WDdataCellBody .cont .formPH.readOnly input:hover{
+  cursor: auto;
+}
+.WDdataCellBody .cont .uploadButton button{
+  background: #F3F3F3;
+  height: 100%;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  font-size: 12px;
+  font-weight: normal;
+  color: #939292;    
+}
+
+.aboutPlugin .cont.name {}
+.aboutPlugin .cont.img {height: 100px}
+.aboutPlugin .cont.cross {}
+.aboutPlugin .cont.description {}
+.aboutPlugin .cont.date {}
+.aboutPlugin .cont.version {}
+
+.WDdataCellBody .cont.newPlugin{
+  font-size: 17px;
+  margin-top: 15px;
+}
+.WDdataCellBody .cont.newPlugin *{
+  font-size: inherit;
+  height: 100%;
+  float: left;
+}
+.cont.newPlugin .labelPH{
+  width: 15%;
+  line-height: 30px;
+}
+.cont.newPlugin .formPH{
+  width: 70%;
+}
+.cont.newPlugin .formPH input{
+  font-size: 17px;
+  width: 100%;
+}
+.cont.newPlugin .buttonPH{
+    width: 15%;
+    padding-left: 6px;
+}
+.cont.newPlugin .buttonPH button{
+  width: 100%;
+  background: #25BAED;
+  color: #FFFFFF;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  vertical-align: baseline;  
+}
+.cont.newPlugin .buttonPH button:hover{
+  background: #009DE2;
+}
+
 
 /* =============================================================================
    5. TABLES
