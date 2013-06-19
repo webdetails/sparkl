@@ -502,7 +502,7 @@ div.container *{
   background: #25BAED;
   color: #FFFFFF;
   font-size: 15px;
-  border: 4px solid #F3F3F3;
+  border: 0px none;
   box-shadow: none;
   height: 100%;
   width: 50%;
@@ -510,6 +510,18 @@ div.container *{
 }
 .WDdataCellBody  tbody td button:hover{
   background: #009DE2;
+}
+
+.WDdataCellBody tbody td.parameterButton {
+	padding: 0px;
+}
+
+.WDdataCellBody tbody td button.viewPluginButton {
+	border-right: 1px solid #FFFFFF;
+}
+
+div.buttonContainer{
+	height: 27px;
 }
 
 /* Footer */
