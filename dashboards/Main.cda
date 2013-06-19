@@ -6,7 +6,7 @@
          <Language>beanshell</Language>
       </Connection>
       <Connection id="pluginsTableQuery" type="kettle.TransFromFile">
-         <KtrFile>../endpoints/kettle/pluginsList.ktr</KtrFile>
+         <KtrFile>../endpoints/kettle/listPlugins.ktr</KtrFile>
       </Connection>
    </DataSources>
    <DataAccess access="public" cache="true" cacheDuration="3600"
@@ -48,7 +48,7 @@ model.addRow(new Object[]{ new String("plugin4_name")
 
 return model;</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
+   <DataAccess access="public" cache="false" cacheDuration="3600"
                connection="pluginsTableQuery"
                id="pluginsTableQuery"
                type="kettle">
