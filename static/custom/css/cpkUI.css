@@ -532,6 +532,9 @@ div.container *{
 .WDdataCellBody tbody td button.viewElementButton {
   border-right: 1px solid #FFFFFF;
 }
+.WDdataCellBody tbody td button.runElementButton {
+  width: 100%;
+}
 
 .WDdataCellBody tbody tr div.buttonContainer{
   height: 50px;
