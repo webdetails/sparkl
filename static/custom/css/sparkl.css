@@ -1,8 +1,3 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-
 /*
  * WDStyleGuide Template CSS  
  *
@@ -18,23 +13,18 @@
  *    4. DATA CELLS
  *    5. TABLES
  *    6. CHARTS 
- *    7. SELECTORS AND BUTTONS 
+ *    7. SELECTORS AND BUTTONS
+ *    8. SITE MAP
  *    Other 
  *    Project Specific Items  
  *
-*/
+ */
 
 
 /* =============================================================================
    Fonts
    ========================================================================== */
 
-@font-face {
-    font-family: 'Gudea';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Gudea'), url('http://themes.googleusercontent.com/static/fonts/gudea/v1/kfCeUiT0HGXHQC8YVeaKy6CWcynf_cDxXwCLxiixG1c.woff') format('woff');
-}
 
 
 /* =============================================================================
@@ -53,17 +43,16 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  /*margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: Open Sans, Arial, sans-serif;*/
-}
+/*margin: 0;
+padding: 0;
+border: 0;
+        font-family: Open Sans, Arial, sans-serif;*/
+  }
+
 
 .WDhidden{
-    display:none;
+  display:none;
 }
-
-
 
 
 /* =============================================================================
@@ -72,196 +61,826 @@ time, mark, audio, video {
 
 /* Window Background */
 body{
-    font-family: Gudea;
-    background: #dee8ec;
 }
-
-.sparklWrapper{
-	width: 950px;
-	border: 2px solid #25B9ED;
-	margin-right:auto;
-    margin-left:auto;
+/* Dashboard Background / Blueprint Container */
+div.container  {
+  background: #FFFFFF;
+  padding: 10px 5px 10px 5px;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
+div.container *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /* =============================================================================
    2. HEADER 
    ========================================================================== */
-   
-.sparklHeader {
-    height: 70px;
-    background: #25B9ED ;
-    position: relative;
-    display:block;
-    
+.WDheader {
 }
 
-.sparklMail {
-    height: 15px;
-    margin-top: 10px;
-    display:inline-block;
-}
+.WDh1 {}
+.WDh2 {}
 
-#sparklMail a{
-	/*color: transparent;*/
-	color: red;
-	position: relative;
-	left: 900px;
-}
+
 
 /* =============================================================================
    3. FILTER CELLS
    ========================================================================== */
 
+.globalOptText{
+	line-height: 40px;
+	text-align: middle;
+	color: #BDC0C2;
+	text-indent: 20px;
+}
+
+
+/* Filter Cells */
+.WDfilterCell *{
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.popupComponent .WDfilterCell {
+  width: 49%;
+  display: inline-block;
+}
+/* Filter Cells header */
+.popupComponent .WDfilterCellHeader{
+  width: 100%;
+}
+
+
+/* Filter Cells body */
+.popupComponent .WDfilterCellBody > *{
+  display: inline-block;
+}
+.no-svg .popupComponent .WDfilterCellBody{
+}
+.svg .popupComponent .WDfilterCellBody{
+}
+
+.WDfilterCellBody {
+  display: inline;
+}
+
+.WDfilterCellBody .globalOptButtonPH{
+  padding-left: 5px;
+  background: #E9ECEE;
+}
+.globalOptButtonPH.multiButton{
+  width: 75%;
+  float: left;
+  display: inline;
+  background: #E9ECEE;
+}
+.globalOptButtonPH.submitButton{
+  width: 25%;
+  float: right;
+  background: #F2F2F2;
+}
+
+/********** FILTER ELEMENTS *********/
+
+.WDfilterCellBody button {
+  border:none;
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  width: 100%;
+}
+.no-svg .WDfilterCellBody button {
+}
+.svg .WDfilterCellBody button {
+}
+
+.WDfilterCellBody button:hover {
+  cursor: pointer;
+}
+.WDfilterCellBody button span {
+}
+
+
+/* Multi Button */
+.WDfilterCellBody .pentaho-toggle-button {
+  display: inline;
+}
+.no-svg .WDfilterCellBody .pentaho-toggle-button {
+}
+.svg .WDfilterCellBody .pentaho-toggle-button {
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-first {
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-last {
+}
+.WDfilterCellBody .pentaho-toggle-button:hover,
+  .WDfilterCellBody .pentaho-toggle-button:hover button{
+  }
+.WDfilterCellBody .pentaho-toggle-button-down {
+
+}
+.no-svg .WDfilterCellBody .pentaho-toggle-button-down {
+}
+.svg .WDfilterCellBody .pentaho-toggle-button-down {
+}
+
+.WDfilterCellBody .pentaho-toggle-button button {
+  width: 30%;
+  background: #EAEDEE;
+  text-align: center;
+  font-size: 11px;
+  font-weight: normal;
+  color: #939292;
+  vertical-align: baseline;
+  border: 5px solid #EAEDEE;
+  box-shadow: none;
+  float: left;
+  margin-right: 5px;
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-last button {
+}
+.WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
+}
+.WDfilterCellBody .pentaho-toggle-button-down button {
+  background: #24B9EC;
+  color: #F2F2F2;
+}
+
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+.WDfilterCellBody .chzn-container{
+	height: 30px;
+	min-width: 160px;
+	margin-top: 6px;
+}
+.WDfilterCellBody .chzn-container * {
+}
+.WDfilterCellBody .chzn-container-active{
+}
+.WDfilterCellBody .chzn-container .chzn-drop {
+	background: #25BAED;
+	height: 100px;
+	min-width: 96%;
+	border: 0 none;
+	border-radius: 0px;
+	margin-left: 3px;
+}
+.WDfilterCellBody .chzn-container .chzn-results {
+	overflow: hidden;
+	height: 99px;
+	padding: 0px;
+	width: 100%;
+}
+.WDfilterCellBody .chzn-drop{
+}
+.WDfilterCellBody .chzn-drop  .chzn-search{
+	display: none;
+}
+.WDfilterCellBody .chzn-drop .chzn-search input{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results li{
+	line-height: 10px;
+	height: 25px;
+	color: #FFFFFF;
+	text-indent: 4px;
+	border-bottom: 1px solid #FFFFFF;
+}
+.WDfilterCellBody .chzn-drop .chzn-results em{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .active-result{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .highlighted{
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .result-selected{
+	color: #EAEDEE;
+}
+.WDfilterCellBody .chzn-drop  .chzn-results .no-results {
+}
+
+/* Single Select */
+.WDfilterCellBody .chzn-container-single .chzn-single{
+	background: #009DE2;
+	color: #EAEDEE;
+	border-radius: 0px;
+	border: 3px solid #EAEDEE;
+	height: 30px;
+	min-width: 100%;
+	line-height: 21px;
+}
+.WDfilterCellBody .chzn-container-active .chzn-single {
+    box-shadow: none;
+}
+.no-svg  .WDfilterCellBody .chzn-container-single .chzn-single{
+}
+
+.svg  .WDfilterCellBody .chzn-container-single .chzn-single{
+
+}
+.WDfilterCellBody .chzn-container-single:hover .chzn-single{
+}
+
+.WDfilterCellBody .chzn-container-single .chzn-single span{
+}
+.WDfilterCellBody .chzn-container-single .chzn-single div{ /* Arrow container */
+	background: none;
+}
+.WDfilterCellBody .chzn-container-single .chzn-single div b,
+  .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
+  }
+.WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
+  .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
+  }
+.WDfilterCellBody .chzn-container-single .chzn-single.chzn-single-with-drop{
+	box-shadow: none;
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop span{
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{
+} 
+
+
+/* Multi Select */
+.WDfilterCellBody .chzn-container-multi.chzn-container{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-drop{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-drop .selectTooltipTriangle{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-drop  .chzn-results{
+}
+
+.WDfilterCellBody .chzn-container-multi .chzn-choices {
+}
+.WDfilterCellBody .chzn-container-multi:hover .chzn-choices,
+  .WDfilterCellBody .chzn-container-multi.chzn-container-active .chzn-choices{
+  }
+.WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
+
+}
+.no-svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
+}
+.svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice span{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close{
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+}
+.WDfilterCellBody .chzn-container-multi .chzn-choices .search-field input{
+}
+
 /* =============================================================================
    4. DATA CELLS
    ========================================================================== */
+
+/* Data Cells */
+.WDdataCell {
+  position: relative;
+}  
+
+/* Data Cells header*/
+.WDdataCellHeader{
+  height: 50px;
+  color: #636261;
+  font-size: 18px;
+  text-align: left;
+  position: relative;
+}
+.WDdataCellHeader .title{
+  position: absolute;
+  bottom: 0px;
+}
+.WDdataCellHeader .subcellHeaderUnderline{
+  width: 100%;
+  height: 3px;
+  background: inherit;
+  border-top: 1px solid #6ACFF2;
+  position: absolute;
+  bottom: 0px;
+}
+.no-svg   .WDdataCellHeader {
+}
+.svg   .WDdataCellHeader {
+}
+
+/* Data Cells body */
+.WDdataCellBody {
+  padding-top: 3px;
+}
+.WDdataCellBody.aboutPlugin {
+}
+.WDdataCellBody.aboutAuthor {
+}
+
+.WDdataCellBody .cont{
+  height: 50px;
+  padding: 6px 6px 6px 6px;
+  background: #E9ECEE;
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  color: #939292;
+  position: relative;
+  border-bottom: 10px solid #FFFFFF;
+  position: relative;
+}
+.WDdataCellBody .cont:hover{
+  background: #25BAED;
+  color: #FFFFFF;
+}
+.WDdataCellBody .cont *{
+  height: 100%;
+}
+
+.WDdataCellBody .cont .labelPH{
+  background: inherit;
+  padding-left: 10px;
+  float: left;
+  font-size: 12px;
+}
+.WDdataCellBody .cont .formPH input{
+  background: #F3F3F3;
+  float: right;
+  border: none;
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  color: #939292;
+  padding-left: 10px;
+  margin: 0px 0px 0px 0px;
+}
+.WDdataCellBody .cont .formPH input:hover{
+  cursor: pointer;
+}
+.WDdataCellBody .cont .formPH.readOnly input{
+  background: inherit;
+}
+.WDdataCellBody .cont .formPH.readOnly input:hover{
+  cursor: auto;
+}
+.WDdataCellBody .cont .uploadButton button{
+  background: #F3F3F3;
+  height: 100%;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  font-size: 12px;
+  font-weight: normal;
+  color: #939292;    
+}
+
+.aboutPlugin .cont.name {}
+.aboutPlugin .cont.img {height: 100px}
+.aboutPlugin .cont.cross {}
+.aboutPlugin .cont.description {}
+.aboutPlugin .cont.date {}
+.aboutPlugin .cont.version {}
+
+.WDdataCellBody .cont.newPlugin{
+  font-size: 17px;
+  margin-top: 15px;
+}
+.WDdataCellBody .cont.newPlugin *{
+  font-size: inherit;
+  height: 100%;
+  float: left;
+}
+.cont.newPlugin .labelPH{
+  width: 15%;
+  line-height: 30px;
+}
+.cont.newPlugin .formPH{
+  width: 70%;
+}
+.cont.newPlugin .formPH input{
+  font-size: 17px;
+  width: 100%;
+}
+.cont.newPlugin .buttonPH{
+    width: 15%;
+    padding-left: 6px;
+}
+.cont.newPlugin .buttonPH button{
+  width: 100%;
+  background: #25BAED;
+  color: #FFFFFF;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  vertical-align: baseline;  
+}
+.cont.newPlugin .buttonPH button:hover{
+  background: #009DE2;
+}
+
 
 /* =============================================================================
    5. TABLES
    ========================================================================== */
 
+.WDdataCellBody table{
+  border: none;
+}
+.WDdataCellBody table tr{
+  background: #EAEDEE;
+}
+
+/* Header */
+.WDdataCellBody  thead {
+  display: none;
+}
+.WDdataCellBody thead tr {
+}
+.WDdataCellBody  thead th {
+  background: #F3F3F3;
+  color: #939292;
+  font-size: 20px;
+  text-align: left;
+  font-weight: normal;
+  border-bottom: 10px solid #FFFFFF;
+  border-right: 5px solid #FFFFFF;
+  padding-left: 10px;
+}
+.WDdataCellBody  thead th:last-child {
+  text-align: center;
+}
+.WDdataCellBody thead th.sorting{
+}
+.WDdataCellBody thead th.sorting_asc{
+}
+.WDdataCellBody  thead th.sorting_desc{
+}
+.WDdataCellBody  thead th:first-child {
+}
+
+/* Body */
+.WDdataCellBody  tbody {}
+.WDdataCellBody  tbody tr {
+}
+.WDdataCellBody  tbody td{
+  text-align: left;
+  color: #939292;
+  font-size: 15px;
+  border-bottom: 10px solid #FFFFFF;
+  border-right: 5px solid #FFFFFF;
+  padding-left: 10px;
+}
+.WDdataCellBody  tbody td:last-child {
+  text-align: center;
+  border-right: none;
+}
+.WDdataCellBody  tbody td,
+  .WDdataCellBody  tbody td.numeric, 
+  .WDdataCellBody  tbody td.string {
+  }
+
+.WDdataCellBody  tbody td button{
+  background: #25BAED;
+  color: #FFFFFF;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  height: 100%;
+  width: 50%;
+  vertical-align: baseline;
+}
+.WDdataCellBody  tbody td button:hover{
+  background: #009DE2;
+}
+
+.WDdataCellBody tbody td.parameterButton {
+	padding: 0px;
+}
+
+.WDdataCellBody tbody td button.deletePluginButton {
+	border-right: 1px solid #FFFFFF;
+}
+
+div.buttonContainer{
+	height: 27px;
+}
+
+/* Footer */
+.WDdataCellBody  tfoot {
+}
+.WDdataCellBody  tfoot tr {
+}
+.WDdataCellBody  tfoot td{
+}
+.WDdataCellBody  tfoot tr:first-child td{
+}
+.WDdataCellBody  tfoot tr:last-child td{
+}
+.WDdataCellBody  tfoot td{
+}
+
+
+
+/* DataTables */
+.WDdataCellBody  .dataTables_wrapper{
+	min-height: 2px;
+}
+.WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
+  .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
+  }
+.WDdataCellBody  .dataTables_wrapper tbody tr.even td.sorting_1,
+  .WDdataCellBody  .dataTables_wrapper tbody tr.even{
+  }
+
+/* Pagination and Page Info */
+
+.WDdataCellBody   .dataTables_info{    
+}
+
+.WDdataCellBody  .dataTables_paginate{
+}
+.WDdataCellBody  .dataTables_paginate > span {
+}
+.WDdataCellBody  .dataTables_paginate > input {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_button {
+}
+.WDdataCellBody  .dataTables_paginate .paginate_button.first,
+  .WDdataCellBody   .dataTables_paginate .paginate_button.last {
+  }
+.WDdataCellBody   .dataTables_paginate .paginate_button.previous {
+}
+.WDdataCellBody  .dataTables_paginate .paginate_button.next {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_page {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_of {
+}
+
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_next {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous{
+}
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_next {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:hover {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:hover {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:active {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:active {
+}
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous,
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous, 
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_next, 
+.WDdataCellBody  .dataTables_paginate .paginate_enabled_next {
+}
+
+/* Add Ins */
+.WDdataCellBody td .trend,
+.WDdataCellBody th .trend{
+}
+.WDdataCellBody  tfoot td .trend{
+}
+.WDdataCellBody  tfoot td .trend.down,
+.WDdataCellBody  tbody td .trend.down,
+.WDdataCellBody  thead th .trend.down {
+}
+.WDdataCellBody  tfoot td .trend.up,
+.WDdataCellBody  tbody td .trend.up,
+.WDdataCellBody  thead th .trend.up {
+}
+.WDdataCellBody  tfoot td .trend.neutral,
+.WDdataCellBody  tbody td .trend.neutral,
+.WDdataCellBody  thead th .trend.neutral {
+}
+
+input.editBox{
+	background-color: transparent;
+	border: 1px solid transparent;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	vertical-align: middle;
+	resize: none;
+	padding: 0;
+	margin: 0;
+	width: 370px;
+}
+
+input.editBox:hover {
+    background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
+    border: 1px solid transparent;
+}
+
+input.editBox:focus {
+    background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
+    border: 1px solid #0F1414;
+}
+
 /* =============================================================================
    6. CHARTS 
    ========================================================================== */
 
+
+
+
 /* =============================================================================
    7. SELECTORS AND BUTTONS 
    ========================================================================== */
+.WDfilterCell select{
+}
+
+button {
+}
+.no-svg   button {
+}
+.svg   button {
+}
+
+button:hover {
+cursor: pointer;
+}
+button span {
+}
+
+
+/* Multi Button */
+.pentaho-toggle-button {
+
+}
+.no-svg .pentaho-toggle-button {
+}
+.svg .pentaho-toggle-button {
+}
+.pentaho-toggle-button-horizontal-first {
+}
+.pentaho-toggle-button-horizontal-last {
+}
+.pentaho-toggle-button:hover,
+.pentaho-toggle-button:hover button{
+  }
+.pentaho-toggle-button-down {
+
+}
+.no-svg .pentaho-toggle-button-down {
+}
+.svg .pentaho-toggle-button-down {
+}
+
+.pentaho-toggle-button button {
+}
+.pentaho-toggle-button-horizontal-last button {
+}
+.pentaho-toggle-button-horizontal-first button {
+}
+.pentaho-toggle-button-down button {
+}
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+.chzn-container{
+}
+.chzn-container * {
+}
+.chzn-container-active{
+}
+.chzn-drop{
+}
+.chzn-drop  .chzn-search{
+}
+.chzn-drop .chzn-search input{
+}
+.chzn-drop  .chzn-results{
+}
+.chzn-drop  .chzn-results li{
+
+}
+.chzn-drop .chzn-results em{
+}
+.chzn-drop  .chzn-results .active-result{
+}
+.chzn-drop  .chzn-results .highlighted{
+}
+.chzn-drop  .chzn-results .result-selected{
+}
+.chzn-drop  .chzn-results .no-results {
+}
+
+/* Single Select */
+.chzn-container-single .chzn-single{
+}
+.no-svg    .chzn-container-single .chzn-single{
+}
+
+.svg    .chzn-container-single .chzn-single{
+
+}
+.chzn-container-single:hover .chzn-single{
+}
+
+.chzn-container-single .chzn-single span{
+}
+.chzn-container-single .chzn-single div{ /* Arrow container */
+}
+.chzn-container-single .chzn-single div b,
+  .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
+  }
+.chzn-container-single:hover .chzn-single div b,
+  .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
+  }
+.chzn-container-single .chzn-single.chzn-single-with-drop{
+}
+.chzn-container-single .chzn-single-with-drop span{
+}
+.chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
+}
+.chzn-container-single .chzn-single-with-drop div b{
+} 
+
+
+/* Multi Select */
+.chzn-container-multi.chzn-container{
+}
+.chzn-container-multi .chzn-drop{
+}
+.chzn-container-multi .chzn-drop .selectTooltipTriangle{
+}
+.chzn-container-multi .chzn-drop  .chzn-results{
+}
+
+.chzn-container-multi .chzn-choices {
+}
+.chzn-container-multi:hover .chzn-choices,
+  .chzn-container-multi.chzn-container-active .chzn-choices{
+  }
+.chzn-container-multi .chzn-choices  .search-choice {
+
+}
+.no-svg    .chzn-container-multi .chzn-choices  .search-choice {
+}
+.svg    .chzn-container-multi .chzn-choices  .search-choice {
+}
+.chzn-container-multi .chzn-choices .search-choice span{
+}
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close{
+}
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+}
+.chzn-container-multi .chzn-choices .search-field input{
+}
+
+
+
+/* =============================================================================
+   8. SITE MAP
+   ========================================================================== */
+
+.WDsiteMap {}
+
+
 
 /* =============================================================================
    Other 
    ========================================================================== */
 
-.sparklContent {
-    /*border: 2px solid #25B9ED;
-	border-top: none;*/
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 950px;
+.popupComponent{
+  color: #9C9C9C;
+  font-size: 18px;
+  width: 900px;
+  border:solid 1px #9C9C9C;
+  position: absolute;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+.popupComponent *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-.sparklNavigation {
-    display:block;
-    width:950px;
-    margin-left:auto;
-    margin-right:auto;
-    height:34px;
+.popupComponent a{
+   display: none;
 }
 
-
-/*** ESSENTIAL STYLES ***/
-.sparklNavigation .siteMap, 
-.sparklNavigation .siteMap * {
-    margin:			0;
-    padding:		0;
-    list-style:		none;
+.popupComponent.south .arrow{
+  background-image: none;
 }
-.sparklNavigation .siteMap {
-    line-height:	1.0;
-}
-.sparklNavigation .siteMap .siteMap {
-    position:		absolute;
-    top:			-999em;
-    width:			8em; /* left offset of submenus need to match (see below) */
-}
-.sparklNavigation .siteMap .siteMap .siteMapItem {
-    width:			100%;
-}
-.sparklNavigation .siteMap .siteMapItem:hover {
-    visibility:		inherit; /* fixes IE7 'sticky bug' */
-}
-.sparklNavigation .siteMap .siteMapItem {
-    float:			left;
-    position:		relative;
-}
-.sparklNavigation .siteMap a {
-    display:		block;
-    position:		relative;
-}
-.sparklNavigation .siteMapItem:hover > .siteMapLevel1 {
-    left:			0;
-    top:			100%; /* match top ul .siteMapItemst item height */
-    z-index:		99;
-}
-.sparklNavigation .siteMap .siteMapItem:hover .siteMapItem .siteMap{
-    top:			-999em;
-}
-.sparklNavigation .siteMap .siteMapItem .siteMapItem:hover .siteMap{
-    left:			100%; /* match .siteMap width */
-    top:			0;
-    margin-left:    -12px;
-}
-.sparklNavigation .siteMap .siteMapItem .siteMapItem:hover .siteMapItem .siteMap{
-    top:			-999em;
-}
-.sparklNavigation .siteMap .siteMapItem .siteMapItem .siteMapItem:hover .siteMap{
-    left:			100%; /* match .siteMap width */
-    top:			0;
-    margin-left:    -12px;
-}
-
-/*** DEMO SKIN ***/
-.sparklNavigation .siteMap {
-    float:  left;
-    width: 100%;
-    background: #57A32B;
-    margin-top: 0px;
-}
-.sparklNavigation .siteMap a {
-    padding: 		10px 20px;
-    color: rgb(34, 34, 34);
-    text-decoration: none;
-}
-.sparklNavigation .siteMap .siteMapItem.siteMapSelected a {
-    color: #fff;
-}
-.sparklNavigation .siteMap a { /* visited pseudo selector so IE6 applies text colour*/
-    color: rgb(34, 34, 34);
-    font-size: 13px;
-
-}
-.sparklNavigation .siteMap .siteMapItem {
-    background: #57A32B;
-    cursor:  pointer;
-}
-.sparklNavigation .siteMap .siteMapItem:hover,
-.sparklNavigation .siteMap a:focus, 
-.sparklNavigation .siteMap a:hover, 
-.sparklNavigation .siteMap a:active {
-    color: #fff;
-    background-position:86% 52%;
-    outline:		0;
-}
-
-
-.sparklNavigation .siteMap > .siteMapItem > .siteMap,
-.sparklNavigation .siteMap > .siteMapItem > .siteMap a {
-    background: #222;
-    color: #fff;
-}
-.sparklNavigation .siteMap > .siteMapItem > .siteMap a:hover {
-    background: #57A32B;
-    color: rgb(34, 34, 34) ;
-}
-
-/*** shadows for all but IE6 ***/
-.sparklNavigation .siteMap .siteMap {
-    padding: 0 0 12px 0;
-    -moz-border-radius-topleft: 0px;
-    -moz-border-radius-topright: 0px;
-    -moz-border-radius-bottomright: 12px;
-    -moz-border-radius-bottomleft: 12px;
-    -webkit-border-radius: 0px 0px 12px 12px;
-    -o-border-radius: 0px 0px 12px 12px;
-    -ms-border-radius: 0px 0px 12px 12px;	
-    border-radius: 0px 0px 12px 12px;	
-    width:250px;
-
-}
-
 
 
 /* =============================================================================
    Project Specific Items 
    ========================================================================== */
+
+
+
+
