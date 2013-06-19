@@ -196,7 +196,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>566</xloc>
+      <xloc>662</xloc>
       <yloc>135</yloc>
       </entry>
     <entry>
@@ -220,7 +220,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>566</xloc>
+      <xloc>662</xloc>
       <yloc>249</yloc>
       </entry>
     <entry>
@@ -241,7 +241,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>331</xloc>
+      <xloc>445</xloc>
       <yloc>249</yloc>
       </entry>
     <entry>
@@ -285,7 +285,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>331</xloc>
+      <xloc>445</xloc>
       <yloc>135</yloc>
       </entry>
     <entry>
@@ -305,8 +305,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>445</xloc>
-      <yloc>54</yloc>
+      <xloc>543</xloc>
+      <yloc>55</yloc>
       </entry>
     <entry>
       <name>updateLibs</name>
@@ -335,7 +335,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>694</xloc>
+      <xloc>790</xloc>
       <yloc>135</yloc>
       </entry>
     <entry>
@@ -345,7 +345,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>839</xloc>
+      <xloc>935</xloc>
+      <yloc>135</yloc>
+      </entry>
+    <entry>
+      <name>${plugin_dir} exists?</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>${plugin_dir}</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
       <yloc>135</yloc>
       </entry>
   </entries>
@@ -385,15 +396,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Plugin ID not null?</from>
-      <to>Plugin Name not null?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Plugin Name not null?</from>
@@ -449,28 +451,34 @@
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>Plugin ID not null?</from>
+      <to>${plugin_dir} exists?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>${plugin_dir} exists?</from>
+      <to>Plugin Name not null?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>${plugin_dir} exists?</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
-    <notepad>
-      <note>What do we do if folder &#47; plugin exists?</note>
-      <xloc>543</xloc>
-      <yloc>84</yloc>
-      <width>215</width>
-      <heigth>24</heigth>
-      <fontname>Microsoft Sans Serif</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
 </job>
