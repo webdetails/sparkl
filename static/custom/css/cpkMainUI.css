@@ -499,17 +499,17 @@ div.container *{
   }
 
 .WDdataCellBody  tbody td button{
-  background: #F3F3F3;
-  color: #939292;
+  background: #25BAED;
+  color: #FFFFFF;
   font-size: 15px;
   border: 4px solid #F3F3F3;
   box-shadow: none;
   height: 100%;
+  width: 50%;
   vertical-align: baseline;
 }
 .WDdataCellBody  tbody td button:hover{
-  background: #25B9ED;
-  color: #FFFFFF;
+  background: #009DE2;
 }
 
 /* Footer */
