@@ -421,22 +421,27 @@ div.container *{
    ========================================================================== */
 
 .WDdataCellBody table{
-  border: 1px solid #9C9C9C;
+  border: none;
 }
 .WDdataCellBody table tr{
-  background: #FFFFFF;
+  background: #EAEDEE;
 }
 
 /* Header */
-.WDdataCellBody  thead {}
+.WDdataCellBody  thead {
+  display: none;
+}
 .WDdataCellBody thead tr {
 }
 .WDdataCellBody  thead th {
-  background: #FFFFFF;
-  color: #9C9C9C;
-  font-size: 15px;
+  background: #F3F3F3;
+  color: #939292;
+  font-size: 20px;
   text-align: left;
   font-weight: normal;
+  border-bottom: 10px solid #FFFFFF;
+  border-right: 5px solid #FFFFFF;
+  padding-left: 10px;
 }
 .WDdataCellBody  thead th:last-child {
   text-align: center;
@@ -456,14 +461,34 @@ div.container *{
 }
 .WDdataCellBody  tbody td{
   text-align: left;
+  color: #939292;
+  font-size: 15px;
+  border-bottom: 10px solid #FFFFFF;
+  border-right: 5px solid #FFFFFF;
+  padding-left: 10px;
 }
 .WDdataCellBody  tbody td:last-child {
   text-align: center;
+  border-right: none;
 }
 .WDdataCellBody  tbody td,
   .WDdataCellBody  tbody td.numeric, 
   .WDdataCellBody  tbody td.string {
   }
+
+.WDdataCellBody  tbody td button{
+  background: #F3F3F3;
+  color: #939292;
+  font-size: 15px;
+  border: 4px solid #F3F3F3;
+  box-shadow: none;
+  height: 100%;
+  vertical-align: baseline;
+}
+.WDdataCellBody  tbody td button:hover{
+  background: #25B9ED;
+  color: #FFFFFF;
+}
 
 /* Footer */
 .WDdataCellBody  tfoot {

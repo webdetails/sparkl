@@ -3935,7 +3935,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "dashboardsDataCell",
+      "value": "elementsDataCell",
       "type": "Id"
      },
      {
@@ -3960,7 +3960,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell WDhidden",
+      "value": "WDdataCell",
       "type": "String"
      }
     ]
@@ -4046,7 +4046,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "dashboardsListCellHeader",
+      "value": "elementsDataCellHeader",
       "type": "Id"
      },
      {
@@ -4077,9 +4077,9 @@
     ]
    },
    {
-    "id": "24701dd3-fa0b-40cb-7c99-c170fc8199b3",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
+    "id": "264e5245-e1f0-b284-3dc9-41b6d6e9ffc0",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
     "parent": "cab64265-f1b5-0b35-933b-082db8634514",
     "properties": [
      {
@@ -4088,8 +4088,119 @@
       "type": "Id"
      },
      {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "31b8d39d-b39a-2282-668a-f9df6f0aa0a8",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "264e5245-e1f0-b284-3dc9-41b6d6e9ffc0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3e5eb1e9-8a1c-b848-beb1-37892d11f84b",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "31b8d39d-b39a-2282-668a-f9df6f0aa0a8",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
       "name": "html",
-      "value": "Plugin Dashboards ",
+      "value": "ELEMENTS ",
       "type": "Html"
      },
      {
@@ -4104,7 +4215,45 @@
      },
      {
       "name": "cssClass",
+      "value": "title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ec0fbcf8-4f9e-0e27-7ab2-87c2fe7c2cec",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "264e5245-e1f0-b284-3dc9-41b6d6e9ffc0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "underline",
+      "type": "Id"
+     },
+     {
+      "name": "height",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "subcellHeaderUnderline",
       "type": "String"
      }
     ]
@@ -4117,7 +4266,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "dashboardsListCellBody",
+      "value": "elementsDataCellBody",
       "type": "Id"
      },
      {
@@ -4155,117 +4304,6 @@
     "properties": [
      {
       "name": "name",
-      "value": "dashboardsTableObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8df0aae6-169a-6240-f0cb-349ab4eb5852",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "endpointsDataCell",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCell WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "473dd5a8-8486-0142-eb17-f57299650497",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "8df0aae6-169a-6240-f0cb-349ab4eb5852",
-    "properties": [
-     {
-      "name": "name",
       "value": "",
       "type": "Id"
      },
@@ -4332,14 +4370,14 @@
     ]
    },
    {
-    "id": "ca685ae0-7803-882a-1a14-bfdb5f70e50a",
+    "id": "2538d753-8265-14a0-ff1a-40e1caae211c",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "473dd5a8-8486-0142-eb17-f57299650497",
+    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
     "properties": [
      {
       "name": "name",
-      "value": "endpointsListCellHeader",
+      "value": "elementsOptionsCell",
       "type": "Id"
      },
      {
@@ -4364,53 +4402,20 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCellHeader",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c6065e6c-77ad-2758-09fa-1d866d70b539",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "ca685ae0-7803-882a-1a14-bfdb5f70e50a",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "Plugin Endpoints (Kettle) ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
       "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "8815196e-14a7-601b-3a10-9164f90898d8",
+    "id": "a11d38a4-fb69-517c-f455-f69a43981f3c",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "473dd5a8-8486-0142-eb17-f57299650497",
+    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
     "properties": [
      {
       "name": "name",
-      "value": "endpointsListCellBody",
+      "value": "elementsTableCell",
       "type": "Id"
      },
      {
@@ -4435,20 +4440,20 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCellBody",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "0d9e740d-3d39-dfc7-8ca6-854453def5b5",
+    "id": "5b09e515-e310-e010-0c89-f30cc9733329",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "8815196e-14a7-601b-3a10-9164f90898d8",
+    "parent": "a11d38a4-fb69-517c-f455-f69a43981f3c",
     "properties": [
      {
       "name": "name",
-      "value": "endpointsTableObj",
+      "value": "elementsTableObj",
       "type": "Id"
      },
      {
@@ -5840,7 +5845,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        var endpoint = isNewPlugin ? 'updateMetadata' : 'updateMetadata';\n    var ajaxOpts = {\n        url:'/pentaho/content/cpk/' + endpoint,\n        type: 'GET',\n        data: {\n            paramplugin_id: pluginId\n        },\n        success: function (json){\n            Dashboards.log('Plugin ' + pluginId + ' updated!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'updateMetadata' : 'updateMetadata';\n    var ajaxOpts = {\n        url:'/pentaho/content/cpk/' + endpoint,\n        type: 'GET',\n        data: {\n            paramplugin_id: pluginId\n        },\n        success: function (json){\n            Dashboards.log('Plugin ' + pluginId + ' updated!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    $.ajax(ajaxOpts);\n\n}",
       "type": "JavaScript"
      },
      {
@@ -5896,84 +5901,6 @@
     ]
    },
    {
-    "id": "49de350c-48e6-2633-0336-e01387df5726",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "metadataSubmitButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Submit",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    console.log(\"Metadata Submit\");\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:metadataSubmitButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "3f354d47-8d3d-0617-8b48-23dc5d77082a",
     "type": "ComponentsTable",
     "typeDesc": "table Component",
@@ -5981,7 +5908,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "dashboardsTable",
+      "value": "elementsTable",
       "type": "Id"
      },
      {
@@ -6082,7 +6009,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "dashboardsTableQuery"
+      "value": "elementsTableQuery"
      },
      {
       "name": "sortBy",
@@ -6116,7 +6043,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:dashboardsTableObj}",
+      "value": "${p:elementsTableObj}",
       "type": "HtmlObject"
      },
      {
@@ -6131,210 +6058,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n/*\n    var opts = function (st){\n        if( false )\n            return {\n                buttonClass: \"editElementButton\",\n                buttonTitle: \"CDE\",\n                buttonAction: function (v, st) {\n                    window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n                }\n            } \n        else \n            return {\n                buttonClass: \"viewDataSourcesButton\",\n                buttonTitle: \"CDA\",\n                buttonAction: function (v, st) {\n                    console.log('/pentaho/content/cpk/'+v+'?mode=editQuery');\n                }            \n            }\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n*/    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"editElementButton\",\n        buttonTitle: \"Edit\",\n        buttonAction: function (v, st) {\n              window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n        }\n    });\n}",
+      "value": "function f(){\n/*\n    var opts = function (st){\n        if( false )\n            return {\n                buttonClass: \"editElementButton\",\n                buttonTitle: \"CDE\",\n                buttonAction: function (v, st) {\n                    window.open('/pentaho/content/cpk/'+v+'?mode=edit');\n                }\n            } \n        else \n            return {\n                buttonClass: \"viewDataSourcesButton\",\n                buttonTitle: \"CDA\",\n                buttonAction: function (v, st) {\n                    console.log('/pentaho/content/cpk/'+v+'?mode=editQuery');\n                }            \n            }\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n*/\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"viewElementButton\",\n                title: \"View\",\n                action: function (v, st) {\n                      window.open('/pentaho/content/' + pluginId + '/' + v);\n                }\n            },\n            {\n                cssClass: \"editElementButton\",\n                title: \"Edit\",\n                action: function (v, st) {\n                      window.open('/pentaho/content/' + pluginId + '/' + v +'?mode=edit');\n                }\n            }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
       "value": "function f(){\n    var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[2]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
-     },
-     {
-      "name": "cccClickAction",
-      "value": "",
-      "type": "JavaScript"
-     }
-    ]
-   },
-   {
-    "id": "8f90642f-a492-4cc8-00bd-6767580589d6",
-    "type": "ComponentsTable",
-    "typeDesc": "table Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "endpointsTable",
-      "type": "Id"
-     },
-     {
-      "name": "expandContainerObject",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "oLanguage",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "colHeaders",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"string\",\"string\"]",
-      "type": "colTypesCustom"
-     },
-     {
-      "name": "colFormats",
-      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colWidths",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "sort",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "displayLength",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "colSearchable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "drawCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "endpointsTableQuery"
-     },
-     {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "paginationType",
-      "value": "two_button",
-      "type": "PaginationType"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:endpointsTableObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "paginateServerside",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "function f(){\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"editElementButton\",\n        buttonTitle: \"Edit\"\n    });\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
       "type": "JavaScript"
      },
      {
@@ -8216,34 +7945,6 @@
     ]
    },
    {
-    "id": "1ebf8f93-517b-c1f5-7b16-f21887b14e70",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "visibleDataCellParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "metadataDataCell",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
     "id": "610ef9bc-5365-0bd2-1ec7-e63897ca7cc8",
     "type": "ComponentsJavascriptParameter",
     "typeDesc": "Custom Parameter",
@@ -8257,6 +7958,29 @@
      {
       "name": "javaScript",
       "value": "{}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "a35fdb59-2911-d73d-c762-44242c971685",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "visibleDataCellParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "\"metadataDataCell\"",
       "type": "JavaScript"
      },
      {
@@ -8451,78 +8175,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "dashboardsTableQuery",
-      "type": "Id"
-     },
-     {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"ID\",\n\"Name\",\n\"Type\",\n\"location\",\n\"Admin\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"dashboard1_Id\")\n, new String(\"dashboard1_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard1_name.wcdf\") , new String(\"false\")});\n\nmodel.addRow(new Object[]{ new String(\"endpoint1_Id\")\n, new String(\"endpoint1_name\") , new String(\"Kettle\") , new String(\"/endpoints/kettle/endpoint1_name.ktr\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard2_Id\")\n, new String(\"dashboard2_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard2_name.wcdf\") , new String(\"true\")});\nmodel.addRow(new Object[]{ new String(\"dashboard3_Id\")\n, new String(\"dashboard3_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard3_name.wcdf\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard4_Id\")\n, new String(\"dashboard4_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard4_name.wcdf\") , new String(\"false\")});\nreturn model;\n\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[\"1\",\"2\",\"3\",\"4\",\"0\"]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "f9c1ea47-3500-63eb-cd07-3aa3734ae95f",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
-    "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
-    "properties": [
-     {
-      "name": "name",
-      "value": "endpointsTableQuery",
+      "value": "elementsTableQuery",
       "type": "Id"
      },
      {

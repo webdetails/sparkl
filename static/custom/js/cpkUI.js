@@ -10,11 +10,15 @@
 	    name: "parameterButton",
 	    label: "Parameter Button",
 	    defaults: {
-	    	buttonClass: "viewButton",
-	    	buttonTitle: "View",
-	      	buttonAction: function(v, st) {
-	      		Dashboards.log(v);
-	      	}
+	    	buttons:[
+		    	{
+			    	cssClass: "viewButton",
+			    	title: "View",
+			      	action: function(v, st) {
+			      		Dashboards.log(v);
+			      	}
+		    	}
+	    	]
 	    },
 
 	    init: function(){
@@ -23,13 +27,17 @@
 	    },
 	    
 	    implementation: function(tgt, st, opt){
-	    	var $button = $("<button class='"+opt.buttonClass+" '>"+opt.buttonTitle+"</button>");
-	    	$button.click(function(){
-	    		opt.buttonAction(st.value, st);
+	    	var $cell = $(tgt).empty();
+	    	_.each(opt.buttons, function(el,idx){
+		    	var $button = $("<button/>").addClass(el.cssClass||"").text(el.title||"");
+		    	$button.click(function(){
+		    		if (el.action) {
+		    			el.action(st.value, st);
+		    		}
+		    	});
+		    	$cell.append($button);
 	    	});
-	    	var $cell = $(tgt);
-	    	$cell.empty();
-	    	$cell.append($button);
+
 	    }
 
   	};
