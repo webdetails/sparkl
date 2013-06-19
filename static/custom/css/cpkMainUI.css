@@ -516,7 +516,7 @@ div.container *{
 	padding: 0px;
 }
 
-.WDdataCellBody tbody td button.viewPluginButton {
+.WDdataCellBody tbody td button.deletePluginButton {
 	border-right: 1px solid #FFFFFF;
 }
 
