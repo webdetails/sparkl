@@ -34,7 +34,7 @@
                type="kettle">
       <Columns/>
       <Parameters>
-         <Parameter default="cvb" name="plugin_id" type="String"/>
+         <Parameter default="" name="plugin_id" type="String"/>
       </Parameters>
       <Query>OUTPUT</Query>
    </DataAccess>
