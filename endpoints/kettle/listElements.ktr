@@ -111,8 +111,8 @@
       <note>TODO
 
 apply filter admin.</note>
-      <xloc>457</xloc>
-      <yloc>92</yloc>
+      <xloc>467</xloc>
+      <yloc>85</yloc>
       <width>96</width>
       <heigth>47</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -132,45 +132,7 @@ apply filter admin.</note>
     </notepad>
   </notepads>
   <order>
-  <hop> <from>_getElementLocations</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
-  <step>
-    <name>_getElementLocations</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;_getElementLocations.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>134</xloc>
-      <yloc>94</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
+  <hop> <from>_getElementLocations</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>exclude CPK private files</to><enabled>Y</enabled> </hop>  <hop> <from>exclude CPK private files</from><to>plugin_name</to><enabled>Y</enabled> </hop>  <hop> <from>plugin_name</from><to>to lower</to><enabled>Y</enabled> </hop>  <hop> <from>to lower</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get File Names</name>
     <type>GetFileNames</type>
@@ -203,8 +165,8 @@ apply filter admin.</note>
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>317</xloc>
-      <yloc>94</yloc>
+      <xloc>235</xloc>
+      <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -219,7 +181,11 @@ apply filter admin.</note>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>elementType</name>
+    <fields>      <field>        <name>element_name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>elementType</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -234,8 +200,151 @@ apply filter admin.</note>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>713</xloc>
-      <yloc>94</yloc>
+      <xloc>852</xloc>
+      <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>_getElementLocations</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;_getElementLocations.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>91</xloc>
+      <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>exclude CPK private files</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>short_filename</leftvalue>
+ <function>STARTS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>_</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>369</xloc>
+      <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>plugin_name</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[(.+)\..+]]></script>    <matcher>short_filename</matcher>
+    <resultfieldname>result</resultfieldname>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>Y</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>element_name</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>622</xloc>
+      <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>to lower</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>element_name</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>730</xloc>
+      <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
