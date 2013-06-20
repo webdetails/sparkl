@@ -5913,7 +5913,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
       "type": "JavaScript"
      },
      {

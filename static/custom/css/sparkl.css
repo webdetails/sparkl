@@ -154,10 +154,9 @@ div.container *{
 
 /********** FILTER ELEMENTS *********/
 
-
 .WDfilterCellBody.tabsContainer button {
-  background: #25B9ED;
-  color: #FFFFFF;
+  background: #41B8EE;
+  color: #D1EEFC;
   font-size: 25px;
   font-weight: lighter;
   width: 100%;
@@ -166,7 +165,23 @@ div.container *{
   border-bottom: 10px solid #EBEDEE;
   border-left: none;
 }
-
+.WDfilterCellBody.tabsContainer button:hover{
+  background: #2C9AE3;
+  color:#FFFFFF;  
+} 
+.WDfilterCellBody.tabsContainer .closeButton {
+  padding-bottom: 1px;
+}
+.WDfilterCellBody.tabsContainer .closeButton > div {
+  height: 100%;
+}
+.WDfilterCellBody.tabsContainer .closeButton button {
+  height: 100%;
+  background: url('../img/x.png') -2px -5px no-repeat #41B8EE;
+}
+.WDfilterCellBody.tabsContainer .closeButton button:hover {
+  background: url('../img/x.png') -52px -5px no-repeat #2C9AE3;
+}
 
 .WDfilterCellBody.tabsContainer .pentaho-toggle-button button {
   width: 30%;
@@ -262,6 +277,7 @@ div.container *{
   font-size: 20px;
   font-weight: normal;
   width: 100%;
+  height: 100%;
 }
 .no-svg .WDfilterCellBody button {
 }
@@ -288,6 +304,11 @@ div.container *{
   margin-right: 5px;
   height:100%;
   width:30%;
+}
+.WDfilterCellBody .tabsContainer .pentaho-toggle-button {
+  display: inline;
+}
+.WDfilterCellBody .pentaho-toggle-button {
 }
 .no-svg .WDfilterCellBody .pentaho-toggle-button {
 }
