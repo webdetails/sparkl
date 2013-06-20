@@ -182,6 +182,20 @@
       <xloc>829</xloc>
       <yloc>79</yloc>
       </entry>
+    <entry>
+      <name>Delete filenames from result</name>
+      <description/>
+      <type>DELETE_RESULT_FILENAMES</type>
+      <foldername/>
+      <specify_wildcard>N</specify_wildcard>
+      <wildcard/>
+      <wildcardexclude/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>978</xloc>
+      <yloc>80</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -241,6 +255,15 @@
     <hop>
       <from>Copy Files</from>
       <to>Delete Unzip Folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete Unzip Folder</from>
+      <to>Delete filenames from result</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
