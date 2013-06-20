@@ -169,14 +169,8 @@ div.container *{
   background: #2C9AE3;
   color:#FFFFFF;  
 } 
-.WDfilterCellBody.tabsContainer .closeButton {
-  padding-bottom: 1px;
-}
-.WDfilterCellBody.tabsContainer .closeButton > div {
-  height: 100%;
-}
+
 .WDfilterCellBody.tabsContainer .closeButton button {
-  height: 100%;
   background: url('../img/x.png') -2px -5px no-repeat #41B8EE;
 }
 .WDfilterCellBody.tabsContainer .closeButton button:hover {
@@ -230,10 +224,13 @@ div.container *{
   display: inline;
   background: #EBEDEE;
 }
-.tabsContainer .globalOptButtonPH{
+.globalOptButtonPH.tabsContainer{
   width: 73%;
   float: left;
   display: inline;
+}
+.tabsContainer .globalOptButtonPH *{
+  height: 100%;
 }
 .globalOptButtonPH.submitButton{
   width: 25%;
