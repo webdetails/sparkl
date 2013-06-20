@@ -49,29 +49,6 @@
     ]
    },
    {
-    "id": "2fee6df6-3f86-2a95-55d9-5d940b595f1d",
-    "type": "LayoutResourceFile",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "projectCSS",
-      "type": "Id"
-     },
-     {
-      "name": "resourceFile",
-      "value": "static/custom/css/cpkUI.css",
-      "type": "ResourceFile"
-     },
-     {
-      "name": "resourceType",
-      "value": "Css",
-      "type": "Label"
-     }
-    ]
-   },
-   {
     "id": "8407aab8-d4b8-5366-99fe-943b40d8d7f5",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -142,7 +119,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell big",
+      "value": "WDfilterCell",
       "type": "String"
      }
     ]
@@ -291,7 +268,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCellBody",
+      "value": "WDfilterCellBody tabsContainer",
       "type": "String"
      }
     ]
@@ -364,7 +341,7 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH multiButton",
+      "value": "globalOptButtonPH tabsContainer",
       "type": "String"
      }
     ]
@@ -662,7 +639,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell",
+      "value": "",
       "type": "String"
      }
     ]
@@ -773,7 +750,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "WDdataCell",
       "type": "String"
      }
     ]
@@ -2489,7 +2466,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "WDdataCell",
       "type": "String"
      }
     ]
@@ -4094,7 +4071,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell",
+      "value": "WDdataCell lastCell",
       "type": "String"
      }
     ]

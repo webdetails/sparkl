@@ -5,6 +5,7 @@
  * the most commonly used classes/rules are already written here. The file is
  * divided in the following sections:
  *
+ *    Color Pallete
  *    Fonts
  *    Style Resets
  *    1. BACKGROUND 
@@ -19,6 +20,29 @@
  *    Project Specific Items  
  *
  */
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+.sparkl-blue-light{
+  /* #D1EEFC */
+}
+.sparkl-blue{
+  /* #41B8EE */
+}
+.sparkl-blue-selected{
+  /* #2C9AE3 */
+}
+.sparkl-grey{
+  /* #EBEDEE */
+}
+.sparkl-grey-selected{
+  /* #DBE7ED */
+}
+.sparkl-grey-font{
+  /* #878685 */
+}
 
 
 /* =============================================================================
@@ -92,18 +116,10 @@ div.container *{
 .globalOptText{
 	line-height: 40px;
 	text-align: middle;
-	color: #BDC0C2;
+	color: #878685;
 	text-indent: 20px;
 }
 
-
-/* Filter Cells */
-.WDfilterCell.small{
-  height: 40px;
-}
-.WDfilterCell.big{
-  height: 60px;
-}
 
 .popupComponent .WDfilterCell {
   width: 49%;
@@ -116,8 +132,69 @@ div.container *{
 
 
 /* Filter Cells body */
+.WDfilterCellBody.tabsContainer {
+  display: inline;
+  background: #EBEDEE;
+}
+
+.WDfilterCell {
+  margin-bottom:34px;
+}
+
+.WDfilterCellBody,
+.WDfilterCellBody > * {
+  height:34px;
+}
+
+.WDfilterCellBody.tabsContainer,
+.WDfilterCellBody.tabsContainer > * {
+  height:60px;
+}
+
+
+/********** FILTER ELEMENTS *********/
+
+
+.WDfilterCellBody.tabsContainer button {
+  background: #25B9ED;
+  color: #FFFFFF;
+  font-size: 25px;
+  font-weight: lighter;
+  width: 100%;
+  border-top: 15px solid #EBEDEE;
+  border-right: none;
+  border-bottom: 10px solid #EBEDEE;
+  border-left: none;
+}
+
+
+.WDfilterCellBody.tabsContainer .pentaho-toggle-button button {
+  width: 30%;
+  background: #EBEDEE;
+  text-align: center;
+  font-size: 25px;
+  font-weight: lighter;
+  color: #878685;
+  vertical-align: baseline;
+  border-top: 15px solid #EBEDEE;
+  border-right: none;
+  border-bottom: 10px solid #EBEDEE;
+  border-left: none;
+  margin-right: 10px;
+  box-shadow: none;
+  float: left;
+}
+
+.WDfilterCellBody.tabsContainer .pentaho-toggle-button-down button {
+  color: #41B8EE;
+  background: #FFFFFF;
+  border-bottom: 10px solid #FFFFFF;  
+}
+
+
 .popupComponent .WDfilterCellBody > *{
   display: inline-block;
+  background: #EBEDEE;
 }
 .no-svg .popupComponent .WDfilterCellBody{
 }
@@ -129,19 +206,24 @@ div.container *{
 }
 
 .WDfilterCellBody .globalOptButtonPH{
-  padding-left: 5px;
-  background: #E9ECEE;
+  padding-left: 10px;
+  background: #EBEDEE;
 }
 .globalOptButtonPH.multiButton{
   width: 75%;
   float: left;
   display: inline;
-  background: #E9ECEE;
+  background: #EBEDEE;
+}
+.tabsContainer .globalOptButtonPH{
+  width: 73%;
+  float: left;
+  display: inline;
 }
 .globalOptButtonPH.submitButton{
   width: 25%;
   float: right;
-  background: #F2F2F2;
+  background: #FFFFFF;
 }
 .globalOptButtonPH.saveButton{
   width: 20%;
@@ -155,9 +237,27 @@ div.container *{
 
 /********** FILTER ELEMENTS *********/
 
+
+.WDfilterCellBody .refreshButtonContainer,
+.WDfilterCellBody .refreshButtonContainer > div {
+  height:34px;
+  float:right;
+}
+.WDfilterCellBody .refreshButtonContainer button{
+  height:100%;
+  width:34px;
+  background: url('../img/refresh.png') -6px 50% no-repeat #EBEDEE;
+}
+.WDfilterCellBody .refreshButtonContainer button:hover{
+  background-position: -53px 50%;
+  background-color:#EBEDEE;
+}
+
+
+
 .WDfilterCellBody button {
   border:none;
-  background: #25B9ED;
+  background-color: #25B9ED;
   color: #FFFFFF;
   font-size: 20px;
   font-weight: normal;
@@ -170,14 +270,24 @@ div.container *{
 
 .WDfilterCellBody button:hover {
   cursor: pointer;
+  background-color: #2C9AE3;
 }
 .WDfilterCellBody button span {
 }
 
 
 /* Multi Button */
+.WDfilterCellBody .multiButtonContainer {
+  height:100%;
+}
+.WDfilterCellBody .multiButtonContainer > div{
+  height:100%;
+}
 .WDfilterCellBody .pentaho-toggle-button {
-  display: inline;
+  display: inline-block;
+  margin-right: 5px;
+  height:100%;
+  width:30%;
 }
 .no-svg .WDfilterCellBody .pentaho-toggle-button {
 }
@@ -199,52 +309,54 @@ div.container *{
 }
 
 .WDfilterCellBody .pentaho-toggle-button button {
-  width: 30%;
-  background: #EAEDEE;
+  width: 100%;
+  height:100%;
+  background: #EBEDEE;
   text-align: center;
   font-size: 11px;
   font-weight: normal;
-  color: #939292;
+  color: #878685;
   vertical-align: baseline;
-  border: 5px solid #EAEDEE;
+  border: 4px solid #EBEDEE;
   box-shadow: none;
   float: left;
-  margin-right: 5px;
+  margin:0px;
 }
 .WDfilterCellBody .pentaho-toggle-button-horizontal-last button {
 }
 .WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
 }
 .WDfilterCellBody .pentaho-toggle-button-down button {
-  background: #24B9EC;
-  color: #F2F2F2;
+  background: #41B8EE;
+  color: #FFFFFF;
 }
 
 
 /**** Chosen Select *****/
 /* All Chosen elements */
 .WDfilterCellBody .chzn-container{
-	height: 30px;
-	min-width: 160px;
-	margin-top: 6px;
+	height:100%;
+  min-width: 160px;
+  border: 4px solid #EBEDEE;
 }
 .WDfilterCellBody .chzn-container * {
 }
 .WDfilterCellBody .chzn-container-active{
 }
 .WDfilterCellBody .chzn-container .chzn-drop {
-	background: #25BAED;
-	height: 100px;
-	min-width: 96%;
+	background: none;
+	min-width: 100%;
 	border: 0 none;
 	border-radius: 0px;
-	margin-left: 3px;
+  margin: 0px;
+  margin-top:2px;
+  height:auto;
 }
 .WDfilterCellBody .chzn-container .chzn-results {
 	overflow: hidden;
-	height: 99px;
 	padding: 0px;
 	width: 100%;
+  margin:0px;
 }
 .WDfilterCellBody .chzn-drop{
 }
@@ -258,9 +370,13 @@ div.container *{
 .WDfilterCellBody .chzn-drop  .chzn-results li{
 	line-height: 10px;
 	height: 25px;
-	color: #FFFFFF;
+	color: #D1EEFC;
 	text-indent: 4px;
-	border-bottom: 1px solid #FFFFFF;
+	border-bottom: 1px solid #D1EEFC;
+  background: #41B8EE;
+}
+.WDfilterCellBody .chzn-drop .chzn-results li:last-child{
+  border-bottom:none;
 }
 .WDfilterCellBody .chzn-drop .chzn-results em{
 }
@@ -268,21 +384,22 @@ div.container *{
 }
 .WDfilterCellBody .chzn-drop  .chzn-results .highlighted{
 }
-.WDfilterCellBody .chzn-drop  .chzn-results .result-selected{
-	color: #EAEDEE;
+.WDfilterCellBody .chzn-drop .chzn-results li:hover {
+	background: #2C9AE3;
+  color:#FFFFFF;
 }
 .WDfilterCellBody .chzn-drop  .chzn-results .no-results {
 }
 
 /* Single Select */
 .WDfilterCellBody .chzn-container-single .chzn-single{
-	background: #009DE2;
-	color: #EAEDEE;
+	background: #41B8EE;
+	color: #D1EEFC;
 	border-radius: 0px;
-	border: 3px solid #EAEDEE;
-	height: 30px;
+  border:none;
+	height: 100%;
 	min-width: 100%;
-	line-height: 21px;
+  line-height: 26px;
 }
 .WDfilterCellBody .chzn-container-active .chzn-single {
     box-shadow: none;
@@ -294,21 +411,36 @@ div.container *{
 
 }
 .WDfilterCellBody .chzn-container-single:hover .chzn-single{
+  background:#2C9AE3;
 }
 
 .WDfilterCellBody .chzn-container-single .chzn-single span{
 }
 .WDfilterCellBody .chzn-container-single .chzn-single div{ /* Arrow container */
 	background: none;
+  border:none;
+  width:22px;
 }
-.WDfilterCellBody .chzn-container-single .chzn-single div b,
-  .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
-  }
+.WDfilterCellBody .chzn-container-single .chzn-single div b{
+  width:18px;
+  height:11px;
+  display:inline-block;
+  background: url('../img/arrow.png') -8px 50% no-repeat transparent;
+}
+.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b,
+.WDfilterCellBody .chzn-container-single .chzn-single:hover div b{ /* Arrow */
+  background-position: -40px 50%;
+}
 .WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
   .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
-  }
-.WDfilterCellBody .chzn-container-single .chzn-single.chzn-single-with-drop{
+  
+}
+.WDfilterCellBody .chzn-container-single .chzn-single.chzn-single-with-drop,
+.WDfilterCellBody .chzn-container-single .chzn-single:hover{
 	box-shadow: none;
+  border:none;
+  background:#2C9AE3;
+  color:#FFFFFF;
 }
 .WDfilterCellBody .chzn-container-single .chzn-single-with-drop span{
 }
@@ -356,12 +488,16 @@ div.container *{
 /* Data Cells */
 .WDdataCell {
   position: relative;
+  margin-bottom:20px;
 }  
+.WDdataCell.lastCell {
+  margin-bottom:0px;
+}
 
 /* Data Cells header*/
 .WDdataCellHeader{
-  height: 50px;
-  color: #636261;
+  height: 20px;
+  color: #878685;
   font-size: 18px;
   text-align: left;
   position: relative;
@@ -381,7 +517,7 @@ div.container *{
   width: 100%;
   height: 3px;
   background: inherit;
-  border-top: 1px solid #6ACFF2;
+  border-top: 1px solid #41B8EE;
   position: absolute;
   bottom: 0px;
 }
@@ -392,7 +528,6 @@ div.container *{
 
 /* Data Cells body */
 .WDdataCellBody {
-  padding-top: 3px;
 }
 .WDdataCellBody.aboutPlugin {
 }
@@ -402,11 +537,11 @@ div.container *{
 .WDdataCellBody .cont{
   height: 50px;
   padding: 6px 0px 6px 0px;
-  background: #E9ECEE;
+  background: #EBEDEE;
   text-align: left;
   font-size: 15px;
   font-weight: normal;
-  color: #939292;
+  color: #878685;
   position: relative;
   border-bottom: 10px solid #FFFFFF;
   position: relative;
@@ -420,7 +555,7 @@ div.container *{
 }
 
 .WDdataCellBody .cont:hover{
-  background: #25BAED;
+  background: #41B8EE;
   color: #FFFFFF;
 }
 .WDdataCellBody .cont *{
@@ -444,7 +579,7 @@ div.container *{
 }
 .WDdataCellBody .cont .formPH input{
   width: 100%;
-  background: #F3F3F3;
+  background: #FFFFFF;
   border: none;
   text-align: left;
   font-size: 15px;
@@ -469,7 +604,7 @@ div.container *{
   padding: 0px 6px 0px 6px;    
 }
 .WDdataCellBody .cont .uploadButton button{
-  background: #F3F3F3;
+  background: #FFFFFF;
   height: 100%;
   width: 100%;
   border: none;
@@ -517,15 +652,16 @@ div.container *{
 }
 .cont.newPlugin .buttonPH button{
   width: 100%;
-  background: #25BAED;
-  color: #FFFFFF;
+  background: #41B8EE;
+  color: #D1EEFC;
   font-size: 15px;
   border: 0px none;
   box-shadow: none;
   vertical-align: baseline;  
 }
 .cont.newPlugin .buttonPH button:hover{
-  background: #009DE2;
+  background: #2C9AE3;
+  color:#FFFFFF;
 }
 
 
@@ -533,11 +669,16 @@ div.container *{
    5. TABLES
    ========================================================================== */
 
+.WDdataCellBody .dataTables_wrapper {
+  min-height:1px;
+}
+
+
 .WDdataCellBody table{
   border: none;
 }
 .WDdataCellBody table tr{
-  background: #EAEDEE;
+  background: #EBEDEE;
   height: 50px;
 }
 
@@ -548,7 +689,7 @@ div.container *{
 .WDdataCellBody thead tr {
 }
 .WDdataCellBody  thead th {
-  background: #F3F3F3;
+  background: #FFFFFF;
   color: #939292;
   font-size: 20px;
   text-align: left;
@@ -591,8 +732,8 @@ div.container *{
   }
 
 .WDdataCellBody  tbody td button{
-  background: #25BAED;
-  color: #FFFFFF;
+  background: #41B8EE;
+  color: #D1EEFC;
   font-size: 15px;
   border: 0px none;
   box-shadow: none;
@@ -601,7 +742,8 @@ div.container *{
   vertical-align: baseline;
 }
 .WDdataCellBody  tbody td button:hover{
-  background: #009DE2;
+  background: #2C9AE3;
+  color:#FFFFFF;
 }
 
 .WDdataCellBody tbody td.parameterButton {
@@ -610,10 +752,10 @@ div.container *{
 }
 
 .WDdataCellBody tbody td button.deletePluginButton {
-	border-right: 1px solid #FFFFFF;
+	border-right: 1px solid #D1EEFC;
 }
 .WDdataCellBody tbody td button.viewElementButton {
-  border-right: 1px solid #FFFFFF;
+  border-right: 1px solid #D1EEFC;
 }
 .WDdataCellBody tbody td button.runElementButton {
   width: 100%;
@@ -640,9 +782,7 @@ div.container *{
 
 
 /* DataTables */
-.WDdataCellBody  .dataTables_wrapper{
-	min-height: 2px;
-}
+
 .WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
   .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
   }
