@@ -65,7 +65,6 @@ body{
 /* Dashboard Background / Blueprint Container */
 div.container  {
   background: #FFFFFF;
-  padding: 10px 5px 10px 5px;
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -99,9 +98,11 @@ div.container *{
 
 
 /* Filter Cells */
-.WDfilterCell *{
+.WDfilterCell.small{
   height: 40px;
-  margin-bottom: 10px;
+}
+.WDfilterCell.big{
+  height: 60px;
 }
 
 .popupComponent .WDfilterCell {
@@ -141,6 +142,15 @@ div.container *{
   width: 25%;
   float: right;
   background: #F2F2F2;
+}
+.globalOptButtonPH.saveButton{
+  width: 20%;
+  float: right;
+}
+.globalOptButtonPH.closeButton{
+  width: 7%;
+  float: right;
+  padding-right: 10px;
 }
 
 /********** FILTER ELEMENTS *********/
@@ -359,6 +369,13 @@ div.container *{
 .WDdataCellHeader .title{
   position: absolute;
   bottom: 0px;
+  cursor:default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .WDdataCellHeader .subcellHeaderUnderline{
   width: 100%;
@@ -384,16 +401,24 @@ div.container *{
 
 .WDdataCellBody .cont{
   height: 50px;
-  padding: 6px 6px 6px 6px;
+  padding: 6px 0px 6px 0px;
   background: #E9ECEE;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: normal;
   color: #939292;
   position: relative;
   border-bottom: 10px solid #FFFFFF;
   position: relative;
 }
+
+.WDdataCellBody .cont *{
+  height: 100%;
+/*  width: 100%;*/
+  font-size: inherit;
+/*  float: left;*/
+}
+
 .WDdataCellBody .cont:hover{
   background: #25BAED;
   color: #FFFFFF;
@@ -405,28 +430,43 @@ div.container *{
 .WDdataCellBody .cont .labelPH{
   background: inherit;
   padding-left: 10px;
-  float: left;
-  font-size: 12px;
+/*  width: 15%;*/
+  line-height: 30px;
+  margin-right: 4px;
+  cursor:default;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .WDdataCellBody .cont .formPH input{
+  width: 100%;
   background: #F3F3F3;
-  float: right;
   border: none;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: normal;
   color: #939292;
   padding-left: 10px;
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
 }
 .WDdataCellBody .cont .formPH input:hover{
   cursor: pointer;
+}
+.WDdataCellBody .cont .formPH input:focus{
+  cursor: auto;
 }
 .WDdataCellBody .cont .formPH.readOnly input{
   background: inherit;
 }
 .WDdataCellBody .cont .formPH.readOnly input:hover{
   cursor: auto;
+}
+.WDdataCellBody .cont .uploadButton{
+  padding: 0px 6px 0px 6px;    
 }
 .WDdataCellBody .cont .uploadButton button{
   background: #F3F3F3;
@@ -436,7 +476,8 @@ div.container *{
   box-shadow: none;
   font-size: 12px;
   font-weight: normal;
-  color: #939292;    
+  color: #939292;
+  padding: 0px 6px 0px 6px;    
 }
 
 .aboutPlugin .cont.name {}
@@ -449,6 +490,7 @@ div.container *{
 .WDdataCellBody .cont.newPlugin{
   font-size: 17px;
   margin-top: 15px;
+  padding:6px;
 }
 .WDdataCellBody .cont.newPlugin *{
   font-size: inherit;
@@ -458,9 +500,11 @@ div.container *{
 .cont.newPlugin .labelPH{
   width: 15%;
   line-height: 30px;
+  margin:0px;
 }
 .cont.newPlugin .formPH{
   width: 70%;
+  margin:0px;
 }
 .cont.newPlugin .formPH input{
   font-size: 17px;
@@ -469,6 +513,7 @@ div.container *{
 .cont.newPlugin .buttonPH{
     width: 15%;
     padding-left: 6px;
+    margin:0px;
 }
 .cont.newPlugin .buttonPH button{
   width: 100%;
@@ -493,6 +538,7 @@ div.container *{
 }
 .WDdataCellBody table tr{
   background: #EAEDEE;
+  height: 50px;
 }
 
 /* Header */
@@ -560,14 +606,21 @@ div.container *{
 
 .WDdataCellBody tbody td.parameterButton {
 	padding: 0px;
+  width: 253px;
 }
 
 .WDdataCellBody tbody td button.deletePluginButton {
 	border-right: 1px solid #FFFFFF;
 }
+.WDdataCellBody tbody td button.viewElementButton {
+  border-right: 1px solid #FFFFFF;
+}
+.WDdataCellBody tbody td button.runElementButton {
+  width: 100%;
+}
 
-div.buttonContainer{
-	height: 27px;
+.WDdataCellBody tbody tr div.buttonContainer{
+  height: 50px;
 }
 
 /* Footer */
@@ -663,28 +716,6 @@ div.buttonContainer{
 .WDdataCellBody  thead th .trend.neutral {
 }
 
-input.editBox{
-	background-color: transparent;
-	border: 1px solid transparent;
-	height: 20px;
-	text-align: center;
-	line-height: 20px;
-	vertical-align: middle;
-	resize: none;
-	padding: 0;
-	margin: 0;
-	width: 370px;
-}
-
-input.editBox:hover {
-    background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
-    border: 1px solid transparent;
-}
-
-input.editBox:focus {
-    background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
-    border: 1px solid #0F1414;
-}
 
 /* =============================================================================
    6. CHARTS 
@@ -844,38 +875,35 @@ button span {
    8. SITE MAP
    ========================================================================== */
 
-.WDsiteMap {}
-
-
 
 /* =============================================================================
    Other 
    ========================================================================== */
 
-.popupComponent{
-  color: #9C9C9C;
-  font-size: 18px;
-  width: 900px;
-  border:solid 1px #9C9C9C;
-  position: absolute;
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
-}
-.popupComponent *{
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
+
+
+input.editBox{
+  background-color: transparent;
+  border: 1px solid transparent;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  vertical-align: middle;
+  resize: none;
+  padding: 0;
+  margin: 0;
+  width: 370px;
 }
 
-.popupComponent a{
-   display: none;
+input.editBox:hover {
+    background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
+    border: 1px solid transparent;
 }
 
-.popupComponent.south .arrow{
-  background-image: none;
+input.editBox:focus {
+    background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
+    border: 1px solid #0F1414;
 }
-
 
 /* =============================================================================
    Project Specific Items 
