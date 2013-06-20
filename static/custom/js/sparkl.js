@@ -2,10 +2,14 @@
 var sparkl = {};
 (function(myself){
 	
-	myself.changeLocation = function (newLocation, params){
+	myself.changeLocation = function (newLocation, params, isNew){
         if(!newLocation){ return; }
-        var hash = (params) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: params } ) : "";
-        window.location = newLocation + hash;
+        var hash = (params && !_.isEmpty(params) ) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: params } ) : "";
+        if (isNew){
+        	window.open( newLocation + hash);
+    		} else {
+    			window.location = newLocation + hash;
+    		}
     }
 
   	function generateHashValue (key, value) {
