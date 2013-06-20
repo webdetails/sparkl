@@ -3,6 +3,29 @@
   "title": "CDF - Sample structure",
   "rows": [
    {
+    "id": "34814c47-6cb7-a3ed-8e21-af369a056fbf",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "projectCSS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "static/custom/css/sparkl.css",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     }
+    ]
+   },
+   {
     "id": "51924ad4-7fcf-d4c4-5756-9ee31557a5ed",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
@@ -119,7 +142,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell",
+      "value": "WDfilterCell big",
       "type": "String"
      }
     ]
@@ -5878,7 +5901,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    sparkl.changeLocation('/pentaho/content/cpk/main');\n}",
+      "value": "function f(){\n    sparkl.changeLocation('/pentaho/content/sparkl/main');\n}",
       "type": "JavaScript"
      },
      {
@@ -5956,7 +5979,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'updateMetadata' : 'updateMetadata';\n    var ajaxOpts = {\n        url:'/pentaho/content/cpk/' + endpoint,\n        type: 'GET',\n        data: {\n            paramplugin_id: pluginId\n        },\n        success: function (json){\n            Dashboards.log('Plugin ' + pluginId + ' updated!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    $.ajax(ajaxOpts);\n\n}",
+      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'createPlugin' : 'updateMetadata';\n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId\n        },\n        success: function (json){\n            Dashboards.log('Plugin ' + pluginId + ' updated!');\n            if (isNewPlugin){ Dashboards.setParameter('${p:isNewPluginParam}', false); }\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        },\n        error: function(){\n            Dashboards.log('Error saving ' + pluginId + '!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();\n    $.ajax(ajaxOpts);\n\n}",
       "type": "JavaScript"
      },
      {
@@ -6029,7 +6052,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -6039,7 +6062,7 @@
      },
      {
       "name": "xActionArrayParameter",
-      "value": "[]",
+      "value": "[[\"plugin_id\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
      },
      {
@@ -6049,7 +6072,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
+      "value": "[\"string\",\"string\",\"string\",\"hidden\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6120,17 +6143,17 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "elementsTableQuery"
-     },
-     {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
+      "value": "listElementsQuery"
      },
      {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -6169,12 +6192,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var opts = function (st){\n        if( st.tableData[st.rowIdx][1] == \"dashboard\" ){\n            return {\n                buttons: [\n                    {\n                        cssClass: \"viewElementButton\",\n                        title: \"View\",\n                        action: function (v, st) {\n                            sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v);\n                        }\n                    },\n                    {\n                        cssClass: \"editElementButton\",\n                        title: \"Edit\",\n                        action: function (v, st) {\n                            sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit');\n                        }\n                    }\n                ]\n            }\n        } else { \n           return {\n                buttons: [\n                    {\n                        cssClass: \"runElementButton\",\n                        title: \"Run\",\n                        action: function (v, st) {\n                            sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v);\n                        }\n                    }\n                ]\n            }\n        }\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
+      "value": "function f(){\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewElementButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editElementButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                }\n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runElementButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                }\n            ]\n        }\n    }\n\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "function f(){\n    var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[2]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );\n}",
+      "value": "function f(data){\n   /* var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );*/\n    \n    _.each( data.resultset, function (el){\n        el.push(el[0]); \n    });\n    data.metadata.push( data.metadata[0] );\n    \n    return data\n\n}",
       "type": "JavaScript"
      },
      {
@@ -6612,7 +6635,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:pluginIdParam}']",
+      "value": "['${p:pluginIdParam}','${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -6662,7 +6685,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n\n    var obj = {};\n    _.each( data.metadata, function(el,idx){\n        obj[el.colName] = data.resultset[0][idx];\n    });\n    \n    Dashboards.setParameter(\"${p:pluginMetadataParam}\",obj);\n}",
+      "value": "function f(data){\n\n    var obj = {};\n    \n    //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n    _.each( data.resultset , function(row,i){\n        _.each( row, function(el,j){\n            if ( _.isEmpty(el) ){\n                row[j] = \"\";\n            }\n        }); \n    });\n    \n    _.each( data.metadata, function(el,idx){\n        obj[el.colName] = data.resultset[0][idx];\n    });\n    \n    Dashboards.setParameter(\"${p:pluginMetadataParam}\",obj);\n}",
       "type": "JavaScript"
      },
      {
@@ -6697,212 +6720,6 @@
     ]
    },
    {
-    "id": "95bf0a9d-a670-c424-a4b8-2b5f6053bb24",
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newDashboardSelector",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "newDashboardParam.template",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "externalPlugin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "newDashboardSelectorQuery"
-     },
-     {
-      "name": "valuesArray",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:newDashboardSelectorObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
-     }
-    ]
-   },
-   {
-    "id": "c5262f67-f8ea-9ca6-0175-378f5527e8e3",
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newEndpointSelector",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "newEndepointParam.template",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "externalPlugin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "newEndpointSelectorQuery"
-     },
-     {
-      "name": "valuesArray",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:newEndpointSelectorObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
-     }
-    ]
-   },
-   {
     "id": "c06a635f-3bae-c43d-edc8-b95250f2beca",
     "type": "ComponentstextInput",
     "typeDesc": "Text input Component",
@@ -6920,7 +6737,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:Select options}']",
       "type": "Listeners"
      },
      {
@@ -6998,7 +6815,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:Select options}']",
       "type": "Listeners"
      },
      {
@@ -7277,7 +7094,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7355,7 +7172,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7433,7 +7250,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7511,7 +7328,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7589,7 +7406,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7667,7 +7484,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7745,7 +7562,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -7823,7 +7640,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
@@ -8028,34 +7845,6 @@
     ]
    },
    {
-    "id": "3e2d5c41-281e-968e-69c1-6543e9c1e799",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "isNewPluginParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "false",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
     "id": "610ef9bc-5365-0bd2-1ec7-e63897ca7cc8",
     "type": "ComponentsJavascriptParameter",
     "typeDesc": "Custom Parameter",
@@ -8102,7 +7891,7 @@
     ]
    },
    {
-    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
+    "id": "58a43329-8109-1b8d-91e6-a0022500141c",
     "type": "ComponentsParameter",
     "typeDesc": "Parameter",
     "parent": "GENERIC",
@@ -8128,6 +7917,57 @@
       "type": "Boolean"
      }
     ]
+   },
+   {
+    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "updateDataEvent",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "28616171-ea64-7c01-1562-70e4e061633e",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "isNewPluginParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "false",
+      "type": "JavaScript"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
    }
   ]
  },
@@ -8148,7 +7988,7 @@
     ]
    },
    {
-    "id": "7c508364-306d-f032-9443-c3220240ac33",
+    "id": "9fc2d788-998a-d62b-cbaa-f70027d010da",
     "type": "Componentskettle_kettleTransFromFile",
     "typeDesc": "kettle over kettleTransFromFile",
     "meta": "CDA",
@@ -8219,7 +8059,7 @@
     ]
    },
    {
-    "id": "d9215148-9502-75a9-246e-c1fdf0471e5b",
+    "id": "e2c2586c-0914-dfb5-86ad-c7198f7e67a8",
     "type": "Componentskettle_kettleTransFromFile",
     "typeDesc": "kettle over kettleTransFromFile",
     "meta": "CDA",
@@ -8290,42 +8130,23 @@
     ]
    },
    {
-    "id": "SCRIPTING",
-    "name": "SCRIPTING Queries",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "SCRIPTING Queries",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "7d557b42-9574-2da0-e618-0e723ecaa6da",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
+    "id": "d9215148-9502-75a9-246e-c1fdf0471e5b",
+    "type": "Componentskettle_kettleTransFromFile",
+    "typeDesc": "kettle over kettleTransFromFile",
     "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
+    "meta_conntype": "kettle.TransFromFile",
+    "meta_datype": "kettle",
+    "parent": "KETTLE",
     "properties": [
      {
       "name": "name",
-      "value": "elementsTableQuery",
+      "value": "listElementsQuery",
       "type": "Id"
      },
      {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
+      "name": "ktrFile",
+      "value": "../endpoints/kettle/listElements.ktr",
+      "type": "KtrPath"
      },
      {
       "name": "access",
@@ -8334,83 +8155,17 @@
      },
      {
       "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"ID\",\n\"Name\",\n\"Type\",\n\"location\",\n\"Admin\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"dashboard1_Id\")\n, new String(\"dashboard1_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard1_name.wcdf\") , new String(\"false\")});\n\nmodel.addRow(new Object[]{ new String(\"endpoint1_Id\")\n, new String(\"endpoint1_name\") , new String(\"Kettle\") , new String(\"/endpoints/kettle/endpoint1_name.ktr\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard2_Id\")\n, new String(\"dashboard2_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard2_name.wcdf\") , new String(\"true\")});\nmodel.addRow(new Object[]{ new String(\"dashboard3_Id\")\n, new String(\"dashboard3_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard3_name.wcdf\") , new String(\"false\")});\nmodel.addRow(new Object[]{ new String(\"dashboard4_Id\")\n, new String(\"dashboard4_name\") , new String(\"dashboard\") , new String(\"/dashboards/dashboard4_name.wcdf\") , new String(\"false\")});\nreturn model;\n\n",
+      "value": "OUTPUT",
       "type": "SqlQuery"
      },
      {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[\"1\",\"2\",\"3\",\"4\",\"0\"]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "6cb74d53-a692-0293-a46a-3688532dbcf2",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
-    "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newDashboardSelectorQuery",
-      "type": "Id"
-     },
-     {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"template_name\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\n\nmodel.addRow(new Object[]{ new String(\"New Clean Element\") });\nmodel.addRow(new Object[]{ new String(\"Template A\") });\nmodel.addRow(new Object[]{ new String(\"Template B\") });\nmodel.addRow(new Object[]{ new String(\"Template C\") });\nmodel.addRow(new Object[]{ new String(\"Template D\") });\n\nreturn model;\n",
-      "type": "SqlQuery"
+      "name": "variables",
+      "value": "[[\"plugin_id\",\"plugin_id\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "parameters",
-      "value": "[]",
+      "value": "[[\"plugin_id\",\"\",\"String\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -8440,83 +8195,12 @@
      },
      {
       "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "60279ab6-2482-eb0f-90d3-b824f9be180f",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
-    "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newEndpointSelectorQuery",
-      "type": "Id"
-     },
-     {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"template_name\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\n\nmodel.addRow(new Object[]{ new String(\"New Clean Element\") });\nmodel.addRow(new Object[]{ new String(\"Template A\") });\nmodel.addRow(new Object[]{ new String(\"Template B\") });\nmodel.addRow(new Object[]{ new String(\"Template C\") });\nmodel.addRow(new Object[]{ new String(\"Template D\") });\n\nreturn model;",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      }
     ]
    }
   ]
  },
- "filename": "/system/cpk/dashboards/pluginInfo.cdfde"
+ "filename": "/system/sparkl/dashboards/pluginInfo.cdfde"
 }

@@ -8,17 +8,9 @@
          <KtrFile>../endpoints/kettle/getPluginMetadata.ktr</KtrFile>
          <variables datarow-name="plugin_id" variable-name="plugin_id"/>
       </Connection>
-      <Connection id="elementsTableQuery" type="scripting.scripting">
-         <Initscript></Initscript>
-         <Language>beanshell</Language>
-      </Connection>
-      <Connection id="newDashboardSelectorQuery" type="scripting.scripting">
-         <Initscript></Initscript>
-         <Language>beanshell</Language>
-      </Connection>
-      <Connection id="newEndpointSelectorQuery" type="scripting.scripting">
-         <Initscript></Initscript>
-         <Language>beanshell</Language>
+      <Connection id="listElementsQuery" type="kettle.TransFromFile">
+         <KtrFile>../endpoints/kettle/listElements.ktr</KtrFile>
+         <variables datarow-name="plugin_id" variable-name="plugin_id"/>
       </Connection>
    </DataSources>
    <DataAccess access="public" cache="true" cacheDuration="3600"
@@ -38,98 +30,14 @@
       </Parameters>
       <Query>OUTPUT</Query>
    </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="elementsTableQuery"
-               id="elementsTableQuery"
-               type="scriptable">
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="listElementsQuery"
+               id="listElementsQuery"
+               type="kettle">
       <Columns/>
-      <Output indexes="1,2,3,4,0" mode="include"/>
-      <Parameters/>
-      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
-
-String[] columnNames = new String[]{
-"ID",
-"Name",
-"Type",
-"location",
-"Admin"
-};
-
-
-Class[] columnTypes = new Class[]{
-String.class
-,String.class
-,String.class
-,String.class
-,String.class
-};
-
-TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-model.addRow(new Object[]{ new String("dashboard1_Id")
-, new String("dashboard1_name") , new String("dashboard") , new String("/dashboards/dashboard1_name.wcdf") , new String("false")});
-
-model.addRow(new Object[]{ new String("endpoint1_Id")
-, new String("endpoint1_name") , new String("Kettle") , new String("/endpoints/kettle/endpoint1_name.ktr") , new String("false")});
-model.addRow(new Object[]{ new String("dashboard2_Id")
-, new String("dashboard2_name") , new String("dashboard") , new String("/dashboards/dashboard2_name.wcdf") , new String("true")});
-model.addRow(new Object[]{ new String("dashboard3_Id")
-, new String("dashboard3_name") , new String("dashboard") , new String("/dashboards/dashboard3_name.wcdf") , new String("false")});
-model.addRow(new Object[]{ new String("dashboard4_Id")
-, new String("dashboard4_name") , new String("dashboard") , new String("/dashboards/dashboard4_name.wcdf") , new String("false")});
-return model;</Query>
-   </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="newDashboardSelectorQuery"
-               id="newDashboardSelectorQuery"
-               type="scriptable">
-      <Columns/>
-      <Parameters/>
-      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
-
-String[] columnNames = new String[]{
-"template_name"
-};
-
-
-Class[] columnTypes = new Class[]{
-String.class
-};
-
-TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-
-model.addRow(new Object[]{ new String("New Clean Element") });
-model.addRow(new Object[]{ new String("Template A") });
-model.addRow(new Object[]{ new String("Template B") });
-model.addRow(new Object[]{ new String("Template C") });
-model.addRow(new Object[]{ new String("Template D") });
-
-return model;</Query>
-   </DataAccess>
-   <DataAccess access="public" cache="true" cacheDuration="3600"
-               connection="newEndpointSelectorQuery"
-               id="newEndpointSelectorQuery"
-               type="scriptable">
-      <Columns/>
-      <Parameters/>
-      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
-
-String[] columnNames = new String[]{
-"template_name"
-};
-
-
-Class[] columnTypes = new Class[]{
-String.class
-};
-
-TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
-
-model.addRow(new Object[]{ new String("New Clean Element") });
-model.addRow(new Object[]{ new String("Template A") });
-model.addRow(new Object[]{ new String("Template B") });
-model.addRow(new Object[]{ new String("Template C") });
-model.addRow(new Object[]{ new String("Template D") });
-
-return model;</Query>
+      <Parameters>
+         <Parameter default="" name="plugin_id" type="String"/>
+      </Parameters>
+      <Query>OUTPUT</Query>
    </DataAccess>
 </CDADescriptor>

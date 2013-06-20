@@ -119,7 +119,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell",
+      "value": "WDfilterCell small",
       "type": "String"
      }
     ]
@@ -886,7 +886,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "refreshButtonContainer",
       "type": "String"
      }
     ]
@@ -1524,6 +1524,16 @@
       "type": "JavaScript"
      },
      {
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "xActionArrayParameter",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -1549,14 +1559,14 @@
       "type": "Array"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
      },
      {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "filter",
@@ -1584,16 +1594,6 @@
       "type": "Boolean"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -1609,14 +1609,14 @@
       "value": "pluginsTableQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -1655,7 +1655,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n \n    /*this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tsparkl.changeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v,\n                metadataReadonlyParam: true\n          \t});\n        }\n    });*/\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"deletePluginButton\",\n                title: \"Delete\",\n                action: function (v, st) {\n                    console.log(\"delete\");\n                }\n            },\n            {\n                cssClass: \"editPluginButton\",\n                title: \"Edit\",\n                action: function (v, st) {\n                    sparkl.changeLocation( '/pentaho/content/cpk/plugininfo', {\n                        pluginIdParam: v,\n                        metadataReadonlyParam: false\n                    });\n                }\n            }\n        ]\n    });\n}\n",
+      "value": "function f(){\n \n    /*this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tsparkl.changeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v,\n                metadataReadonlyParam: true\n          \t});\n        }\n    });*/\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"deletePluginButton\",\n                title: \"Delete\",\n                action: function (v, st) {\n                    $.ajax({\n                        url: '/pentaho/content/sparkl/deletePlugin',\n                        type: 'POST',\n                        data: {\n                            paramplugin_id:v\n                        },\n                        success: function (){\n                            Dashboards.fireChange('${p:updateTableEvent}');\n                        }\n                    });\n                }\n            },\n            {\n                cssClass: \"editPluginButton\",\n                title: \"Edit\",\n                action: function (v, st) {\n                    sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n                        pluginIdParam: v,\n                        metadataReadonlyParam: false\n                    });\n                }\n            }\n        ]\n    });\n}\n",
       "type": "JavaScript"
      },
      {
@@ -1874,7 +1874,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    sparkl.changeLocation( '/pentaho/content/cpk/plugininfo', {\n        isNewPluginParam: true,\n        metadataReadonlyParam: false\n    });\n}",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n        isNewPluginParam: true,\n        metadataReadonlyParam: false,\n        pluginIdParam: pluginId\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -2386,91 +2386,6 @@
  "datasources": {
   "rows": [
    {
-    "id": "SCRIPTING",
-    "name": "SCRIPTING Queries",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "SCRIPTING Queries",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "b7e8668a-f2ee-bb60-fe97-f254d7560f9e",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
-    "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
-    "properties": [
-     {
-      "name": "name",
-      "value": "pluginsTableQuery_old",
-      "type": "Id"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"Name\",\n\"ID\",\n\"Description\",\n\"Version\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n,String.class\n,String.class\n,String.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(\"plugin1_name\")\n, new String(\"plugin1_Id\") , new String(\"plugin1_description\") , new String(\"plugin1_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin2_name\")\n, new String(\"plugin2_Id\") , new String(\"plugin2_description\") , new String(\"plugin2_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin3_name\")\n, new String(\"plugin3_Id\") , new String(\"plugin3_description\") , new String(\"plugin3_version\") });\n\nmodel.addRow(new Object[]{ new String(\"plugin4_name\")\n, new String(\"plugin4_Id\") , new String(\"plugin4_description\") , new String(\"plugin4_version\") });\n\nreturn model;\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[\"0\",\"2\",\"3\",\"1\"]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
     "id": "KETTLE",
     "name": "KETTLE Queries",
     "type": "Label",
@@ -2557,5 +2472,5 @@
    }
   ]
  },
- "filename": "/system/cpk/dashboards/Main.cdfde"
+ "filename": "/system/sparkl/dashboards/Main.cdfde"
 }
