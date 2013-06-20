@@ -1,3 +1,3 @@
-cpk
+sparkl
 ===
-Community Plugin Kickstarter
+pentahoSPARKL - Create and explore pentaho plugins.
