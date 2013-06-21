@@ -5956,7 +5956,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'createPlugin' : 'updateMetadata';\n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId\n        },\n        success: function (json){\n            Dashboards.log('Plugin ' + pluginId + ' updated!');\n            if (isNewPlugin){ Dashboards.setParameter('${p:isNewPluginParam}', false); }\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        },\n        error: function(){\n            Dashboards.log('Error saving ' + pluginId + '!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();\n    $.ajax(ajaxOpts);\n\n}",
+      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'createPlugin' : 'updateMetadata';\n        \n    function successCallback (json){\n        Dashboards.log('Plugin ' + pluginId + ' updated!');\n        if (isNewPlugin){ Dashboards.setParameter('${p:isNewPluginParam}', false); }\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addPublishWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/Publish',\n                type:'GET',\n                data: {\n                    'publish': 'now',\n                    'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                },\n                success: callback\n            });\n        };\n    };\n\n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: { \n            paramplugin_id: pluginId \n        },\n        success: isNewPlugin ? addPublishWrapper(successCallback) : successCallback ,\n        error: function(){\n            Dashboards.log('Error saving ' + pluginId + '!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    \n    Dashboards.incrementRunningCalls();\n    $.ajax(ajaxOpts);\n\n}",
       "type": "JavaScript"
      },
      {
@@ -6038,11 +6038,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "xActionArrayParameter",
-      "value": "[[\"plugin_id\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -6073,9 +6068,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "xActionArrayParameter",
+      "value": "[[\"plugin_id\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -6108,6 +6103,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -6123,14 +6123,14 @@
       "value": "listElementsQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
