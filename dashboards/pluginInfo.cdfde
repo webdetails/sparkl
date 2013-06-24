@@ -94,7 +94,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tabOptionsCell",
+      "value": "globalOptionsCell",
       "type": "Id"
      },
      {
@@ -205,7 +205,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tabOptionsCellHeader",
+      "value": "globalOptionsCellHeader",
       "type": "Id"
      },
      {
@@ -243,7 +243,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tabOptionsCellBody",
+      "value": "globalOptionsCellBody",
       "type": "Id"
      },
      {
@@ -281,7 +281,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tabMultiButtonCointainer",
+      "value": "optionsMultiButtonCointainer",
       "type": "Id"
      },
      {
@@ -577,637 +577,6 @@
      {
       "name": "name",
       "value": "saveMetadataButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "9032447d-2185-b70d-70de-ff940c7b83a7",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "globalOptionsCell",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDfilterCell",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d37b989c-5888-2e14-f03f-571fe02d5ec9",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "9032447d-2185-b70d-70de-ff940c7b83a7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5397f663-89ed-6731-fada-544f8dc49913",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "d37b989c-5888-2e14-f03f-571fe02d5ec9",
-    "properties": [
-     {
-      "name": "name",
-      "value": "globalOptionsCellHeader",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDfilterCellHeader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "a67cafe2-b935-bcf8-5d58-7537504e2faf",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "d37b989c-5888-2e14-f03f-571fe02d5ec9",
-    "properties": [
-     {
-      "name": "name",
-      "value": "globalOptionsCellBody",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDfilterCellBody build",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8b6b47f1-2742-75a2-3e87-fea75bf3adb9",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "a67cafe2-b935-bcf8-5d58-7537504e2faf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "reportBugButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH reportBug",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "2dffcc13-3569-a11f-9e3a-ace0e24589b8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "8b6b47f1-2742-75a2-3e87-fea75bf3adb9",
-    "properties": [
-     {
-      "name": "name",
-      "value": "reportBugButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "90a210aa-56cd-8c25-910f-b90eb03a3530",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "a67cafe2-b935-bcf8-5d58-7537504e2faf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "marketPlaceButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH marketPlace",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "2b79bae3-7e58-130e-e61f-b6bede1a4eac",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "90a210aa-56cd-8c25-910f-b90eb03a3530",
-    "properties": [
-     {
-      "name": "name",
-      "value": "marketPlaceButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "06097e61-09e6-03fc-1c47-859b15f46d13",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "a67cafe2-b935-bcf8-5d58-7537504e2faf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH packButton",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ae03bfac-3ee5-b5d5-e2ad-0b2dc98323f6",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "06097e61-09e6-03fc-1c47-859b15f46d13",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "0f312653-2958-376f-eea9-8fc2daa5e8fa",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "a67cafe2-b935-bcf8-5d58-7537504e2faf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "submitChangesButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH submitChanges",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "2a176dc5-a7c8-8bb3-e702-ac59872d6253",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "0f312653-2958-376f-eea9-8fc2daa5e8fa",
-    "properties": [
-     {
-      "name": "name",
-      "value": "submitChangesButtonObj",
       "type": "Id"
      },
      {
@@ -4670,44 +4039,6 @@
     ]
    },
    {
-    "id": "57f4d911-85ea-3bb9-4d8a-f7eabfa769a7",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "readonlyMetadataDataCell",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "95aed796-eb0c-36de-307b-7d30d431fcd8",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -6625,7 +5956,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'createPlugin' : 'updateMetadata';\n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId\n        },\n        success: function (json){\n            Dashboards.log('Plugin ' + pluginId + ' updated!');\n            if (isNewPlugin){ Dashboards.setParameter('${p:isNewPluginParam}', false); }\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        },\n        error: function(){\n            Dashboards.log('Error saving ' + pluginId + '!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();\n    $.ajax(ajaxOpts);\n\n}",
+      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'createPlugin' : 'updateMetadata';\n        \n    function successCallback (json){\n        Dashboards.log('Plugin ' + pluginId + ' updated!');\n        if (isNewPlugin){ Dashboards.setParameter('${p:isNewPluginParam}', false); }\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addPublishWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/Publish',\n                type:'GET',\n                data: {\n                    'publish': 'now',\n                    'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                },\n                success: callback\n            });\n        };\n    };\n\n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: { \n            paramplugin_id: pluginId \n        },\n        success: isNewPlugin ? addPublishWrapper(successCallback) : successCallback ,\n        error: function(){\n            Dashboards.log('Error saving ' + pluginId + '!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    \n    Dashboards.incrementRunningCalls();\n    $.ajax(ajaxOpts);\n\n}",
       "type": "JavaScript"
      },
      {
@@ -6707,11 +6038,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "xActionArrayParameter",
-      "value": "[[\"plugin_id\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -6742,9 +6068,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "xActionArrayParameter",
+      "value": "[[\"plugin_id\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -6777,6 +6103,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -6792,14 +6123,14 @@
       "value": "listElementsQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -7352,318 +6683,6 @@
     ]
    },
    {
-    "id": "a97f758a-eac4-521b-53c2-380b52eb158a",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "reportBugButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Report a Bug",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:reportBugButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "6911ac2f-fc7a-1265-1f20-f432287801fb",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "marketPlaceButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "To MarketPlace",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:marketPlaceButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "93ca09ee-f158-f1fd-ac87-0301a0794f32",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Pack",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:packButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "53538c04-726f-b33d-508f-4ce3d07814c8",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "submitChangesButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Submit Changes",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:submitChangesButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "SELECTORS",
     "name": "Selects",
     "type": "Label",
@@ -7949,7 +6968,7 @@
      },
      {
       "name": "parameter",
-      "value": "${p:visibleTabParam}",
+      "value": "${p:visibleDataCellParam}",
       "type": "Parameter"
      },
      {
@@ -7979,7 +6998,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"description\",\"Description\"],[\"build\",\"Build\"]]",
+      "value": "[[\"metadataDataCell\",\"Description\"],[\"elementsDataCell\",\"Build\"]]",
       "type": "ValuesArray"
      },
      {
@@ -8014,7 +7033,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n/*    var that = this,\n        $ItemsList = $(\"#\"+that.htmlObject).find('button');\n        \n  $.each($ItemsList, function(j,item){\n      \n      $($ItemsList[j]).bind('click',function(){\n        console.log(that.valuesArray[j][0]);\n    })\n  })  \n*/\n\n}",
+      "value": "function f(){\n    var that = this,\n        $ItemsList = $(\"#\"+that.htmlObject).find('button');\n        \n  $.each($ItemsList, function(j,item){\n      $($ItemsList[j]).bind('click',function(){\n/*      window.location = that.valuesArray[j][0];*/\n        console.log(that.valuesArray[j][0]);\n    })\n  })\n}",
       "type": "JavaScript"
      },
      {
@@ -8024,7 +7043,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\nvar bruno;\n    var tabView = Dashboards.getParameterValue(\"${p:visibleTabParam}\"),              \n        buildTabHiddenElements = [].concat( $(\"#closeMetadataEditionButtonContainer button\").get() , $(\"#saveMetadataButtonContainer button\").get() , $(\"#metadataDataCell\").get() ),\n        descriptionTabHiddenElements = [].concat( $(\"#globalOptionsCell .globalOptButtonPH\").get() , $(\"#readonlyMetadataDataCell\").get() , $(\"#elementsDataCell\").get() );\n\n    $.each(buildTabHiddenElements,function(idx, el){\n        $(el).removeClass('WDhidden');\n    });\n    $.each(descriptionTabHiddenElements,function(idx, el){\n        $(el).removeClass('WDhidden');\n    });    \n \n\n    if(tabView == 'description'){\n        $.each(descriptionTabHiddenElements, function(idx,el){\n                $(el).addClass('WDhidden');\n        });\n    } else {\n        $.each(buildTabHiddenElements, function(idx,el){\n                $(el).addClass('WDhidden');\n        });        \n    }\n}\n",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -8833,7 +7852,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "visibleTabParam",
+      "value": "visibleDataCellParam",
       "type": "Id"
      },
      {
