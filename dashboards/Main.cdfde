@@ -94,7 +94,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsCell",
+      "value": "pluginsListOptionsCell",
       "type": "Id"
      },
      {
@@ -205,7 +205,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsCellHeader",
+      "value": "pluginsListOptionsCellHeader",
       "type": "Id"
      },
      {
@@ -243,7 +243,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsCellBody",
+      "value": "pluginsListOptionsCellBody",
       "type": "Id"
      },
      {
@@ -2361,7 +2361,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n    \n    var bruno;\n}",
       "type": "JavaScript"
      },
      {

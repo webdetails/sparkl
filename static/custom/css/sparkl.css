@@ -22,7 +22,7 @@
  */
 
 /* =============================================================================
-   Fonts
+   Color Pallete
    ========================================================================== */
 
 .sparkl-blue-light{
@@ -116,7 +116,7 @@ div.container *{
 .globalOptText{
 	line-height: 40px;
 	text-align: middle;
-	color: #878685;
+	color: #878685; 
 	text-indent: 20px;
 }
 
@@ -245,6 +245,34 @@ div.container *{
   width: 7%;
   float: right;
   padding-right: 10px;
+}
+
+.build .globalOptButtonPH{
+  display: inline;
+  float: right;
+  width: 15%;
+  padding-left: 0px;
+  margin-left: 10px;
+}
+.build .globalOptButtonPH * {
+  height: 100%;
+}
+.build .globalOptButtonPH button{
+  width: 100%;
+  background: #EBEDEE;
+  text-align: center;
+  font-size: 11px;
+  font-weight: normal;
+  color: #878685;
+  vertical-align: baseline;
+  border: 4px solid #EBEDEE;
+  box-shadow: none;
+  float: left;
+  margin:0px;
+}
+.build .globalOptButtonPH button:hover{
+  background: #41B8EE;
+  color: #FFFFFF;
 }
 
 /********** FILTER ELEMENTS *********/
