@@ -247,17 +247,17 @@ div.container *{
   padding-right: 10px;
 }
 
-.build .globalOptButtonPH{
+.tabGlobalOpt .globalOptButtonPH{
   display: inline;
   float: right;
   width: 15%;
   padding-left: 0px;
   margin-left: 10px;
 }
-.build .globalOptButtonPH * {
+.tabGlobalOpt .globalOptButtonPH * {
   height: 100%;
 }
-.build .globalOptButtonPH button{
+.tabGlobalOpt .globalOptButtonPH button{
   width: 100%;
   background: #EBEDEE;
   text-align: center;
@@ -270,9 +270,12 @@ div.container *{
   float: left;
   margin:0px;
 }
-.build .globalOptButtonPH button:hover{
+.tabGlobalOpt .globalOptButtonPH button:hover{
   background: #41B8EE;
   color: #FFFFFF;
+}
+.tabGlobalOpt .globalOptButtonPH.WDhidden{
+  display: none;
 }
 
 /********** FILTER ELEMENTS *********/
