@@ -72,6 +72,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>dashboard_style</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>instalationFolder</name>
             <default_value>${plugin_dir}</default_value>
             <description/>
@@ -259,6 +264,9 @@
             </parameter>            <parameter>            <name>version</name>
             <stream_name/>
             <value>${version}</value>
+            </parameter>            <parameter>            <name>dashboard_style</name>
+            <stream_name/>
+            <value>${dashboard_style}</value>
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -292,7 +300,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>430</xloc>
+      <xloc>434</xloc>
       <yloc>69</yloc>
       </entry>
   </entries>

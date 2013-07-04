@@ -172,6 +172,27 @@ java.lang.NullPointerException
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>If there are new fields, just modify the input and Row Normaliser steps</note>
+      <xloc>60</xloc>
+      <yloc>544</yloc>
+      <width>381</width>
+      <heigth>24</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
   <hop> <from>read cpk.xml as a text file</from><to>row info init&#47;end</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>formatted_field</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; info_init</from><to>&gt; info_end</to><enabled>Y</enabled> </hop>  <hop> <from>row info init&#47;end</from><to>info init&#47;end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; info_init</from><to>lines before</to><enabled>Y</enabled> </hop>  <hop> <from>&gt; info_end</from><to>lines after</to><enabled>Y</enabled> </hop>  <hop> <from>lines before</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>info_start</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>formatted_field</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 2</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>info_end</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 3</from><to>Append streams 4</to><enabled>Y</enabled> </hop>  <hop> <from>lines after</from><to>Append streams 4</to><enabled>Y</enabled> </hop>  <hop> <from>info init&#47;end</from><to>&lt; cpk_end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; cpk_end</from><to>&lt; info_init</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; cpk_end</from><to>last line</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 4</from><to>Append streams 5</to><enabled>Y</enabled> </hop>  <hop> <from>last line</from><to>Append streams 5</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 5</from><to>Block this step until steps finish</to><enabled>Y</enabled> </hop>  <hop> <from>Block this step until steps finish</from><to>update cpk.xml</to><enabled>Y</enabled> </hop>  <hop> <from>field not null</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>input</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>sample row</from><to>Row Normaliser</to><enabled>N</enabled> </hop>  <hop> <from>Row Normaliser</from><to>null_value</to><enabled>Y</enabled> </hop>  <hop> <from>null_value</from><to>field not null</to><enabled>Y</enabled> </hop>  </order>
@@ -437,6 +458,9 @@ java.lang.NullPointerException
         </field>      <field>        <name>version</name>
         <value>version</value>
         <norm>field</norm>
+        </field>      <field>        <name>dashboard_style</name>
+        <value>dashboard_style</value>
+        <norm>field</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>190</xloc>
@@ -681,6 +705,12 @@ java.lang.NullPointerException
       </field>
       <field>
         <name>version</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>dashboard_style</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
