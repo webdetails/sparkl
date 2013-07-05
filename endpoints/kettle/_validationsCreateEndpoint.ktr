@@ -153,7 +153,7 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Abort</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>is dashboard?</from><to>Clone row</to><enabled>Y</enabled> </hop>  <hop> <from>Clone row</from><to>Value Mapper</to><enabled>Y</enabled> </hop>  <hop> <from>is dashboard?</from><to>some constants</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>is dashboard?</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>lk endpoint</from><to>not exists</to><enabled>Y</enabled> </hop>  <hop> <from>_getElementLocations</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>match pattern?</to><enabled>Y</enabled> </hop>  <hop> <from>match pattern?</from><to>Sample rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sample rows</from><to>Select paths</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables 2</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>some constants</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Value Mapper</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Select paths</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>filenames</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Abort</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>is dashboard?</from><to>Clone row</to><enabled>Y</enabled> </hop>  <hop> <from>Clone row</from><to>Value Mapper</to><enabled>Y</enabled> </hop>  <hop> <from>is dashboard?</from><to>some constants</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>is dashboard?</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>lk endpoint</from><to>not exists</to><enabled>Y</enabled> </hop>  <hop> <from>_getElementLocations</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>match pattern?</to><enabled>Y</enabled> </hop>  <hop> <from>match pattern?</from><to>Sample rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sample rows</from><to>Select paths</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables 2</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>some constants</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Value Mapper</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Select paths</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>filenames</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>wcdf ?</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf ?</from><to>Set ${WCDF_FILE}</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Abort</name>
     <type>Abort</type>
@@ -301,6 +301,97 @@
     </step>
 
   <step>
+    <name>Get Variables 2</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>templates_dir</name>
+        <variable>${cpk.templates.dir}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>endpoint_file</name>
+        <variable>${endpoint}.${endpoint_type}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>252</xloc>
+      <yloc>285</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sample rows</name>
+    <type>SampleRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <linesrange>1</linesrange>
+    <linenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>145</xloc>
+      <yloc>450</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select paths</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>path</name>
+        <rename>dest_path</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>templates_dir</name>
+        <rename>source_path</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>145</xloc>
+      <yloc>534</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
@@ -402,10 +493,66 @@
     </step>
 
   <step>
+    <name>_getElementLocations</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;_getElementLocations.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>49</xloc>
+      <yloc>285</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dummy</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>522</xloc>
+      <yloc>450</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>filenames</name>
     <type>Janino</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -464,6 +611,66 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>458</xloc>
       <yloc>281</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>join</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>=</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>145</xloc>
+      <yloc>285</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>join 2</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>=</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>522</xloc>
+      <yloc>534</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -546,6 +753,34 @@
     </step>
 
   <step>
+    <name>match pattern?</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>endpoint_file</leftvalue>
+ <function>REGEXP</function>
+ <rightvalue>pattern</rightvalue>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>145</xloc>
+      <yloc>366</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>not exists</name>
     <type>FilterRows</type>
     <description/>
@@ -606,8 +841,8 @@
     </step>
 
   <step>
-    <name>_getElementLocations</name>
-    <type>Mapping</type>
+    <name>Set ${WCDF_FILE}</name>
+    <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -615,66 +850,25 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;_getElementLocations.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
+    <fields>
+      <field>
+        <field_name>dest_file</field_name>
+        <variable_name>WCDF_FILE</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>285</yloc>
+      <xloc>895</xloc>
+      <yloc>450</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>join</name>
-    <type>JoinRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue/>
- <function>=</function>
- <rightvalue/>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>285</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>match pattern?</name>
+    <name>wcdf ?</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -688,153 +882,14 @@
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>endpoint_file</leftvalue>
- <function>REGEXP</function>
- <rightvalue>pattern</rightvalue>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>366</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Sample rows</name>
-    <type>SampleRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <linesrange>1</linesrange>
-    <linenumfield/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>450</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select paths</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>path</name>
-        <rename>dest_path</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>templates_dir</name>
-        <rename>source_path</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>534</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get Variables 2</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>templates_dir</name>
-        <variable>${cpk.templates.dir}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>endpoint_file</name>
-        <variable>${endpoint}.${endpoint_type}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>252</xloc>
-      <yloc>285</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>join 2</name>
-    <type>JoinRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue/>
+ <leftvalue>extension</leftvalue>
  <function>=</function>
  <rightvalue/>
- </condition>
+ <value><name>constant</name><type>String</type><text>wcdf</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>522</xloc>
-      <yloc>534</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>dummy</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>522</xloc>
+      <xloc>647</xloc>
       <yloc>450</yloc>
       <draw>Y</draw>
       </GUI>

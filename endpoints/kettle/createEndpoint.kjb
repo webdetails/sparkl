@@ -144,7 +144,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>364</xloc>
+      <xloc>354</xloc>
       <yloc>134</yloc>
       </entry>
     <entry>
@@ -180,7 +180,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>364</xloc>
+      <xloc>354</xloc>
       <yloc>327</yloc>
       </entry>
     <entry>
@@ -235,6 +235,38 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>177</xloc>
+      <yloc>327</yloc>
+      </entry>
+    <entry>
+      <name>updateDashboardStyle</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_updateDashboardStyle.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>531</xloc>
       <yloc>327</yloc>
       </entry>
   </entries>
@@ -305,6 +337,15 @@
     <hop>
       <from>Checks if ${plugin_dir} exists</from>
       <to>Endpoint (new) not null?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy template</from>
+      <to>updateDashboardStyle</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
