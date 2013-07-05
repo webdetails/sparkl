@@ -70,6 +70,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>dashboard_style</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>plugin_description</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
@@ -328,6 +333,18 @@
         <trim_type>both</trim_type>
       </field>
       <field>
+        <name>dashboard_style_param</name>
+        <variable>${dashboard_style}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
         <name>null_value</name>
         <variable>${NULL_VALUE}</variable>
         <type>String</type>
@@ -410,6 +427,12 @@
       <field>
         <field_name>version_new</field_name>
         <variable_name>version</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>dashboard_style_new</field_name>
+        <variable_name>dashboard_style</variable_name>
         <variable_type>ROOT_JOB</variable_type>
         <default_value/>
         </field>
@@ -570,6 +593,13 @@
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
+       <formula><field_name>dashboard_style_new</field_name>
+<formula_string>dashboard_style_param.equals(null_value)?dashboard_style:dashboard_style_param</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>358</xloc>
@@ -621,6 +651,10 @@
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>version_new</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dashboard_style_new</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>

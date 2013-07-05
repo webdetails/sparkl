@@ -130,9 +130,31 @@ apply filter admin.</note>
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>need this for validations in
+duplicateEndpoint</note>
+      <xloc>790</xloc>
+      <yloc>249</yloc>
+      <width>143</width>
+      <heigth>35</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>8</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>165</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
-  <hop> <from>_getElementLocations</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>exclude CPK private files</to><enabled>Y</enabled> </hop>  <hop> <from>exclude CPK private files</from><to>plugin_name</to><enabled>Y</enabled> </hop>  <hop> <from>plugin_name</from><to>to lower</to><enabled>Y</enabled> </hop>  <hop> <from>to lower</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>_getElementLocations</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>exclude CPK private files</to><enabled>Y</enabled> </hop>  <hop> <from>exclude CPK private files</from><to>plugin_name</to><enabled>Y</enabled> </hop>  <hop> <from>plugin_name</from><to>to lower</to><enabled>Y</enabled> </hop>  <hop> <from>to lower</from><to>select fields</to><enabled>Y</enabled> </hop>  <hop> <from>select fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get File Names</name>
     <type>GetFileNames</type>
@@ -172,7 +194,7 @@ apply filter admin.</note>
     </step>
 
   <step>
-    <name>OUTPUT</name>
+    <name>select fields</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -345,6 +367,24 @@ apply filter admin.</note>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>730</xloc>
       <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>OUTPUT</name>
+    <type>MappingOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>852</xloc>
+      <yloc>187</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

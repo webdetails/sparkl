@@ -72,6 +72,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>dashboard_style</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>instalationFolder</name>
             <default_value>${plugin_dir}</default_value>
             <description/>
