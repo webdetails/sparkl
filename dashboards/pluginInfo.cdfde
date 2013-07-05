@@ -6707,16 +6707,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"hidden\",\"parameterButton\"]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
@@ -6742,14 +6732,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[]",
+      "type": "Array"
      },
      {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colTypes",
+      "value": "[\"string\",\"string\",\"string\",\"hidden\",\"parameterButton\"]",
+      "type": "colTypesCustom"
      },
      {
       "name": "sort",
@@ -6773,6 +6763,16 @@
      },
      {
       "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "info",
       "value": "false",
       "type": "Boolean"
      },
@@ -6838,7 +6838,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewElementButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editElementButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                }\n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runElementButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                }\n            ]\n        }\n    }\n\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
+      "value": "function f(){\n    \n    var cd = this.chartDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listelements';\n    }\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewElementButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editElementButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                }\n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runElementButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                }\n            ]\n        }\n    }\n\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
       "type": "JavaScript"
      },
      {
@@ -7321,7 +7321,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    \n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'getpluginmetadata';\n    }\n}",
       "type": "JavaScript"
      },
      {
