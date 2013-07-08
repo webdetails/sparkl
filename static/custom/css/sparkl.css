@@ -171,10 +171,10 @@ div.container *{
 } 
 
 .WDfilterCellBody.tabsContainer .closeButton button {
-  background: url('../img/x.png') -2px -5px no-repeat #41B8EE;
+  background: url('../img/x.png') 5px 0px no-repeat #41B8EE;
 }
 .WDfilterCellBody.tabsContainer .closeButton button:hover {
-  background: url('../img/x.png') -52px -5px no-repeat #2C9AE3;
+  background: url('../img/x.png') -30px 0px no-repeat #2C9AE3;
 }
 
 .WDfilterCellBody.tabsContainer .pentaho-toggle-button button {
@@ -289,10 +289,10 @@ div.container *{
 .WDfilterCellBody .refreshButtonContainer button{
   height:100%;
   width:34px;
-  background: url('../img/refresh.png') -6px 50% no-repeat #EBEDEE;
+  background: url('../img/refresh.png') -1px 50% no-repeat #EBEDEE;
 }
 .WDfilterCellBody .refreshButtonContainer button:hover{
-  background-position: -53px 50%;
+  background-position: -36px 50%;
   background-color:#EBEDEE;
 }
 
@@ -474,11 +474,11 @@ div.container *{
   width:18px;
   height:11px;
   display:inline-block;
-  background: url('../img/arrow.png') -8px 50% no-repeat transparent;
+  background: url('../img/arrow.png') -4px 50% no-repeat transparent;
 }
 .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b,
 .WDfilterCellBody .chzn-container-single .chzn-single:hover div b{ /* Arrow */
-  background-position: -40px 50%;
+  background-position: -28px 50%;
 }
 .WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
   .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
