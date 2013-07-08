@@ -614,7 +614,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsCell",
+      "value": "buildTabGlobalOptions",
       "type": "Id"
      },
      {
@@ -725,7 +725,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsCellHeader",
+      "value": "globalOptionsBuildTabHeader",
       "type": "Id"
      },
      {
@@ -763,7 +763,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsCellBody",
+      "value": "globalOptionsBuildTabBody",
       "type": "Id"
      },
      {
@@ -1245,7 +1245,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "metadataDataCell",
+      "value": "descriptionTabMetadataDataCell",
       "type": "Id"
      },
      {
@@ -4677,7 +4677,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "readonlyMetadataDataCell",
+      "value": "buildTabMetadataDataCell",
       "type": "Id"
      },
      {
@@ -4715,7 +4715,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "elementsDataCell",
+      "value": "buildTabElementsDataCell",
       "type": "Id"
      },
      {
@@ -4826,7 +4826,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "elementsDataCellHeader",
+      "value": "buildTabElementsDataCellHeader",
       "type": "Id"
      },
      {
@@ -5046,7 +5046,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "elementsDataCellBody",
+      "value": "buildTabElementsDataCellBody",
       "type": "Id"
      },
      {
@@ -7979,7 +7979,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"description\",\"Description\"],[\"build\",\"Build\"]]",
+      "value": "[[\"tab1\",\"Description\"],[\"tab2\",\"Build\"]]",
       "type": "ValuesArray"
      },
      {
@@ -8014,7 +8014,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n/*    var tabView = Dashboards.getParameterValue(\"${p:visibleTabParam}\"),              \n        buildTabHiddenElements = [].concat( $(\"#closeMetadataEditionButtonContainer button\").get() , $(\"#saveMetadataButtonContainer button\").get() , $(\"#metadataDataCell\").get() ),\n        descriptionTabHiddenElements = [].concat( $(\"#globalOptionsCell .globalOptButtonPH\").get() , $(\"#readonlyMetadataDataCell\").get() , $(\"#elementsDataCell\").get() );\n\n    $.each(buildTabHiddenElements,function(idx, el){\n        $(el).removeClass('WDhidden');\n    });\n    $.each(descriptionTabHiddenElements,function(idx, el){\n        $(el).removeClass('WDhidden');\n    });    \n \n\n    if(tabView == 'description'){\n        $.each(descriptionTabHiddenElements, function(idx,el){\n                $(el).addClass('WDhidden');\n        });\n    } else {\n        $.each(buildTabHiddenElements, function(idx,el){\n                $(el).addClass('WDhidden');\n        });        \n    }\n*/\n}\n",
+      "value": "function f(){\n    var tabsDictionary = {\n        tab1: ['#descriptionTabMetadataDataCell','#closeMetadataEditionButtonObj','#saveMetadataButtonObj'],\n        tab2: ['#buildTabGlobalOptions','#buildTabMetadataDataCell','#buildTabElementsDataCell']\n    };\n    \n    var defaultTabView = \"tab1\";\n    $.each(tabsDictionary,function(key, val){\n        if (defaultTabView == key){return;}\n        $.each(val ,function(idx,el){\n            $(el).addClass('WDhidden');\n        });\n    });  \n\n\n}",
       "type": "JavaScript"
      },
      {
@@ -8024,7 +8024,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var tabView = Dashboards.getParameterValue(\"${p:visibleTabParam}\"),              \n        buildTabHiddenElements = [].concat( $(\"#closeMetadataEditionButtonContainer button\").get() , $(\"#saveMetadataButtonContainer button\").get() , $(\"#metadataDataCell\").get() ),\n        descriptionTabHiddenElements = [].concat( $(\"#globalOptionsCell .globalOptButtonPH\").get() , $(\"#readonlyMetadataDataCell\").get() , $(\"#elementsDataCell\").get() );\n\n    $.each(buildTabHiddenElements,function(idx, el){\n        $(el).removeClass('WDhidden');\n    });\n    $.each(descriptionTabHiddenElements,function(idx, el){\n        $(el).removeClass('WDhidden');\n    });    \n \n\n    if(tabView == 'description'){\n        $.each(descriptionTabHiddenElements, function(idx,el){\n                $(el).addClass('WDhidden');\n        });\n    } else {\n        $.each(buildTabHiddenElements, function(idx,el){\n                $(el).addClass('WDhidden');\n        });        \n    }\n}",
+      "value": "function f(){\n    var tabsDictionary = {\n        tab1: ['#descriptionTabMetadataDataCell','#closeMetadataEditionButtonObj','#saveMetadataButtonObj'],\n        tab2: ['#buildTabGlobalOptions','#buildTabMetadataDataCell','#buildTabElementsDataCell']\n    };\n    \n    $.each(tabsDictionary,function(key, val){\n        $.each(val ,function(idx,el){\n            $(el).addClass('WDhidden');\n        });\n    });  \n \n    var tabView = Dashboards.getParameterValue(\"${p:visibleTabParam}\");\n    $.each(tabsDictionary[tabView], function(idx,el){\n        $(el).removeClass('WDhidden');\n    });\n}\n",
       "type": "JavaScript"
      },
      {

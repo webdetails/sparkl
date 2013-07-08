@@ -725,6 +725,8 @@ div.container *{
 
 .WDdataCellBody table{
   border: none;
+  max-width: 100%;
+  min-width: 100%;
 }
 .WDdataCellBody table tr{
   background: #EBEDEE;
