@@ -385,14 +385,52 @@
     ]
    },
    {
-    "id": "b398b220-43b7-5051-6b7b-127a98b61254",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "b8e8a342-b750-177b-fa1a-488b15329d8f",
+    "id": "c89e7f19-7c7e-6caa-5045-e0dcf0896d83",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "closeMetadataEditionButtonContainer",
+      "value": "descriptionTabGlobalOptions",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCell",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "35aa3204-1de7-7d12-ab29-dc789a90e9e0",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "c89e7f19-7c7e-6caa-5045-e0dcf0896d83",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
       "type": "Id"
      },
      {
@@ -452,20 +490,20 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH closeButton",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "d17a5c41-aba2-bb82-db4f-500a62ac1033",
+    "id": "e7569f9d-ccba-5c33-b433-2855b7ff0b63",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "b398b220-43b7-5051-6b7b-127a98b61254",
+    "parent": "35aa3204-1de7-7d12-ab29-dc789a90e9e0",
     "properties": [
      {
       "name": "name",
-      "value": "closeMetadataEditionButtonObj",
+      "value": "descriptionTabGlobalOptionsHeader",
       "type": "Id"
      },
      {
@@ -490,20 +528,58 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "WDfilterCellHeader WDhidden",
       "type": "String"
      }
     ]
    },
    {
-    "id": "a3ee137d-5d0e-24ae-f382-52621b2427a9",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "b8e8a342-b750-177b-fa1a-488b15329d8f",
+    "id": "8a700f54-68d8-412b-4e38-738545314877",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "35aa3204-1de7-7d12-ab29-dc789a90e9e0",
     "properties": [
      {
       "name": "name",
-      "value": "saveMetadataButtonContainer",
+      "value": "descriptionTabGlobalOptionsBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCellBody tabGlobalOpt",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "316fc3f0-cb55-ef76-7a5f-c07e59fff9df",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "8a700f54-68d8-412b-4e38-738545314877",
+    "properties": [
+     {
+      "name": "name",
+      "value": "descriptionTabSubmitChangesButtonContainer",
       "type": "Id"
      },
      {
@@ -558,25 +634,25 @@
      },
      {
       "name": "textAlign",
-      "value": "center",
+      "value": "",
       "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH saveButton",
+      "value": "globalOptButtonPH submitChanges",
       "type": "String"
      }
     ]
    },
    {
-    "id": "462e7be3-d97d-3880-d3c0-a7f4d2d3477c",
+    "id": "36431368-d83a-c8dc-8564-b93591deaccd",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "a3ee137d-5d0e-24ae-f382-52621b2427a9",
+    "parent": "316fc3f0-cb55-ef76-7a5f-c07e59fff9df",
     "properties": [
      {
       "name": "name",
-      "value": "saveMetadataButtonObj",
+      "value": "descriptionTabSubmitChangesButtonObj",
       "type": "Id"
      },
      {
@@ -725,7 +801,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsBuildTabHeader",
+      "value": "buildTabGlobalOptionsHeader",
       "type": "Id"
      },
      {
@@ -763,7 +839,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "globalOptionsBuildTabBody",
+      "value": "buildTabGlobalOptionsBody",
       "type": "Id"
      },
      {
@@ -1134,7 +1210,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "submitChangesButtonContainer",
+      "value": "buildTabSubmitChangesButtonContainer",
       "type": "Id"
      },
      {
@@ -1207,7 +1283,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "submitChangesButtonObj",
+      "value": "buildTabSubmitChangesButtonObj",
       "type": "Id"
      },
      {
@@ -6525,162 +6601,6 @@
     ]
    },
    {
-    "id": "9e163ab5-c2f7-c237-3c9d-44efd7ab1414",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "closeMetadataEditionButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "X",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    sparkl.changeLocation('/pentaho/content/sparkl/main');\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:closeMetadataEditionButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "ab4854df-b999-4092-2432-c6051b59584d",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "saveMetadataButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Save all",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        isNewPlugin = Dashboards.getParameterValue('${p:isNewPluginParam}'),\n        endpoint = isNewPlugin ? 'createPlugin' : 'updateMetadata';\n        \n    function successCallback (json){\n        Dashboards.log('Plugin ' + pluginId + ' updated!');\n        if (isNewPlugin){ Dashboards.setParameter('${p:isNewPluginParam}', false); }\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addPublishWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/Publish',\n                type:'GET',\n                data: {\n                    'publish': 'now',\n                    'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                },\n                success: callback\n            });\n        };\n    };\n\n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: { \n            paramplugin_id: pluginId \n        },\n        success: isNewPlugin ? addPublishWrapper(successCallback) : successCallback ,\n        error: function(){\n            Dashboards.log('Error saving ' + pluginId + '!');\n        }\n    };\n    \n    _.each( metadata, function(el, key) {\n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    \n    Dashboards.incrementRunningCalls();\n    $.ajax(ajaxOpts);\n\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:saveMetadataButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "3f354d47-8d3d-0617-8b48-23dc5d77082a",
     "type": "ComponentsTable",
     "typeDesc": "table Component",
@@ -7586,14 +7506,14 @@
     ]
    },
    {
-    "id": "1a5536a7-bef1-3017-d52b-caa3b1f0236f",
+    "id": "00268e08-d0bb-48b5-6118-aa8e9aea25b8",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "submitChangesButton",
+      "value": "buildTabSubmitChangesButton",
       "type": "Id"
      },
      {
@@ -7628,7 +7548,85 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:submitChangesButtonObj}",
+      "value": "${p:buildTabSubmitChangesButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "1a5536a7-bef1-3017-d52b-caa3b1f0236f",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "descriptionTabSubmitChangesButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Submit Changes",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:descriptionTabSubmitChangesButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -8014,7 +8012,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var tabsDictionary = {\n        tab1: ['#descriptionTabMetadataDataCell','#closeMetadataEditionButtonObj','#saveMetadataButtonObj'],\n        tab2: ['#buildTabGlobalOptions','#buildTabMetadataDataCell','#buildTabElementsDataCell']\n    };\n    \n    var defaultTabView = \"tab1\";\n    $.each(tabsDictionary,function(key, val){\n        if (defaultTabView == key){return;}\n        $.each(val ,function(idx,el){\n            $(el).addClass('WDhidden');\n        });\n    });  \n\n\n}",
+      "value": "function f(){\n    var tabsDictionary = {\n        tab1: ['#descriptionTabGlobalOptions','#descriptionTabMetadataDataCell'],\n        tab2: ['#buildTabGlobalOptions','#buildTabMetadataDataCell','#buildTabElementsDataCell']\n    };\n    \n    var defaultTabView = \"tab1\";\n    $.each(tabsDictionary,function(key, val){\n        if (defaultTabView == key){return;}\n        $.each(val ,function(idx,el){\n            $(el).addClass('WDhidden');\n        });\n    });  \n\n\n}",
       "type": "JavaScript"
      },
      {
@@ -8024,7 +8022,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var tabsDictionary = {\n        tab1: ['#descriptionTabMetadataDataCell','#closeMetadataEditionButtonObj','#saveMetadataButtonObj'],\n        tab2: ['#buildTabGlobalOptions','#buildTabMetadataDataCell','#buildTabElementsDataCell']\n    };\n    \n    $.each(tabsDictionary,function(key, val){\n        $.each(val ,function(idx,el){\n            $(el).addClass('WDhidden');\n        });\n    });  \n \n    var tabView = Dashboards.getParameterValue(\"${p:visibleTabParam}\");\n    $.each(tabsDictionary[tabView], function(idx,el){\n        $(el).removeClass('WDhidden');\n    });\n}\n",
+      "value": "function f(){\n    var tabsDictionary = {\n        tab1: ['#descriptionTabGlobalOptions','#descriptionTabMetadataDataCell'],\n        tab2: ['#buildTabGlobalOptions','#buildTabMetadataDataCell','#buildTabElementsDataCell']\n    };\n    \n    $.each(tabsDictionary,function(key, val){\n        $.each(val ,function(idx,el){\n            $(el).addClass('WDhidden');\n        });\n    });  \n \n    var tabView = Dashboards.getParameterValue(\"${p:visibleTabParam}\");\n    $.each(tabsDictionary[tabView], function(idx,el){\n        $(el).removeClass('WDhidden');\n    });\n}\n",
       "type": "JavaScript"
      },
      {

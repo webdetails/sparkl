@@ -225,13 +225,14 @@ div.container *{
   background: #EBEDEE;
 }
 .globalOptButtonPH.tabsContainer{
-  width: 73%;
+  width: 100%;
   float: left;
   display: inline;
 }
 .tabsContainer .globalOptButtonPH *{
   height: 100%;
 }
+/*
 .globalOptButtonPH.submitButton{
   width: 25%;
   float: right;
@@ -246,7 +247,7 @@ div.container *{
   float: right;
   padding-right: 10px;
 }
-
+*/
 .tabGlobalOpt .globalOptButtonPH{
   display: inline;
   float: right;
