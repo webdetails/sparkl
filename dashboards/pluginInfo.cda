@@ -12,6 +12,14 @@
          <KtrFile>../endpoints/kettle/listElements.ktr</KtrFile>
          <variables datarow-name="plugin_id" variable-name="plugin_id"/>
       </Connection>
+      <Connection id="newEndpointSelectorQuery" type="scripting.scripting">
+         <Initscript></Initscript>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="newDashboardSelectorQuery" type="scripting.scripting">
+         <Initscript></Initscript>
+         <Language>beanshell</Language>
+      </Connection>
    </DataSources>
    <DataAccess access="public" cache="true" cacheDuration="3600"
                connection="listDashboardsQuery"
@@ -39,5 +47,59 @@
          <Parameter default="" name="plugin_id" type="String"/>
       </Parameters>
       <Query>OUTPUT</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="newEndpointSelectorQuery"
+               id="newEndpointSelectorQuery"
+               type="scriptable">
+      <Columns/>
+      <Parameters/>
+      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+"template_name"
+};
+
+
+Class[] columnTypes = new Class[]{
+String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+
+model.addRow(new Object[]{ new String("New Clean Element") });
+model.addRow(new Object[]{ new String("Template A") });
+model.addRow(new Object[]{ new String("Template B") });
+model.addRow(new Object[]{ new String("Template C") });
+model.addRow(new Object[]{ new String("Template D") });
+
+return model;</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="newDashboardSelectorQuery"
+               id="newDashboardSelectorQuery"
+               type="scriptable">
+      <Columns/>
+      <Parameters/>
+      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+"template_name"
+};
+
+
+Class[] columnTypes = new Class[]{
+String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+
+model.addRow(new Object[]{ new String("New Clean Element") });
+model.addRow(new Object[]{ new String("Template A") });
+model.addRow(new Object[]{ new String("Template B") });
+model.addRow(new Object[]{ new String("Template C") });
+model.addRow(new Object[]{ new String("Template D") });
+
+return model;</Query>
    </DataAccess>
 </CDADescriptor>

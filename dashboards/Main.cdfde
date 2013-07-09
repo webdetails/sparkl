@@ -2361,7 +2361,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n    \n    var bruno;\n}",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n}",
       "type": "JavaScript"
      },
      {
