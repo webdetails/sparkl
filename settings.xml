@@ -3,4 +3,5 @@
 	<cde-styles>
 		<path>system/sparkl/resources/styles</path>
 	</cde-styles>
+	<cde-datasources/>
 </settings>
