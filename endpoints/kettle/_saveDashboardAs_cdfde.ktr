@@ -88,8 +88,8 @@ source_dash  - full path
 dest_dash  - full path
 new_title
 </note>
-      <xloc>33</xloc>
-      <yloc>444</yloc>
+      <xloc>774</xloc>
+      <yloc>23</yloc>
       <width>152</width>
       <heigth>69</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -130,8 +130,8 @@ new_title
     </notepad>
     <notepad>
       <note>single line</note>
-      <xloc>696</xloc>
-      <yloc>136</yloc>
+      <xloc>660</xloc>
+      <yloc>115</yloc>
       <width>59</width>
       <heigth>22</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -152,7 +152,7 @@ new_title
     <notepad>
       <note>Replacing information in destination file                                                                                                                                                      </note>
       <xloc>199</xloc>
-      <yloc>334</yloc>
+      <yloc>431</yloc>
       <width>697</width>
       <heigth>24</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -172,7 +172,7 @@ new_title
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Replace info in destination file</from><to>Block until Text file input finishes</to><enabled>Y</enabled> </hop>  <hop> <from>Block until Text file input finishes</from><to>Text file output</to><enabled>Y</enabled> </hop>  <hop> <from>Get source and dest</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>source cdfde file</to><enabled>Y</enabled> </hop>  <hop> <from>source cdfde file</from><to>dashboard filename</to><enabled>Y</enabled> </hop>  <hop> <from>dashboard filename</from><to>filename line</to><enabled>Y</enabled> </hop>  <hop> <from>filename line</from><to>tolower</to><enabled>Y</enabled> </hop>  <hop> <from>tolower</from><to>solution_dir</to><enabled>Y</enabled> </hop>  <hop> <from>solution_dir</from><to>new_filename</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>destination cdfde file</to><enabled>Y</enabled> </hop>  <hop> <from>destination cdfde file</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>formatted data</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Replace info in destination file</to><enabled>Y</enabled> </hop>  <hop> <from>new_filename</from><to>Get new_title</to><enabled>Y</enabled> </hop>  <hop> <from>Get new_title</from><to>formatted data</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Replace info in destination file</from><to>Block until Text file input finishes</to><enabled>Y</enabled> </hop>  <hop> <from>Block until Text file input finishes</from><to>Text file output</to><enabled>Y</enabled> </hop>  <hop> <from>Get source and dest</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>source cdfde file</to><enabled>Y</enabled> </hop>  <hop> <from>source cdfde file</from><to>dashboard filename</to><enabled>Y</enabled> </hop>  <hop> <from>dashboard filename</from><to>filename line</to><enabled>Y</enabled> </hop>  <hop> <from>filename tolower</from><to>solution_dir</to><enabled>Y</enabled> </hop>  <hop> <from>solution_dir</from><to>new_filename</to><enabled>Y</enabled> </hop>  <hop> <from>Replace in string</from><to>destination cdfde file</to><enabled>Y</enabled> </hop>  <hop> <from>destination cdfde file</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>formatted data</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Replace info in destination file</to><enabled>Y</enabled> </hop>  <hop> <from>new_filename</from><to>Get new_title</to><enabled>Y</enabled> </hop>  <hop> <from>Get new_title</from><to>formatted data</to><enabled>Y</enabled> </hop>  <hop> <from>Get source and dest</from><to>_saveDashboardAs_cdfde</to><enabled>Y</enabled> </hop>  <hop> <from>destination cdfde file</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>filename line</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>filename tolower</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>join 2</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Block until Text file input finishes</name>
     <type>BlockUntilStepsFinish</type>
@@ -192,14 +192,14 @@ new_title
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>691</xloc>
-      <yloc>275</yloc>
+      <yloc>372</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Replace info in destination file</name>
-    <type>ReplaceString</type>
+    <name>Get new_title</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -209,93 +209,22 @@ new_title
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>Field1</in_stream_name>
-        <out_stream_name/>
-        <use_regex>yes</use_regex>
-        <replace_string>&quot;filename&quot;: &quot;.+&quot;</replace_string>
-        <replace_by_string/>
-        <replace_field_by_string>new_filename</replace_field_by_string>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>Field1</in_stream_name>
-        <out_stream_name/>
-        <use_regex>yes</use_regex>
-        <replace_string>&quot;title&quot;: &quot;.+&quot;</replace_string>
-        <replace_by_string/>
-        <replace_field_by_string>new_title</replace_field_by_string>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>456</xloc>
-      <yloc>275</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Text file output</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator/>
-    <enclosure/>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>Y</fileNameInField>
-    <fileNameField>dest_dash</fileNameField>
-    <create_parent_folder>N</create_parent_folder>
-    <file>
-      <name/>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention/>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>N</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>Field1</name>
+        <name>new_title</name>
+        <variable>${new_title}</variable>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>859</xloc>
-      <yloc>275</yloc>
+      <xloc>456</xloc>
+      <yloc>259</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -304,7 +233,7 @@ new_title
     <name>Get source and dest</name>
     <type>GetVariable</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -338,7 +267,7 @@ new_title
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>100</xloc>
+      <xloc>99</xloc>
       <yloc>69</yloc>
       <draw>Y</draw>
       </GUI>
@@ -405,8 +334,8 @@ new_title
     </step>
 
   <step>
-    <name>source cdfde file</name>
-    <type>TextFileInput</type>
+    <name>Replace info in destination file</name>
+    <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -414,43 +343,77 @@ new_title
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <accept_filenames>Y</accept_filenames>
-    <passing_through_fields>Y</passing_through_fields>
-    <accept_field>source_dash</accept_field>
-    <accept_stepname>Replace in string</accept_stepname>
-    <separator>F&quot;#$FWEFHW)($&#47;&quot;HG)&#47;H&quot;=()GH=)#($F)H$&quot;GBE&#47;SBIUGFSDGIUSE</separator>
+    <fields>
+      <field>
+        <in_stream_name>Field1</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&quot;filename&quot;: &quot;.+&quot;</replace_string>
+        <replace_by_string/>
+        <replace_field_by_string>new_filename</replace_field_by_string>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Field1</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&quot;title&quot;: &quot;.+&quot;</replace_string>
+        <replace_by_string/>
+        <replace_field_by_string>new_title</replace_field_by_string>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>456</xloc>
+      <yloc>372</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
     <enclosure/>
-    <enclosure_breaks>N</enclosure_breaks>
-    <escapechar/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>N</header>
-    <nr_headerlines>1</nr_headerlines>
     <footer>N</footer>
-    <nr_footerlines>1</nr_footerlines>
-    <line_wrapped>N</line_wrapped>
-    <nr_wraps>1</nr_wraps>
-    <layout_paged>N</layout_paged>
-    <nr_lines_per_page>80</nr_lines_per_page>
-    <nr_lines_doc_header>0</nr_lines_doc_header>
-    <noempty>Y</noempty>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <rownumByFile>N</rownumByFile>
-    <rownum_field/>
-    <format>mixed</format>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>Y</fileNameInField>
+    <fileNameField>dest_dash_uri</fileNameField>
+    <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;sparkl&#47;dashboards&#47;main.cdfde</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <type>Fixed</type>
-      <compression>None</compression>
+      <name/>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention/>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>N</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
     </file>
-    <filters>
-    </filters>
     <fields>
       <field>
         <name>Field1</name>
@@ -460,43 +423,44 @@ new_title
         <decimal/>
         <group/>
         <nullif/>
-        <ifnull/>
-        <position>0</position>
-        <length>500</length>
-        <precision>-1</precision>
         <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
-    <limit>0</limit>
-    <error_ignored>N</error_ignored>
-    <skip_bad_files>N</skip_bad_files>
-    <file_error_field/>
-    <file_error_message_field/>
-    <error_line_skipped>N</error_line_skipped>
-    <error_count_field/>
-    <error_fields_field/>
-    <error_text_field/>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <date_format_lenient>Y</date_format_lenient>
-    <date_format_locale>en_US</date_format_locale>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>69</yloc>
+      <xloc>859</xloc>
+      <yloc>372</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>_saveDashboardAs_cdfde</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <logmessage>Parameters:</logmessage>
+    <fields>
+      <field>
+        <name>source_dash</name>
+        </field>
+      <field>
+        <name>dest_dash</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>99</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -546,154 +510,17 @@ new_title
     </step>
 
   <step>
-    <name>filename line</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to/>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>result</leftvalue>
- <function>=</function>
- <rightvalue/>
- <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>574</xloc>
-      <yloc>69</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>solution_dir</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>solution_dir</field_name>
-<formula_string>source_dash.replace(filename, &quot;&quot;)</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>690</xloc>
-      <yloc>162</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>tolower</name>
-    <type>StringOperations</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>source_dash</in_stream_name>
-        <out_stream_name/>
-        <trim_type>none</trim_type>
-        <lower_upper>lower</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>none</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>dest_dash</in_stream_name>
-        <out_stream_name/>
-        <trim_type>none</trim_type>
-        <lower_upper>lower</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>none</remove_special_characters>
-      </field>
-      <field>
-        <in_stream_name>filename</in_stream_name>
-        <out_stream_name/>
-        <trim_type>none</trim_type>
-        <lower_upper>lower</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>none</digits>
-        <remove_special_characters>none</remove_special_characters>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>690</xloc>
-      <yloc>69</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>new_filename</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>new_filename</field_name>
-<formula_string>dest_dash.replace(solution_dir, &quot;&quot;)</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>574</xloc>
-      <yloc>162</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>destination cdfde file</name>
     <type>TextFileInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
     <accept_filenames>Y</accept_filenames>
-    <passing_through_fields>Y</passing_through_fields>
+    <passing_through_fields>N</passing_through_fields>
     <accept_field>dest_dash</accept_field>
     <accept_stepname>Replace in string</accept_stepname>
     <separator>F&quot;#$FWEFHW)($&#47;&quot;HG)&#47;H&quot;=()GH=)#($F)H$&quot;GBE&#47;SBIUGFSDGIUSE</separator>
@@ -719,7 +546,7 @@ new_title
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:&#47;Pentaho&#47;project-brazil2013-solution&#47;system&#47;sparkl&#47;dashboards&#47;main.cdfde</name>
+      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -767,21 +594,21 @@ new_title
     <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
+    <uriNameFieldName>dest_dash_uri</uriNameFieldName>
     <rootUriNameFieldName/>
     <extensionFieldName/>
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>218</xloc>
-      <yloc>275</yloc>
+      <yloc>371</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>join</name>
-    <type>JoinRows</type>
+    <name>filename line</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -789,22 +616,20 @@ new_title
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main/>
+<send_true_to/>
+<send_false_to/>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue/>
+ <leftvalue>result</leftvalue>
  <function>=</function>
  <rightvalue/>
- </condition>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>275</yloc>
+      <xloc>574</xloc>
+      <yloc>69</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -836,14 +661,191 @@ new_title
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>336</xloc>
-      <yloc>162</yloc>
+      <yloc>259</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get new_title</name>
-    <type>GetVariable</type>
+    <name>join</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>=</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>336</xloc>
+      <yloc>372</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>new_filename</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>new_filename</field_name>
+<formula_string>dest_dash_uri.replace(solution_dir, &quot;&quot;)</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>574</xloc>
+      <yloc>259</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>solution_dir</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>solution_dir</field_name>
+<formula_string>source_dash_uri.replace(filename, &quot;&quot;)</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>690</xloc>
+      <yloc>259</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>source cdfde file</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>Y</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field>source_dash</accept_field>
+    <accept_stepname>Replace in string</accept_stepname>
+    <separator>F&quot;#$FWEFHW)($&#47;&quot;HG)&#47;H&quot;=()GH=)#($F)H$&quot;GBE&#47;SBIUGFSDGIUSE</separator>
+    <enclosure/>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>N</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>Fixed</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>Field1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>0</position>
+        <length>500</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName>source_dash_uri</uriNameFieldName>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>336</xloc>
+      <yloc>69</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>filename tolower</name>
+    <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -853,22 +855,73 @@ new_title
            </partitioning>
     <fields>
       <field>
-        <name>new_title</name>
-        <variable>${new_title}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <in_stream_name>filename</in_stream_name>
+        <out_stream_name/>
         <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>456</xloc>
-      <yloc>162</yloc>
+      <xloc>691</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>1 row</name>
+    <type>SampleRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <linesrange>1</linesrange>
+    <linenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>334</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>join 2</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>=</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>574</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
