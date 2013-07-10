@@ -144,7 +144,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>441</xloc>
+      <xloc>349</xloc>
       <yloc>213</yloc>
       </entry>
     <entry>
@@ -202,8 +202,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>362</xloc>
-      <yloc>402</yloc>
+      <xloc>349</xloc>
+      <yloc>492</yloc>
       </entry>
     <entry>
       <name>Endpoint (new) not null?</name>
@@ -257,6 +257,64 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>175</xloc>
+      <yloc>402</yloc>
+      </entry>
+    <entry>
+      <name>is dashboard?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname/>
+      <variablename>${IS_DASHBOARD}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>Y</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>174</xloc>
+      <yloc>492</yloc>
+      </entry>
+    <entry>
+      <name>_saveDashboardAs</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_saveDashboardAs.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>Y</params_from_previous>
+      <exec_per_row>Y</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>dest_dash</name>
+            <stream_name>dest_file</stream_name>
+            <value/>
+            </parameter>            <parameter>            <name>source_dash</name>
+            <stream_name>source_file</stream_name>
+            <value/>
+            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>349</xloc>
       <yloc>402</yloc>
       </entry>
   </entries>
@@ -344,11 +402,29 @@
     </hop>
     <hop>
       <from>validations</from>
-      <to>Copy endpoint</to>
+      <to>is dashboard?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>is dashboard?</from>
+      <to>_saveDashboardAs</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>is dashboard?</from>
+      <to>Copy endpoint</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
