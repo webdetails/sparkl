@@ -28,7 +28,7 @@
         </parameter>
         <parameter>
             <name>dest_dash</name>
-            <default_value>C:\Pentaho\project-brazil2013-solution\system\sparkl\copia.wcdf</default_value>
+            <default_value/>
             <description>mandatory</description>
         </parameter>
         <parameter>
@@ -43,7 +43,7 @@
         </parameter>
         <parameter>
             <name>source_dash</name>
-            <default_value>C:\Pentaho\project-brazil2013-solution\system\sparkl\dashboards\main.wcdf</default_value>
+            <default_value/>
             <description>mandatory</description>
         </parameter>
         <parameter>
@@ -102,7 +102,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>67</xloc>
-      <yloc>56</yloc>
+      <yloc>35</yloc>
       </entry>
     <entry>
       <name>${source_dash} not null?</name>
@@ -123,8 +123,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>56</yloc>
+      <xloc>317</xloc>
+      <yloc>35</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -134,8 +134,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>455</xloc>
-      <yloc>135</yloc>
+      <xloc>517</xloc>
+      <yloc>114</yloc>
       </entry>
     <entry>
       <name>Checks if ${source_dash} exists</name>
@@ -150,8 +150,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>135</yloc>
+      <xloc>317</xloc>
+      <yloc>114</yloc>
       </entry>
     <entry>
       <name>Copy files (cdfde and cda)</name>
@@ -170,8 +170,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>455</xloc>
-      <yloc>419</yloc>
+      <xloc>498</xloc>
+      <yloc>399</yloc>
       </entry>
     <entry>
       <name>${dest_dash} not null?</name>
@@ -192,8 +192,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>235</yloc>
+      <xloc>317</xloc>
+      <yloc>214</yloc>
       </entry>
     <entry>
       <name>_prepareForSaveAsDashboard</name>
@@ -224,8 +224,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>419</yloc>
+      <xloc>317</xloc>
+      <yloc>399</yloc>
       </entry>
     <entry>
       <name>generate wcdf file</name>
@@ -256,8 +256,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>638</xloc>
-      <yloc>419</yloc>
+      <xloc>679</xloc>
+      <yloc>399</yloc>
       </entry>
     <entry>
       <name>Checks if ${dest_dash} exists</name>
@@ -272,8 +272,49 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>323</yloc>
+      <xloc>317</xloc>
+      <yloc>302</yloc>
+      </entry>
+    <entry>
+      <name>update cdfde file</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_saveDashboardAs_cdfde.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>dest_dash</name>
+            <stream_name/>
+            <value>${dest_dash}</value>
+            </parameter>            <parameter>            <name>new_title</name>
+            <stream_name/>
+            <value>${TITLE_NEW}</value>
+            </parameter>            <parameter>            <name>source_dash</name>
+            <stream_name/>
+            <value>${source_dash}</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>860</xloc>
+      <yloc>399</yloc>
       </entry>
   </entries>
   <hops>
@@ -376,7 +417,51 @@
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>generate wcdf file</from>
+      <to>update cdfde file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Named parameters:
+
+source_dash - full path, mandatory
+dest_dash - full path, mandatory
+
+Other (opt.)
+author
+description
+icon
+rendererType
+style
+title	
+widget
+
+</note>
+      <xloc>19</xloc>
+      <yloc>246</yloc>
+      <width>201</width>
+      <heigth>200</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>192</backgroundcolorred>
+      <backgroundcolorgreen>192</backgroundcolorgreen>
+      <backgroundcolorblue>192</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
 </job>
