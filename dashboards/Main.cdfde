@@ -1530,12 +1530,12 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
+      "value": "[\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
       "name": "colFormats",
-      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
      },
      {
@@ -1660,7 +1660,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    \n    $.each(data.resultset,function(i,element){\n        data.resultset[i].push(data.resultset[i].shift());       \n    });\n    data.metadata.push(data.metadata.shift());    \n    /* TODO: circulate colIndex in all metadata Items*/\n    $.each(data.metadata, function(i,element){\n        element.colIndex = i;\n    });\n        \n    var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[2,3,4,5,6,7,8]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );\n    \n    return(data);\n}",
+      "value": "function f(data){\n  \n    $.each(data.resultset,function(i,element){\n        data.resultset[i].push(data.resultset[i][0]);       \n    });\n    data.metadata.push( $.extend( {} , data.metadata[0] ) );    \n    var lastMetadataElIdx = data.metadata.length-1;\n    (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n    var opts = Dashboards.propertiesArrayToObject( this.extraOptions || [] );\n    opts = $.extend( {}, opts, { \"aoColumnDefs\" : [ {\n        \"bVisible\": false,\n        \"aTargets\":[3,4,5,6,7,8,9]\n    }]});\n    this.extraOptions = Dashboards.objectToPropertiesArray( opts );    \n    \n    return(data);\n}",
       "type": "JavaScript"
      },
      {
