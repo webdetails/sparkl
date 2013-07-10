@@ -114,14 +114,14 @@ body{
 }
 
 .sparklMail a{
-  background: url('../img/email.png') -5px 50%;
+  background: url('../img/email.png') 0px 50%;
   width:31px;
   height:21px;
   position:relative;
   display:inline-block;
 }
 .sparklMail a:hover{
-  background-position: -47px 50%;
+  background-position: -32px 50%;
 }
 
 .sparklMail a span {

@@ -120,15 +120,7 @@ div.container *{
 	text-indent: 20px;
 }
 
-
-.popupComponent .WDfilterCell {
-  width: 49%;
-  display: inline-block;
-}
 /* Filter Cells header */
-.popupComponent .WDfilterCellHeader{
-  width: 100%;
-}
 
 
 /* Filter Cells body */
@@ -171,10 +163,10 @@ div.container *{
 } 
 
 .WDfilterCellBody.tabsContainer .closeButton button {
-  background: url('../img/x.png') -2px -5px no-repeat #41B8EE;
+  background: url('../img/x.png') 5px 0px no-repeat #41B8EE;
 }
 .WDfilterCellBody.tabsContainer .closeButton button:hover {
-  background: url('../img/x.png') -52px -5px no-repeat #2C9AE3;
+  background: url('../img/x.png') -30px 0px no-repeat #2C9AE3;
 }
 
 .WDfilterCellBody.tabsContainer .pentaho-toggle-button button {
@@ -201,14 +193,204 @@ div.container *{
 }
 
 
+/*New Element Popup*/
+
+.popupComponent{
+   color: #878685;
+   font-size: 18px;
+   text-align: left;
+   height: auto;
+   width: 700px;
+   padding: 15px 15px 15px 15px; 
+
+   border:solid 2px #25B9ED;
+   -webkit-box-shadow:0px 1px 2px 0px #C4C4C4;
+   -moz-box-shadow:0px 1px 2px 0px #C4C4C4;
+   -o-box-shadow:0px 1px 2px 0px #C4C4C4;
+   -ms-box-shadow:0px 1px 2px 0px #C4C4C4;
+   box-shadow:0px 1px 2px 0px #C4C4C4;
+   -webkit-border-radius:2px;
+   -moz-border-radius:2px;
+   -o-border-radius:2px;
+   -ms-border-radius:2px;
+   border-radius:2px;
+
+   position: absolute;
+
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.popupComponent *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.popupComponent a{
+   display: none;
+}
+
+.popupComponent.north .arrow{
+  background-image: none;
+}
+
+.popupComponent .WDfilterCell {
+  width: 100%;
+  display: inline-block;
+}
+.popupComponent .WDfilterCellHeader{
+  width: 100%;
+}
+.popupComponent .WDfilterCellBody{
+  height: auto;
+}
 .popupComponent .WDfilterCellBody > *{
   display: inline-block;
   background: #EBEDEE;
+  height: 100%;
+  float: left;
 }
 .no-svg .popupComponent .WDfilterCellBody{
 }
 .svg .popupComponent .WDfilterCellBody{
 }
+
+.WDfilterCellBody .cont{
+  height: 34px;
+  padding: 6px 6px 6px 6px;
+  background: #EBEDEE;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  color: #878685;
+  position: relative;
+  margin-right: 5px;
+}
+
+.WDfilterCellBody .cont *{
+  height: 100%;
+  /*width: 100%;*/
+  font-size: inherit;
+/*  float: left;*/
+}
+
+.WDfilterCellBody .cont:hover{
+  background: #41B8EE;
+  color: #FFFFFF;
+}
+.WDfilterCellBody .cont.elementName{
+  width: 35%;
+}
+.WDfilterCellBody .cont.elementSelector{
+  width: 30%;
+}
+.WDfilterCellBody .cont.elementAdminCheckbox{
+  width: 15%;
+}
+.WDfilterCellBody .cont.elementAddButton{
+  width: 15%;
+}
+
+.WDfilterCellBody .cont.elementName .labelPH{
+  background: inherit;
+  padding-left: 5px;
+  width: 15%;
+  line-height: 23px;
+  cursor:default;
+  width: 30%;
+  display: inline;
+  float: left;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.WDfilterCellBody .cont.elementName .formPH{
+  width: 70%;
+  display: inline;
+  float: left;
+}
+.WDfilterCellBody .cont .formPH input{
+  width: 100%;
+  background: #FFFFFF;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  padding-left: 10px;
+  margin: 0px;
+}
+.WDfilterCellBody .cont .formPH input:hover{
+  cursor: pointer;
+}
+.WDfilterCellBody .cont .formPH input:focus{
+  cursor: auto;
+}
+.WDfilterCellBody .cont .checkboxPH{
+  width: 100%;
+  color: #878685;
+}
+.WDfilterCellBody .cont .checkboxPH:hover{
+  color: #FFFFFF;
+  background: #25B9ED;
+}
+.WDfilterCellBody .cont .checkboxPH ul.toggleGroup{
+  margin: 0px;
+  padding-left: 0px;
+  width: 100%;
+  position: relative;
+}
+.WDfilterCellBody .cont .checkboxPH li.toggleGroup{
+  display: inline;
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.WDfilterCellBody .cont .checkboxPH li.toggleGroup label{
+  min-width: 100%;
+  position: relative;
+  bottom: 5px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.WDfilterCellBody .cont .checkboxPH li.toggleGroup label input{
+  position: relative;
+  top: 3px;
+}
+.WDfilterCellBody .cont.elementAddButton{
+  padding: 0px 0px 0px 0px;
+}
+.WDfilterCellBody .cont .buttonPH button{
+  color: #D1EEFC;
+}
+.WDfilterCellBody .cont .buttonPH button:hover{
+  color: #FFFFFF;
+}
+.WDfilterCellBody .cont .selectorPH{
+  width: 100%;
+}
+.WDfilterCellBody .cont.elementSelector:hover,
+.WDfilterCellBody .cont.elementAdminCheckbox:hover{
+  background: #EBEDEE;
+}
+
+.WDfilterCellBody .cont.elementSelector .selectorPH .chzn-container{
+  /*min-width: 188px;*/
+  min-width: 100%;
+  height: 100%;
+  border: none;
+}
+.WDfilterCellBody .cont.elementSelector .selectorPH .chzn-container span{
+  line-height: 22px;
+}
+
+/********/
 
 .WDfilterCellBody {
   display: inline;
@@ -225,28 +407,13 @@ div.container *{
   background: #EBEDEE;
 }
 .globalOptButtonPH.tabsContainer{
-  width: 73%;
+  width: 100%;
   float: left;
   display: inline;
 }
 .tabsContainer .globalOptButtonPH *{
   height: 100%;
 }
-.globalOptButtonPH.submitButton{
-  width: 25%;
-  float: right;
-  background: #FFFFFF;
-}
-.globalOptButtonPH.saveButton{
-  width: 20%;
-  float: right;
-}
-.globalOptButtonPH.closeButton{
-  width: 7%;
-  float: right;
-  padding-right: 10px;
-}
-
 .tabGlobalOpt .globalOptButtonPH{
   display: inline;
   float: right;
@@ -289,10 +456,10 @@ div.container *{
 .WDfilterCellBody .refreshButtonContainer button{
   height:100%;
   width:34px;
-  background: url('../img/refresh.png') -6px 50% no-repeat #EBEDEE;
+  background: url('../img/refresh.png') -1px 50% no-repeat #EBEDEE;
 }
 .WDfilterCellBody .refreshButtonContainer button:hover{
-  background-position: -53px 50%;
+  background-position: -36px 50%;
   background-color:#EBEDEE;
 }
 
@@ -474,11 +641,11 @@ div.container *{
   width:18px;
   height:11px;
   display:inline-block;
-  background: url('../img/arrow.png') -8px 50% no-repeat transparent;
+  background: url('../img/arrow.png') -4px 50% no-repeat transparent;
 }
 .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b,
 .WDfilterCellBody .chzn-container-single .chzn-single:hover div b{ /* Arrow */
-  background-position: -40px 50%;
+  background-position: -28px 50%;
 }
 .WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
   .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
@@ -712,7 +879,32 @@ div.container *{
   background: #2C9AE3;
   color:#FFFFFF;
 }
-
+.WDdataCellBody .cont.newElement{
+  font-size: 17px;
+  margin-top: 15px;
+  padding:6px;
+  border-bottom: none;
+}
+.WDdataCellBody .cont.newElement:hover{
+  background: #EBEDEE;
+}
+.cont.newElement .buttonPH{
+    width: 100%;
+    margin:0px;
+}
+.cont.newElement .buttonPH button{
+  width: 100%;
+  background: #EBEDEE;
+  color: #878685;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  vertical-align: baseline;  
+}
+.cont.newElement .buttonPH button:hover{
+  background: #41B8EE;
+  color:#FFFFFF;
+}
 
 /* =============================================================================
    5. TABLES
@@ -725,6 +917,8 @@ div.container *{
 
 .WDdataCellBody table{
   border: none;
+  max-width: 100%;
+  min-width: 100%;
 }
 .WDdataCellBody table tr{
   background: #EBEDEE;

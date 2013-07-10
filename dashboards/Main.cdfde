@@ -1524,16 +1524,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -1559,14 +1549,14 @@
       "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "xActionArrayParameter",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -1590,6 +1580,16 @@
      },
      {
       "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "paginate",
       "value": "false",
       "type": "Boolean"
      },
@@ -1655,7 +1655,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n \n    /*this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tsparkl.changeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v,\n                metadataReadonlyParam: true\n          \t});\n        }\n    });*/\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"deletePluginButton\",\n                title: \"Delete\",\n                action: function (v, st) {\n                    $.ajax({\n                        url: '/pentaho/content/sparkl/deletePlugin',\n                        type: 'POST',\n                        data: {\n                            paramplugin_id:v\n                        },\n                        success: function (){\n                            Dashboards.fireChange('${p:updateTableEvent}');\n                        }\n                    });\n                }\n            },\n            {\n                cssClass: \"viewPluginButton\",\n                title: \"View\",\n                action: function (v, st) {\n                    sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n                        pluginIdParam: v,\n                        metadataReadonlyParam: false\n                    });\n                }\n            }\n        ]\n    });\n}\n",
+      "value": "function f(){\n     \n    var cd = this.chartDefinition; \n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listplugins';\n    }\n \n    /*this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttonClass: \"viewPluginButton\",\n        buttonTitle: \"View Plugin\",\n        buttonAction: function (v, st) {\n          \tsparkl.changeLocation( '/pentaho/content/cpk/viewPlugin', {\n                pluginIdParam: v,\n                metadataReadonlyParam: true\n          \t});\n        }\n    });*/\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    this.setAddInOptions(\"colType\",\"parameterButton\",{\n        buttons: [\n            {\n                cssClass: \"deletePluginButton\",\n                title: \"Delete\",\n                action: function (v, st) {\n                    $.ajax({\n                        url: '/pentaho/content/sparkl/deletePlugin',\n                        type: 'POST',\n                        data: {\n                            paramplugin_id:v\n                        },\n                        success: function (){\n                            Dashboards.fireChange('${p:updateTableEvent}');\n                        }\n                    });\n                }\n            },\n            {\n                cssClass: \"viewPluginButton\",\n                title: \"View\",\n                action: function (v, st) {\n                    sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n                        pluginIdParam: v,\n                        metadataReadonlyParam: false\n                    });\n                }\n            }\n        ]\n    });\n}\n",
       "type": "JavaScript"
      },
      {
@@ -2361,7 +2361,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n    \n    var bruno;\n}",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n}",
       "type": "JavaScript"
      },
      {
