@@ -69,8 +69,8 @@
   <notepads>
     <notepad>
       <note>List of current endpoints                                   </note>
-      <xloc>47</xloc>
-      <yloc>48</yloc>
+      <xloc>46</xloc>
+      <yloc>85</yloc>
       <width>249</width>
       <heigth>24</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -83,27 +83,6 @@
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>128</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>.wcdf, .cdfde e .cda</note>
-      <xloc>298</xloc>
-      <yloc>343</yloc>
-      <width>104</width>
-      <heigth>22</heigth>
-      <fontname>Microsoft Sans Serif</fontname>
-      <fontsize>8</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>165</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
       <bordercolorred>100</bordercolorred>
       <bordercolorgreen>100</bordercolorgreen>
       <bordercolorblue>100</bordercolorblue>
@@ -153,7 +132,7 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Abort</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>is dashboard?</from><to>Clone row</to><enabled>Y</enabled> </hop>  <hop> <from>Clone row</from><to>Value Mapper</to><enabled>Y</enabled> </hop>  <hop> <from>is dashboard?</from><to>some constants</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>is dashboard?</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>lk endpoint</from><to>not exists</to><enabled>Y</enabled> </hop>  <hop> <from>_getElementLocations</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>match pattern?</to><enabled>Y</enabled> </hop>  <hop> <from>match pattern?</from><to>Sample rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sample rows</from><to>Select paths</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables 2</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>some constants</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Value Mapper</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Select paths</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>filenames</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>wcdf ?</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf ?</from><to>Set ${WCDF_FILE}</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Abort</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>lk endpoint</from><to>not exists</to><enabled>Y</enabled> </hop>  <hop> <from>_getElementLocations</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>match pattern?</to><enabled>Y</enabled> </hop>  <hop> <from>match pattern?</from><to>Sample rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sample rows</from><to>Select paths</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables 2</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>Select paths</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>filenames</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Set ${IS_DASHBOARD}</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Abort</name>
     <type>Abort</type>
@@ -169,33 +148,8 @@
       <always_log_rows>Y</always_log_rows>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>579</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Clone row</name>
-    <type>CloneRow</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <nrclones>2</nrclones>
-    <addcloneflag>N</addcloneflag>
-    <cloneflagfield/>
-    <nrcloneinfield>N</nrcloneinfield>
-    <nrclonefield/>
-    <addclonenum>Y</addclonenum>
-    <clonenumfield>clone_id</clonenumfield>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
-      <yloc>366</yloc>
+      <xloc>580</xloc>
+      <yloc>246</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -212,8 +166,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>895</xloc>
-      <yloc>534</yloc>
+      <xloc>866</xloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -250,8 +204,8 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>96</yloc>
+      <xloc>144</xloc>
+      <yloc>133</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -294,8 +248,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>458</xloc>
-      <yloc>12</yloc>
+      <xloc>450</xloc>
+      <yloc>49</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -359,7 +313,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>145</xloc>
-      <yloc>450</yloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -385,8 +339,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>534</yloc>
+      <xloc>270</xloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -420,8 +374,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>252</xloc>
-      <yloc>96</yloc>
+      <xloc>251</xloc>
+      <yloc>133</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -451,15 +405,15 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>771</xloc>
-      <yloc>534</yloc>
+      <xloc>742</xloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Value Mapper</name>
-    <type>ValueMapper</type>
+    <name>Set ${IS_DASHBOARD}</name>
+    <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -467,27 +421,19 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <field_to_use>clone_id</field_to_use>
-    <target_field>extension</target_field>
-    <non_match_default/>
     <fields>
       <field>
-        <source_value>0</source_value>
-        <target_value>wcdf</target_value>
-      </field>
-      <field>
-        <source_value>1</source_value>
-        <target_value>cdfde</target_value>
-      </field>
-      <field>
-        <source_value>2</source_value>
-        <target_value>cda</target_value>
-      </field>
-    </fields>
+        <field_name>is_dashboard</field_name>
+        <variable_name>IS_DASHBOARD</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
-      <yloc>450</yloc>
+      <xloc>580</xloc>
+      <yloc>359</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -531,24 +477,6 @@
     </step>
 
   <step>
-    <name>dummy</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>522</xloc>
-      <yloc>450</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>filenames</name>
     <type>Janino</type>
     <description/>
@@ -559,14 +487,14 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>source_file</field_name>
-<formula_string>source_path + &quot;&#47;template.&quot; + extension</formula_string>
+<formula_string>source_path + &quot;&#47;template.&quot; + endpoint_type</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>dest_file</field_name>
-<formula_string>dest_path + &quot;&#47;&quot; + endpoint + &quot;.&quot; + extension</formula_string>
+<formula_string>dest_path + &quot;&#47;&quot; + endpoint + &quot;.&quot; + endpoint_type</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -579,38 +507,17 @@
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
+       <formula><field_name>is_dashboard</field_name>
+<formula_string>endpoint_type.equals(&quot;wcdf&quot;)?&quot;Y&quot;:&quot;N&quot;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>647</xloc>
-      <yloc>534</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>is dashboard?</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Clone row</send_true_to>
-<send_false_to>some constants</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>endpoint_type</leftvalue>
- <function>=</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>wcdf</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>458</xloc>
-      <yloc>281</yloc>
+      <xloc>580</xloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -669,8 +576,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>522</xloc>
-      <yloc>534</yloc>
+      <xloc>451</xloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -707,8 +614,8 @@
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>49</xloc>
-      <yloc>96</yloc>
+      <xloc>48</xloc>
+      <yloc>133</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -746,8 +653,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>458</xloc>
-      <yloc>96</yloc>
+      <xloc>450</xloc>
+      <yloc>133</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -790,7 +697,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>is dashboard?</send_true_to>
+<send_true_to>join 2</send_true_to>
 <send_false_to>Abort</send_false_to>
     <compare>
 <condition>
@@ -802,95 +709,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>458</xloc>
-      <yloc>193</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>some constants</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>clone_id</field_name>
-<formula_string>0</formula_string>
-<value_type>Integer</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-       <formula><field_name>extension</field_name>
-<formula_string>endpoint_type</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>522</xloc>
-      <yloc>366</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Set ${WCDF_FILE}</name>
-    <type>SetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <field_name>dest_file</field_name>
-        <variable_name>WCDF_FILE</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      </fields>
-    <use_formatting>Y</use_formatting>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>895</xloc>
-      <yloc>450</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>wcdf ?</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to/>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>extension</leftvalue>
- <function>=</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>wcdf</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>647</xloc>
-      <yloc>450</yloc>
+      <xloc>451</xloc>
+      <yloc>246</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

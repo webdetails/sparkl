@@ -217,7 +217,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from wcdf</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>get wcdf filename</from><to>wcdf exist?</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>Row Normaliser</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>Select xml_field</to><enabled>Y</enabled> </hop>  <hop> <from>Select xml_field</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>parent xml elements</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>${dest_dash}</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from wcdf</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>get wcdf filename</from><to>wcdf exist?</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>Row Normaliser</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>Select xml_field</to><enabled>Y</enabled> </hop>  <hop> <from>Select xml_field</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>parent xml elements</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>${dest_dash}</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>${dest_dash}</name>
     <type>TextFileOutput</type>
@@ -1059,7 +1059,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <name>select new values</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1146,6 +1146,69 @@ I could also have used an XML Output step, but it generates a null Parent XML el
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>747</xloc>
       <yloc>58</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>author_new</field_name>
+        <variable_name>AUTHOR_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>description_new</field_name>
+        <variable_name>DESCRIPTION_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>icon_new</field_name>
+        <variable_name>ICON_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>rendererType_new</field_name>
+        <variable_name>RENDERERTYPE_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>title_new</field_name>
+        <variable_name>TITLE_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>widget_new</field_name>
+        <variable_name>WIDGET_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>style_new</field_name>
+        <variable_name>STYLE_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>623</xloc>
+      <yloc>153</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
