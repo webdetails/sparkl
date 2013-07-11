@@ -135,11 +135,11 @@
       <name>Abort job</name>
       <description/>
       <type>ABORT</type>
-      <message/>
+      <message>invalid parameters &#47;&#47; ${plugin_dir} &#47;&#47; plugin_to_dup_dir</message>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>435</xloc>
+      <xloc>411</xloc>
       <yloc>220</yloc>
       </entry>
     <entry>
@@ -181,7 +181,7 @@
       <yloc>290</yloc>
       </entry>
     <entry>
-      <name>Checks if ${plugin__to_dupdir} exist</name>
+      <name>Checks if ${plugin_to_dupdir} exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
@@ -194,7 +194,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>183</xloc>
-      <yloc>378</yloc>
+      <yloc>379</yloc>
       </entry>
     <entry>
       <name>Copy plugin folder</name>
@@ -218,8 +218,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>435</xloc>
-      <yloc>378</yloc>
+      <xloc>411</xloc>
+      <yloc>379</yloc>
       </entry>
     <entry>
       <name>updatePluginXML</name>
@@ -251,7 +251,49 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>585</xloc>
-      <yloc>378</yloc>
+      <yloc>379</yloc>
+      </entry>
+    <entry>
+      <name>_fixDashboard_cdfde</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_fixDashboard_cdfde.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>dest_plugin_dir</name>
+            <stream_name/>
+            <value>${plugin_dir}</value>
+            </parameter>            <parameter>            <name>dest_plugin_id</name>
+            <stream_name/>
+            <value>${plugin_id}</value>
+            </parameter>            <parameter>            <name>source_plugin_dir</name>
+            <stream_name/>
+            <value>${plugin_to_dup_dir}</value>
+            </parameter>            <parameter>            <name>source_plugin_id</name>
+            <stream_name/>
+            <value>${plugin_to_dup_id}</value>
+            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>756</xloc>
+      <yloc>379</yloc>
       </entry>
   </entries>
   <hops>
@@ -302,7 +344,7 @@
     </hop>
     <hop>
       <from>Plugin to duplicate ID not null?</from>
-      <to>Checks if ${plugin__to_dupdir} exist</to>
+      <to>Checks if ${plugin_to_dupdir} exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -319,7 +361,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin__to_dupdir} exist</from>
+      <from>Checks if ${plugin_to_dupdir} exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -328,7 +370,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin__to_dupdir} exist</from>
+      <from>Checks if ${plugin_to_dupdir} exist</from>
       <to>Copy plugin folder</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -339,6 +381,15 @@
     <hop>
       <from>Copy plugin folder</from>
       <to>updatePluginXML</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>updatePluginXML</from>
+      <to>_fixDashboard_cdfde</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
