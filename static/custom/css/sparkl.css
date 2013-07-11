@@ -1292,6 +1292,50 @@ input.editBox:focus {
    Project Specific Items 
    ========================================================================== */
 
+/***** Confirmation Message Dialog *****/
+.ui-dialog{
+}
+.ui-dialog.ui-widget.ui-corner-all{
+  border-radius: 0px;
+  padding: 0px 0px 0px 0px;
+}
+.ui-dialog.ui-widget.ui-widget-content{
+  background: #FFFFFF;
+  color: #8786A4;
+  border: 2px solid #25B9ED;
+}
 
+.ui-dialog .ui-dialog-titlebar.ui-widget-header{
+  border-radius: 0px;
+  background: #25B9ED;
+  color: #FFFFFF;
+  border: none;
+}
+.ui-dialog .ui-dialog-titlebar.ui-widget-header a{
+  display: none;
+}
+.ui-dialog .ui-dialog-content{
+  color: #8786A4;
+  min-height: 0px;
+}
+.ui-dialog .ui-dialog-buttonpane{
+  background: #FFFFFF;
+  border: none;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+.ui-dialog .ui-dialog-buttonpane button{
+  background: #25B9ED;
+  color: #FFFFFF;
+  border-radius: 0px;
+  border: none;
+}
+.ui-dialog .ui-dialog-buttonpane button:hover{
+  background: #2C9AE3;
+  color:#FFFFFF;
+}
 
-
+.ui-widget-overlay{
+  background: #FFFFFF;
+  opacity: 0.8;
+}
