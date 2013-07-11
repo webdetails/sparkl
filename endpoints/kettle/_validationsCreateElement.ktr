@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_validationsCreateEndpoint</name>
+    <name>_validationsCreateElement</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -222,8 +222,8 @@
            </partitioning>
     <fields>
       <field>
-        <name>endpoint</name>
-        <variable>${endpoint}</variable>
+        <name>element</name>
+        <variable>${element}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -234,8 +234,8 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>endpoint_type</name>
-        <variable>${endpoint_type}</variable>
+        <name>element_type</name>
+        <variable>${element_type}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -278,8 +278,8 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>endpoint_file</name>
-        <variable>${endpoint}.${endpoint_type}</variable>
+        <name>element_file</name>
+        <variable>${element}.${element_type}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -487,14 +487,14 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>source_file</field_name>
-<formula_string>source_path + &quot;&#47;template.&quot; + endpoint_type</formula_string>
+<formula_string>source_path + &quot;&#47;template.&quot; + element_type</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>dest_file</field_name>
-<formula_string>dest_path + &quot;&#47;&quot; + endpoint + &quot;.&quot; + endpoint_type</formula_string>
+<formula_string>dest_path + &quot;&#47;&quot; + element + &quot;.&quot; + element_type</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -508,7 +508,7 @@
 <replace_field/>
 </formula>
        <formula><field_name>is_dashboard</field_name>
-<formula_string>endpoint_type.equals(&quot;wcdf&quot;)?&quot;Y&quot;:&quot;N&quot;</formula_string>
+<formula_string>element_type.equals(&quot;wcdf&quot;)?&quot;Y&quot;:&quot;N&quot;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -637,11 +637,11 @@
     <integer_pair>N</integer_pair>
     <lookup>
       <key>
-        <name>endpoint</name>
+        <name>element</name>
         <field>element_name</field>
       </key>
       <key>
-        <name>endpoint_type</name>
+        <name>element_type</name>
         <field>extension</field>
       </key>
       <value>
@@ -674,7 +674,7 @@
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>endpoint_file</leftvalue>
+ <leftvalue>element_file</leftvalue>
  <function>REGEXP</function>
  <rightvalue>pattern</rightvalue>
  </condition>

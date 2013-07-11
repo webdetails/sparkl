@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>createEndpoint</name>
+  <name>createDashboard</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -47,14 +47,9 @@
             <description/>
         </parameter>
         <parameter>
-            <name>endpoint_name</name>
+            <name>dashboard_name</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
-        </parameter>
-        <parameter>
-            <name>endpoint_type</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description>ktr|kjb - mandatory</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
@@ -115,7 +110,7 @@
       <yloc>55</yloc>
       </entry>
     <entry>
-      <name>_createElement (ktr&#47;kjb)</name>
+      <name>_createElement (wcdf)</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
@@ -139,78 +134,27 @@
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
             <parameter>            <name>element</name>
             <stream_name/>
-            <value>${endpoint_name}</value>
+            <value>${dashboard_name}</value>
             </parameter>            <parameter>            <name>element_type</name>
             <stream_name/>
-            <value>${endpoint_type}</value>
+            <value>wcdf</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>212</xloc>
-      <yloc>161</yloc>
-      </entry>
-    <entry>
-      <name>endpoint_type valid?</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${endpoint_type}</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>(ktr|kjb)</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>regexp</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>212</xloc>
-      <yloc>55</yloc>
-      </entry>
-    <entry>
-      <name>Abort job</name>
-      <description/>
-      <type>ABORT</type>
-      <message>invalid endpoint_type [${endpoint_type}]</message>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>382</xloc>
+      <xloc>215</xloc>
       <yloc>55</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>endpoint_type valid?</to>
+      <to>_createElement (wcdf)</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>endpoint_type valid?</from>
-      <to>_createElement (ktr&#47;kjb)</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>endpoint_type valid?</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
