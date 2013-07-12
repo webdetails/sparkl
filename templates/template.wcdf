@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cdf>
         <title>Sparkl</title>
-        <author/>
+        <author></author>
         <description>Sparkl Template</description>
         <icon/>
-		<style>sparkl - (SPARKL)</style>
-</cdf>
+		<style>Clean</style>
+<rendererType>blueprint</rendererType><widget>false</widget></cdf>
