@@ -8372,7 +8372,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){}",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'packPlugin';\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" packed!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId,\n            paramdownload: true\n        },\n        success: successCallback,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error packing plugin ' + pluginId + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}\n",
       "type": "JavaScript"
      },
      {
