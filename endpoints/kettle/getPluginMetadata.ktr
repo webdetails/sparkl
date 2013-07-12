@@ -7,42 +7,42 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;</directory>
+    <directory>&#47;</directory>
     <parameters>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>&#x24;&#x7b;cpk.system.dir&#x7d;&#x2f;&#x24;&#x7b;cpk.plugin.id&#x7d;</default_value>
+            <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.system.dir</name>
-            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;system&#x2f;</default_value>
+            <default_value>${cpk.plugin.dir}&#47;system&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
+            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.system.dir</name>
-            <default_value>&#x24;&#x7b;cpk.solution.dir&#x7d;&#x2f;system&#x2f;</default_value>
+            <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_dir</name>
-            <default_value>&#x24;&#x7b;cpk.system.dir&#x7d;&#x2f;&#x24;&#x7b;plugin_id&#x7d;</default_value>
+            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
-            <description/>
+            <default_value>${NULL_VALUE}</default_value>
+            <description>mandatory</description>
         </parameter>
     </parameters>
     <log>
@@ -97,37 +97,16 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</created_date>
+  <created_date>2013&#47;06&#47;07 14:22:01.523</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</modified_date>
+  <modified_date>2013&#47;06&#47;07 14:22:01.523</modified_date>
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Get &#x24;&#x7b;cpk_filename&#x7d;</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>
-  <hop> <from>getPluginMetadata</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
-  </order>
+  <hop> <from>Get ${cpk_filename}</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>Get &#x24;&#x7b;cpk_filename&#x7d;</name>
+    <name>Get ${cpk_filename}</name>
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
@@ -139,7 +118,7 @@
     <fields>
       <field>
         <name>cpk_filename</name>
-        <variable>&#x24;&#x7b;plugin_dir&#x7d;&#x2f;cpk.xml</variable>
+        <variable>${plugin_dir}&#47;cpk.xml</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -189,7 +168,7 @@
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;_getPluginMetadata.ktr</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\_getPluginMetadata.ktr</filename>
     <directory_path/>
     <mappings>
       <input>

@@ -49,12 +49,12 @@
         <parameter>
             <name>endpoint_to_dup</name>
             <default_value>${NULL_VALUE}</default_value>
-            <description>name of the dash or Kettle file - mandatory</description>
+            <description>name of the dash or Kettle file;mandatory</description>
         </parameter>
         <parameter>
             <name>endpoint_type</name>
             <default_value>${NULL_VALUE}</default_value>
-            <description>wcdf|ktr|kjb - mandatory</description>
+            <description>allowed:wcdf|ktr|kjb;mandatory</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>

@@ -54,7 +54,7 @@
         <parameter>
             <name>plugin_id</name>
             <default_value>${NULL_VALUE}</default_value>
-            <description/>
+            <description>mandatory</description>
         </parameter>
     </parameters>
     <slaveservers>

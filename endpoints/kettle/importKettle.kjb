@@ -19,12 +19,12 @@
         <parameter>
             <name>admin</name>
             <default_value>true</default_value>
-            <description>UNUSED!!!</description>
+            <description>unused!!!</description>
         </parameter>
         <parameter>
             <name>kettleFile</name>
             <default_value/>
-            <description/>
+            <description>mandatory</description>
         </parameter>
         <parameter>
             <name>pluginFolder</name>
@@ -34,7 +34,7 @@
         <parameter>
             <name>plugin_id</name>
             <default_value>${NULL_VALUE}</default_value>
-            <description/>
+            <description>mandatory</description>
         </parameter>
     </parameters>
     <slaveservers>
