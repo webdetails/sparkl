@@ -102,8 +102,11 @@ plugin-specific options.
 
 ### Original hand-made Mock-up
 
-![CPK-UI Mockup](img/CPK_Dashboard1.png "CPK_UI Mockup")
+![Main Original Mockup](img/CPK_Dashboard1.png "Main Original Mockup")
 
+### UX Mock-up 
+
+![Main UX Mockup](img/CPK2.png "Main UX Mockup")
 
 ### Actions
 
@@ -159,8 +162,14 @@ and allow the user to edit it by changing the plugin's metadata or adding/deleti
 
 ### Original hand-made Mock-up
 
-![View Plugin Mockup](img/CPK_Dashboard2.png "View Plugin Mockup")
+![Plugin Info Original Mockup](img/CPK_Dashboard2.png "Plugin Info Original Mockup")
 
+### UX Mock-up 
+
+#### Description View
+![Plugin Info - description tab - UX Mockup](img/CPK9.png "Plugin Info - description tab - UX Mockup")
+#### Build View
+![Plugin Info - build tab- UX Mockup](img/CPK10.png "Plugin Info - build tab - UX Mockup")
 
 ### Actions
 
