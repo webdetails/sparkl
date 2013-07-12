@@ -67,11 +67,8 @@ String.class
 
 TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
 
-model.addRow(new Object[]{ new String("New Clean Element") });
-model.addRow(new Object[]{ new String("Template A") });
-model.addRow(new Object[]{ new String("Template B") });
-model.addRow(new Object[]{ new String("Template C") });
-model.addRow(new Object[]{ new String("Template D") });
+model.addRow(new Object[]{ new String("New Clean Kettle ktr") });
+model.addRow(new Object[]{ new String("New Clean Kettle kjb") });
 
 return model;</Query>
    </DataAccess>
@@ -94,11 +91,7 @@ String.class
 
 TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
 
-model.addRow(new Object[]{ new String("New Clean Element") });
-model.addRow(new Object[]{ new String("Template A") });
-model.addRow(new Object[]{ new String("Template B") });
-model.addRow(new Object[]{ new String("Template C") });
-model.addRow(new Object[]{ new String("Template D") });
+model.addRow(new Object[]{ new String("New Clean Dashboard") });
 
 return model;</Query>
    </DataAccess>
