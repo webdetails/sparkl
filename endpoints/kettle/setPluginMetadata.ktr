@@ -7,11 +7,11 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>CPK_version</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -21,82 +21,82 @@
         </parameter>
         <parameter>
             <name>author_email</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>author_name</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>company_name</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>company_url</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <default_value>&#x24;&#x7b;cpk.system.dir&#x7d;&#x2f;&#x24;&#x7b;cpk.plugin.id&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.system.dir</name>
-            <default_value>${cpk.plugin.dir}&#47;system&#47;</default_value>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;system&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.system.dir</name>
-            <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.dir&#x7d;&#x2f;system&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>creation_date</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>dashboard_style</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_description</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <default_value>&#x24;&#x7b;cpk.system.dir&#x7d;&#x2f;&#x24;&#x7b;plugin_id&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_name</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>version</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -152,9 +152,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;06&#47;07 14:22:01.523</created_date>
+  <created_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;06&#47;07 14:22:01.523</modified_date>
+  <modified_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</modified_date>
   </info>
   <notepads>
     <notepad>
@@ -179,9 +179,7 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>WARNING!!!
-Overwrites all.
-For updating, please run updateMetadata !!!</note>
+      <note>WARNING&#x21;&#x21;&#x21;&#xa;Overwrites all.&#xa;For updating, please run updateMetadata &#x21;&#x21;&#x21;</note>
       <xloc>639</xloc>
       <yloc>9</yloc>
       <width>262</width>
@@ -202,8 +200,29 @@ For updating, please run updateMetadata !!!</note>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>Get parameters</from><to>setPluginMetadata</to><enabled>Y</enabled> </hop>  <hop> <from>setPluginMetadata</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>setPluginMetadata</to><enabled>Y</enabled> </hop>
+  <hop> <from>setPluginMetadata</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
     <name>Get parameters</name>
     <type>GetVariable</type>
@@ -217,7 +236,7 @@ For updating, please run updateMetadata !!!</note>
     <fields>
       <field>
         <name>CPK_version</name>
-        <variable>${CPK_version}</variable>
+        <variable>&#x24;&#x7b;CPK_version&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -229,7 +248,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>author_email</name>
-        <variable>${author_email}</variable>
+        <variable>&#x24;&#x7b;author_email&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -241,7 +260,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>author_name</name>
-        <variable>${author_name}</variable>
+        <variable>&#x24;&#x7b;author_name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -253,7 +272,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>company_name</name>
-        <variable>${company_name}</variable>
+        <variable>&#x24;&#x7b;company_name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -265,7 +284,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>company_url</name>
-        <variable>${company_url}</variable>
+        <variable>&#x24;&#x7b;company_url&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -277,7 +296,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>creation_date</name>
-        <variable>${creation_date}</variable>
+        <variable>&#x24;&#x7b;creation_date&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -289,7 +308,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>plugin_description</name>
-        <variable>${plugin_description}</variable>
+        <variable>&#x24;&#x7b;plugin_description&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -301,7 +320,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>plugin_name</name>
-        <variable>${plugin_name}</variable>
+        <variable>&#x24;&#x7b;plugin_name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -313,7 +332,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>version</name>
-        <variable>${version}</variable>
+        <variable>&#x24;&#x7b;version&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -325,7 +344,7 @@ For updating, please run updateMetadata !!!</note>
       </field>
       <field>
         <name>dashboard_style</name>
-        <variable>${dashboard_style}</variable>
+        <variable>&#x24;&#x7b;dashboard_style&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -334,6 +353,18 @@ For updating, please run updateMetadata !!!</note>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>plugin_id</name>
+        <variable>&#x24;&#x7b;plugin_id&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
     </fields>
      <cluster_schema/>
@@ -375,7 +406,7 @@ For updating, please run updateMetadata !!!</note>
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}\_setPluginMetadata.ktr</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;_setPluginMetadata.ktr</filename>
     <directory_path/>
     <mappings>
       <input>
