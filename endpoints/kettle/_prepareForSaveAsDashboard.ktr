@@ -217,7 +217,7 @@ dest_dash  - full path
     </filter>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
+    <isaddresult>N</isaddresult>
     <filefield>N</filefield>
     <rownum_field/>
     <filename_Field/>

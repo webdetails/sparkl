@@ -254,7 +254,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
+      <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
       <splitevery>0</splitevery>
@@ -680,6 +680,69 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>747</xloc>
+      <yloc>153</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>author_new</field_name>
+        <variable_name>AUTHOR_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>description_new</field_name>
+        <variable_name>DESCRIPTION_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>icon_new</field_name>
+        <variable_name>ICON_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>rendererType_new</field_name>
+        <variable_name>RENDERERTYPE_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>title_new</field_name>
+        <variable_name>TITLE_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>widget_new</field_name>
+        <variable_name>WIDGET_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>style_new</field_name>
+        <variable_name>STYLE_NEW</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>623</xloc>
       <yloc>153</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1146,69 +1209,6 @@ I could also have used an XML Output step, but it generates a null Parent XML el
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>747</xloc>
       <yloc>58</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Set Variables</name>
-    <type>SetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <field_name>author_new</field_name>
-        <variable_name>AUTHOR_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>description_new</field_name>
-        <variable_name>DESCRIPTION_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>icon_new</field_name>
-        <variable_name>ICON_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>rendererType_new</field_name>
-        <variable_name>RENDERERTYPE_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>title_new</field_name>
-        <variable_name>TITLE_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>widget_new</field_name>
-        <variable_name>WIDGET_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>style_new</field_name>
-        <variable_name>STYLE_NEW</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      </fields>
-    <use_formatting>Y</use_formatting>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>623</xloc>
-      <yloc>153</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
