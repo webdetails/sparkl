@@ -54,7 +54,7 @@
         <parameter>
             <name>endpoint_type</name>
             <default_value>${NULL_VALUE}</default_value>
-            <description>ktr|kjb - mandatory</description>
+            <description>mandatory;allowed:ktr|kjb</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
