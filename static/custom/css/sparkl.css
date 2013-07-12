@@ -998,11 +998,19 @@ div.container *{
 .WDdataCellBody tbody td button.deletePluginButton {
 	border-right: 1px solid #D1EEFC;
 }
-.WDdataCellBody tbody td button.viewElementButton {
+.WDdataCellBody tbody td button.viewDashboardButton {
   border-right: 1px solid #D1EEFC;
+  width: 33%;
 }
-.WDdataCellBody tbody td button.runElementButton {
-  width: 100%;
+.WDdataCellBody tbody td button.editDashboardButton {
+  border-right: 1px solid #D1EEFC;
+  width: 34%;
+}
+.WDdataCellBody tbody td button.deleteDashboardButton {
+  width: 33%;
+}
+.WDdataCellBody tbody td button.runEndpointButton {
+  border-right: 1px solid #D1EEFC;
 }
 
 .WDdataCellBody tbody tr div.buttonContainer{
@@ -1314,6 +1322,12 @@ input.editBox:focus {
 }
 .ui-dialog .ui-dialog-titlebar.ui-widget-header a{
   display: none;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a{
+  display: inline;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span{
+  background: url('../img/x.png') -45px 50% no-repeat transparent;
 }
 .ui-dialog .ui-dialog-content{
   color: #8786A4;
