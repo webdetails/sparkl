@@ -39,6 +39,11 @@
         <parameter>
             <name>plugin_id</name>
             <default_value>${NULL_VALUE}</default_value>
+            <description>mandatory</description>
+        </parameter>
+        <parameter>
+            <name>send_email</name>
+            <default_value>false</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -125,7 +130,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>380</xloc>
-      <yloc>192</yloc>
+      <yloc>176</yloc>
       </entry>
     <entry>
       <name>Checks if ${pluginFolder} exist</name>
@@ -157,7 +162,7 @@
       <afterzip>0</afterzip>
       <addfiletoresult>Y</addfiletoresult>
       <isfromprevious>N</isfromprevious>
-      <createparentfolder>Y</createparentfolder>
+      <createparentfolder>N</createparentfolder>
       <adddate>N</adddate>
       <addtime>N</addtime>
       <SpecifyFormat>N</SpecifyFormat>
@@ -167,7 +172,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>830</xloc>
+      <xloc>880</xloc>
       <yloc>73</yloc>
       </entry>
     <entry>
@@ -189,8 +194,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>651</xloc>
-      <yloc>192</yloc>
+      <xloc>656</xloc>
+      <yloc>277</yloc>
       </entry>
     <entry>
       <name>Clear Result</name>
@@ -226,11 +231,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>651</xloc>
+      <xloc>656</xloc>
       <yloc>73</yloc>
       </entry>
     <entry>
-      <name>Zip file</name>
+      <name>Zip file in destination</name>
       <description/>
       <type>ZIP_FILE</type>
       <zipfilename>${destinationFolder}&#47;${zipName}</zipfilename>
@@ -253,8 +258,121 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>830</xloc>
-      <yloc>192</yloc>
+      <xloc>880</xloc>
+      <yloc>277</yloc>
+      </entry>
+    <entry>
+      <name>Send mail</name>
+      <description/>
+      <type>MAIL</type>
+      <server>${SMTP_SERVER}</server>
+      <port>${PORT}</port>
+      <destination>${DESTINATION_EMAIL}</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>${SENDER_ADDRESS}</replyto>
+      <replytoname>${SENDER_NAME}</replytoname>
+      <subject>${SUBJECT}</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment/>
+      <include_files>Y</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>${AUTH_USER}</auth_user>
+      <auth_password>${AUTH_PASS}</auth_password>
+      <only_comment>Y</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>        <filetype>GENERAL</filetype>
+      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>995</xloc>
+      <yloc>176</yloc>
+      </entry>
+    <entry>
+      <name>send_email?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>${plugin_id}</fieldname>
+      <variablename>${send_email}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>true</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>176</yloc>
+      </entry>
+    <entry>
+      <name>Zip file for email</name>
+      <description/>
+      <type>ZIP_FILE</type>
+      <zipfilename>${zipLocation}&#47;${zipName}</zipfilename>
+      <compressionrate>1</compressionrate>
+      <ifzipfileexists>3</ifzipfileexists>
+      <wildcard/>
+      <wildcardexclude/>
+      <sourcedirectory>${pluginFolder}</sourcedirectory>
+      <movetodirectory/>
+      <afterzip>0</afterzip>
+      <addfiletoresult>Y</addfiletoresult>
+      <isfromprevious>N</isfromprevious>
+      <createparentfolder>Y</createparentfolder>
+      <adddate>N</adddate>
+      <addtime>N</addtime>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <createMoveToDirectory>N</createMoveToDirectory>
+      <include_subfolders>Y</include_subfolders>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>880</xloc>
+      <yloc>176</yloc>
+      </entry>
+    <entry>
+      <name>Create tmp folder II</name>
+      <description/>
+      <type>CREATE_FOLDER</type>
+      <foldername>${zipLocation}</foldername>
+      <fail_of_folder_exists>N</fail_of_folder_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>762</xloc>
+      <yloc>176</yloc>
+      </entry>
+    <entry>
+      <name>Create tmp folder</name>
+      <description/>
+      <type>CREATE_FOLDER</type>
+      <foldername>${zipLocation}</foldername>
+      <fail_of_folder_exists>N</fail_of_folder_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>764</xloc>
+      <yloc>73</yloc>
       </entry>
   </entries>
   <hops>
@@ -295,15 +413,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>download?</from>
-      <to>Zip file &amp; download</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Checks if ${pluginFolder} exist</from>
       <to>Clear Result</to>
       <from_nr>0</from_nr>
@@ -322,17 +431,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>download?</from>
-      <to>destination not null?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>destination not null?</from>
-      <to>Zip file</to>
+      <to>Zip file in destination</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -348,17 +448,82 @@
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>download?</from>
+      <to>send_email?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>send_email?</from>
+      <to>destination not null?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Zip file for email</from>
+      <to>Send mail</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>send_email?</from>
+      <to>Create tmp folder II</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create tmp folder II</from>
+      <to>Zip file for email</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>download?</from>
+      <to>Create tmp folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Create tmp folder</from>
+      <to>Zip file &amp; download</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
     <notepad>
-      <note>pergunta
-onde criar o zip?</note>
-      <xloc>839</xloc>
-      <yloc>34</yloc>
-      <width>91</width>
-      <heigth>35</heigth>
-      <fontname/>
-      <fontsize>-1</fontsize>
+      <note>Notes:
+Before the zip entries we create the tmp folder because the zip entry fails if the folder already exists and we check &quot;create parent folder&quot;, and also fails if the folder doesn&apos;t exist and we don&apos;t check &quot;create parent folder&quot;
+For sending the email we have to create the zip file first, because the option &quot;add files to result + attach the result list as zip&quot; doesn&apos;t create the subfolders; all the files are zipped in a single folder.
+</note>
+      <xloc>21</xloc>
+      <yloc>484</yloc>
+      <width>1066</width>
+      <heigth>47</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>8</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -366,6 +531,65 @@ onde criar o zip?</note>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>165</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>WIP</note>
+      <xloc>59</xloc>
+      <yloc>155</yloc>
+      <width>41</width>
+      <heigth>28</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>12</fontsize>
+      <fontbold>Y</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>TO DO
+
+1) nos parâmetros, usar as variaveis ${cpk.*}
+
+2) definir variables (in kettle.properties) para tudo neste step:
+
+DESTINATION_EMAIL=
+SENDER_NAME=
+SENDER_ADDRESS=
+SMTP_SERVER=smtp.gmail.com
+PORT=465
+AUTH_USER=
+AUTH_PASS=
+SUBJECT=
+
+3) Apagar o zip depois de enviar o email
+
+</note>
+      <xloc>18</xloc>
+      <yloc>225</yloc>
+      <width>339</width>
+      <heigth>241</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>0</backgroundcolorblue>
       <bordercolorred>100</bordercolorred>
       <bordercolorgreen>100</bordercolorgreen>
