@@ -132,7 +132,9 @@ div.container *{
 .WDfilterCell {
   margin-bottom:34px;
 }
-
+.elementsCell .WDfilterCell {
+  margin-top: 6px;
+}
 .WDfilterCellBody,
 .WDfilterCellBody > * {
   height:34px;
@@ -458,6 +460,11 @@ div.container *{
   height:100%;
   width:34px;
   background: url('../img/refresh.png') -1px 50% no-repeat #EBEDEE;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  -o-border-radius:2px;
+  -ms-border-radius:2px;
+  border-radius:2px;
 }
 .WDfilterCellBody .refreshButtonContainer button:hover{
   background-position: -36px 50%;
@@ -914,7 +921,9 @@ div.container *{
 .WDdataCellBody .dataTables_wrapper {
   min-height:1px;
 }
-
+.WDdataCellBody .dataTables_wrapper .dataTables_filter{
+  display: none;
+}
 
 .WDdataCellBody table{
   border: none;
