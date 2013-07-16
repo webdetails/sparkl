@@ -341,7 +341,7 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptText",
+      "value": "globalOptText WDhidden",
       "type": "String"
      }
     ]
@@ -447,7 +447,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "WDhidden",
       "type": "String"
      }
     ]

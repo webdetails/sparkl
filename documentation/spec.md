@@ -182,7 +182,7 @@ The dashboard contains a set of *global options*:
 * _Update CPK libraries_: updates the CPK libraries in the plugin;
 * _Edit Metadata_: gives the user access to the plugin metadata (see below) by editing its fields;
 * _Pack (zip)_: packs the plugin in a zip file;
-* _Email_: sends email to a specific destination with the new version
+* _Send by Email_: sends email to a specific destination with the new version
   attached;
 * _Market Place push_: submit the new version to Market Place;
 * _Feedback (email)_: sends email to pentaho/ctools/plugin-author with
@@ -254,7 +254,7 @@ The set of Endpoints for the _Plugin Info_ dashboard are:
 * updateLib;
 * updatePlugin;
 * packPlugin;
-* sendAsEmail;
+* sendByEmail;
 * pushToMarketPlace;
 * deleteElement;
 * duplicateElement;
@@ -320,7 +320,7 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: create a zip file with the plugin current version
 	* Parameters: plugin Id and url/path to save the pack
 	* Output: (operation status)
-* sendAsEmail
+* sendByEmail
 	* Description: pack plugin and open email default application with zip file already attached
 	* Parameters: plugin Id
 	* Output: (operation status)
