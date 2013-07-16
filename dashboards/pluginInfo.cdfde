@@ -6618,7 +6618,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "newElementPopupCont",
       "type": "String"
      }
     ]
@@ -8488,7 +8488,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "emailInfoPopupCont",
       "type": "String"
      }
     ]

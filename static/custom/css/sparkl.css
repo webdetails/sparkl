@@ -202,7 +202,6 @@ div.container *{
    font-size: 18px;
    text-align: left;
    height: auto;
-   width: 700px;
    padding: 15px 15px 15px 15px; 
 
    border:solid 2px #25B9ED;
@@ -223,6 +222,7 @@ div.container *{
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .popupComponent *{
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
@@ -237,7 +237,9 @@ div.container *{
 .popupComponent.south .arrow{
   background-image: none;
 }
-
+.newElementPopupCont{
+  width: 700px;
+}
 .popupComponent .WDfilterCell {
   width: 100%;
   display: inline-block;
@@ -394,6 +396,9 @@ div.container *{
 }
 
 /*Email Info Popup*/
+.emailInfoPopupCont{
+  width: 500px;
+}
 .popupComponent .emailInfo.WDfilterCell{
   margin-bottom: 0px;
   width: 100%;
