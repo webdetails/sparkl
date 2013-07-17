@@ -8716,6 +8716,223 @@
     ]
    },
    {
+    "id": "13cc8e6b-526b-09a9-3ad8-52d318c648dc",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "14fafc06-0bfb-1dbb-a3ce-7041edbea1a2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "senderNameContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont senderName",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "841c1fe8-c92c-5cd6-0ebb-43e7bcfb5f9f",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "13cc8e6b-526b-09a9-3ad8-52d318c648dc",
+    "properties": [
+     {
+      "name": "name",
+      "value": "label",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c3ae1eee-9db1-8341-73b5-047f206b91f6",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "841c1fe8-c92c-5cd6-0ebb-43e7bcfb5f9f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Sender Name ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3120de19-1278-8945-3e1c-52c747d8255b",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "13cc8e6b-526b-09a9-3ad8-52d318c648dc",
+    "properties": [
+     {
+      "name": "name",
+      "value": "senderNameFormObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "formPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "00523ae4-13a2-e91f-aeeb-308dc56fd405",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -10840,6 +11057,84 @@
     ]
    },
    {
+    "id": "816cd5bc-506d-24a4-6800-ed3e3711c1f5",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "senderNameForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "sendByEmailParam.senderName",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:senderNameFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Your Name');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "93e13ec0-2146-466b-4461-aa90feaeabfb",
     "type": "ComponentstextInput",
     "typeDesc": "Text input Component",
@@ -10897,7 +11192,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','services@webdetails.pt');\n}",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Destination Address');\n}",
       "type": "JavaScript"
      },
      {
@@ -12829,7 +13124,7 @@
      },
      {
       "name": "javaScript",
-      "value": "{\n    adress:'',\n    subject:'new plugin version'\n}",
+      "value": "{\n    senderName: '',\n    adress: '',\n    subject: 'new plugin version'\n}",
       "type": "JavaScript"
      },
      {
