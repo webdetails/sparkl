@@ -116,9 +116,9 @@ The dashboard contains a set of four *global options*:
 
 * _New Plugin_: allows to create a new plugin. The user must insert a nre plugin Id. A verification if the plugin Id just inserted is free for use and in case it is already in use, a cancelation message should be prompt. In case the plugin Id is free, opens the "Plugin Info" dashboard (see below) with the plugin metadata all blank, ready to be filled;
 * _Import Plugin_: allows to import a remotely hosted plugin to the local CPK
-  plugins folder. Opens a form to be filled with the plugin url/localisation. *This option is not implemented yet and is left for a second stage.*
+  plugins folder. Opens a form to be filled with the plugin url/localisation. **This option is not implemented yet and is left for a second stage.**
 * _Refresh List_: updates the list of plugins;
-* _Request Pentaho Services_: sends email requesting Pentaho services/support. *This option is now present in all Sparkl dashboards on the dashboards container's header.*
+* _Request Pentaho Services_: sends email requesting Pentaho services/support. **This option is now present in all Sparkl dashboards on the dashboards container's header.**
 
 
 The dashboard also contains a *table* listing the existing plugins, each row with the corresponding plugin's Id, name, description and a set of *plugin options*:
@@ -148,7 +148,7 @@ The set of Endpoints for the _Main_ dashboard are:
 
 * listPlugins;
 * deletePlugin
-* importPlugin *(postponed)*.	
+* importPlugin **(postponed)**.	
 
 
 Plugin Info Dashboard
@@ -304,11 +304,11 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: save metadata values inserted by user and merge with existing values (if any)
 	* Parameters: plugin Id, table with changed metadata
 	* Output: (operation status)
-* updateLib
+* updateLib (done)
 	* Description: override the plugin's CPK libs with their current version
 	* Parameters: plugin Id
 	* Output: (operation status)
-* updatePlugin
+* updatePlugin (done)
 	* Description: do updateLib and updateMetadata together ??
 	* Parameters: plugin Id
 	* Output: (operation status)
@@ -316,19 +316,19 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Description: list the plugin elements (dashboards and endpoints) with the following info: _element name_, _element description_, _element type_, _element Admin property_, _element location_, _number of queries in element (dashboards only)_, _element Id_
 	* Parameters: plugin Id
 	* Output: table listing the plugin elements and corresponding info
-* packPlugin
+* packPlugin (WIP)
 	* Description: create a zip file with the plugin current version
 	* Parameters: plugin Id and url/path to save the pack
 	* Output: (operation status)
-* sendAsEmail
+* sendAsEmail (WIP)
 	* Description: pack plugin and open email default application with zip file already attached
 	* Parameters: plugin Id
 	* Output: (operation status)
-* deleteElement
+* deleteElement (WIP)
 	* Description: delete element from plugin
 	* Parameters: plugin Id, element Id
 	* Output: (operation status)
-* duplicateElement
+* duplicateElement (WIP)
 	* Description:
 	* Parameters:
 	* Output:
