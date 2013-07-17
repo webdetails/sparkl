@@ -202,7 +202,6 @@ div.container *{
    font-size: 18px;
    text-align: left;
    height: auto;
-   width: 700px;
    padding: 15px 15px 15px 15px; 
 
    border:solid 2px #25B9ED;
@@ -223,6 +222,7 @@ div.container *{
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .popupComponent *{
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
@@ -237,7 +237,9 @@ div.container *{
 .popupComponent.south .arrow{
   background-image: none;
 }
-
+.newElementPopupCont{
+  width: 700px;
+}
 .popupComponent .WDfilterCell {
   width: 100%;
   display: inline-block;
@@ -391,6 +393,45 @@ div.container *{
 }
 .WDfilterCellBody .cont.elementSelector .selectorPH .chzn-container span{
   line-height: 22px;
+}
+
+/*Email Info Popup*/
+.emailInfoPopupCont{
+  width: 500px;
+}
+.popupComponent .emailInfo.WDfilterCell{
+  margin-bottom: 0px;
+  width: 100%;
+  height: auto;
+}
+.popupComponent .emailInfo.WDfilterCell *{
+  width: 100%;
+}
+.emailInfo .WDfilterCellBody > div{
+  background: #FFFFFF;
+}
+
+.emailInfo .WDfilterCellBody .cont{
+  width: 100%;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.emailInfo .WDfilterCellBody .cont .labelPH{
+  width: 20%;
+  float: left;
+}
+
+.emailInfo .WDfilterCellBody .cont .formPH{
+  width: 80%;
+  float: left;
+}
+
+.emailInfo .WDfilterCellBody .cont.sendMessageButton{
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  margin-bottom: 0px;
 }
 
 /********/
@@ -1335,8 +1376,17 @@ input.editBox:focus {
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a{
   display: inline;
 }
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover{
+  background: #25B9ED;
+  border: none;
+}
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span{
-  background: url('../img/x.png') -45px 50% no-repeat transparent;
+  background: url('../img/x.png') -45px -10px no-repeat #25B9ED;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus span,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover span{
+  background: url('../img/x.png') -11px -9px no-repeat #25B9ED;
 }
 .ui-dialog .ui-dialog-content{
   color: #8786A4;

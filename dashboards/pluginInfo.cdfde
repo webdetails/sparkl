@@ -4369,7 +4369,7 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH reportBug",
+      "value": "globalOptButtonPH reportBug WDhidden",
       "type": "String"
      }
     ]
@@ -4480,7 +4480,7 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH marketPlace",
+      "value": "globalOptButtonPH marketPlace WDhidden",
       "type": "String"
      }
     ]
@@ -4494,6 +4494,117 @@
      {
       "name": "name",
       "value": "marketPlaceButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cd229196-5c9a-a183-8a75-140212b8d8fe",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "6b234f53-b0ee-12fb-5143-0df6f1c5effc",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendByEmailButtonContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "globalOptButtonPH sendByEmail",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "96348681-ee33-e356-a168-54cfaa299c49",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "cd229196-5c9a-a183-8a75-140212b8d8fe",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendByEmailButtonObj",
       "type": "Id"
      },
      {
@@ -4813,7 +4924,7 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptButtonPH submitChanges",
+      "value": "globalOptButtonPH submitChanges WDhidden",
       "type": "String"
      }
     ]
@@ -6507,7 +6618,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "newElementPopupCont",
       "type": "String"
      }
     ]
@@ -8234,6 +8345,922 @@
     ]
    },
    {
+    "id": "c94749a9-3eb4-30a4-158b-3f5aa303c75c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emailInfoPopupContentContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f0866641-6513-887c-835b-4d19bdf8cde6",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "c94749a9-3eb4-30a4-158b-3f5aa303c75c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fad151e4-baa5-25bd-58fb-4b62d5124730",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f0866641-6513-887c-835b-4d19bdf8cde6",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emailInfoPopupContentObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "emailInfoPopupCont",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a6407af6-dbaf-b7fe-b2a7-76be74c079cb",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "fad151e4-baa5-25bd-58fb-4b62d5124730",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCell emailInfo",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "8e4badce-549a-57ec-adf6-a24cedb82154",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "a6407af6-dbaf-b7fe-b2a7-76be74c079cb",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emailFilterCellHeader",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCellHeader",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b816f5b9-0e86-c981-0eff-9a5f69f7d203",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "a6407af6-dbaf-b7fe-b2a7-76be74c079cb",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emailFilterCellBody",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDfilterCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "14fafc06-0bfb-1dbb-a3ce-7041edbea1a2",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "b816f5b9-0e86-c981-0eff-9a5f69f7d203",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "00523ae4-13a2-e91f-aeeb-308dc56fd405",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "14fafc06-0bfb-1dbb-a3ce-7041edbea1a2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "destinationAdressContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont emailAdress",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "92631468-a8b3-7d9c-ba39-99b6fd4ef23a",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "00523ae4-13a2-e91f-aeeb-308dc56fd405",
+    "properties": [
+     {
+      "name": "name",
+      "value": "label",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c2f9fbde-0d7d-99a1-d1e3-75778a65b566",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "92631468-a8b3-7d9c-ba39-99b6fd4ef23a",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Email Address ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b7b7a6c2-23d7-ed1f-204d-3313d1fb383f",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "00523ae4-13a2-e91f-aeeb-308dc56fd405",
+    "properties": [
+     {
+      "name": "name",
+      "value": "destinationAdressFormObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "formPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "00fd30bd-8633-5614-b8b6-5fe742267973",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "14fafc06-0bfb-1dbb-a3ce-7041edbea1a2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "messageSubjectContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont emailSubject",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0e7470ca-15f7-666e-ee68-2249a3c9c744",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "00fd30bd-8633-5614-b8b6-5fe742267973",
+    "properties": [
+     {
+      "name": "name",
+      "value": "label",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "69b53a1b-f4a9-df03-7c71-efa5d34c1172",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "0e7470ca-15f7-666e-ee68-2249a3c9c744",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Subject ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "32325fa8-d1c0-54a5-eae8-e55aa3a30413",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "00fd30bd-8633-5614-b8b6-5fe742267973",
+    "properties": [
+     {
+      "name": "name",
+      "value": "messageSubjectFormObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "formPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "58b3fd05-b29d-f76d-8668-dcc3d93385c9",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "14fafc06-0bfb-1dbb-a3ce-7041edbea1a2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendMessageButtonContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont sendMessageButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "724b48d2-de9b-3a80-7e94-11ce93f6e064",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "58b3fd05-b29d-f76d-8668-dcc3d93385c9",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendMessageButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "buttonPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "4a4af046-9fe7-fd57-920a-28a7c820eda8",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -8447,12 +9474,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var cd = this.chartDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listelements';\n    }\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                    /*    $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteDashboard',\n                                            type: 'POST',\n                                            data: {\n                                                paramdashboard_name:v\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                    */    $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete the selected element. Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                    /*    $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteEndpoint',\n                                            type: 'POST',\n                                            data: {\n                                                paramendpoint_name:v\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                    */    $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
+      "value": "function f(){\n    \n    var cd = this.chartDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listelements';\n    }\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                    /*    $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteDashboard',\n                                            type: 'POST',\n                                            data: {\n                                                paramdashboard_name:v\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                    */    $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                    /*    $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteEndpoint',\n                                            type: 'POST',\n                                            data: {\n                                                paramendpoint_name:v\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                    */    $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    \n    _.each( data.resultset, function (el){\n        el.push(el[0]); \n    });\n    data.metadata.push( $.extend( {} , data.metadata[0] ) );\n    var lastMetadataElIdx = data.metadata.length-1;\n    (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n\n    // *** Register in sort selector events   \n    var myself = this,\n        selector = Dashboards.getComponentByName('${c:sortSelector}');    \n    // create a property to store the present definition of selector callback\n    this.custom =  this.custom || {};\n    \n    selector.off('custom:update', this.custom.selectorCallback);\n    this.custom.selectorCallback = function (v){\n        var sortCol = -1;\n        _.each(data.metadata, function(el,idx){\n            if(el.colName == v){\n                sortCol = idx;\n            }\n        });\n        if(sortCol >= 0){\n            this.dataTable.fnSort([ [sortCol, 'asc']])\n        }\n    \n    };\n    selector.on('custom:update', this.custom.selectorCallback, this);\n\nvar bruno;\n    // *** Register in View selector events   \n    var myself = this,\n        selector = Dashboards.getComponentByName('${c:viewSelector}');    \n    // create a property to store the present definition of selector callback\n    this.custom =  this.custom || {};\n    \n    selector.off('custom:update', this.custom.selectorCallback);\n    this.custom.selectorCallback = function (v){\n        if(v === 'all'){ v = '' }\n        \n        this.dataTable.fnFilter( v , 1);    \n    };\n    selector.on('custom:update', this.custom.selectorCallback, this);\n\n    this.extraOptions = [ [ 'bFilter' , true ] ];\n\n    return data\n}",
+      "value": "function f(data){\n    \n    _.each( data.resultset, function (el){\n        el.push(el[0]); \n    });\n    data.metadata.push( $.extend( {} , data.metadata[0] ) );\n    var lastMetadataElIdx = data.metadata.length-1;\n    (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n\n    // *** Register in sort selector events   \n    var myself = this,\n        selector = Dashboards.getComponentByName('${c:sortSelector}');    \n    // create a property to store the present definition of selector callback\n    this.custom =  this.custom || {};\n    \n    selector.off('custom:update', this.custom.selectorCallback);\n    this.custom.selectorCallback = function (v){\n        var sortCol = -1;\n        _.each(data.metadata, function(el,idx){\n            if(el.colName == v){\n                sortCol = idx;\n            }\n        });\n        if(sortCol >= 0){\n            this.dataTable.fnSort([ [sortCol, 'asc']])\n        }\n    \n    };\n    selector.on('custom:update', this.custom.selectorCallback, this);\n\n    // *** Register in View selector events   \n    var myself = this,\n        selector = Dashboards.getComponentByName('${c:viewSelector}');    \n    // create a property to store the present definition of selector callback\n    this.custom =  this.custom || {};\n    \n    selector.off('custom:update', this.custom.selectorCallback);\n    this.custom.selectorCallback = function (v){\n        if(v === 'all'){ v = '' }\n        \n        this.dataTable.fnFilter( v , 1);    \n    };\n    selector.on('custom:update', this.custom.selectorCallback, this);\n\n    this.extraOptions = [ [ 'bFilter' , true ] ];\n\n    return data\n}",
       "type": "JavaScript"
      },
      {
@@ -8566,7 +9593,7 @@
     ]
    },
    {
-    "id": "3c0ab9e2-ff52-b19d-5133-1df9253e9cfe",
+    "id": "f81e7adf-3f0f-86c8-06f9-5efe7db0d555",
     "type": "Componentspopup",
     "typeDesc": "Popup Component",
     "parent": "OTHERCOMPONENTS",
@@ -8644,6 +9671,84 @@
     ]
    },
    {
+    "id": "3c0ab9e2-ff52-b19d-5133-1df9253e9cfe",
+    "type": "Componentspopup",
+    "typeDesc": "Popup Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emailInfoPopup",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "gravity",
+      "value": "S",
+      "type": "Gravity"
+     },
+     {
+      "name": "xActionArrayParameter",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "draggable",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "horizontalScroll",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "verticalScroll",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "closeOnClickOutside",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${h:emailInfoPopupContentObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "4e70cad9-274b-9781-0f11-17365522299c",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
@@ -8666,7 +9771,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newDashboardOpts = Dashboards.getParameterValue('${p:newDashboardParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createDashboard';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Dashbord \"+newDashboardOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId        \n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating dashboard ' + newDashboardOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newDashboardOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'dashboard_'+ key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newDashboardOpts = Dashboards.getParameterValue('${p:newDashboardParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createDashboard';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();\n    \n    if (newDashboardOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Dashbord \"+newDashboardOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId        \n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating dashboard ' + newDashboardOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newDashboardOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'dashboard_'+ key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -8744,7 +9849,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newEndpointOpts = Dashboards.getParameterValue('${p:newEndpointParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createEndpoint';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n        \n    newEndpointOpts.type = _(newEndpointOpts.template.split('.')).last();\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Endpoint \"+newEndpointOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId        \n        },\n        success: addRefreshWrapper(successCallback) ,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating endpoint ' + newEndpointOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }   \n    };    \n    \n    _.each( newEndpointOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'endpoint_'+ key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newEndpointOpts = Dashboards.getParameterValue('${p:newEndpointParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createEndpoint';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n\n    if (newEndpointOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    newEndpointOpts.type = _(newEndpointOpts.template.split('.')).last();\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Endpoint \"+newEndpointOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            paramplugin_id: pluginId        \n        },\n        success: addRefreshWrapper(successCallback) ,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating endpoint ' + newEndpointOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }   \n    };    \n    \n    _.each( newEndpointOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'endpoint_'+ key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -9039,7 +10144,7 @@
     ]
    },
    {
-    "id": "55e7c72f-91e2-c381-1218-c3971dd4201c",
+    "id": "e3a8dcf9-4b96-01f7-8068-69d8243cde36",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
@@ -9082,6 +10187,162 @@
      {
       "name": "htmlObject",
       "value": "${p:marketPlaceButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "70cd64ca-1974-28c5-166a-6815c97553a1",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendByEmailButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Send by Email",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(e){\n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    $tgt = $('#' + this.htmlObject).find('button');\n    infoPopup.popup($tgt);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:sendByEmailButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "55e7c72f-91e2-c381-1218-c3971dd4201c",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendMessageButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Send",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    Dashboards.log(\"Send Message...\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:sendMessageButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -9575,6 +10836,162 @@
       "name": "Group",
       "value": "Selects",
       "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "93e13ec0-2146-466b-4461-aa90feaeabfb",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "destinationAdressForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "sendByEmailParam.adress",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:destinationAdressFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','services@webdetails.pt');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "bcd6ca10-c42c-b668-6cb2-a32d2d2f17e6",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "messageSubjectForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "sendByEmailParam.subject",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:messageSubjectFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','New Plugin Version');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -11398,6 +12815,29 @@
       "type": "Boolean"
      }
     ]
+   },
+   {
+    "id": "721c1130-8afb-076d-d4b3-3edc9f414140",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendByEmailParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "{\n    adress:'',\n    subject:'new plugin version'\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
    }
   ]
  },
@@ -11788,5 +13228,5 @@
    }
   ]
  },
- "filename": "/system/sparkl/dashboards/pluginInfo.cdfde"
+ "filename": "/system/sparkl/dashboards/plugininfo.cdfde"
 }
