@@ -49,7 +49,8 @@ var SparklPluginCardComponent = (function(){
 
   var MyClass = UnmanagedComponent.extend({
 
-
+  _models: {},
+  _views: {},
 
 	update: function() {
 		$.extend(this.options,this);
@@ -60,6 +61,7 @@ var SparklPluginCardComponent = (function(){
 	},
 
   handleJsonResponse: function (json){
+
      // { metadata: [], queryInfo: [], resultset: [[ ],[]]}
 
     var plugins = _.map( json.resulset , function (rawPlugin){
@@ -68,6 +70,8 @@ var SparklPluginCardComponent = (function(){
       _.each ( rawPlugin, function(value, idx){
         plugin[ json.metadata[idx].title ] = value;
       });
+
+      plugin.actionOpts = 
 
       return plugin
     });
@@ -86,32 +90,32 @@ var SparklPluginCardComponent = (function(){
     	/* Initialize model and view, if needed */
   		_.each( plugins , function(pluginOpts){
 
-  			if( !this.pluginCardModel[pluginOpts.plugin_id] ){
-    			this.pluginCardModel[pluginOpts.plugin_id] = new wd.cpk.models.sparklPluginCard( pluginOpts );
+  			if( !this._models[pluginOpts.plugin_id] ){
+    			this._models[pluginOpts.plugin_id] = new wd.cpk.models.sparklPluginCard( pluginOpts );
     		} else {
-    			this.pluginCardModel[pluginOpts.plugin_id].set( pluginOpts );
+    			this._models[pluginOpts.plugin_id].set( pluginOpts );
     		}
 
-    		if( !this.pluginCardView[pluginOpts.plugin_id] ){
-	    		this.pluginCardView[pluginOpts.plugin_id] = new wd.cpk.views.sparklPluginCard({	
+    		if( !this._views[pluginOpts.plugin_id] ){
+	    		this._views[pluginOpts.plugin_id] = new wd.cpk.views.sparklPluginCard({	
 	      			model: pluginCardModel[pluginOpts.plugin_id],
 	      			tagName: 'div'
 	    		});
 	    	}
-    		pluginCardView.render( '#' + this.htmlObject );
-    		this.configureListeners();
+    		this.pluginCardView.render( '#' + this.htmlObject );
+    		this.configureListeners( this._models[pluginOpts.plugin_id] );
     		/*this.selectorModel.syncSelection();*/
   		});
-  	}
-	configureListeners: function (){
+  	},
+	configureListeners: function (model){
 
-		this.pluginCardModel[pluginOpts.plugin_id].off('action:deleteOption');
-		this.pluginCardModel[pluginOpts.plugin_id].off('action:viewOption');
+		model.off('action:deleteOption');
+		model.off('action:viewOption');
 
-    	this.pluginCardModel[pluginOpts.plugin_id].on('action:deleteOption',function(id){
+    	model.on('action:deleteOption',function(id){
       		Console.log('Deleting '+id);
     	},this);
-    	this.pluginCardModel[pluginOpts.plugin_id].on('action:viewOption',function(id){
+    	model.on('action:viewOption',function(id){
       		Console.log('Viewing '+id);
     	},this);
 
