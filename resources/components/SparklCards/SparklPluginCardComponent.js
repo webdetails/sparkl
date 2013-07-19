@@ -1,58 +1,81 @@
-var SparklPluginCardComponent = UnmanagedComponent.extend({
 
-  	var pluginOptsButton = [
-    	{
-      		id: "deleteOption",
-      		label: "Delete"
-    	},
-    	{
-      		id: "viewOption",
-      		label: "View"
-    	}
-  	]
+var SparklPluginCardComponent = (function(){
 
-  	var plugins = [
-    	{
-      		plugin_id: 'plugin1',
-      		plugin_description: 'A plugin made of gold',
-      		plugin_name: 'BSilva Breakfast Plugin',
-      		version: '01a13',
-      		actionOpts: pluginOptsButton,
-      		imgSrc: '../img/alpha.png'
-    	},
-    	{
-      		plugin_id: 'plugin2',
-      		plugin_description: 'Testing some stuff 22222',
-      		plugin_name: 'BSilva Lunch Plugin',
-      		version: '01a13',
-      		actionOpts: pluginOptsButton,
-      		imgSrc: '../img/beta.png'
-    	},
-    	{
-      		plugin_id: 'plugin3',
-      		plugin_description: 'Testing some stuff 3333',
-      		plugin_name: 'BSilva Tea Plugin',
-    	  	version: '01a13',
-     	 	actionOpts: pluginOptsButton,
-      		imgSrc: '../img/gamma.png'
-    	},
-    	{
-      		plugin_id: 'plugin4',
-      		plugin_description: 'Testing some stuff 3333',
-      		plugin_name: 'PMartins Plugin',
-      		version: '01a13',
-      		actionOpts: pluginOptsButton,
-      		imgSrc: '../img/omega.png'
-    	}
-  	]
+    var pluginOptsButton = [
+      {
+          id: "deleteOption",
+          label: "Delete"
+      },
+      {
+          id: "viewOption",
+          label: "View"
+      }
+    ]
+
+    var plugins = [
+      {
+          plugin_id: 'plugin1',
+          plugin_description: 'A plugin made of gold',
+          plugin_name: 'BSilva Breakfast Plugin',
+          version: '01a13',
+          actionOpts: pluginOptsButton,
+          imgSrc: '../img/alpha.png'
+      },
+      {
+          plugin_id: 'plugin2',
+          plugin_description: 'Testing some stuff 22222',
+          plugin_name: 'BSilva Lunch Plugin',
+          version: '01a13',
+          actionOpts: pluginOptsButton,
+          imgSrc: '../img/beta.png'
+      },
+      {
+          plugin_id: 'plugin3',
+          plugin_description: 'Testing some stuff 3333',
+          plugin_name: 'BSilva Tea Plugin',
+          version: '01a13',
+        actionOpts: pluginOptsButton,
+          imgSrc: '../img/gamma.png'
+      },
+      {
+          plugin_id: 'plugin4',
+          plugin_description: 'Testing some stuff 3333',
+          plugin_name: 'PMartins Plugin',
+          version: '01a13',
+          actionOpts: pluginOptsButton,
+          imgSrc: '../img/omega.png'
+      }
+    ]
+
+  var MyClass = UnmanagedComponent.extend({
+
+
 
 	update: function() {
 		$.extend(this.options,this);
 	   	this.ph = $("#" + this.htmlObject);
 	   	var redraw = _.bind(this.redraw,this);
-	   	this.synchronous(redraw);
+	   	this.synchronous(redraw, [plugins]);
+      //this.triggerQuery( this.chartDefinition , handleJsonResponse );
 	},
-	redraw: function() {
+
+  handleJsonResponse: function (json){
+     // { metadata: [], queryInfo: [], resultset: [[ ],[]]}
+
+    var plugins = _.map( json.resulset , function (rawPlugin){
+      var plugin = {};
+
+      _.each ( rawPlugin, function(value, idx){
+        plugin[ json.metadata[idx].title ] = value;
+      });
+
+      return plugin
+    });
+
+    this.redraw(plugins);
+  },
+
+	redraw: function(plugins) {
     	var cd = this.chartDefinition;
 /*    	var modelOptions = $.extend({
         	sow: (_.isNumber(cd.startOfWeek)) ? cd.startOfWeek : 1,
@@ -117,3 +140,7 @@ var SparklPluginCardComponent = UnmanagedComponent.extend({
   	},  	
 */
 }); 
+
+return MyClass
+
+})();

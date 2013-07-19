@@ -15,9 +15,10 @@
       <Property>executeAtStart</Property>
       <Property>htmlObject</Property>
       <Property name="parameters">xActionArrayParameter</Property>
-     <!-- <Definition name="chartDefinition">
-        <Property>inputFormat</Property>
-      </Definition> -->
+      <Definition name="chartDefinition">
+        <Property type="query">dataSource</Property>
+        <!-- <Property>inputFormat</Property> -->
+      </Definition>
       <Property>preExecution</Property>
       <Property>postExecution</Property>
       <Property>postFetch</Property>
