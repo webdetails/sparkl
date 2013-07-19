@@ -69,17 +69,22 @@
       tagName: 'div'
     });
 
+    card.on('action:deleteOption',function(id){
+      Console.log('Deleting '+id);
+    },this);
+    card.on('action:viewOption',function(id){
+      Console.log('Viewing '+id);
+    },this);
+
+
     cardView.render( '#foo' );
   });
-
-
 
 
    /* opts.on('change:selection', function (){
       var selection = opts.get('selection');
       console.log(selection.start + '  --->  ' + selection.end);
     }); */
-
 
   </script>
 </body>

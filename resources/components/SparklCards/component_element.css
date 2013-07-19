@@ -53,8 +53,14 @@ time, mark, audio, video {
 }
 .cardBody{
 	height: 76px;
-	padding: 10px 10px;
+	padding: 10px 10px 0px 10px;
 	font-size: 12px;
+}
+.cardBody .name{
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.cardBody .description{
 }
 .cardFooter{
 	padding: 5px 5px 5px 10px;
@@ -104,9 +110,6 @@ time, mark, audio, video {
 
 	z-index: 1000;
 }
-.optionsContainer:hover{
-}
-
 .optionCont{
 	height: 25px;
 	padding: 0px 10px 0px 10px;

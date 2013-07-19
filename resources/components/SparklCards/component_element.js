@@ -51,7 +51,11 @@ wd.cpk = wd.cpk || {};
 	namespace.templates.sparklElementCard = Mustache.compile(
 		"		<div class='optsExpandCont type{{elementType}}'>"+
 		"			<div class='cardBody'>"+
-		"				{{element_name}} is an element that does lots of things"+
+		"				<div class='name'>{{element_name}}:</div>"+
+		" 				<div class='description'>"+
+		"					Selects better resolution images and "+
+		"					gathers pixel data, making lots of things happen."+
+		"				</div>"+
 		"			</div>"+
 		"			<div class='cardFooter'>"+
 		"				<div class='typeLabel'>[{{elementType}}]</div>"+

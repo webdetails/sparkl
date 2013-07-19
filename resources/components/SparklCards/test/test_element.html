@@ -92,6 +92,20 @@
     });
 
     cardView.render( '#faa' );
+
+    card.on('action:deleteOption',function(id){
+      alert('Deleting '+id);
+    },this);
+    card.on('action:runOption',function(id){
+      alert('Running '+id);
+    },this);
+    card.on('action:viewOption',function(id){
+      alert('Viewing '+id);
+    },this);
+    card.on('action:editOption',function(id){
+      alert('Editing '+id);
+    },this);
+
   });
 
 
@@ -99,7 +113,7 @@
       var selection = opts.get('selection');
       console.log(selection.start + '  --->  ' + selection.end);
     }); */
-
+  
 
   </script>
 </body>
