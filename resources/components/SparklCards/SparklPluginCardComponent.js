@@ -63,7 +63,7 @@ var SparklPluginCardComponent = UnmanagedComponent.extend({
     	/* Initialize model and view, if needed */
   		_.each( plugins , function(pluginOpts){
 
-  			if( !this.pluginCardModel ){
+  			if( !this.pluginCardModel[pluginOpts.plugin_id] ){
     			this.pluginCardModel[pluginOpts.plugin_id] = new wd.cpk.models.sparklPluginCard( pluginOpts );
     		} else {
     			this.pluginCardModel[pluginOpts.plugin_id].set( pluginOpts );
