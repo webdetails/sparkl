@@ -62,6 +62,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>isAdmin</name>
+            <default_value>false</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>plugin_dir</name>
             <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
             <description/>

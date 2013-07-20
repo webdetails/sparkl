@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>createEndpoint</name>
+  <name>deleteElement</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -47,23 +47,13 @@
             <description/>
         </parameter>
         <parameter>
-            <name>endpoint_name</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description>mandatory</description>
-        </parameter>
-        <parameter>
-            <name>endpoint_type</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description>mandatory;allowed:ktr|kjb</description>
+            <name>element_name</name>
+            <default_value>a2</default_value>
+            <description/>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
             <default_value>${plugin_dir}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>isAdmin</name>
-            <default_value>false</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -73,7 +63,7 @@
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>T10</default_value>
             <description>mandatory</description>
         </parameter>
     </parameters>
@@ -120,79 +110,52 @@
       <yloc>55</yloc>
       </entry>
     <entry>
-      <name>_createElement (ktr&#47;kjb)</name>
+      <name>Delete Element</name>
       <description/>
-      <type>JOB</type>
+      <type>TRANS</type>
       <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_createElement.kjb</filename>
-      <jobname/>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_deleteElement.ktr</filename>
+      <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
       <logfile/>
       <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
       <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>element</name>
-            <stream_name/>
-            <value>${endpoint_name}</value>
-            </parameter>            <parameter>            <name>element_type</name>
-            <stream_name/>
-            <value>${endpoint_type}</value>
-            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>212</xloc>
-      <yloc>161</yloc>
+      <xloc>168</xloc>
+      <yloc>61</yloc>
       </entry>
     <entry>
-      <name>endpoint_type valid?</name>
+      <name>Success</name>
       <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${endpoint_type}</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>(ktr|kjb)</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>regexp</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
+      <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>212</xloc>
-      <yloc>55</yloc>
-      </entry>
-    <entry>
-      <name>Abort job</name>
-      <description/>
-      <type>ABORT</type>
-      <message>invalid endpoint_type [${endpoint_type}]</message>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>382</xloc>
-      <yloc>55</yloc>
+      <xloc>312</xloc>
+      <yloc>69</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>endpoint_type valid?</to>
+      <to>Delete Element</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -200,21 +163,12 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>endpoint_type valid?</from>
-      <to>_createElement (ktr&#47;kjb)</to>
+      <from>Delete Element</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>endpoint_type valid?</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

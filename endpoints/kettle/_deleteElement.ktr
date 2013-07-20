@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_getElementLocations</name>
+    <name>_deleteElement</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -40,14 +40,19 @@
             <description/>
         </parameter>
         <parameter>
+            <name>element_name</name>
+            <default_value>a2</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>plugin_dir</name>
             <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
+            <default_value>T10</default_value>
+            <description>mandatory</description>
         </parameter>
     </parameters>
     <log>
@@ -102,17 +107,17 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;05&#47;23 12:32:03.883</created_date>
+  <created_date>2013&#47;06&#47;19 13:50:08.537</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;05&#47;23 12:32:03.883</modified_date>
+  <modified_date>2013&#47;06&#47;19 13:50:08.537</modified_date>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from XML</from><to>full path</to><enabled>Y</enabled> </hop>  <hop> <from>full path</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Is Kettle or Dashboard?</to><enabled>Y</enabled> </hop>  <hop> <from>Is Kettle or Dashboard?</from><to>Add all dashboard files</to><enabled>Y</enabled> </hop>  <hop> <from>Dashboard Extensions</from><to>Add all dashboard files</to><enabled>Y</enabled> </hop>  <hop> <from>Add all dashboard files</from><to>Replace extensions</to><enabled>Y</enabled> </hop>  <hop> <from>Replace extensions</from><to>Rename new uri</to><enabled>Y</enabled> </hop>  <hop> <from>Rename new uri</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>Is Kettle or Dashboard?</from><to>File exists</to><enabled>Y</enabled> </hop>  <hop> <from>File exists</from><to>Process files</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>Get data from XML</name>
-    <type>getXMLData</type>
+    <name>Add all dashboard files</name>
+    <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -120,113 +125,165 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <include>N</include>
-    <include_field/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>=</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>249</xloc>
+      <yloc>247</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dashboard Extensions</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>dashExtensions</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <data>
+      <line> <item>cdfde</item> </line>
+      <line> <item>wcdf</item> </line>
+      <line> <item>cda</item> </line>
+    </data>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>122</xloc>
+      <yloc>247</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>File exists</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>uri</filenamefield>
+    <resultfieldname>result</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>483</xloc>
+      <yloc>142</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>element_name</leftvalue>
+   <function>=</function>
+   <rightvalue>elementToDelete</rightvalue>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>file</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>98</xloc>
+      <yloc>43</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get File Names</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>N</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <isaddresult>N</isaddresult>
+    <filefield>Y</filefield>
     <rownum_field/>
-    <encoding>UTF-8</encoding>
+    <filename_Field>filename</filename_Field>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
     <file>
-      <name>${plugin_dir}&#47;cpk.xml</name>
+      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
     </file>
-    <fields>
-      <field>
-        <name>elementType</name>
-        <xpath>..&#47;..&#47;@name</xpath>
-        <element_type>attribut</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>adminOnly</name>
-        <xpath>@adminOnly</xpath>
-        <element_type>attribut</element_type>
-        <result_type>valueof</result_type>
-        <type>Boolean</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>elementPath</name>
-        <xpath>@path</xpath>
-        <element_type>attribut</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>pattern</name>
-        <xpath>@pattern</xpath>
-        <element_type>attribut</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <loopxpath>&#47;cpk&#47;elementTypes&#47;elementType&#47;elementLocations&#47;elementLocation</loopxpath>
-    <IsInFields>N</IsInFields>
-    <IsAFile>Y</IsAFile>
-    <XmlField>cpk_file</XmlField>
-    <prunePath/>
-    <shortFileFieldName/>
-    <pathFieldName>pluginPath</pathFieldName>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>115</xloc>
-      <yloc>89</yloc>
+      <xloc>284</xloc>
+      <yloc>45</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>OUTPUT</name>
-    <type>MappingOutput</type>
+    <name>Get Variables</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -234,16 +291,59 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+    <fields>
+      <field>
+        <name>elementToDelete</name>
+        <variable>${element_name}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
-      <yloc>89</yloc>
+      <xloc>188</xloc>
+      <yloc>42</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values</name>
+    <name>Is Kettle or Dashboard?</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>elementType</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>String</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step/>
+<cases><case><value>Dashboard</value>
+<target_step>Add all dashboard files</target_step>
+</case><case><value>Kettle</value>
+<target_step>File exists</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>248</xloc>
+      <yloc>142</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Rename new uri</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -252,33 +352,29 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>elementType</name>
+    <fields>      <field>        <name>extension</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>adminOnly</name>
-        <rename/>
+      </field>      <field>        <name>newUri</name>
+        <rename>uri</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>path</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>pattern</name>
+      </field>      <field>        <name>elementType</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>421</xloc>
-      <yloc>89</yloc>
+      <xloc>483</xloc>
+      <yloc>251</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>full path</name>
+    <name>Replace extensions</name>
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
@@ -287,8 +383,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>path</field_name>
-<formula_string>pluginPath + &quot;&#47;&quot; + elementPath</formula_string>
+       <formula><field_name>newUri</field_name>
+<formula_string>uri.replace(&apos;.&apos; + extension , &apos;.&apos; + dashExtensions)</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -296,8 +392,102 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>268</xloc>
-      <yloc>89</yloc>
+      <xloc>375</xloc>
+      <yloc>248</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>extension</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>uri</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>elementType</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>99</xloc>
+      <yloc>142</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>listElements</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;listElements.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>387</xloc>
+      <yloc>42</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Process files</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <sourcefilenamefield>uri</sourcefilenamefield>
+    <targetfilenamefield/>
+    <operation_type>delete</operation_type>
+    <addresultfilenames>N</addresultfilenames>
+    <overwritetargetfile>N</overwritetargetfile>
+    <createparentfolder>N</createparentfolder>
+    <simulate>N</simulate>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>143</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

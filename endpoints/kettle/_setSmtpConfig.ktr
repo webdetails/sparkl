@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_getElementLocations</name>
+    <name>_setSmtpConfig</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -10,33 +10,38 @@
     <directory>&#47;</directory>
     <parameters>
         <parameter>
-            <name>admin</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
             <name>cpk.plugin.dir</name>
             <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>sparkl</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.system.dir</name>
-            <default_value>${cpk.plugin.dir}&#47;system&#47;</default_value>
+            <default_value>${cpk.plugin.dir}&#47;system</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;..</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.system.dir</name>
-            <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
+            <default_value>${cpk.solution.dir}&#47;system</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>destination_email</name>
+            <default_value>goncalo.neto@webdetails.pt</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>email_config</name>
+            <default_value>${cpk.system.dir}&#47;smtp-email&#47;email_config.xml</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -46,7 +51,17 @@
         </parameter>
         <parameter>
             <name>plugin_id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>cvb</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>unique_location</name>
+            <default_value>${cpk.plugin.dir}&#47;.tmp</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>zipName</name>
+            <default_value>${plugin_id}.zip</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -102,19 +117,19 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;05&#47;23 12:32:03.883</created_date>
+  <created_date>2013&#47;06&#47;07 14:22:01.523</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;05&#47;23 12:32:03.883</modified_date>
+  <modified_date>2013&#47;06&#47;07 14:22:01.523</modified_date>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from XML</from><to>full path</to><enabled>Y</enabled> </hop>  <hop> <from>full path</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get data from XML</from><to>Set Variables</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get data from XML</name>
     <type>getXMLData</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -134,7 +149,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>${plugin_dir}&#47;cpk.xml</name>
+      <name>${email_config}</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -142,9 +157,9 @@
     </file>
     <fields>
       <field>
-        <name>elementType</name>
-        <xpath>..&#47;..&#47;@name</xpath>
-        <element_type>attribut</element_type>
+        <name>mail.smtp.host</name>
+        <xpath>properties&#47;mail.smtp.host</xpath>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -157,9 +172,69 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>adminOnly</name>
-        <xpath>@adminOnly</xpath>
-        <element_type>attribut</element_type>
+        <name>mail.smtp.port</name>
+        <xpath>properties&#47;mail.smtp.port</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>mail.from.default</name>
+        <xpath>mail.from.default</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>mail.userid</name>
+        <xpath>mail.userid</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>mail.password</name>
+        <xpath>mail.password</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>mail.smtp.auth</name>
+        <xpath>properties&#47;mail.smtp.auth</xpath>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Boolean</type>
         <format/>
@@ -172,26 +247,11 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>elementPath</name>
-        <xpath>@path</xpath>
-        <element_type>attribut</element_type>
+        <name>mail.smtp.ssl</name>
+        <xpath>properties&#47;mail.smtp.ssl</xpath>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>pattern</name>
-        <xpath>@pattern</xpath>
-        <element_type>attribut</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
+        <type>Boolean</type>
         <format/>
         <currency/>
         <decimal/>
@@ -203,13 +263,13 @@
       </field>
     </fields>
     <limit>0</limit>
-    <loopxpath>&#47;cpk&#47;elementTypes&#47;elementType&#47;elementLocations&#47;elementLocation</loopxpath>
+    <loopxpath>&#47;email-smtp</loopxpath>
     <IsInFields>N</IsInFields>
-    <IsAFile>Y</IsAFile>
-    <XmlField>cpk_file</XmlField>
+    <IsAFile>N</IsAFile>
+    <XmlField/>
     <prunePath/>
     <shortFileFieldName/>
-    <pathFieldName>pluginPath</pathFieldName>
+    <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>
     <uriNameFieldName/>
@@ -218,15 +278,15 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>115</xloc>
-      <yloc>89</yloc>
+      <xloc>130</xloc>
+      <yloc>154</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>OUTPUT</name>
-    <type>MappingOutput</type>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -234,70 +294,55 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+    <fields>
+      <field>
+        <field_name>mail.smtp.host</field_name>
+        <variable_name>MAIL.SMTP.HOST</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>mail.smtp.port</field_name>
+        <variable_name>MAIL.SMTP.PORT</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>mail.from.default</field_name>
+        <variable_name>MAIL.FROM.DEFAULT</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>mail.userid</field_name>
+        <variable_name>MAIL.USERID</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>mail.password</field_name>
+        <variable_name>MAIL.PASSWORD</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>mail.smtp.auth</field_name>
+        <variable_name>MAIL.SMTP.AUTH</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>mail.smtp.ssl</field_name>
+        <variable_name>MAIL.SMTP.SSL</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
-      <yloc>89</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>elementType</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>adminOnly</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>path</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>pattern</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>421</xloc>
-      <yloc>89</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>full path</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>path</field_name>
-<formula_string>pluginPath + &quot;&#47;&quot; + elementPath</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>268</xloc>
-      <yloc>89</yloc>
+      <xloc>289</xloc>
+      <yloc>161</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
