@@ -109,7 +109,7 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
+      <fieldname>${pluginId}</fieldname>
       <variablename>${source_dash}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
@@ -178,7 +178,7 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
+      <fieldname>${pluginId}</fieldname>
       <variablename>${dest_dash}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>

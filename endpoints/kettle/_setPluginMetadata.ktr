@@ -40,12 +40,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
@@ -863,7 +863,7 @@ java.lang.NullPointerException
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${plugin_dir}&#47;cpk.xml</name>
+      <name>${pluginDir}&#47;cpk.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1106,7 +1106,7 @@ java.lang.NullPointerException
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${plugin_dir}&#47;cpk.xml</name>
+      <name>${pluginDir}&#47;cpk.xml</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>

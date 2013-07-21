@@ -28,11 +28,11 @@
         </parameter>
         <parameter>
             <name>pluginFolder</name>
-            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;${plugin_id}</default_value>
+            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -104,8 +104,8 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -280,9 +280,9 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>plugin_id</name>
+            <parameter>            <name>pluginId</name>
             <stream_name/>
-            <value>${plugin_id}</value>
+            <value>${pluginId}</value>
             </parameter>            <parameter>            <name>admin</name>
             <stream_name/>
             <value>${admin}</value>

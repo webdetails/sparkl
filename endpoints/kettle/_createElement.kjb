@@ -52,13 +52,13 @@
             <description>mandatory</description>
         </parameter>
         <parameter>
-            <name>element_type</name>
+            <name>elementType</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>wcdf|ktr|kjb - mandatory</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
-            <default_value>${plugin_dir}</default_value>
+            <default_value>${pluginDir}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -67,12 +67,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -124,8 +124,8 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -145,7 +145,7 @@
       <name>Abort job</name>
       <description/>
       <type>ABORT</type>
-      <message>invalid parameters &#47;&#47; ${plugin_dir} &#47;&#47; ${element} &#47;&#47;</message>
+      <message>invalid parameters &#47;&#47; ${pluginDir} &#47;&#47; ${element} &#47;&#47;</message>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -153,13 +153,13 @@
       <yloc>148</yloc>
       </entry>
     <entry>
-      <name>Checks if ${plugin_dir} exists</name>
+      <name>Checks if ${pluginDir} exists</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>${plugin_dir}</name>
+          <name>${pluginDir}</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -193,7 +193,7 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
+      <fieldname>${pluginId}</fieldname>
       <variablename>${element}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
@@ -322,7 +322,7 @@
     </hop>
     <hop>
       <from>Plugin ID not null?</from>
-      <to>Checks if ${plugin_dir} exists</to>
+      <to>Checks if ${pluginDir} exists</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -330,7 +330,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exists</from>
+      <from>Checks if ${pluginDir} exists</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -357,7 +357,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exists</from>
+      <from>Checks if ${pluginDir} exists</from>
       <to>Element (new) not null?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

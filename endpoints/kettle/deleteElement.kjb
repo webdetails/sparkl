@@ -47,22 +47,22 @@
             <description/>
         </parameter>
         <parameter>
-            <name>element_name</name>
+            <name>elementName</name>
             <default_value>a2</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
-            <default_value>${plugin_dir}</default_value>
+            <default_value>${pluginDir}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>T10</default_value>
             <description>mandatory</description>
         </parameter>

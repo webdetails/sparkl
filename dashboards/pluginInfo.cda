@@ -6,11 +6,11 @@
       </Connection>
       <Connection id="metadataQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/getPluginMetadata.ktr</KtrFile>
-         <variables datarow-name="plugin_id" variable-name="plugin_id"/>
+         <variables datarow-name="pluginId" variable-name="pluginId"/>
       </Connection>
       <Connection id="listElementsQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/listElements.ktr</KtrFile>
-         <variables datarow-name="plugin_id" variable-name="plugin_id"/>
+         <variables datarow-name="pluginId" variable-name="pluginId"/>
       </Connection>
       <Connection id="newEndpointSelectorQuery" type="scripting.scripting">
          <Initscript></Initscript>
@@ -34,7 +34,7 @@
                type="kettle">
       <Columns/>
       <Parameters>
-         <Parameter default="" name="plugin_id" type="String"/>
+         <Parameter default="" name="pluginId" type="String"/>
       </Parameters>
       <Query>OUTPUT</Query>
    </DataAccess>
@@ -44,7 +44,7 @@
                type="kettle">
       <Columns/>
       <Parameters>
-         <Parameter default="" name="plugin_id" type="String"/>
+         <Parameter default="" name="pluginId" type="String"/>
       </Parameters>
       <Query>OUTPUT</Query>
    </DataAccess>

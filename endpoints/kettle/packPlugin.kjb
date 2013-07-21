@@ -52,12 +52,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -68,12 +68,12 @@
         </parameter>
         <parameter>
             <name>unique_location</name>
-            <default_value>${base_dir}&#47;${plugin_id}</default_value>
+            <default_value>${base_dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>zipName</name>
-            <default_value>${plugin_id}.zip</default_value>
+            <default_value>${pluginId}.zip</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -124,8 +124,8 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -153,13 +153,13 @@
       <yloc>172</yloc>
       </entry>
     <entry>
-      <name>Checks if ${plugin_dir} exist</name>
+      <name>Checks if ${pluginDir} exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>${plugin_dir}</name>
+          <name>${pluginDir}</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -188,7 +188,7 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
+      <fieldname>${pluginId}</fieldname>
       <variablename>${destination_email}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
@@ -290,7 +290,7 @@
       <ifzipfileexists>2</ifzipfileexists>
       <wildcard/>
       <wildcardexclude/>
-      <sourcedirectory>${unique_location}&#47;${plugin_id}</sourcedirectory>
+      <sourcedirectory>${unique_location}&#47;${pluginId}</sourcedirectory>
       <movetodirectory/>
       <afterzip>0</afterzip>
       <addfiletoresult>Y</addfiletoresult>
@@ -322,8 +322,8 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>${plugin_dir}</source_filefolder>
-          <destination_filefolder>${unique_location}&#47;${plugin_id}</destination_filefolder>
+          <source_filefolder>${pluginDir}</source_filefolder>
+          <destination_filefolder>${unique_location}&#47;${pluginId}</destination_filefolder>
           <wildcard/>
         </field>
       </fields>
@@ -342,7 +342,7 @@
       <limit_folders>10</limit_folders>
       <fields>
         <field>
-          <name>${unique_location}&#47;${plugin_id}&#47;.git</name>
+          <name>${unique_location}&#47;${pluginId}&#47;.git</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -355,7 +355,7 @@
       <name>Create Staging Folder</name>
       <description/>
       <type>CREATE_FOLDER</type>
-      <foldername>${plugin_dir}&#47;.tmp</foldername>
+      <foldername>${pluginDir}&#47;.tmp</foldername>
       <fail_of_folder_exists>N</fail_of_folder_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -406,11 +406,11 @@
       <destinationBCc/>
       <replyto>${MAIL.FROM.DEFAULT}</replyto>
       <replytoname>${sender_name}</replytoname>
-      <subject>[Sparkl] Here, have this: ${plugin_id}</subject>
+      <subject>[Sparkl] Here, have this: ${pluginId}</subject>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
-      <comment>Installation: uncompress ${plugin_id}.zip to your solution&#47;system folder and restart the server.</comment>
+      <comment>Installation: uncompress ${pluginId}.zip to your solution&#47;system folder and restart the server.</comment>
       <include_files>Y</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
@@ -522,11 +522,11 @@
       <destinationBCc/>
       <replyto>${MAIL.FROM.DEFAULT}</replyto>
       <replytoname>${sender_name}</replytoname>
-      <subject>[Sparkl] Here, have this: ${plugin_id}</subject>
+      <subject>[Sparkl] Here, have this: ${pluginId}</subject>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
-      <comment>Installation: uncompress ${plugin_id}.zip to your solution&#47;system folder and restart the server.</comment>
+      <comment>Installation: uncompress ${pluginId}.zip to your solution&#47;system folder and restart the server.</comment>
       <include_files>Y</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
@@ -562,11 +562,11 @@
       <destinationBCc/>
       <replyto>${MAIL.FROM.DEFAULT}</replyto>
       <replytoname>${sender_name}</replytoname>
-      <subject>[Sparkl] Here, have this: ${plugin_id}</subject>
+      <subject>[Sparkl] Here, have this: ${pluginId}</subject>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
-      <comment>Installation: uncompress ${plugin_id}.zip to your solution&#47;system folder and restart the server.</comment>
+      <comment>Installation: uncompress ${pluginId}.zip to your solution&#47;system folder and restart the server.</comment>
       <include_files>Y</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
@@ -623,7 +623,7 @@
     </hop>
     <hop>
       <from>Plugin ID not null?</from>
-      <to>Checks if ${plugin_dir} exist</to>
+      <to>Checks if ${pluginDir} exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -631,7 +631,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
+      <from>Checks if ${pluginDir} exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -640,7 +640,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
+      <from>Checks if ${pluginDir} exist</from>
       <to>Clear Result</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

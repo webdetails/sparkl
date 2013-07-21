@@ -40,12 +40,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>cvb</default_value>
             <description>mandatory</description>
         </parameter>
@@ -128,13 +128,13 @@
     <isaddresult>N</isaddresult>
     <filefield>N</filefield>
     <rownum_field/>
-    <filename_Field>plugin_dir</filename_Field>
+    <filename_Field>pluginDir</filename_Field>
     <wildcard_Field>include</wildcard_Field>
     <exclude_wildcard_Field/>
     <dynamic_include_subfolders>Y</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${plugin_dir}</name>
+      <name>${pluginDir}</name>
       <filemask>.*</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -273,13 +273,13 @@
     <isaddresult>N</isaddresult>
     <filefield>N</filefield>
     <rownum_field/>
-    <filename_Field>plugin_dir</filename_Field>
+    <filename_Field>pluginDir</filename_Field>
     <wildcard_Field>include</wildcard_Field>
     <exclude_wildcard_Field/>
     <dynamic_include_subfolders>Y</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${plugin_dir}&#47;..</name>
+      <name>${pluginDir}&#47;..</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>Y</file_required>

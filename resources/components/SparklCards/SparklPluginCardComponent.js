@@ -14,7 +14,7 @@ var SparklPluginCardComponent = (function(){
 
     var plugins = [
      	{
-        	plugin_id: 'plugin1',
+        	pluginId: 'plugin1',
           	plugin_description: 'A plugin made of gold',
           	plugin_name: 'BSilva Breakfast Plugin',
           	version: '01a13',
@@ -22,7 +22,7 @@ var SparklPluginCardComponent = (function(){
           	imgSrc: '../img/alpha.png'
       	},
       	{
-         	plugin_id: 'plugin2',
+         	pluginId: 'plugin2',
           	plugin_description: 'Testing some stuff 22222',
           	plugin_name: 'BSilva Lunch Plugin',
           	version: '01a13',
@@ -30,7 +30,7 @@ var SparklPluginCardComponent = (function(){
           	imgSrc: '../img/beta.png'
       	},
       	{
-        	plugin_id: 'plugin3',
+        	pluginId: 'plugin3',
           	plugin_description: 'Testing some stuff 3333',
           	plugin_name: 'BSilva Tea Plugin',
           	version: '01a13',
@@ -38,7 +38,7 @@ var SparklPluginCardComponent = (function(){
           	imgSrc: '../img/gamma.png'
       	},
       	{
-         	plugin_id: 'plugin4',
+         	pluginId: 'plugin4',
           	plugin_description: 'Testing some stuff 3333',
           	plugin_name: 'PMartins Plugin',
           	version: '01a13',
@@ -78,19 +78,19 @@ var SparklPluginCardComponent = (function(){
 	    	var that = this;
 	    	/* Initialize model and view, if needed */
 	  		_.each( plugins , function(pluginOpts){
-	  			if( !that._models[pluginOpts.plugin_id] ){
-	    			that._models[pluginOpts.plugin_id] = new wd.cpk.models.sparklPluginCard( pluginOpts );
+	  			if( !that._models[pluginOpts.pluginId] ){
+	    			that._models[pluginOpts.pluginId] = new wd.cpk.models.sparklPluginCard( pluginOpts );
 	    		} else {
-	    			that._models[pluginOpts.plugin_id].set( pluginOpts );
+	    			that._models[pluginOpts.pluginId].set( pluginOpts );
 	    		}
-	    		if( !that._views[pluginOpts.plugin_id] ){
-		    		that._views[pluginOpts.plugin_id] = new wd.cpk.views.sparklPluginCard({	
-		      			model: that._models[pluginOpts.plugin_id],
+	    		if( !that._views[pluginOpts.pluginId] ){
+		    		that._views[pluginOpts.pluginId] = new wd.cpk.views.sparklPluginCard({	
+		      			model: that._models[pluginOpts.pluginId],
 		      			tagName: 'div'
 		    		});
 		    	}
-	    		that._views[pluginOpts.plugin_id].render( '#' + that.htmlObject );
-	    		that.configureListeners( that._models[pluginOpts.plugin_id] );
+	    		that._views[pluginOpts.pluginId].render( '#' + that.htmlObject );
+	    		that.configureListeners( that._models[pluginOpts.pluginId] );
 	    		/*this.selectorModel.syncSelection();*/
 	  		});
 	  	},

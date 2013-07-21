@@ -28,7 +28,7 @@ wd.cpk = wd.cpk || {};
 
   	namespace.models.sparklElementCard = Backbone.Model.extend({
     	defaults:{
-   	    	"element_name": "",
+   	    	"elementName": "",
     	  	"elementType": "",
 	      	"adminOnly": "",
    			"actionOpts" : []
@@ -39,7 +39,7 @@ wd.cpk = wd.cpk || {};
     	},
 
     	fireAction: function (action){
-    		this.trigger('action:' + action , this.get('element_name') );
+    		this.trigger('action:' + action , this.get('elementName') );
     	}
 	});
 
@@ -51,7 +51,7 @@ wd.cpk = wd.cpk || {};
 	namespace.templates.sparklElementCard = Mustache.compile(
 		"		<div class='optsExpandCont type{{elementType}}'>"+
 		"			<div class='cardBody'>"+
-		"				<div class='name'>{{element_name}}:</div>"+
+		"				<div class='name'>{{elementName}}:</div>"+
 		" 				<div class='description'>"+
 		"					Selects better resolution images and "+
 		"					gathers pixel data, making lots of things happen."+

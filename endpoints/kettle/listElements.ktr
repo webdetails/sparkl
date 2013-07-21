@@ -40,12 +40,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -301,7 +301,7 @@ duplicateEndpoint</note>
     <unix>N</unix>
     <fields>
       <field>
-        <name>element_name</name>
+        <name>elementName</name>
         <type>String</type>
         <format/>
         <group/>
@@ -331,7 +331,7 @@ duplicateEndpoint</note>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>element_name</name>
+    <fields>      <field>        <name>elementName</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -368,7 +368,7 @@ duplicateEndpoint</note>
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>element_name</in_stream_name>
+        <in_stream_name>elementName</in_stream_name>
         <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>lower</lower_upper>

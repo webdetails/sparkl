@@ -28,7 +28,7 @@ wd.cpk = wd.cpk || {};
 
   	namespace.models.sparklPluginCard = Backbone.Model.extend({
     	defaults:{
-      		"plugin_id" : "", 
+      		"pluginId" : "", 
       		"plugin_name" : "",
       		"plugin_description" : "",
       		"author_name": "",
@@ -48,7 +48,7 @@ wd.cpk = wd.cpk || {};
     	},
 
     	fireAction: function (action){
-    		this.trigger('action:' + action , this.get('plugin_id') );
+    		this.trigger('action:' + action , this.get('pluginId') );
     	}
 	});
 

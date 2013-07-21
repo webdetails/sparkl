@@ -132,7 +132,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>${plugin_dir}&#47;cpk.xml</name>
+      <name>${pluginDir}&#47;cpk.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -142,7 +142,7 @@
       <field>
         <name>plugin_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -157,7 +157,7 @@
       <field>
         <name>plugin_description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -172,7 +172,7 @@
       <field>
         <name>author_name</name>
         <xpath>author_name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -187,7 +187,7 @@
       <field>
         <name>author_email</name>
         <xpath>author_email</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -202,7 +202,7 @@
       <field>
         <name>company_name</name>
         <xpath>company_name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -217,7 +217,7 @@
       <field>
         <name>company_url</name>
         <xpath>company_url</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -232,7 +232,7 @@
       <field>
         <name>creation_date</name>
         <xpath>creation_date</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -247,7 +247,7 @@
       <field>
         <name>version</name>
         <xpath>version</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -262,7 +262,7 @@
       <field>
         <name>CPK_version</name>
         <xpath>CPK_version</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -277,7 +277,7 @@
       <field>
         <name>dashboard_style</name>
         <xpath>dashboard_style</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

@@ -47,12 +47,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -114,7 +114,7 @@
       <fields>
         <field>
           <source_filefolder>${cpk.lib.dir}</source_filefolder>
-          <destination_filefolder>${plugin_dir}&#47;lib</destination_filefolder>
+          <destination_filefolder>${pluginDir}&#47;lib</destination_filefolder>
           <wildcard>.*\.jar</wildcard>
         </field>
       </fields>
@@ -129,8 +129,8 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -158,13 +158,13 @@
       <yloc>211</yloc>
       </entry>
     <entry>
-      <name>Checks if ${plugin_dir} exist</name>
+      <name>Checks if ${pluginDir} exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>${plugin_dir}</name>
+          <name>${pluginDir}</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -181,7 +181,7 @@
       <include_subfolders>N</include_subfolders>
       <fields>
         <field>
-          <name>${plugin_dir}&#47;lib</name>
+          <name>${pluginDir}&#47;lib</name>
           <filemask>.*\.jar</filemask>
         </field>
       </fields>
@@ -213,7 +213,7 @@
     </hop>
     <hop>
       <from>Plugin ID not null?</from>
-      <to>Checks if ${plugin_dir} exist</to>
+      <to>Checks if ${pluginDir} exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -221,7 +221,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
+      <from>Checks if ${pluginDir} exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -230,7 +230,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
+      <from>Checks if ${pluginDir} exist</from>
       <to>Delete old libs</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

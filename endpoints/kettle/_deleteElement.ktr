@@ -40,17 +40,17 @@
             <description/>
         </parameter>
         <parameter>
-            <name>element_name</name>
+            <name>elementName</name>
             <default_value>a2</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>T10</default_value>
             <description>mandatory</description>
         </parameter>
@@ -221,7 +221,7 @@
  <conditions>
   <condition>
    <negated>N</negated>
-   <leftvalue>element_name</leftvalue>
+   <leftvalue>elementName</leftvalue>
    <function>=</function>
    <rightvalue>elementToDelete</rightvalue>
    </condition>
@@ -294,7 +294,7 @@
     <fields>
       <field>
         <name>elementToDelete</name>
-        <variable>${element_name}</variable>
+        <variable>${elementName}</variable>
         <type>String</type>
         <format/>
         <currency/>

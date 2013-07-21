@@ -241,7 +241,7 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>element_name</name>
+      </field>      <field>        <name>elementName</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -419,7 +419,7 @@
     <lookup>
       <key>
         <name>endpoint</name>
-        <field>element_name</field>
+        <field>elementName</field>
       </key>
       <key>
         <name>endpoint_type</name>
@@ -458,7 +458,7 @@
     <lookup>
       <key>
         <name>endpoint_to_dup</name>
-        <field>element_name</field>
+        <field>elementName</field>
       </key>
       <key>
         <name>endpoint_type</name>

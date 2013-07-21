@@ -94,7 +94,7 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Sort by filename</from><to>PluginXML</to><enabled>Y</enabled> </hop>  <hop> <from>cpk_filename</from><to>Sort by filename</to><enabled>Y</enabled> </hop>  <hop> <from>Get plugin filenames</from><to>cpk_filename</to><enabled>Y</enabled> </hop>  <hop> <from>PluginXML</from><to>cpk plugins</to><enabled>Y</enabled> </hop>  <hop> <from>Build JSON</from><to>JSON</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by plugin_id</from><to>Build JSON</to><enabled>Y</enabled> </hop>  <hop> <from>cpk plugins</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by plugin_id</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>Remove unecessary fields</to><enabled>Y</enabled> </hop>  <hop> <from>Remove unecessary fields</from><to>Sort by plugin_id</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Sort by filename</from><to>PluginXML</to><enabled>Y</enabled> </hop>  <hop> <from>cpk_filename</from><to>Sort by filename</to><enabled>Y</enabled> </hop>  <hop> <from>Get plugin filenames</from><to>cpk_filename</to><enabled>Y</enabled> </hop>  <hop> <from>PluginXML</from><to>cpk plugins</to><enabled>Y</enabled> </hop>  <hop> <from>Build JSON</from><to>JSON</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by pluginId</from><to>Build JSON</to><enabled>Y</enabled> </hop>  <hop> <from>cpk plugins</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by pluginId</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>Remove unecessary fields</to><enabled>Y</enabled> </hop>  <hop> <from>Remove unecessary fields</from><to>Sort by pluginId</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Build JSON</name>
     <type>JsonOutput</type>
@@ -126,8 +126,8 @@
       </file>
     <fields>
       <field>
-        <name>plugin_id</name>
-        <element>plugin_id</element>
+        <name>pluginId</name>
+        <element>pluginId</element>
     </field>
       <field>
         <name>plugin_name</name>
@@ -285,9 +285,9 @@
     </file>
     <fields>
       <field>
-        <name>plugin_id</name>
+        <name>pluginId</name>
         <xpath>content-generator&#47;@id</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -302,7 +302,7 @@
       <field>
         <name>plugin_content_generator</name>
         <xpath>content-generator&#47;@class</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -370,7 +370,7 @@
     </step>
 
   <step>
-    <name>Sort by plugin_id</name>
+    <name>Sort by pluginId</name>
     <type>SortRows</type>
     <description/>
     <distribute>N</distribute>
@@ -388,7 +388,7 @@
       <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>plugin_id</name>
+        <name>pluginId</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
       </field>
@@ -508,7 +508,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>plugin_id</name>
+    <fields>      <field>        <name>pluginId</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>

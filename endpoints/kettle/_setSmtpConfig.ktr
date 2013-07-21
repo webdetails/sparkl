@@ -45,12 +45,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>cvb</default_value>
             <description/>
         </parameter>
@@ -61,7 +61,7 @@
         </parameter>
         <parameter>
             <name>zipName</name>
-            <default_value>${plugin_id}.zip</default_value>
+            <default_value>${pluginId}.zip</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -159,7 +159,7 @@
       <field>
         <name>mail.smtp.host</name>
         <xpath>properties&#47;mail.smtp.host</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -174,7 +174,7 @@
       <field>
         <name>mail.smtp.port</name>
         <xpath>properties&#47;mail.smtp.port</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -189,7 +189,7 @@
       <field>
         <name>mail.from.default</name>
         <xpath>mail.from.default</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -204,7 +204,7 @@
       <field>
         <name>mail.userid</name>
         <xpath>mail.userid</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -219,7 +219,7 @@
       <field>
         <name>mail.password</name>
         <xpath>mail.password</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -234,7 +234,7 @@
       <field>
         <name>mail.smtp.auth</name>
         <xpath>properties&#47;mail.smtp.auth</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>Boolean</type>
         <format/>
@@ -249,7 +249,7 @@
       <field>
         <name>mail.smtp.ssl</name>
         <xpath>properties&#47;mail.smtp.ssl</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>Boolean</type>
         <format/>

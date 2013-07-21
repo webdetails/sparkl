@@ -10,7 +10,7 @@
     <directory>&#47;</directory>
     <parameters>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>T10</default_value>
             <description/>
         </parameter>
@@ -239,8 +239,8 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>element_type</name>
-        <variable>${element_type}</variable>
+        <name>elementType</name>
+        <variable>${elementType}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -296,7 +296,7 @@
       </field>
       <field>
         <name>element_file</name>
-        <variable>${element}.${element_type}</variable>
+        <variable>${element}.${elementType}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -380,7 +380,7 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>element_name</name>
+      </field>      <field>        <name>elementName</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -504,14 +504,14 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>source_file</field_name>
-<formula_string>source_path + &quot;&#47;template.&quot; + element_type</formula_string>
+<formula_string>source_path + &quot;&#47;template.&quot; + elementType</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>dest_file</field_name>
-<formula_string>dest_path + &quot;&#47;&quot; + element + &quot;.&quot; + element_type</formula_string>
+<formula_string>dest_path + &quot;&#47;&quot; + element + &quot;.&quot; + elementType</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -525,7 +525,7 @@
 <replace_field/>
 </formula>
        <formula><field_name>is_dashboard</field_name>
-<formula_string>element_type.equals(&quot;wcdf&quot;)?&quot;Y&quot;:&quot;N&quot;</formula_string>
+<formula_string>elementType.equals(&quot;wcdf&quot;)?&quot;Y&quot;:&quot;N&quot;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -655,10 +655,10 @@
     <lookup>
       <key>
         <name>element</name>
-        <field>element_name</field>
+        <field>elementName</field>
       </key>
       <key>
-        <name>element_type</name>
+        <name>elementType</name>
         <field>extension</field>
       </key>
       <value>

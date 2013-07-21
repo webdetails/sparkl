@@ -78,7 +78,7 @@
         </parameter>
         <parameter>
             <name>instalationFolder</name>
-            <default_value>${plugin_dir}</default_value>
+            <default_value>${pluginDir}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -92,12 +92,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -123,7 +123,7 @@
         </parameter>
         <parameter>
             <name>unzipFolder</name>
-            <default_value>${stubFolder}&#47;.${plugin_id}</default_value>
+            <default_value>${stubFolder}&#47;.${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -254,8 +254,8 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -294,7 +294,7 @@
       <yloc>135</yloc>
       </entry>
     <entry>
-      <name>plugin_name = plugin_id</name>
+      <name>plugin_name = pluginId</name>
       <description/>
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
@@ -303,7 +303,7 @@
       <fields>
         <field>
           <variable_name>plugin_name</variable_name>
-          <variable_value>${plugin_id}</variable_value>
+          <variable_value>${pluginId}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
@@ -354,10 +354,10 @@
       <yloc>135</yloc>
       </entry>
     <entry>
-      <name>${plugin_dir} exists?</name>
+      <name>${pluginDir} exists?</name>
       <description/>
       <type>FILE_EXISTS</type>
-      <filename>${plugin_dir}</filename>
+      <filename>${pluginDir}</filename>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -404,7 +404,7 @@
     </hop>
     <hop>
       <from>Plugin Name not null?</from>
-      <to>plugin_name = plugin_id</to>
+      <to>plugin_name = pluginId</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -412,7 +412,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>plugin_name = plugin_id</from>
+      <from>plugin_name = pluginId</from>
       <to>updateMetadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -458,7 +458,7 @@
     </hop>
     <hop>
       <from>Plugin ID not null?</from>
-      <to>${plugin_dir} exists?</to>
+      <to>${pluginDir} exists?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -466,7 +466,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>${plugin_dir} exists?</from>
+      <from>${pluginDir} exists?</from>
       <to>Plugin Name not null?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -475,7 +475,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>${plugin_dir} exists?</from>
+      <from>${pluginDir} exists?</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

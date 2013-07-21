@@ -40,12 +40,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
@@ -134,7 +134,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>${plugin_dir}&#47;cpk.xml</name>
+      <name>${pluginDir}&#47;cpk.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -144,7 +144,7 @@
       <field>
         <name>elementType</name>
         <xpath>..&#47;..&#47;@name</xpath>
-        <element_type>attribut</element_type>
+        <elementType>attribut</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -159,7 +159,7 @@
       <field>
         <name>adminOnly</name>
         <xpath>@adminOnly</xpath>
-        <element_type>attribut</element_type>
+        <elementType>attribut</elementType>
         <result_type>valueof</result_type>
         <type>Boolean</type>
         <format/>
@@ -174,7 +174,7 @@
       <field>
         <name>path</name>
         <xpath>@path</xpath>
-        <element_type>attribut</element_type>
+        <elementType>attribut</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

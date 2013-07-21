@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>new_value</name>
-            <default_value>id=&quot;${plugin_id}&quot;</default_value>
+            <default_value>id=&quot;${pluginId}&quot;</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -171,7 +171,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${plugin_dir}&#47;plugin.xml</name>
+      <name>${pluginDir}&#47;plugin.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -255,7 +255,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${plugin_dir}&#47;plugin.xml</name>
+      <name>${pluginDir}&#47;plugin.xml</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>

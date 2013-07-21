@@ -43,16 +43,16 @@
         </parameter>
         <parameter>
             <name>instalationFolder</name>
-            <default_value>${plugin_dir}</default_value>
+            <default_value>${pluginDir}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
@@ -114,8 +114,8 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
-      <variablename>${plugin_id}</variablename>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -135,7 +135,7 @@
       <name>Abort job</name>
       <description/>
       <type>ABORT</type>
-      <message>invalid parameters &#47;&#47; ${plugin_dir} &#47;&#47; plugin_to_dup_dir</message>
+      <message>invalid parameters &#47;&#47; ${pluginDir} &#47;&#47; plugin_to_dup_dir</message>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -143,13 +143,13 @@
       <yloc>220</yloc>
       </entry>
     <entry>
-      <name>Checks if ${plugin_dir} exist</name>
+      <name>Checks if ${pluginDir} exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>${plugin_dir}</name>
+          <name>${pluginDir}</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -163,7 +163,7 @@
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${plugin_id}</fieldname>
+      <fieldname>${pluginId}</fieldname>
       <variablename>${plugin_to_dup_id}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
@@ -211,7 +211,7 @@
       <fields>
         <field>
           <source_filefolder>${plugin_to_dup_dir}</source_filefolder>
-          <destination_filefolder>${plugin_dir}</destination_filefolder>
+          <destination_filefolder>${pluginDir}</destination_filefolder>
           <wildcard>.*</wildcard>
         </field>
       </fields>
@@ -276,16 +276,16 @@
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>dest_plugin_dir</name>
+            <parameter>            <name>dest_pluginDir</name>
             <stream_name/>
-            <value>${plugin_dir}</value>
-            </parameter>            <parameter>            <name>dest_plugin_id</name>
+            <value>${pluginDir}</value>
+            </parameter>            <parameter>            <name>dest_pluginId</name>
             <stream_name/>
-            <value>${plugin_id}</value>
-            </parameter>            <parameter>            <name>source_plugin_dir</name>
+            <value>${pluginId}</value>
+            </parameter>            <parameter>            <name>source_pluginDir</name>
             <stream_name/>
             <value>${plugin_to_dup_dir}</value>
-            </parameter>            <parameter>            <name>source_plugin_id</name>
+            </parameter>            <parameter>            <name>source_pluginId</name>
             <stream_name/>
             <value>${plugin_to_dup_id}</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
@@ -317,7 +317,7 @@
     </hop>
     <hop>
       <from>Plugin ID not null?</from>
-      <to>Checks if ${plugin_dir} exist</to>
+      <to>Checks if ${pluginDir} exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -325,7 +325,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
+      <from>Checks if ${pluginDir} exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -334,7 +334,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_dir} exist</from>
+      <from>Checks if ${pluginDir} exist</from>
       <to>Plugin to duplicate ID not null?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

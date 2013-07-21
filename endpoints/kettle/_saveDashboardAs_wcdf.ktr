@@ -381,7 +381,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>title</name>
         <xpath>title</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -396,7 +396,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>author</name>
         <xpath>author</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -411,7 +411,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -426,7 +426,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>icon</name>
         <xpath>icon</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -441,7 +441,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>style</name>
         <xpath>style</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -456,7 +456,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>rendererType</name>
         <xpath>rendererType</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -471,7 +471,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>widget</name>
         <xpath>widget</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

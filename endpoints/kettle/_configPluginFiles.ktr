@@ -148,7 +148,7 @@
         <out_stream_name/>
         <use_regex>no</use_regex>
         <replace_string>@PLUGIN_ID@</replace_string>
-        <replace_by_string>${plugin_id}</replace_by_string>
+        <replace_by_string>${pluginId}</replace_by_string>
         <replace_field_by_string/>
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>

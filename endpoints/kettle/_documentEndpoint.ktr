@@ -45,7 +45,7 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>sparkl</default_value>
             <description>mandatory</description>
         </parameter>
@@ -182,7 +182,7 @@
       <field>
         <name>parameter_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -197,7 +197,7 @@
       <field>
         <name>default_value</name>
         <xpath>default_value</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -212,7 +212,7 @@
       <field>
         <name>description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -281,7 +281,7 @@
       <field>
         <name>parameter_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -296,7 +296,7 @@
       <field>
         <name>default_value</name>
         <xpath>default_value</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -311,7 +311,7 @@
       <field>
         <name>description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

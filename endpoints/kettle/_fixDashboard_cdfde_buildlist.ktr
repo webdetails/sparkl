@@ -70,11 +70,11 @@
     <notepad>
       <note>Variables that have to be set:
 
-source_plugin_dir
-dest_plugin_dir
+source_pluginDir
+dest_pluginDir
 
-source_plugin_id
-dest_plugin_id</note>
+source_pluginId
+dest_pluginId</note>
       <xloc>16</xloc>
       <yloc>273</yloc>
       <width>171</width>
@@ -96,7 +96,7 @@ dest_plugin_id</note>
     </notepad>
   </notepads>
   <order>
-  <hop> <from>dashboards - plugin_dir</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>key_filename</to><enabled>Y</enabled> </hop>  <hop> <from>key_filename</from><to>Sort by key_filename</to><enabled>Y</enabled> </hop>  <hop> <from>dashboards - plugin_to_dup_dir</from><to>Sort by filename</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by filename</from><to>source_dash</to><enabled>Y</enabled> </hop>  <hop> <from>source_dash</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by key_filename</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Join</from><to>remove unused field</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused field</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>dashboards - pluginDir</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>key_filename</to><enabled>Y</enabled> </hop>  <hop> <from>key_filename</from><to>Sort by key_filename</to><enabled>Y</enabled> </hop>  <hop> <from>dashboards - plugin_to_dup_dir</from><to>Sort by filename</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by filename</from><to>source_dash</to><enabled>Y</enabled> </hop>  <hop> <from>source_dash</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Sort by key_filename</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Join</from><to>remove unused field</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused field</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get Variables</name>
     <type>GetVariable</type>
@@ -109,8 +109,8 @@ dest_plugin_id</note>
            </partitioning>
     <fields>
       <field>
-        <name>source_plugin_id</name>
-        <variable>${source_plugin_id}</variable>
+        <name>source_pluginId</name>
+        <variable>${source_pluginId}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -121,8 +121,8 @@ dest_plugin_id</note>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>dest_plugin_id</name>
-        <variable>${dest_plugin_id}</variable>
+        <name>dest_pluginId</name>
+        <variable>${dest_pluginId}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -169,7 +169,7 @@ dest_plugin_id</note>
     </step>
 
   <step>
-    <name>dashboards - plugin_dir</name>
+    <name>dashboards - pluginDir</name>
     <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
@@ -192,7 +192,7 @@ dest_plugin_id</note>
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${dest_plugin_dir}</name>
+      <name>${dest_pluginDir}</name>
       <filemask>.*\.wcdf</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -230,7 +230,7 @@ dest_plugin_id</note>
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${source_plugin_dir}</name>
+      <name>${source_pluginDir}</name>
       <filemask>.*\.wcdf</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -255,7 +255,7 @@ dest_plugin_id</note>
            <schema_name/>
            </partitioning>
        <formula><field_name>key_filename</field_name>
-<formula_string>filename.replace(dest_plugin_id,source_plugin_id)</formula_string>
+<formula_string>filename.replace(dest_pluginId,source_pluginId)</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>

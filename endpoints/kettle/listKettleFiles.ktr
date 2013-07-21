@@ -199,7 +199,7 @@
       <field>
         <name>k_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -214,7 +214,7 @@
       <field>
         <name>k_description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -377,7 +377,7 @@
       <field>
         <name>k_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -392,7 +392,7 @@
       <field>
         <name>k_description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -618,7 +618,7 @@
       <field>
         <name>k_dep_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -633,7 +633,7 @@
       <field>
         <name>k_dep_type</name>
         <xpath>type</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -648,7 +648,7 @@
       <field>
         <name>k_dep_filename</name>
         <xpath>filename</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -722,7 +722,7 @@
       <field>
         <name>k_dep_name</name>
         <xpath>name</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -737,7 +737,7 @@
       <field>
         <name>k_dep_type</name>
         <xpath>type</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -752,7 +752,7 @@
       <field>
         <name>k_dep_filename</name>
         <xpath>filename</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

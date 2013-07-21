@@ -12,22 +12,22 @@
   <modified_date>2013&#47;07&#47;11 09:13:54.566</modified_date>
     <parameters>
         <parameter>
-            <name>dest_plugin_dir</name>
+            <name>dest_pluginDir</name>
             <default_value/>
             <description/>
         </parameter>
         <parameter>
-            <name>dest_plugin_id</name>
+            <name>dest_pluginId</name>
             <default_value/>
             <description/>
         </parameter>
         <parameter>
-            <name>source_plugin_dir</name>
+            <name>source_pluginDir</name>
             <default_value/>
             <description/>
         </parameter>
         <parameter>
-            <name>source_plugin_id</name>
+            <name>source_pluginId</name>
             <default_value/>
             <description/>
         </parameter>
@@ -190,10 +190,10 @@
     <notepad>
       <note>NAMED PARAMETERS:
 
-source_plugin_dir
-source_plugin_id
-dest_plugin_dir
-dest_plugin_id</note>
+source_pluginDir
+source_pluginId
+dest_pluginDir
+dest_pluginId</note>
       <xloc>96</xloc>
       <yloc>205</yloc>
       <width>149</width>

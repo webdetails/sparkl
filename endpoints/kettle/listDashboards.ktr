@@ -213,7 +213,7 @@ esta parte de uma outra forma!</note>
       <field>
         <name>title</name>
         <xpath>title</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -228,7 +228,7 @@ esta parte de uma outra forma!</note>
       <field>
         <name>author</name>
         <xpath>author</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -243,7 +243,7 @@ esta parte de uma outra forma!</note>
       <field>
         <name>description</name>
         <xpath>description</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -258,7 +258,7 @@ esta parte de uma outra forma!</note>
       <field>
         <name>icon</name>
         <xpath>icon</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -273,7 +273,7 @@ esta parte de uma outra forma!</note>
       <field>
         <name>style</name>
         <xpath>style</xpath>
-        <element_type>node</element_type>
+        <elementType>node</elementType>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

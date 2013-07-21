@@ -80,12 +80,12 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_dir</name>
-            <default_value>${cpk.system.dir}&#47;${plugin_id}</default_value>
+            <name>pluginDir</name>
+            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_id</name>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
@@ -194,7 +194,7 @@
     <fields>
       <field>
         <name>cpk_filename</name>
-        <variable>${plugin_dir}&#47;cpk.xml</variable>
+        <variable>${pluginDir}&#47;cpk.xml</variable>
         <type>String</type>
         <format/>
         <currency/>

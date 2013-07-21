@@ -297,7 +297,7 @@
     <fields>
       <field>
         <name>cpk_filename</name>
-        <variable>${plugin_dir}&#47;cpk.xml</variable>
+        <variable>${pluginDir}&#47;cpk.xml</variable>
         <type>String</type>
         <format/>
         <currency/>
