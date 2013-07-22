@@ -3,7 +3,7 @@ var SparklPluginCardComponent = (function(){
 
     var pluginOptsButton = [
       	{
-        	 id: "deleteOption",
+        	id: "deleteOption",
           	label: "Delete"
       	},
       	{
@@ -12,6 +12,17 @@ var SparklPluginCardComponent = (function(){
       	}
     ]
 
+    var newPluginOpts = [
+    	{
+    		id: "createOption",
+    		label: "Create"
+    	},
+    	{
+    		id: "importOption",
+    		label: "Import"
+    	}
+    ]
+/*
     var plugins = [
      	{
         	pluginId: 'plugin1',
@@ -44,9 +55,17 @@ var SparklPluginCardComponent = (function(){
           	version: '01a13',
           	actionOpts: pluginOptsButton,
           	imgSrc: '../img/omega.png'
+      	},
+      	{
+         	pluginId: 'plugin5',
+          	plugin_description: 'Testing some stuff 3333',
+          	plugin_name: 'PMartins Plugin',
+          	version: '01a13',
+          	actionOpts: pluginOptsButton,
+          	imgSrc: '../img/omega.png'
       	}
     ]
-
+*/
 	var MyClass = UnmanagedComponent.extend({
 
 	  	_models: {},
@@ -55,17 +74,23 @@ var SparklPluginCardComponent = (function(){
 		update: function() {
 			$.extend(this.options,this);
 		   	this.ph = $("#" + this.htmlObject);
-		   	var redraw = _.bind(this.redraw,this);
-		   	this.synchronous(redraw, plugins);
-	      	//this.triggerQuery( this.chartDefinition , handleJsonResponse );
+		   	var callback = _.bind(this.handleJsonResponse,this);
+//		   	var redraw = _.bind(this.redarw,this);
+//		   	this.synchronous(redraw, plugins);
+			this.clean();
+	      	this.triggerQuery( this.chartDefinition , callback );
+		},
+
+		clean: function (){
+			this._views = {};
+			this._models = {};
 		},
 
 	  	handleJsonResponse: function (json){
-	     	//{ metadata: [], queryInfo: [], resultset: [[ ],[]]}
-	    	var plugins = _.map( json.resulset , function (rawPlugin){
+	    	var	plugins = _.map( json.resultset , function (rawPlugin){
 	      		var plugin = {};
 	      		_.each ( rawPlugin, function(value, idx){
-	        		plugin[ json.metadata[idx].title ] = value;
+	        		plugin[ json.metadata[idx].colName ] = value;
 		      		plugin.actionOpts = pluginOptsButton;
 	      		});
 	      		return plugin
@@ -74,9 +99,26 @@ var SparklPluginCardComponent = (function(){
 	  	},
 
 		redraw: function(plugins) {
+			$('#'+this.htmlObject).empty();
+
 	    	var cd = this.chartDefinition;
 	    	var that = this;
-	    	/* Initialize model and view, if needed */
+	    	/* Initialize New Plugin Card */
+	  		if( !that._models["newPlugin"] ){
+	    		that._models["newPlugin"] = new wd.cpk.models.sparklNewPluginCard( newPluginOpts );
+	    	} else {
+	    		that._models["newPlugin"].set( newPluginOpts );
+	   		}
+	   		if( !that._views["newPlugin"] ){
+	    		that._views["newPlugin"] = new wd.cpk.views.sparklNewPluginCard({	
+	      			model: that._models["newPlugin"],
+	      			tagName: 'div'
+	       		});
+		    }
+	    	that._views["newPlugin"].render( '#' + that.htmlObject );
+	   		that.configureListeners( that._models["newPlugin"] );	
+
+	    	/* Initialize Plugins Cards models and views */
 	  		_.each( plugins , function(pluginOpts){
 	  			if( !that._models[pluginOpts.pluginId] ){
 	    			that._models[pluginOpts.pluginId] = new wd.cpk.models.sparklPluginCard( pluginOpts );
@@ -93,6 +135,17 @@ var SparklPluginCardComponent = (function(){
 	    		that.configureListeners( that._models[pluginOpts.pluginId] );
 	    		/*this.selectorModel.syncSelection();*/
 	  		});
+
+//			var nrCardsInRow = 4,
+//				cardWidth = Math.floor(($(document).find('.pluginsListContainer').width() - 10*(nrCardsInRow-1))/nrCardsInRow),
+//				$card = $(document).find('.sparklPluginCardContainer');
+/*			$card.css('width',cardWidth);
+			$card.css('height',cardWidth);
+			$card.each(function(j){
+				if( (j+1) % nrCardsInRow == 0)
+		        	$(this).addClass('lastInRow');
+  			});
+*/
 	  	},
 		configureListeners: function (model){
 
@@ -100,10 +153,41 @@ var SparklPluginCardComponent = (function(){
 			model.off('action:viewOption');
 
 	    	model.on('action:deleteOption',function(id){
-	      		Dashboards.log('Deleting '+id);
+                var dialogComponent = Dashboards.getComponentByName("render_dialogGrabComponent");
+                dialogComponent.open({
+                    message:"You are about to delete "+id+". Please, press OK to continue...",
+                    buttons:[
+                        {
+                            text: "OK",
+                            click: function () {
+                                $.ajax({
+                                    url: '/pentaho/content/sparkl/deletePlugin',
+                                    type: 'POST',
+                                    data: {
+                                        parampluginId:id
+                                    },
+                                    success: function (){
+                                        Dashboards.fireChange('updateTableEvent');
+                                    }
+                                });
+                                $("#"+dialogComponent.htmlObject).dialog("close");
+                            }
+                        },
+                        {
+                            text: "Cancel",
+                            click: function () {
+                                $("#"+dialogComponent.htmlObject).dialog("close");
+                            }                               
+                        }
+                    ]
+                });
 	    	},this);
+
 	    	model.on('action:viewOption',function(id){
-	      		Dashboards.log('Viewing '+id);
+                sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {
+                    pluginIdParam: id,
+                    metadataReadonlyParam: false
+                });
 	    	},this);
 
 	/*    	this.selectorModel.off('change:selection');

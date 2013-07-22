@@ -1184,7 +1184,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "WDhidden",
       "type": "String"
      }
     ]
@@ -1197,7 +1197,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsCardsObj",
+      "value": "pluginsListObj",
       "type": "Id"
      },
      {
@@ -1222,7 +1222,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "pluginsListContainer",
       "type": "String"
      }
     ]
@@ -2558,7 +2558,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": ""
+      "value": "pluginsTableQuery"
      },
      {
       "name": "priority",
@@ -2567,7 +2567,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:pluginsCardsObj}",
+      "value": "${p:pluginsListObj}",
       "type": "HtmlObject"
      },
      {
@@ -2577,7 +2577,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n/*    var cd = this.chartDefinition; \n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listplugins';\n    }\n*/\n}",
+      "value": "function f(){\n     \n    var cd = this.chartDefinition; \n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listplugins';\n    }\n}",
       "type": "JavaScript"
      },
      {
