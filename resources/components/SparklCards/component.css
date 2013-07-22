@@ -33,8 +33,8 @@ time, mark, audio, video {
 	padding: 30px 30px;
 }
 .sparklPluginCardContainer{
-	width: 210px;
-	height: 219px;
+	width: 230px;
+	height: 230px;
 	background: #EAEDEE;
 	color: #434140;
 	position: relative;
@@ -42,15 +42,17 @@ time, mark, audio, video {
 	margin-right: 10px;
 	margin-bottom: 10px;
 	overflow: hidden;
-
+}
+.sparklPluginCardContainer.lastInRow{
+	margin-right: 0px;
 }
 .descriptionExpandCont{
-	height: 185px;
+	height: 195px;
 	overflow: hidden;
 	position: relative;
 }
 .cardHeader{
-	height: 65px;
+	height: 70px;
 	padding: 10px 10px;
 	font-size: 18px;
 }
@@ -58,7 +60,7 @@ time, mark, audio, video {
 	position: relative;
 }
 .imageContainer{
-	height: 120px;
+	height: 125px;
 	background: red;
 }
 .imageContainer:hover{
@@ -83,8 +85,8 @@ time, mark, audio, video {
 	transition:         all 600ms ease-out;
 }
 .descriptionExpandCont:hover .descriptionContainer{
-	height: 185px;
-	bottom: 185px;
+	height: 195px;
+	bottom: 195px;
 }
 .descriptionContainer .header{
 	height: 25px;
@@ -97,7 +99,7 @@ time, mark, audio, video {
 .cardFooter{
 	padding: 5px 5px 5px 10px;
 	font-size: 15px;
-	height: 34px;
+	height: 35px;
 
 }
 .cardFooter .versionLabel{
@@ -116,8 +118,8 @@ time, mark, audio, video {
 	transition:         all 600ms ease-out;
 }
 .optsExternCont:hover{
-	height: 154px;
-	bottom: 154px;
+	height: 160px;
+	bottom: 160px;
 	left: 0px;
 	cursor: pointer;	
 }

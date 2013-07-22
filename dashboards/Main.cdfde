@@ -1197,7 +1197,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsCardsObj",
+      "value": "pluginsListObj",
       "type": "Id"
      },
      {
@@ -1222,7 +1222,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "pluginsListContainer",
       "type": "String"
      }
     ]
@@ -2567,7 +2567,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:pluginsCardsObj}",
+      "value": "${p:pluginsListObj}",
       "type": "HtmlObject"
      },
      {

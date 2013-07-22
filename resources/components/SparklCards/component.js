@@ -56,7 +56,7 @@ wd.cpk = wd.cpk || {};
 	/*
 	 * Templates
 	 */
-//aminGundi
+
 	namespace.templates.sparklPluginCard = Mustache.compile(
 		"		<div class=descriptionExpandCont>"+
 		"			<div class='cardHeader'>"+
@@ -83,37 +83,7 @@ wd.cpk = wd.cpk || {};
 		"			<div class='optionsIcon'>"+
 		"			</div>"+
 		"		</div>"
-);
-//animBSilva
-/*	namespace.templates.sparklPluginCard = Mustache.compile(
-		"		<div class=descriptionExpandCont>"+
-		"			<div class='cardHeader'>"+
-		"		  	 	{{plugin_name}}"+
-		"			</div>"+
-		"			<div class='cardBody'>"+
-		"				<div class='imageContainer'>"+
-		"					<img src='{{imgSrc}}' class='image'/> " +
-		"				</div>"+
-		"				<div class='descriptionContainer'>"+
-		"					<div class='header'>Description</div>"+
-		"					<div class='body'>{{plugin_description}}</div>"+
-		"				</div>"+
-		"			</div>"+
-		"		</div>"+
-		"		<div class='cardFooter'>"+
-		"			<div class='versionLabel'> VER. "+
-		"					{{version}}"+
-		"			</div>"+
-		"			<div class='optionsIcon'>"+
-		"			</div>"+
-		"		</div>"+
-		"		<div class='optionsContainer'>"+
-		"		</div>"
-);
-*/
-//	namespace.templates.option = Mustache.compile(
-//		"		<div id='{{id}}' class='optionCont'>{{label}}</div>"
-//	);
+	);
 
 	/*
 	 * Views
@@ -139,7 +109,6 @@ wd.cpk = wd.cpk || {};
 
 	      	_.each ( that.model.get('actionOpts') , function (action) {
 	      		var $optsContainer = that.$el.find('.optionsContainer');
-//	      		$optsContainer.html( that.optionTemplate() );
 				var $opt = $("<div id='"+action.id+"' class='optionCont'>"+action.label+"</div>");
 				$optsContainer.append($opt);
 	      		$opt.click( function (){
@@ -152,6 +121,7 @@ wd.cpk = wd.cpk || {};
 	      		$(ph).append(that.$el);
 	      	}
 	    },
+	
 /*	    toggleOptionsExpanded: function(){
 		    var $ph = this.$el.find('.optionsContainer');
 		    $ph.toggleClass('expanded');

@@ -44,6 +44,14 @@ var SparklPluginCardComponent = (function(){
           	version: '01a13',
           	actionOpts: pluginOptsButton,
           	imgSrc: '../img/omega.png'
+      	},
+      	{
+         	pluginId: 'plugin5',
+          	plugin_description: 'Testing some stuff 3333',
+          	plugin_name: 'PMartins Plugin',
+          	version: '01a13',
+          	actionOpts: pluginOptsButton,
+          	imgSrc: '../img/omega.png'
       	}
     ]
 
@@ -93,6 +101,17 @@ var SparklPluginCardComponent = (function(){
 	    		that.configureListeners( that._models[pluginOpts.pluginId] );
 	    		/*this.selectorModel.syncSelection();*/
 	  		});
+
+			var nrCardsInRow = 4,
+//				cardWidth = Math.floor(($(document).find('.pluginsListContainer').width() - 10*(nrCardsInRow-1))/nrCardsInRow),
+				$card = $(document).find('.sparklPluginCardContainer');
+/*			$card.css('width',cardWidth);
+			$card.css('height',cardWidth);
+*/			$card.each(function(j){
+				if( (j+1) % nrCardsInRow == 0)
+		        	$(this).addClass('lastInRow');
+  			});
+
 	  	},
 		configureListeners: function (model){
 
