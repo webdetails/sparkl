@@ -4,4 +4,9 @@
 		<path>system/sparkl/resources/styles</path>
 	</cde-styles>
 	<cde-datasources/>
+	  <custom-components>
+    <!-- paths from solution with cde component definitions to be loaded-->
+    <path>system/sparkl/resources/components</path>
+    <path>sparkl/components</path>
+  </custom-components>
 </settings>
