@@ -118,10 +118,41 @@ var SparklPluginCardComponent = (function(){
 			model.off('action:viewOption');
 
 	    	model.on('action:deleteOption',function(id){
-	      		Dashboards.log('Deleting '+id);
+                var dialogComponent = Dashboards.getComponentByName("render_dialogGrabComponent");
+                dialogComponent.open({
+                    message:"You are about to delete "+id+". Please, press OK to continue...",
+                    buttons:[
+                        {
+                            text: "OK",
+                            click: function () {
+                                $.ajax({
+                                    url: '/pentaho/content/sparkl/deletePlugin',
+                                    type: 'POST',
+                                    data: {
+                                        parampluginId:id
+                                    },
+                                    success: function (){
+                                        Dashboards.fireChange('updateTableEvent');
+                                    }
+                                });
+                                $("#"+dialogComponent.htmlObject).dialog("close");
+                            }
+                        },
+                        {
+                            text: "Cancel",
+                            click: function () {
+                                $("#"+dialogComponent.htmlObject).dialog("close");
+                            }                               
+                        }
+                    ]
+                });
 	    	},this);
+
 	    	model.on('action:viewOption',function(id){
-	      		Dashboards.log('Viewing '+id);
+                sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {
+                    pluginIdParam: id,
+                    metadataReadonlyParam: false
+                });
 	    	},this);
 
 	/*    	this.selectorModel.off('change:selection');
