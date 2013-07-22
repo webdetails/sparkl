@@ -40,16 +40,27 @@ wd.cpk = wd.cpk || {};
       		"pluginImage": "",
    	
    			"actionOpts" : [],
-   			"imgSrc": ""
+   			"imgSrc": "",
+
+   			"selected" : true
     	},
 
-    	initialize: function (){
+    	selec: function (){
 			      	
     	},
 
     	fireAction: function (action){
     		this.trigger('action:' + action , this.get('pluginId') );
-    	}
+    	},
+    	//match: function () {}
+    	//se true: lanca envento A
+    	//se false : lança evento B
+
+    	//var match =
+
+    	//this.set('selected', match);
+
+    	//As views escutam os eventos
 	});
 
 
@@ -91,7 +102,6 @@ wd.cpk = wd.cpk || {};
 
 	namespace.views.sparklPluginCard = Backbone.View.extend({
 		template: namespace.templates.sparklPluginCard,
-//		optionTemplate: namespace.templates.option,	  
 		tagName: 'div',
 		className: 'sparklPluginCardContainer',
 		events:{
@@ -102,6 +112,10 @@ wd.cpk = wd.cpk || {};
 	    },
 
 	    initialize: function (){
+	    //	that.model.on('change:selected', function(e){
+	    //		that.model.get('selected');	
+	    //	})
+
 	    },
 	    render: function (ph){
 			var that = this;

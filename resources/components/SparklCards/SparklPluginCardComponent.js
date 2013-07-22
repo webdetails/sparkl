@@ -63,17 +63,16 @@ var SparklPluginCardComponent = (function(){
 		update: function() {
 			$.extend(this.options,this);
 		   	this.ph = $("#" + this.htmlObject);
-		   	var redraw = _.bind(this.redraw,this);
-		   	this.synchronous(redraw, plugins);
-	      	//this.triggerQuery( this.chartDefinition , handleJsonResponse );
+		   	var callback = _.bind(this.handleJsonResponse,this);
+//		   	this.synchronous(redraw, plugins);
+	      	this.triggerQuery( this.chartDefinition , callback );
 		},
 
 	  	handleJsonResponse: function (json){
-	     	//{ metadata: [], queryInfo: [], resultset: [[ ],[]]}
-	    	var plugins = _.map( json.resulset , function (rawPlugin){
+	    	var	plugins = _.map( json.resultset , function (rawPlugin){
 	      		var plugin = {};
 	      		_.each ( rawPlugin, function(value, idx){
-	        		plugin[ json.metadata[idx].title ] = value;
+	        		plugin[ json.metadata[idx].colName ] = value;
 		      		plugin.actionOpts = pluginOptsButton;
 	      		});
 	      		return plugin

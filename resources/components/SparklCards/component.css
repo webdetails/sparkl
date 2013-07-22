@@ -78,11 +78,11 @@ time, mark, audio, video {
 	position: relative;
 	background: #434141;
 	font-size: 15px;
-	-webkit-transition: all 600ms ease-out;
-	-moz-transition:    all 600ms ease-out;
-	-ms-transition:     all 600ms ease-out;
-	-o-transition:      all 600ms ease-out;
-	transition:         all 600ms ease-out;
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition:    all 500ms ease-out;
+	-ms-transition:     all 500ms ease-out;
+	-o-transition:      all 500ms ease-out;
+	transition:         all 500ms ease-out;
 }
 .descriptionExpandCont:hover .descriptionContainer{
 	height: 195px;
@@ -111,11 +111,11 @@ time, mark, audio, video {
 	height: 0px;
 	bottom: 0px;
 	position: relative;
-	-webkit-transition: all 600ms ease-out;
-	-moz-transition:    all 600ms ease-out;
-	-ms-transition:     all 600ms ease-out;
-	-o-transition:      all 600ms ease-out;
-	transition:         all 600ms ease-out;
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition:    all 500ms ease-out;
+	-ms-transition:     all 500ms ease-out;
+	-o-transition:      all 500ms ease-out;
+	transition:         all 500ms ease-out;
 }
 .optsExternCont:hover{
 	height: 160px;
@@ -145,12 +145,12 @@ time, mark, audio, video {
 	z-index: 1000;
 }
 .optionCont{
-	height: 30px;
+	height: 40px;
 	padding: 0px 10px 0px 10px;
 	background: #25BAED;
 	color: #CEEEFC;
 	border-bottom: 1px solid #83D5F4;
-	line-height: 28px;
+	line-height: 35px;
 }
 .optionCont:hover{
 	background: #009DE2;
