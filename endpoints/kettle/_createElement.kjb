@@ -47,23 +47,28 @@
             <description/>
         </parameter>
         <parameter>
-            <name>element</name>
+            <name>elementAdmin</name>
+            <default_value>false</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>elementName</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
         <parameter>
+            <name>elementTemplate</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>elementType</name>
             <default_value>${NULL_VALUE}</default_value>
-            <description>wcdf|ktr|kjb - mandatory</description>
+            <description>Kettle|Dashboard - mandatory</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
             <default_value>${pluginDir}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>isAdmin</name>
-            <default_value>false</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -185,8 +190,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>360</xloc>
-      <yloc>427</yloc>
+      <xloc>361</xloc>
+      <yloc>529</yloc>
       </entry>
     <entry>
       <name>Element (new) not null?</name>
@@ -194,7 +199,7 @@
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
       <fieldname>${pluginId}</fieldname>
-      <variablename>${element}</variablename>
+      <variablename>${elementName}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>${NULL_VALUE}</comparevalue>
@@ -239,8 +244,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>174</xloc>
-      <yloc>334</yloc>
+      <xloc>175</xloc>
+      <yloc>436</yloc>
       </entry>
     <entry>
       <name>is dashboard?</name>
@@ -261,8 +266,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>174</xloc>
-      <yloc>427</yloc>
+      <xloc>175</xloc>
+      <yloc>529</yloc>
       </entry>
     <entry>
       <name>_saveDashboardAs</name>
@@ -297,8 +302,19 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>360</xloc>
-      <yloc>335</yloc>
+      <xloc>362</xloc>
+      <yloc>437</yloc>
+      </entry>
+    <entry>
+      <name>Template Exists?</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>${elementTemplate}</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>173</xloc>
+      <yloc>331</yloc>
       </entry>
   </entries>
   <hops>
@@ -348,15 +364,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Element (new) not null?</from>
-      <to>validations</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Checks if ${pluginDir} exists</from>
       <to>Element (new) not null?</to>
       <from_nr>0</from_nr>
@@ -386,6 +393,33 @@
     <hop>
       <from>is dashboard?</from>
       <to>Copy files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Element (new) not null?</from>
+      <to>Template Exists?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Template Exists?</from>
+      <to>validations</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Template Exists?</from>
+      <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

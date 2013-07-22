@@ -47,23 +47,28 @@
             <description/>
         </parameter>
         <parameter>
-            <name>endpoint_name</name>
+            <name>endpointAdmin</name>
+            <default_value>false</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>endpointName</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
         <parameter>
-            <name>endpoint_type</name>
+            <name>endpointTemplate</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>endpointType</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory;allowed:ktr|kjb</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
             <default_value>${pluginDir}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>isAdmin</name>
-            <default_value>false</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -142,80 +147,35 @@
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>element</name>
+            <parameter>            <name>elementName</name>
             <stream_name/>
-            <value>${endpoint_name}</value>
+            <value>${endpointName}</value>
             </parameter>            <parameter>            <name>elementType</name>
             <stream_name/>
-            <value>${endpoint_type}</value>
+            <value>Kettle</value>
+            </parameter>            <parameter>            <name>elementAdmin</name>
+            <stream_name/>
+            <value>${endpointAdmin}</value>
+            </parameter>            <parameter>            <name>elementTemplate</name>
+            <stream_name/>
+            <value>${endpointTemplate}</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>212</xloc>
-      <yloc>161</yloc>
-      </entry>
-    <entry>
-      <name>endpoint_type valid?</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname>${pluginId}</fieldname>
-      <variablename>${endpoint_type}</variablename>
-      <fieldtype>string</fieldtype>
-      <mask/>
-      <comparevalue>(ktr|kjb)</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>regexp</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>212</xloc>
-      <yloc>55</yloc>
-      </entry>
-    <entry>
-      <name>Abort job</name>
-      <description/>
-      <type>ABORT</type>
-      <message>invalid endpoint_type [${endpoint_type}]</message>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>382</xloc>
-      <yloc>55</yloc>
+      <xloc>202</xloc>
+      <yloc>60</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>endpoint_type valid?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>endpoint_type valid?</from>
       <to>_createElement (ktr&#47;kjb)</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>endpoint_type valid?</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

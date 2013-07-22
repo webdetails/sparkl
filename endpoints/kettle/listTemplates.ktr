@@ -34,6 +34,11 @@
             <default_value>${cpk.solution.dir}&#47;system</default_value>
             <description/>
         </parameter>
+        <parameter>
+            <name>elementType</name>
+            <default_value>All</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -94,7 +99,32 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get File Names</from><to>exclude CPK private files</to><enabled>Y</enabled> </hop>  <hop> <from>select fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Data Grid</from><to>Get plugin dir</to><enabled>Y</enabled> </hop>  <hop> <from>Get plugin dir</from><to>Compose path</to><enabled>Y</enabled> </hop>  <hop> <from>Compose path</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>exclude CPK private files</from><to>Switch &#47; Case</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Get .wcdf description</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Get .ktr description</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Get .kjb description</to><enabled>Y</enabled> </hop>  <hop> <from>Get .kjb description</from><to>select fields</to><enabled>Y</enabled> </hop>  <hop> <from>Get .ktr description</from><to>select fields</to><enabled>Y</enabled> </hop>  <hop> <from>Get .wcdf description</from><to>select fields</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get File Names</from><to>exclude CPK private files</to><enabled>Y</enabled> </hop>  <hop> <from>Data Grid</from><to>Get plugin dir</to><enabled>Y</enabled> </hop>  <hop> <from>Get plugin dir</from><to>Compose path</to><enabled>Y</enabled> </hop>  <hop> <from>Compose path</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>exclude CPK private files</from><to>Switch &#47; Case</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Get .wcdf description</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Get .ktr description</to><enabled>Y</enabled> </hop>  <hop> <from>Switch &#47; Case</from><to>Get .kjb description</to><enabled>Y</enabled> </hop>  <hop> <from>Get .kjb description</from><to>Empty Description</to><enabled>Y</enabled> </hop>  <hop> <from>Get .ktr description</from><to>Empty Description</to><enabled>Y</enabled> </hop>  <hop> <from>Get .wcdf description</from><to>Empty Description</to><enabled>Y</enabled> </hop>  <hop> <from>select fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>select fields</to><enabled>Y</enabled> </hop>  <hop> <from>Empty Description</from><to>Get Filter</to><enabled>Y</enabled> </hop>  <hop> <from>Get Filter</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>External Templates</from><to>Get plugin dir</to><enabled>N</enabled> </hop>  </order>
+  <step>
+    <name>Compose path</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>path</field_name>
+<formula_string>pluginPath + templatePath</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>30</xloc>
+      <yloc>193</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Data Grid</name>
     <type>DataGrid</type>
@@ -144,101 +174,13 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>225</xloc>
-      <yloc>193</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get File Names</name>
-    <type>GetFileNames</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filter>
-      <filterfiletype>all_files</filterfiletype>
-    </filter>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum>N</rownum>
-    <isaddresult>N</isaddresult>
-    <filefield>Y</filefield>
-    <rownum_field/>
-    <filename_Field>path</filename_Field>
-    <wildcard_Field>pattern</wildcard_Field>
-    <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
-    <limit>0</limit>
-    <file>
-      <name/>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>31</xloc>
-      <yloc>90</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get plugin dir</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>pluginPath</name>
-        <variable>${cpk.plugin.dir}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>134</xloc>
-      <yloc>196</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>OUTPUT</name>
-    <type>MappingOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>852</xloc>
-      <yloc>187</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Compose path</name>
+    <name>Empty Description</name>
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
@@ -247,23 +189,23 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>path</field_name>
-<formula_string>pluginPath + templatePath</formula_string>
+       <formula><field_name>_description</field_name>
+<formula_string>description.isEmpty() ? short_filename : description</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
-<replace_field/>
+<replace_field>description</replace_field>
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>30</xloc>
-      <yloc>193</yloc>
+      <xloc>704</xloc>
+      <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>exclude CPK private files</name>
+    <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -276,88 +218,34 @@
 <send_false_to/>
     <compare>
 <condition>
- <negated>Y</negated>
- <leftvalue>short_filename</leftvalue>
- <function>STARTS WITH</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>_</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>filterElementType</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>All</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>elementType</leftvalue>
+   <function>=</function>
+   <rightvalue>filterElementType</rightvalue>
+   </condition>
+  </conditions>
+ </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>191</xloc>
-      <yloc>87</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>select fields</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>filename</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>description</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>elementType</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>short_filename</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>852</xloc>
+      <xloc>931</xloc>
       <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Switch &#47; Case</name>
-    <type>SwitchCase</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<fieldname>extension</fieldname>
-<use_contains>N</use_contains>
-<case_value_type>String</case_value_type>
-<case_value_format/>
-<case_value_decimal/>
-<case_value_group/>
-<default_target_step/>
-<cases><case><value>wcdf</value>
-<target_step>Get .wcdf description</target_step>
-</case><case><value>ktr</value>
-<target_step>Get .ktr description</target_step>
-</case><case><value>kjb</value>
-<target_step>Get .kjb description</target_step>
-</case></cases>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>300</xloc>
-      <yloc>89</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get .wcdf description</name>
+    <name>Get .kjb description</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -404,7 +292,7 @@
       </field>
     </fields>
     <limit>0</limit>
-    <loopxpath>cdf</loopxpath>
+    <loopxpath>job</loopxpath>
     <IsInFields>Y</IsInFields>
     <IsAFile>N</IsAFile>
     <XmlField>uri</XmlField>
@@ -419,8 +307,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>433</xloc>
-      <yloc>25</yloc>
+      <xloc>432</xloc>
+      <yloc>170</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -495,7 +383,7 @@
     </step>
 
   <step>
-    <name>Get .kjb description</name>
+    <name>Get .wcdf description</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -542,7 +430,7 @@
       </field>
     </fields>
     <limit>0</limit>
-    <loopxpath>job</loopxpath>
+    <loopxpath>cdf</loopxpath>
     <IsInFields>Y</IsInFields>
     <IsAFile>N</IsAFile>
     <XmlField>uri</XmlField>
@@ -557,8 +445,265 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>432</xloc>
-      <yloc>170</yloc>
+      <xloc>433</xloc>
+      <yloc>25</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get File Names</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>N</isaddresult>
+    <filefield>Y</filefield>
+    <rownum_field/>
+    <filename_Field>path</filename_Field>
+    <wildcard_Field>pattern</wildcard_Field>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>31</xloc>
+      <yloc>90</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Filter</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>filterElementType</name>
+        <variable>${elementType}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>826</xloc>
+      <yloc>93</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get plugin dir</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>pluginPath</name>
+        <variable>${cpk.plugin.dir}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>134</xloc>
+      <yloc>196</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>OUTPUT</name>
+    <type>MappingOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1041</xloc>
+      <yloc>210</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#47; Case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>extension</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>String</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step/>
+<cases><case><value>wcdf</value>
+<target_step>Get .wcdf description</target_step>
+</case><case><value>ktr</value>
+<target_step>Get .ktr description</target_step>
+</case><case><value>kjb</value>
+<target_step>Get .kjb description</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>300</xloc>
+      <yloc>89</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>exclude CPK private files</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>short_filename</leftvalue>
+ <function>STARTS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>_</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>191</xloc>
+      <yloc>87</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>select fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <rename>templateFilename</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>description</name>
+        <rename>templateDescription</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>elementType</name>
+        <rename>templateType</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>short_filename</name>
+        <rename>templateShortFilename</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>extension</name>
+        <rename>templateExtension</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1042</xloc>
+      <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>External Templates</name>
+    <type>MappingInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>elementType</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>pattern</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>templatePath</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+        <select_unspecified>N</select_unspecified>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>232</xloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

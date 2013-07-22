@@ -23,7 +23,7 @@
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>sparkl</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -47,18 +47,28 @@
             <description/>
         </parameter>
         <parameter>
-            <name>dashboard_name</name>
+            <name>dashboardAdmin</name>
+            <default_value>false</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>dashboardName</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
         <parameter>
-            <name>instalationFolder</name>
-            <default_value>${pluginDir}</default_value>
+            <name>dashboardTemplate</name>
+            <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>isAdmin</name>
-            <default_value>false</default_value>
+            <name>dashboardType</name>
+            <default_value>Dashboard</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>instalationFolder</name>
+            <default_value>${pluginDir}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -137,18 +147,24 @@
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>element</name>
+            <parameter>            <name>elementName</name>
             <stream_name/>
-            <value>${dashboard_name}</value>
+            <value>${dashboardName}</value>
             </parameter>            <parameter>            <name>elementType</name>
             <stream_name/>
-            <value>wcdf</value>
+            <value>Dashboard</value>
+            </parameter>            <parameter>            <name>elementTemplate</name>
+            <stream_name/>
+            <value>${dashboardTemplate}</value>
+            </parameter>            <parameter>            <name>elementAdmin</name>
+            <stream_name/>
+            <value>${dashboardAdmin}</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>215</xloc>
-      <yloc>55</yloc>
+      <xloc>214</xloc>
+      <yloc>56</yloc>
       </entry>
   </entries>
   <hops>
