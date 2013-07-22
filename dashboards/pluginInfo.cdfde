@@ -9560,11 +9560,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "xActionArrayParameter",
       "value": "[[\"pluginId\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
@@ -9595,9 +9590,9 @@
       "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "paginate",
@@ -9630,6 +9625,11 @@
       "type": "Boolean"
      },
      {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -9645,14 +9645,14 @@
       "value": "listElementsQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -9988,7 +9988,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newDashboardOpts = Dashboards.getParameterValue('${p:newDashboardParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createDashboard';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();\n    \n    if (newDashboardOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Dashbord \"+newDashboardOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating dashboard ' + newDashboardOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newDashboardOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'dashboard_'+ key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newDashboardOpts = Dashboards.getParameterValue('${p:newDashboardParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createDashboard';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();\n    \n    if (newDashboardOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Dashbord \"+newDashboardOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating dashboard ' + newDashboardOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newDashboardOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'dashboard'+ capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -10066,7 +10066,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newEndpointOpts = Dashboards.getParameterValue('${p:newEndpointParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createEndpoint';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n\n    if (newEndpointOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    newEndpointOpts.type = _(newEndpointOpts.template.split('.')).last();\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Endpoint \"+newEndpointOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: addRefreshWrapper(successCallback) ,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating endpoint ' + newEndpointOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }   \n    };    \n    \n    _.each( newEndpointOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'endpoint_'+ key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newEndpointOpts = Dashboards.getParameterValue('${p:newEndpointParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createEndpoint';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n\n    if (newEndpointOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    newEndpointOpts.type = _(newEndpointOpts.template.split('.')).last();\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Endpoint \"+newEndpointOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: addRefreshWrapper(successCallback) ,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating endpoint ' + newEndpointOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }   \n    };    \n    \n    _.each( newEndpointOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'endpoint'+ capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -12196,7 +12196,7 @@
      },
      {
       "name": "xActionArrayParameter",
-      "value": "[]",
+      "value": "[[\"elementType\",\"'Dashboard'\"]]",
       "type": "ValuesArray"
      },
      {
@@ -12216,7 +12216,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"template.cdfde\",\"New Clean Dashboard\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -12241,7 +12241,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
       "type": "JavaScript"
      },
      {
@@ -12299,7 +12299,7 @@
      },
      {
       "name": "xActionArrayParameter",
-      "value": "[]",
+      "value": "[[\"elementType\",\"'Kettle'\"]]",
       "type": "ValuesArray"
      },
      {
@@ -12319,7 +12319,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"template.ktr\",\"New Clean Kettle ktr\"],[\"template.kjb\",\"New Clean Kettle kjb\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -12344,7 +12344,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
       "type": "JavaScript"
      },
      {
@@ -13394,13 +13394,13 @@
       "type": "Id"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
@@ -13465,13 +13465,13 @@
       "type": "Id"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
