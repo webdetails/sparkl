@@ -32,7 +32,8 @@ time, mark, audio, video {
 	display: inline;
 	padding: 30px 30px;
 }
-.sparklPluginCardContainer{
+.sparklPluginCardContainer,
+.sparklNewPluginCardContainer{
 	width: 230px;
 	height: 230px;
 	background: #EAEDEE;
@@ -56,12 +57,23 @@ time, mark, audio, video {
 	padding: 10px 10px;
 	font-size: 18px;
 }
+.cardHeader .name{
+	height: 50%;
+	padding-bottom: 5px;
+}
+.cardHeader .id{
+	height: 50%;
+	color: #878685;
+	font-weight: normal;
+	font-size: 15px;
+}
+
 .cardBody{
 	position: relative;
 }
 .imageContainer{
 	height: 125px;
-	background: red;
+	background: orange;
 }
 .imageContainer:hover{
 	cursor: pointer;
@@ -92,6 +104,7 @@ time, mark, audio, video {
 	height: 25px;
 	color: #0398DA;
 }
+
 .descriptionContainer .body{
 	height: 140px;
 	color: #EAEDEF;
@@ -117,11 +130,16 @@ time, mark, audio, video {
 	-o-transition:      all 500ms ease-out;
 	transition:         all 500ms ease-out;
 }
-.optsExternCont:hover{
+/*.optsExternCont:hover{
 	height: 160px;
 	bottom: 160px;
 	left: 0px;
 	cursor: pointer;	
+}*/
+.optsExternCont.expanded{
+	height: 160px;
+	bottom: 160px;
+	left: 0px;
 }
 .optionsIcon{
   	background: url('img/options.png') no-repeat 0px center transparent;
@@ -133,9 +151,13 @@ time, mark, audio, video {
 	bottom: 0px;
 	right: 5px;
 }
-.optsExternCont:hover .optionsIcon{
+.optionsIcon:hover{
   	background: url('img/options.png') no-repeat -24px center transparent;
   	cursor: pointer;
+}
+.optsExternCont.expanded .optionsIcon{
+  	background: url('img/options.png') no-repeat -24px center transparent;
+	z-index: 2000;
 }
 .optionsContainer{
 	height: 100%;
@@ -150,9 +172,11 @@ time, mark, audio, video {
 	background: #25BAED;
 	color: #CEEEFC;
 	border-bottom: 1px solid #83D5F4;
-	line-height: 35px;
+	font-size: 15px;
+	line-height: 40px;
 }
 .optionCont:hover{
 	background: #009DE2;
 	color: #F2FAFD;
+	cursor: pointer;
 };
