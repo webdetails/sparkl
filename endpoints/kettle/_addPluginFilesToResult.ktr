@@ -46,7 +46,7 @@
         </parameter>
         <parameter>
             <name>pluginId</name>
-            <default_value>cvb</default_value>
+            <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
     </parameters>
@@ -111,6 +111,24 @@
   <order>
   <hop> <from>OUTPUT</from><to>Set files in result</to><enabled>Y</enabled> </hop>  <hop> <from>Select uri field</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Remove .git</to><enabled>Y</enabled> </hop>  <hop> <from>Remove .git</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  <hop> <from>Remove .git</from><to>Select uri field</to><enabled>Y</enabled> </hop>  <hop> <from>Get Root Folder</from><to>Remove .git</to><enabled>N</enabled> </hop>  </order>
   <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>460</xloc>
+      <yloc>200</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Get File Names</name>
     <type>GetFileNames</type>
     <description/>
@@ -149,6 +167,44 @@
     </step>
 
   <step>
+    <name>Get Root Folder</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>N</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field>pluginDir</filename_Field>
+    <wildcard_Field>include</wildcard_Field>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>${pluginDir}&#47;..</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>Y</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>180</xloc>
+      <yloc>50</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>OUTPUT</name>
     <type>Dummy</type>
     <description/>
@@ -162,6 +218,34 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>870</xloc>
       <yloc>70</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Remove .git</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Dummy (do nothing)</send_true_to>
+<send_false_to>Select uri field</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>filename</leftvalue>
+ <function>CONTAINS</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>.git</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>458</xloc>
+      <yloc>73</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -205,90 +289,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>964</xloc>
       <yloc>71</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Remove .git</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Dummy (do nothing)</send_true_to>
-<send_false_to>Select uri field</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>filename</leftvalue>
- <function>CONTAINS</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>.git</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>458</xloc>
-      <yloc>73</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy (do nothing)</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>460</xloc>
-      <yloc>200</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get Root Folder</name>
-    <type>GetFileNames</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filter>
-      <filterfiletype>all_files</filterfiletype>
-    </filter>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum>N</rownum>
-    <isaddresult>N</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <filename_Field>pluginDir</filename_Field>
-    <wildcard_Field>include</wildcard_Field>
-    <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
-    <limit>0</limit>
-    <file>
-      <name>${pluginDir}&#47;..</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>Y</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>180</xloc>
-      <yloc>50</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

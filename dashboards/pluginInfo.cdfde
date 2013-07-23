@@ -9560,11 +9560,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "xActionArrayParameter",
-      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -9595,9 +9590,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "xActionArrayParameter",
+      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -9630,6 +9625,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -9645,14 +9645,14 @@
       "value": "listElementsQuery"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -10539,7 +10539,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'packPlugin';\n\n    function successCallback (){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" sent!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        data: {\n            parampluginId: pluginId\n        },\n        success: successCallback,\n        error: errorCallback    \n    };\n    \n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };    \n    _.each( mailParam , function (el, key) {\n        var qKey = 'param' + translationMap[key];\n        ajaxOpts.data[qKey] = el;\n    });\n\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}\n",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail';\n\n    function successCallback (){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" sent!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        data: {\n            parampluginId: pluginId\n        },\n        success: successCallback,\n        error: errorCallback    \n    };\n    \n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };    \n    _.each( mailParam , function (el, key) {\n        var qKey = 'param' + translationMap[key];\n        ajaxOpts.data[qKey] = el;\n    });\n\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}\n",
       "type": "JavaScript"
      },
      {
@@ -13394,13 +13394,13 @@
       "type": "Id"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
@@ -13465,13 +13465,13 @@
       "type": "Id"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
