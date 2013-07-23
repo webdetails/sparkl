@@ -32,8 +32,10 @@ time, mark, audio, video {
 	display: inline;
 	padding: 30px 30px;
 }
-.sparklPluginCardContainer,
-.sparklNewPluginCardContainer{
+
+/***** Plugin Card *****/
+
+.sparklPluginCardContainer{
 	width: 230px;
 	height: 230px;
 	background: #EAEDEE;
@@ -180,3 +182,39 @@ time, mark, audio, video {
 	color: #F2FAFD;
 	cursor: pointer;
 };
+
+/***** New Plugin Card *****/
+
+.sparklNewPluginCardContainer{
+	width: 230px;
+	height: 230px;
+	background: #EAEDEE;
+	color: #434140;
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.sparklNewPluginCardContainer .optionCont{
+	height: 110px;
+}
+.sparklNewPluginCardContainer .optionCont .label{
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+}
+.sparklNewPluginCardContainer .separator{
+	height: 10px;
+	background: #FFFFFF;
+}
+.sparklNewPluginCardContainer .separator .horizontalRectangle{
+	height: 100%;
+	background: #FFFFFF;
+	width: 55px;
+}
+.sparklNewPluginCardContainer .separator .verticalRectangle{
+	background: #FFFFFF;
+	height: 55px;
+	width: 10px;
+}

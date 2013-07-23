@@ -95,9 +95,15 @@ wd.cpk = wd.cpk || {};
 	 * Templates
 	 */
 
+	 
+
 	namespace.templates.sparklNewPluginCard = Mustache.compile(
-		"		<div class=descriptionExpandCont>"+
-		"		</div>"
+		"		<div class='optionCont first'></div>"+
+		"		<div class='separator'>"+
+		"			<div class='horizontalRectangle'></div>"+
+		"			<div class='verticalRectangle'></div>"+
+		"		</div>"+
+		"		<div class='optionCont second'></div>"
 	);
 
 	namespace.templates.sparklPluginCard = Mustache.compile(
@@ -143,19 +149,19 @@ wd.cpk = wd.cpk || {};
 
 		},
 		render: function (ph){
-			var that = this;
+			var that = this,
+				$optsContArr = that.$el.find('.optionCont');
+
 	      	that.$el.html( that.template( that.model.toJSON()) );
 
-/*	      	_.each ( that.model.get('actionOpts') , function (action) {
-	      		var $optsContainer = that.$el.find('.optionsContainer');
-				var $opt = $("<div id='"+action.id+"' class='optionCont'>"+action.label+"</div>");
-				$optsContainer.append($opt);
-	      		$opt.click( function (){
+	      	_.each ( that.model.get('actionOpts') , function (action,idx) {
+				var $label = $("<div id='"+action.id+"' class='label'>"+action.label+"</div>");
+				$optsContArr[idx].append($label);
+	      		$optsContArr[idx].click( function (){
 	      			that.model.fireAction( action.id );
-	      			that.toggleOptionsExpanded(false);
 	      		});
 	      	});	
-*/
+
 	      	if (ph){
 	      		that.$ph = $(ph);
 	      		$(ph).append(that.$el);

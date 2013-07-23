@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
-   <DataSources>
-      <Connection id="pluginsTableQuery" type="kettle.TransFromFile">
-         <KtrFile>../endpoints/kettle/listPlugins.ktr</KtrFile>
-      </Connection>
-   </DataSources>
-   <DataAccess access="public" cache="false" cacheDuration="3600"
-               connection="pluginsTableQuery"
-               id="pluginsTableQuery"
-               type="kettle">
-      <Columns/>
-      <Parameters/>
-      <Query>OUTPUT</Query>
-   </DataAccess>
+   <DataSources/>
 </CDADescriptor>
