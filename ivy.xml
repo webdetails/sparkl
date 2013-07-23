@@ -16,11 +16,14 @@
 		<artifact name="${ivy.artifact.id}" m:classifier="sources" type="source" ext="jar" conf="source"/>
 	</publications>
 	<dependencies defaultconf="runtime->default">
- 	<dependency org="pt.webdetails" name="cpf-core"
+ 		<dependency org="pt.webdetails" name="cpf-core"
 		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
-  	<dependency org="pt.webdetails" name="cpf-pentaho"
+  		<dependency org="pt.webdetails" name="cpf-pentaho"
 		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
 
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.2.2" conf='default->default' />
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.2.2" conf='default->default' />
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.2.2" conf='default->default'/>
   </dependencies>
 </ivy-module>
