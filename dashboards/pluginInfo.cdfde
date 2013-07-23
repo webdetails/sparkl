@@ -10232,7 +10232,7 @@
      },
      {
       "name": "priority",
-      "value": "1",
+      "value": "2",
       "type": "Integer"
      },
      {
@@ -10262,7 +10262,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n\n    var obj = {};\n    \n    //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n    _.each( data.resultset , function(row,i){\n        _.each( row, function(el,j){\n            if ( _.isEmpty(el) ){\n                row[j] = \"\";\n            }\n        }); \n    });\n    \n    _.each( data.metadata, function(el,idx){\n        obj[el.colName] = data.resultset[0][idx];\n    });\n    \n    Dashboards.setParameter(\"${p:pluginMetadataParam}\",obj);\n}",
+      "value": "function f(data){\n\n    var obj = {};\n    \n    //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n    _.each( data.resultset , function(row,i){\n        _.each( row, function(el,j){\n            if ( _.isEmpty(el) ){\n                row[j] = \"\";\n            }\n        }); \n    });\n    \n    _.each( data.metadata, function(el,idx){\n        obj[el.colName] = data.resultset[0][idx];\n    });\n    \n    Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n}",
       "type": "JavaScript"
      },
      {
@@ -11567,7 +11567,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -11577,7 +11577,7 @@
      },
      {
       "name": "priority",
-      "value": 5,
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -11645,7 +11645,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -11723,7 +11723,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -11801,7 +11801,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -11879,7 +11879,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -11957,7 +11957,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -12035,7 +12035,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -12113,7 +12113,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
