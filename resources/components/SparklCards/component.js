@@ -52,6 +52,16 @@ wd.cpk = wd.cpk || {};
     	fireAction: function (action){
     		this.trigger('action:' + action , this.get('pluginId') );
     	},
+
+    	sort: function(m2, prop, direction){
+    		var m1 = this,
+    			s1 = m1.get(prop),
+    			s2 = m2.get(prop);
+
+
+
+    	}
+
 	});
 
 	namespace.models.sparklPluginCard = Backbone.Model.extend({
@@ -80,7 +90,8 @@ wd.cpk = wd.cpk || {};
     	fireAction: function (action){
     		this.trigger('action:' + action , this.get('pluginId') );
     	},
-    	//match: function () {}
+
+//    	match: function () {}
     	//se true: lanca envento A
     	//se false : lança evento B
 
@@ -95,7 +106,7 @@ wd.cpk = wd.cpk || {};
 	 * Templates
 	 */
 
-	 
+
 
 	namespace.templates.sparklNewPluginCard = Mustache.compile(
 		"		<div class='optionCont first'></div>"+
@@ -175,15 +186,13 @@ wd.cpk = wd.cpk || {};
 		className: 'sparklPluginCardContainer',
 		events:{
 	    	"click .optionsIcon": "toggleOptionsExpanded"
-//	    	"mouseleave .optionsContainer.expanded": "toggleOptionsExpanded",
-//	    	"mouseenter .imageContainer": "toggleDescriptionExpanded",
-//	    	"mouseleave .descriptionContainer.expanded": "toggleDescriptionExpanded"
 	    },
 
 	    initialize: function (){
-	    //	that.model.on('change:selected', function(e){
-	    //		that.model.get('selected');	
-	    //	})
+	    	var that = this;
+	    	that.model.on('change:selected', function(e){
+	    		that.model.get('selected');	
+	    	})
 	    },
 	    render: function (ph){
 			var that = this;
@@ -199,10 +208,23 @@ wd.cpk = wd.cpk || {};
 	      		});
 	      	});	
 
-	      	if (ph){
-	      		that.$ph = $(ph);
-	      		$(ph).append(that.$el);
-	      	}
+	      	that.appendView(ph);
+	    },
+
+	    appendView: function(ph){
+	    	if (ph){
+	    		this.$ph = $(ph);
+	    	}
+	    	if (this.$ph){
+	    		this.$ph.append(this.$el);
+	    	}
+
+	    	return this
+	    },
+
+	    detachView: function(){
+			this.$el.detach();
+			return this
 	    },
 	
 	    toggleOptionsExpanded: function( predicate ){
@@ -210,10 +232,6 @@ wd.cpk = wd.cpk || {};
 		    var pred = _.isUndefined( predicate ) ? !$ph.hasClass('expanded') : predicate;
 		    $ph.toggleClass('expanded', pred);
 	    },
-/*	    toggleDescriptionExpanded: function(){
-		    var $ph = this.$el.find('.descriptionContainer');
-		    $ph.toggleClass('expanded');
-	    }
-*/	});
+	});
 
 }) (wd.cpk);

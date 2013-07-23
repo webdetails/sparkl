@@ -70,6 +70,8 @@ var SparklPluginCardComponent = (function(){
 
 	  	_models: {},
 	  	_views: {},
+	  	_newPluginModel: undefined,
+	  	_newPluginView: undefined,
 
 		update: function() {
 			$.extend(this.options,this);
@@ -104,19 +106,19 @@ var SparklPluginCardComponent = (function(){
 	    	var cd = this.chartDefinition;
 	    	var that = this;
 	    	/* Initialize New Plugin Card */
-	  		if( !that._models["newPlugin"] ){
-	    		that._models["newPlugin"] = new wd.cpk.models.sparklNewPluginCard( newPluginOpts );
+	  		if( !that._newPluginModel ){
+	    		that._newPluginModel = new wd.cpk.models.sparklNewPluginCard( newPluginOpts );
 	    	} else {
-	    		that._models["newPlugin"].set( newPluginOpts );
+	    		that._newPluginModel.set( newPluginOpts );
 	   		}
-	   		if( !that._views["newPlugin"] ){
-	    		that._views["newPlugin"] = new wd.cpk.views.sparklNewPluginCard({	
-	      			model: that._models["newPlugin"],
+	   		if( !that._newPluginView ){
+	    		that._newPluginView = new wd.cpk.views.sparklNewPluginCard({	
+	      			model: that._newPluginModel,
 	      			tagName: 'div'
 	       		});
 		    }
-	    	that._views["newPlugin"].render( '#' + that.htmlObject );
-	   		that.configureListeners( that._models["newPlugin"] );	
+	    	that._newPluginView.render( '#' + that.htmlObject );
+	   		//that.configureListeners( that._newPluginModel );	
 
 	    	/* Initialize Plugins Cards models and views */
 	  		_.each( plugins , function(pluginOpts){
@@ -131,9 +133,12 @@ var SparklPluginCardComponent = (function(){
 		      			tagName: 'div'
 		    		});
 		    	}
-	    		that._views[pluginOpts.pluginId].render( '#' + that.htmlObject );
 	    		that.configureListeners( that._models[pluginOpts.pluginId] );
 	    		/*this.selectorModel.syncSelection();*/
+	  		});
+
+	  		_.each( this.getSortedViews() , function(v){
+	  			v.render('#' + that.htmlObject ); 
 	  		});
 
 //			var nrCardsInRow = 4,
@@ -147,6 +152,29 @@ var SparklPluginCardComponent = (function(){
   			});
 */
 	  	},
+
+	  	getSortedViews: function (prop, direction){
+	  		var viewsArray = _.map( this._views , function(el){ return el});
+	  		if (prop){
+	  			viewsArray.sort( function(v1,v2){
+					var s1 = v1.model.get(prop),
+						s2 = v2.model.get(prop),
+						ref = [s1,s2],
+						comp = [s1,s2];
+					comp.sort();
+					return ref.join() == comp.join();
+	  			});
+	  		}
+	  		return viewsArray;
+	  	},
+
+	  	sortViews: function (prop, direction){
+	  		var viewsArray = this.getSortedViews( prop, direction);
+	  		_.each( viewsArray , function(v){
+	  			v.detachView().appendView();
+	  		});
+	  	},
+
 		configureListeners: function (model){
 
 			model.off('action:deleteOption');
