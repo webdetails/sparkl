@@ -157,12 +157,13 @@ var SparklPluginCardComponent = (function(){
 	  		var viewsArray = _.map( this._views , function(el){ return el});
 	  		if (prop){
 	  			viewsArray.sort( function(v1,v2){
-					var s1 = v1.model.get(prop),
-						s2 = v2.model.get(prop),
-						ref = [s1,s2],
-						comp = [s1,s2];
-					comp.sort();
-					return ref.join() == comp.join();
+					var s1 = v1.model.attributes[prop].toLowerCase(),
+						s2 = v2.model.attributes[prop].toLowerCase();
+					if(s1 < s2){
+						return -1;
+					}else{
+						return 1;
+					}
 	  			});
 	  		}
 	  		return viewsArray;
