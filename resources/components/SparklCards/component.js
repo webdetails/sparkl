@@ -28,40 +28,13 @@ wd.cpk = wd.cpk || {};
 
   	namespace.models.sparklNewPluginCard = Backbone.Model.extend({
     	defaults:{
-      		"pluginId" : "", 
-      		"plugin_name" : "",
-      		"plugin_description" : "",
-      		"author_name": "",
-      		"company_name": "",
-      		"company_url": "",
-      		"creation_date": "",
-      		"version": "",
-      		"CPK_version": "",
-      		"pluginImage": "",
-   	
-   			"actionOpts" : [],
-   			"imgSrc": "",
-
-   			"selected" : true
-    	},
-
-    	selec: function (){
-			      	
-    	},
+      		"pluginId" : "newPluginId", 
+   			"actionOpts" : []
+       	},
 
     	fireAction: function (action){
     		this.trigger('action:' + action , this.get('pluginId') );
     	},
-
-    	sort: function(m2, prop, direction){
-    		var m1 = this,
-    			s1 = m1.get(prop),
-    			s2 = m2.get(prop);
-
-
-
-    	}
-
 	});
 
 	namespace.models.sparklPluginCard = Backbone.Model.extend({
@@ -79,27 +52,11 @@ wd.cpk = wd.cpk || {};
    	
    			"actionOpts" : [],
    			"imgSrc": "",
-
-   			"selected" : true
-    	},
-
-    	selec: function (){
-			      	
     	},
 
     	fireAction: function (action){
     		this.trigger('action:' + action , this.get('pluginId') );
     	},
-
-//    	match: function () {}
-    	//se true: lanca envento A
-    	//se false : lança evento B
-
-    	//var match =
-
-    	//this.set('selected', match);
-
-    	//As views escutam os eventos
 	});
 
 	/*
@@ -160,15 +117,14 @@ wd.cpk = wd.cpk || {};
 
 		},
 		render: function (ph){
-			var that = this,
-				$optsContArr = that.$el.find('.optionCont');
-
+			var that = this;
 	      	that.$el.html( that.template( that.model.toJSON()) );
 
+			var $optsContArr = that.$el.find('.optionCont');
+
 	      	_.each ( that.model.get('actionOpts') , function (action,idx) {
-				var $label = $("<div id='"+action.id+"' class='label'>"+action.label+"</div>");
-				$optsContArr[idx].append($label);
-	      		$optsContArr[idx].click( function (){
+				$optsContArr[idx].innerHTML=action.label;
+	      		$($optsContArr[idx]).click( function (){
 	      			that.model.fireAction( action.id );
 	      		});
 	      	});	
@@ -189,10 +145,7 @@ wd.cpk = wd.cpk || {};
 	    },
 
 	    initialize: function (){
-	    	var that = this;
-	    	that.model.on('change:selected', function(e){
-	    		that.model.get('selected');	
-	    	})
+
 	    },
 	    render: function (ph){
 			var that = this;

@@ -22,50 +22,7 @@ var SparklPluginCardComponent = (function(){
     		label: "Import"
     	}
     ]
-/*
-    var plugins = [
-     	{
-        	pluginId: 'plugin1',
-          	plugin_description: 'A plugin made of gold',
-          	plugin_name: 'BSilva Breakfast Plugin',
-          	version: '01a13',
-          	actionOpts: pluginOptsButton,
-          	imgSrc: '../img/alpha.png'
-      	},
-      	{
-         	pluginId: 'plugin2',
-          	plugin_description: 'Testing some stuff 22222',
-          	plugin_name: 'BSilva Lunch Plugin',
-          	version: '01a13',
-          	actionOpts: pluginOptsButton,
-          	imgSrc: '../img/beta.png'
-      	},
-      	{
-        	pluginId: 'plugin3',
-          	plugin_description: 'Testing some stuff 3333',
-          	plugin_name: 'BSilva Tea Plugin',
-          	version: '01a13',
-        	actionOpts: pluginOptsButton,
-          	imgSrc: '../img/gamma.png'
-      	},
-      	{
-         	pluginId: 'plugin4',
-          	plugin_description: 'Testing some stuff 3333',
-          	plugin_name: 'PMartins Plugin',
-          	version: '01a13',
-          	actionOpts: pluginOptsButton,
-          	imgSrc: '../img/omega.png'
-      	},
-      	{
-         	pluginId: 'plugin5',
-          	plugin_description: 'Testing some stuff 3333',
-          	plugin_name: 'PMartins Plugin',
-          	version: '01a13',
-          	actionOpts: pluginOptsButton,
-          	imgSrc: '../img/omega.png'
-      	}
-    ]
-*/
+
 	var MyClass = UnmanagedComponent.extend({
 
 	  	_models: {},
@@ -87,13 +44,13 @@ var SparklPluginCardComponent = (function(){
 			this._views = {};
 			this._models = {};
 		},
-
+		// construct plugins info based on query data
 	  	handleJsonResponse: function (json){
 	    	var	plugins = _.map( json.resultset , function (rawPlugin){
 	      		var plugin = {};
 	      		_.each ( rawPlugin, function(value, idx){
 	        		plugin[ json.metadata[idx].colName ] = value;
-		      		plugin.actionOpts = pluginOptsButton;
+		      		plugin.actionOpts = pluginOptsButton; //append opts data not included in query
 	      		});
 	      		return plugin
 	    	});
@@ -105,11 +62,17 @@ var SparklPluginCardComponent = (function(){
 
 	    	var cd = this.chartDefinition;
 	    	var that = this;
+
+	    	// Construct NewPlugin
+	    	var newPlugin = {};
+	    	newPlugin.pluginId = Dashboards.getParameterValue('pluginIdParam');
+	    	newPlugin.actionOpts = newPluginOpts;
+
 	    	/* Initialize New Plugin Card */
 	  		if( !that._newPluginModel ){
-	    		that._newPluginModel = new wd.cpk.models.sparklNewPluginCard( newPluginOpts );
+	    		that._newPluginModel = new wd.cpk.models.sparklNewPluginCard( newPlugin );
 	    	} else {
-	    		that._newPluginModel.set( newPluginOpts );
+	    		that._newPluginModel.set( newPlugin );
 	   		}
 	   		if( !that._newPluginView ){
 	    		that._newPluginView = new wd.cpk.views.sparklNewPluginCard({	
@@ -118,7 +81,7 @@ var SparklPluginCardComponent = (function(){
 	       		});
 		    }
 	    	that._newPluginView.render( '#' + that.htmlObject );
-	   		//that.configureListeners( that._newPluginModel );	
+	   		that.configureNewCardListeners( that._newPluginModel );	
 
 	    	/* Initialize Plugins Cards models and views */
 	  		_.each( plugins , function(pluginOpts){
@@ -134,7 +97,6 @@ var SparklPluginCardComponent = (function(){
 		    		});
 		    	}
 	    		that.configureListeners( that._models[pluginOpts.pluginId] );
-	    		/*this.selectorModel.syncSelection();*/
 	  		});
 
 	  		_.each( this.getSortedViews() , function(v){
@@ -175,6 +137,53 @@ var SparklPluginCardComponent = (function(){
 	  			v.detachView().appendView();
 	  		});
 	  	},
+
+		configureNewCardListeners: function (model){
+
+			model.off('action:createOption');
+			model.off('action:importOption');
+
+	    	model.on('action:createOption',function(id){
+			    var tableData = Dashboards.getComponentByName("render_pluginsTable").rawData,
+			        idsArray = [],
+			        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');
+			    
+			    $.each(tableData.resultset, function(idx,el){
+			        idsArray.push(el[0]);
+			    });
+			    
+			    if( idsArray.indexOf(id) > -1 ){
+			        var dialogComponent = Dashboards.getComponentByName("render_dialogGrabComponent");
+			        dialogComponent.open({
+			            message:"Id "+id+" already in use. Please, try again with a different Id.",
+			            buttons:[
+			                {
+			                    text: "OK",
+			                    click: function () {
+			                        $("#"+dialogComponent.htmlObject).dialog("close");
+			                    }                               
+			                }
+			            ]
+			        });
+			    }
+			    else{
+			        sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {
+			            isNewPluginParam: true,
+			            metadataReadonlyParam: false,
+			            pluginIdParam: id
+			        });
+			    }
+	    	},this);
+
+	    	model.on('action:importOption',function(id){
+		        var dialogComponent = Dashboards.getComponentByName("render_dialogGrabComponent");
+		        dialogComponent.open({
+		            message:"Import option not implemented yet.",
+		            dialogClass:'closeButtonVisible',
+		            buttons:[]
+		        });
+	    	},this);
+		},
 
 		configureListeners: function (model){
 
