@@ -1772,84 +1772,6 @@
     ]
    },
    {
-    "id": "cb27c38c-c00d-8706-3bc4-e875181fb684",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "New Plugin",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){    \n        function generateHashValue (key, value) {\n            var obj = Dashboards.getHashValue(),json;\n            if (arguments.length == 1) {\n                obj = key;\n            } else {\n                obj[key] = value;\n            }\n            json = JSON.stringify(obj);\n            return json;\n        }\n        \n        function changeLocation (newLocation, params){\n            if(!newLocation){ return; }\n            var hash = (params) ? '#' + generateHashValue( \"bookmark\" , { impl: \"client\" , params: params } ) : \"\";\n            window.location = newLocation + hash;\n        }\n    \n        changeLocation( '/pentaho/content/cpk/viewPlugin', {isNewPluginParam: true});\n}\n\n\n",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "08c82301-84e1-a5f0-ab39-7b083e67eb05",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
@@ -1950,7 +1872,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    var tableData = Dashboards.getComponentByName(\"render_pluginsTable\").rawData,\n        idsArray = [],\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    \n    $.each(tableData.resultset, function(idx,el){\n        idsArray.push(el[0]);\n    });\n    \n    if( idsArray.indexOf(pluginId) > -1 ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Id \"+pluginId+\" already in use. Please, try again with a different Id.\",\n            buttons:[\n                {\n                    text: \"OK\",\n                    click: function () {\n                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                    }                               \n                }\n            ]\n        });\n    }\n    else{\n        sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n            isNewPluginParam: true,\n            metadataReadonlyParam: false,\n            pluginIdParam: pluginId\n        });\n    }\n}",
+      "value": "function f(){\n    \n    var tableData = Dashboards.getComponentByName(\"render_pluginsTable\").rawData,\n        idsArray = [],\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    \n    $.each(tableData.resultset, function(idx,el){\n        idsArray.push(el[0]);\n    });\n    \n    if( idsArray.indexOf(pluginId) > -1 ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Id \"+pluginId+\" already in use. Please, try again with a different Id.\",\n            buttons:[\n                {\n                    text: \"OK\",\n                    click: function () {\n                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                    }                               \n                }\n            ]\n        });\n    }\n    else{\n        sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n            isNewPluginParam: true,\n            pluginIdParam: pluginId\n        });\n    }\n}",
       "type": "JavaScript"
      },
      {
