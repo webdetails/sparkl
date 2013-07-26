@@ -860,12 +860,6 @@ div.container *{
 .WDdataCellBody .cont .formPH input:focus{
   cursor: auto;
 }
-.WDdataCellBody .cont .formPH.readOnly input{
-  background: inherit;
-}
-.WDdataCellBody .cont .formPH.readOnly input:hover{
-  cursor: auto;
-}
 .WDdataCellBody .cont .uploadButton{
   padding: 0px 6px 0px 6px;    
 }
@@ -889,9 +883,15 @@ div.container *{
 .aboutPlugin .cont.version {}
 
 .WDdataCellBody .cont.newPlugin{
-  font-size: 17px;
-  margin-top: 15px;
-  padding:6px;
+  height: 55px;
+  max-height: 55px;
+  min-height: 55px;
+  font-size: 14px;
+  padding:10px;
+  border-bottom: none;
+  width: 80%;
+  position: relative;
+  float: left;
 }
 .WDdataCellBody .cont.newPlugin *{
   font-size: inherit;
@@ -899,18 +899,68 @@ div.container *{
   float: left;
 }
 .cont.newPlugin .labelPH{
-  width: 15%;
-  line-height: 30px;
+  width: 25%;
+  line-height: 37px;
   margin:0px;
+  color: #25BAEE;
+}
+.cont.newPlugin:hover .labelPH{
+  color: #FFFFFF;
 }
 .cont.newPlugin .formPH{
-  width: 70%;
+  width: 32%;
   margin:0px;
 }
 .cont.newPlugin .formPH input{
-  font-size: 17px;
+  font-size: 14px;
   width: 100%;
 }
+.cont.newPlugin .validateIconPH{
+  width: 5%; 
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #FFFFFF;
+  position: relative;
+}
+.cont.newPlugin .validateIconPH.correct{
+  background: url('../img/validate_correct.png') no-repeat scroll right center #FFFFFF;
+}
+.cont.newPlugin .validateIconPH.wrong{
+  background: url('../img/validate_wrong.png') no-repeat scroll right center #FFFFFF;
+}
+.cont.newPlugin .labelPH.validityFeedback{
+  width: 38%;
+  background: #C31116;
+  color: #FFFFFF;
+}
+
+.WDdataCellBody .createNewPluginPH{
+  background: #EAEDEE;
+  width: 19%;
+  height: 55px;
+  max-height: 55px;
+  min-height: 55px;
+  float: right;
+}
+.WDdataCellBody .createNewPluginPH button{
+  background: #EAEDEE;
+  color: #8C8B8B;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  height: 100%;
+  width: 100%;
+  vertical-align: baseline;
+}
+.createNewPlugin button.active{
+  background: #41B8EE;
+  color: #D1EEFC;
+}
+.createNewPlugin button.active:hover{
+  background: #2C9AE3;
+  color:#FFFFFF;
+  cursor: pointer;
+}
+
+/*
 .cont.newPlugin .buttonPH{
     width: 15%;
     padding-left: 6px;
@@ -929,8 +979,9 @@ div.container *{
   background: #2C9AE3;
   color:#FFFFFF;
 }
+*/
 .WDdataCellBody .cont.newElement{
-  font-size: 17px;
+  font-size: 13px;
   margin-top: 15px;
   padding:6px;
   border-bottom: none;
