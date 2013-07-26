@@ -1260,7 +1260,7 @@
      },
      {
       "name": "cssClass",
-      "value": "cont newPlugin",
+      "value": "cont newPlugin WDhidden",
       "type": "String"
      }
     ]

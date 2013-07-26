@@ -144,34 +144,9 @@ var SparklPluginCardComponent = (function(){
 			model.off('action:importOption');
 
 	    	model.on('action:createOption',function(id){
-			    var tableData = Dashboards.getComponentByName("render_pluginsTable").rawData,
-			        idsArray = [],
-			        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');
-			    
-			    $.each(tableData.resultset, function(idx,el){
-			        idsArray.push(el[0]);
-			    });
-			    
-			    if( idsArray.indexOf(id) > -1 ){
-			        var dialogComponent = Dashboards.getComponentByName("render_dialogGrabComponent");
-			        dialogComponent.open({
-			            message:"Id "+id+" already in use. Please, try again with a different Id.",
-			            buttons:[
-			                {
-			                    text: "OK",
-			                    click: function () {
-			                        $("#"+dialogComponent.htmlObject).dialog("close");
-			                    }                               
-			                }
-			            ]
-			        });
-			    }
-			    else{
-			        sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {
-			            isNewPluginParam: true,
-			            pluginIdParam: id
-			        });
-			    }
+		        sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {
+		            isNewPluginParam: true
+		        });
 	    	},this);
 
 	    	model.on('action:importOption',function(id){

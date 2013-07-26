@@ -11577,7 +11577,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n        $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n    \n    $otherToggleDataCells.toggleClass(\"WDhidden\");\n    $thisDataCell.toggleClass(\"WDhidden\");\n    Dashboards.fireChange(\"${p:pluginIdParam}\",Dashboards.getParameterValue(\"${p:newPluginIdParam}\"));\n    Dashboards.setParameter(\"${p:newPluginIdParam}\",\"newPluginId\");\n    Dashboards.firechange(\"updateDataEvent\");\n}",
+      "value": "function f(){\n    var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n        $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n    \n    $otherToggleDataCells.toggleClass(\"WDhidden\");\n    $thisDataCell.toggleClass(\"WDhidden\");\n    Dashboards.fireChange(\"${p:pluginIdParam}\",Dashboards.getParameterValue(\"${p:newPluginIdParam}\"));\n    Dashboards.setParameter(\"${p:newPluginIdParam}\",\"newPluginId\");\n    Dashboards.fireChange(\"updateDataEvent\");\n}",
       "type": "JavaScript"
      },
      {
