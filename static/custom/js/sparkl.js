@@ -21,6 +21,43 @@ var sparkl = {};
         }
         json = JSON.stringify(obj);
         return json;
+    }
+
+    myself.createElementsTableEmptyRawData = function() {
+    	var emptyData = {
+    		metadata:[
+    			{
+    				colIndex: 0,
+    				colType: 'String',
+    				colName: 'elementName'
+    			},
+    			{
+    				colIndex: 1,
+    				colType: 'String',
+    				colName: 'elementType'
+    			},
+    			{
+    				colIndex: 2,
+    				colType: 'Boolean',
+    				colName: 'adminOnly'
+    			},
+    			{
+    				colIndex: 3,
+    				colType: 'String',
+    				colName: 'fileName'
+    			},
+    			{
+    				colIndex: 4,
+    				colType: 'String',
+    				colName: 'elementName'
+    			}
+    		],
+    		queryInfo:{
+    			totalRows: 0
+    		},
+    		resultset: []
+    	}
+    	return emptyData;
     }	
 
 })(sparkl);

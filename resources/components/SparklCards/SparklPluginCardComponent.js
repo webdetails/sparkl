@@ -198,7 +198,6 @@ var SparklPluginCardComponent = (function(){
 	    	model.on('action:viewOption',function(id){
                 sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {
                     pluginIdParam: id,
-                    metadataReadonlyParam: false
                 });
 	    	},this);
 
