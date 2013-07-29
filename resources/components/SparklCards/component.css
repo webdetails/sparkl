@@ -152,6 +152,7 @@ time, mark, audio, video {
 	position: absolute;
 	bottom: 0px;
 	right: 5px;
+	z-index:200;
 }
 .optionsIcon:hover{
   	background: url('img/options.png') no-repeat -24px center transparent;
@@ -159,14 +160,13 @@ time, mark, audio, video {
 }
 .optsExternCont.expanded .optionsIcon{
   	background: url('img/options.png') no-repeat -24px center transparent;
-	z-index: 2000;
 }
 .optionsContainer{
 	height: 100%;
 	position: relative;
 	background: #25BAED;
 
-	z-index: 1000;
+	z-index: 100;
 }
 .optionCont{
 	height: 40px;
