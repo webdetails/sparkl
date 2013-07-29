@@ -66,6 +66,7 @@ wd.cpk = wd.cpk || {};
 
 
 	namespace.templates.sparklNewPluginCard = Mustache.compile(
+		"   <div class='overlay'></div>" +
 		"		<div class='optionCont first'></div>"+
 		"		<div class='separator'>"+
 		"			<div class='horizontalRectangle'></div>"+

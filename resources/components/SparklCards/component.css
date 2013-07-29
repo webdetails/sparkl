@@ -196,6 +196,12 @@ time, mark, audio, video {
 	margin-bottom: 10px;
 	overflow: hidden;
 	position: relative;
+
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition:    all 150ms ease-out;
+	-ms-transition:     all 150ms ease-out;
+	-o-transition:      all 150ms ease-out;
+	transition:         all 150ms ease-out;
 }
 .sparklNewPluginCardContainer:hover{
 	background: #25BAED;
@@ -212,10 +218,6 @@ time, mark, audio, video {
 }
 .sparklNewPluginCardContainer .separator{
 	height: 10px;
-	background: #EAEDEE;
-}
-.sparklNewPluginCardContainer:hover .separator{
-	background: #25BAED;
 }
 .sparklNewPluginCardContainer .separator .horizontalRectangle{
 	height: 10px;
@@ -257,13 +259,31 @@ time, mark, audio, video {
 	visibility: hidden;
 	border-bottom: none;
 	text-align: center;
+}
+.sparklNewPluginCardContainer:hover .optionCont{
+	visibility: visible;
 
-	-webkit-transition: visibility 500ms 500ms ease-out ;
+		-webkit-transition: visibility 500ms 500ms ease-out ;
 	-moz-transition:    visibility 500ms 500ms ease-out ;
 	-ms-transition:     visibility 500ms 500ms ease-out ;
 	-o-transition:      visibility 500ms 500ms ease-out ;
 	transition:         visibility 500ms 500ms ease-out ;
 }
-.sparklNewPluginCardContainer:hover .optionCont{
-	visibility: visible;
+
+.sparklNewPluginCardContainer .overlay{
+	background:#EAEDEE;
+	height:100%;
+	width:100%;
+	position: absolute;
+
+	-webkit-transition: all 50ms ease-out;
+	-moz-transition:    all 50ms ease-out;
+	-ms-transition:     all 50ms ease-out;
+	-o-transition:      all 50ms ease-out;
+	transition:         all 50ms ease-out;
+}
+
+.sparklNewPluginCardContainer:hover .overlay{
+	background: transparent;
+	z-index:-100;
 }
