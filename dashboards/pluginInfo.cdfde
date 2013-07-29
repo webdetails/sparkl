@@ -11721,7 +11721,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n        $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n    \n    $otherToggleDataCells.toggleClass(\"WDhidden\");\n    $thisDataCell.toggleClass(\"WDhidden\");\n    Dashboards.fireChange(\"${p:pluginIdParam}\",Dashboards.getParameterValue(\"${p:newPluginIdParam}\"));\n    Dashboards.setParameter(\"${p:newPluginIdParam}\",\"newPluginId\");\n    Dashboards.fireChange(\"updateDataEvent\");\n}",
+      "value": "function f(){\n    var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n        $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n    \n    $otherToggleDataCells.unblock();\n    $thisDataCell.toggleClass(\"WDhidden\");\n    Dashboards.fireChange(\"${p:pluginIdParam}\",Dashboards.getParameterValue(\"${p:newPluginIdParam}\"));\n    Dashboards.setParameter(\"${p:newPluginIdParam}\",\"newPluginId\");\n    Dashboards.fireChange(\"updateDataEvent\");\n}",
       "type": "JavaScript"
      },
      {
@@ -13573,7 +13573,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        $otherToggleDataCells.toggleClass(\"WDhidden\");\n        $thisDataCell.toggleClass(\"WDhidden\");\n        var $form = $('#'+this.htmlObject).find('input');\n        $form.removeAttr('value');\n        $form.attr('placeholder','newPluginId');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n}",
+      "value": "function f(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        var $form = $('#'+this.htmlObject).find('input');\n        $form.removeAttr('value');\n        $form.attr('placeholder','newPluginId');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n}",
       "type": "JavaScript"
      },
      {

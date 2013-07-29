@@ -937,8 +937,9 @@ div.container *{
 }
 
 .WDdataCellBody .createNewPluginPH{
-  background: #EAEDEE;
-  width: 19%;
+/*  background: #EAEDEE;
+  color: #8C8B8B;
+*/  width: 19%;
   height: 55px;
   max-height: 55px;
   min-height: 55px;
@@ -954,11 +955,14 @@ div.container *{
   width: 100%;
   vertical-align: baseline;
 }
-.createNewPlugin button.active{
+.WDdataCellBody .createNewPluginPH button:hover{
+  cursor: default;  
+}
+.createNewPluginPH.active button{
   background: #41B8EE;
   color: #D1EEFC;
 }
-.createNewPlugin button.active:hover{
+.createNewPluginPH.active:hover button{
   background: #2C9AE3;
   color:#FFFFFF;
   cursor: pointer;
