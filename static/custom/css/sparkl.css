@@ -932,6 +932,10 @@ div.container *{
   color: #FFFFFF;
 }
 
+.WDdataCellBody .pluginsListContainer {
+  margin-right:-10px;
+}
+
 .WDdataCellBody .createNewPluginPH{
   background: #EAEDEE;
   width: 19%;
