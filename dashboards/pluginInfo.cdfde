@@ -11777,6 +11777,89 @@
     ]
    },
    {
+    "id": "87f8e786-bdd9-371d-dcf3-2d8fc7671187",
+    "type": "ComponentsQuery",
+    "typeDesc": "Query Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginIdsList",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "xActionArrayParameter",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "resultvar",
+      "value": "",
+      "type": "Result"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "pluginsListDatasource"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "function f(data){\n/*    var pluginIdsList = [];\n    _.each(data.resultset, function(el,idx){\n        pluginIdsList.push(el[0]);\n    });\n*/\n    /* for the moment use dummy plugin list */\n    var pluginIdsList = [\"plugin1\",\"plugin2\",\"plugin3\"]\n    Dashboards.setParameter(\"${p:pluginIdsListParam}\",pluginIdsList);\n    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "SELECTORS",
     "name": "Selects",
     "type": "Label",
@@ -13583,7 +13666,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var dummyPluginList = [\"plugin1\",\"plugin2\",\"plugin3\"];\n    var $thisHTML = $('#'+this.htmlObject),\n        $thisSiblings = $thisHTML.siblings();\n    \n    $thisHTML.find('input').keypress(function(ev){\n        var code = ev.which;\n        console.log(\"Unicode of pressed letter: \"+code);\n        if(code==13){\n            _.each(dummyPluginsList,function(el,idx){\n                if(Dashboards.getParameterValue(\"${p:newPluginIdParam}\") == el){\n                    $thisSiblings.find('.validateIconPH').addClass('correct');\n                    $thisSiblings.find('.createNewPluginPH').addClass('active');\n                    return;\n                }\n                else{\n                    $thisSiblings.find('.validateIconPH').addClass('wrong');\n                    $thisSiblings.find('.validityFeedback').toggleClass('WDhidden');\n                }      \n            });\n        }\n    });\n\nconsole.log(\"Done\");\n\n}",
+      "value": "function f(){\n    var pluginIdsList = Dashboards.getParameterValue(\"${p:pluginIdsListParam}\"),\n        $thisHTML = $('#'+this.htmlObject),\n        $thisSiblings = $thisHTML.siblings();\n    \n    $thisHTML.find('input').keypress(function(ev){\n        var code = ev.which;\n        console.log(\"Unicode of pressed letter: \"+code);\n        if(code==13){\n            _.each(dummyPluginsList,function(el,idx){\n                if(Dashboards.getParameterValue(\"${p:newPluginIdParam}\") == el){\n                    $thisSiblings.find('.validateIconPH').addClass('correct');\n                    $thisSiblings.find('.createNewPluginPH').addClass('active');\n                    return;\n                }\n                else{\n                    $thisSiblings.find('.validateIconPH').addClass('wrong');\n                    $thisSiblings.find('.validityFeedback').toggleClass('WDhidden');\n                }      \n            });\n        }\n    });\n\nconsole.log(\"Done\");\n\n}",
       "type": "JavaScript"
      },
      {
@@ -13932,6 +14015,34 @@
      {
       "name": "propertyValue",
       "value": "newPluginId",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "d04dbc89-c324-7397-5dbc-567fa73da7cc",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginIdsListParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
       "type": "String"
      },
      {
@@ -14362,6 +14473,36 @@
       "name": "cache",
       "value": "true",
       "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "SPARKL_CPKENDPOINTS",
+    "name": "SPARKL Endpoints",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "SPARKL Endpoints",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "3ca2a0eb-6fc0-ca45-b9dd-2f8ed18bd003",
+    "type": "Componentssparkl_listPlugins_CPKENDPOINT",
+    "typeDesc": "listPlugins Endpoint",
+    "meta": "CPK",
+    "meta_pluginId": "sparkl",
+    "meta_endpoint": "listPlugins",
+    "parent": "SPARKL_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginsListDatasource",
+      "type": "Id"
      }
     ]
    }
