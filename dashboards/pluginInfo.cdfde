@@ -13583,7 +13583,7 @@
      },
      {
       "name": "postChange",
-      "value": "",
+      "value": "function f(){\n    var dummyPluginList = [\"plugin1\",\"plugin2\",\"plugin3\"];\n    var $thisHTML = $('#'+this.htmlObject),\n        $thisSiblings = $thisHTML.siblings();\n    \n    $thisHTML.find('input').keypress(function(ev){\n        var code = ev.which;\n        console.log(\"Unicode of pressed letter: \"+code);\n        if(code==13){\n            _.each(dummyPluginsList,function(el,idx){\n                if(Dashboards.getParameterValue(\"${p:newPluginIdParam}\") == el){\n                    $thisSiblings.find('.validateIconPH').addClass('correct');\n                    $thisSiblings.find('.createNewPluginPH').addClass('active');\n                    return;\n                }\n                else{\n                    $thisSiblings.find('.validateIconPH').addClass('wrong');\n                    $thisSiblings.find('.validityFeedback').toggleClass('WDhidden');\n                }      \n            });\n        }\n    });\n\nconsole.log(\"Done\");\n\n}",
       "type": "JavaScript"
      },
      {
