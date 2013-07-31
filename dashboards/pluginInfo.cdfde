@@ -6909,6 +6909,228 @@
     ]
    },
    {
+    "id": "4c319a7b-1538-0b75-0fba-39f43cf9bd86",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
+    "properties": [
+     {
+      "name": "name",
+      "value": "openNewElementButtonContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont openNewElement",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6e87d13d-83b5-b081-9c3f-d64c455550fd",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "4c319a7b-1538-0b75-0fba-39f43cf9bd86",
+    "properties": [
+     {
+      "name": "name",
+      "value": "openNewElementButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "buttonPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e4a2a5b2-0846-74ca-cd72-e67c23ffc6d9",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementButtonContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont newElement WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d95c6cf8-7e3f-06ea-afaf-b89dd4e43481",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e4a2a5b2-0846-74ca-cd72-e67c23ffc6d9",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "buttonPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "a11d38a4-fb69-517c-f455-f69a43981f3c",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -7015,117 +7237,6 @@
      {
       "name": "cssClass",
       "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "4c319a7b-1538-0b75-0fba-39f43cf9bd86",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "cont newElement",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "6e87d13d-83b5-b081-9c3f-d64c455550fd",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "4c319a7b-1538-0b75-0fba-39f43cf9bd86",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "buttonPH",
       "type": "String"
      }
     ]
@@ -10217,7 +10328,7 @@
      },
      {
       "name": "colHeaders",
-      "value": "[]",
+      "value": "[\"Name\",\"Type\",\"Admin Only\",\"File Name\",\"Actions\"]",
       "type": "Array"
      },
      {
@@ -10384,6 +10495,84 @@
       "name": "cccClickAction",
       "value": "",
       "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "e6f9a231-264f-889f-a57d-b01010e58921",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "openNewElementButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Add New Element",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(e){\n    var $thisCont = $('#'+this.htmlObject).parents('.cont');\n    $thisCont.toggleClass('WDhidden');\n    $thisCont.siblings('.cont.newElement').toggleClass('WDhidden');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:openNewElementButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -10644,7 +10833,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newDashboardOpts = Dashboards.getParameterValue('${p:newDashboardParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createDashboard';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();\n    \n    if (newDashboardOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Dashbord \"+newDashboardOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating dashboard ' + newDashboardOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newDashboardOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'dashboard'+ capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newDashboardOpts = Dashboards.getParameterValue('${p:newDashboardParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createDashboard';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementButtonContainer\").toggleClass('WDhidden');\n    \n    if (newDashboardOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Dashbord \"+newDashboardOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating dashboard ' + newDashboardOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newDashboardOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'dashboard'+ capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -10722,7 +10911,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newEndpointOpts = Dashboards.getParameterValue('${p:newEndpointParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createEndpoint';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n\n    if (newEndpointOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    newEndpointOpts.type = _(newEndpointOpts.template.split('.')).last();\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Endpoint \"+newEndpointOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: addRefreshWrapper(successCallback) ,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating endpoint ' + newEndpointOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }   \n    };    \n    \n    _.each( newEndpointOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'endpoint'+ capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newEndpointOpts = Dashboards.getParameterValue('${p:newEndpointParam}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'createEndpoint';\n\n    Dashboards.getComponentByName('${c:newElementPopup}').hide();        \n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementButtonContainer\").toggleClass('WDhidden');\n    \n    if (newEndpointOpts.name === \"\"){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    newEndpointOpts.type = _(newEndpointOpts.template.split('.')).last();\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Endpoint \"+newEndpointOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: addRefreshWrapper(successCallback) ,\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating endpoint ' + newEndpointOpts.name + '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }   \n    };    \n    \n    _.each( newEndpointOpts, function(el, key) {        \n        ajaxOpts.data['param' + 'endpoint'+ capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
