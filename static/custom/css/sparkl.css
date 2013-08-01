@@ -959,11 +959,11 @@ div.container *{
 .WDdataCellBody .createNewPluginPH button:hover{
   cursor: default;  
 }
-.createNewPluginPH.active button{
+.WDdataCellBody .createNewPluginPH.active button{
   background: #41B8EE;
   color: #D1EEFC;
 }
-.createNewPluginPH.active:hover button{
+.WDdataCellBody .createNewPluginPH.active:hover button{
   background: #2C9AE3;
   color:#FFFFFF;
   cursor: pointer;
