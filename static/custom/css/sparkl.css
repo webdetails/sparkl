@@ -935,9 +935,20 @@ div.container *{
   margin-top: 15px;
   padding:6px;
   border-bottom: none;
+/*  -webkit-transition: all 500ms ease-out;
+  -moz-transition:    all 500ms ease-out;
+  -ms-transition:     all 500ms ease-out;
+  -o-transition:      all 500ms ease-out;
+  transition:         all 500ms ease-out;
+*/}
+/*.WDdataCellBody .cont.openNewElement.closed{
+  height: 0px;
+  overflow: hidden;
 }
+*/
 .WDdataCellBody .cont.openNewElement:hover{
   background: #EBEDEE;
+
 }
 .cont.openNewElement .buttonPH{
     width: 100%;
@@ -945,7 +956,7 @@ div.container *{
 }
 .cont.openNewElement .buttonPH button{
   width: 100%;
-  background: #41B8EE;
+  background: url('../img/add_new.png') no-repeat 99% center #41B8EE;
   color:#FFFFFF;
   font-size: 15px;
   border: 0px none;
@@ -962,9 +973,20 @@ div.container *{
   background: #EBEDEE;
   height: 50px;
   width: 100%;
-  margin-top: 5px;
+/*  -webkit-transition: all 500ms ease-out;
+  -moz-transition:    all 500ms ease-out;
+  -ms-transition:     all 500ms ease-out;
+  -o-transition:      all 500ms ease-out;
+  transition:         all 500ms ease-out;
+*/}
+/*.WDdataCellBody .newElementOptsCont.closed{
+  height: 0px;
+  overflow: hidden;
 }
-
+*/
+.WDdataCellBody .newElementOptsCont.WDhidden{
+  display: none;
+}
 .WDdataCellBody .newElementOptsCont .cont{
   height: 100%;
   padding: 6px 6px 6px 6px;
@@ -1053,10 +1075,22 @@ div.container *{
   font-weight: normal;
   font-size: 15px;
 }
-.newElementOptsCont .cont .checkboxPH li.toggleGroup label input{
+/*.newElementOptsCont .cont .checkboxPH li.toggleGroup label input{
   position: relative;
   top: 3px;
 }
+*/
+.newElementOptsCont .cont .checkboxPH li.toggleGroup label input[type="checkbox"] {
+    display:none;
+}
+.newElementOptsCont .cont .checkboxPH li.toggleGroup label input[type="checkbox"] + label span {
+    background: url(checkbox.png) left top no-repeat;
+    cursor: pointer;
+}
+.newElementOptsCont .cont .checkboxPH li.toggleGroup label input[type="checkbox"]:checked + label span {
+    background: url(checkbox.png) -19px top no-repeat;
+}
+
 .newElementOptsCont .cont .selectorPH{
   width: 100%;
 }

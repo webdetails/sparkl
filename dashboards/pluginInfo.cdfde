@@ -7269,7 +7269,7 @@
      },
      {
       "name": "cssClass",
-      "value": "newElementOptsCont WDfilterCellBody",
+      "value": "newElementOptsCont WDfilterCellBody WDhidden",
       "type": "String"
      }
     ]
@@ -11220,7 +11220,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(e){\n    var $thisCont = $('#'+this.htmlObject).parents('.cont');\n    $thisCont.toggleClass('WDhidden');\n    $thisCont.siblings('.cont.newElement').toggleClass('WDhidden');\n}",
+      "value": "function f(e){\n    var $thisCont = $('#'+this.htmlObject).parents('.cont');\n    $thisCont.toggleClass('WDhidden');\n    $thisCont.siblings('.newElementOptsCont').toggleClass('WDhidden');\n}",
       "type": "JavaScript"
      },
      {
