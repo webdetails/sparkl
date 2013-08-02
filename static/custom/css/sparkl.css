@@ -959,36 +959,16 @@ div.container *{
 .WDdataCellBody .createNewPluginPH button:hover{
   cursor: default;  
 }
-.createNewPluginPH.active button{
+.WDdataCellBody .createNewPluginPH.active button{
   background: #41B8EE;
   color: #D1EEFC;
 }
-.createNewPluginPH.active:hover button{
+.WDdataCellBody .createNewPluginPH.active:hover button{
   background: #2C9AE3;
   color:#FFFFFF;
   cursor: pointer;
 }
 
-/*
-.cont.newPlugin .buttonPH{
-    width: 15%;
-    padding-left: 6px;
-    margin:0px;
-}
-.cont.newPlugin .buttonPH button{
-  width: 100%;
-  background: #41B8EE;
-  color: #D1EEFC;
-  font-size: 15px;
-  border: 0px none;
-  box-shadow: none;
-  vertical-align: baseline;  
-}
-.cont.newPlugin .buttonPH button:hover{
-  background: #2C9AE3;
-  color:#FFFFFF;
-}
-*/
 .WDdataCellBody .cont.openNewElement{
   font-size: 13px;
   margin-top: 15px;
@@ -1015,31 +995,125 @@ div.container *{
   cursor: pointer;
 }
 
-
-.WDdataCellBody .cont.newElement{
-  font-size: 13px;
-  margin-top: 15px;
-  padding:6px;
-  border-bottom: none;
-}
-.WDdataCellBody .cont.newElement:hover{
+/*New Element Opts Container*/
+.WDdataCellBody .newElementOptsCont{
+  display: inline-block;
   background: #EBEDEE;
-}
-.cont.newElement .buttonPH{
-    width: 100%;
-    margin:0px;
-}
-.cont.newElement .buttonPH button{
+  height: 50px;
   width: 100%;
-  background: #EBEDEE;
-  color:#FFFFFF;
-  font-size: 15px;
-  border: 0px none;
-  box-shadow: none;
-  vertical-align: baseline;  
+  margin-top: 5px;
 }
-.cont.newElement .buttonPH button:hover{
+
+.WDdataCellBody .newElementOptsCont .cont{
+  height: 100%;
+  padding: 6px 6px 6px 6px;
+  background: #EBEDEE;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  color: #878685;
+  position: relative;
+  border-bottom: 0px;
+  float: left;
+}
+.WDdataCellBody .newElementOptsCont .cont *{
+  height: 100%;
+  /*width: 100%;*/
+  font-size: inherit;
+/*  float: left;*/
+}
+.WDdataCellBody .newElementOptsCont .cont.elementName{
+  width: 30%;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementSelector{
+  width: 20%;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAdminCheckbox{
+  width: 10%;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAddButton{
+  width: 10%;
+  float: right;
+}
+
+.newElementOptsCont .cont.elementName .formPH{
+  width: 100%;
+  display: inline;
+  float: left;
+}
+.newElementOptsCont .cont .formPH input{
+  width: 100%;
+  background: #FFFFFF;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  padding-left: 10px;
+  margin: 0px;
+}
+.newElementOptsCont .cont .formPH input:hover{
   cursor: pointer;
+}
+.newElementOptsCont .cont .formPH input:focus{
+  cursor: auto;
+}
+.newElementOptsCont .cont .checkboxPH{
+  width: 100%;
+  color: #878685;
+}
+.newElementOptsCont .cont .checkboxPH:hover{
+  color: #FFFFFF;
+  background: #25B9ED;
+}
+.newElementOptsCont .cont .checkboxPH ul.toggleGroup{
+  margin: 0px;
+  padding-left: 0px;
+  width: 100%;
+  position: relative;
+}
+.newElementOptsCont .cont .checkboxPH li.toggleGroup{
+  display: inline;
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.newElementOptsCont .cont .checkboxPH li.toggleGroup label{
+  min-width: 100%;
+  position: relative;
+  bottom: 5px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.newElementOptsCont .cont .checkboxPH li.toggleGroup label input{
+  position: relative;
+  top: 3px;
+}
+.newElementOptsCont .cont.elementAddButton{
+  padding: 0px 0px 0px 0px;
+}
+.newElementOptsCont .cont .buttonPH button{
+  color: #D1EEFC;
+}
+.newElementOptsCont .cont .buttonPH button:hover{
+  color: #FFFFFF;
+}
+.newElementOptsCont .cont .selectorPH{
+  width: 100%;
+}
+.newElementOptsCont .cont.elementSelector:hover,
+.newElementOptsCont .cont.elementAdminCheckbox:hover{
+  background: #EBEDEE;
+}
+
+.newElementOptsCont .cont.elementSelector .selectorPH .chzn-container{
+  /*min-width: 188px;*/
+  min-width: 100%;
+  height: 100%;
+  border: none;
+}
+.newElementOptsCont .cont.elementSelector .selectorPH .chzn-container span{
+  line-height: 22px;
 }
 
 /* =============================================================================
@@ -1047,7 +1121,7 @@ div.container *{
    ========================================================================== */
 
 .WDdataCellBody .dataTables_wrapper {
-  min-height:1px;
+  min-height: 1px;
 }
 .WDdataCellBody .dataTables_wrapper .dataTables_filter{
   display: none;
