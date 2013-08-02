@@ -644,7 +644,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "idValidityLabel",
+      "value": "inUseLabel",
       "type": "Id"
      },
      {
@@ -704,7 +704,7 @@
      },
      {
       "name": "cssClass",
-      "value": "labelPH validityFeedback",
+      "value": "labelPH validityFeedback WDhidden",
       "type": "String"
      }
     ]
@@ -723,6 +723,112 @@
      {
       "name": "html",
       "value": "<b>ID in use</b>, please use another. ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "15b4b27d-4a16-e436-7f8c-10889c0f61d5",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "573c9360-d58d-cb45-372f-528ef31cd605",
+    "properties": [
+     {
+      "name": "name",
+      "value": "invalidLabel",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "labelPH validityFeedback WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a60a0ddd-15d3-b31e-dff0-fe769d48cd85",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "15b4b27d-4a16-e436-7f8c-10889c0f61d5",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<b>Invalid ID</b>, please use another. ",
       "type": "Html"
      },
      {
@@ -11910,7 +12016,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n        \n    if( true /*$('#'+this.htmlObject).hasClass('active')*/ ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        \n        var newPluginId = Dashboards.getParameterValue('${p:newPluginIdParam}'),\n            endpoint = 'createplugin';\n            \n        function successCallback (json){        \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:\"Plugin \"+newPluginId+\" created successfully!\",\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });        \n            Dashboards.setParameter('${p:isNewPluginParam}', false);\n            Dashboards.setParameter('${p:pluginIdParam}', newPluginId);\n            Dashboards.setParameter('${p:newPluginIdParam}', 'newPluginId');\n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        function addPublishWrapper (callback){\n            return function (json) {\n                $.ajax({\n                    url: '/pentaho/Publish',\n                    type:'GET',\n                    data: {\n                        'publish': 'now',\n                        'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                    },                \n                    success: callback\n                });\n            };\n        };\n        \n        var ajaxOpts = {\n            url:'/pentaho/content/sparkl/' + endpoint,\n            type: 'POST',\n            async: true,\n            dataType: 'json',\n            data: {\n                parampluginId: newPluginId        \n            },\n            success: addPublishWrapper(successCallback),\n            error: function(){            \n                Dashboards.log('Error creating ' + newPluginId + '!');\n            }    \n        };    \n        \n        $.ajax(ajaxOpts);\n    }\n}",
+      "value": "function f(){\n        \n    if( true /*$('#'+this.htmlObject).hasClass('active')*/ ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        \n        var newPluginId = Dashboards.getParameterValue('${p:newPluginIdParam}'),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        function successCallback (json){        \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:\"Plugin \"+newPluginId+\" created successfully!\",\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });        \n            Dashboards.setParameter('${p:isNewPluginParam}', false);\n            Dashboards.setParameter('${p:pluginIdParam}', newPluginId);\n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        function addPublishWrapper (callback){\n            return function (json) {\n                $.ajax({\n                    url: '/pentaho/Publish',\n                    type:'GET',\n                    data: {\n                        'publish': 'now',\n                        'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                    },                \n                    success: callback\n                });\n            };\n        };\n        \n        var ajaxOpts = {\n            url:'/pentaho/content/sparkl/' + endpoint,\n            type: 'POST',\n            async: true,\n            dataType: 'json',\n            data: {\n                parampluginId: newPluginId        \n            },\n            success: addPublishWrapper(successCallback),\n            error: function(){            \n                Dashboards.log('Error creating ' + newPluginId + '!');\n            }    \n        };    \n        \n        $.ajax(ajaxOpts);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -11978,7 +12084,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:newPluginIdParam}']",
       "type": "Listeners"
      },
      {
@@ -12028,7 +12134,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n/*    var pluginIdsList = [];\n    _.each(data.resultset, function(el,idx){\n        pluginIdsList.push(el[0]);\n    });\n*/\n    /* for the moment use dummy plugin list */\n    var pluginIdsList = [\"plugin1\",\"plugin2\",\"plugin3\"]\n    Dashboards.setParameter(\"${p:pluginIdsListParam}\",pluginIdsList);\n    \n}",
+      "value": "function f(data){\n/*    var pluginIdsList = [];\n    _.each(data.resultset, function(el,idx){\n        pluginIdsList.push(el[0]);\n    });\n*/\n\n    /* for the moment use dummy plugin list */\n    var pluginIdsList = [\"plugin1\",\"plugin2\",\"plugin3\"];\n\n    var newPluginId = Dashboards.getParameterValue(\"${p:newPluginIdParam}\");\n//    Dashboards.setParameter(\"${p:pluginIdsListParam}\",pluginIdsList);\n\n    /* get place holders */\n    var $newPluginContainer = $(\"#newPluginContainer\"),\n        $buttonPH = $newPluginContainer.parents('.WDdataCellBody').find(\".createNewPluginPH\"),\n        $iconPH = $newPluginContainer.find(\".validateIconPH\"),\n        $inUseMessagePH = $newPluginContainer.find(\"#inUseLabel\"),\n        $invalidMessagePH = $newPluginContainer.find(\"#invalidLabel\");\n    \n    /* reset css classes */\n    $iconPH.removeClass('correct');\n    $iconPH.removeClass('wrong');\n    $buttonPH.removeClass('active');\n    $inUseMessagePH.addClass('WDhidden');\n    $invalidMessagePH.addClass('WDhidden');\n    \n    /* check if new Id already in use or invalid */\n    if( pluginIdsList.indexOf(newPluginId) != -1 ){\n        $iconPH.addClass('wrong');\n        $inUseMessagePH.removeClass('WDhidden');\n    } else if( (newPluginId === \"\" || newPluginId.split(\" \").length > 1) ){\n        $iconPH.addClass('wrong');\n        $invalidMessagePH.removeClass('WDhidden');\n    } else if( newPluginId !== \"newPluginId\"){\n        $iconPH.addClass('correct');\n        $buttonPH.addClass('active');\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -13845,7 +13951,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        var $form = $('#'+this.htmlObject).find('input');\n        $form.removeAttr('value');\n        $form.attr('placeholder','newPluginId');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n}",
+      "value": "function f(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n        \n        var $form = $('#'+this.htmlObject).find('input');\n        $form.removeAttr('value');\n        $form.attr('placeholder','newPluginId');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -13855,7 +13961,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var pluginIdsList = Dashboards.getParameterValue(\"${p:pluginIdsListParam}\"),\n        $thisHTML = $('#'+this.htmlObject),\n        $thisSiblings = $thisHTML.siblings();\n    \n    $thisHTML.find('input').keypress(function(ev){\n        var code = ev.which;\n        console.log(\"Unicode of pressed letter: \"+code);\n        if(code==13){\n            _.each(dummyPluginsList,function(el,idx){\n                if(Dashboards.getParameterValue(\"${p:newPluginIdParam}\") == el){\n                    $thisSiblings.find('.validateIconPH').addClass('correct');\n                    $thisSiblings.find('.createNewPluginPH').addClass('active');\n                    return;\n                }\n                else{\n                    $thisSiblings.find('.validateIconPH').addClass('wrong');\n                    $thisSiblings.find('.validityFeedback').toggleClass('WDhidden');\n                }      \n            });\n        }\n    });\n\nconsole.log(\"Done\");\n\n}",
+      "value": "function f(){\n}",
       "type": "JavaScript"
      },
      {
@@ -14204,34 +14310,6 @@
      {
       "name": "propertyValue",
       "value": "newPluginId",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "d04dbc89-c324-7397-5dbc-567fa73da7cc",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "pluginIdsListParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
       "type": "String"
      },
      {
