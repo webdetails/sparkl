@@ -341,7 +341,7 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptText WDhidden",
+      "value": "globalOptText",
       "type": "String"
      }
     ]
@@ -1630,7 +1630,7 @@
       "type": "ValuesArray"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -1765,7 +1765,7 @@
       "type": "OptionArray"
      },
      {
-      "name": "cccClickAction",
+      "name": "clickAction",
       "value": "",
       "type": "JavaScript"
      }
@@ -1808,7 +1808,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -1886,7 +1886,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -2180,7 +2180,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -2278,7 +2278,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -2473,7 +2473,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
