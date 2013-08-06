@@ -292,6 +292,9 @@ div.container *{
 .WDfilterCellBody .cont.elementSelector{
   width: 30%;
 }
+.WDfilterCellBody .cont.elementAdminCheckbox{
+  width: 15%;
+}
 .WDfilterCellBody .cont.elementAddButton{
   width: 15%;
 }
@@ -336,6 +339,37 @@ div.container *{
 .WDfilterCellBody .cont .formPH input:focus{
   cursor: auto;
 }
+.WDfilterCellBody .cont .checkboxPH{
+  width: 100%;
+  color: #878685;
+}
+.WDfilterCellBody .cont .checkboxPH:hover{
+  color: #FFFFFF;
+  background: #25B9ED;
+}
+.WDfilterCellBody .cont .checkboxPH ul.toggleGroup{
+  margin: 0px;
+  padding-left: 0px;
+  width: 100%;
+  position: relative;
+}
+.WDfilterCellBody .cont .checkboxPH li.toggleGroup{
+  display: inline;
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.WDfilterCellBody .cont .checkboxPH li.toggleGroup label{
+  min-width: 100%;
+  position: relative;
+  bottom: 5px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.WDfilterCellBody .cont .checkboxPH li.toggleGroup label input{
+  position: relative;
+  top: 3px;
+}
 .WDfilterCellBody .cont.elementAddButton{
   padding: 0px 0px 0px 0px;
 }
@@ -348,6 +382,11 @@ div.container *{
 .WDfilterCellBody .cont .selectorPH{
   width: 100%;
 }
+.WDfilterCellBody .cont.elementSelector:hover,
+.WDfilterCellBody .cont.elementAdminCheckbox:hover{
+  background: #EBEDEE;
+}
+
 .WDfilterCellBody .cont.elementSelector .selectorPH .chzn-container{
   /*min-width: 188px;*/
   min-width: 100%;
@@ -935,20 +974,9 @@ div.container *{
   margin-top: 15px;
   padding:6px;
   border-bottom: none;
-/*  -webkit-transition: all 500ms ease-out;
-  -moz-transition:    all 500ms ease-out;
-  -ms-transition:     all 500ms ease-out;
-  -o-transition:      all 500ms ease-out;
-  transition:         all 500ms ease-out;
-*/}
-/*.WDdataCellBody .cont.openNewElement.closed{
-  height: 0px;
-  overflow: hidden;
 }
-*/
 .WDdataCellBody .cont.openNewElement:hover{
   background: #EBEDEE;
-
 }
 .cont.openNewElement .buttonPH{
     width: 100%;
@@ -956,7 +984,7 @@ div.container *{
 }
 .cont.openNewElement .buttonPH button{
   width: 100%;
-  background: url('../img/add_new.png') no-repeat 99% center #41B8EE;
+  background: #41B8EE;
   color:#FFFFFF;
   font-size: 15px;
   border: 0px none;
@@ -973,20 +1001,9 @@ div.container *{
   background: #EBEDEE;
   height: 50px;
   width: 100%;
-/*  -webkit-transition: all 500ms ease-out;
-  -moz-transition:    all 500ms ease-out;
-  -ms-transition:     all 500ms ease-out;
-  -o-transition:      all 500ms ease-out;
-  transition:         all 500ms ease-out;
-*/}
-/*.WDdataCellBody .newElementOptsCont.closed{
-  height: 0px;
-  overflow: hidden;
+  margin-top: 5px;
 }
-*/
-.WDdataCellBody .newElementOptsCont.WDhidden{
-  display: none;
-}
+
 .WDdataCellBody .newElementOptsCont .cont{
   height: 100%;
   padding: 6px 6px 6px 6px;
@@ -1009,25 +1026,16 @@ div.container *{
   width: 30%;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementSelector{
-  width: 23%;
-}
-.WDdataCellBody .newElementOptsCont .cont.elementSelector.type{
-  padding-right: 0px;
-  margin-right: 0px;
+  width: 20%;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAdminCheckbox{
-  width: 14%;
+  width: 10%;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAddButton{
-  width: 50px;
+  width: 10%;
   float: right;
 }
-.newElementOptsCont .cont .buttonPH button{
-  background: url('../img/add_new.png') no-repeat center center #25BAED;
-}
-.newElementOptsCont .cont .buttonPH button:hover{
-  background-color: #009DE2;
-}
+
 .newElementOptsCont .cont.elementName .formPH{
   width: 100%;
   display: inline;
@@ -1055,6 +1063,8 @@ div.container *{
   color: #878685;
 }
 .newElementOptsCont .cont .checkboxPH:hover{
+  color: #FFFFFF;
+  background: #25B9ED;
 }
 .newElementOptsCont .cont .checkboxPH ul.toggleGroup{
   margin: 0px;
@@ -1075,27 +1085,25 @@ div.container *{
   font-weight: normal;
   font-size: 15px;
 }
-/*.newElementOptsCont .cont .checkboxPH li.toggleGroup label input{
+.newElementOptsCont .cont .checkboxPH li.toggleGroup label input{
   position: relative;
   top: 3px;
 }
-*/
-.newElementOptsCont .cont .checkboxPH li.toggleGroup label input[type="checkbox"] {
-    display:none;
+.newElementOptsCont .cont.elementAddButton{
+  padding: 0px 0px 0px 0px;
 }
-.newElementOptsCont .cont .checkboxPH li.toggleGroup label input[type="checkbox"] + label span {
-    background: url(checkbox.png) left top no-repeat;
-    cursor: pointer;
+.newElementOptsCont .cont .buttonPH button{
+  color: #D1EEFC;
 }
-.newElementOptsCont .cont .checkboxPH li.toggleGroup label input[type="checkbox"]:checked + label span {
-    background: url(checkbox.png) -19px top no-repeat;
+.newElementOptsCont .cont .buttonPH button:hover{
+  color: #FFFFFF;
 }
-
 .newElementOptsCont .cont .selectorPH{
   width: 100%;
 }
 .newElementOptsCont .cont.elementSelector:hover,
 .newElementOptsCont .cont.elementAdminCheckbox:hover{
+  background: #EBEDEE;
 }
 
 .newElementOptsCont .cont.elementSelector .selectorPH .chzn-container{
