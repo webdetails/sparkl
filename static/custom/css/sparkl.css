@@ -1071,7 +1071,19 @@ div.container *{
   border: none;
 }
 .newElementOptsCont .cont.elementSelector .selectorPH .chzn-container span{
+  line-height: 38px;
+  text-indent: 8px;
+}
+.newElementOptsCont .cont.elementSelector .selectorPH .chzn-container .chzn-single div b{
+  height: 100%;
+}
+.newElementOptsCont .cont.elementSelector .selectorPH .chzn-drop{
+  height: auto;
+}
+.newElementOptsCont .cont.elementSelector .selectorPH .chzn-drop .chzn-results li{
+  height: 38px;
   line-height: 22px;
+  text-indent: 8px;
 }
 
 /* =============================================================================
