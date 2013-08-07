@@ -7133,7 +7133,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementButtonContainer",
+      "value": "oldNewElementButtonContainer",
       "type": "Id"
      },
      {
@@ -7158,7 +7158,7 @@
      },
      {
       "name": "cssClass",
-      "value": "cont newElement WDhidden",
+      "value": "cont WDhidden",
       "type": "String"
      }
     ]
@@ -7208,6 +7208,599 @@
       "name": "columnBigBorder",
       "value": "false",
       "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "buttonPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "newElementOptsCont WDfilterCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c491d7ba-c181-f3c6-79d0-507daa9a7af8",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementNameContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont elementName",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d5b74413-adc7-e219-0c91-463de1aec880",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c491d7ba-c181-f3c6-79d0-507daa9a7af8",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementNameFormObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "formPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "9766c66f-be84-0e7c-ce51-56ba6e7b5423",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementTypeContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont elementSelector type",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bd6ad272-bc1a-b050-a18a-97a1d7b1598e",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "9766c66f-be84-0e7c-ce51-56ba6e7b5423",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementTypeSelectorObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "selectorPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3bb281c8-50db-3c20-31c0-fc9d36fb4692",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementTemplateSelectorContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont elementSelector template",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "92da2b81-15fa-e7d9-c46b-d0677b6d955c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "3bb281c8-50db-3c20-31c0-fc9d36fb4692",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementTemplateSelectorObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "selectorPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "39f34ec4-c3d8-0fa8-7b40-3e71aa537251",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAdminCheckboxContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont elementAdminCheckbox",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "7fd146a0-062b-7421-f850-5dda27c7ef69",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "39f34ec4-c3d8-0fa8-7b40-3e71aa537251",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAdminCheckboxObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "checkboxPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "97ce2a89-9cc0-261b-cf9d-b75b934b7042",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAddButtonContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont elementAddButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e6e91a81-e2a3-d52d-b8e3-19ecad8e3f42",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "97ce2a89-9cc0-261b-cf9d-b75b934b7042",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAddButtonObj",
+      "type": "Id"
      },
      {
       "name": "height",
@@ -11073,6 +11666,84 @@
     ]
    },
    {
+    "id": "3a0cb670-56e4-a726-a02d-912791f5f0dd",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAddButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Add New",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    Dashboards.log(\"Add button pressed.\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newElementAddButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function (){\n    $('#' + this.htmlObject).find('button').empty();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "b18f554f-8a6f-3780-e481-3245e5756018",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
@@ -12100,7 +12771,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "pluginsListEndpoint"
+      "value": "pluginsListDatasource"
      },
      {
       "name": "priority",
@@ -12481,7 +13152,7 @@
     ]
    },
    {
-    "id": "8230f4ad-2c2a-21ba-be70-8756e790880a",
+    "id": "2247b415-3720-369e-dcbb-472754f6a891",
     "type": "ComponentstextInput",
     "typeDesc": "Text input Component",
     "parent": "SELECTORS",
@@ -12524,6 +13195,84 @@
      {
       "name": "htmlObject",
       "value": "${p:newEndpointNameFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Name');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "8230f4ad-2c2a-21ba-be70-8756e790880a",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementNameForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "newElementParam.name",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newElementNameFormObj}",
       "type": "HtmlObject"
      },
      {
@@ -13324,7 +14073,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newElementTemplatesEndpoint"
+      "value": "newDashboardSelectorQuery"
      },
      {
       "name": "valuesArray",
@@ -13353,7 +14102,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
       "type": "JavaScript"
      },
      {
@@ -13427,7 +14176,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newElementTemplatesEndpoint"
+      "value": "newEndpointSelectorQuery"
      },
      {
       "name": "valuesArray",
@@ -13446,7 +14195,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "",
+      "value": "${p:newEndpointSelectorObj}",
       "type": "HtmlObject"
      },
      {
@@ -13456,7 +14205,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
       "type": "JavaScript"
      },
      {
@@ -13492,14 +14241,117 @@
     ]
    },
    {
-    "id": "c9349101-c800-23b8-2785-3426e20f575d",
+    "id": "9998ddf5-b0f6-6dc6-51e8-9bda1cb33e69",
     "type": "ComponentsSelect",
     "typeDesc": "Select Component",
     "parent": "SELECTORS",
     "properties": [
      {
       "name": "name",
-      "value": "newElementSelector",
+      "value": "newElementTypeSelector",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "newElementParam.type",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "externalPlugin",
+      "value": "chosen",
+      "type": "String"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"\",\"Dashboard\"],[\"\",\"Kettle\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newElementTypeSelectorObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "function f(){\n    /* Force fireChange of overall object (not only its type property) so the template selector can hear it */\n    var newParam = Dashboards.getParameterValue(\"${p:newElementParam}\");\n    Dashboards.fireChange(\"${p:newElementParam}\",newParam);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     },
+     {
+      "name": "extraOptions",
+      "value": "[]",
+      "type": "OptionArray"
+     }
+    ]
+   },
+   {
+    "id": "ae59c2f2-acbe-4b00-f450-f591e9683a14",
+    "type": "ComponentsSelect",
+    "typeDesc": "Select Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementTemplateSelector",
       "type": "Id"
      },
      {
@@ -13509,7 +14361,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:newElementParam}']",
       "type": "Listeners"
      },
      {
@@ -13530,7 +14382,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newElementTemplatesEndpoint"
+      "value": "newElementTemplateSelectorEndpoint"
      },
      {
       "name": "valuesArray",
@@ -13549,7 +14401,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:newEndpointSelectorObj}",
+      "value": "${p:newElementTemplateSelectorObj}",
       "type": "HtmlObject"
      },
      {
@@ -13559,7 +14411,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var typeOfElement = Dashboards.getParameterValue(\"${p:newElementParam}\").type;\n    this.parameters = [[\"elementType\",\"'\"+typeOfElement+\"'\"]];\n}",
+      "value": "function f(){\n    var elementType = Dashboards.getParameterValue(\"${p:newElementParam}\").type;\n    this.parameters = [[\"elementType\",\"'\"+elementType+\"'\"]];\n}",
       "type": "JavaScript"
      },
      {
@@ -13751,6 +14603,104 @@
      {
       "name": "htmlObject",
       "value": "${p:newEndpointAdminCheckboxObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "function (value) {\n    return !_.isEmpty(value)\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "f8774066-88f5-c383-fdf3-2ca7e490f050",
+    "type": "Componentscheck",
+    "typeDesc": "Check Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAdminCheckbox",
+      "type": "Id"
+     },
+     {
+      "name": "separator",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameter",
+      "value": "newElementParam.admin",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"yes\",\"Admin\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newElementAdminCheckboxObj}",
       "type": "HtmlObject"
      },
      {
@@ -14229,7 +15179,7 @@
     ]
    },
    {
-    "id": "af6161b7-f090-6c88-3325-0bfa5a15d931",
+    "id": "6e8127cd-30b6-a213-cc74-4e1121f5d39e",
     "type": "ComponentsJavascriptParameter",
     "typeDesc": "Custom Parameter",
     "parent": "GENERIC",
@@ -14924,20 +15874,20 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsListEndpoint",
+      "value": "pluginsListDatasource",
       "type": "Id"
      }
     ]
    },
    {
-    "id": "471459e8-835b-3b83-a859-af132c34ae8e",
+    "id": "c7f896a7-b047-8a42-ac90-97efe1a6d5cc",
     "type": "Componentssparkl_listTemplates_CPKENDPOINT",
     "typeDesc": "listTemplates Endpoint",
     "parent": "SPARKL_CPKENDPOINTS",
     "properties": [
      {
       "name": "name",
-      "value": "newElementTemplatesEndpoint",
+      "value": "newElementTemplateSelectorEndpoint",
       "type": "Id"
      }
     ],
