@@ -292,9 +292,6 @@ div.container *{
 .WDfilterCellBody .cont.elementSelector{
   width: 30%;
 }
-.WDfilterCellBody .cont.elementAdminCheckbox{
-  width: 15%;
-}
 .WDfilterCellBody .cont.elementAddButton{
   width: 15%;
 }
@@ -339,37 +336,6 @@ div.container *{
 .WDfilterCellBody .cont .formPH input:focus{
   cursor: auto;
 }
-.WDfilterCellBody .cont .checkboxPH{
-  width: 100%;
-  color: #878685;
-}
-.WDfilterCellBody .cont .checkboxPH:hover{
-  color: #FFFFFF;
-  background: #25B9ED;
-}
-.WDfilterCellBody .cont .checkboxPH ul.toggleGroup{
-  margin: 0px;
-  padding-left: 0px;
-  width: 100%;
-  position: relative;
-}
-.WDfilterCellBody .cont .checkboxPH li.toggleGroup{
-  display: inline;
-  position: absolute;
-  top:0px;
-  left: 0px;
-}
-.WDfilterCellBody .cont .checkboxPH li.toggleGroup label{
-  min-width: 100%;
-  position: relative;
-  bottom: 5px;
-  font-weight: normal;
-  font-size: 15px;
-}
-.WDfilterCellBody .cont .checkboxPH li.toggleGroup label input{
-  position: relative;
-  top: 3px;
-}
 .WDfilterCellBody .cont.elementAddButton{
   padding: 0px 0px 0px 0px;
 }
@@ -382,11 +348,6 @@ div.container *{
 .WDfilterCellBody .cont .selectorPH{
   width: 100%;
 }
-.WDfilterCellBody .cont.elementSelector:hover,
-.WDfilterCellBody .cont.elementAdminCheckbox:hover{
-  background: #EBEDEE;
-}
-
 .WDfilterCellBody .cont.elementSelector .selectorPH .chzn-container{
   /*min-width: 188px;*/
   min-width: 100%;
@@ -1026,16 +987,25 @@ div.container *{
   width: 30%;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementSelector{
-  width: 20%;
+  width: 23%;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementSelector.type{
+  padding-right: 0px;
+  margin-right: 0px;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAdminCheckbox{
-  width: 10%;
+  width: 14%;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAddButton{
-  width: 10%;
+  width: 50px;
   float: right;
 }
-
+.newElementOptsCont .cont .buttonPH button{
+  background: url('../img/add_new.png') no-repeat center center #25BAED;
+}
+.newElementOptsCont .cont .buttonPH button:hover{
+  background-color: #009DE2;
+}
 .newElementOptsCont .cont.elementName .formPH{
   width: 100%;
   display: inline;
@@ -1063,8 +1033,6 @@ div.container *{
   color: #878685;
 }
 .newElementOptsCont .cont .checkboxPH:hover{
-  color: #FFFFFF;
-  background: #25B9ED;
 }
 .newElementOptsCont .cont .checkboxPH ul.toggleGroup{
   margin: 0px;
@@ -1089,21 +1057,11 @@ div.container *{
   position: relative;
   top: 3px;
 }
-.newElementOptsCont .cont.elementAddButton{
-  padding: 0px 0px 0px 0px;
-}
-.newElementOptsCont .cont .buttonPH button{
-  color: #D1EEFC;
-}
-.newElementOptsCont .cont .buttonPH button:hover{
-  color: #FFFFFF;
-}
 .newElementOptsCont .cont .selectorPH{
   width: 100%;
 }
 .newElementOptsCont .cont.elementSelector:hover,
 .newElementOptsCont .cont.elementAdminCheckbox:hover{
-  background: #EBEDEE;
 }
 
 .newElementOptsCont .cont.elementSelector .selectorPH .chzn-container{
