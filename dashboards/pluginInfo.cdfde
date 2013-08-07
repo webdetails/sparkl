@@ -10463,7 +10463,7 @@
       "type": "ValuesArray"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[[\"pluginId\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
      },
@@ -10598,7 +10598,7 @@
       "type": "OptionArray"
      },
      {
-      "name": "cccClickAction",
+      "name": "clickAction",
       "value": "",
       "type": "JavaScript"
      }
@@ -10641,7 +10641,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -10719,7 +10719,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -10782,7 +10782,7 @@
       "type": "Gravity"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -10860,7 +10860,7 @@
       "type": "Gravity"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -10953,7 +10953,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11031,7 +11031,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11109,7 +11109,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11167,7 +11167,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[[\"pluginId\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
      },
@@ -11270,7 +11270,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11348,7 +11348,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11426,7 +11426,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11504,7 +11504,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11582,7 +11582,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11660,7 +11660,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11738,7 +11738,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11816,7 +11816,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -11952,7 +11952,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "themeroller",
       "type": "TableStyle"
      },
@@ -12030,7 +12030,7 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
@@ -12088,7 +12088,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -12100,7 +12100,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "pluginsListDatasource"
+      "value": "pluginsListEndpoint"
      },
      {
       "name": "priority",
@@ -12585,7 +12585,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -13307,7 +13307,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[[\"elementType\",\"'Dashboard'\"]]",
       "type": "ValuesArray"
      },
@@ -13324,7 +13324,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newDashboardSelectorQuery"
+      "value": "newElementTemplatesEndpoint"
      },
      {
       "name": "valuesArray",
@@ -13353,7 +13353,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -13410,7 +13410,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[[\"elementType\",\"'Kettle'\"]]",
       "type": "ValuesArray"
      },
@@ -13427,7 +13427,110 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newEndpointSelectorQuery"
+      "value": "newElementTemplatesEndpoint"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     },
+     {
+      "name": "extraOptions",
+      "value": "[]",
+      "type": "OptionArray"
+     }
+    ]
+   },
+   {
+    "id": "c9349101-c800-23b8-2785-3426e20f575d",
+    "type": "ComponentsSelect",
+    "typeDesc": "Select Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementSelector",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "newElementParam.template",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "externalPlugin",
+      "value": "chosen",
+      "type": "String"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "newElementTemplatesEndpoint"
      },
      {
       "name": "valuesArray",
@@ -13456,7 +13559,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
+      "value": "function f(){\n    var typeOfElement = Dashboards.getParameterValue(\"${p:newElementParam}\").type;\n    this.parameters = [[\"elementType\",\"'\"+typeOfElement+\"'\"]];\n}",
       "type": "JavaScript"
      },
      {
@@ -13518,7 +13621,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -13616,7 +13719,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -13714,7 +13817,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -13812,7 +13915,7 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
+      "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
      },
@@ -14086,6 +14189,11 @@
       "type": "JavaScript"
      },
      {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
       "name": "bookmarkable",
       "value": "false",
       "type": "Boolean"
@@ -14109,6 +14217,39 @@
       "type": "JavaScript"
      },
      {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "af6161b7-f090-6c88-3325-0bfa5a15d931",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "{\n    type: \"Dashboard\",\n    template: \"\",\n    name: \"\",\n    admin: false\n\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
       "name": "bookmarkable",
       "value": "false",
       "type": "Boolean"
@@ -14130,6 +14271,11 @@
       "name": "javaScript",
       "value": "{}",
       "type": "JavaScript"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
      },
      {
       "name": "bookmarkable",
@@ -14181,6 +14327,11 @@
       "name": "javaScript",
       "value": "false",
       "type": "JavaScript"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
      },
      {
       "name": "bookmarkable",
@@ -14288,6 +14439,11 @@
       "name": "javaScript",
       "value": "{\n    senderName: '',\n    adress: '',\n    subject: 'new plugin version'\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
      },
      {
       "name": "bookmarkable",
@@ -14768,10 +14924,26 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsListDatasource",
+      "value": "pluginsListEndpoint",
       "type": "Id"
      }
     ]
+   },
+   {
+    "id": "471459e8-835b-3b83-a859-af132c34ae8e",
+    "type": "Componentssparkl_listTemplates_CPKENDPOINT",
+    "typeDesc": "listTemplates Endpoint",
+    "parent": "SPARKL_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementTemplatesEndpoint",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "sparkl",
+    "meta_endpoint": "listTemplates"
    }
   ]
  },
