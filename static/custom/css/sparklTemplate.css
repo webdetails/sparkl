@@ -134,7 +134,7 @@ body{
   text-align: right;
   color:#FFFFFF;
   font-size:13px;
-  bottom: 0px;
+  bottom: 3px;
   white-space: nowrap;
 
   -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
@@ -144,7 +144,7 @@ body{
 
 }
 .sparklMail a:hover span {
-  width:150px;
+  width:155px;
   margin-right:31px;
 }
 
