@@ -945,7 +945,8 @@ div.container *{
 }
 .cont.openNewElement .buttonPH button{
   width: 100%;
-  background: #41B8EE;
+/*  background: #41B8EE;*/
+  background: url('../img/add_new.png') no-repeat 99% center #25BAED;  
   color:#FFFFFF;
   font-size: 15px;
   border: 0px none;
@@ -962,9 +963,10 @@ div.container *{
   background: #EBEDEE;
   height: 50px;
   width: 100%;
-  margin-top: 5px;
 }
-
+.WDdataCellBody .newElementOptsCont.WDhidden{
+  display: none;
+}
 .WDdataCellBody .newElementOptsCont .cont{
   height: 100%;
   padding: 6px 6px 6px 6px;
@@ -1101,6 +1103,7 @@ div.container *{
   border: none;
   max-width: 100%;
   min-width: 100%;
+  padding-top: 10px;
 }
 .WDdataCellBody table tr{
   background: #EBEDEE;
