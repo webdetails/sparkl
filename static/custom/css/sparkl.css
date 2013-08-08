@@ -417,7 +417,27 @@ div.container *{
   width: 100%;
   float: left;
   display: inline;
+  position: relative;
 }
+
+/*** temporary back button until iframes get into sparkl ***/
+.tempBackButtonPH{
+  position: absolute;
+  height: 100%;
+  background: #EBEDEE;
+  width: 35px;
+  top: 0px;
+  right: 20px;
+}
+.WDfilterCellBody.tabsContainer .tempBackButtonPH button{
+  background: url("../img/remove_image.png") no-repeat scroll left center #EBEDEE;
+  height: 100%;
+}
+.WDfilterCellBody.tabsContainer .tempBackButtonPH:hover button{
+  background: url("../img/remove_image.png") no-repeat scroll right center #EBEDEE;
+}
+/**********************/
+
 .tabsContainer .globalOptButtonPH *{
   height: 100%;
 }
