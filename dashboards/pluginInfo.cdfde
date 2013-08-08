@@ -7786,7 +7786,7 @@
      },
      {
       "name": "cssClass",
-      "value": "cont elementAdminCheckbox",
+      "value": "cont elementAdminCheckbox WDhidden",
       "type": "String"
      }
     ]
@@ -7825,6 +7825,296 @@
      {
       "name": "cssClass",
       "value": "checkboxPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3e1ca532-33e9-401c-4521-da558d2ccfbd",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAdminButtonContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cont elementAdmin",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bfd9478e-1574-cbe9-1a91-836ae79058df",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "3e1ca532-33e9-401c-4521-da558d2ccfbd",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fe9d2427-0633-3383-d7d9-77efc0551fc5",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "bfd9478e-1574-cbe9-1a91-836ae79058df",
+    "properties": [
+     {
+      "name": "name",
+      "value": "adminLabel",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "labelPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fdef5c65-46dd-e901-34e3-714fbd497235",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "fe9d2427-0633-3383-d7d9-77efc0551fc5",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Admin: ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "452f5675-d944-62d1-05bd-4d39a6397e8b",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "bfd9478e-1574-cbe9-1a91-836ae79058df",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAdminButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "buttonPH",
       "type": "String"
      }
     ]
@@ -12995,6 +13285,84 @@
      {
       "name": "postExecution",
       "value": "function (){\n    $('#' + this.htmlObject).find('button').empty();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "ea9f9461-fb12-b11f-a060-d716433488a0",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementAdminButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "press",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button'),\n        precNewElementOpts = Dashboards.getParameterValue(\"${p:newElementParam}\"),\n        newAdminStatus = !(precNewElementOpts.admin);\n        \n    /* update newElementParam */\n    Dashboards.setParameter(\"${p:newElementParam}\",$.extend(precNewElementOpts,{\"admin\":newAdminStatus}));\n\nvar bruno;\n\n    /* update button CSS*/\n    $btn.removeClass(\"checked\");\n    if( newAdminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newElementAdminButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button').empty();\n    var adminStatus = Dashboards.getParameterValue(\"${p:newElementParam}\").admin;\n    if( adminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
       "type": "JavaScript"
      },
      {

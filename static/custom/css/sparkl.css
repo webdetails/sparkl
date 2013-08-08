@@ -427,7 +427,7 @@ div.container *{
   background: #EBEDEE;
   width: 35px;
   top: 0px;
-  right: 20px;
+  right: 0px;
 }
 .WDfilterCellBody.tabsContainer .tempBackButtonPH button{
   background: url("../img/remove_image.png") no-repeat scroll left center #EBEDEE;
@@ -1018,6 +1018,13 @@ div.container *{
 .WDdataCellBody .newElementOptsCont .cont.elementAdminCheckbox{
   width: 14%;
 }
+.WDdataCellBody .newElementOptsCont .cont.elementAdmin{
+  width: 14%;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAdmin *{
+  height: 100%;
+  float: left;
+}
 .WDdataCellBody .newElementOptsCont .cont.elementAddButton{
   width: 50px;
   float: right;
@@ -1027,6 +1034,19 @@ div.container *{
 }
 .newElementOptsCont .cont .buttonPH button:hover{
   background-color: #009DE2;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAdmin .labelPH{
+  line-height: 38px;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAdmin .buttonPH{
+  width: 30px;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAdmin .buttonPH button{
+  background: url("../img/checkbox.png") no-repeat -1px center #EBEDEE;
+  height: 100%;
+}
+.WDdataCellBody .newElementOptsCont .cont.elementAdmin .buttonPH button.checked{
+  background: url("../img/checkbox_checked.png") no-repeat 0px center #EBEDEE;
 }
 .newElementOptsCont .cont.elementName .formPH{
   width: 100%;
@@ -1050,6 +1070,7 @@ div.container *{
 .newElementOptsCont .cont .formPH input:focus{
   cursor: auto;
 }
+/*
 .newElementOptsCont .cont .checkboxPH{
   width: 100%;
   color: #878685;
@@ -1085,7 +1106,7 @@ div.container *{
 .newElementOptsCont .cont.elementSelector:hover,
 .newElementOptsCont .cont.elementAdminCheckbox:hover{
 }
-
+*/
 .newElementOptsCont .cont.elementSelector .selectorPH .chzn-container{
   /*min-width: 188px;*/
   min-width: 100%;
