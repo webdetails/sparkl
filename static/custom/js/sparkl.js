@@ -9,7 +9,7 @@ var sparkl = {};
         	window.open( newLocation + hash);
     		} else {
     			window.location = newLocation + hash;
-    		}
+    	}
     }
 
   	function generateHashValue (key, value) {
@@ -22,6 +22,14 @@ var sparkl = {};
         json = JSON.stringify(obj);
         return json;
     }
+
+    myself.isValidName = function (name){
+        return !(name === "" || name.split(" ").length > 1 || typeof name === "undefined")
+    }
+
+    myself.isNameInList = function (name, namesList){
+        return (namesList.indexOf(name) > -1)
+    }        
 
     myself.createElementsTableEmptyRawData = function() {
     	var emptyData = {
