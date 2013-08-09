@@ -1042,7 +1042,7 @@ div.container *{
   width: 30px;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAdmin .buttonPH button{
-  background: url("../img/checkbox.png") no-repeat -1px center #EBEDEE;
+  background: url("../img/checkbox.png") no-repeat 0px center #EBEDEE;
   height: 100%;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAdmin .buttonPH button.checked{
