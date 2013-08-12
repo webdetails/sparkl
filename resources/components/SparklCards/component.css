@@ -144,7 +144,7 @@ time, mark, audio, video {
 	left: 0px;
 }
 .optionsIcon{
-  	background: url('img/options.png') no-repeat 0px center transparent;
+  background: url('img/options.png') no-repeat 0px center transparent;
 	float: right;
 	height: 29px;
 	width: 24px;
@@ -155,11 +155,11 @@ time, mark, audio, video {
 	z-index:200;
 }
 .optionsIcon:hover{
-  	background: url('img/options.png') no-repeat -24px center transparent;
+  	background-position: -24px center;
   	cursor: pointer;
 }
 .optsExternCont.expanded .optionsIcon{
-  	background: url('img/options.png') no-repeat -24px center transparent;
+  	background-position: -24px center;
 }
 .optionsContainer{
 	height: 100%;
