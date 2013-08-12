@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>sparkl</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -41,17 +41,27 @@
         </parameter>
         <parameter>
             <name>elementName</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>k3333</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>elementTemplate</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>template.wcdf</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>elementType</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>Dashboard</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>pluginDir</name>
+            <default_value/>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>pluginId</name>
+            <default_value>sparkl</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -177,7 +187,7 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables 2</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>Sample rows</from><to>Select paths</to><enabled>Y</enabled> </hop>  <hop> <from>Select paths</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>_getElementLocations</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Set ${IS_DASHBOARD}</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>filenames</to><enabled>Y</enabled> </hop>  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>lk endpoint</from><to>not exists</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Abort</to><enabled>Y</enabled> </hop>  <hop> <from>Get Templates</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Get Template</to><enabled>Y</enabled> </hop>  <hop> <from>Get Template</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Filter paths</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Remove extra fields</to><enabled>Y</enabled> </hop>  <hop> <from>Remove extra fields</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter paths</from><to>Sample rows</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables 2</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>Sample rows</from><to>Select paths</to><enabled>Y</enabled> </hop>  <hop> <from>Select paths</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>  <hop> <from>_getElementLocations</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>filenames</from><to>Set ${IS_DASHBOARD}</to><enabled>N</enabled> </hop>  <hop> <from>join 2</from><to>filenames</to><enabled>Y</enabled> </hop>  <hop> <from>listElements</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>lk endpoint</from><to>not exists</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Abort</to><enabled>Y</enabled> </hop>  <hop> <from>Get Templates</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Get Template</to><enabled>Y</enabled> </hop>  <hop> <from>Get Template</from><to>lk endpoint</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Filter paths</to><enabled>Y</enabled> </hop>  <hop> <from>not exists</from><to>Remove extra fields</to><enabled>Y</enabled> </hop>  <hop> <from>Remove extra fields</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter paths</from><to>Sample rows</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Abort</name>
     <type>Abort</type>
@@ -211,8 +221,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>928</xloc>
-      <yloc>490</yloc>
+      <xloc>1066</xloc>
+      <yloc>491</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -611,8 +621,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>803</xloc>
-      <yloc>493</yloc>
+      <xloc>941</xloc>
+      <yloc>494</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

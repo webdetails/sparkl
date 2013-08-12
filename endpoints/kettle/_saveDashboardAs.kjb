@@ -37,6 +37,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>pluginId</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>rendererType</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
@@ -225,7 +230,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>317</xloc>
-      <yloc>399</yloc>
+      <yloc>400</yloc>
       </entry>
     <entry>
       <name>generate wcdf file</name>

@@ -176,7 +176,7 @@ duplicateEndpoint</note>
     <filename_Field>path</filename_Field>
     <wildcard_Field>pattern</wildcard_Field>
     <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
       <name/>

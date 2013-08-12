@@ -81,6 +81,11 @@
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
         </parameter>
+        <parameter>
+            <name>style</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -244,8 +249,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>175</xloc>
-      <yloc>436</yloc>
+      <xloc>176</xloc>
+      <yloc>371</yloc>
       </entry>
     <entry>
       <name>is dashboard?</name>
@@ -298,23 +303,15 @@
             </parameter>            <parameter>            <name>source_dash</name>
             <stream_name>source_file</stream_name>
             <value/>
+            </parameter>            <parameter>            <name>pluginId</name>
+            <stream_name/>
+            <value/>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>583</xloc>
-      <yloc>329</yloc>
-      </entry>
-    <entry>
-      <name>Template Exists?</name>
-      <description/>
-      <type>FILE_EXISTS</type>
-      <filename>${elementTemplate}</filename>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>173</xloc>
-      <yloc>331</yloc>
+      <xloc>528</xloc>
+      <yloc>358</yloc>
       </entry>
   </entries>
   <hops>
@@ -383,15 +380,6 @@
     </hop>
     <hop>
       <from>is dashboard?</from>
-      <to>_saveDashboardAs</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>is dashboard?</from>
       <to>Copy files</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -401,15 +389,6 @@
     </hop>
     <hop>
       <from>Element (new) not null?</from>
-      <to>Template Exists?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Template Exists?</from>
       <to>validations</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -418,12 +397,12 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Template Exists?</from>
-      <to>Abort job</to>
+      <from>is dashboard?</from>
+      <to>_saveDashboardAs</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

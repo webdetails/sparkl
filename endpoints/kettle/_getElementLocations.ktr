@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>admin</name>
-            <default_value/>
+            <default_value>false</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -144,7 +144,7 @@
       <field>
         <name>elementType</name>
         <xpath>..&#47;..&#47;@name</xpath>
-        <elementType>attribut</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -159,7 +159,7 @@
       <field>
         <name>adminOnly</name>
         <xpath>@adminOnly</xpath>
-        <elementType>attribut</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Boolean</type>
         <format/>
@@ -174,7 +174,7 @@
       <field>
         <name>elementPath</name>
         <xpath>@path</xpath>
-        <elementType>attribut</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -189,7 +189,7 @@
       <field>
         <name>pattern</name>
         <xpath>@pattern</xpath>
-        <elementType>attribut</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>

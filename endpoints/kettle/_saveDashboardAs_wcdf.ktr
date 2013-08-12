@@ -20,6 +20,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>cpk.plugin.id</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>description</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
@@ -31,6 +36,11 @@
         </parameter>
         <parameter>
             <name>icon</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
         </parameter>
@@ -174,8 +184,8 @@
     </notepad>
     <notepad>
       <note>old values                                                                                         </note>
-      <xloc>212</xloc>
-      <yloc>480</yloc>
+      <xloc>205</xloc>
+      <yloc>659</yloc>
       <width>348</width>
       <heigth>24</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -217,7 +227,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from wcdf</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>get wcdf filename</from><to>wcdf exist?</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>Row Normaliser</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>Select xml_field</to><enabled>Y</enabled> </hop>  <hop> <from>Select xml_field</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>parent xml elements</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>${dest_dash}</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from wcdf</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>get wcdf filename</from><to>wcdf exist?</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>Row Normaliser</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>Select xml_field</to><enabled>Y</enabled> </hop>  <hop> <from>Select xml_field</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>parent xml elements</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>${dest_dash}</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Get capitalized plugin id</to><enabled>Y</enabled> </hop>  <hop> <from>Get capitalized plugin id</from><to>Replace pluginId in style</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Replace pluginId in style</from><to>remove unused fields 2</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields 2</from><to>join</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>${dest_dash}</name>
     <type>TextFileOutput</type>
@@ -295,8 +305,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <linenumfield/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>537</xloc>
-      <yloc>415</yloc>
+      <xloc>530</xloc>
+      <yloc>594</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -341,8 +351,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>381</xloc>
-      <yloc>331</yloc>
+      <xloc>374</xloc>
+      <yloc>510</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -381,7 +391,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>title</name>
         <xpath>title</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -396,7 +406,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>author</name>
         <xpath>author</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -411,7 +421,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>description</name>
         <xpath>description</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -426,7 +436,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>icon</name>
         <xpath>icon</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -439,9 +449,9 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <repeat>N</repeat>
       </field>
       <field>
-        <name>style</name>
+        <name>rawStyle</name>
         <xpath>style</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -456,7 +466,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>rendererType</name>
         <xpath>rendererType</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -471,7 +481,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <field>
         <name>widget</name>
         <xpath>widget</xpath>
-        <elementType>node</elementType>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -500,8 +510,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>381</xloc>
-      <yloc>246</yloc>
+      <xloc>374</xloc>
+      <yloc>425</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -792,8 +802,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>381</xloc>
-      <yloc>415</yloc>
+      <xloc>374</xloc>
+      <yloc>594</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -820,8 +830,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>225</xloc>
-      <yloc>246</yloc>
+      <xloc>218</xloc>
+      <yloc>425</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -852,8 +862,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>73</xloc>
-      <yloc>156</yloc>
+      <xloc>66</xloc>
+      <yloc>335</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1011,7 +1021,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <precision>-1</precision>
       </field>
       <field>
-        <name>style</name>
+        <name>rawStyle</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1046,8 +1056,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>225</xloc>
-      <yloc>415</yloc>
+      <xloc>218</xloc>
+      <yloc>594</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1112,8 +1122,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </remove>      <remove>        <name>exist</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>537</xloc>
-      <yloc>246</yloc>
+      <xloc>530</xloc>
+      <yloc>425</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1182,8 +1192,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <addresultfilenames>N</addresultfilenames>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>73</xloc>
-      <yloc>247</yloc>
+      <xloc>66</xloc>
+      <yloc>426</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1209,6 +1219,115 @@ I could also have used an XML Output step, but it generates a null Parent XML el
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>747</xloc>
       <yloc>58</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Variables</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>pluginId</name>
+        <variable>${pluginId}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>526</xloc>
+      <yloc>321</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace pluginId in style</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>rawStyle</in_stream_name>
+        <out_stream_name>style</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>\((.*?)\)</replace_string>
+        <replace_by_string/>
+        <replace_field_by_string>capitalizedId</replace_field_by_string>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>218</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get capitalized plugin id</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>capitalizedId</field_name>
+<formula_string>&quot;(&quot; + pluginId.toUpperCase() + &quot;)&quot;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>371</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove unused fields 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>rawStyle</name>
+      </remove>      <remove>        <name>pluginId</name>
+      </remove>      <remove>        <name>capitalizedId</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>216</xloc>
+      <yloc>230</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
