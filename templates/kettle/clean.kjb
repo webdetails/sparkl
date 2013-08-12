@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
   <name>template</name>
-    <description/>
+    <description>Clean Job</description>
     <extended_description/>
     <job_version/>
   <directory>&#47;</directory>
