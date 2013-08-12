@@ -121,16 +121,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>42</xloc>
-      <yloc>55</yloc>
+      <xloc>44</xloc>
+      <yloc>59</yloc>
       </entry>
     <entry>
-      <name>_createElement (ktr&#47;kjb)</name>
+      <name>createElement (ktr&#47;kjb)</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_createElement.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;createElement.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -170,7 +170,7 @@
   <hops>
     <hop>
       <from>START</from>
-      <to>_createElement (ktr&#47;kjb)</to>
+      <to>createElement (ktr&#47;kjb)</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

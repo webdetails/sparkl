@@ -125,12 +125,12 @@
       <yloc>55</yloc>
       </entry>
     <entry>
-      <name>_createElement (wcdf)</name>
+      <name>createElement (wcdf)</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_createElement.kjb</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;createElement.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -170,7 +170,7 @@
   <hops>
     <hop>
       <from>START</from>
-      <to>_createElement (wcdf)</to>
+      <to>createElement (wcdf)</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
