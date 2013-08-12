@@ -205,6 +205,45 @@
     </step>
 
   <step>
+    <name>External Templates</name>
+    <type>MappingInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>elementType</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>pattern</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>templatePath</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+        <select_unspecified>N</select_unspecified>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>232</xloc>
+      <yloc>300</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -640,20 +679,20 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>filename</name>
-        <rename>templateFilename</rename>
+    <fields>      <field>        <name>short_filename</name>
+        <rename>templateShortFilename</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>description</name>
         <rename>templateDescription</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>elementType</name>
-        <rename>templateType</rename>
+      </field>      <field>        <name>filename</name>
+        <rename>templateFilename</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>short_filename</name>
-        <rename>templateShortFilename</rename>
+      </field>      <field>        <name>elementType</name>
+        <rename>templateType</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>extension</name>
@@ -665,45 +704,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1042</xloc>
       <yloc>92</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>External Templates</name>
-    <type>MappingInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>elementType</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>pattern</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>templatePath</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-        <select_unspecified>N</select_unspecified>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>232</xloc>
-      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
