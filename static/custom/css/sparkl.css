@@ -451,7 +451,8 @@ div.container *{
 .tabGlobalOpt .globalOptButtonPH * {
   height: 100%;
 }
-.tabGlobalOpt .globalOptButtonPH button{
+.tabGlobalOpt .globalOptButtonPH button,
+.tabGlobalOpt .globalOptButtonPH a{
   width: 100%;
   background: #EBEDEE;
   text-align: center;
@@ -463,8 +464,12 @@ div.container *{
   box-shadow: none;
   float: left;
   margin:0px;
+  text-decoration:none;
+  padding:0px;
+  line-height: 26px;
 }
-.tabGlobalOpt .globalOptButtonPH button:hover{
+.tabGlobalOpt .globalOptButtonPH button:hover,
+.tabGlobalOpt .globalOptButtonPH a:hover{
   background: #41B8EE;
   color: #FFFFFF;
 }
