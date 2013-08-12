@@ -908,10 +908,10 @@ div.container *{
   position: relative;
 }
 .cont.newPlugin .validateIconPH.correct{
-  background: url('../img/validate_correct.png') no-repeat scroll right center #FFFFFF;
+  background-image: url('../img/validate_correct.png');
 }
 .cont.newPlugin .validateIconPH.wrong{
-  background: url('../img/validate_wrong.png') no-repeat scroll right center #FFFFFF;
+  background-image: url('../img/validate_wrong.png') ;
 }
 .cont.newPlugin .labelPH.validityFeedback{
   width: 38%;
