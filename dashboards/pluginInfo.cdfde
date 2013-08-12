@@ -704,7 +704,7 @@
      },
      {
       "name": "cssClass",
-      "value": "labelPH validityFeedback WDhidden",
+      "value": "labelPH validityFeedback WDhidden inUseLabel",
       "type": "String"
      }
     ]
@@ -810,7 +810,7 @@
      },
      {
       "name": "cssClass",
-      "value": "labelPH validityFeedback WDhidden",
+      "value": "labelPH validityFeedback WDhidden invalidLabel",
       "type": "String"
      }
     ]
@@ -856,7 +856,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "createNewPluingButtonObj",
+      "value": "createNewPluginButtonObj",
       "type": "Id"
      },
      {
@@ -1490,7 +1490,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "descriptionTabSubmitChangesButtonContainer",
+      "value": "submitChangesButtonObj",
       "type": "Id"
      },
      {
@@ -1556,15 +1556,50 @@
     ]
    },
    {
-    "id": "36431368-d83a-c8dc-8564-b93591deaccd",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "316fc3f0-cb55-ef76-7a5f-c07e59fff9df",
+    "id": "8783d164-7edb-f23c-e822-c8e79f698b5d",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "8a700f54-68d8-412b-4e38-738545314877",
     "properties": [
      {
       "name": "name",
-      "value": "descriptionTabSubmitChangesButtonObj",
+      "value": "updateLibsButtonObj",
       "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "height",
@@ -1588,7 +1623,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "globalOptButtonPH submitChanges",
       "type": "String"
      }
     ]
@@ -5220,7 +5255,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "reportBugButtonContainer",
+      "value": "reportBugButtonObj",
       "type": "Id"
      },
      {
@@ -5286,44 +5321,6 @@
     ]
    },
    {
-    "id": "08350fba-feae-5763-1263-96dab59f0bd4",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "d9321ab4-bcf0-8614-9b4b-fbeba8ddf4a4",
-    "properties": [
-     {
-      "name": "name",
-      "value": "reportBugButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "ca2f9e9b-73e6-6829-55ac-3b32c08258c7",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5331,7 +5328,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "marketPlaceButtonContainer",
+      "value": "marketPlaceButtonObj",
       "type": "Id"
      },
      {
@@ -5397,44 +5394,6 @@
     ]
    },
    {
-    "id": "1634aae7-3420-2401-a9c4-56fec69e959d",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ca2f9e9b-73e6-6829-55ac-3b32c08258c7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "marketPlaceButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "cd229196-5c9a-a183-8a75-140212b8d8fe",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5442,7 +5401,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "sendByEmailButtonContainer",
+      "value": "sendByEmailButtonObj",
       "type": "Id"
      },
      {
@@ -5508,44 +5467,6 @@
     ]
    },
    {
-    "id": "96348681-ee33-e356-a168-54cfaa299c49",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "cd229196-5c9a-a183-8a75-140212b8d8fe",
-    "properties": [
-     {
-      "name": "name",
-      "value": "sendByEmailButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "ea280349-44f1-f7c9-304c-160899aba4bf",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5553,7 +5474,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "submitToAuthorButtonContainer",
+      "value": "submitToAuthorButtonObj",
       "type": "Id"
      },
      {
@@ -5619,44 +5540,6 @@
     ]
    },
    {
-    "id": "d9541381-3ce0-0baa-430f-0984328e84d7",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ea280349-44f1-f7c9-304c-160899aba4bf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "submitToAuthorButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "34f06e9f-e551-aeae-67b9-016520f83ac4",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5664,7 +5547,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "packButtonContainer",
+      "value": "packButtonObj",
       "type": "Id"
      },
      {
@@ -5730,44 +5613,6 @@
     ]
    },
    {
-    "id": "bc6fa24e-c8ad-dc5d-47d5-fc3430c13c93",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "34f06e9f-e551-aeae-67b9-016520f83ac4",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "eccd827b-900e-5e52-1836-49d472c2395e",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5775,7 +5620,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "buildTabSubmitChangesButtonContainer",
+      "value": "buildTabSubmitChangesButtonObj",
       "type": "Id"
      },
      {
@@ -5836,44 +5681,6 @@
      {
       "name": "cssClass",
       "value": "globalOptButtonPH submitChanges WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "95b7e1c6-3650-68cc-a8df-6e200cd1a523",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "eccd827b-900e-5e52-1836-49d472c2395e",
-    "properties": [
-     {
-      "name": "name",
-      "value": "buildTabSubmitChangesButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
       "type": "String"
      }
     ]
@@ -11427,11 +11234,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colFormats",
-      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
-      "type": "Array"
-     },
-     {
       "name": "colWidths",
       "value": "[]",
       "type": "Array"
@@ -11462,9 +11264,9 @@
       "type": "colTypesCustom"
      },
      {
-      "name": "sort",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colFormats",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
+      "type": "Array"
      },
      {
       "name": "displayLength",
@@ -11497,6 +11299,11 @@
       "type": "Boolean"
      },
      {
+      "name": "sort",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -11509,17 +11316,17 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "listElementsQuery"
-     },
-     {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
+      "value": "elementsEndpoint"
      },
      {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -11558,7 +11365,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var cd = this.chartDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listelements';\n    }\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
+      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
       "type": "JavaScript"
      },
      {
@@ -12089,7 +11896,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        newElementType;    \n    newElementOpts.type === \"Dashboard\" ? newElementType='dashboard' : newElementType='endpoint';\n    var endpoint = 'create'+capitalize(newElementType);\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = Dashboards.getParameterValue(\"${p:elementsNamesListParam}\");\n    if ( !(sparkl.isValidName(elementName)) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n    if ( sparkl.isNameInList(elementName, elementsNamesList) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: function(){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n        }    \n    };    \n    \n    _.each( newElementOpts, function(el, key) {        \n        ajaxOpts.data['param' + newElementType + capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        newElementType;    \n    newElementOpts.type === \"Dashboard\" ? newElementType='dashboard' : newElementType='endpoint';\n    var endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = Dashboards.getParameterValue(\"${p:elementsNamesListParam}\");\n    if ( !(sparkl.isValidName(elementName)) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n    if ( sparkl.isNameInList(elementName, elementsNamesList) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: errorCallback\n    };    \n    \n    _.each( newElementOpts, function(el, key) {        \n        ajaxOpts.data['paramelement' + capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -12251,7 +12058,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "metadataQuery"
+      "value": "metadataEndpoint"
      },
      {
       "name": "priority",
@@ -12275,7 +12082,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'getpluginmetadata';\n    }\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -12832,7 +12639,7 @@
     ]
    },
    {
-    "id": "1a5536a7-bef1-3017-d52b-caa3b1f0236f",
+    "id": "d841bdd4-f8b5-e484-04eb-ccdbc736ee93",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
@@ -12874,7 +12681,85 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:descriptionTabSubmitChangesButtonObj}",
+      "value": "${p:submitChangesButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "1a5536a7-bef1-3017-d52b-caa3b1f0236f",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "updateLibsButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Update Libs",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'updateLibs';\n        \n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" libs updated successfully!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    function addPublishWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/Publish',\n                type:'GET',\n                data: {\n                    'publish': 'now',\n                    'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                },                \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: successCallback ,\n        error: function(){            \n            Dashboards.log('Error saving ' + pluginId + '!');\n        }    \n    };    \n    \n    _.each( metadata, function(el, key) {        \n        ajaxOpts.data['param' + key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}\n",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:updateLibsButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -13088,7 +12973,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:createNewPluingButtonObj}",
+      "value": "${p:createNewPluginButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -13136,7 +13021,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:newPluginIdParam}']",
+      "value": "[]",
       "type": "Listeners"
      },
      {
@@ -13254,7 +13139,7 @@
      },
      {
       "name": "executeAtStart",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -14919,7 +14804,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newElementTemplateSelectorEndpoint"
+      "value": "listTemplatesEndpoint"
      },
      {
       "name": "valuesArray",
@@ -15541,7 +15426,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n        \n        var $form = $('#'+this.htmlObject).find('input');\n        $form.removeAttr('value');\n        $form.attr('placeholder','newPluginId');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n}",
+      "value": "function f(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('#tabOptionsCell,#descriptionTabGlobalOptions,#descriptionTabMetadataDataCell');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n        \n        var $form = $('#'+this.htmlObject).find('input');\n        $form.removeAttr('value');\n        $form.attr('placeholder','newPluginId');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n    \n    \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = Dashboards.getParameterValue('${p:pluginIdsListParam}'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val);\n        $icon.toggleClass('wrong' , inUse_p || invalid_p)\n             .toggleClass('correct', !( inUse_p || invalid_p));\n        $inUse.toggleClass('WDhidden' , !inUse_p );\n        $invalid.toggleClass('WDhidden' , !invalid_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n}",
       "type": "JavaScript"
      },
      {
@@ -15551,7 +15436,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -16060,233 +15945,6 @@
  "datasources": {
   "rows": [
    {
-    "id": "KETTLE",
-    "name": "KETTLE Queries",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "KETTLE Queries",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "9fc2d788-998a-d62b-cbaa-f70027d010da",
-    "type": "Componentskettle_kettleTransFromFile",
-    "typeDesc": "kettle over kettleTransFromFile",
-    "meta": "CDA",
-    "meta_conntype": "kettle.TransFromFile",
-    "meta_datype": "kettle",
-    "parent": "KETTLE",
-    "properties": [
-     {
-      "name": "name",
-      "value": "listDashboardsQuery",
-      "type": "Id"
-     },
-     {
-      "name": "ktrFile",
-      "value": "../endpoints/kettle/listDashboards.ktr",
-      "type": "KtrPath"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "OUTPUT",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "variables",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "e2c2586c-0914-dfb5-86ad-c7198f7e67a8",
-    "type": "Componentskettle_kettleTransFromFile",
-    "typeDesc": "kettle over kettleTransFromFile",
-    "meta": "CDA",
-    "meta_conntype": "kettle.TransFromFile",
-    "meta_datype": "kettle",
-    "parent": "KETTLE",
-    "properties": [
-     {
-      "name": "name",
-      "value": "metadataQuery",
-      "type": "Id"
-     },
-     {
-      "name": "ktrFile",
-      "value": "../endpoints/kettle/getPluginMetadata.ktr",
-      "type": "KtrPath"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "OUTPUT",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "variables",
-      "value": "[[\"pluginId\",\"pluginId\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "d9215148-9502-75a9-246e-c1fdf0471e5b",
-    "type": "Componentskettle_kettleTransFromFile",
-    "typeDesc": "kettle over kettleTransFromFile",
-    "meta": "CDA",
-    "meta_conntype": "kettle.TransFromFile",
-    "meta_datype": "kettle",
-    "parent": "KETTLE",
-    "properties": [
-     {
-      "name": "name",
-      "value": "listElementsQuery",
-      "type": "Id"
-     },
-     {
-      "name": "ktrFile",
-      "value": "../endpoints/kettle/listElements.ktr",
-      "type": "KtrPath"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "OUTPUT",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "variables",
-      "value": "[[\"pluginId\",\"pluginId\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
     "id": "SCRIPTING",
     "name": "SCRIPTING Queries",
     "type": "Label",
@@ -16315,13 +15973,13 @@
       "type": "Id"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
@@ -16386,13 +16044,13 @@
       "type": "Id"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
@@ -16480,7 +16138,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementTemplateSelectorEndpoint",
+      "value": "listTemplatesEndpoint",
       "type": "Id"
      }
     ],
@@ -16503,6 +16161,38 @@
     "meta": "CPK",
     "meta_pluginId": "sparkl",
     "meta_endpoint": "getUnavailableIds"
+   },
+   {
+    "id": "f833ab0b-4828-ac66-30c4-d0ce346e40ad",
+    "type": "Componentssparkl_getPluginMetadata_CPKENDPOINT",
+    "typeDesc": "getPluginMetadata Endpoint",
+    "parent": "SPARKL_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "metadataEndpoint",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "sparkl",
+    "meta_endpoint": "getPluginMetadata"
+   },
+   {
+    "id": "4c3660d9-27b7-b2d1-90d1-645b2bdd9aa7",
+    "type": "Componentssparkl_listElements_CPKENDPOINT",
+    "typeDesc": "listElements Endpoint",
+    "parent": "SPARKL_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "elementsEndpoint",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "sparkl",
+    "meta_endpoint": "listElements"
    }
   ]
  },
