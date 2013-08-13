@@ -15,7 +15,7 @@
         </elementType>
     </elementTypes> 
     <info>
-        <description>pentahoSPARKL - Create and explore pentaho plugins.</description>
-        <name>pentahoSPARKL</name>
+        <description>Sparkl - Create and explore pentaho plugins.</description>
+        <name>Sparkl</name>
     </info>
 </cpk> 

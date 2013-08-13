@@ -7,15 +7,18 @@
 	</static-paths>
 	<content-types>
 		<content-type>
-			<title>pentahoSPARKL</title>
-			<description>pentahoSPARKL - Create and explore pentaho plugins.</description>
+			<title>Sparkl</title>
+			<description>Sparkl - Create and explore pentaho plugins.</description>
 			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
 		</content-type>
 	</content-types>
 	<content-generator
 		id="sparkl"
-		title="pentahoSPARKL"
+		title="Sparkl"
 		type="sparkl"
 		class="pt.webdetails.cpk.CpkContentGenerator"/>
-	<menu-items/>
+	<!-- Menu entry -->
+	<menu-items>
+		<menu-item id="sparkl_main" anchor="tools-submenu" label="Sparkl" command="content/sparkl/" type="MENU_ITEM" how="LAST_CHILD"/>
+	</menu-items>
 </plugin>
