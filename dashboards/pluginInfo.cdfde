@@ -11234,11 +11234,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colWidths",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
@@ -11269,9 +11264,9 @@
       "type": "Array"
      },
      {
-      "name": "displayLength",
-      "value": "",
-      "type": "Integer"
+      "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "lengthChange",
@@ -11304,6 +11299,11 @@
       "type": "Boolean"
      },
      {
+      "name": "displayLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -11319,14 +11319,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -14495,7 +14495,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newDashboardSelectorQuery"
+      "value": "listTemplatesEndpoint"
      },
      {
       "name": "valuesArray",
@@ -14524,7 +14524,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -14598,7 +14598,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "newEndpointSelectorQuery"
+      "value": "listTemplatesEndpoint"
      },
      {
       "name": "valuesArray",
@@ -14627,7 +14627,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function (){\n    var cd = this.queryDefinition;\n    // TODO: Not needed when registered query types make it to CDF\n    if (Dashboards.getQuery){\n        cd.queryType = 'cpk';\n        cd.pluginId = 'sparkl';\n        cd.endpoint = 'listtemplates';\n    }    \n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -15944,162 +15944,6 @@
  },
  "datasources": {
   "rows": [
-   {
-    "id": "SCRIPTING",
-    "name": "SCRIPTING Queries",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "SCRIPTING Queries",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "25d1a061-7b7a-b20e-c550-039c1659a321",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
-    "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newEndpointSelectorQuery",
-      "type": "Id"
-     },
-     {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"template_name\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\n\nmodel.addRow(new Object[]{ new String(\"New Clean Kettle ktr\") });\nmodel.addRow(new Object[]{ new String(\"New Clean Kettle kjb\") });\n\nreturn model;",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "92b895c6-bd68-f582-0625-abb957b7c7de",
-    "type": "Componentsscriptable_scripting",
-    "typeDesc": "scriptable over scripting",
-    "meta": "CDA",
-    "meta_conntype": "scripting.scripting",
-    "meta_datype": "scriptable",
-    "parent": "SCRIPTING",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newDashboardSelectorQuery",
-      "type": "Id"
-     },
-     {
-      "name": "language",
-      "value": "beanshell",
-      "type": "String"
-     },
-     {
-      "name": "initscript",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "query",
-      "value": "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[]{\n\"template_name\"\n};\n\n\nClass[] columnTypes = new Class[]{\nString.class\n};\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\n\nmodel.addRow(new Object[]{ new String(\"New Clean Dashboard\") });\n\nreturn model;\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
    {
     "id": "SPARKL_CPKENDPOINTS",
     "name": "SPARKL Endpoints",
