@@ -29,7 +29,7 @@ wd.cpk = wd.cpk || {};
   	namespace.models.sparklNewPluginCard = Backbone.Model.extend({
     	defaults:{
       		"pluginId" : "newPluginId", 
-   			"actionOpts" : []
+   				"actionOpts" : []
        	},
 
     	fireAction: function (action){
