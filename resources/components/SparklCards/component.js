@@ -78,7 +78,10 @@ wd.cpk = wd.cpk || {};
 	namespace.templates.sparklPluginCard = Mustache.compile(
 		"		<div class=descriptionExpandCont>"+
 		"			<div class='cardHeader'>"+
-		"		  	 	<div class='name'>{{plugin_name}}</div>"+
+		"		  	<div class='nameContainer'>"+
+		"         <span class='name'>{{plugin_name}}</span>"+
+		"					<div class='ellipsis'>...</div>" +
+		"       </div>"+
 		"				<div class='id'>{{pluginId}}</div>"+
 		"			</div>"+
 		"			<div class='cardBody'>"+
@@ -162,7 +165,7 @@ wd.cpk = wd.cpk || {};
 	      		});
 	      	});	
 
-	      	that.appendView(ph);
+	      that.appendView(ph);
 	    },
 
 	    appendView: function(ph){
@@ -172,6 +175,12 @@ wd.cpk = wd.cpk || {};
 	    	if (this.$ph){
 	    		this.$ph.append(this.$el);
 	    	}
+
+	    	var $header = this.$el.find('.cardHeader'),
+	      		$title = $header.find('.name');
+	      if( $title.width() > $header.width()){
+	      	$header.addClass('overflow');
+	      }
 
 	    	return this
 	    },

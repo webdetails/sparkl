@@ -58,10 +58,41 @@ time, mark, audio, video {
 	height: 70px;
 	padding: 10px 10px;
 	font-size: 18px;
+	position:relative;
 }
 .cardHeader .name{
+	cursor:default;
 	height: 50%;
 	padding-bottom: 5px;
+	display:inline-block;
+	white-space: nowrap;
+	overflow:hidden;
+   -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.cardHeader.overflow .name:hover {
+	text-indent:-50%;
+}
+.cardHeader .ellipsis,
+.cardHeader.overflow .nameContainer:hover .ellipsis{
+	overflow: hidden;
+	width:0px;
+	padding:5px 0px;
+	position:absolute;
+	top:0px;
+	right:0px;
+	height:100%;
+	background:#EAEDEE;
+	-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.cardHeader.overflow .nameContainer .ellipsis{
+	width:25px;
+	padding:5px;
 }
 .cardHeader .id{
 	height: 50%;
@@ -71,10 +102,11 @@ time, mark, audio, video {
 }
 
 .cardBody{
+	height:125px;
 	position: relative;
 }
 .imageContainer{
-	height: 125px;
+	height: 100%;
 	background: orange;
 }
 .imageContainer:hover{
@@ -98,7 +130,7 @@ time, mark, audio, video {
 	-o-transition:      all 500ms ease-out;
 	transition:         all 500ms ease-out;
 }
-.descriptionExpandCont:hover .descriptionContainer{
+.cardBody:hover .descriptionContainer{
 	height: 195px;
 	bottom: 195px;
 }
