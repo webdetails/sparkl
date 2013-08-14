@@ -157,7 +157,10 @@ wd.cpk = wd.cpk || {};
 
 	      	_.each ( that.model.get('actionOpts') , function (action) {
 	      		var $optsContainer = that.$el.find('.optionsContainer');
-				var $opt = $("<div id='"+action.id+"' class='optionCont'>"+action.label+"</div>");
+				var $opt = $("<div/>").text(action.label)
+					.attr('id', action.id)
+					.addClass('optionCont')
+					.addClass(action.classes || "");
 				$optsContainer.append($opt);
 	      		$opt.click( function (){
 	      			that.model.fireAction( action.id );

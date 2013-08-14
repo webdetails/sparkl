@@ -766,13 +766,11 @@ div.container *{
   -ms-user-select: none;
   user-select: none;
 }
-.WDdataCellHeader .subcellHeaderUnderline{
-  width: 100%;
-  height: 3px;
-  background: inherit;
-  border-top: 1px solid #41B8EE;
-  position: absolute;
-  bottom: 0px;
+.WDdataCellHeader.underline {
+  height:23px;
+  padding-bottom:3px;
+  margin-bottom:7px;
+  border-bottom: 1px solid #41B8EE;
 }
 .no-svg   .WDdataCellHeader {
 }
@@ -1025,6 +1023,8 @@ div.container *{
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAdmin{
   width: 14%;
+  padding-right:0px;
+  padding-left:0px;
 }
 .WDdataCellBody .newElementOptsCont .cont.elementAdmin *{
   height: 100%;

@@ -214,6 +214,11 @@ time, mark, audio, video {
 	color: #F2FAFD;
 	cursor: pointer;
 }
+.optionCont.noAction:hover{
+	background: #25BAED;
+	color: #CEEEFC;
+	cursor: default;
+}
 
 /***** New Plugin Card *****/
 

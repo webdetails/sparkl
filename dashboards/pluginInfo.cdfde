@@ -1556,6 +1556,152 @@
     ]
    },
    {
+    "id": "5b41401d-0bc0-2508-b48d-c75f0ef5b1bd",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "8a700f54-68d8-412b-4e38-738545314877",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendByEmailButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "globalOptButtonPH sendByEmail",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "9945ac47-baaa-cc27-8dfc-a51e4294c90f",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "8a700f54-68d8-412b-4e38-738545314877",
+    "properties": [
+     {
+      "name": "name",
+      "value": "packButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "globalOptButtonPH packButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "70d7d37e-8e4a-7e48-bc66-068ba0ec708f",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -1810,127 +1956,16 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCellHeader",
+      "value": "WDdataCellHeader underline",
       "type": "String"
      }
     ]
    },
    {
-    "id": "c1e5db76-fc2c-9ee7-20ca-b800a24ad6d1",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "2d6e15b3-72de-e146-355b-fb749b7ae9d1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c0c9a8bc-e798-f954-100a-0f90a242ff9b",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "c1e5db76-fc2c-9ee7-20ca-b800a24ad6d1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "f05462f2-c88b-5e3d-f9ae-f90370145bc1",
+    "id": "874c227c-d66b-dbf1-c120-d801184f5b2b",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "c0c9a8bc-e798-f954-100a-0f90a242ff9b",
+    "parent": "2d6e15b3-72de-e146-355b-fb749b7ae9d1",
     "properties": [
      {
       "name": "name",
@@ -1954,45 +1989,7 @@
      },
      {
       "name": "cssClass",
-      "value": "title",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "f16a8b08-8bd2-50eb-e2a8-7aebd972db1a",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "c1e5db76-fc2c-9ee7-20ca-b800a24ad6d1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "underline",
-      "type": "Id"
-     },
-     {
-      "name": "height",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "subcellHeaderUnderline",
       "type": "String"
      }
     ]
@@ -3526,127 +3523,16 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCellHeader",
+      "value": "WDdataCellHeader underline",
       "type": "String"
      }
     ]
    },
    {
-    "id": "0c39155d-20b5-aec3-0425-4c670b0c8990",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "b840810f-e5b2-6e58-2687-f1621b7fa9e7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "27bd81ab-128b-3cb6-820e-582cc3c210d0",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "0c39155d-20b5-aec3-0425-4c670b0c8990",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "a006626a-c80c-da9e-a2ad-299d096f868b",
+    "id": "4c5eeddd-79a8-eeb2-5b3d-74013eb0ecbf",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "27bd81ab-128b-3cb6-820e-582cc3c210d0",
+    "parent": "b840810f-e5b2-6e58-2687-f1621b7fa9e7",
     "properties": [
      {
       "name": "name",
@@ -3670,45 +3556,7 @@
      },
      {
       "name": "cssClass",
-      "value": "title",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d210f541-7097-9b46-5299-61ddcc5ae5e4",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "0c39155d-20b5-aec3-0425-4c670b0c8990",
-    "properties": [
-     {
-      "name": "name",
-      "value": "underline",
-      "type": "Id"
-     },
-     {
-      "name": "height",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "subcellHeaderUnderline",
       "type": "String"
      }
     ]
@@ -5321,79 +5169,6 @@
     ]
    },
    {
-    "id": "cd229196-5c9a-a183-8a75-140212b8d8fe",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "6b234f53-b0ee-12fb-5143-0df6f1c5effc",
-    "properties": [
-     {
-      "name": "name",
-      "value": "sendByEmailButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH sendByEmail",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "ea280349-44f1-f7c9-304c-160899aba4bf",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5462,79 +5237,6 @@
      {
       "name": "cssClass",
       "value": "globalOptButtonPH submitAuthorButton WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "34f06e9f-e551-aeae-67b9-016520f83ac4",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "6b234f53-b0ee-12fb-5143-0df6f1c5effc",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "globalOptButtonPH packButton",
       "type": "String"
      }
     ]
@@ -5756,127 +5458,16 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCellHeader",
+      "value": "WDdataCellHeader underline",
       "type": "String"
      }
     ]
    },
    {
-    "id": "264e5245-e1f0-b284-3dc9-41b6d6e9ffc0",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "cab64265-f1b5-0b35-933b-082db8634514",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "31b8d39d-b39a-2282-668a-f9df6f0aa0a8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "264e5245-e1f0-b284-3dc9-41b6d6e9ffc0",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "3e5eb1e9-8a1c-b848-beb1-37892d11f84b",
+    "id": "dff6c97e-81ce-f766-b966-bfdfe6fa448e",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "31b8d39d-b39a-2282-668a-f9df6f0aa0a8",
+    "parent": "cab64265-f1b5-0b35-933b-082db8634514",
     "properties": [
      {
       "name": "name",
@@ -5900,45 +5491,7 @@
      },
      {
       "name": "cssClass",
-      "value": "title",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ec0fbcf8-4f9e-0e27-7ab2-87c2fe7c2cec",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "264e5245-e1f0-b284-3dc9-41b6d6e9ffc0",
-    "properties": [
-     {
-      "name": "name",
-      "value": "underline",
-      "type": "Id"
-     },
-     {
-      "name": "height",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "subcellHeaderUnderline",
       "type": "String"
      }
     ]
@@ -6971,117 +6524,6 @@
     ]
    },
    {
-    "id": "e4a2a5b2-0846-74ca-cd72-e67c23ffc6d9",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "f5a3b21a-bc3b-7b5b-9dff-1a70003245bf",
-    "properties": [
-     {
-      "name": "name",
-      "value": "oldNewElementButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "cont WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d95c6cf8-7e3f-06ea-afaf-b89dd4e43481",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "e4a2a5b2-0846-74ca-cd72-e67c23ffc6d9",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "buttonPH",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -7760,7 +7202,7 @@
      },
      {
       "name": "html",
-      "value": "Admin: ",
+      "value": "Admin Only: ",
       "type": "Html"
      },
      {
@@ -11172,12 +10614,12 @@
      },
      {
       "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Admin Only\",\"File Name\",\"Actions\"]",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
       "type": "Array"
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"string\",\"hidden\",\"parameterButton\"]",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
       "type": "colTypesCustom"
      },
      {
@@ -11292,7 +10734,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n}",
+      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation('/pentaho/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        $.ajax({\n                                            url: '/pentaho/content/sparkl/deleteElement',\n                                            type: 'POST',\n                                            data: {\n                                                paramelementName:v,\n                                                parampluginId: pluginId\n                                            },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -11589,7 +11031,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        newElementType;    \n    newElementOpts.type === \"Dashboard\" ? newElementType='dashboard' : newElementType='endpoint';\n    var endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = Dashboards.getParameterValue(\"${p:elementsNamesListParam}\");\n    if ( !(sparkl.isValidName(elementName)) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n    if ( sparkl.isNameInList(elementName, elementsNamesList) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: errorCallback\n    };    \n    \n    _.each( newElementOpts, function(el, key) {        \n        ajaxOpts.data['paramelement' + capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
+      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        newElementType;    \n    newElementOpts.type === \"Dashboard\" ? newElementType='dashboard' : newElementType='endpoint';\n    var endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName)) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        return ;\n    }\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    function addRefreshWrapper (callback){\n        return function (json) {\n            $.ajax({\n                url: '/pentaho/content/'+pluginId+'/refresh',\n                type:'GET',               \n                success: callback\n            });\n        };\n    };\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId\n        },\n        success: addRefreshWrapper(successCallback),\n        error: errorCallback\n    };    \n    \n    _.each( newElementOpts, function(el, key) {        \n        ajaxOpts.data['paramelement' + capitalize(key)] = el;\n    });\n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}",
       "type": "JavaScript"
      },
      {
@@ -13865,7 +13307,7 @@
      },
      {
       "name": "valueAsId",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -13880,7 +13322,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"\",\"Dashboard\"],[\"\",\"Kettle\"]]",
+      "value": "[[\"Dashboard\",\"Dashboard\"],[\"Kettle\",\"Kettle Endpoint\"]]",
       "type": "ValuesArray"
      },
      {
@@ -14086,7 +13528,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"yes\",\"Admin\"]]",
+      "value": "[[\"yes\",\"Admin Only\"]]",
       "type": "ValuesArray"
      },
      {
@@ -14287,7 +13729,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"elementName\",\"Element Name\"],[\"elementType\",\"Element Type\"]]",
+      "value": "[[\"elementName\",\"Element Name\"],[\"elementType\",\"Element Type\"],[\"adminOnly\",\"Permission\"]]",
       "type": "ValuesArray"
      },
      {
