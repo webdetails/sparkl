@@ -56,9 +56,10 @@ time, mark, audio, video {
 }
 .cardHeader{
 	height: 70px;
-	padding: 10px 10px;
+	border:solid 10px #EAEDEE;
 	font-size: 18px;
 	position:relative;
+	overflow:hidden;
 }
 .cardHeader .name{
 	cursor:default;
@@ -76,23 +77,30 @@ time, mark, audio, video {
 	text-indent:-50%;
 }
 .cardHeader .ellipsis,
-.cardHeader.overflow .nameContainer:hover .ellipsis{
+.cardHeader.overflow .nameContainer:hover .ellipsis.right{
 	overflow: hidden;
 	width:0px;
-	padding:5px 0px;
+	line-height: 12px;
+	padding:0px;
 	position:absolute;
 	top:0px;
-	right:0px;
-	height:100%;
+	height:20px;
 	background:#EAEDEE;
 	-webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  text-align:center;
 }
-.cardHeader.overflow .nameContainer .ellipsis{
-	width:25px;
-	padding:5px;
+.cardHeader .ellipsis.right{
+	right:0px;
+}
+.cardHeader .ellipsis.left{
+	left:0px;
+}
+.cardHeader.overflow .nameContainer .ellipsis.right,
+.cardHeader.overflow .nameContainer:hover .ellipsis.left{
+	width:20px;
 }
 .cardHeader .id{
 	height: 50%;

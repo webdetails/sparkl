@@ -79,8 +79,9 @@ wd.cpk = wd.cpk || {};
 		"		<div class=descriptionExpandCont>"+
 		"			<div class='cardHeader'>"+
 		"		  	<div class='nameContainer'>"+
+		"					<div class='ellipsis left'>...</div>" +
 		"         <span class='name'>{{plugin_name}}</span>"+
-		"					<div class='ellipsis'>...</div>" +
+		"					<div class='ellipsis right'>...</div>" +
 		"       </div>"+
 		"				<div class='id'>{{pluginId}}</div>"+
 		"			</div>"+
@@ -145,7 +146,9 @@ wd.cpk = wd.cpk || {};
 		tagName: 'div',
 		className: 'sparklPluginCardContainer',
 		events:{
-	    	"click .optionsIcon": "toggleOptionsExpanded"
+	    	"click .optionsIcon": "toggleOptionsExpanded",
+	    	"mouseenter .name" : "handleOverflow" ,
+	    	"mouseleave .name" : "resetOverflow"
 	    },
 
 	    initialize: function (){
@@ -186,6 +189,22 @@ wd.cpk = wd.cpk || {};
 	      }
 
 	    	return this
+	    },
+
+	    handleOverflow: function (){
+	    	var $header = this.$el.find('.cardHeader');
+	      		$title = $header.find('.name');
+	      if ( $header.hasClass('overflow')){
+	      	$title.css('text-indent', $header.width() - $title.width() );
+	      }
+	    },
+
+	    resetOverflow: function (){
+	    	var $header = this.$el.find('.cardHeader');
+	      		$title = $header.find('.name');
+	      if ( $header.hasClass('overflow')){
+	      	$title.css('text-indent', 0 );
+	      }
 	    },
 
 	    detachView: function(){
