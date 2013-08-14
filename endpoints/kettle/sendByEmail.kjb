@@ -77,6 +77,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>validationRegex</name>
+            <default_value>^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>zipName</name>
             <default_value>${pluginId}.zip</default_value>
             <description/>
@@ -143,8 +148,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>211</xloc>
-      <yloc>73</yloc>
+      <xloc>165</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -154,8 +159,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>296</xloc>
-      <yloc>172</yloc>
+      <xloc>291</xloc>
+      <yloc>223</yloc>
       </entry>
     <entry>
       <name>Checks if ${pluginDir} exist</name>
@@ -170,8 +175,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>380</xloc>
-      <yloc>73</yloc>
+      <xloc>438</xloc>
+      <yloc>70</yloc>
       </entry>
     <entry>
       <name>Clear Result</name>
@@ -185,8 +190,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>526</xloc>
-      <yloc>73</yloc>
+      <xloc>576</xloc>
+      <yloc>72</yloc>
       </entry>
     <entry>
       <name>Set SMTP Config</name>
@@ -217,8 +222,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>996</xloc>
-      <yloc>321</yloc>
+      <xloc>909</xloc>
+      <yloc>379</yloc>
       </entry>
     <entry>
       <name>Create unique folder</name>
@@ -256,8 +261,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1004</xloc>
-      <yloc>224</yloc>
+      <xloc>911</xloc>
+      <yloc>297</yloc>
       </entry>
     <entry>
       <name>Copy Files</name>
@@ -281,8 +286,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1007</xloc>
-      <yloc>73</yloc>
+      <xloc>912</xloc>
+      <yloc>148</yloc>
       </entry>
     <entry>
       <name>Delete .git</name>
@@ -299,8 +304,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1003</xloc>
-      <yloc>151</yloc>
+      <xloc>911</xloc>
+      <yloc>222</yloc>
       </entry>
     <entry>
       <name>Create Staging Folder</name>
@@ -311,8 +316,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>653</xloc>
-      <yloc>74</yloc>
+      <xloc>683</xloc>
+      <yloc>73</yloc>
       </entry>
     <entry>
       <name>Set Unique Location</name>
@@ -343,7 +348,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>792</xloc>
+      <xloc>798</xloc>
       <yloc>74</yloc>
       </entry>
     <entry>
@@ -383,8 +388,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>860</xloc>
-      <yloc>400</yloc>
+      <xloc>806</xloc>
+      <yloc>446</yloc>
       </entry>
     <entry>
       <name>Delete unique folder</name>
@@ -401,8 +406,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>713</xloc>
-      <yloc>496</yloc>
+      <xloc>539</xloc>
+      <yloc>324</yloc>
       </entry>
     <entry>
       <name>Clear Zip from result</name>
@@ -415,8 +420,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>594</xloc>
-      <yloc>495</yloc>
+      <xloc>435</xloc>
+      <yloc>321</yloc>
       </entry>
     <entry>
       <name>Is Authenticated?</name>
@@ -437,8 +442,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1000</xloc>
-      <yloc>444</yloc>
+      <xloc>897</xloc>
+      <yloc>535</yloc>
       </entry>
     <entry>
       <name>Is SSL?</name>
@@ -459,7 +464,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1005</xloc>
+      <xloc>704</xloc>
       <yloc>535</yloc>
       </entry>
     <entry>
@@ -499,8 +504,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>866</xloc>
-      <yloc>495</yloc>
+      <xloc>594</xloc>
+      <yloc>447</yloc>
       </entry>
     <entry>
       <name>Authenticated w&#47; SSL</name>
@@ -539,8 +544,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>867</xloc>
-      <yloc>586</yloc>
+      <xloc>709</xloc>
+      <yloc>446</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -549,8 +554,62 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>402</xloc>
-      <yloc>492</yloc>
+      <xloc>290</xloc>
+      <yloc>317</yloc>
+      </entry>
+    <entry>
+      <name>Destination Address Valid?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname>${pluginId}</fieldname>
+      <variablename>${pluginId}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>${validationRegex}</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>regexp</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>297</xloc>
+      <yloc>72</yloc>
+      </entry>
+    <entry>
+      <name>Delete unique folder 2</name>
+      <description/>
+      <type>DELETE_FOLDERS</type>
+      <arg_from_previous>N</arg_from_previous>
+      <success_condition>success_if_no_errors</success_condition>
+      <limit_folders>10</limit_folders>
+      <fields>
+        <field>
+          <name>${unique_location}</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>712</xloc>
+      <yloc>230</yloc>
+      </entry>
+    <entry>
+      <name>Clear Zip from result 2</name>
+      <description/>
+      <type>DELETE_RESULT_FILENAMES</type>
+      <foldername/>
+      <specify_wildcard>N</specify_wildcard>
+      <wildcard/>
+      <wildcardexclude/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>538</xloc>
+      <yloc>227</yloc>
       </entry>
   </entries>
   <hops>
@@ -570,15 +629,6 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Plugin ID not null?</from>
-      <to>Checks if ${pluginDir} exist</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -668,8 +718,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Set SMTP Config</from>
@@ -740,8 +790,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Clear Result</from>
@@ -750,6 +800,114 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin ID not null?</from>
+      <to>Destination Address Valid?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Destination Address Valid?</from>
+      <to>Checks if ${pluginDir} exist</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Destination Address Valid?</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete unique folder 2</from>
+      <to>Clear Zip from result 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Clear Zip from result 2</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Authenticated</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Authenticated w&#47; SSL</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Non Authenticated</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set SMTP Config</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Zip file</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete .git</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy Files</from>
+      <to>Delete unique folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
