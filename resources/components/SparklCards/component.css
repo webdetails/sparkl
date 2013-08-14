@@ -68,10 +68,10 @@ time, mark, audio, video {
 	display:inline-block;
 	white-space: nowrap;
 	overflow:hidden;
-   -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+   -webkit-transition: all 1.5s ease-in-out;
+  -moz-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 .cardHeader.overflow .name:hover {
 	text-indent:-50%;
@@ -86,10 +86,10 @@ time, mark, audio, video {
 	top:0px;
 	height:20px;
 	background:#EAEDEE;
-	-webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+	-webkit-transition: all 1.5s ease-in-out;
+  -moz-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
   text-align:center;
 }
 .cardHeader .ellipsis.right{
