@@ -25,7 +25,12 @@ var sparkl = {};
 
     myself.isValidName = function (name){
         return !(name === "" || name.split(" ").length > 1 || typeof name === "undefined")
-    }       
+    }    
+
+
+    myself.isJobError = function(json){
+        return !json || ( json.hasOwnProperty('result') && json.result === false );
+    }   
 
     myself.createElementsTableEmptyRawData = function() {
     	var emptyData = {

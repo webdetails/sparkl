@@ -10603,16 +10603,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
       "type": "Array"
@@ -10638,14 +10628,14 @@
       "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "parameters",
+      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -10669,6 +10659,16 @@
      },
      {
       "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "paginate",
       "value": "false",
       "type": "Boolean"
      },
@@ -11504,7 +11504,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail';\n\n    function successCallback (){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" sent!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        data: {\n            parampluginId: pluginId\n        },\n        success: successCallback,\n        error: errorCallback    \n    };\n    \n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };    \n    _.each( mailParam , function (el, key) {\n        var qKey = 'param' + translationMap[key];\n        ajaxOpts.data[qKey] = el;\n    });\n\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}\n",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail';\n\n    function successCallback (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            message = (sparkl.isJobError(json)) ? \n                \"Error sending plugin \" + pluginId + \"!\\n Check server email configurations.\" :\n                \"Plugin \"+pluginId+\" sent!\";\n        dialogComponent.open({\n            message: message,\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    function errorCallback (){\n        var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        dialogComponent.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'POST',\n        async: true,\n        data: {\n            parampluginId: pluginId\n        },\n        success: successCallback,\n        error: errorCallback    \n    };\n    \n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };    \n    _.each( mailParam , function (el, key) {\n        var qKey = 'param' + translationMap[key];\n        ajaxOpts.data[qKey] = el;\n    });\n\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    Dashboards.incrementRunningCalls();    \n    $.ajax(ajaxOpts);\n}\n",
       "type": "JavaScript"
      },
      {
@@ -11932,7 +11932,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('.tabElement,.contentElement');\n        \n        var newPluginId = Dashboards.getParameterValue('${p:newPluginIdParam}'),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        function successCallback (json){\n            \n            alert('Testing server timing.')\n            \n            var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n            dialogComponent.open({\n                message:\"Plugin \"+newPluginId+\" created successfully!\",\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });        \n            Dashboards.setParameter('${p:isNewPluginParam}', false);\n            Dashboards.setParameter('${p:pluginIdParam}', newPluginId);\n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        function addPublishWrapper (callback){\n            return function (json) {\n                $.ajax({\n                    url: '/pentaho/Publish',\n                    type:'GET',\n                    data: {\n                        'publish': 'now',\n                        'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                    },                \n                    success: callback\n                });\n            };\n        };\n        \n        function addSparklRefreshWrapper (callback){\n            return function (json) {\n                $.ajax({\n                    url: '/pentaho/content/sparkl/refresh',\n                    type:'GET',              \n                    success: callback\n                });\n            };\n        };\n        \n        var ajaxOpts = {\n            url:'/pentaho/content/sparkl/' + endpoint,\n            type: 'POST',\n            async: true,\n            dataType: 'json',\n            data: {\n                parampluginId: newPluginId        \n            },\n            //success: addPublishWrapper( successCallback) ,\n            success: addPublishWrapper( addSparklRefreshWrapper( successCallback) ),\n            error: function(){            \n                Dashboards.log('Error creating ' + newPluginId + '!');\n            }    \n        };    \n        \n        $.ajax(ajaxOpts);\n    }\n}",
+      "value": "function f(){\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('.tabElement,.contentElement');\n        \n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        function successCallback (json){\n            \n            alert('Testing server timing.')\n            \n            var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n            dialogComponent.open({\n                message:\"Plugin \"+newPluginId+\" created successfully!\",\n                dialogClass:'closeButtonVisible',\n                buttons:[]\n            });        \n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        function addPublishWrapper (callback){\n            return function (json) {\n                $.ajax({\n                    url: '/pentaho/Publish',\n                    type:'GET',\n                    data: {\n                        'publish': 'now',\n                        'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'\n                    },                \n                    success: callback\n                });\n            };\n        };\n        \n        function addSparklRefreshWrapper (callback){\n            return function (json) {\n                $.ajax({\n                    url: '/pentaho/content/sparkl/refresh',\n                    type:'GET',              \n                    success: callback\n                });\n            };\n        };\n        \n        var ajaxOpts = {\n            url:'/pentaho/content/sparkl/' + endpoint,\n            type: 'POST',\n            async: true,\n            dataType: 'json',\n            data: {\n                parampluginId: newPluginId        \n            },\n            //success: addPublishWrapper( successCallback) ,\n            success: addPublishWrapper( addSparklRefreshWrapper( successCallback) ),\n            error: function(){            \n                Dashboards.log('Error creating ' + newPluginId + '!');\n            }    \n        };    \n        \n        $.ajax(ajaxOpts);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -12454,7 +12454,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','New Plugin Version');\n}",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Mail Subject');\n}",
       "type": "JavaScript"
      },
      {
@@ -13802,7 +13802,7 @@
      },
      {
       "name": "parameter",
-      "value": "${p:newPluginIdParam}",
+      "value": "${p:pluginIdParam}",
       "type": "Parameter"
      },
      {
@@ -14050,34 +14050,6 @@
     ]
    },
    {
-    "id": "28616171-ea64-7c01-1562-70e4e061633e",
-    "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "isNewPluginParam",
-      "type": "Id"
-     },
-     {
-      "name": "javaScript",
-      "value": "false",
-      "type": "JavaScript"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
     "id": "bc85ce31-be23-959c-77bf-81ef042f0349",
     "type": "ComponentsParameter",
     "typeDesc": "Parameter",
@@ -14174,36 +14146,8 @@
      },
      {
       "name": "javaScript",
-      "value": "{\n    senderName: '',\n    adress: '',\n    subject: 'new plugin version'\n}",
+      "value": "{\n    senderName: '',\n    address: '',\n    subject: ''\n}",
       "type": "JavaScript"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "17206ace-008e-c523-58f1-8ae2341b6591",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginIdParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
      },
      {
       "name": "parameterViewRole",
@@ -14300,7 +14244,7 @@
      },
      {
       "name": "javaScript",
-      "value": "Dashboards.on('cdf:postInit', function(){\n    if( Dashboards.getParameterValue(\"${p:isNewPluginParam}\") ){\n        var $thisDataCell = $('.newElement'),\n            $otherToggleDataCells = $('.tabElement,.contentElement');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n});",
+      "value": "Dashboards.on('cdf:postInit', function(){\n    if( !Dashboards.getParameterValue(\"${p:pluginIdParam}\") ){\n        var $thisDataCell = $('.newElement'),\n            $otherToggleDataCells = $('.tabElement,.contentElement');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n});",
       "type": "JavaScript"
      }
     ]
