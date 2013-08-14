@@ -1600,16 +1600,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colWidths",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -1635,14 +1625,14 @@
       "type": "Array"
      },
      {
-      "name": "displayLength",
-      "value": "",
-      "type": "Integer"
+      "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
      },
      {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "expandOnClick",
@@ -1666,6 +1656,16 @@
      },
      {
       "name": "sort",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "displayLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "lengthChange",
       "value": "false",
       "type": "Boolean"
      },
@@ -2299,7 +2299,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"plugin_id\",\"Plugin Id\"],[\"plugin_name\",\"Plugin Name\"],[\"version\",\"Version\"]]",
+      "value": "[[\"pluginId\",\"Plugin Id\"],[\"plugin_name\",\"Plugin Name\"],[\"version\",\"Version\"]]",
       "type": "ValuesArray"
      },
      {
