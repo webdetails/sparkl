@@ -20,6 +20,11 @@
 		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
   		<dependency org="pt.webdetails" name="cpf-pentaho"
 		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
+		  <dependency org="pt.webdetails" name="cpk-core"
+		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
+  		<dependency org="pt.webdetails" name="cpk-pentaho"
+		  rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>
+
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
 		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.2.2" conf='default->default' />
 		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.2.2" conf='default->default' />
