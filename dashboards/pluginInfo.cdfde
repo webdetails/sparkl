@@ -10603,11 +10603,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
       "type": "colTypesCustom"
@@ -10638,9 +10633,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
+      "type": "Array"
      },
      {
       "name": "info",
@@ -10673,6 +10668,11 @@
       "type": "Boolean"
      },
      {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -10688,14 +10688,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -12050,7 +12050,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return _.first(row);\n    });\n    \n    Dashboards.setParameter('${p:pluginIdsListParam}', pluginIdsList);\n}",
+      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return _.first(row);\n    });\n    \n    Dashboards.setParameter('${p:unavailableIdsParam}', pluginIdsList);\n}",
       "type": "JavaScript"
      },
      {
@@ -13847,7 +13847,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = Dashboards.getParameterValue('${p:pluginIdsListParam}'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val);\n        $icon.toggleClass('wrong' , inUse_p || invalid_p)\n             .toggleClass('correct', !( inUse_p || invalid_p));\n        $inUse.toggleClass('WDhidden' , !inUse_p );\n        $invalid.toggleClass('WDhidden' , !invalid_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n}",
+      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val);\n        $icon.toggleClass('wrong' , inUse_p || invalid_p)\n             .toggleClass('correct', !( inUse_p || invalid_p));\n        $inUse.toggleClass('WDhidden' , !inUse_p );\n        $invalid.toggleClass('WDhidden' , !invalid_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n}",
       "type": "JavaScript"
      },
      {
@@ -13960,7 +13960,7 @@
      },
      {
       "name": "bookmarkable",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      }
     ]
@@ -14197,7 +14197,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginIdsListParam",
+      "value": "unavailableIdsParam",
       "type": "Id"
      },
      {
@@ -14248,6 +14248,24 @@
       "type": "JavaScript"
      }
     ]
+   },
+   {
+    "id": "d74c0d55-e26d-3e59-10f2-0c536dccaa5c",
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "value": "InitPluginId",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "(function(){\n    var pluginId = Dashboards.getQueryParameter('pluginId');\n    if (pluginId){\n        Dashboards.setParameter('pluginIdParam', pluginId);\n    }\n})();",
+      "type": "JavaScript"
+     }
+    ]
    }
   ]
  },
@@ -14278,7 +14296,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pluginsListDatasource",
+      "value": "listPluginsEndpoint",
       "type": "Id"
      }
     ]

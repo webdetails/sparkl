@@ -2,9 +2,9 @@
 var sparkl = {};
 (function(myself){
 	
-	myself.changeLocation = function (newLocation, params, isNew){
+	myself.changeLocation = function (newLocation, bookmarks, isNew){
         if(!newLocation){ return; }
-        var hash = (params && !_.isEmpty(params) ) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: params } ) : "";
+        var hash = (bookmarks && !_.isEmpty(bookmarks) ) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: bookmarks } ) : "";
         if (isNew){
         	window.open( newLocation + hash);
     		} else {

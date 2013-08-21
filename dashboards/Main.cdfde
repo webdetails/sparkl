@@ -1600,11 +1600,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "parameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -1635,9 +1630,9 @@
       "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "paginate",
@@ -1670,6 +1665,11 @@
       "type": "Boolean"
      },
      {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -1685,14 +1685,14 @@
       "value": "listPluginsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -2124,7 +2124,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "newPluginId",
+      "value": "",
       "type": "String"
      },
      {
@@ -2134,7 +2134,7 @@
      },
      {
       "name": "bookmarkable",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      }
     ]
@@ -2499,7 +2499,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f (){\n    \n    this.newPluginActions = [\n\t    {\n\t        id: \"createAction\",\n\t    \tlabel: \"Create\",\n            callback: function(id){\n    \t        sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo');\n\t    \t}\n    \t},\n    \t{\n\t\t\tid: \"importAction\",\n\t\t\tlabel: \"Import\",\n            callback:function(id){\n    \t        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\t\t        dialogComponent.open({\n\t\t            message:\"Import option not implemented yet.\",\n\t\t            dialogClass:'closeButtonVisible',\n\t\t            buttons:[]\n\t\t        });\n\t    \t}\n\t\t}\n\t];\n\n    this.pluginActions = [\n        {\n            id: \"runAppAction\",\n            label: \"Run App\",\n            callback: function(id){\n                sparkl.changeLocation( '/pentaho/content/' + id , {}, true);\n        \t}\n      \t},\n        {\n        \tid: \"detailsAction\",\n            label: \"Details\",\n            callback: function(id){\n                sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo', {\n                    pluginIdParam: id\n                });\n        \t}\n      \t},\n        {\n            id: \"separatorDummy\",\n            label: \"\",\n            classes:'noAction'\n        },\n        {\n            id: \"deleteAction\",\n            label: \"Delete\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                dialogComponent.open({\n                    message:\"You are about to delete \"+id+\". Please, press OK to continue...\",\n                    buttons:[\n                        {\n                            text: \"OK\",\n                            click: function () {\n                                $.ajax({\n                                    url: '/pentaho/content/sparkl/deletePlugin',\n                                    type: 'POST',\n                                    data: {\n                                        parampluginId:id\n                                    },\n                                    success: function (json){\n                                        Dashboards.fireChange('updateTableEvent');\n                                    }\n                                });\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }\n                        },\n                        {\n                            text: \"Cancel\",\n                            click: function () {\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }                               \n                        }\n                    ]\n                });\n        \t}\n      \t}\n\t];\n}",
+      "value": "function f (){\n    \n    this.newPluginActions = [\n        {\n            id: \"createAction\",\n            label: \"Create\",\n            callback: function(id){\n                sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo');\n            }\n        },\n        {\n\t\t\tid: \"importAction\",\n\t\t\tlabel: \"Import\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n                dialogComponent.open({\n                    message:\"Import option not implemented yet.\",\n                        dialogClass:'closeButtonVisible',\n                        buttons:[]\n                });\n            }\n\t\t}\n\t];\n\n    this.pluginActions = [\n        {\n            id: \"runAppAction\",\n            label: \"Run App\",\n            callback: function(id){\n                sparkl.changeLocation( '/pentaho/content/' + id , {}, true);\n            }\n        },\n        {\n            id: \"detailsAction\",\n            label: \"Details\",\n            callback: function(id){\n                sparkl.changeLocation( '/pentaho/content/sparkl/plugininfo?pluginId=' + id);\n            }\n        },\n        {\n            id: \"separatorDummy\",\n            label: \"\",\n            classes:'noAction'\n        },\n        {\n            id: \"deleteAction\",\n            label: \"Delete\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                dialogComponent.open({\n                    message:\"You are about to delete \"+id+\". Please, press OK to continue...\",\n                    buttons:[\n                        {\n                            text: \"OK\",\n                            click: function () {\n                                $.ajax({\n                                    url: '/pentaho/content/sparkl/deletePlugin',\n                                    type: 'POST',\n                                    data: {\n                                        parampluginId:id\n                                    },\n                                    success: function (json){\n                                        Dashboards.fireChange('updateTableEvent');\n                                    }\n                                });\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }\n                        },\n                        {\n                            text: \"Cancel\",\n                            click: function () {\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }                               \n                        }\n                    ]\n                });\n            }\n        }\n\t];\n}",
       "type": "JavaScript"
      },
      {
