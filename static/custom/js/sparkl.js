@@ -74,13 +74,16 @@ myself.addUploadForm = function(ph, opts){
     var _opts = {
       root:'.',
       success: function (filename) {
-        alert('File uploaded');
+        Dashboards.log('File uploaded');
       },
       uploadError: function () {
-        alert('Error uploading file');
+        Dashboards.log('Error uploading file');
       },
       validationError: function () {
-        alert('File upload not permited.');
+        Dashboards.log('File type not allowed.');
+      },
+      isValidFilename: function(filename){
+        return (/\.(png)$/i).test(filename);
       }
     }
 
@@ -90,6 +93,15 @@ myself.addUploadForm = function(ph, opts){
         myself = this,
         $uploadForm = $('<form action="../cfr/store" method="post" enctype="multipart/form-data">').addClass('WDhidden'),
         filename = '';
+
+    var validateForm = function (){
+      if ( opts.isValidFilename(filename) ){
+        return true
+      } else {
+        opts.validationError();
+        return false
+      }
+    }
 
     var resetUploadForm = function () {
       $fileInput.val('');
@@ -109,7 +121,8 @@ myself.addUploadForm = function(ph, opts){
     $uploadForm.ajaxForm({
       dataType: 'json',
       success: fileUploaded,
-      error: opts.uploadError 
+      error: opts.uploadError,
+      beforeSubmit: validateForm
     });
 
     $ph.append($uploadForm);
@@ -145,6 +158,64 @@ myself.addUploadForm = function(ph, opts){
       success: successCallback
     });
   }
+
+
+
+  myself.runEndpoint = function ( pluginId, endpoint, opts){
+
+    if ( !pluginId && !endpoint){
+      Dashboards.log('PluginId or endpointName not defined.');
+      return false
+    }
+
+    var _opts = {
+      success: function (){
+        Dashboards.log( pluginId + ': ' + endpoint + ' ran successfully.')
+      },
+      error: function (){
+        Dashboards.log( pluginId + ': error running ' + endpoint + '.')
+      },
+      params: {},
+      systemParams: {}
+    }
+    var opts = $.extend( {}, _opts, opts);
+    var url = Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + endpoint;
+
+    function successHandler  (json){
+      if ( json && json.result == false){
+        opts.errorHandler.apply(this, arguments);
+      } else {
+        opts.success.apply( this, arguments );
+      }
+    }
+
+    function errorHandler  (){
+      opts.errorHandler.apply(this, arguments);
+    }
+
+    var ajaxOpts = {
+      url: url,
+      async: true,
+      dataType: 'json',
+      type: 'GET',
+      success: opts.success,
+      error: opts.error,
+      data: {}
+    }
+
+    _.each( opts.params , function ( value , key){
+      ajaxOpts.data['param' + key] = value;
+    });
+    _.each( opts.systemParams , function ( value , key){
+      ajaxOpts.data[key] = value;
+    });
+
+    $.ajax(ajaxOpts)
+  }
+
+
+
+
 
 })(sparkl);
 
