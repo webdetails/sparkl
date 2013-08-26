@@ -147,8 +147,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>798</xloc>
-      <yloc>80</yloc>
+      <xloc>865</xloc>
+      <yloc>78</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -172,17 +172,20 @@
       <xloc>411</xloc>
       <yloc>76</yloc>
       </entry>
+    <entry>
+      <name>Delete file</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>${sourceFile}</filename>
+      <fail_if_file_not_exists>N</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>731</xloc>
+      <yloc>77</yloc>
+      </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Copy Files</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>START</from>
       <to>File Exists</to>
@@ -217,6 +220,24 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy Files</from>
+      <to>Delete file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete file</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
