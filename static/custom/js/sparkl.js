@@ -214,6 +214,19 @@ myself.addUploadForm = function(ph, opts){
   }
 
 
+  myself.publishToServer = function (callback){
+    $.ajax({
+      url: Dashboards.getWebAppPath() + '/Publish',
+      type:'GET',
+      data: {
+        'publish': 'now',
+        'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'
+      },                
+      success: callback
+    });
+  }
+
+
 
 
 
