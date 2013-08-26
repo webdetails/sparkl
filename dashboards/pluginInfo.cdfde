@@ -10603,11 +10603,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
@@ -10638,9 +10633,9 @@
       "type": "Array"
      },
      {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colTypes",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
+      "type": "colTypesCustom"
      },
      {
       "name": "sort",
@@ -10673,6 +10668,11 @@
       "type": "Boolean"
      },
      {
+      "name": "info",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -10688,14 +10688,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -11109,7 +11109,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    console.log(\"Uplaod Image\");    \n}",
+      "value": "function f(){\n    if (this.custom || this.custom.uploadTrigger){\n        this.custom.uploadTrigger();\n    }    \n}",
       "type": "JavaScript"
      },
      {
@@ -11139,12 +11139,12 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function (){\n    if (!this.hasRunOnce){\n        this.block = function (){ Dashboards.incrementRunningCalls(); }   \n        this.unblock = function(){ Dashboards.decrementRunningCalls(); }\n        this.hasRunOnce = true;\n    }  \n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        $button = $ph.find('button'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = '/pentaho/content/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this;\n    \n    function successCallback (){\n        d = new Date();\n        $button.find('img').empty().attr(\"src\", imgUrl + \"?\" + d.getTime());\n        Dashboards.log('File uploaded successfully');\n    }\n    \n    var ajaxOpts = {\n        url:'/pentaho/content/sparkl/' + endpoint,\n        type: 'GET',\n        async: true,\n        dataType: 'json',\n        data: {\n            parampluginId: pluginId        \n        },\n        success: successCallback ,\n        error: function(){            \n            Dashboards.log('Error uploading image for ' + pluginId + '!');\n        }    \n    };    \n        \n    var uploadOpts = {\n        root: 'sparkl/plugins/' + pluginId,\n        success: function (filename){\n            ajaxOpts.data.paramfilename = filename;\n            $.ajax( ajaxOpts );\n        }\n    };\n        \n    this.custom = this.custom || {};\n    var trigger = sparkl.addUploadForm.call( this, $ph, uploadOpts);\n    this.custom.uploadTrigger = function(){\n        trigger();\n    };    \n    \n    sparkl.testFile( imgUrl, function() {\n        $button.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -12020,7 +12020,7 @@
      },
      {
       "name": "priority",
-      "value": 5,
+      "value": "1",
       "type": "Integer"
      },
      {
@@ -12045,12 +12045,12 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function(){\n    var rawList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n        pluginIdsList = _.pluck( _.filter( rawList, function(el){\n            return el.type == 'plugin'   \n        }) , 'name'),\n        pluginId = Dashboards.getParameterValue(\"${p:pluginIdParam}\");\n    \n    if( !_.contains( pluginIdsList, pluginId ) ){\n        var $thisDataCell = $('.newElement'),\n            $otherToggleDataCells = $('.tabElement,.contentElement');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return _.first(row);\n    });\n    \n    Dashboards.setParameter('${p:unavailableIdsParam}', pluginIdsList);\n}",
+      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return { name: row[0] , type: row[1]};\n    });\n    \n    Dashboards.setParameter('${p:unavailableIdsParam}', pluginIdsList);\n}",
       "type": "JavaScript"
      },
      {
@@ -12171,7 +12171,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button'),\n        precNewElementOpts = Dashboards.getParameterValue(\"${p:newElementParam}\"),\n        newAdminStatus = !(precNewElementOpts.admin);\n        \n    /* update newElementParam */\n    Dashboards.setParameter(\"${p:newElementParam}\",$.extend(precNewElementOpts,{\"admin\":newAdminStatus}));\n\nvar bruno;\n\n    /* update button CSS*/\n    $btn.removeClass(\"checked\");\n    if( newAdminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
+      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button'),\n        precNewElementOpts = Dashboards.getParameterValue(\"${p:newElementParam}\"),\n        newAdminStatus = !(precNewElementOpts.admin);\n        \n    /* update newElementParam */\n    Dashboards.setParameter(\"${p:newElementParam}\",$.extend(precNewElementOpts,{\"admin\":newAdminStatus}));\n\n    /* update button CSS*/\n    $btn.removeClass(\"checked\");\n    if( newAdminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -13847,7 +13847,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','newPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val);\n        $icon.toggleClass('wrong' , inUse_p || invalid_p)\n             .toggleClass('correct', !( inUse_p || invalid_p));\n        $inUse.toggleClass('WDhidden' , !inUse_p );\n        $invalid.toggleClass('WDhidden' , !invalid_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n}",
+      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
@@ -13878,6 +13878,34 @@
       "name": "Group",
       "value": "Generic",
       "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "cfbfeb4d-1521-704b-5b06-424b59ba561e",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "uploadedFileParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
      }
     ]
    },
@@ -14228,24 +14256,6 @@
       "name": "Group",
       "value": "Scripts",
       "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "250812d3-ecfb-bf35-dc7c-644ca7377483",
-    "type": "ComponentsFunction",
-    "typeDesc": "JavaScript function",
-    "parent": "SCRIPT",
-    "properties": [
-     {
-      "name": "name",
-      "value": "processCreateDialog",
-      "type": "Id"
-     },
-     {
-      "name": "javaScript",
-      "value": "Dashboards.on('cdf:postInit', function(){\n    if( !Dashboards.getParameterValue(\"${p:pluginIdParam}\") ){\n        var $thisDataCell = $('.newElement'),\n            $otherToggleDataCells = $('.tabElement,.contentElement');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n});",
-      "type": "JavaScript"
      }
     ]
    },

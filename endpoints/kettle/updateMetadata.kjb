@@ -82,16 +82,6 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_defaultElement</name>
-            <default_value>home</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_description</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>pluginDir</name>
             <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
@@ -100,6 +90,16 @@
             <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
+        </parameter>
+        <parameter>
+            <name>plugin_defaultElement</name>
+            <default_value>home</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>plugin_description</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
         </parameter>
         <parameter>
             <name>plugin_name</name>

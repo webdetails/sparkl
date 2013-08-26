@@ -2509,7 +2509,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(){\n    // *** Register in sort selector events \n    var myself = this,\n        selector = Dashboards.getComponentByName('${c:sortSelector}');    \n    // create a property to store the present definition of selector callback\n    this.custom =  this.custom || {};\n    \n    if (this.customSelectorCallback){\n        selector.off('custom:update', this.custom.selectorCallback);\n    }\n    this.custom.selectorCallback = function (v){\n        myself.sortViews(v);\n    };\n    selector.on('custom:update', this.custom.selectorCallback, this);\n}",
+      "value": "function f(data){\n    // *** Register in sort selector events \n    var myself = this,\n        selector = Dashboards.getComponentByName('${c:sortSelector}');    \n    // create a property to store the present definition of selector callback\n    this.custom =  this.custom || {};\n    \n    if (this.customSelectorCallback){\n        selector.off('custom:update', this.custom.selectorCallback);\n    }\n    this.custom.selectorCallback = function (v){\n        myself.sortViews(v);\n    };\n    selector.on('custom:update', this.custom.selectorCallback, this);\n    \n}",
       "type": "JavaScript"
      },
      {
