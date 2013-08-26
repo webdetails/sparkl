@@ -87,7 +87,7 @@ wd.cpk = wd.cpk || {};
 		"			</div>"+
 		"			<div class='cardBody'>"+
 		"				<div class='imageContainer'>"+
-		"					<img src='{{imgSrc}}' class='image'/> " +
+		"					<img src='/pentaho/content/{{pluginId}}/static/system/img/pluginLogo.png' class='image'/> " +
 		"				</div>"+
 		"				<div class='descriptionContainer'>"+
 		"					<div class='header'>Description</div>"+
