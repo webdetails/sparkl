@@ -176,30 +176,30 @@ myself.addUploadForm = function(ph, opts){
         Dashboards.log( pluginId + ': error running ' + endpoint + '.')
       },
       params: {},
-      systemParams: {}
+      systemParams: {},
+      type: 'POST'
     }
     var opts = $.extend( {}, _opts, opts);
     var url = Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + endpoint;
 
     function successHandler  (json){
       if ( json && json.result == false){
-        opts.errorHandler.apply(this, arguments);
+        opts.error.apply(this, arguments);
       } else {
         opts.success.apply( this, arguments );
       }
     }
 
     function errorHandler  (){
-      opts.errorHandler.apply(this, arguments);
+      opts.error.apply(this, arguments);
     }
 
     var ajaxOpts = {
       url: url,
       async: true,
-      dataType: 'json',
-      type: 'GET',
-      success: opts.success,
-      error: opts.error,
+      type: opts.type,
+      success: successHandler,
+      error: errorHandler,
       data: {}
     }
 
@@ -213,11 +213,21 @@ myself.addUploadForm = function(ph, opts){
     $.ajax(ajaxOpts)
   }
 
+  myself.getEndpointCaller = function( pluginId, endpoint, opts ){
+    var myself = this;
+    return function (callback, errorCallback, params){
+      var _opts = $.extend({}, opts);
+      _opts.params = params || _opts.params;
+      _opts.success = callback || _opts.success;
+      _opts.error = errorCallback || _opts.error;
+      myself.runEndpoint(pluginId, endpoint, _opts);
+    }
+  };
 
   myself.publishToServer = function (callback){
     $.ajax({
       url: Dashboards.getWebAppPath() + '/Publish',
-      type:'GET',
+      type:'POST',
       data: {
         'publish': 'now',
         'class': 'org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter'
@@ -225,6 +235,19 @@ myself.addUploadForm = function(ph, opts){
       success: callback
     });
   }
+
+  myself.addCallWrapper = function ( caller , callback){
+    return function (json) { 
+      caller( callback ); 
+    };
+  };
+  myself.addRefreshWrapper = function (pluginId, callback){
+    var caller = this.getEndpointCaller( pluginId, 'refresh' );
+    return this.addCallWrapper( caller, callback );
+  }
+  myself.addPublishWrapper = function (callback){
+    return this.addCallWrapper( this.publishToServer, callback );
+  };
 
 
 

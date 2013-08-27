@@ -10577,20 +10577,98 @@
     ]
    },
    {
-    "id": "3f354d47-8d3d-0617-8b48-23dc5d77082a",
-    "type": "ComponentsTable",
-    "typeDesc": "table Component",
+    "id": "87f8e786-bdd9-371d-dcf3-2d8fc7671187",
+    "type": "ComponentsQuery",
+    "typeDesc": "Query Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "elementsTable",
+      "value": "pluginIdsList",
       "type": "Id"
      },
      {
-      "name": "expandContainerObject",
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "resultvar",
       "value": "",
-      "type": "String"
+      "type": "Result"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "unavailableIdsEndpoint"
+     },
+     {
+      "name": "priority",
+      "value": "1",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function(){\n    var rawList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n        pluginIdsList = _.pluck( _.filter( rawList, function(el){\n            return el.type == 'plugin'   \n        }) , 'name'),\n        pluginId = Dashboards.getParameterValue(\"${p:pluginIdParam}\");\n    \n    if( !_.contains( pluginIdsList, pluginId ) ){\n        var $thisDataCell = $('.newElement'),\n            $otherToggleDataCells = $('.tabElement,.contentElement');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return { name: row[0] , type: row[1]};\n    });\n    \n    Dashboards.setParameter('${p:unavailableIdsParam}', pluginIdsList);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "80267868-60ae-9923-9c22-d4d42cafde3b",
+    "type": "ComponentsQuery",
+    "typeDesc": "Query Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "getPluginMetadata",
+      "type": "Id"
      },
      {
       "name": "listeners",
@@ -10598,104 +10676,155 @@
       "type": "Listeners"
      },
      {
-      "name": "oLanguage",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "colWidths",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "parameters",
       "value": "[[\"pluginId\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
-      "type": "colTypesCustom"
-     },
-     {
-      "name": "colFormats",
-      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
-      "type": "Array"
-     },
-     {
-      "name": "displayLength",
+      "name": "resultvar",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "sort",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "colSearchable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "drawCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "Result"
      },
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "elementsEndpoint"
+      "value": "metadataEndpoint"
      },
      {
-      "name": "sDom",
+      "name": "priority",
+      "value": "2",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "sortBy",
+      "name": "postExecution",
+      "value": "function f(){\n/*\n    $metadataContainersArr = $(\"#metadataDataCell\").find('.cont');\n    \n    if(Dashboards.getParameterValue(\"${p:metadataReadonlyParam}\") == \"true\"){\n        $metadataContainersArr.addClass('readOnly');\n        $metadataFormsArr.children('input').attr('readonly','readonly');        \n    } else {\n        $metadataFormsArr.removeClass('readOnly');\n        $metadataFormsArr.children('input').removeAttr('readonly');         \n    }\n*/}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var obj = {};\n        \n        //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n        _.each( data.resultset , function(row,i){\n            _.each( row, function(el,j){\n                if ( _.isEmpty(el) ){\n                    row[j] = \"\";\n                }\n            }); \n        });\n        \n        _.each( data.metadata, function(el,idx){\n            obj[el.colName] = data.resultset[0][idx];\n        });\n        \n        Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n    }\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "57d796af-dcf1-83ba-352a-e661b4e8958f",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dialogGrabComponent",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
       "value": "[]",
-      "type": "SortByArray"
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    \n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts){\n        \n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: false,\n            title: \"Confirmation Message\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $( this ).dialog( \"close\" );\n                    }\n                }\n            ]\n        };\n        /*merge of defaults with user custom opts*/\n        $.extend( dialogOpts, opts); \n        /*method's action*/\n        $( \"#\" + this.htmlObject ).dialog(dialogOpts);\n        $( \"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts){\n        $( \"#\" + this.htmlObject ).dialog('close');\n    };\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:dialogGrabComponentObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n/*    if(Dashboards.getParameterValue(\"${p:isNewPluginParam}\")){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            title: \"Please insert a new plugin Id:\",\n            message:\"<div class='WDdataCellBody'>\"+\n                        \"<div class='cont newPlugin'>\"+\n                            \"<div class='labelPH'>New Plugin</div>\"+\n                            \"<div class='formPH'></div>\"+\n                            \"<div class='ButtonPH'></div>\"+\n                        \"</div>\"+\n            +\"</div>\",\n            dialogClass:'insertNewPluginId',\n            buttons:[]\n        });\n    }    \n*/}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "94f75496-1de8-4196-ad44-0a3b9bf2b40c",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "tempBackButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Back",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function(){\n    sparkl.changeLocation(\"main\");    \n}",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -10708,24 +10837,14 @@
       "type": "Integer"
      },
      {
-      "name": "paginationType",
-      "value": "two_button",
-      "type": "PaginationType"
-     },
-     {
-      "name": "tableStyle",
+      "name": "buttonStyle",
       "value": "classic",
       "type": "TableStyle"
      },
      {
       "name": "htmlObject",
-      "value": "${p:elementsTableObj}",
+      "value": "${p:tempBackButtonObj}",
       "type": "HtmlObject"
-     },
-     {
-      "name": "paginateServerside",
-      "value": "false",
-      "type": "Boolean"
      },
      {
       "name": "executeAtStart",
@@ -10734,12 +10853,85 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                                            params: { pluginId: id, elementName: v },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \" + v + \". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                                            params: { pluginId: id, elementName: v },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var elementsNamesList = [];\n        _.each( data.resultset, function (el){\n            elementsNamesList.push(el[0]);\n            el.push(el[0]); \n        });\n        Dashboards.setParameter(\"${p:elementsNamesListParam}\",elementsNamesList);\n        data.metadata.push( $.extend( {} , data.metadata[0] ) );\n        var lastMetadataElIdx = data.metadata.length-1;\n        (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n        // *** Register in sort selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:sortSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            var sortCol = -1;\n            _.each(data.metadata, function(el,idx){\n                if(el.colName == v){\n                    sortCol = idx;\n                }\n            });\n            if(sortCol >= 0){\n                this.dataTable.fnSort([ [sortCol, 'asc']])\n            }\n        \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        // *** Register in View selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:viewSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            if(v === 'all'){ v = '' }\n            \n            this.dataTable.fnFilter( v , 1);    \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        this.extraOptions = [ [ 'bFilter' , true ] ];\n        \n        return data;\n    }else{\n        data = sparkl.createElementsTableEmptyRawData();\n        return data;\n    }\n}",
+      "name": "postExecution",
+      "value": "function (){\n    $('#' + this.htmlObject).find('button').empty();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "5da1b29d-decf-b6e1-9aab-fc6280f9507f",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "createNewPluginButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Create Plugin",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('.tabElement,.contentElement');\n        \n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        var successCallback = function (json){\n            \n            //alert('Testing server timing.')\n            \n            var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n            dialogComponent.open({\n                message:\"Plugin \" + newPluginId + \" created successfully!\",\n                dialogClass:'closeButtonVisible'\n            });        \n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n                \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { pluginId: newPluginId },\n            success: sparkl.addPublishWrapper( \n                sparkl.addRefreshWrapper( 'sparkl' , successCallback) ),\n            error: function(){            \n                Dashboards.log('Error creating ' + newPluginId + '!');\n            } \n        });\n    }\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": "1",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:createNewPluginButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -10761,16 +10953,688 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "b18f554f-8a6f-3780-e481-3245e5756018",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "uploadImgButton",
+      "type": "Id"
      },
      {
-      "name": "extraOptions",
+      "name": "label",
+      "value": "Upload Image",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
       "value": "[]",
-      "type": "OptionArray"
+      "type": "Listeners"
      },
      {
-      "name": "clickAction",
+      "name": "expression",
+      "value": "function f(){\n    if (this.custom || this.custom.uploadTrigger){\n        this.custom.uploadTrigger();\n    }    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:uploadImgButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "function (){\n    if (!this.hasRunOnce){\n        this.block = function (){ Dashboards.incrementRunningCalls(); }   \n        this.unblock = function(){ Dashboards.decrementRunningCalls(); }\n        this.hasRunOnce = true;\n    }  \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        $button = $ph.find('button'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = Dashboards.getWebAppPath() + '/content/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\n    \n    var successCallback = function (){\n        d = new Date();\n        $button.find('img').empty().attr(\"src\", imgUrl + \"?\" + d.getTime());\n        Dashboards.log('File uploaded successfully');\n    }\n            \n    var uploadOpts = {\n        root: 'sparkl/plugins/' + pluginId,\n        success: function (filename){\n            sparkl.runEndpoint( 'sparkl' , endpoint, {\n                params: { pluginId: pluginId, filename: filename },\n                success: successCallback ,\n                error: function(){            \n                    Dashboards.log('Error uploading image for ' + pluginId + '!');\n                }    \n            });  \n        },\n        validationError: function (){\n            dialogComponent.open({\n                message:\"File type not allowed as plugin logo.\",\n                dialogClass:'closeButtonVisible'\n            });\n        },\n        uploadError: function (){\n            dialogComponent.open({\n                message:\"Error uploading plugin logo.\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n    };\n        \n    this.custom = this.custom || {};\n    var trigger = sparkl.addUploadForm.call( this, $ph, uploadOpts);\n    this.custom.uploadTrigger = function(){\n        trigger();\n    };    \n    \n    sparkl.testFile( imgUrl, function() {\n        $button.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "1c902eed-d857-f782-5c1e-b599ae3f61fe",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "reportBugButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Report a Bug",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:reportBugButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "d841bdd4-f8b5-e484-04eb-ccdbc736ee93",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "submitChangesButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Submit Changes",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'updateMetadata';\n        \n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();        \n    }\n    \n\n        \n    var endpointParams = $.extend({}, metadata, { pluginId: pluginId });\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: function(){            \n            Dashboards.log('Error saving ' + pluginId + '!');\n        }    \n    }); \n}\n",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:submitChangesButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "9ff4280c-53ee-d60e-1f2d-d44c09325f9b",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "packButton",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'packplugin',\n        url = Dashboards.getWebAppPath() + '/content/sparkl/' + endpoint + '?parampluginId=' + pluginId;\n        \n    $('#' + this.htmlObject).append( \n        $('<a/>').attr('href', url).text('Pack') );\n}\n",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:packButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "70cd64ca-1974-28c5-166a-6815c97553a1",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendByEmailButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Send by Email",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(e){\n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    $tgt = $('#' + this.htmlObject).find('button');\n    infoPopup.popup($tgt);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:sendByEmailButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "3c0ab9e2-ff52-b19d-5133-1df9253e9cfe",
+    "type": "Componentspopup",
+    "typeDesc": "Popup Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emailInfoPopup",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "gravity",
+      "value": "S",
+      "type": "Gravity"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "draggable",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "horizontalScroll",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "verticalScroll",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "closeOnClickOutside",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${h:emailInfoPopupContentObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "55e7c72f-91e2-c381-1218-c3971dd4201c",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sendMessageButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Send",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail';\n\n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            message = (sparkl.isJobError(json)) ? \n                \"Error sending plugin \" + pluginId + \"!\\n Check server email configurations.\" :\n                \"Plugin \"+pluginId+\" sent!\";\n        dialogComponent.open({\n            message: message,\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){\n        var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        dialogComponent.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };\n    var endointParams = { pluginId: pluginId };\n    _.each( mailParam , function (el, key) {\n        var qKey = translationMap[key];\n        endointParams[qKey] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    });  \n}\n",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:sendMessageButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "e3a8dcf9-4b96-01f7-8068-69d8243cde36",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "marketPlaceButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "To MarketPlace",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:marketPlaceButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "a2459b3e-addf-36a9-c221-fb9f38895f50",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "submitChangesToAuthorButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Submit To Author",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:submitToAuthorButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -10931,15 +11795,20 @@
     ]
    },
    {
-    "id": "3c0ab9e2-ff52-b19d-5133-1df9253e9cfe",
-    "type": "Componentspopup",
-    "typeDesc": "Popup Component",
+    "id": "ea9f9461-fb12-b11f-a060-d716433488a0",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "emailInfoPopup",
+      "value": "newElementAdminButton",
       "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "press",
+      "type": "String"
      },
      {
       "name": "listeners",
@@ -10947,14 +11816,9 @@
       "type": "Listeners"
      },
      {
-      "name": "gravity",
-      "value": "S",
-      "type": "Gravity"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
+      "name": "expression",
+      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button'),\n        precNewElementOpts = Dashboards.getParameterValue(\"${p:newElementParam}\"),\n        newAdminStatus = !(precNewElementOpts.admin);\n        \n    /* update newElementParam */\n    Dashboards.setParameter(\"${p:newElementParam}\",$.extend(precNewElementOpts,{\"admin\":newAdminStatus}));\n\n    /* update button CSS*/\n    $btn.removeClass(\"checked\");\n    if( newAdminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -10962,28 +11826,18 @@
       "type": "Integer"
      },
      {
-      "name": "draggable",
-      "value": "true",
-      "type": "Boolean"
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
      },
      {
-      "name": "horizontalScroll",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "verticalScroll",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "closeOnClickOutside",
-      "value": "true",
-      "type": "Boolean"
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
      },
      {
       "name": "htmlObject",
-      "value": "${h:emailInfoPopupContentObj}",
+      "value": "${p:newElementAdminButtonObj}",
       "type": "HtmlObject"
      },
      {
@@ -10998,6 +11852,16 @@
      },
      {
       "name": "postExecution",
+      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button').empty();\n    var adminStatus = Dashboards.getParameterValue(\"${p:newElementParam}\").admin;\n    if( adminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
       "value": "",
       "type": "JavaScript"
      },
@@ -11031,7 +11895,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        newElementType;    \n    newElementOpts.type === \"Dashboard\" ? newElementType='dashboard' : newElementType='endpoint';\n    var endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName)) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var addRefreshWrapper = function (callback){\n        return function (json) {\n            sparkl.runEndpoint( pluginId, 'refresh', { success: callback });\n        };\n    };\n    \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: addRefreshWrapper(successCallback),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
+      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        newElementType;    \n    newElementOpts.type === \"Dashboard\" ? newElementType='dashboard' : newElementType='endpoint';\n    var endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName)) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n            dialogComponent.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: sparkl.addRefreshWrapper( pluginId,\n            sparkl.addRefreshWrapper( 'pentaho-cdf-dd', successCallback) ),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -11077,751 +11941,6 @@
      {
       "name": "postChange",
       "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "b18f554f-8a6f-3780-e481-3245e5756018",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "uploadImgButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Upload Image",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    if (this.custom || this.custom.uploadTrigger){\n        this.custom.uploadTrigger();\n    }    \n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:uploadImgButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "function (){\n    if (!this.hasRunOnce){\n        this.block = function (){ Dashboards.incrementRunningCalls(); }   \n        this.unblock = function(){ Dashboards.decrementRunningCalls(); }\n        this.hasRunOnce = true;\n    }  \n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        $button = $ph.find('button'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = Dashboards.getWebAppPath() + '/content/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\n    \n    var successCallback = function (){\n        d = new Date();\n        $button.find('img').empty().attr(\"src\", imgUrl + \"?\" + d.getTime());\n        Dashboards.log('File uploaded successfully');\n    }\n            \n    var uploadOpts = {\n        root: 'sparkl/plugins/' + pluginId,\n        success: function (filename){\n            sparkl.runEndpoint( 'sparkl' , endpoint, {\n                params: { pluginId: pluginId, filename: filename },\n                success: successCallback ,\n                error: function(){            \n                    Dashboards.log('Error uploading image for ' + pluginId + '!');\n                }    \n            });  \n        },\n        validationError: function (){\n            dialogComponent.open({\n                message:\"File type not allowed as plugin logo.\",\n                dialogClass:'closeButtonVisible'\n            });\n        },\n        uploadError: function (){\n            dialogComponent.open({\n                message:\"Error uploading plugin logo.\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n    };\n        \n    this.custom = this.custom || {};\n    var trigger = sparkl.addUploadForm.call( this, $ph, uploadOpts);\n    this.custom.uploadTrigger = function(){\n        trigger();\n    };    \n    \n    sparkl.testFile( imgUrl, function() {\n        $button.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "80267868-60ae-9923-9c22-d4d42cafde3b",
-    "type": "ComponentsQuery",
-    "typeDesc": "Query Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "getPluginMetadata",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "resultvar",
-      "value": "",
-      "type": "Result"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "metadataEndpoint"
-     },
-     {
-      "name": "priority",
-      "value": "2",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n/*\n    $metadataContainersArr = $(\"#metadataDataCell\").find('.cont');\n    \n    if(Dashboards.getParameterValue(\"${p:metadataReadonlyParam}\") == \"true\"){\n        $metadataContainersArr.addClass('readOnly');\n        $metadataFormsArr.children('input').attr('readonly','readonly');        \n    } else {\n        $metadataFormsArr.removeClass('readOnly');\n        $metadataFormsArr.children('input').removeAttr('readonly');         \n    }\n*/}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var obj = {};\n        \n        //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n        _.each( data.resultset , function(row,i){\n            _.each( row, function(el,j){\n                if ( _.isEmpty(el) ){\n                    row[j] = \"\";\n                }\n            }); \n        });\n        \n        _.each( data.metadata, function(el,idx){\n            obj[el.colName] = data.resultset[0][idx];\n        });\n        \n        Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n    }\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "1c902eed-d857-f782-5c1e-b599ae3f61fe",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "reportBugButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Report a Bug",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:reportBugButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "e3a8dcf9-4b96-01f7-8068-69d8243cde36",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "marketPlaceButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "To MarketPlace",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:marketPlaceButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "70cd64ca-1974-28c5-166a-6815c97553a1",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "sendByEmailButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Send by Email",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(e){\n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    $tgt = $('#' + this.htmlObject).find('button');\n    infoPopup.popup($tgt);\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:sendByEmailButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "55e7c72f-91e2-c381-1218-c3971dd4201c",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "sendMessageButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Send",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail';\n\n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            message = (sparkl.isJobError(json)) ? \n                \"Error sending plugin \" + pluginId + \"!\\n Check server email configurations.\" :\n                \"Plugin \"+pluginId+\" sent!\";\n        dialogComponent.open({\n            message: message,\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){\n        var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        dialogComponent.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };\n    var endointParams = { pluginId: pluginId };\n    _.each( mailParam , function (el, key) {\n        var qKey = translationMap[key];\n        endointParams[qKey] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    });  \n}\n",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:sendMessageButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "9ff4280c-53ee-d60e-1f2d-d44c09325f9b",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "packButton",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'packplugin',\n        url = Dashboards.getWebAppPath() + '/content/sparkl/' + endpoint + '?parampluginId=' + pluginId;\n        \n    $('#' + this.htmlObject).append( \n        $('<a/>').attr('href', url).text('Pack') );\n}\n",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:packButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "a2459b3e-addf-36a9-c221-fb9f38895f50",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "submitChangesToAuthorButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Submit To Author",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:submitToAuthorButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "d841bdd4-f8b5-e484-04eb-ccdbc736ee93",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "submitChangesButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Submit Changes",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'updateMetadata';\n        \n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var addPublishWrapper = function (callback){\n        return function (json) {\n            sparkl.publishToServer( callback );\n        };\n    };\n        \n    var endpointParams = { pluginId: pluginId };\n    _.each( metadata, function(el, key) {        \n        endpointParams[key] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: function(){            \n            Dashboards.log('Error saving ' + pluginId + '!');\n        }    \n    }); \n}\n",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:submitChangesButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "57d796af-dcf1-83ba-352a-e661b4e8958f",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dialogGrabComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    \n    /* tranfering dialog(close) to component's method  - options management similar addins */  \n    this.open = function (opts){\n        \n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: false,\n            title: \"Confirmation Message\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $( this ).dialog( \"close\" );\n                    }\n                }\n            ]\n        };\n        /*merge of defaults with user custom opts*/\n        $.extend( dialogOpts, opts); \n        /*method's action*/\n        $( \"#\" + this.htmlObject ).dialog(dialogOpts);\n        $( \"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts){\n        $( \"#\" + this.htmlObject ).dialog('close');\n    };\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": "5",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:dialogGrabComponentObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n/*    if(Dashboards.getParameterValue(\"${p:isNewPluginParam}\")){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            title: \"Please insert a new plugin Id:\",\n            message:\"<div class='WDdataCellBody'>\"+\n                        \"<div class='cont newPlugin'>\"+\n                            \"<div class='labelPH'>New Plugin</div>\"+\n                            \"<div class='formPH'></div>\"+\n                            \"<div class='ButtonPH'></div>\"+\n                        \"</div>\"+\n            +\"</div>\",\n            dialogClass:'insertNewPluginId',\n            buttons:[]\n        });\n    }    \n*/}",
       "type": "JavaScript"
      },
      {
@@ -11910,190 +12029,124 @@
     ]
    },
    {
-    "id": "5da1b29d-decf-b6e1-9aab-fc6280f9507f",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
+    "id": "3f354d47-8d3d-0617-8b48-23dc5d77082a",
+    "type": "ComponentsTable",
+    "typeDesc": "table Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "createNewPluginButton",
+      "value": "elementsTable",
       "type": "Id"
      },
      {
-      "name": "label",
-      "value": "Create Plugin",
+      "name": "expandContainerObject",
+      "value": "",
       "type": "String"
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateDataEvent}']",
       "type": "Listeners"
      },
      {
-      "name": "expression",
-      "value": "function f(){\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('.tabElement,.contentElement');\n        \n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        var successCallback = function (json){\n            \n            //alert('Testing server timing.')\n            \n            var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n            dialogComponent.open({\n                message:\"Plugin \" + newPluginId + \" created successfully!\",\n                dialogClass:'closeButtonVisible'\n            });        \n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        var addPublishWrapper = function (callback){\n            return function (json) { \n                sparkl.publishToServer( callback ); \n            };\n        };\n        var addSparklRefreshWrapper = function (callback){\n            return function (json) {\n                sparkl.runEndpoint( 'sparkl' , 'refresh' , { success: callback });\n            };\n        }\n                \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { pluginId: pluginId },\n            success: addPublishWrapper( addSparklRefreshWrapper( successCallback) ),\n            error: function(){            \n                Dashboards.log('Error creating ' + newPluginId + '!');\n            } \n        });\n    }\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": "1",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:createNewPluginButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
+      "name": "oLanguage",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "87f8e786-bdd9-371d-dcf3-2d8fc7671187",
-    "type": "ComponentsQuery",
-    "typeDesc": "Query Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "pluginIdsList",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
      },
      {
       "name": "parameters",
+      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
+      "type": "colTypesCustom"
+     },
+     {
+      "name": "colFormats",
+      "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
      },
      {
-      "name": "resultvar",
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "info",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "sort",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "displayLength",
       "value": "",
-      "type": "Result"
+      "type": "Integer"
+     },
+     {
+      "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "colSearchable",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "drawCallback",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "unavailableIdsEndpoint"
+      "value": "elementsEndpoint"
      },
      {
-      "name": "priority",
-      "value": "1",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function(){\n    var rawList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n        pluginIdsList = _.pluck( _.filter( rawList, function(el){\n            return el.type == 'plugin'   \n        }) , 'name'),\n        pluginId = Dashboards.getParameterValue(\"${p:pluginIdParam}\");\n    \n    if( !_.contains( pluginIdsList, pluginId ) ){\n        var $thisDataCell = $('.newElement'),\n            $otherToggleDataCells = $('.tabElement,.contentElement');\n        \n        $otherToggleDataCells.block();\n        $thisDataCell.toggleClass(\"WDhidden\");\n        $otherToggleDataCells.find('img').addClass('WDhidden');\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return { name: row[0] , type: row[1]};\n    });\n    \n    Dashboards.setParameter('${p:unavailableIdsParam}', pluginIdsList);\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "94f75496-1de8-4196-ad44-0a3b9bf2b40c",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "tempBackButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Back",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
+      "name": "sortBy",
       "value": "[]",
-      "type": "Listeners"
+      "type": "SortByArray"
      },
      {
-      "name": "expression",
-      "value": "function(){\n    sparkl.changeLocation(\"main\");    \n}",
+      "name": "sDom",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -12107,14 +12160,24 @@
       "type": "Integer"
      },
      {
-      "name": "buttonStyle",
+      "name": "paginationType",
+      "value": "two_button",
+      "type": "PaginationType"
+     },
+     {
+      "name": "tableStyle",
       "value": "classic",
       "type": "TableStyle"
      },
      {
       "name": "htmlObject",
-      "value": "${p:tempBackButtonObj}",
+      "value": "${p:elementsTableObj}",
       "type": "HtmlObject"
+     },
+     {
+      "name": "paginateServerside",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "executeAtStart",
@@ -12123,12 +12186,17 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \"+v+\". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                                            params: { pluginId: id, elementName: v },\n                                            success: sparkl.addRefreshWrapper('pentaho-cdf-dd',\n                                                function (){\n                                                    Dashboards.fireChange('${p:updateDataEvent}');\n                                                })\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: function (v, st) {\n                        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                        dialogComponent.open({\n                            message:\"You are about to delete \" + v + \". Please, press OK to continue...\",\n                            buttons:[\n                                {\n                                    text: \"OK\",\n                                    click: function () {\n                                        sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                                            params: { pluginId: id, elementName: v },\n                                            success: function (){\n                                                Dashboards.fireChange('${p:updateDataEvent}');\n                                            }\n                                        });\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }\n                                },\n                                {\n                                    text: \"Cancel\",\n                                    click: function () {\n                                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                    }                               \n                                }\n                            ]\n                        });\n                    }                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var elementsNamesList = [];\n        _.each( data.resultset, function (el){\n            elementsNamesList.push(el[0]);\n            el.push(el[0]); \n        });\n        Dashboards.setParameter(\"${p:elementsNamesListParam}\",elementsNamesList);\n        data.metadata.push( $.extend( {} , data.metadata[0] ) );\n        var lastMetadataElIdx = data.metadata.length-1;\n        (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n        // *** Register in sort selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:sortSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            var sortCol = -1;\n            _.each(data.metadata, function(el,idx){\n                if(el.colName == v){\n                    sortCol = idx;\n                }\n            });\n            if(sortCol >= 0){\n                this.dataTable.fnSort([ [sortCol, 'asc']])\n            }\n        \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        // *** Register in View selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:viewSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            if(v === 'all'){ v = '' }\n            \n            this.dataTable.fnFilter( v , 1);    \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        this.extraOptions = [ [ 'bFilter' , true ] ];\n        \n        return data;\n    }else{\n        data = sparkl.createElementsTableEmptyRawData();\n        return data;\n    }\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function (){\n    $('#' + this.htmlObject).find('button').empty();\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -12145,84 +12213,16 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "ea9f9461-fb12-b11f-a060-d716433488a0",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementAdminButton",
-      "type": "Id"
      },
      {
-      "name": "label",
-      "value": "press",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
+      "name": "extraOptions",
       "value": "[]",
-      "type": "Listeners"
+      "type": "OptionArray"
      },
      {
-      "name": "expression",
-      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button'),\n        precNewElementOpts = Dashboards.getParameterValue(\"${p:newElementParam}\"),\n        newAdminStatus = !(precNewElementOpts.admin);\n        \n    /* update newElementParam */\n    Dashboards.setParameter(\"${p:newElementParam}\",$.extend(precNewElementOpts,{\"admin\":newAdminStatus}));\n\n    /* update button CSS*/\n    $btn.removeClass(\"checked\");\n    if( newAdminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:newElementAdminButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
+      "name": "clickAction",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button').empty();\n    var adminStatus = Dashboards.getParameterValue(\"${p:newElementParam}\").admin;\n    if( adminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
      }
     ]
    },
