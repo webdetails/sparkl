@@ -68,9 +68,9 @@
   <notepads>
   </notepads>
   <order>
-  </order>
+  <hop> <from>Dummy Data</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>Dummy</name>
+    <name>OUTPUT</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -81,8 +81,54 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>89</xloc>
-      <yloc>105</yloc>
+      <xloc>539</xloc>
+      <yloc>248</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy Data</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>type</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>value</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <data>
+      <line> <item>sample</item><item>0</item> </line>
+      <line> <item>transformation</item><item>1</item> </line>
+      <line> <item>as</item><item>2</item> </line>
+      <line> <item>enbdpoint</item><item/> </line>
+    </data>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>377</xloc>
+      <yloc>247</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
