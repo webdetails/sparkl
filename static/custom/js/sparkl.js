@@ -177,7 +177,8 @@ myself.addUploadForm = function(ph, opts){
       },
       params: {},
       systemParams: {},
-      type: 'POST'
+      type: 'POST',
+      dataType: 'json'
     }
     var opts = $.extend( {}, _opts, opts);
     var url = Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + endpoint;
@@ -198,6 +199,7 @@ myself.addUploadForm = function(ph, opts){
       url: url,
       async: true,
       type: opts.type,
+      dataType: opts.dataType,
       success: successHandler,
       error: errorHandler,
       data: {}
@@ -242,11 +244,22 @@ myself.addUploadForm = function(ph, opts){
     };
   };
   myself.addRefreshWrapper = function (pluginId, callback){
-    var caller = this.getEndpointCaller( pluginId, 'refresh' );
+    var caller = this.getEndpointCaller( pluginId, 'refresh' , { dataType:'text'});
     return this.addCallWrapper( caller, callback );
   }
   myself.addPublishWrapper = function (callback){
-    return this.addCallWrapper( this.publishToServer, callback );
+    // HACK: This call is only here because cpk is acting weird after a publish. Remove when bug 
+    // on cpk is found!!!
+    var cb = function (){
+      $.ajax({
+        url: Dashboards.getWebAppPath() + '/content/sparkl/getpluginmetadata',
+        type: 'GET',
+        async: true,
+        success: callback,
+        error: callback
+      });
+    };
+    return this.addCallWrapper( this.publishToServer, cb );
   };
 
 
