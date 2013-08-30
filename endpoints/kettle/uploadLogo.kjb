@@ -43,7 +43,7 @@
         </parameter>
         <parameter>
             <name>extensionRegExp</name>
-            <default_value>[^\\s]+(\\.(?i)png)$
+            <default_value>[^\\s]+(\\.(?i)(png|jpg))$
 </default_value>
             <description/>
         </parameter>
