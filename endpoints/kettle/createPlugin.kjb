@@ -82,16 +82,6 @@
             <description/>
         </parameter>
         <parameter>
-            <name>plugin_defaultElement</name>
-            <default_value>home</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_description</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>pluginDir</name>
             <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
             <description/>
@@ -100,6 +90,16 @@
             <name>pluginId</name>
             <default_value>${NULL_VALUE}</default_value>
             <description>mandatory</description>
+        </parameter>
+        <parameter>
+            <name>plugin_defaultElement</name>
+            <default_value>home</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>plugin_description</name>
+            <default_value>${NULL_VALUE}</default_value>
+            <description/>
         </parameter>
         <parameter>
             <name>plugin_name</name>
@@ -201,8 +201,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>662</xloc>
-      <yloc>135</yloc>
+      <xloc>848</xloc>
+      <yloc>137</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -225,8 +225,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>662</xloc>
-      <yloc>249</yloc>
+      <xloc>848</xloc>
+      <yloc>251</yloc>
       </entry>
     <entry>
       <name>Delete folders</name>
@@ -246,8 +246,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>445</xloc>
-      <yloc>249</yloc>
+      <xloc>631</xloc>
+      <yloc>251</yloc>
       </entry>
     <entry>
       <name>Plugin ID not null?</name>
@@ -290,8 +290,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>445</xloc>
-      <yloc>135</yloc>
+      <xloc>631</xloc>
+      <yloc>137</yloc>
       </entry>
     <entry>
       <name>plugin_name = pluginId</name>
@@ -310,8 +310,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>543</xloc>
-      <yloc>55</yloc>
+      <xloc>729</xloc>
+      <yloc>57</yloc>
       </entry>
     <entry>
       <name>updateLibs</name>
@@ -340,8 +340,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>790</xloc>
-      <yloc>135</yloc>
+      <xloc>976</xloc>
+      <yloc>137</yloc>
       </entry>
     <entry>
       <name>OUTPUT</name>
@@ -350,8 +350,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>935</xloc>
-      <yloc>135</yloc>
+      <xloc>1121</xloc>
+      <yloc>137</yloc>
       </entry>
     <entry>
       <name>${pluginDir} exists?</name>
@@ -361,8 +361,30 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
-      <yloc>135</yloc>
+      <xloc>490</xloc>
+      <yloc>137</yloc>
+      </entry>
+    <entry>
+      <name>Is valid plugin id?</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname/>
+      <variablename>${pluginId}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>^[A-Za-z][A-Za-z\d]+$</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>regexp</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>290</xloc>
+      <yloc>136</yloc>
       </entry>
   </entries>
   <hops>
@@ -457,15 +479,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Plugin ID not null?</from>
-      <to>${pluginDir} exists?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>${pluginDir} exists?</from>
       <to>Plugin Name not null?</to>
       <from_nr>0</from_nr>
@@ -481,6 +494,33 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Plugin ID not null?</from>
+      <to>Is valid plugin id?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Is valid plugin id?</from>
+      <to>${pluginDir} exists?</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Is valid plugin id?</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
