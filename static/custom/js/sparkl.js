@@ -4,8 +4,7 @@ var sparkl = {};
 
   _settings = {
     expressions: {
-      //element: /^[A-Za-z][A-Za-z\d]+$/,
-      element:/.*/,
+      element: /^[A-Za-z][A-Za-z\d]+$/,
       plugin: /^[A-Za-z][A-Za-z\d]+$/
     }
   };
