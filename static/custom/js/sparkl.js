@@ -1,6 +1,15 @@
 /********************************** Project namespace *******************************************/
 var sparkl = {};
 (function(myself){
+
+  _settings = {
+    expressions: {
+      //element: /^[A-Za-z][A-Za-z\d]+$/,
+      element:/.*/,
+      plugin: /^[A-Za-z][A-Za-z\d]+$/
+    }
+  };
+
   
   myself.changeLocation = function (newLocation, bookmarks, isNew){
   if(!newLocation){ return; }
@@ -12,7 +21,7 @@ var sparkl = {};
     }
   }
 
-    function generateHashValue (key, value) {
+  function generateHashValue (key, value) {
     var obj = Dashboards.getHashValue(),json;
     if (arguments.length == 1) {
       obj = key;
@@ -23,13 +32,14 @@ var sparkl = {};
     return json;
   }
 
-  myself.isValidName = function (name){
-    return !(name === "" || name.split(" ").length > 1 || typeof name === "undefined")
+  myself.isValidName = function (name, type){
+    var reg = _settings.expressions[ type || 'plugin' ] || /.*/;
+    return reg.test(name);
   }  
 
 
   myself.isJobError = function(json){
-    return !json || ( json.hasOwnProperty('result') && json.result === false );
+    return (json && json.result === false );
   }   
 
   myself.createElementsTableEmptyRawData = function() {
