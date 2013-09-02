@@ -5,11 +5,22 @@ var sparkl = {};
   _settings = {
     expressions: {
       element: /^[A-Za-z][A-Za-z\d]+$/,
-      plugin: /^[A-Za-z][A-Za-z\d]+$/
+      plugin: /^[A-Za-z][A-Za-z\d]+$/, 
+      image: /\.(png|jpg)$/,
+      zip: /\.(zip)$/
     }
   };
 
+  myself.getSettings = function (){
+    var acc = _settings;
+    _.every( arguments, function(el){
+      acc = acc[el] || undefined;
+      return !!acc
+    });
+    return acc;
+  }
   
+
   myself.changeLocation = function (newLocation, bookmarks, isNew){
   if(!newLocation){ return; }
     var hash = (bookmarks && !_.isEmpty(bookmarks) ) ? '#' + generateHashValue( "bookmark" , { impl: "client" , params: bookmarks } ) : "";
@@ -80,6 +91,8 @@ var sparkl = {};
 
 
 myself.addUploadForm = function(ph, opts){
+    var _myself = myself;
+
     var _opts = {
       root:'.',
       success: function (filename) {
@@ -92,7 +105,8 @@ myself.addUploadForm = function(ph, opts){
         Dashboards.log('File type not allowed.');
       },
       isValidFilename: function(filename){
-        return (/\.(png)$/i).test(filename);
+        var reg = _myself.getSettings('expressions','image');
+        return reg.test(filename);
       }
     }
 
