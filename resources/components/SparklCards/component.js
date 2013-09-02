@@ -18,6 +18,17 @@ wd.cpk = wd.cpk || {};
 
 (function (namespace) {
 
+	function _testFile (url, successCallback, errorCallback){
+    successCallback = successCallback || function (){ return true };
+    errorCallback = errorCallback || function(){ return true }
+    $.ajax({
+      url: url,
+      type:'HEAD',
+      error: errorCallback,
+      success: successCallback
+    });
+  }
+
 	namespace.models = namespace.models || {};
 	namespace.views = namespace.views || {};
 	namespace.templates = namespace.templates || {};
@@ -39,19 +50,25 @@ wd.cpk = wd.cpk || {};
 
 	namespace.models.sparklPluginCard = Backbone.Model.extend({
     	defaults:{
-      		"pluginId" : "", 
-      		"plugin_name" : "",
-      		"plugin_description" : "",
-      		"author_name": "",
-      		"company_name": "",
-      		"company_url": "",
-      		"creation_date": "",
-      		"version": "",
-      		"CPK_version": "",
-      		"pluginImage": "",
-   	
+    		"pluginId" : "", 
+    		"plugin_name" : "",
+    		"plugin_description" : "",
+    		"author_name": "",
+    		"company_name": "",
+    		"company_url": "",
+    		"creation_date": "",
+    		"version": "",
+    		"CPK_version": "",
+    		"pluginImage": "",
    			"actionOpts" : [],
    			"imgSrc": "",
+   			"backgroundColor" : "none"
+    	},
+
+    	initialize: function (){
+    		var pluginId = this.get('pluginId'),
+    				imgSrc = '/pentaho/content/' + pluginId + '/static/system/img/pluginLogo.png';
+    		this.set('imgSrc', imgSrc);
     	},
 
     	fireAction: function (action){
@@ -87,7 +104,6 @@ wd.cpk = wd.cpk || {};
 		"			</div>"+
 		"			<div class='cardBody'>"+
 		"				<div class='imageContainer'>"+
-		"					<img src='/pentaho/content/{{pluginId}}/static/system/img/pluginLogo.png' class='image'/> " +
 		"				</div>"+
 		"				<div class='descriptionContainer'>"+
 		"					<div class='header'>Description</div>"+
@@ -152,26 +168,43 @@ wd.cpk = wd.cpk || {};
 	    },
 
 	    initialize: function (){
-
+	    	this.model.on('change:imgSrc', function(v){
+	    		if (v){
+	    			this.$el.find('img').show();
+	    		}
+	    	});
 	    },
 	    render: function (ph){
-			var that = this;
-	      	that.$el.html( that.template( that.model.toJSON()) );
+				var self = this;
+	      
+	      this.$el.html( this.template( this.model.toJSON()) );
 
-	      	_.each ( that.model.get('actionOpts') , function (action) {
-	      		var $optsContainer = that.$el.find('.optionsContainer');
-				var $opt = $("<div/>").text(action.label)
-					.attr('id', action.id)
-					.addClass('optionCont')
-					.addClass(action.classes || "");
-				$optsContainer.append($opt);
+	     	_.each ( this.model.get('actionOpts') , function (action) {
+	      		var $optsContainer = self.$el.find('.optionsContainer');
+						var $opt = $("<div/>").text(action.label)
+							.attr('id', action.id)
+							.addClass('optionCont')
+							.addClass(action.classes || "");
+						$optsContainer.append($opt);
 	      		$opt.click( function (){
-	      			that.model.fireAction( action.id );
-	      			that.toggleOptionsExpanded(false);
-	      		});
-	      	});	
+	      			self.model.fireAction( action.id );
+	      			self.toggleOptionsExpanded(false);
+	      	});
+	      });
 
-	      that.appendView(ph);
+	      var imgSrc = this.model.get('imgSrc'),
+	      		$container = this.$el.find('.imageContainer'),
+	     			successCallback = function (){
+	     				$('<img/>').attr('src', imgSrc ).addClass('image').appendTo($container);
+	     			},
+	     			errorCallback = function (){
+	     				var label = self.model.get('plugin_name') || self.model.get('pluginId') || "";
+	     				$('<div/>').text( label ).addClass('imagePlaceholder').appendTo($container);
+	     				$container.css('background-color', self.model.get('backgroundColor'));
+	     			};
+	      _testFile( imgSrc, successCallback, errorCallback );
+
+	      this.appendView(ph);
 	    },
 
 	    appendView: function(ph){

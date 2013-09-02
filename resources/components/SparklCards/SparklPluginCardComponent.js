@@ -26,6 +26,8 @@ var SparklPluginCardComponent = (function(){
     		}
     	],
 
+    	colorPalette: [ "#e6b313" , "#ed5825" , "#ed2556" , "#0fb63a" , "#5825ed" ],
+
 	  	_models: {},
 	  	_views: {},
 	  	_newPluginModel: undefined,
@@ -88,6 +90,7 @@ var SparklPluginCardComponent = (function(){
 
 	    	/* Initialize Plugins Cards models and views */
 	  		_.each( plugins , function(pluginOpts){
+	  			pluginOpts.backgroundColor = _.first( _.shuffle( that.colorPalette));
 	  			if( !that._models[pluginOpts.pluginId] ){
 	    			that._models[pluginOpts.pluginId] = new wd.cpk.models.sparklPluginCard( pluginOpts );
 	    		} else {

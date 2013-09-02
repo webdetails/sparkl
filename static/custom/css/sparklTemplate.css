@@ -82,6 +82,7 @@ body{
 	margin-right:auto;
   margin-left:auto;
   background: #FFFFFF;
+  border-top: 0px;
 }
 
 /* =============================================================================
@@ -94,12 +95,12 @@ body{
     background: url('../img/headerShadow.png') 0px 100% no-repeat #25B9ED ;
     position: relative;
     display:block;
-    
+    overflow:hidden;
 }
 
 .sparklLogo{
   height:100%;
-  width:180px;
+  width:200px;
   float:left;
   background: url('../img/logo.png') 0px 50% no-repeat transparent;
   margin-left:30px;
@@ -146,6 +147,66 @@ body{
 .sparklMail a:hover span {
   width:155px;
   margin-right:31px;
+}
+
+.sparklHeader .pluginTabContainer {
+  height:100%;
+  min-width:200px;
+  max-width:400px;
+  position:relative;
+  float:left;
+  padding:15px;
+
+  -webkit-box-shadow:  0px 0px 6px 4px #3C8AB2;
+  box-shadow:  0px 0px 6px 4px #3C8AB2;
+}
+
+.sparklHeader *{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.sparklHeader .pluginTabContainer .pluginName{
+  color: #FFFFFF;
+  font-size:14px;
+  float:left;
+  height:0px;
+  line-height:0px;
+  position:absolute;
+  top:40%;
+  left:15px;
+  margin-right:25px;
+  text-transform:uppercase;
+}
+
+.sparklHeader .pluginTabContainer .pluginId {
+  float:left;
+  color: #D1EEFC;
+  font-size:11px;
+  float:left;
+  height:0px;
+  line-height:0px;
+  position:absolute;
+  top:40%;
+  margin-top: 16px;
+  left:15px;
+  margin-right:25px;
+}
+
+.sparklHeader .pluginTabContainer .closeButton {
+  position:absolute;
+  width:13px;
+  height:13px;
+  background: url('../img/x.png') -11px 50% transparent no-repeat;
+  top: 50%;
+  margin-top: -7px;
+  right: 10px;
+  cursor:pointer;
+}
+
+.sparklHeader .pluginTabContainer .closeButton:hover {
+  background-position: -46px 50%;
 }
 
 /* =============================================================================
