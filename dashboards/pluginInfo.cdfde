@@ -1328,7 +1328,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell contentElement tab1",
+      "value": "WDfilterCell contentElement tab1 WDhidden",
       "type": "String"
      }
     ]
@@ -1734,7 +1734,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell contentElement tab1",
+      "value": "WDdataCell contentElement tab1 WDhidden",
       "type": "String"
      }
     ]
@@ -4868,7 +4868,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell contentElement tab2",
+      "value": "WDfilterCell contentElement tab2 WDhidden",
       "type": "String"
      }
     ]
@@ -5347,7 +5347,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell elementsCell contentElement tab2",
+      "value": "WDdataCell elementsCell contentElement tab2 WDhidden",
       "type": "String"
      }
     ]
@@ -10722,7 +10722,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var obj = {};\n        \n        //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n        _.each( data.resultset , function(row,i){\n            _.each( row, function(el,j){\n                if ( _.isEmpty(el) ){\n                    row[j] = \"\";\n                }\n            }); \n        });\n        \n        _.each( data.metadata, function(el,idx){\n            obj[el.colName] = data.resultset[0][idx];\n        });\n        \n        Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n    }\n}",
+      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var obj = {};\n        \n        //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n        _.each( data.resultset , function(row,i){\n            _.each( row, function(el,j){\n                if ( _.isEmpty(el) ){\n                    row[j] = \"\";\n                }\n            }); \n        });\n        \n        _.each( data.metadata, function(el,idx){\n            obj[el.colName] = data.resultset[0][idx];\n        });\n        \n        Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n        Dashboards.fireChange(\"${p:newMetadataParam}\", $.extend({},obj) );\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -10901,7 +10901,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('.tabElement,.contentElement');\n        \n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        var successCallback = function (json){\n            \n            //alert('Testing server timing.')\n            \n            var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n            dialogComponent.open({\n                message:\"Plugin \" + newPluginId + \" created successfully!\",\n                dialogClass:'closeButtonVisible'\n            });        \n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        var errorCallback = function (json){\n            var dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n            dialogComponent.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });        \n        }\n                \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
+      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var $thisDataCell = $('#'+this.htmlObject).parents(\".WDdataCell\"),\n            $otherToggleDataCells = $thisDataCell.siblings('.tabElement,.contentElement');\n        \n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n        \n        $($otherToggleDataCells[1]).find('img').removeClass('WDhidden');\n        \n        var successCallback = function (json){\n            dialog.open({\n                message:\"Plugin \" + newPluginId + \" created successfully!\",\n                dialogClass:'closeButtonVisible'\n            });        \n            $thisDataCell.toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $otherToggleDataCells.unblock();\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });        \n        }\n                \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -11135,7 +11135,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'updateMetadata';\n        \n    var successCallback = function (json){        \n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible',\n            buttons:[]\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();        \n    }\n    \n\n        \n    var endpointParams = $.extend({}, metadata, { pluginId: pluginId });\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: function(){            \n            Dashboards.log('Error saving ' + pluginId + '!');\n        }    \n    }); \n}\n",
+      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        endpoint = 'updateMetadata';\n\n        \n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var errorCallback = function (json){        \n        dialog.open({\n            message:\"Error updating \"+pluginId+\" plugin!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();        \n    }\n\n        \n    var endpointParams = $.extend({}, metadata, { pluginId: pluginId });\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    }); \n}\n",
       "type": "JavaScript"
      },
      {
@@ -11895,7 +11895,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}'),\n        newElementType = (newElementOpts.type === \"Dashboard\") ? 'dashboard' : 'endpoint',\n        endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName, 'element')) ){\n        dialog.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        dialog.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        dialog.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            dialog.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: sparkl.addRefreshWrapper( pluginId,\n            sparkl.addRefreshWrapper( 'pentaho-cdf-dd', successCallback) ),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
+      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}'),\n        newElementType = (newElementOpts.type === \"Dashboard\") ? 'dashboard' : 'endpoint',\n        endpoint = 'createElement';\n\n    $(\"#openNewElementButtonContainer\").toggleClass('WDhidden');\n    $(\"#newElementContainer\").toggleClass('WDhidden');\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName, 'element')) ){\n        dialog.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        dialog.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            dialog.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: sparkl.addRefreshWrapper( pluginId,\n            sparkl.addRefreshWrapper( 'pentaho-cdf-dd', successCallback) ),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -12055,11 +12055,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
       "type": "colTypesCustom"
@@ -12090,9 +12085,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
+      "type": "Array"
      },
      {
       "name": "info",
@@ -12125,6 +12120,11 @@
       "type": "Boolean"
      },
      {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -12140,14 +12140,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -12227,6 +12227,64 @@
     ]
    },
    {
+    "id": "c8be2052-b824-7486-6dfc-be86e7981658",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginDescriptionTab",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:pluginMetadataParam}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    \n    this.$ph = this.$ph ||\n        $('<div/>').addClass('pluginTabContainer').insertAfter( $('.sparklLogo') );\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}') || \"untitledPlugin\",\n        pluginMetadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginName = pluginMetadata.plugin_name || \"Untitled Plugin\";\n    \n    var $pluginName = $('<div>').addClass('pluginName')\n            .text(pluginName),\n        $pluginId = $('<div>').addClass('pluginId')\n            .text(pluginId),\n        $close = $('<div/>').addClass('closeButton')\n            .click( function (){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/content/sparkl/main'); \n            });\n            \n    this.$ph.empty()\n        .append( $pluginName, $pluginId, $close );  \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "SELECTORS",
     "name": "Selects",
     "type": "Label",
@@ -12241,24 +12299,24 @@
     ]
    },
    {
-    "id": "816cd5bc-506d-24a4-6800-ed3e3711c1f5",
+    "id": "489d6527-5156-eb52-30bd-29bc37656897",
     "type": "ComponentstextInput",
     "typeDesc": "Text input Component",
     "parent": "SELECTORS",
     "properties": [
      {
       "name": "name",
-      "value": "senderNameForm",
+      "value": "newPluginIdForm",
       "type": "Id"
      },
      {
       "name": "parameter",
-      "value": "sendByEmailParam.senderName",
+      "value": "${p:pluginIdParam}",
       "type": "Parameter"
      },
      {
       "name": "listeners",
-      "value": "['${p:Select options}']",
+      "value": "[]",
       "type": "Listeners"
      },
      {
@@ -12268,7 +12326,7 @@
      },
      {
       "name": "priority",
-      "value": "5",
+      "value": "1",
       "type": "Integer"
      },
      {
@@ -12283,7 +12341,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:senderNameFormObj}",
+      "value": "${p:newPluginIdFormObj}",
       "type": "HtmlObject"
      },
      {
@@ -12298,241 +12356,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Your Name');\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "93e13ec0-2146-466b-4461-aa90feaeabfb",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "destinationAdressForm",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "sendByEmailParam.address",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:Select options}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "maxLength",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "priority",
-      "value": "5",
-      "type": "Integer"
-     },
-     {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:destinationAdressFormObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Destination Address');\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "bcd6ca10-c42c-b668-6cb2-a32d2d2f17e6",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "messageSubjectForm",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "sendByEmailParam.subject",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:Select options}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "maxLength",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "priority",
-      "value": "5",
-      "type": "Integer"
-     },
-     {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:messageSubjectFormObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Mail Subject');\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "8230f4ad-2c2a-21ba-be70-8756e790880a",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementNameForm",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "newElementParam.name",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:Select options}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "maxLength",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:newElementNameFormObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Name');\n}",
+      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , inUse_p || !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
@@ -12791,7 +12615,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n  \n    return true;\n  \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
@@ -13260,6 +13084,318 @@
      {
       "name": "postExecution",
       "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "816cd5bc-506d-24a4-6800-ed3e3711c1f5",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "senderNameForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "sendByEmailParam.senderName",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:senderNameFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Your Name');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "93e13ec0-2146-466b-4461-aa90feaeabfb",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "destinationAdressForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "sendByEmailParam.address",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:destinationAdressFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Destination Address');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "bcd6ca10-c42c-b668-6cb2-a32d2d2f17e6",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "messageSubjectForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "sendByEmailParam.subject",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:messageSubjectFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Mail Subject');\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "8230f4ad-2c2a-21ba-be70-8756e790880a",
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementNameForm",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "newElementParam.name",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:Select options}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "maxLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "size",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:newElementNameFormObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Name');\n}",
       "type": "JavaScript"
      },
      {
@@ -13790,84 +13926,6 @@
     ]
    },
    {
-    "id": "489d6527-5156-eb52-30bd-29bc37656897",
-    "type": "ComponentstextInput",
-    "typeDesc": "Text input Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginIdForm",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "${p:pluginIdParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "maxLength",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "priority",
-      "value": "1",
-      "type": "Integer"
-     },
-     {
-      "name": "size",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:newPluginIdFormObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "GENERIC",
     "name": "Generic",
     "type": "Label",
@@ -13882,75 +13940,19 @@
     ]
    },
    {
-    "id": "cfbfeb4d-1521-704b-5b06-424b59ba561e",
+    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
     "type": "ComponentsParameter",
     "typeDesc": "Parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "uploadedFileParam",
+      "value": "updateDataEvent",
       "type": "Id"
      },
      {
       "name": "propertyValue",
       "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "d7a87b8e-5e7a-0ea6-a546-4fdb9b1f7740",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "destinationParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "plugin-samples",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "3760b954-56ac-9897-d9ed-f436db1390f6",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "downloadParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "false",
       "type": "String"
      },
      {
@@ -13994,35 +13996,7 @@
     ]
    },
    {
-    "id": "6e8127cd-30b6-a213-cc74-4e1121f5d39e",
-    "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementParam",
-      "type": "Id"
-     },
-     {
-      "name": "javaScript",
-      "value": "{\n    type: \"Dashboard\",\n    template: \"\",\n    name: \"\",\n    admin: false\n\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "610ef9bc-5365-0bd2-1ec7-e63897ca7cc8",
+    "id": "b4a227aa-9b7b-c736-b174-eaf66b506fc2",
     "type": "ComponentsJavascriptParameter",
     "typeDesc": "Custom Parameter",
     "parent": "GENERIC",
@@ -14050,20 +14024,48 @@
     ]
    },
    {
-    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "id": "610ef9bc-5365-0bd2-1ec7-e63897ca7cc8",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "updateDataEvent",
+      "value": "newMetadataParam",
       "type": "Id"
      },
      {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
+      "name": "javaScript",
+      "value": "{}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "6e8127cd-30b6-a213-cc74-4e1121f5d39e",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "newElementParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "{\n    type: \"Dashboard\",\n    template: \"\",\n    name: \"\",\n    admin: false\n\n}",
+      "type": "JavaScript"
      },
      {
       "name": "parameterViewRole",
