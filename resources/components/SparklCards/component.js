@@ -200,8 +200,8 @@ wd.cpk = wd.cpk || {};
 	     			errorCallback = function (){
 	     				var label = self.model.get('plugin_name') || self.model.get('pluginId') || "";
 	     				$('<div/>').text( label ).addClass('imagePlaceholder').appendTo($container);
-	     				$container.css('background-color', self.model.get('backgroundColor'));
 	     			};
+	     	$container.css('background-color', self.model.get('backgroundColor'));
 	      _testFile( imgSrc, successCallback, errorCallback );
 
 	      this.appendView(ph);
