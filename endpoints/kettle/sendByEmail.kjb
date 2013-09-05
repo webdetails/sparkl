@@ -127,7 +127,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>42</xloc>
-      <yloc>73</yloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Plugin ID not null?</name>
@@ -148,7 +148,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>165</xloc>
+      <xloc>175</xloc>
       <yloc>69</yloc>
       </entry>
     <entry>
@@ -159,8 +159,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>291</xloc>
-      <yloc>223</yloc>
+      <xloc>308</xloc>
+      <yloc>193</yloc>
       </entry>
     <entry>
       <name>Checks if ${pluginDir} exist</name>
@@ -175,8 +175,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>438</xloc>
-      <yloc>70</yloc>
+      <xloc>441</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Clear Result</name>
@@ -190,122 +190,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>72</yloc>
-      </entry>
-    <entry>
-      <name>Set SMTP Config</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_setSmtpConfig.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>909</xloc>
-      <yloc>379</yloc>
-      </entry>
-    <entry>
-      <name>Create unique folder</name>
-      <description/>
-      <type>CREATE_FOLDER</type>
-      <foldername>${unique_location}</foldername>
-      <fail_of_folder_exists>N</fail_of_folder_exists>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>906</xloc>
-      <yloc>75</yloc>
-      </entry>
-    <entry>
-      <name>Zip file</name>
-      <description/>
-      <type>ZIP_FILE</type>
-      <zipfilename>${unique_location}&#47;${zipName}</zipfilename>
-      <compressionrate>1</compressionrate>
-      <ifzipfileexists>2</ifzipfileexists>
-      <wildcard/>
-      <wildcardexclude/>
-      <sourcedirectory>${unique_location}&#47;${pluginId}</sourcedirectory>
-      <movetodirectory/>
-      <afterzip>0</afterzip>
-      <addfiletoresult>Y</addfiletoresult>
-      <isfromprevious>N</isfromprevious>
-      <createparentfolder>Y</createparentfolder>
-      <adddate>N</adddate>
-      <addtime>N</addtime>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <createMoveToDirectory>N</createMoveToDirectory>
-      <include_subfolders>Y</include_subfolders>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>911</xloc>
-      <yloc>297</yloc>
-      </entry>
-    <entry>
-      <name>Copy Files</name>
-      <description/>
-      <type>COPY_FILES</type>
-      <copy_empty_folders>Y</copy_empty_folders>
-      <arg_from_previous>N</arg_from_previous>
-      <overwrite_files>N</overwrite_files>
-      <include_subfolders>Y</include_subfolders>
-      <remove_source_files>N</remove_source_files>
-      <add_result_filesname>N</add_result_filesname>
-      <destination_is_a_file>N</destination_is_a_file>
-      <create_destination_folder>Y</create_destination_folder>
-      <fields>
-        <field>
-          <source_filefolder>${pluginDir}</source_filefolder>
-          <destination_filefolder>${unique_location}&#47;${pluginId}</destination_filefolder>
-          <wildcard/>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>912</xloc>
-      <yloc>148</yloc>
-      </entry>
-    <entry>
-      <name>Delete .git</name>
-      <description/>
-      <type>DELETE_FOLDERS</type>
-      <arg_from_previous>N</arg_from_previous>
-      <success_condition>success_if_no_errors</success_condition>
-      <limit_folders>10</limit_folders>
-      <fields>
-        <field>
-          <name>${unique_location}&#47;${pluginId}&#47;.git</name>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>911</xloc>
-      <yloc>222</yloc>
+      <xloc>574</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Create Staging Folder</name>
@@ -316,8 +202,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>683</xloc>
-      <yloc>73</yloc>
+      <xloc>707</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Set Unique Location</name>
@@ -348,48 +234,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>798</xloc>
-      <yloc>74</yloc>
-      </entry>
-    <entry>
-      <name>Non Authenticated</name>
-      <description/>
-      <type>MAIL</type>
-      <server>${MAIL.SMTP.HOST}</server>
-      <port>${MAIL.SMTP.PORT}</port>
-      <destination>${destination_email}</destination>
-      <destinationCc/>
-      <destinationBCc/>
-      <replyto>${MAIL.FROM.DEFAULT}</replyto>
-      <replytoname>${sender_name}</replytoname>
-      <subject>[${cpk.plugin.id}] ${subject}</subject>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment>Installation: uncompress ${pluginId}.zip to your solution&#47;system folder and restart the server.</comment>
-      <include_files>Y</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>N</use_auth>
-      <use_secure_auth>Y</use_secure_auth>
-      <auth_user>${MAIL.USERID}</auth_user>
-      <auth_password>${MAIL.PASSWORD}</auth_password>
-      <only_comment>Y</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses>${MAIL.FROM.DEFAULT}</replyToAddresses>
-      <filetypes>        <filetype>GENERAL</filetype>
-      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>806</xloc>
-      <yloc>446</yloc>
+      <xloc>844</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Delete unique folder</name>
@@ -406,8 +252,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>539</xloc>
-      <yloc>324</yloc>
+      <xloc>707</xloc>
+      <yloc>293</yloc>
       </entry>
     <entry>
       <name>Clear Zip from result</name>
@@ -420,132 +266,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>435</xloc>
-      <yloc>321</yloc>
-      </entry>
-    <entry>
-      <name>Is Authenticated?</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname/>
-      <variablename>${MAIL.SMTP.AUTH}</variablename>
-      <fieldtype>boolean</fieldtype>
-      <mask/>
-      <comparevalue/>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>true</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>897</xloc>
-      <yloc>535</yloc>
-      </entry>
-    <entry>
-      <name>Is SSL?</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname/>
-      <variablename>${MAIL.SMTP.SSL}</variablename>
-      <fieldtype>boolean</fieldtype>
-      <mask/>
-      <comparevalue/>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>true</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>704</xloc>
-      <yloc>535</yloc>
-      </entry>
-    <entry>
-      <name>Authenticated</name>
-      <description/>
-      <type>MAIL</type>
-      <server>${MAIL.SMTP.HOST}</server>
-      <port>${MAIL.SMTP.PORT}</port>
-      <destination>${destination_email}</destination>
-      <destinationCc/>
-      <destinationBCc/>
-      <replyto>${MAIL.FROM.DEFAULT}</replyto>
-      <replytoname>${sender_name}</replytoname>
-      <subject>[${cpk.plugin.id}] ${subject}</subject>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment>Installation: uncompress ${pluginId}.zip to your solution&#47;system folder and restart the server.</comment>
-      <include_files>Y</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>Y</use_auth>
-      <use_secure_auth>N</use_secure_auth>
-      <auth_user>${MAIL.USERID}</auth_user>
-      <auth_password>${MAIL.PASSWORD}</auth_password>
-      <only_comment>Y</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses>${MAIL.FROM.DEFAULT}</replyToAddresses>
-      <filetypes>        <filetype>GENERAL</filetype>
-      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>594</xloc>
-      <yloc>447</yloc>
-      </entry>
-    <entry>
-      <name>Authenticated w&#47; SSL</name>
-      <description/>
-      <type>MAIL</type>
-      <server>${MAIL.SMTP.HOST}</server>
-      <port>${MAIL.SMTP.PORT}</port>
-      <destination>${destination_email}</destination>
-      <destinationCc/>
-      <destinationBCc/>
-      <replyto>${MAIL.FROM.DEFAULT}</replyto>
-      <replytoname>${sender_name}</replytoname>
-      <subject>[${cpk.plugin.id}] ${subject}</subject>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment>Installation: uncompress ${pluginId}.zip to your solution&#47;system folder and restart the server.</comment>
-      <include_files>Y</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>Y</use_auth>
-      <use_secure_auth>Y</use_secure_auth>
-      <auth_user>${MAIL.USERID}</auth_user>
-      <auth_password>${MAIL.PASSWORD}</auth_password>
-      <only_comment>Y</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses>${MAIL.FROM.DEFAULT}</replyToAddresses>
-      <filetypes>        <filetype>GENERAL</filetype>
-      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>709</xloc>
-      <yloc>446</yloc>
+      <xloc>574</xloc>
+      <yloc>293</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -554,8 +276,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>290</xloc>
-      <yloc>317</yloc>
+      <xloc>308</xloc>
+      <yloc>293</yloc>
       </entry>
     <entry>
       <name>Destination Address Valid?</name>
@@ -572,12 +294,12 @@
       <successcondition>regexp</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>Y</successwhenvarset>
+      <successwhenvarset>N</successwhenvarset>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>297</xloc>
-      <yloc>72</yloc>
+      <xloc>308</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>Delete unique folder 2</name>
@@ -594,8 +316,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>712</xloc>
-      <yloc>230</yloc>
+      <xloc>707</xloc>
+      <yloc>193</yloc>
       </entry>
     <entry>
       <name>Clear Zip from result 2</name>
@@ -608,8 +330,68 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>538</xloc>
-      <yloc>227</yloc>
+      <xloc>574</xloc>
+      <yloc>193</yloc>
+      </entry>
+    <entry>
+      <name>prepare Zip</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_sendByEmail_prepareZip.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>844</xloc>
+      <yloc>193</yloc>
+      </entry>
+    <entry>
+      <name>send Mail</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_sendByEmail_sendMail.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>844</xloc>
+      <yloc>293</yloc>
       </entry>
   </entries>
   <hops>
@@ -650,69 +432,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Zip file</from>
-      <to>Set SMTP Config</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Create unique folder</from>
-      <to>Copy Files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Copy Files</from>
-      <to>Delete .git</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Delete .git</from>
-      <to>Zip file</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Create Staging Folder</from>
-      <to>Set Unique Location</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set Unique Location</from>
-      <to>Create unique folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Non Authenticated</from>
-      <to>Delete unique folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Delete unique folder</from>
       <to>Clear Zip from result</to>
       <from_nr>0</from_nr>
@@ -720,69 +439,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Set SMTP Config</from>
-      <to>Is Authenticated?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Is Authenticated?</from>
-      <to>Non Authenticated</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Is Authenticated?</from>
-      <to>Is SSL?</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Is SSL?</from>
-      <to>Authenticated</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Is SSL?</from>
-      <to>Authenticated w&#47; SSL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Authenticated</from>
-      <to>Delete unique folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Authenticated w&#47; SSL</from>
-      <to>Delete unique folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Clear Zip from result</from>
@@ -848,7 +504,34 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Authenticated</from>
+      <from>Create Staging Folder</from>
+      <to>Set Unique Location</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set Unique Location</from>
+      <to>prepare Zip</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>prepare Zip</from>
+      <to>send Mail</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>prepare Zip</from>
       <to>Delete unique folder 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -857,52 +540,16 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Authenticated w&#47; SSL</from>
-      <to>Delete unique folder 2</to>
+      <from>send Mail</from>
+      <to>Delete unique folder</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Non Authenticated</from>
-      <to>Delete unique folder 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set SMTP Config</from>
-      <to>Delete unique folder 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Zip file</from>
-      <to>Delete unique folder 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Delete .git</from>
-      <to>Delete unique folder 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Copy Files</from>
+      <from>send Mail</from>
       <to>Delete unique folder 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
