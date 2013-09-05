@@ -18,7 +18,7 @@
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <default_value>${cpk.solution.system.dir}&#47;${cpk.plugin.id}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -37,7 +37,7 @@
             <description/>
         </parameter>
         <parameter>
-            <name>cpk.system.dir</name>
+            <name>cpk.solution.system.dir</name>
             <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
             <description/>
         </parameter>
@@ -54,7 +54,7 @@
         </parameter>
         <parameter>
             <name>sourceFile</name>
-            <default_value>${cpk.system.dir}&#47;.cfr&#47;${cpk.plugin.id}&#47;import&#47;${filename}</default_value>
+            <default_value>${cpk.solution.system.dir}&#47;.cfr&#47;${cpk.plugin.id}&#47;import&#47;${filename}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -135,7 +135,7 @@
       <zipfilename>${sourceFile}</zipfilename>
       <wildcard/>
       <wildcardexclude/>
-      <targetdirectory>${cpk.system.dir}</targetdirectory>
+      <targetdirectory>${cpk.solution.system.dir}</targetdirectory>
       <movetodirectory/>
       <afterunzip>0</afterunzip>
       <addfiletoresult>N</addfiletoresult>

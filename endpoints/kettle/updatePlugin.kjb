@@ -43,7 +43,7 @@
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <default_value>${cpk.solution.system.dir}&#47;${cpk.plugin.id}</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -62,7 +62,7 @@
             <description/>
         </parameter>
         <parameter>
-            <name>cpk.system.dir</name>
+            <name>cpk.solution.system.dir</name>
             <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
             <description/>
         </parameter>
@@ -93,7 +93,7 @@
         </parameter>
         <parameter>
             <name>pluginDir</name>
-            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
+            <default_value>${cpk.solution.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>

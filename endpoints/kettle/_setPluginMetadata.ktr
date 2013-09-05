@@ -35,13 +35,13 @@
             <description/>
         </parameter>
         <parameter>
-            <name>cpk.system.dir</name>
+            <name>cpk.solution.system.dir</name>
             <default_value/>
             <description/>
         </parameter>
         <parameter>
             <name>pluginDir</name>
-            <default_value>${cpk.system.dir}&#47;${pluginId}</default_value>
+            <default_value>${cpk.solution.system.dir}&#47;${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>

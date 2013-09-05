@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>${cpk.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <default_value>${cpk.solution.system.dir}&#47;${cpk.plugin.id}</default_value>
             <description/>
         </parameter>
         <parameter>
