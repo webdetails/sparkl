@@ -296,9 +296,9 @@ myself.addUploadForm = function(ph, opts){
 
 ;(function (){
 
-  var parameterButton = {
-    name: "parameterButton",
-    label: "Parameter Button",
+  var actionButtonsOpts = {
+    name: "actionButtons",
+    label: "Action Buttons",
     defaults: {
       buttons:[
         {
@@ -317,7 +317,8 @@ myself.addUploadForm = function(ph, opts){
     },
     
     implementation: function(tgt, st, opt){
-      var $buttonContainer = $('<div/>').addClass('buttonContainer');
+      var $buttonContainer = $('<div/>').addClass('buttonContainer')
+        .addClass('numButtons-' + opt.buttons.length);
       _.each(opt.buttons, function(el,idx){
         var $button = $("<button/>").addClass(el.cssClass||"").text(el.title||"");
         $button.click(function(){
@@ -332,7 +333,7 @@ myself.addUploadForm = function(ph, opts){
     }
 
     };
-    Dashboards.registerAddIn("Table", "colType", new AddIn(parameterButton));
+    Dashboards.registerAddIn("Table", "colType", new AddIn(actionButtonsOpts));
   
   
 /* edit data of table  */
