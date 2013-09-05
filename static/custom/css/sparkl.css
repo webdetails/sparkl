@@ -196,119 +196,6 @@ div.container *{
 
 
 
-
-
-
-
-
-.cont{
-  height: 34px;
-  padding: 6px 6px 6px 6px;
-  background: #EBEDEE;
-  text-align: left;
-  font-size: 15px;
-  font-weight: normal;
-  color: #878685;
-  position: relative;
-  margin-right: 5px;
-
-}
-
-.cont *{
-  height: 100%;
-  /*width: 100%;*/
-  font-size: inherit;
-/*  float: left;*/
-}
-
-.cont:hover{
-  background: #41B8EE;
-  color: #FFFFFF;
-}
-.cont.elementName{
-  width: 35%;
-}
-.cont.elementSelector{
-  width: 30%;
-}
-.cont.elementAddButton{
-  width: 15%;
-}
-
-.cont.elementName .labelPH{
-  background: inherit;
-  padding-left: 5px;
-  width: 15%;
-  line-height: 23px;
-  cursor:default;
-  width: 30%;
-  display: inline;
-  float: left;
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.cont.elementName .formPH{
-  width: 70%;
-  display: inline;
-  float: left;
-}
-.cont .formPH input{
-  width: 100%;
-  background: #FFFFFF;
-  border: none;
-  text-align: left;
-  font-size: 15px;
-  font-weight: normal;
-  color: #939292;
-  padding-left: 10px;
-  margin: 0px;
-}
-.cont .formPH input:hover{
-  cursor: pointer;
-}
-.cont .formPH input:focus{
-  cursor: auto;
-}
-.cont.elementAddButton{
-  padding: 0px 0px 0px 0px;
-}
-.cont .buttonPH button{
-  color: #D1EEFC;
-}
-.cont .buttonPH button:hover{
-  color: #FFFFFF;
-}
-.cont .selectorPH{
-  width: 100%;
-}
-.cont.elementSelector .selectorPH .chzn-container{
-  /*min-width: 188px;*/
-  min-width: 100%;
-  height: 100%;
-  border: none;
-}
-.cont.elementSelector .selectorPH .chzn-container span{
-  line-height: 22px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Email Info Popup*/
 .emailInfoPopupCont{
   width: 500px;
@@ -317,15 +204,7 @@ div.container *{
 
 
 
-
-
-
 /********/
-
-{
-  display: inline;
-}
-
 .globalOptButtonPH{
   padding-left: 10px;
   background: #EBEDEE;
@@ -620,8 +499,7 @@ div.container *{
 
 
 
-
- .cont.newPlugin{
+.newPluginContainer{
   height: 55px;
   max-height: 55px;
   min-height: 55px;
@@ -631,46 +509,84 @@ div.container *{
   width: 80%;
   position: relative;
   float: left;
+  background:#EAEDEE;
+  line-height: 37px;
 }
- .cont.newPlugin *{
+ .newPluginContainer *{
   font-size: inherit;
   height: 100%;
   float: left;
 }
-.cont.newPlugin .labelPH{
+.newPluginContainer span{
   width: 25%;
-  line-height: 37px;
   margin:0px;
   color: #25BAEE;
 }
-.cont.newPlugin:hover .labelPH{
-  color: #FFFFFF;
-}
-.cont.newPlugin .formPH{
-  width: 32%;
-  margin:0px;
-}
-.cont.newPlugin .formPH input{
+
+.newPluginContainer input{
   font-size: 14px;
-  width: 100%;
-}
-.cont.newPlugin .validateIconPH{
-  width: 5%; 
+  border:none;
+  margin:0;
+  width: 37%;
   background: url('../img/validate_disabled.png') no-repeat scroll right center #FFFFFF;
-  position: relative;
+  padding-left: 10px;
 }
-.cont.newPlugin .validateIconPH.correct{
+.newPluginContainer.notEmpty  input{
   background-image: url('../img/validate_correct.png');
 }
-.cont.newPlugin .validateIconPH.wrong{
+.newPluginContainer.inUse.notEmpty  input,
+.newPluginContainer.invalid.notEmpty  input{
   background-image: url('../img/validate_wrong.png') ;
 }
-.cont.newPlugin .labelPH.validityFeedback{
+
+.newPluginContainer .validityFeedback {
   width: 38%;
+  padding-left:10px;
   background: #C31116;
   color: #FFFFFF;
+  display:none;
+}
+.newPluginContainer.inUse.notEmpty .validityFeedback.inUseLabel{
+  display:inline-block;
+}
+.newPluginContainer.invalid.notEmpty .validityFeedback.invalidLabel{
+  display:inline-block;
 }
 
+
+
+
+.createNewPluginButton {
+/*  background: #EAEDEE;
+  color: #8C8B8B;
+*/  width: 19%;
+  height: 55px;
+  max-height: 55px;
+  min-height: 55px;
+  float: right;
+}
+.createNewPluginButton button{
+  background: #EAEDEE;
+  color: #8C8B8B;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  height: 100%;
+  width: 100%;
+  vertical-align: baseline;
+}
+.createNewPluginButton button:hover{
+  cursor: default;  
+}
+.createNewPluginButton.active button{
+  background: #41B8EE;
+  color: #D1EEFC;
+}
+.createNewPluginButton.active:hover button{
+  background: #2C9AE3;
+  color:#FFFFFF;
+  cursor: pointer;
+}
 
 
 
@@ -685,37 +601,7 @@ div.container *{
   margin-right:-10px;
 }
 
- .createNewPluginPH{
-/*  background: #EAEDEE;
-  color: #8C8B8B;
-*/  width: 19%;
-  height: 55px;
-  max-height: 55px;
-  min-height: 55px;
-  float: right;
-}
- .createNewPluginPH button{
-  background: #EAEDEE;
-  color: #8C8B8B;
-  font-size: 15px;
-  border: 0px none;
-  box-shadow: none;
-  height: 100%;
-  width: 100%;
-  vertical-align: baseline;
-}
- .createNewPluginPH button:hover{
-  cursor: default;  
-}
- .createNewPluginPH.active button{
-  background: #41B8EE;
-  color: #D1EEFC;
-}
- .createNewPluginPH.active:hover button{
-  background: #2C9AE3;
-  color:#FFFFFF;
-  cursor: pointer;
-}
+
 
 
 
@@ -737,6 +623,8 @@ div.container *{
   color: #878685;
   position: relative;
   float: left;
+
+  margin-right:6px;
 }
 .newElementContainer.active > .negative,
 .newElementContainer.inactive > .positive {
@@ -744,38 +632,68 @@ div.container *{
 }
 
 
-.newElementContainer > .newElementButton {
-  width:100%;
-  margin:0;
-}
-.newElementContainer > .newElementButton button {
+
+.newElementContainer .formButton button {
   width:100%;
   height:100%;
   margin:0;
-  background: url('../img/add_new.png') no-repeat 99% center #25BAED;  
   color:#FFFFFF;
   font-size: 15px;
   border: 0;
   box-shadow: none;
   vertical-align: baseline;  
   cursor:pointer;
+  background: url('../img/add_new.png') 50% 50% no-repeat #25BAED;
 }
-.newElementContainer > .newElementButton button:hover {
+.newElementContainer .formButton button:hover {
   background-color: #009DE2 ;
 }
 
+.newElementContainer .toggleNewElement.formButton {
+  width:100%;
+  margin:0;
+}
+.newElementContainer .addElement.formButton {
+  width:38px;
+}
+.newElementContainer .toggleNewElement.formButton button {
+   background-position: 99% 50%;   
+}
+.newElementContainer .addElement.formButton button {
 
- .newElementContainer > .elementName{
+}
+
+
+
+
+
+
+
+.newElementContainer .formInput{
   width: 30%;
 }
- .newElementContainer > .elementSelector{
+.newElementContainer .formInput input {
+  height:100%;
+  width: 100%;
+  background: #FFFFFF;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  color: #939292;
+  padding-left: 10px;
+  margin: 0px;
+  cursor: pointer;
+}
+.newElementContainer .formInput input:focus{
+  cursor: auto;
+}
+
+
+.newElementContainer .formSelector{
   width: 23%;
 }
- .newElementContainer .elementSelector.type{
-  padding-right: 0px;
-  margin-right: 0px;
-}
- .newElementContainer .elementAdminCheckbox{
+ .newElementContainer .formCheckbox{
   width: 14%;
 }
  .newElementContainer .elementAdmin{
@@ -791,10 +709,10 @@ div.container *{
   width: 50px;
   float: right;
 }
-.newElementContainer  .buttonPH button{
+.newElementContainer  .formButton button{
   background: url('../img/add_new.png') no-repeat center center #25BAED;
 }
-.newElementContainer .buttonPH button:hover{
+.newElementContainer .formButton button:hover{
   background-color: #009DE2;
 }
  .newElementContainer .elementAdmin .labelPH{
@@ -815,40 +733,25 @@ div.container *{
   display: inline;
   float: left;
 }
-.newElementContainer  .formPH input{
-  width: 100%;
-  background: #FFFFFF;
-  border: none;
-  text-align: left;
-  font-size: 15px;
-  font-weight: normal;
-  color: #939292;
-  padding-left: 10px;
-  margin: 0px;
-}
-.newElementContainer  .formPH input:hover{
-  cursor: pointer;
-}
-.newElementContainer  .formPH input:focus{
-  cursor: auto;
-}
-.newElementContainer .elementSelector .selectorPH .chzn-container{
+
+
+.newElementContainer .formSelector .chzn-container{
   /*min-width: 188px;*/
   min-width: 100%;
   height: 100%;
   border: none;
 }
-.newElementContainer .elementSelector .selectorPH .chzn-container span{
+.newElementContainer .formSelector .chzn-container span{
   line-height: 38px;
   text-indent: 8px;
 }
-.newElementContainer .elementSelector .selectorPH .chzn-container .chzn-single div b{
+.newElementContainer .formSelector .chzn-container .chzn-single div b{
   height: 100%;
 }
-.newElementContainer .elementSelector .selectorPH .chzn-drop{
+.newElementContainer .formSelector .chzn-drop{
   height: auto;
 }
-.newElementContainer .elementSelector .selectorPH .chzn-drop .chzn-results li{
+.newElementContainer .formSelector .chzn-drop .chzn-results li{
   height: 38px;
   line-height: 22px;
   text-indent: 8px;
@@ -872,92 +775,86 @@ div.container *{
   display: none;
 }
 
- table{
+table{
   border: none;
   max-width: 100%;
   min-width: 100%;
   padding-top: 10px;
+  border-collapse:separate;
+  border-spacing:5px 10px;
 }
- table tr{
+table tr{
   background: #EBEDEE;
   height: 50px;
 }
 
 /* Header */
- thead tr {
+thead tr {
   height: 30px;
 }
-  thead th {
+thead th {
   background: #FFFFFF;
   color: #939292;
   font-size: 13px;
   text-align: center;
   font-weight: normal;
-  border-right: 5px solid #FFFFFF;
   vertical-align: bottom;
 }
-  thead th:last-child {
+thead th:last-child {
   text-align: center;
 }
 
 /* Body */
-  tbody td{
+tbody td{
   text-align: left;
   color: #939292;
   font-size: 15px;
-  border-bottom: 10px solid #FFFFFF;
-  border-right: 5px solid #FFFFFF;
+  padding:0px;
   padding-left: 10px;
+  background:#EBEDEE;
 }
-  tbody td:last-child {
+tbody td:last-child {
   text-align: center;
   border-right: none;
 }
-  tbody td,
-    tbody td.numeric, 
-    tbody td.string {
-  }
+tbody td.actionButtons {
+	padding: 0px;
+  height:50px; /* Can't work out a percentual height with tables */
+}
 
-  tbody td button{
+tbody td.actionButtons .buttonContainer {
+  height:100%;
+  width:100%;
+}
+tbody td.actionButtons button{
   background: #41B8EE;
   color: #D1EEFC;
   font-size: 15px;
   border: 0px none;
   box-shadow: none;
   height: 100%;
-  width: 50%;
+  width:100%;
   vertical-align: baseline;
+  border-right: 1px solid #D1EEFC;
 }
-  tbody td button:hover{
+tbody td.actionButtons button:last-child {
+  border-right:none;
+}
+tbody td.actionButtons button:hover{
   background: #2C9AE3;
   color:#FFFFFF;
 }
-
- tbody td.parameterButton {
-	padding: 0px;
-  width: 253px;
+tbody td.actionButtons .numButtons-1 button{
+  width:100%;
 }
-
- tbody td button.deletePluginButton {
-	border-right: 1px solid #D1EEFC;
+tbody td.actionButtons .numButtons-2 button{
+  width:50%;
 }
- tbody td button.viewDashboardButton {
-  border-right: 1px solid #D1EEFC;
-  width: 33%;
+tbody td.actionButtons .numButtons-3 button{
+  width:33.3333333%;
 }
- tbody td button.editDashboardButton {
-  border-right: 1px solid #D1EEFC;
-  width: 34%;
-}
- tbody td button.deleteDashboardButton {
-  width: 33%;
-}
- tbody td button.runEndpointButton {
-  border-right: 1px solid #D1EEFC;
-}
-
- tbody tr div.buttonContainer{
-  height: 50px;
+tbody td.actionButtons .numButtons-4 button{
+  width:25%;
 }
 
 
@@ -977,15 +874,14 @@ button {
   height: 100%;
 }
 
-
-
 /**** Chosen Select *****/
 /* All Chosen elements */
 .chzn-container{
   height:100%;
-  min-width: 160px;
   border: 4px solid #EBEDEE;
+  min-width:160px;
 }
+
 .chzn-container .chzn-drop {
   background: none;
   min-width: 100%;
@@ -1033,9 +929,21 @@ button {
 .chzn-container-active .chzn-single {
     box-shadow: none;
 }
-.chzn-container-single:hover .chzn-single{
+.chzn-container-single .chzn-single.chzn-single-with-drop,
+.chzn-container-single .chzn-single:hover{
+  box-shadow: none;
+  border:none;
   background:#2C9AE3;
+  color:#FFFFFF;
 }
+.noResults .chzn-container-single .chzn-single,
+.noResults .chzn-container-single .chzn-single.chzn-single-with-drop,
+.noResults .chzn-container-single .chzn-single:hover{
+  background:#CFCECE;
+  color:#FFFFFF;
+  cursor:default;
+}
+
 .chzn-container-single .chzn-single div{ /* Arrow container */
   background: none;
   border:none;
@@ -1051,16 +959,10 @@ button {
 .chzn-container-single .chzn-single:hover div b{ /* Arrow */
   background-position: -28px 50%;
 }
-.chzn-container-single:hover .chzn-single div b,
-  .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
-  
-}
-.chzn-container-single .chzn-single.chzn-single-with-drop,
-.chzn-container-single .chzn-single:hover{
-  box-shadow: none;
-  border:none;
-  background:#2C9AE3;
-  color:#FFFFFF;
+.noResults .chzn-container-single div b,
+.noResults .chzn-container-single .chzn-single-with-drop div b,
+.noResults .chzn-container-single .chzn-single:hover div b{ /* Arrow */
+  background-position: -28px 50%;
 }
 
 

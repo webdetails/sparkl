@@ -87,7 +87,7 @@
     ]
    },
    {
-    "id": "059f8ed9-c82b-c19e-f343-206077b60d3e",
+    "id": "d14dbfb3-3de4-9d77-d149-451e35585865",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -119,382 +119,16 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell WDhidden newElement",
+      "value": "WDhidden newElement",
       "type": "String"
      }
     ]
    },
    {
-    "id": "081599cc-7c95-29f1-43c8-4a9078dff671",
+    "id": "a9e89bd9-039d-df6a-ad95-a7656e37f285",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "059f8ed9-c82b-c19e-f343-206077b60d3e",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8a229c8b-5e57-c582-7c02-a75f2afce210",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "081599cc-7c95-29f1-43c8-4a9078dff671",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginIdCellHeader",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCellHeader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8aff5c23-c31b-2583-3044-3204d9d3f616",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "081599cc-7c95-29f1-43c8-4a9078dff671",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginIdCellBody",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCellBody",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "672552b7-8589-6b18-e9c5-a68f0929a3f7",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "8aff5c23-c31b-2583-3044-3204d9d3f616",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "573c9360-d58d-cb45-372f-528ef31cd605",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "672552b7-8589-6b18-e9c5-a68f0929a3f7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newPluginContainer",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "cont newPlugin",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "3ad39d6a-1577-cb3b-3c76-e0697faa2eea",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "573c9360-d58d-cb45-372f-528ef31cd605",
-    "properties": [
-     {
-      "name": "name",
-      "value": "label",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "labelPH",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "1342a196-4eeb-9438-57a3-e1d795c34e9d",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "3ad39d6a-1577-cb3b-3c76-e0697faa2eea",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "First define your plugin ID ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "304e061e-320c-a101-1a3e-3a6476cedcf8",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "573c9360-d58d-cb45-372f-528ef31cd605",
+    "parent": "d14dbfb3-3de4-9d77-d149-451e35585865",
     "properties": [
      {
       "name": "name",
@@ -558,301 +192,16 @@
      },
      {
       "name": "cssClass",
-      "value": "formPH",
+      "value": "newPluginContainer",
       "type": "String"
      }
     ]
    },
    {
-    "id": "35caa218-492e-fef6-0133-66a946d6cef0",
+    "id": "7cea0138-4aea-d378-87d6-4bda5530cbbe",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "573c9360-d58d-cb45-372f-528ef31cd605",
-    "properties": [
-     {
-      "name": "name",
-      "value": "validateIcon",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "validateIconPH",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "74a63f08-645c-5579-4763-7079d7ea34ad",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "573c9360-d58d-cb45-372f-528ef31cd605",
-    "properties": [
-     {
-      "name": "name",
-      "value": "inUseLabel",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "labelPH validityFeedback WDhidden inUseLabel",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "b166c260-905f-1ae6-406b-0d221e361a83",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "74a63f08-645c-5579-4763-7079d7ea34ad",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<b>ID in use</b>, please use another. ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "15b4b27d-4a16-e436-7f8c-10889c0f61d5",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "573c9360-d58d-cb45-372f-528ef31cd605",
-    "properties": [
-     {
-      "name": "name",
-      "value": "invalidLabel",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "labelPH validityFeedback WDhidden invalidLabel",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "a60a0ddd-15d3-b31e-dff0-fe769d48cd85",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "15b4b27d-4a16-e436-7f8c-10889c0f61d5",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "<b>Invalid ID</b>, please use another. ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5e06e6bc-aa86-e60e-ec38-e9ef004d2c39",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "672552b7-8589-6b18-e9c5-a68f0929a3f7",
+    "parent": "d14dbfb3-3de4-9d77-d149-451e35585865",
     "properties": [
      {
       "name": "name",
@@ -860,6 +209,41 @@
       "type": "Id"
      },
      {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "height",
       "value": "",
       "type": "Integer"
@@ -881,7 +265,7 @@
      },
      {
       "name": "cssClass",
-      "value": "createNewPluginPH",
+      "value": "createNewPluginButton",
       "type": "String"
      }
     ]
@@ -3712,6 +3096,39 @@
      },
      {
       "name": "cssClass",
+      "value": "formLabel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "71d25ac2-0593-8fef-4246-ce10124278a3",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "82384229-a268-1db9-fb17-73c7bc321ac9",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Description ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
       "value": "",
       "type": "String"
      }
@@ -6430,7 +5847,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "toggleView",
+      "value": "viewSelectorObj",
       "type": "Id"
      },
      {
@@ -6467,44 +5884,6 @@
       "name": "columnBigBorder",
       "value": "false",
       "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "7259023b-1266-fed4-8c3f-adfa6ded5f89",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "52a30e05-14c3-91a3-dc13-1ee1cd581a0c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "viewSelectorObj",
-      "type": "Id"
      },
      {
       "name": "height",
@@ -6647,7 +6026,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "sortSelectorContainer",
+      "value": "sortSelectorObj",
       "type": "Id"
      },
      {
@@ -6684,44 +6063,6 @@
       "name": "columnBigBorder",
       "value": "false",
       "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d0293e15-d743-62a6-fe74-fe8431feed83",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "21fa4ee7-1b95-d544-ea32-f5f059b48cef",
-    "properties": [
-     {
-      "name": "name",
-      "value": "sortSelectorObj",
-      "type": "Id"
      },
      {
       "name": "height",
@@ -6831,7 +6172,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "refresh",
+      "value": "refreshObj",
       "type": "Id"
      },
      {
@@ -6891,45 +6232,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "79d68dfa-078e-dbdc-3e90-4148737b0edf",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "d2ef2d6f-93af-3f14-a032-d68e06b4fc4c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "refreshObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "refreshButtonContainer",
+      "value": "refreshButton",
       "type": "String"
      }
     ]
@@ -7040,7 +6343,7 @@
      },
      {
       "name": "cssClass",
-      "value": "newElementButton negative",
+      "value": "toggleNewElement formButton negative",
       "type": "String"
      }
     ]
@@ -7053,7 +6356,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementNameContainer",
+      "value": "newElementNameFormObj",
       "type": "Id"
      },
      {
@@ -7113,45 +6416,7 @@
      },
      {
       "name": "cssClass",
-      "value": "elementName positive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d5b74413-adc7-e219-0c91-463de1aec880",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "c491d7ba-c181-f3c6-79d0-507daa9a7af8",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementNameFormObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "formPH",
+      "value": "formInput positive formPh",
       "type": "String"
      }
     ]
@@ -7164,7 +6429,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementTypeContainer",
+      "value": "newElementTypeSelectorObj",
       "type": "Id"
      },
      {
@@ -7224,45 +6489,7 @@
      },
      {
       "name": "cssClass",
-      "value": "elementSelector type positive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "bd6ad272-bc1a-b050-a18a-97a1d7b1598e",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "9766c66f-be84-0e7c-ce51-56ba6e7b5423",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementTypeSelectorObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "selectorPH",
+      "value": "formSelector type positive",
       "type": "String"
      }
     ]
@@ -7275,7 +6502,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementTemplateSelectorContainer",
+      "value": "newElementTemplateSelectorObj",
       "type": "Id"
      },
      {
@@ -7335,45 +6562,7 @@
      },
      {
       "name": "cssClass",
-      "value": "elementSelector template positive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "92da2b81-15fa-e7d9-c46b-d0677b6d955c",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "3bb281c8-50db-3c20-31c0-fc9d36fb4692",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementTemplateSelectorObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "selectorPH",
+      "value": "formSelector template positive",
       "type": "String"
      }
     ]
@@ -7386,7 +6575,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementAdminCheckboxContainer",
+      "value": "newElementAdminCheckboxObj",
       "type": "Id"
      },
      {
@@ -7446,45 +6635,7 @@
      },
      {
       "name": "cssClass",
-      "value": "elementAdminCheckbox WDhidden positive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "7fd146a0-062b-7421-f850-5dda27c7ef69",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "39f34ec4-c3d8-0fa8-7b40-3e71aa537251",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementAdminCheckboxObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "checkboxPH",
+      "value": "formCheckbox WDhidden positive",
       "type": "String"
      }
     ]
@@ -7557,7 +6708,7 @@
      },
      {
       "name": "cssClass",
-      "value": "elementAdmin positive",
+      "value": "formCheckbox positive",
       "type": "String"
      }
     ]
@@ -7787,7 +6938,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "newElementAddButtonContainer",
+      "value": "newElementAddButtonObj",
       "type": "Id"
      },
      {
@@ -7847,45 +6998,7 @@
      },
      {
       "name": "cssClass",
-      "value": "elementAddButton positive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "e6e91a81-e2a3-d52d-b8e3-19ecad8e3f42",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "97ce2a89-9cc0-261b-cf9d-b75b934b7042",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementAddButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "buttonPH",
+      "value": "addElement formButton positive buttonPH",
       "type": "String"
      }
     ]
@@ -9331,7 +8444,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n/*\n    $metadataContainersArr = $(\"#metadataDataCell\").find('.cont');\n    \n    if(Dashboards.getParameterValue(\"${p:metadataReadonlyParam}\") == \"true\"){\n        $metadataContainersArr.addClass('readOnly');\n        $metadataFormsArr.children('input').attr('readonly','readonly');        \n    } else {\n        $metadataFormsArr.removeClass('readOnly');\n        $metadataFormsArr.children('input').removeAttr('readonly');         \n    }\n*/}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -10041,7 +9154,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail',\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n\n    var successCallback = function (json){        \n        dialog.open({\n            message: message,\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){\n        dialog.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };\n    var endointParams = { pluginId: pluginId };\n    _.each( mailParam , function (el, key) {\n        var qKey = translationMap[key];\n        endointParams[qKey] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    });  \n}\n",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        mailParam = Dashboards.getParameterValue('${p:sendByEmailParam}'),\n        endpoint = 'sendByEmail',\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n\n    var successCallback = function (json){        \n        dialog.open({\n            message: 'Plugin ' + pluginId + ' sent!',\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){\n        dialog.open({\n            message:'Error sending plugin ' + pluginId + '!',\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var infoPopup = Dashboards.getComponentByName('${c:emailInfoPopup}');\n    infoPopup.hide();\n    \n    var translationMap = {\n        senderName: 'sender_name',\n        address: 'destination_email',\n        subject: 'subject'\n    };\n    var endpointParams = { pluginId: pluginId };\n    _.each( mailParam , function (el, key) {\n        var qKey = translationMap[key];\n        endpointParams[qKey] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    });  \n}\n",
       "type": "JavaScript"
      },
      {
@@ -10305,7 +9418,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var myself = this;\n    this.custom = this.custom || {};\n    this.custom.toggle = function (predicate){\n        var $container = $('#' + myself.htmlObject).parents('.newElementContainer'),\n            previous = $container.hasClass('active'),\n            newPredicate = _.isBoolean(predicate) ? predicate : !previous;\n        $container.toggleClass('active', newPredicate )\n            .toggleClass('inactive', !newPredicate);\n    }\n}",
+      "value": "function f(){\n    var myself = this;\n    this.custom = this.custom || {};\n    this.custom.toggle = function (predicate){\n        var $container = $('#' + myself.htmlObject).parents('.newElementContainer'),\n            previous = $container.hasClass('active'),\n            newPredicate = _.isBoolean(predicate) ? predicate : !previous;\n        $container.toggleClass('active', newPredicate )\n            .toggleClass('inactive', !newPredicate);\n            \n        if (!newPredicate) {\n            Dashboards.fireChange('${p:newElementParam}', \n                {type: \"\", template: \"\", name: \"\", admin: false });\n        }\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -10591,11 +9704,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -10612,7 +9720,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"parameterButton\"]",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
       "type": "colTypesCustom"
      },
      {
@@ -10626,9 +9734,9 @@
       "type": "Array"
      },
      {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "expandOnClick",
@@ -10661,6 +9769,11 @@
       "type": "Integer"
      },
      {
+      "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -10676,14 +9789,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -10722,7 +9835,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    \n    // Callbacks\n    var successCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    var errorCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    \n    // Actions \n    var deleteElementAction = function (v, st) {\n        var okCallback = function () {\n                dialog.close();\n                Dashboards.incrementRunningCalls();\n                sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                    params: { pluginId: pluginId, elementName: v },\n                    success: sparkl.addRefreshWrapper('pentaho-cdf-dd', successCallback),\n                    error:   sparkl.addRefreshWrapper('pentaho-cdf-dd', errorCallback)\n                });\n            },\n            cancelCallback = function () { \n                dialog.close(); \n            } \n        \n        dialog.open({\n            message:\"You are about to delete \" + v + \". Please, press OK to continue...\",\n            buttons:[\n                { text: \"OK\", click: okCallback },\n                { text: \"Cancel\", click: cancelCallback }\n            ]\n        });\n    }\n\n    \n    // Options\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"parameterButton\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
+      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    \n    // Callbacks\n    var successCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    var errorCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    \n    // Actions \n    var deleteElementAction = function (v, st) {\n        var okCallback = function () {\n                dialog.close();\n                Dashboards.incrementRunningCalls();\n                sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                    params: { pluginId: pluginId, elementName: v },\n                    success: sparkl.addRefreshWrapper('pentaho-cdf-dd', successCallback),\n                    error:   sparkl.addRefreshWrapper('pentaho-cdf-dd', errorCallback)\n                });\n            },\n            cancelCallback = function () { \n                dialog.close(); \n            } \n        \n        dialog.open({\n            message:\"You are about to delete \" + v + \". Please, press OK to continue...\",\n            buttons:[\n                { text: \"OK\", click: okCallback },\n                { text: \"Cancel\", click: cancelCallback }\n            ]\n        });\n    }\n\n    \n    // Options\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"actionButtons\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -10800,7 +9913,7 @@
      },
      {
       "name": "executeAtStart",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -10892,7 +10005,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , inUse_p || !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
+      "value": "function f(){\n\n    var $container = $('#'+this.htmlObject);\n    \n    // Add label, validationIcon and validationLabels\n    $('<span/>').text('First define your Plugin ID').prependTo( $container );\n    $('<div/>').addClass('validityIcon').appendTo( $container );\n    $('<div/>').html('<b>ID in use</b>, please use another.')\n        .addClass('validityFeedback inUseLabel')\n        .appendTo( $container );\n    $('<div/>').html('<b>Invalid ID</b>, please use another.')\n        .addClass('validityFeedback invalidLabel')\n        .appendTo( $container );\n    \n    // Add input placeholder\n    var $input = $container.find('input');\n    $input.attr('placeholder','myPluginId');\n       \n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject);\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $container\n            .toggleClass('inUse', inUse_p)\n            .toggleClass('invalid', invalid_p)\n            .toggleClass('notEmpty', !isEmpty_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
@@ -11891,7 +11004,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:Select options}']",
+      "value": "['${p:newElementParam}']",
       "type": "Listeners"
      },
      {
@@ -11931,7 +11044,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.removeAttr('value');\n    $form.attr('placeholder','Insert Name');\n}",
+      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','Insert Name');\n}",
       "type": "JavaScript"
      },
      {
@@ -11969,7 +11082,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:newElementParam}']",
       "type": "Listeners"
      },
      {
@@ -12019,7 +11132,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    this.defaultIfEmpty = false;\n    this.placeholderText = \"Choose Type\"\n}",
       "type": "JavaScript"
      },
      {
@@ -12039,7 +11152,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    /* Force fireChange of overall object (not only its type property) so the template selector can hear it */\n    var newParam = Dashboards.getParameterValue(\"${p:newElementParam}\");\n    Dashboards.fireChange(\"${p:newElementParam}\",newParam);\n}",
+      "value": "function f(){\n    var p = Dashboards.getParameterValue('${p:newElementParam}');\n    Dashboards.fireChange(\"${p:newElementParam}\", p);\n}",
       "type": "JavaScript"
      },
      {
@@ -12122,12 +11235,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var elementType = Dashboards.getParameterValue(\"${p:newElementParam}\").type;\n    this.parameters = [[\"elementType\",\"'\"+elementType+\"'\"]];\n}",
+      "value": "function f(){\n    this.defaultIfEmpty = false;\n    this.placeholderText = \"Choose Template\"\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "",
+      "value": "function f(data){\n    var type = Dashboards.getParameterValue('${p:newElementParam}').type;\n    var idx = _.find( data.metadata, function(el){\n        return el.colName == 'templateType'; \n    }).colIndex;\n    \n    data.resultset = _.filter( data.resultset, function (row){\n        return row[idx] == type;\n    });\n    \n    $('#' + this.htmlObject).toggleClass('noResults', _.isEmpty(data.resultset));\n    \n    return data\n}",
       "type": "JavaScript"
      },
      {
@@ -12180,7 +11293,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:newElementParam}']",
       "type": "Listeners"
      },
      {
@@ -12600,7 +11713,7 @@
      },
      {
       "name": "javaScript",
-      "value": "{\n    type: \"Dashboard\",\n    template: \"\",\n    name: \"\",\n    admin: false\n\n}",
+      "value": "{\n    type: \"\",\n    template: \"\",\n    name: \"\",\n    admin: false\n}",
       "type": "JavaScript"
      },
      {
