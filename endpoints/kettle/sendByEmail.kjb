@@ -17,11 +17,6 @@
             <description/>
         </parameter>
         <parameter>
-            <name>base_dir</name>
-            <default_value>${cpk.plugin.dir}&#47;.tmp</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>cpk.plugin.dir</name>
             <default_value>${cpk.solution.system.dir}&#47;${cpk.plugin.id}</default_value>
             <description/>
@@ -67,13 +62,23 @@
             <description/>
         </parameter>
         <parameter>
+            <name>stagingFolder</name>
+            <default_value>${tmpFolder}&#47;${cpk.plugin.id}&#47;sendByEmail</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>subject</name>
             <default_value>Here, have this: ${pluginId}</default_value>
             <description/>
         </parameter>
         <parameter>
+            <name>tmpFolder</name>
+            <default_value>${cpk.solution.system.dir}&#47;tmp</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>unique_location</name>
-            <default_value>${base_dir}&#47;${pluginId}</default_value>
+            <default_value/>
             <description/>
         </parameter>
         <parameter>
@@ -197,7 +202,7 @@
       <name>Create Staging Folder</name>
       <description/>
       <type>CREATE_FOLDER</type>
-      <foldername>${pluginDir}&#47;.tmp</foldername>
+      <foldername>${stagingFolder}</foldername>
       <fail_of_folder_exists>N</fail_of_folder_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -231,7 +236,10 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+            <parameter>            <name>base_dir</name>
+            <stream_name/>
+            <value>${stagingFolder}</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>844</xloc>
@@ -294,7 +302,7 @@
       <successcondition>regexp</successcondition>
       <successnumbercondition>equal</successnumbercondition>
       <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
+      <successwhenvarset>Y</successwhenvarset>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -361,7 +369,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>844</xloc>
-      <yloc>193</yloc>
+      <yloc>194</yloc>
       </entry>
     <entry>
       <name>send Mail</name>

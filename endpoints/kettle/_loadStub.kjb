@@ -11,6 +11,26 @@
   <modified_user>-</modified_user>
   <modified_date>2013&#47;04&#47;29 10:07:15.179</modified_date>
     <parameters>
+        <parameter>
+            <name>stagingFolder</name>
+            <default_value>${tmpFolder}&#47;${cpk.plugin.id}&#47;staging</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>stubFile</name>
+            <default_value>${stubFolder}&#47;plugin.zip</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>stubFolder</name>
+            <default_value>${cpk.plugin.dir}&#47;stub</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>tmpFolder</name>
+            <default_value>${cpk.solution.system.dir}&#47;tmp</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -41,7 +61,7 @@
       <zipfilename>${stubFile}</zipfilename>
       <wildcard/>
       <wildcardexclude/>
-      <targetdirectory>${unzipFolder}</targetdirectory>
+      <targetdirectory>${unique_location}</targetdirectory>
       <movetodirectory/>
       <afterunzip>0</afterunzip>
       <addfiletoresult>N</addfiletoresult>
@@ -62,8 +82,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>355</xloc>
-      <yloc>79</yloc>
+      <xloc>604</xloc>
+      <yloc>83</yloc>
       </entry>
     <entry>
       <name>${stubFile} exists</name>
@@ -84,8 +104,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>264</xloc>
-      <yloc>208</yloc>
+      <xloc>200</xloc>
+      <yloc>250</yloc>
       </entry>
     <entry>
       <name>START</name>
@@ -121,7 +141,7 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>${unzipFolder}</source_filefolder>
+          <source_filefolder>${unique_location}</source_filefolder>
           <destination_filefolder>${instalationFolder}</destination_filefolder>
           <wildcard/>
         </field>
@@ -129,8 +149,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>663</xloc>
-      <yloc>79</yloc>
+      <xloc>632</xloc>
+      <yloc>365</yloc>
       </entry>
     <entry>
       <name>_configPluginFiles</name>
@@ -158,14 +178,17 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+            <parameter>            <name>unzipFolder</name>
+            <stream_name/>
+            <value>${unique_location}</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>509</xloc>
-      <yloc>79</yloc>
+      <xloc>703</xloc>
+      <yloc>216</yloc>
       </entry>
     <entry>
-      <name>Delete Unzip Folder</name>
+      <name>Delete Unique Folder</name>
       <description/>
       <type>DELETE_FOLDERS</type>
       <arg_from_previous>N</arg_from_previous>
@@ -173,14 +196,14 @@
       <limit_folders>10</limit_folders>
       <fields>
         <field>
-          <name>${unzipFolder}</name>
+          <name>${unique_location}</name>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>829</xloc>
-      <yloc>79</yloc>
+      <xloc>767</xloc>
+      <yloc>366</yloc>
       </entry>
     <entry>
       <name>Delete filenames from result</name>
@@ -193,20 +216,100 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>978</xloc>
-      <yloc>80</yloc>
+      <xloc>886</xloc>
+      <yloc>367</yloc>
+      </entry>
+    <entry>
+      <name>Create Staging Folder</name>
+      <description/>
+      <type>CREATE_FOLDER</type>
+      <foldername>${stagingFolder}</foldername>
+      <fail_of_folder_exists>N</fail_of_folder_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>342</xloc>
+      <yloc>79</yloc>
+      </entry>
+    <entry>
+      <name>Set Unique Location</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_setUniqueLocation.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>base_dir</name>
+            <stream_name/>
+            <value>${stagingFolder}</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>461</xloc>
+      <yloc>79</yloc>
+      </entry>
+    <entry>
+      <name>Delete Unique Folder 2</name>
+      <description/>
+      <type>DELETE_FOLDERS</type>
+      <arg_from_previous>N</arg_from_previous>
+      <success_condition>success_if_no_errors</success_condition>
+      <limit_folders>10</limit_folders>
+      <fields>
+        <field>
+          <name>${unique_location}</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>526</xloc>
+      <yloc>255</yloc>
+      </entry>
+    <entry>
+      <name>Delete filenames from result 2</name>
+      <description/>
+      <type>DELETE_RESULT_FILENAMES</type>
+      <foldername/>
+      <specify_wildcard>N</specify_wildcard>
+      <wildcard/>
+      <wildcardexclude/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>398</xloc>
+      <yloc>251</yloc>
+      </entry>
+    <entry>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1026</xloc>
+      <yloc>365</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>${stubFile} exists</from>
-      <to>Unzip file</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>${stubFile} exists</from>
       <to>Abort job</to>
@@ -226,12 +329,57 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Unzip file</from>
-      <to>Abort job</to>
+      <from>_configPluginFiles</from>
+      <to>Copy Files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy Files</from>
+      <to>Delete Unique Folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete Unique Folder</from>
+      <to>Delete filenames from result</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Create Staging Folder</from>
+      <to>Set Unique Location</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>${stubFile} exists</from>
+      <to>Create Staging Folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set Unique Location</from>
+      <to>Unzip file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -244,31 +392,58 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>_configPluginFiles</from>
-      <to>Copy Files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Copy Files</from>
-      <to>Delete Unzip Folder</to>
+      <to>Delete Unique Folder 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete Unzip Folder</from>
-      <to>Delete filenames from result</to>
+      <from>_configPluginFiles</from>
+      <to>Delete Unique Folder 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Unzip file</from>
+      <to>Delete Unique Folder 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete Unique Folder 2</from>
+      <to>Delete filenames from result 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Delete filenames from result 2</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Delete filenames from result</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

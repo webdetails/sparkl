@@ -117,21 +117,6 @@
             <description/>
         </parameter>
         <parameter>
-            <name>stubFile</name>
-            <default_value>${stubFolder}&#47;plugin.zip</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>stubFolder</name>
-            <default_value>${cpk.plugin.dir}&#47;stub</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>unzipFolder</name>
-            <default_value>${cpk.solution.system.dir}&#47;.${pluginId}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>version</name>
             <default_value>${NULL_VALUE}</default_value>
             <description/>
