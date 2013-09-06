@@ -49,44 +49,6 @@
     ]
    },
    {
-    "id": "8407aab8-d4b8-5366-99fe-943b40d8d7f5",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "headerCell",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDheader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "d14dbfb3-3de4-9d77-d149-451e35585865",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -119,7 +81,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDhidden newElement",
+      "value": "WDhidden newElement sparklCell",
       "type": "String"
      }
     ]
@@ -303,7 +265,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell tabElement",
+      "value": "tabElement sparklCell",
       "type": "String"
      }
     ]
@@ -712,7 +674,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell contentElement tab1 WDhidden",
+      "value": "sparklCell contentElement tab1 WDhidden",
       "type": "String"
      }
     ]
@@ -1093,7 +1055,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "firstTabMetadataDataCell",
+      "value": "aboutCell",
       "type": "Id"
      },
      {
@@ -1118,7 +1080,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell contentElement tab1 WDhidden",
+      "value": "sparklCell contentElement tab1 WDhidden",
       "type": "String"
      }
     ]
@@ -1204,7 +1166,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "aboutPluginDataSubcell",
+      "value": "aboutPluginSubcell",
       "type": "Id"
      },
      {
@@ -1229,7 +1191,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell",
+      "value": "",
       "type": "String"
      }
     ]
@@ -1315,7 +1277,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "aboutPluginDataSubcellHeader",
+      "value": "aboutPluginHeader",
       "type": "Id"
      },
      {
@@ -1386,7 +1348,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "aboutPluginDataSubcellBody",
+      "value": "aboutPluginBody",
       "type": "Id"
      },
      {
@@ -3215,7 +3177,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "aboutAuthorDataSubcell",
+      "value": "aboutAuthorSubcell",
       "type": "Id"
      },
      {
@@ -3326,7 +3288,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "aboutAuthorDataSubcellHeader",
+      "value": "aboutAuthorHeader",
       "type": "Id"
      },
      {
@@ -3397,7 +3359,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "aboutAuthorDataSubcellBody",
+      "value": "aboutAuthorBody",
       "type": "Id"
      },
      {
@@ -4807,7 +4769,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell contentElement tab2 WDhidden",
+      "value": "sparklCell contentElement tab2 WDhidden",
       "type": "String"
      }
     ]
@@ -4886,44 +4848,6 @@
     ]
    },
    {
-    "id": "cb3bc621-4d05-70e1-7a78-31b33c08ed99",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "2833af94-7b74-fb78-5510-99f3c5a525fa",
-    "properties": [
-     {
-      "name": "name",
-      "value": "secondTabGlobalOptionsHeader",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDfilterCellHeader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "6b234f53-b0ee-12fb-5143-0df6f1c5effc",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -4956,7 +4880,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCellBody tabGlobalOpt",
+      "value": "tabGlobalOpt",
       "type": "String"
      }
     ]
@@ -5261,7 +5185,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "secondTabElementsDataCell",
+      "value": "elementsCell",
       "type": "Id"
      },
      {
@@ -5286,7 +5210,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell elementsCell contentElement tab2 WDhidden",
+      "value": "sparklCell contentElement tab2 WDhidden",
       "type": "String"
      }
     ]
@@ -5372,7 +5296,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "buildTabElementsDataCellHeader",
+      "value": "elementsCellHeader",
       "type": "Id"
      },
      {
@@ -5443,7 +5367,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "buildTabElementsDataCellBody",
+      "value": "elementsCellBody",
       "type": "Id"
      },
      {
@@ -5585,159 +5509,10 @@
     ]
    },
    {
-    "id": "ab6275ad-a020-a40e-a1c9-dd311c3df4b7",
+    "id": "3c181d77-e29e-2d9f-00d4-4cbe1b2953df",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "2538d753-8265-14a0-ff1a-40e1caae211c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "aba2ec4f-774c-3d3d-553b-ec05167bed8f",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ab6275ad-a020-a40e-a1c9-dd311c3df4b7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "elementsOptionsCellHeader",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDfilterCellHeader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ab6275ad-a020-a40e-a1c9-dd311c3df4b7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "elementsOptionsCellBody",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDfilterCellBody",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "eb2170fb-13f5-1202-4fc4-74df9bad63fc",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
     "properties": [
      {
       "name": "name",
@@ -5801,16 +5576,16 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptText",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "d151c553-8598-521b-fa5b-55f8f0e1c598",
+    "id": "84951180-b7b6-7727-7ef0-fb6900e4260b",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "eb2170fb-13f5-1202-4fc4-74df9bad63fc",
+    "parent": "3c181d77-e29e-2d9f-00d4-4cbe1b2953df",
     "properties": [
      {
       "name": "name",
@@ -5840,10 +5615,10 @@
     ]
    },
    {
-    "id": "52a30e05-14c3-91a3-dc13-1ee1cd581a0c",
+    "id": "d82e7254-8e70-1990-02fd-fac48f42bb54",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
+    "parent": "2538d753-8265-14a0-ff1a-40e1caae211c",
     "properties": [
      {
       "name": "name",
@@ -5907,16 +5682,16 @@
      },
      {
       "name": "cssClass",
-      "value": "multiButtonContainer",
+      "value": "multiButton",
       "type": "String"
      }
     ]
    },
    {
-    "id": "b465c326-6314-7486-b764-0f31531e2ca8",
+    "id": "84514650-bf65-fe5b-dd51-f1a38f0821bd",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
+    "parent": "2538d753-8265-14a0-ff1a-40e1caae211c",
     "properties": [
      {
       "name": "name",
@@ -5980,16 +5755,16 @@
      },
      {
       "name": "cssClass",
-      "value": "globalOptText",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "79b65813-0597-98ba-4602-6bc1bb9260ce",
+    "id": "87b7f2fb-0848-770c-0e2a-016a28a75f74",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "b465c326-6314-7486-b764-0f31531e2ca8",
+    "parent": "84514650-bf65-fe5b-dd51-f1a38f0821bd",
     "properties": [
      {
       "name": "name",
@@ -5998,7 +5773,7 @@
      },
      {
       "name": "html",
-      "value": "Sort by ",
+      "value": "Sort By ",
       "type": "Html"
      },
      {
@@ -6019,10 +5794,10 @@
     ]
    },
    {
-    "id": "21fa4ee7-1b95-d544-ea32-f5f059b48cef",
+    "id": "4ea0abe1-470b-6b2d-d905-6d0578e13c85",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
+    "parent": "2538d753-8265-14a0-ff1a-40e1caae211c",
     "properties": [
      {
       "name": "name",
@@ -6092,14 +5867,14 @@
     ]
    },
    {
-    "id": "28419940-9ad3-06bd-7b03-19f878090c23",
+    "id": "53932156-39ad-08b8-8fa9-d0771ec51ab6",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
+    "parent": "2538d753-8265-14a0-ff1a-40e1caae211c",
     "properties": [
      {
       "name": "name",
-      "value": "search",
+      "value": "searchObj",
       "type": "Id"
      },
      {
@@ -6165,10 +5940,10 @@
     ]
    },
    {
-    "id": "d2ef2d6f-93af-3f14-a032-d68e06b4fc4c",
+    "id": "d8392ed0-8b96-b1ac-c51d-afa0733a44e0",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "1a7df6e5-db44-38d5-4340-d0e79b7cb5de",
+    "parent": "2538d753-8265-14a0-ff1a-40e1caae211c",
     "properties": [
      {
       "name": "name",
@@ -6177,7 +5952,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "1",
       "type": "Integer"
      },
      {
@@ -9617,7 +9392,7 @@
      },
      {
       "name": "buttonStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {

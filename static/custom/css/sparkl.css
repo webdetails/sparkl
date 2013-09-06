@@ -117,36 +117,9 @@ div.container *{
 	text-indent: 20px;
 }
 
-/* Filter Cells header */
-
-
-/* Filter Cells body */
-.WDfilterCellBody.tabsContainer {
-  display: inline;
-  background: #EBEDEE;
-}
-
-.WDfilterCell {
-  margin-bottom: 34px;
-}
-.elementsCell .WDfilterCell {
-  margin-top: 6px;
-  margin-bottom: 15px;
-}
-.WDfilterCellBody,
-> * {
-  height:34px;
-}
-
-.WDfilterCellBody.tabsContainer,
-.WDfilterCellBody.tabsContainer > * {
-  height:60px;
-}
-
-
 /********** FILTER ELEMENTS *********/
 
-.WDfilterCellBody.tabsContainer button {
+.tabsContainer button {
   background: #41B8EE;
   color: #D1EEFC;
   font-size: 25px;
@@ -157,19 +130,19 @@ div.container *{
   border-bottom: 10px solid #EBEDEE;
   border-left: none;
 }
-.WDfilterCellBody.tabsContainer button:hover{
+.tabsContainer button:hover{
   background: #2C9AE3;
   color:#FFFFFF;  
 } 
 
-.WDfilterCellBody.tabsContainer .closeButton button {
+.tabsContainer .closeButton button {
   background: url('../img/x.png') 5px 0px no-repeat #41B8EE;
 }
-.WDfilterCellBody.tabsContainer .closeButton button:hover {
+.tabsContainer .closeButton button:hover {
   background: url('../img/x.png') -30px 0px no-repeat #2C9AE3;
 }
 
-.WDfilterCellBody.tabsContainer .pentaho-toggle-button button {
+.tabsContainer .pentaho-toggle-button button {
   width: 30%;
   background: #EBEDEE;
   text-align: center;
@@ -186,7 +159,7 @@ div.container *{
   float: left;
 }
 
-.WDfilterCellBody.tabsContainer .pentaho-toggle-button-down button {
+.tabsContainer .pentaho-toggle-button-down button {
   color: #41B8EE;
   background: #FFFFFF;
   border-bottom: 10px solid #FFFFFF;  
@@ -222,22 +195,6 @@ div.container *{
   position: relative;
 }
 
-/*** temporary back button until iframes get into sparkl ***/
-.tempBackButtonPH{
-  position: absolute;
-  height: 100%;
-  background: #EBEDEE;
-  width: 35px;
-  top: 0px;
-  right: 0px;
-}
-.WDfilterCellBody.tabsContainer .tempBackButtonPH button{
-  background: url("../img/remove_image.png") no-repeat scroll left center #EBEDEE;
-  height: 100%;
-}
-.WDfilterCellBody.tabsContainer .tempBackButtonPH:hover button{
-  background: url("../img/remove_image.png") no-repeat scroll right center #EBEDEE;
-}
 /**********************/
 
 .tabsContainer .globalOptButtonPH *{
@@ -287,12 +244,11 @@ div.container *{
 /********** FILTER ELEMENTS *********/
 
 
-.refreshButtonContainer,
-.refreshButtonContainer > div {
+.refreshButton {
   height:34px;
   float:right;
 }
-.refreshButtonContainer button{
+.refreshButton button{
   height:100%;
   width:34px;
   background: url('../img/refresh.png') -1px 50% no-repeat #EBEDEE;
@@ -302,7 +258,7 @@ div.container *{
   -ms-border-radius:2px;
   border-radius:2px;
 }
-.refreshButtonContainer button:hover{
+.refreshButton button:hover{
   background-position: -36px 50%;
   background-color:#EBEDEE;
 }
@@ -361,42 +317,6 @@ div.container *{
 /* =============================================================================
    4. DATA CELLS
    ========================================================================== */
-
-/* Data Cells */
-.WDdataCell {
-  position: relative;
-  margin-bottom:20px;
-}  
-.WDdataCell.lastCell {
-  margin-bottom:0px;
-}
-
-/* Data Cells header*/
-.WDdataCellHeader{
-  height: 20px;
-  color: #878685;
-  font-size: 18px;
-  text-align: left;
-  position: relative;
-}
-.WDdataCellHeader .title{
-  position: absolute;
-  bottom: 0px;
-  cursor:default;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.WDdataCellHeader.underline {
-  height:23px;
-  padding-bottom:3px;
-  margin-bottom:7px;
-  border-bottom: 1px solid #41B8EE;
-}
-
 
 
 .formRow-1 {
@@ -697,36 +617,40 @@ div.container *{
  .newElementContainer .formCheckbox{
   width: 14%;
 }
- .newElementContainer .elementAdmin{
-  width: 14%;
-  padding-right:0px;
-  padding-left:0px;
-}
- .newElementContainer .elementAdmin *{
-  height: 100%;
-  float: left;
-}
- .newElementContainer .elementAddButton{
-  width: 50px;
-  float: right;
-}
 .newElementContainer  .formButton button{
   background: url('../img/add_new.png') no-repeat center center #25BAED;
 }
 .newElementContainer .formButton button:hover{
   background-color: #009DE2;
 }
- .newElementContainer .elementAdmin .labelPH{
+
+
+
+
+.newElementContainer .elementAdmin{
+  width: 14%;
+  padding-right:0px;
+  padding-left:0px;
+}
+.newElementContainer .elementAdmin *{
+  height: 100%;
+  float: left;
+}
+.newElementContainer .elementAddButton{
+  width: 50px;
+  float: right;
+}
+.newElementContainer .elementAdmin .labelPH{
   line-height: 38px;
 }
- .newElementContainer .elementAdmin .buttonPH{
+.newElementContainer .elementAdmin .buttonPH{
   width: 30px;
 }
- .newElementContainer .elementAdmin .buttonPH button{
+.newElementContainer .elementAdmin .buttonPH button{
   background: url("../img/checkbox.png") no-repeat 0px center #EBEDEE;
   height: 100%;
 }
- .newElementContainer .elementAdmin .buttonPH button.checked{
+.newElementContainer .elementAdmin .buttonPH button.checked{
   background: url("../img/checkbox_checked.png") no-repeat 0px center #EBEDEE;
 }
 .newElementContainer .elementName .formPH{
@@ -734,6 +658,10 @@ div.container *{
   display: inline;
   float: left;
 }
+
+
+
+
 
 
 .newElementContainer .formSelector .chzn-container{
@@ -874,6 +802,9 @@ button {
   width: 100%;
   height: 100%;
 }
+
+
+
 
 /**** Chosen Select *****/
 /* All Chosen elements */
