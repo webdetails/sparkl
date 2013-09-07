@@ -1,41 +1,6 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	/*margin: 0;
-	padding: 0;
-	border: 0;*/
-	font-family: Open Sans, Arial, sans-serif;
-}
-
-.WDhidden{
-	display: none;
-}
-
-.fool,
-.fool *{
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.fool{
-	width: 950px;
-	display: inline;
-	padding: 30px 30px;
-}
-
 /***** Plugin Card *****/
 
-.sparklPluginCardContainer{
+.sparklPluginCardContainer {
 	width: 230px;
 	height: 230px;
 	background: #EAEDEE;
@@ -49,19 +14,19 @@ time, mark, audio, video {
 .sparklPluginCardContainer.lastInRow{
 	margin-right: 0px;
 }
-.descriptionExpandCont{
+.sparklPluginCardContainer .descriptionExpandCont{
 	height: 195px;
 	overflow: hidden;
 	position: relative;
 }
-.cardHeader{
+.sparklPluginCardContainer .cardHeader{
 	height: 70px;
 	border:solid 10px #EAEDEE;
 	font-size: 18px;
 	position:relative;
 	overflow:hidden;
 }
-.cardHeader .name{
+.sparklPluginCardContainer .cardHeader .name{
 	cursor:default;
 	height: 50%;
 	padding-bottom: 5px;
@@ -73,11 +38,11 @@ time, mark, audio, video {
   -o-transition: all 1.5s ease-in-out;
   transition: all 1.5s ease-in-out;
 }
-.cardHeader.overflow .name:hover {
+.sparklPluginCardContainer .cardHeader.overflow .name:hover {
 	text-indent:-50%;
 }
-.cardHeader .ellipsis,
-.cardHeader.overflow .nameContainer:hover .ellipsis.right{
+.sparklPluginCardContainer .cardHeader .ellipsis,
+.sparklPluginCardContainer .cardHeader.overflow .nameContainer:hover .ellipsis.right{
 	overflow: hidden;
 	width:0px;
 	line-height: 12px;
@@ -92,39 +57,39 @@ time, mark, audio, video {
   transition: all 1.5s ease-in-out;
   text-align:center;
 }
-.cardHeader .ellipsis.right{
+.sparklPluginCardContainer .cardHeader .ellipsis.right{
 	right:0px;
 }
-.cardHeader .ellipsis.left{
+.sparklPluginCardContainer .cardHeader .ellipsis.left{
 	left:0px;
 }
-.cardHeader.overflow .nameContainer .ellipsis.right,
-.cardHeader.overflow .nameContainer:hover .ellipsis.left{
+.sparklPluginCardContainer .cardHeader.overflow .nameContainer .ellipsis.right,
+.sparklPluginCardContainer .cardHeader.overflow .nameContainer:hover .ellipsis.left{
 	width:20px;
 }
-.cardHeader .id{
+.sparklPluginCardContainer .cardHeader .id{
 	height: 50%;
 	color: #878685;
 	font-weight: normal;
 	font-size: 15px;
 }
 
-.cardBody{
+.sparklPluginCardContainer .cardBody{
 	height:125px;
 	position: relative;
 }
-.imageContainer{
+.sparklPluginCardContainer .imageContainer{
 	height: 100%;
 }
-.imageContainer:hover{
+.sparklPluginCardContainer .imageContainer:hover{
 	cursor: pointer;
 }
-.imageContainer .image{
+.sparklPluginCardContainer .imageContainer .image{
 	width: 100%;
 	height: 100%;
 }
 
-.imageContainer .imagePlaceholder{
+.sparklPluginCardContainer .imageContainer .imagePlaceholder{
 	max-width:100%;
 	max-height:100%;
 	bottom:0px;
@@ -137,7 +102,7 @@ time, mark, audio, video {
 	line-height:1;
 }
 
-.descriptionContainer{
+.sparklPluginCardContainer .descriptionContainer{
 	height: 0px;
 	bottom: 0px;
 	padding: 10px 10px;
@@ -151,31 +116,31 @@ time, mark, audio, video {
 	-o-transition:      all 500ms ease-out;
 	transition:         all 500ms ease-out;
 }
-.cardBody:hover .descriptionContainer{
+.sparklPluginCardContainer .cardBody:hover .descriptionContainer{
 	height: 195px;
 	bottom: 195px;
 }
-.descriptionContainer .header{
+.sparklPluginCardContainer .descriptionContainer .header{
 	height: 25px;
 	color: #0398DA;
 }
 
-.descriptionContainer .body{
+.sparklPluginCardContainer .descriptionContainer .body{
 	height: 140px;
 	color: #EAEDEF;
 }
-.cardFooter{
+.sparklPluginCardContainer .cardFooter{
 	padding: 5px 5px 5px 10px;
 	font-size: 15px;
 	height: 35px;
 
 }
-.cardFooter .versionLabel{
+.sparklPluginCardContainer .cardFooter .versionLabel{
 	float: left;
 	height: 100%;
 	line-height: 25px;
 }
-.optsExternCont{
+.sparklPluginCardContainer .optsExternCont{
 	height: 0px;
 	bottom: 0px;
 	position: relative;
@@ -191,12 +156,12 @@ time, mark, audio, video {
 	left: 0px;
 	cursor: pointer;	
 }*/
-.optsExternCont.expanded{
+.sparklPluginCardContainer .optsExternCont.expanded{
 	height: 160px;
 	bottom: 160px;
 	left: 0px;
 }
-.optionsIcon{
+.sparklPluginCardContainer .optionsIcon{
   background: url('img/options.png') no-repeat 0px center transparent;
 	float: right;
 	height: 29px;
@@ -207,21 +172,21 @@ time, mark, audio, video {
 	right: 5px;
 	z-index:200;
 }
-.optionsIcon:hover{
+.sparklPluginCardContainer .optionsIcon:hover{
   	background-position: -24px center;
   	cursor: pointer;
 }
-.optsExternCont.expanded .optionsIcon{
+.sparklPluginCardContainer .optsExternCont.expanded .optionsIcon{
   	background-position: -24px center;
 }
-.optionsContainer{
+.sparklPluginCardContainer .optionsContainer{
 	height: 100%;
 	position: relative;
 	background: #25BAED;
 
 	z-index: 100;
 }
-.optionCont{
+.sparklPluginCardContainer .optionCont{
 	height: 40px;
 	padding: 0px 10px 0px 10px;
 	background: #25BAED;
@@ -230,16 +195,18 @@ time, mark, audio, video {
 	font-size: 15px;
 	line-height: 40px;
 }
-.optionCont:hover{
+.sparklPluginCardContainer .optionCont:hover{
 	background: #009DE2;
 	color: #F2FAFD;
 	cursor: pointer;
 }
-.optionCont.noAction:hover{
+.sparklPluginCardContainer .optionCont.noAction:hover{
 	background: #25BAED;
 	color: #CEEEFC;
 	cursor: default;
 }
+
+
 
 /***** New Plugin Card *****/
 
@@ -268,6 +235,13 @@ time, mark, audio, video {
 	height: 110px;
 	line-height: 110px;
 	font-size: 20px;
+	color: #CEEEFC;
+	background: #25BAED;
+	cursor: pointer;
+}
+.sparklNewPluginCardContainer .optionCont:hover {
+	background: #009DE2;
+	color: #F2FAFD;
 }
 .sparklNewPluginCardContainer .optionCont .label{
 	color: #FFFFFF;
