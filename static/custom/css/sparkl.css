@@ -117,32 +117,27 @@ div.container *{
 	text-indent: 20px;
 }
 
-/********** FILTER ELEMENTS *********/
 
-.tabsContainer button {
-  background: #41B8EE;
-  color: #D1EEFC;
-  font-size: 25px;
-  font-weight: lighter;
-  width: 100%;
-  border-top: 15px solid #EBEDEE;
-  border-right: none;
-  border-bottom: 10px solid #EBEDEE;
-  border-left: none;
-}
-.tabsContainer button:hover{
-  background: #2C9AE3;
-  color:#FFFFFF;  
-} 
 
-.tabsContainer .closeButton button {
-  background: url('../img/x.png') 5px 0px no-repeat #41B8EE;
-}
-.tabsContainer .closeButton button:hover {
-  background: url('../img/x.png') -30px 0px no-repeat #2C9AE3;
+
+
+
+.tabsCell {
+  height:55px;
+  padding: 10px 5px 0px 5px;
+  background: #EBEDEE;
 }
 
-.tabsContainer .pentaho-toggle-button button {
+
+.multiButton {
+  height:100%;
+}
+.multiButton > div {
+  height:100%;
+}
+
+.tabsCell .pentaho-toggle-button button {
+  border:none;
   width: 30%;
   background: #EBEDEE;
   text-align: center;
@@ -150,19 +145,13 @@ div.container *{
   font-weight: lighter;
   color: #878685;
   vertical-align: baseline;
-  border-top: 15px solid #EBEDEE;
-  border-right: none;
-  border-bottom: 10px solid #EBEDEE;
-  border-left: none;
-  margin-right: 10px;
   box-shadow: none;
   float: left;
 }
 
-.tabsContainer .pentaho-toggle-button-down button {
+.tabsCell .pentaho-toggle-button-down button {
   color: #41B8EE;
   background: #FFFFFF;
-  border-bottom: 10px solid #FFFFFF;  
 }
 
 
@@ -188,7 +177,7 @@ div.container *{
   display: inline;
   background: #EBEDEE;
 }
-.globalOptButtonPH.tabsContainer{
+.globalOptButtonPH.tabsCell{
   width: 100%;
   float: left;
   display: inline;
@@ -197,7 +186,7 @@ div.container *{
 
 /**********************/
 
-.tabsContainer .globalOptButtonPH *{
+.tabsCell .globalOptButtonPH *{
   height: 100%;
 }
 .tabGlobalOpt .globalOptButtonPH{
@@ -210,8 +199,31 @@ div.container *{
 .tabGlobalOpt .globalOptButtonPH * {
   height: 100%;
 }
-.tabGlobalOpt .globalOptButtonPH button,
-.tabGlobalOpt .globalOptButtonPH a{
+
+
+
+
+
+.actionsCell{
+  height: 35px;
+  line-height: 27px;
+  text-align: right;
+  margin:25px 0px;
+}
+
+.actionsCell .actionButton {
+  height:100%;
+  width:110px;
+  margin-right:10px;
+  display:inline-block;
+}
+.actionsCell .actionButton:last-child{
+  margin-right:0px;
+}
+
+.actionButton button,
+.actionButton a{
+  height:100%;
   width: 100%;
   background: #EBEDEE;
   text-align: center;
@@ -221,20 +233,18 @@ div.container *{
   vertical-align: baseline;
   border: 4px solid #EBEDEE;
   box-shadow: none;
-  float: left;
   margin:0px;
-  text-decoration:none;
   padding:0px;
-  line-height: 26px;
+  text-decoration:none;
+  float:left;
 }
-.tabGlobalOpt .globalOptButtonPH button:hover,
-.tabGlobalOpt .globalOptButtonPH a:hover{
-  background: #41B8EE;
-  color: #FFFFFF;
+.actionButton button:hover,
+.actionButton a:hover{
+  background:#41B8EE;
+  color:#FFFFFF;
 }
-.tabGlobalOpt .globalOptButtonPH.WDhidden{
-  display: none;
-}
+
+
 
 
 
@@ -257,6 +267,7 @@ div.container *{
   -o-border-radius:2px;
   -ms-border-radius:2px;
   border-radius:2px;
+  float:right;
 }
 .refreshButton button:hover{
   background-position: -36px 50%;
@@ -288,7 +299,7 @@ div.container *{
   height:100%;
   width:30%;
 }
-.tabsContainer .pentaho-toggle-button {
+.tabsCell .pentaho-toggle-button {
   display: inline;
 }
 .pentaho-toggle-button button {
