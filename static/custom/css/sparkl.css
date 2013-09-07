@@ -1,21 +1,7 @@
 /*
- * WDStyleGuide Template CSS  
- *
- * Use this as a template to format the styles of specific projects. Most of 
- * the most commonly used classes/rules are already written here. The file is
- * divided in the following sections:
- *
  *    Color Pallete
  *    Fonts
  *    Style Resets
- *    1. BACKGROUND 
- *    2. HEADER 
- *    3. FILTER CELLS
- *    4. DATA CELLS
- *    5. TABLES
- *    6. CHARTS 
- *    7. SELECTORS AND BUTTONS
- *    8. SITE MAP
  *    Other 
  *    Project Specific Items  
  *
@@ -80,7 +66,7 @@ border: 0;
 
 
 /* =============================================================================
-   1. BACKGROUND 
+   BACKGROUND 
    ========================================================================== */
 
 /* Window Background */
@@ -102,24 +88,46 @@ div.container *{
 
 
 /* =============================================================================
-   2. HEADER 
+   HEADER 
    ========================================================================== */
+
+
+
+
 
 
 /* =============================================================================
-   3. FILTER CELLS
+   CELLS
    ========================================================================== */
 
-.globalOptText{
-	line-height: 40px;
-	text-align: middle;
-	color: #878685; 
-	text-indent: 20px;
+.sparklCell {
+  margin-bottom:25px;
 }
 
 
-
-
+/* Data Cells header*/
+.sparklCellHeader{
+  height: 20px;
+  color: #878685;
+  font-size: 18px;
+  text-align: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+.sparklCellHeader.underline {
+  border-bottom: 1px solid #41B8EE;
+}
+.sparklCellHeader .title{
+  position: absolute;
+  bottom: 0px;
+  cursor:default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 
 .tabsCell {
@@ -129,26 +137,14 @@ div.container *{
 }
 
 
-.multiButton {
-  height:100%;
+.tabsCell .pentaho-toggle-button {
+  width:30%;
 }
-.multiButton > div {
-  height:100%;
-}
-
 .tabsCell .pentaho-toggle-button button {
-  border:none;
-  width: 30%;
   background: #EBEDEE;
-  text-align: center;
   font-size: 25px;
-  font-weight: lighter;
   color: #878685;
-  vertical-align: baseline;
-  box-shadow: none;
-  float: left;
 }
-
 .tabsCell .pentaho-toggle-button-down button {
   color: #41B8EE;
   background: #FFFFFF;
@@ -158,48 +154,11 @@ div.container *{
 
 
 
-/*Email Info Popup*/
-.emailInfoPopupCont{
-  width: 500px;
-}
 
 
-
-
-/********/
-.globalOptButtonPH{
-  padding-left: 10px;
-  background: #EBEDEE;
+.pluginsListContainer {
+  margin-right:-10px;
 }
-.globalOptButtonPH.multiButton{
-  width: 75%;
-  float: left;
-  display: inline;
-  background: #EBEDEE;
-}
-.globalOptButtonPH.tabsCell{
-  width: 100%;
-  float: left;
-  display: inline;
-  position: relative;
-}
-
-/**********************/
-
-.tabsCell .globalOptButtonPH *{
-  height: 100%;
-}
-.tabGlobalOpt .globalOptButtonPH{
-  display: inline;
-  float: right;
-  width: 15%;
-  padding-left: 0px;
-  margin-left: 10px;
-}
-.tabGlobalOpt .globalOptButtonPH * {
-  height: 100%;
-}
-
 
 
 
@@ -208,7 +167,6 @@ div.container *{
   height: 35px;
   line-height: 27px;
   text-align: right;
-  margin:25px 0px;
 }
 
 .actionsCell .actionButton {
@@ -251,11 +209,33 @@ div.container *{
 
 
 
-/********** FILTER ELEMENTS *********/
 
+
+
+
+.multiButton {
+  height:100%;
+}
+.multiButton > div {
+  height:100%;
+}
+
+
+
+
+.filtersContainer {
+  height: 35px;
+  line-height:27px;
+  color: #878685; 
+  margin-bottom: 15px;
+}
+
+.filtersContainer > div {
+  height: 100%;
+}
 
 .refreshButton {
-  height:34px;
+  height:100%;
   float:right;
 }
 .refreshButton button{
@@ -274,35 +254,13 @@ div.container *{
   background-color:#EBEDEE;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Multi Button */
-.multiButtonContainer {
-  height:100%;
-}
-.multiButtonContainer > div{
-  height:100%;
-}
-.pentaho-toggle-button {
+.filtersContainer .pentaho-toggle-button {
   display: inline-block;
   margin-right: 5px;
   height:100%;
   width:30%;
 }
-.tabsCell .pentaho-toggle-button {
-  display: inline;
-}
-.pentaho-toggle-button button {
+.filtersContainer .pentaho-toggle-button button {
   width: 100%;
   height:100%;
   background: #EBEDEE;
@@ -316,17 +274,30 @@ div.container *{
   float: left;
   margin:0px;
 }
-.pentaho-toggle-button-down button {
+.boxshadow .filtersContainer .pentaho-toggle-button button{
+  border: 4px solid #EBEDEE;
+}
+.filtersContainer .pentaho-toggle-button-down button {
   background: #41B8EE;
   color: #FFFFFF;
+}
+
+.filtersContainer .filterLabel{
+  padding:4px;
+  text-align: right;
 }
 
 
 
 
 
+
+
+
+
+
 /* =============================================================================
-   4. DATA CELLS
+   About Plugin Forms UI / Metadata Forms UI
    ========================================================================== */
 
 
@@ -431,6 +402,17 @@ div.container *{
 
 
 
+
+
+
+
+
+
+
+/* =============================================================================
+   New Plugin UI
+   ========================================================================== */
+
 .newPluginContainer{
   height: 55px;
   max-height: 55px;
@@ -485,9 +467,6 @@ div.container *{
   display:inline-block;
 }
 
-
-
-
 .createNewPluginButton {
 /*  background: #EAEDEE;
   color: #8C8B8B;
@@ -529,17 +508,12 @@ div.container *{
 
 
 
- .pluginsListContainer {
-  margin-right:-10px;
-}
 
 
 
-
-
-
-
-
+/* =============================================================================
+   New Element UI
+   ========================================================================== */
 
 .newElementContainer {
   padding:6px;
@@ -562,10 +536,7 @@ div.container *{
 .newElementContainer.inactive > .positive {
   display:none;
 }
-
-
-
-.newElementContainer .formButton button {
+.newElementContainer .formButton button{
   width:100%;
   height:100%;
   margin:0;
@@ -577,9 +548,22 @@ div.container *{
   cursor:pointer;
   background: url('../img/add_new.png') 50% 50% no-repeat #25BAED;
 }
-.newElementContainer .formButton button:hover {
+.newElementContainer.notEmpty .formButton button:hover {
   background-color: #009DE2 ;
 }
+
+.newElementContainer.empty .formButton.addElement button,
+.newElementContainer.notEmpty.invalid .formButton.addElement button,
+.newElementContainer.notEmpty.reserved .formButton.addElement button,
+.newElementContainer.notEmpty.inUse .formButton.addElement button,
+.newElementContainer.empty .formButton.addElement button:hover,
+.newElementContainer.notEmpty.invalid .formButton.addElement button:hover,
+.newElementContainer.notEmpty.reserved .formButton.addElement button:hover,
+.newElementContainer.notEmpty.inUse .formButton.addElement button:hover {
+  cursor:default;
+  background-color: #EAEDEE;
+}
+
 
 .newElementContainer .toggleNewElement.formButton {
   width:100%;
@@ -587,19 +571,11 @@ div.container *{
 }
 .newElementContainer .addElement.formButton {
   width:38px;
+  float:right;
 }
 .newElementContainer .toggleNewElement.formButton button {
    background-position: 99% 50%;   
 }
-.newElementContainer .addElement.formButton button {
-
-}
-
-
-
-
-
-
 
 .newElementContainer .formInput{
   width: 30%;
@@ -616,17 +592,72 @@ div.container *{
   padding-left: 10px;
   margin: 0px;
   cursor: pointer;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #FFFFFF;
 }
+.newElementContainer.notEmpty  .formInput input{
+  background-image: url('../img/validate_correct.png');
+}
+.newElementContainer.inUse.notEmpty  .formInput input,
+.newElementContainer.invalid.notEmpty  .formInput input,
+.newElementContainer.reserved.notEmpty .formInput input{
+  background-image: url('../img/validate_wrong.png') ;
+}
+
+
+.newElementContainer.inUse.notEmpty .toggleValidation,
+.newElementContainer.invalid.notEmpty .toggleValidation,
+.newElementContainer.reserved.notEmpty .toggleValidation{
+  display:none;
+}
+
+
+.newElementContainer .validityLabels{
+  width:64%;
+  display:none;
+  line-height: 38px;
+}
+.newElementContainer .validityLabels > div{
+  width:100%;
+  height:100%;
+}
+.newElementContainer.inUse.notEmpty .validityLabels,
+.newElementContainer.invalid.notEmpty .validityLabels,
+.newElementContainer.reserved.notEmpty .validityLabels{
+  display:inline-block;
+}
+
+.newElementContainer .validityFeedback {
+  width: 100%;
+  height:100%;
+  background: #C31116;
+  color: #FFFFFF;
+  display:none;
+  padding-left:10px;
+}
+.newElementContainer.inUse.notEmpty .validityFeedback.inUseLabel{
+  display:inline-block;
+}
+.newElementContainer.invalid.notEmpty .validityFeedback.invalidLabel{
+  display:inline-block;
+}
+.newElementContainer.reserved.notEmpty .validityFeedback.reservedLabel{
+  display:inline-block;
+}
+
+
+
+
+
+
+
+
+
+
 .newElementContainer .formInput input:focus{
   cursor: auto;
 }
-
-
 .newElementContainer .formSelector{
   width: 23%;
-}
- .newElementContainer .formCheckbox{
-  width: 14%;
 }
 .newElementContainer  .formButton button{
   background: url('../img/add_new.png') no-repeat center center #25BAED;
@@ -634,47 +665,32 @@ div.container *{
 .newElementContainer .formButton button:hover{
   background-color: #009DE2;
 }
-
-
-
-
-.newElementContainer .elementAdmin{
-  width: 14%;
-  padding-right:0px;
-  padding-left:0px;
-}
-.newElementContainer .elementAdmin *{
-  height: 100%;
-  float: left;
-}
-.newElementContainer .elementAddButton{
-  width: 50px;
-  float: right;
-}
-.newElementContainer .elementAdmin .labelPH{
+.newElementContainer .formLabel {
   line-height: 38px;
+  padding-left:20px;
 }
-.newElementContainer .elementAdmin .buttonPH{
-  width: 30px;
+.newElementContainer .formCheckbox{
+  padding-top:6px;
 }
-.newElementContainer .elementAdmin .buttonPH button{
-  background: url("../img/checkbox.png") no-repeat 0px center #EBEDEE;
-  height: 100%;
+.newElementContainer .formCheckbox button {
+  background:#FFFFFF;
+  border: solid 1px #D0CFCF;
+  height:26px;
+  width:26px;
+  position: relative;
 }
-.newElementContainer .elementAdmin .buttonPH button.checked{
-  background: url("../img/checkbox_checked.png") no-repeat 0px center #EBEDEE;
+.newElementContainer .formCheckbox .checkMark{
+  height:18px;
+  width:23px;
+  border:none;
+  position:absolute;
+  background: no-repeat center center transparent;
+  top: 3px;
+  left: 5px;
 }
-.newElementContainer .elementName .formPH{
-  width: 100%;
-  display: inline;
-  float: left;
+.newElementContainer .formCheckbox.checked .checkMark{
+  background-image: url("../img/checked.png");
 }
-
-
-
-
-
-
 .newElementContainer .formSelector .chzn-container{
   /*min-width: 188px;*/
   min-width: 100%;
@@ -704,8 +720,15 @@ div.container *{
 
 
 
+
+
+
+
+
+
+
 /* =============================================================================
-   5. TABLES
+   TABLES
    ========================================================================== */
 
  .dataTables_wrapper {
@@ -798,13 +821,23 @@ tbody td.actionButtons .numButtons-4 button{
 }
 
 
-/* =============================================================================
-   6. CHARTS 
-   ========================================================================== */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =============================================================================
-   7. SELECTORS AND BUTTONS 
+   Elements Baseline
    ========================================================================== */
 
 button {
@@ -813,6 +846,28 @@ button {
   width: 100%;
   height: 100%;
 }
+
+.pentaho-toggle-button {
+  height:100%;
+  display: inline-block;
+}
+.pentaho-toggle-button button {
+  width: 100%;
+  height:100%;
+  text-align: center;
+  font-weight: lighter;
+  vertical-align: baseline;
+  float: left;
+  cursor: pointer;
+  padding:0;
+}
+.boxshadow .pentaho-toggle-button button {
+  box-shadow: none;
+  border:none;
+}
+
+
+
 
 
 
@@ -910,14 +965,20 @@ button {
 
 
 
-/* =============================================================================
-   8. SITE MAP
-   ========================================================================== */
+
+
+
+
 
 
 /* =============================================================================
    Other 
    ========================================================================== */
+
+
+.container .blockElement img {
+  display:none;
+}
 
 
 .popupComponent{
@@ -959,6 +1020,10 @@ button {
 }
 
 
+/*Email Info Popup*/
+.emailInfoPopupCont{
+  width: 500px;
+}
 
 
 
@@ -1061,7 +1126,5 @@ input.editBox:focus {
 
 
 
-/* =============================================================================
-   Project Specific Items 
-   ========================================================================== */
+
 

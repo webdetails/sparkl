@@ -4,11 +4,14 @@ var sparkl = {};
 
   _settings = {
     expressions: {
-      element: /^[A-Za-z][A-Za-z\d]+$/,
-      plugin: /^[A-Za-z][A-Za-z\d]+$/, 
+      element: /^[A-Za-z][A-Za-z\d]*$/,
+      plugin: /^[A-Za-z][A-Za-z\d]*$/, 
       image: /\.(png|jpg)$/,
       zip: /\.(zip)$/
-    }
+    },
+    reservedNames: [
+      'status', 'refresh', 'reload'
+    ]
   };
 
   myself.getSettings = function (){

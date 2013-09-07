@@ -855,7 +855,7 @@
      },
      {
       "name": "cssClass",
-      "value": "underline",
+      "value": "underline sparklCellHeader",
       "type": "String"
      }
     ]
@@ -2866,7 +2866,7 @@
      },
      {
       "name": "cssClass",
-      "value": "underline",
+      "value": "underline sparklCellHeader",
       "type": "String"
      }
     ]
@@ -4433,7 +4433,7 @@
      },
      {
       "name": "cssClass",
-      "value": "underline",
+      "value": "underline sparklCellHeader",
       "type": "String"
      }
     ]
@@ -4590,7 +4590,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "elementsOptionsCell",
+      "value": "elementFiltersCell",
       "type": "Id"
      },
      {
@@ -4615,7 +4615,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDfilterCell",
+      "value": "filtersContainer",
       "type": "String"
      }
     ]
@@ -4688,7 +4688,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "filterLabel",
       "type": "String"
      }
     ]
@@ -4867,7 +4867,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "filterLabel",
       "type": "String"
      }
     ]
@@ -5309,6 +5309,435 @@
     ]
    },
    {
+    "id": "d54769a8-42e7-dcee-22db-a0d4a574a1d1",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "validityFeedbackLabels",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "positive validityLabels",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a5582390-9dd9-b202-d6a2-47f4152c65c2",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d54769a8-42e7-dcee-22db-a0d4a574a1d1",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "194fb3d2-117c-361f-fbf0-e9f5fb650137",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "a5582390-9dd9-b202-d6a2-47f4152c65c2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "inUseLabel",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "validityFeedback inUseLabel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "aa2bf0e6-5ce6-0053-9dc2-85d9bc15c276",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "194fb3d2-117c-361f-fbf0-e9f5fb650137",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<b>Name in use</b>, please use another. ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "be872289-02ab-7f98-6506-b12b09dcaa63",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "a5582390-9dd9-b202-d6a2-47f4152c65c2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "reservedLabel",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "validityFeedback reservedLabel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c8aa1058-9017-48be-65e1-7c53df59ee18",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "be872289-02ab-7f98-6506-b12b09dcaa63",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<b>Reserved name</b>, please use another. ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "166a07ab-01d4-977f-38a5-51ec89f05f1b",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "a5582390-9dd9-b202-d6a2-47f4152c65c2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "invalidLabel",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "validityFeedback invalidLabel",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f7104317-3102-8006-1957-3e0f7e39af9f",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "166a07ab-01d4-977f-38a5-51ec89f05f1b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<b>Invalid name</b>, please use another. ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "9766c66f-be84-0e7c-ce51-56ba6e7b5423",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -5376,7 +5805,7 @@
      },
      {
       "name": "cssClass",
-      "value": "formSelector type positive",
+      "value": "formSelector type positive toggleValidation",
       "type": "String"
      }
     ]
@@ -5449,20 +5878,20 @@
      },
      {
       "name": "cssClass",
-      "value": "formSelector template positive",
+      "value": "formSelector template positive toggleValidation",
       "type": "String"
      }
     ]
    },
    {
-    "id": "39f34ec4-c3d8-0fa8-7b40-3e71aa537251",
+    "id": "32e18d99-8078-7943-23d4-5d7305ba3aef",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
     "properties": [
      {
       "name": "name",
-      "value": "newElementAdminCheckboxObj",
+      "value": "newElementAdminLabel",
       "type": "Id"
      },
      {
@@ -5522,200 +5951,16 @@
      },
      {
       "name": "cssClass",
-      "value": "formCheckbox WDhidden positive",
+      "value": "positive formLabel toggleValidation",
       "type": "String"
      }
     ]
    },
    {
-    "id": "3e1ca532-33e9-401c-4521-da558d2ccfbd",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementAdminButtonContainer",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "formCheckbox positive",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "bfd9478e-1574-cbe9-1a91-836ae79058df",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "3e1ca532-33e9-401c-4521-da558d2ccfbd",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "fe9d2427-0633-3383-d7d9-77efc0551fc5",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "bfd9478e-1574-cbe9-1a91-836ae79058df",
-    "properties": [
-     {
-      "name": "name",
-      "value": "adminLabel",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "labelPH",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "fdef5c65-46dd-e901-34e3-714fbd497235",
+    "id": "2d4e8632-4393-451f-3188-a7d36261d52e",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "fe9d2427-0633-3383-d7d9-77efc0551fc5",
+    "parent": "32e18d99-8078-7943-23d4-5d7305ba3aef",
     "properties": [
      {
       "name": "name",
@@ -5745,10 +5990,10 @@
     ]
    },
    {
-    "id": "452f5675-d944-62d1-05bd-4d39a6397e8b",
+    "id": "aab92cfe-0d41-0d82-b30a-eb07ac4aa797",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "bfd9478e-1574-cbe9-1a91-836ae79058df",
+    "parent": "e2ce9e32-05b0-cd5a-3e89-915e60da0f8f",
     "properties": [
      {
       "name": "name",
@@ -5812,7 +6057,7 @@
      },
      {
       "name": "cssClass",
-      "value": "buttonPH",
+      "value": "formCheckbox positive toggleValidation",
       "type": "String"
      }
     ]
@@ -8021,7 +8266,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button'),\n        precNewElementOpts = Dashboards.getParameterValue(\"${p:newElementParam}\"),\n        newAdminStatus = !(precNewElementOpts.admin);\n        \n    /* update newElementParam */\n    Dashboards.setParameter(\"${p:newElementParam}\",$.extend(precNewElementOpts,{\"admin\":newAdminStatus}));\n\n    /* update button CSS*/\n    $btn.removeClass(\"checked\");\n    if( newAdminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
+      "value": "function f(){\n    var $ph =$('#' + this.htmlObject),\n        newOpts = Dashboards.getParameterValue(\"${p:newElementParam}\");\n        \n    $ph.toggleClass('checked', !newOpts.admin);    \n        \n    // We're getting the object directly, atm. Dashboards.setParameter does nothing\n    // unless Dashboards.getParameterValue starts returning a clone.\n    newOpts.admin = !newOpts.admin;\n    Dashboards.setParameter('${p:newElementParam}', newOpts);\n\n}",
       "type": "JavaScript"
      },
      {
@@ -8056,7 +8301,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $btn =$('#' + this.htmlObject).find('button').empty();\n    var adminStatus = Dashboards.getParameterValue(\"${p:newElementParam}\").admin;\n    if( adminStatus === true ){\n        $btn.addClass(\"checked\");\n    }\n}",
+      "value": "function f(){\n    var $ph =$('#' + this.htmlObject),\n        adminStatus = Dashboards.getParameterValue(\"${p:newElementParam}\").admin;\n    $ph.toggleClass(\"checked\", !!adminStatus);\n    $ph.find('button').empty().append( $('<div/>').addClass('checkMark') );\n}",
       "type": "JavaScript"
      },
      {
@@ -8099,7 +8344,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}'),\n        toggleButton = Dashboards.getComponentByName('${c:newElementToggle}'),\n        newElementType = (newElementOpts.type === \"Dashboard\") ? 'dashboard' : 'endpoint',\n        endpoint = 'createElement';\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName, 'element')) ){\n        dialog.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        dialog.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        toggleButton.custom.toggle();\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            dialog.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: sparkl.addRefreshWrapper( pluginId,\n            sparkl.addRefreshWrapper( 'pentaho-cdf-dd', successCallback) ),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
+      "value": "function f(){\n    \n    var $newContainer = $('#' + this.htmlObject).parents('.newElementContainer'); \n    if ( !$newContainer.hasClass('activeButton') ){\n        return false\n    }\n    \n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}'),\n        toggleButton = Dashboards.getComponentByName('${c:newElementToggle}'),\n        newElementType = (newElementOpts.type === \"Dashboard\") ? 'dashboard' : 'endpoint',\n        endpoint = 'createElement';\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName, 'element')) ){\n        dialog.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        dialog.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        toggleButton.custom.toggle();\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            dialog.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: sparkl.addRefreshWrapper( pluginId,\n            sparkl.addRefreshWrapper( 'pentaho-cdf-dd', successCallback) ),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -8560,7 +8805,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n\n    var $container = $('#'+this.htmlObject);\n    \n    // Add label, validationIcon and validationLabels\n    $('<span/>').text('First define your Plugin ID').prependTo( $container );\n    $('<div/>').addClass('validityIcon').appendTo( $container );\n    $('<div/>').html('<b>ID in use</b>, please use another.')\n        .addClass('validityFeedback inUseLabel')\n        .appendTo( $container );\n    $('<div/>').html('<b>Invalid ID</b>, please use another.')\n        .addClass('validityFeedback invalidLabel')\n        .appendTo( $container );\n    \n    // Add input placeholder\n    var $input = $container.find('input');\n    $input.attr('placeholder','myPluginId');\n       \n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject);\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $container\n            .toggleClass('inUse', inUse_p)\n            .toggleClass('invalid', invalid_p)\n            .toggleClass('notEmpty', !isEmpty_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
+      "value": "function f(){\n\n    var $container = $('#'+this.htmlObject);\n    \n    // Add label, validationIcon and validationLabels\n    $('<span/>').text('First define your Plugin ID').prependTo( $container );\n    $('<div/>').html('<b>ID in use</b>, please use another.')\n        .addClass('validityFeedback inUseLabel')\n        .appendTo( $container );\n    $('<div/>').html('<b>Invalid ID</b>, please use another.')\n        .addClass('validityFeedback invalidLabel')\n        .appendTo( $container );\n    \n    // Add input placeholder\n    var $input = $container.find('input');\n    $input.attr('placeholder','myPluginId');\n       \n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject);\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $container\n            .toggleClass('inUse', inUse_p)\n            .toggleClass('invalid', invalid_p)\n            .toggleClass('notEmpty', !isEmpty_p);\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
@@ -9599,7 +9844,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','Insert Name');\n}",
+      "value": "function f(){\n\n    var $container = $('#'+this.htmlObject).parents('.newElementContainer');\n    \n    // Add input placeholder\n    var $input = $container.find('input');\n    $input.attr('placeholder','Insert Name');\n       \n    var callback = function(){\n        var val = $(this).val(),\n            used = Dashboards.getParameterValue('${p:elementsNamesListParam}'),\n            reserved = sparkl.getSettings('reservedNames'),\n            inUse_p = _.contains( used , val),\n            reserved_p = _.contains( reserved, val),\n            invalid_p = !sparkl.isValidName(val, 'element'),\n            isEmpty_p = _.isEmpty(val);\n        $container\n            .toggleClass('inUse', inUse_p)\n            .toggleClass('reserved', reserved_p)\n            .toggleClass('invalid', invalid_p)\n            .toggleClass('notEmpty', !isEmpty_p)\n            .toggleClass('empty', isEmpty_p)\n            .toggleClass('activeButton', !inUse_p && !reserved_p && !invalid_p && !isEmpty_p);\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
