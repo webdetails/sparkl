@@ -783,6 +783,8 @@ div.container *{
 
  .dataTables_wrapper {
   min-height: 1px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
  .dataTables_wrapper .dataTables_filter{
   display: none;
@@ -1104,7 +1106,7 @@ input.editBox:focus {
 
 
 
-.optionsIcon{
+.sparklPluginCardContainer .optionsIcon{
   background-image: url('../img/options.png');
 }
 
