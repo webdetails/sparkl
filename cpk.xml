@@ -17,6 +17,6 @@
     <info>
         <description>Sparkl - Create and explore pentaho plugins.</description>
         <name>Sparkl</name>
-        <CPK_version>TRUNK</CPK_version>
+        <CPK_version>1</CPK_version>
     </info>
 </cpk> 
