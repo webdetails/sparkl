@@ -154,8 +154,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>355</xloc>
-      <yloc>211</yloc>
+      <xloc>359</xloc>
+      <yloc>210</yloc>
       </entry>
     <entry>
       <name>Checks if ${pluginDir} exist</name>
@@ -190,6 +190,38 @@
       <nr>0</nr>
       <xloc>617</xloc>
       <yloc>69</yloc>
+      </entry>
+    <entry>
+      <name>_setLibsVersion</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_setLibsVersion.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>938</xloc>
+      <yloc>72</yloc>
       </entry>
   </entries>
   <hops>
@@ -241,6 +273,15 @@
     <hop>
       <from>Delete old libs</from>
       <to>Copy jar files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy jar files</from>
+      <to>_setLibsVersion</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
