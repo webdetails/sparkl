@@ -2351,7 +2351,7 @@
      },
      {
       "name": "cssClass",
-      "value": "formContainer",
+      "value": "updateLibs updated",
       "type": "String"
      }
     ]
@@ -2407,7 +2407,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -2439,6 +2439,44 @@
       "name": "columnBigBorder",
       "value": "false",
       "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "formContainer",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ccc1aa24-7a4a-0732-d211-02b2c7e1522c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "ba7f9ae8-2f26-2785-e98b-0e514eaf3553",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
      },
      {
       "name": "height",
@@ -2468,10 +2506,10 @@
     ]
    },
    {
-    "id": "5619bde5-fcef-05c1-4934-fc297aa7ace5",
+    "id": "0926f77a-3d2c-94d4-9db5-a440a838cf56",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "ba7f9ae8-2f26-2785-e98b-0e514eaf3553",
+    "parent": "ccc1aa24-7a4a-0732-d211-02b2c7e1522c",
     "properties": [
      {
       "name": "name",
@@ -2480,219 +2518,7 @@
      },
      {
       "name": "html",
-      "value": "Libraries ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8cf2b8eb-8c1e-e768-be1e-9ef8b8fbf55e",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "e7b98701-a03a-5fc8-eb2c-09c998375ebb",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "formLabel updated status",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "512bb39d-b337-e119-1cb0-3b0274d8c8c4",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "8cf2b8eb-8c1e-e768-be1e-9ef8b8fbf55e",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "Updated ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "daf5725b-82db-f1dd-1eb0-a248da267bf7",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "e7b98701-a03a-5fc8-eb2c-09c998375ebb",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "formLabel outdated status",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "32130673-648a-d8b8-ab9d-18620c3a9b18",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "daf5725b-82db-f1dd-1eb0-a248da267bf7",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "Outdated ",
+      "value": "Updated Libraries? ",
       "type": "Html"
      },
      {
@@ -2725,7 +2551,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -2780,7 +2606,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "actionButton",
       "type": "String"
      }
     ]
@@ -8501,7 +8327,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:pluginMetadataParam}']",
       "type": "Listeners"
      },
      {
@@ -8531,12 +8357,12 @@
      },
      {
       "name": "executeAtStart",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function (){\n    var sparklVersion = Dashboards.getParameterValue('${p:sparklVersionParam}'),\n        pluginVersion =  Dashboards.getParameterValue('${p:pluginMetadataParam}')['CPK_version'],\n        updated_p = sparkl.isUpdated( sparklVersion, pluginVersion);\n        \n    $('#' + this.htmlObject).parents('.updateLibs')\n        .toggleClass('updated', updated_p)\n        .toggleClass('outdated' , !updated_p );\n\n}",
       "type": "JavaScript"
      },
      {
@@ -9056,11 +8882,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
       "type": "Array"
@@ -9091,9 +8912,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "parameters",
+      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -9126,6 +8947,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -9141,14 +8967,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -9266,64 +9092,6 @@
      {
       "name": "executeAtStart",
       "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "220dd91f-74ca-1f66-448c-2abbfd47e2fa",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "librariesUpdate",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:librariesUpdateObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
       "type": "Boolean"
      },
      {

@@ -51,6 +51,11 @@ var sparkl = {};
   }  
 
 
+  myself.isUpdated = function ( srcVersion , pluginVersion ){
+    return ( srcVersion == pluginVersion );
+  }
+
+
   myself.isJobError = function(json){
     return (json && json.result === false );
   }   

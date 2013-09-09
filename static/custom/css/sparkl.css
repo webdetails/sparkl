@@ -402,6 +402,56 @@ div.container *{
 
 
 
+/*.formContainer .formButton{
+  width:150px;
+  height:100%;
+  float:right;
+}
+.formContainer .formButton button {
+  height:100%;
+  width:100%;
+  color:#FFFFFF;
+  background:#25BAED;
+}
+.formContainer .formButton button:hover{
+  background-color: #009DE2;
+}*/
+
+
+.updateLibs {
+  height:100%;
+}
+.updateLibs > div {
+  height:100%;
+}
+
+.updateLibs .formContainer:hover {
+  background-color:#EBEDEE;
+  color: #878685;
+}
+.updateLibs .formContainer .formLabel{
+  width:150px;
+}
+.updateLibs .formContainer {
+  background-repeat: no-repeat;
+  background-position: 140px 50%;
+}
+.updateLibs.updated .formContainer{
+  background-image: url('../img/validate_correct.png');
+}
+.updateLibs.outdated .formContainer{
+  background-image: url('../img/validate_wrong.png') ;
+}
+
+
+.updateLibs .actionButton{
+  height:100%;
+}
+.updateLibs.updated .actionButton {
+  display:none;
+}
+
+
 
 
 
