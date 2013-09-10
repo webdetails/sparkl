@@ -8055,7 +8055,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    return $('<span/>').text(\"Upload Image\");    \n}",
+      "value": "function f(){\n    var hasUpload_p = sparkl.hasUploaderComponent();\n    $('#' + this.htmlObject).parents('.formContainer')\n        .toggleClass('active', hasUpload_p)\n        .toggleClass('inactive' , !hasUpload_p);\n    return $('<span/>').text( hasUpload_p ? \"Upload Image\" : \"No Image\" );    \n}",
       "type": "JavaScript"
      },
      {
@@ -8085,7 +8085,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = Dashboards.getWebAppPath() + '/content/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\n    \n    var successCallback = function (){\n        $ph.empty().append( \n            $('<img/>').attr('src', imgUrl + '?' + (new Date()).getTime() ) );\n        Dashboards.log('File uploaded successfully');\n    }\n            \n    var uploadOpts = {\n        root: 'sparkl/plugins/' + pluginId,\n        success: function (filename){\n            sparkl.runEndpoint( 'sparkl' , endpoint, {\n                params: { pluginId: pluginId, filename: filename },\n                success: successCallback ,\n                error: function(){            \n                    Dashboards.log('Error uploading image for ' + pluginId + '!');\n                }    \n            });  \n        },\n        validationError: function (){\n            dialogComponent.open({\n                message:\"File type not allowed as plugin logo.\",\n                dialogClass:'closeButtonVisible'\n            });\n        },\n        uploadError: function (){\n            dialogComponent.open({\n                message:\"Error uploading plugin logo.\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n    };\n        \n    var trigger = sparkl.addUploadForm.call( this, $ph.parent(), uploadOpts);\n    $ph.click( function (){\n        trigger();   \n    });\n    \n    sparkl.testFile( imgUrl, function() {\n        $ph.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
+      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = Dashboards.getWebAppPath() + '/content/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\n    if ( sparkl.hasUploaderComponent() ){\n        var successCallback = function (){\n            $ph.empty().append( \n                $('<img/>').attr('src', imgUrl + '?' + (new Date()).getTime() ) );\n            Dashboards.log('File uploaded successfully');\n        }\n                \n        var uploadOpts = {\n            root: 'sparkl/plugins/' + pluginId,\n            success: function (filename){\n                sparkl.runEndpoint( 'sparkl' , endpoint, {\n                    params: { pluginId: pluginId, filename: filename },\n                    success: successCallback ,\n                    error: function(){            \n                        Dashboards.log('Error uploading image for ' + pluginId + '!');\n                    }    \n                });  \n            },\n            validationError: function (){\n                dialogComponent.open({\n                    message:\"File type not allowed as plugin logo.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            uploadError: function (){\n                dialogComponent.open({\n                    message:\"Error uploading plugin logo.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            }\n        };\n            \n        var trigger = sparkl.addUploadForm.call( this, $ph.parent(), uploadOpts);\n        $ph.click( function (){\n            trigger();   \n        });\n    } \n    \n    sparkl.testFile( imgUrl, function() {\n        $ph.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -8882,11 +8882,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
       "type": "colTypesCustom"
@@ -8917,9 +8912,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\"Actions\"]",
+      "type": "Array"
      },
      {
       "name": "info",
@@ -8952,6 +8947,11 @@
       "type": "Boolean"
      },
      {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -8967,14 +8967,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
