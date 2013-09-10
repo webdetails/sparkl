@@ -60,6 +60,11 @@ var sparkl = {};
     return (json && json.result === false );
   }   
 
+  myself.hasUploaderComponent = function (){
+    return !(typeof FileUploaderComponent == 'undefined')
+  }
+
+
   myself.createElementsTableEmptyRawData = function() {
     var emptyData = {
       metadata:[
