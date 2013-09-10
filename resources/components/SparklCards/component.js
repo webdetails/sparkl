@@ -84,12 +84,11 @@ wd.cpk = wd.cpk || {};
 
 	namespace.templates.sparklNewPluginCard = Mustache.compile(
 		"   <div class='overlay'></div>" +
-		"		<div class='optionCont first'></div>"+
-		"		<div class='separator'>"+
-		"			<div class='horizontalRectangle'></div>"+
-		"			<div class='verticalRectangle'></div>"+
-		"		</div>"+
-		"		<div class='optionCont second'></div>"
+		"		<div class='optionsContainer'></div>" +
+		"		<div class='separator'>" +
+		"			<div class='horizontalRectangle'></div>" +
+		"			<div class='verticalRectangle'></div>" +
+		"		</div>"
 	);
 
 	namespace.templates.sparklPluginCard = Mustache.compile(
@@ -139,22 +138,33 @@ wd.cpk = wd.cpk || {};
 		},
 		render: function (ph){
 			var that = this;
-	      	that.$el.html( that.template( that.model.toJSON()) );
+	    that.$el.html( that.template( that.model.toJSON()) );
 
-			var $optsContArr = that.$el.find('.optionCont');
+	    var $optsContainer = that.$el.find('.optionsContainer')
+	    _.each ( that.model.get('actionOpts') , function (action,idx) {
+	    	$('<div/>').addClass('optionCont')
+	    		.append( $('<span/>').text(action.label).addClass('label') )
+	    		.click( function (){
+	      		that.model.fireAction( action.id );
+	      	})
+	      	.appendTo( $optsContainer );
+	    });
+	    that.$el.addClass('numActions-' + that.model.get('actionOpts').length);
 
-	      	_.each ( that.model.get('actionOpts') , function (action,idx) {
-				$optsContArr[idx].innerHTML=action.label;
-	      		$($optsContArr[idx]).click( function (){
-	      			that.model.fireAction( action.id );
-	      		});
-	      	});	
 
-	      	if (ph){
-	      		that.$ph = $(ph);
-	      		$(ph).append(that.$el);
-	      	}
+	    this.appendView(ph);
 		},
+
+		appendView: function(ph){
+	    if (ph){
+	    	this.$ph = $(ph);
+	    }
+	    if (this.$ph){
+	    	this.$ph.append(this.$el);
+	    }
+	    return this
+	  }
+
 	});
 
 	namespace.views.sparklPluginCard = Backbone.View.extend({

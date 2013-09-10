@@ -231,23 +231,42 @@
 .sparklNewPluginCardContainer:hover{
 	background: #25BAED;
 }
+.sparklNewPluginCardContainer .optionsContainer {
+	height:100%;
+}
 .sparklNewPluginCardContainer .optionCont{
-	height: 110px;
-	line-height: 110px;
 	font-size: 20px;
 	color: #CEEEFC;
 	background: #25BAED;
 	cursor: pointer;
+	position: relative;
 }
 .sparklNewPluginCardContainer .optionCont:hover {
 	background: #009DE2;
 	color: #F2FAFD;
 }
 .sparklNewPluginCardContainer .optionCont .label{
+	font-size: 20px;
 	color: #FFFFFF;
 	text-align: center;
 	font-size: 20px;
+	height:0;
+	width:100%;
+	line-height: 0;
+	top:50%;
+	left:0px;
+	position: absolute;
 }
+
+.sparklNewPluginCardContainer.numActions-1 .optionCont{
+	height:100%;
+}
+.sparklNewPluginCardContainer.numActions-2 .optionCont{
+	height:50%;
+}
+
+
+
 .sparklNewPluginCardContainer .separator{
 	height: 10px;
 }
@@ -279,9 +298,13 @@
 	-o-transition:      all 500ms ease-out;
 	transition:         all 500ms ease-out;
 }
-.sparklNewPluginCardContainer:hover .separator .horizontalRectangle{
-	width: 230px;
+.sparklNewPluginCardContainer.numActions-2:hover  .separator .horizontalRectangle{
+	width: 100%;
 	left: 0px;
+}
+.sparklNewPluginCardContainer.numActions-1:hover  .separator .horizontalRectangle{
+	width: 0px;
+	left: 50%;
 }
 .sparklNewPluginCardContainer:hover .separator .verticalRectangle{
 	height: 0px;
