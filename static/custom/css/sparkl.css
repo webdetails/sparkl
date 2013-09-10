@@ -327,6 +327,9 @@ div.container *{
   background: #41B8EE;
   color: #FFFFFF;
 }
+.formContainer.inactive:hover {
+  background: #EBEDEE;
+}
 .formContainer.noLabel {
   padding-left:6px;
 }
@@ -384,6 +387,9 @@ div.container *{
   padding: 0px;
   cursor:pointer;
   position:relative;
+}
+.formContainer.inactive .uploadButton{
+  cursor:default;
 }
 .formContainer .uploadButton img {
   width:100%;
