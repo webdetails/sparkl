@@ -8800,7 +8800,7 @@
      },
      {
       "name": "expression",
-      "value": "function(){\n    Dashboards.fireChange(\"updateDataEvent\",0);\n}",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        endpoint = 'refresh';\n        \n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange(\"${p:updateDataEvent}\", $.now());\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var errorCallback = function (json){        \n        dialog.open({\n            message:\"Error reloading \"+pluginId+\" plugin!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.fireChange(\"${p:updateDataEvent}\", $.now());        \n    }\n\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        success: successCallback ,\n        error: errorCallback    \n    }); \n}\n",
       "type": "JavaScript"
      },
      {
@@ -8882,11 +8882,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
@@ -8917,9 +8912,9 @@
       "type": "Array"
      },
      {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colTypes",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
+      "type": "colTypesCustom"
      },
      {
       "name": "sort",
@@ -8952,6 +8947,11 @@
       "type": "Boolean"
      },
      {
+      "name": "info",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -8967,14 +8967,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
