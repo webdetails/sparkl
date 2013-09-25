@@ -8800,7 +8800,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        endpoint = 'refresh';\n        \n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange(\"${p:updateDataEvent}\", $.now());\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var errorCallback = function (json){        \n        dialog.open({\n            message:\"Error reloading \"+pluginId+\" plugin!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();        \n    }\n\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        success: successCallback ,\n        error: errorCallback,\n        dataType: null\n    }); \n}\n",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        endpoint = 'refresh';\n        \n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange(\"${p:updateTableEvent}\", $.now());\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var errorCallback = function (json){        \n        dialog.open({\n            message:\"Error reloading \"+pluginId+\" plugin!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();        \n    }\n\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        success: successCallback ,\n        error: errorCallback,\n        dataType: null\n    }); \n}\n",
       "type": "JavaScript"
      },
      {
@@ -8873,7 +8873,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateDataEvent}']",
+      "value": "['${p:updateDataEvent}','${p:updateTableEvent}']",
       "type": "Listeners"
      },
      {
@@ -10767,7 +10767,7 @@
     ]
    },
    {
-    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
+    "id": "60e465f5-cf3e-14ee-1e4d-4d40cdb2a3fc",
     "type": "ComponentsParameter",
     "typeDesc": "Parameter",
     "parent": "GENERIC",
@@ -10775,6 +10775,34 @@
      {
       "name": "name",
       "value": "updateDataEvent",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
+    "type": "ComponentsParameter",
+    "typeDesc": "Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "updateTableEvent",
       "type": "Id"
      },
      {
