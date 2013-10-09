@@ -10,8 +10,13 @@
     <directory>&#47;</directory>
     <parameters>
         <parameter>
+            <name>filterRegex</name>
+            <default_value>.*</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>unzipFolder</name>
-            <default_value/>
+            <default_value>&#47;Users&#47;gundisalwa&#47;Desktop&#47;stub</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -73,8 +78,27 @@
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>Replace in string</from><to>Block until Text file input finishes</to><enabled>Y</enabled> </hop>  <hop> <from>Block until Text file input finishes</from><to>Text file output</to><enabled>Y</enabled> </hop>  <hop> <from>Text file input</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Text file input</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Replace in string</from><to>Block until Text file input finishes</to><enabled>Y</enabled> </hop>  <hop> <from>Block until Text file input finishes</from><to>Text file output</to><enabled>Y</enabled> </hop>  <hop> <from>Text file input</from><to>Replace in string</to><enabled>Y</enabled> </hop>  <hop> <from>Filter files</from><to>Delete filtered files</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Get Filter Regex</to><enabled>Y</enabled> </hop>  <hop> <from>Get Filter Regex</from><to>Filter files</to><enabled>Y</enabled> </hop>  <hop> <from>Filter files</from><to>Remove filter tags from filename</to><enabled>Y</enabled> </hop>  <hop> <from>Remove filter tags from filename</from><to>Rename filter tagged files</to><enabled>Y</enabled> </hop>  <hop> <from>Remove token tags from filename</from><to>Rename tokenized files</to><enabled>Y</enabled> </hop>  <hop> <from>Rename filter tagged files</from><to>Get Tokenized Files</to><enabled>Y</enabled> </hop>  <hop> <from>Rename tokenized files</from><to>Text file input</to><enabled>Y</enabled> </hop>  <hop> <from>Get Tokenized Files</from><to>Remove token tags from filename</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Block until Text file input finishes</name>
     <type>BlockUntilStepsFinish</type>
@@ -93,8 +117,66 @@
       </steps>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
-      <yloc>111</yloc>
+      <xloc>799</xloc>
+      <yloc>300</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Delete filtered files</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <sourcefilenamefield>filename</sourcefilenamefield>
+    <targetfilenamefield/>
+    <operation_type>delete</operation_type>
+    <addresultfilenames>N</addresultfilenames>
+    <overwritetargetfile>N</overwritetargetfile>
+    <createparentfolder>N</createparentfolder>
+    <simulate>N</simulate>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>251</xloc>
+      <yloc>11</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter files</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Remove filter tags from filename</send_true_to>
+<send_false_to>Delete filtered files</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>extension</leftvalue>
+   <function>REGEXP</function>
+   <rightvalue>filterRegex</rightvalue>
+   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>253</xloc>
+      <yloc>113</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -125,14 +207,189 @@
     <file>
       <name>${unzipFolder}</name>
       <filemask>.*</filemask>
-      <exclude_filemask>.*\.(jar|bin|zip|class|png|jpg|jpeg|bmp)</exclude_filemask>
+      <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>Y</include_subfolders>
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>81</xloc>
-      <yloc>111</yloc>
+      <xloc>46</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Filter Regex</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>filterRegex</name>
+        <variable>${filterRegex}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>157</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Tokenized Files</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>filteredFilename</leftvalue>
+   <function>REGEXP</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>.*\.token$</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>72</xloc>
+      <yloc>302</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Remove filter tags from filename</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>filename</in_stream_name>
+        <out_stream_name>filteredFilename</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>\.update$|\.init$</replace_string>
+        <replace_by_string/>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>373</xloc>
+      <yloc>113</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Remove token tags from filename</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>filteredFilename</in_stream_name>
+        <out_stream_name>tokenFilename</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>\.token$</replace_string>
+        <replace_by_string/>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>215</xloc>
+      <yloc>301</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Rename filter tagged files</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <sourcefilenamefield>filename</sourcefilenamefield>
+    <targetfilenamefield>filteredFilename</targetfilenamefield>
+    <operation_type>move</operation_type>
+    <addresultfilenames>N</addresultfilenames>
+    <overwritetargetfile>N</overwritetargetfile>
+    <createparentfolder>N</createparentfolder>
+    <simulate>N</simulate>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>522</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Rename tokenized files</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <sourcefilenamefield>filteredFilename</sourcefilenamefield>
+    <targetfilenamefield>tokenFilename</targetfilenamefield>
+    <operation_type>move</operation_type>
+    <addresultfilenames>N</addresultfilenames>
+    <overwritetargetfile>N</overwritetargetfile>
+    <createparentfolder>N</createparentfolder>
+    <simulate>N</simulate>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>374</xloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -231,8 +488,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>379</xloc>
-      <yloc>111</yloc>
+      <xloc>657</xloc>
+      <yloc>299</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -249,8 +506,8 @@
            </partitioning>
     <accept_filenames>Y</accept_filenames>
     <passing_through_fields>Y</passing_through_fields>
-    <accept_field>filename</accept_field>
-    <accept_stepname>Get File Names</accept_stepname>
+    <accept_field>tokenFilename</accept_field>
+    <accept_stepname>Rename tokenized files</accept_stepname>
     <separator>F&quot;#$FWEFHW)($&#47;&quot;HG)&#47;H&quot;=()GH=)#($F)H$&quot;GBE&#47;SBIUGFSDGIUSE</separator>
     <enclosure/>
     <enclosure_breaks>N</enclosure_breaks>
@@ -328,8 +585,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>230</xloc>
-      <yloc>111</yloc>
+      <xloc>504</xloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -355,7 +612,7 @@
     <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>Y</fileNameInField>
-    <fileNameField>filename</fileNameField>
+    <fileNameField>tokenFilename</fileNameField>
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>path&#47;short_filename.extension</name>
@@ -391,8 +648,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>677</xloc>
-      <yloc>111</yloc>
+      <xloc>977</xloc>
+      <yloc>301</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
