@@ -1,2 +1,4 @@
 override.properties
 .ant-targets-build.xml
+bin/
+dist/
