@@ -43,7 +43,7 @@
     <mkdir dir="${stage.dir}"/>
     <mkdir dir="${stage.dir}/${plugin.name}"/>
     <mkdir dir="${stage.dir}/${plugin.name}"/>
-    <mkdir dir="${dir.dir}"/>
+    <mkdir dir="${dist.dir}"/>
 
 
     <!-- copy the entire plugin to that folder  -->
