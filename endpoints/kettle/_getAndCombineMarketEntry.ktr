@@ -232,6 +232,7 @@ Generates a local market_entry file</note>
        <connector><parent>creation_date</parent><child>creation_date_github</child></connector>
        <connector><parent>CPK_version</parent><child>CPK_version_github</child></connector>
        <connector><parent>dashboard_style</parent><child>dashboard_style_github</child></connector>
+       <connector><parent>version_nodes</parent><child>version_nodes</child></connector>
     </mapping>      </input>
       <output>
       </output>
