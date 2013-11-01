@@ -140,7 +140,7 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>test (github)</from><to>filename exist?</to><enabled>Y</enabled> </hop>  <hop> <from>INPUT</from><to>filename exist?</to><enabled>N</enabled> </hop>  <hop> <from>filename exist?</from><to>exists?</to><enabled>Y</enabled> </hop>  <hop> <from>exists?</from><to>read marketplace.xml as a text file</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_entry_init</from><to>&gt; market_entry_end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_entry_init</from><to>lines before</to><enabled>Y</enabled> </hop>  <hop> <from>&gt; market_entry_end</from><to>lines after</to><enabled>Y</enabled> </hop>  <hop> <from>read marketplace.xml as a text file</from><to>get ${pluginId}</to><enabled>Y</enabled> </hop>  <hop> <from>get ${pluginId}</from><to>Analytic Query</to><enabled>Y</enabled> </hop>  <hop> <from>Analytic Query</from><to>delimiters</to><enabled>Y</enabled> </hop>  <hop> <from>market_entry init&#47;end</from><to>&lt; market_end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_end</from><to>&lt; market_entry_init</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_end</from><to>last line</to><enabled>Y</enabled> </hop>  <hop> <from>lines before</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>local market_entry.xml</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>lines after</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>last line</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 2</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>delimiters</from><to>Null if...</to><enabled>Y</enabled> </hop>  <hop> <from>Null if...</from><to>market_entry init&#47;end</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 3</from><to>marketplace.xml</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>filename exist?</from><to>exists?</to><enabled>Y</enabled> </hop>  <hop> <from>exists?</from><to>read marketplace.xml as a text file</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_entry_init</from><to>&gt; market_entry_end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_entry_init</from><to>lines before</to><enabled>Y</enabled> </hop>  <hop> <from>&gt; market_entry_end</from><to>lines after</to><enabled>Y</enabled> </hop>  <hop> <from>read marketplace.xml as a text file</from><to>get ${pluginId}</to><enabled>Y</enabled> </hop>  <hop> <from>get ${pluginId}</from><to>Analytic Query</to><enabled>Y</enabled> </hop>  <hop> <from>Analytic Query</from><to>delimiters</to><enabled>Y</enabled> </hop>  <hop> <from>market_entry init&#47;end</from><to>&lt; market_end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_end</from><to>&lt; market_entry_init</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; market_end</from><to>last line</to><enabled>Y</enabled> </hop>  <hop> <from>lines before</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>local market_entry.xml</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>lines after</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>last line</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 2</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>delimiters</from><to>Null if...</to><enabled>Y</enabled> </hop>  <hop> <from>Null if...</from><to>market_entry init&#47;end</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 3</from><to>marketplace.xml</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${marketplace_url} &amp; ${pluginId}</from><to>filename exist?</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>&lt; market_end</name>
     <type>FilterRows</type>
@@ -325,39 +325,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>770</xloc>
       <yloc>471</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>INPUT</name>
-    <type>MappingInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>market_entry_filename</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>pluginId</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-        <select_unspecified>N</select_unspecified>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>37</xloc>
-      <yloc>9</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -639,9 +606,9 @@ if (trim(line) ==&quot;&lt;&#47;market&gt;&quot;) {
     <enclosure/>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
-    <header>Y</header>
-    <nr_headerlines>2</nr_headerlines>
-    <footer>Y</footer>
+    <header>N</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
     <nr_footerlines>1</nr_footerlines>
     <line_wrapped>N</line_wrapped>
     <nr_wraps>1</nr_wraps>
@@ -927,8 +894,8 @@ if (trim(line) ==&quot;&lt;&#47;market&gt;&quot;) {
     </step>
 
   <step>
-    <name>test (github)</name>
-    <type>RowGenerator</type>
+    <name>Get ${marketplace_url} &amp; ${pluginId}</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -939,32 +906,33 @@ if (trim(line) ==&quot;&lt;&#47;market&gt;&quot;) {
     <fields>
       <field>
         <name>market_entry_filename</name>
+        <variable>${marketplace_url}</variable>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>https:&#47;&#47;raw.github.com&#47;pentaho&#47;marketplace-metadata&#47;master&#47;marketplace.xml</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
       <field>
         <name>pluginId</name>
+        <variable>${pluginId}</variable>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>sparkl</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
     </fields>
-    <limit>1</limit>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>127</xloc>
-      <yloc>14</yloc>
+      <xloc>95</xloc>
+      <yloc>18</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
