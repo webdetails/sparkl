@@ -154,7 +154,7 @@ Generates a local market_entry file</note>
            </partitioning>
     <fields>
       <field>
-        <name>marketplace_url</name>
+        <name>market_entry_filename</name>
         <variable>${marketplace_url}</variable>
         <type>String</type>
         <format/>
@@ -271,7 +271,7 @@ Generates a local market_entry file</note>
     <main_path>Y</main_path>
     <rename_on_output>Y</rename_on_output>
     <description/>
-       <connector><parent>marketplace_url</parent><child>market_entry_filename</child></connector>
+       <connector><parent>market_entry_filename</parent><child>market_entry_filename</child></connector>
        <connector><parent>pluginId</parent><child>pluginId</child></connector>
     </mapping>      </input>
       <output>
