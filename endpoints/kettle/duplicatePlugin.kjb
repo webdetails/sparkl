@@ -5,11 +5,11 @@
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
-  <directory>&#47;</directory>
+  <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2013&#47;05&#47;15 12:48:18.595</created_date>
+  <created_date>2013&#x2f;05&#x2f;15 12&#x3a;48&#x3a;18.595</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;05&#47;15 12:48:18.595</modified_date>
+  <modified_date>2013&#x2f;05&#x2f;15 12&#x3a;48&#x3a;18.595</modified_date>
     <parameters>
         <parameter>
             <name>NULL_VALUE</name>
@@ -18,55 +18,97 @@
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>${cpk.solution.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;cpk.plugin.id&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.system.dir</name>
-            <default_value>${cpk.plugin.dir}&#47;system&#47;</default_value>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;system&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.dir</name>
-            <default_value>${Internal.Job.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.dir&#x7d;&#x2f;system&#x2f;</default_value>
             <description/>
+        </parameter>
+        <parameter>
+            <name>dest_pluginDir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;dest_pluginId&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>dest_pluginId</name>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <description>mandatory</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
-            <default_value>${pluginDir}</default_value>
+            <default_value>&#x24;&#x7b;pluginDir&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>pluginDir</name>
-            <default_value>${cpk.solution.system.dir}&#47;${pluginId}</default_value>
+            <name>source_pluginDir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;source_pluginId&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>pluginId</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description>mandatory</description>
-        </parameter>
-        <parameter>
-            <name>plugin_to_dup_dir</name>
-            <default_value>${cpk.solution.system.dir}&#47;${plugin_to_dup_id}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_to_dup_id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <name>source_pluginId</name>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description>mandatory</description>
         </parameter>
     </parameters>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>baseline_demo</name>
+    <server>&#x24;&#x7b;BIGWIRELESS_MYSQL_HOST&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>BaselineDemo</database>
+    <port>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -110,15 +152,15 @@
       <yloc>30</yloc>
       </entry>
     <entry>
-      <name>Plugin ID not null?</name>
+      <name>Plugin ID not null&#x3f;</name>
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${pluginId}</fieldname>
-      <variablename>${pluginId}</variablename>
+      <fieldname>&#x24;&#x7b;pluginId&#x7d;</fieldname>
+      <variablename>&#x24;&#x7b;dest_pluginId&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
-      <comparevalue>${NULL_VALUE}</comparevalue>
+      <comparevalue>&#x24;&#x7b;NULL_VALUE&#x7d;</comparevalue>
       <minvalue/>
       <maxvalue/>
       <successcondition>different</successcondition>
@@ -135,7 +177,7 @@
       <name>Abort job</name>
       <description/>
       <type>ABORT</type>
-      <message>invalid parameters &#47;&#47; ${pluginDir} &#47;&#47; plugin_to_dup_dir</message>
+      <message>invalid parameters &#x2f;&#x2f; &#x24;&#x7b;pluginDir&#x7d; &#x2f;&#x2f; plugin_to_dup_dir</message>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -143,13 +185,13 @@
       <yloc>220</yloc>
       </entry>
     <entry>
-      <name>Checks if ${pluginDir} exist</name>
+      <name>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>${pluginDir}</name>
+          <name>&#x24;&#x7b;dest_pluginDir&#x7d;</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -159,15 +201,15 @@
       <yloc>202</yloc>
       </entry>
     <entry>
-      <name>Plugin to duplicate ID not null?</name>
+      <name>Plugin to duplicate ID not null&#x3f;</name>
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
-      <fieldname>${pluginId}</fieldname>
-      <variablename>${plugin_to_dup_id}</variablename>
+      <fieldname>&#x24;&#x7b;pluginId&#x7d;</fieldname>
+      <variablename>&#x24;&#x7b;source_pluginId&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
-      <comparevalue>${NULL_VALUE}</comparevalue>
+      <comparevalue>&#x24;&#x7b;NULL_VALUE&#x7d;</comparevalue>
       <minvalue/>
       <maxvalue/>
       <successcondition>different</successcondition>
@@ -181,13 +223,13 @@
       <yloc>290</yloc>
       </entry>
     <entry>
-      <name>Checks if ${plugin_to_dupdir} exist</name>
+      <name>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>${plugin_to_dup_dir}</name>
+          <name>&#x24;&#x7b;source_pluginDir&#x7d;</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -210,9 +252,9 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>${plugin_to_dup_dir}</source_filefolder>
-          <destination_filefolder>${pluginDir}</destination_filefolder>
-          <wildcard>.*</wildcard>
+          <source_filefolder>&#x24;&#x7b;source_pluginDir&#x7d;</source_filefolder>
+          <destination_filefolder>&#x24;&#x7b;dest_pluginDir&#x7d;</destination_filefolder>
+          <wildcard>.&#x2a;</wildcard>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -222,44 +264,12 @@
       <yloc>379</yloc>
       </entry>
     <entry>
-      <name>updatePluginXML</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_updatePluginXML.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>585</xloc>
-      <yloc>379</yloc>
-      </entry>
-    <entry>
       <name>_fixDashboard_cdfde</name>
       <description/>
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_fixDashboard_cdfde.kjb</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_fixDashboard_cdfde.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -278,16 +288,16 @@
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
             <parameter>            <name>dest_pluginDir</name>
             <stream_name/>
-            <value>${pluginDir}</value>
+            <value>&#x24;&#x7b;pluginDir&#x7d;</value>
             </parameter>            <parameter>            <name>dest_pluginId</name>
             <stream_name/>
-            <value>${pluginId}</value>
+            <value>&#x24;&#x7b;pluginId&#x7d;</value>
             </parameter>            <parameter>            <name>source_pluginDir</name>
             <stream_name/>
-            <value>${plugin_to_dup_dir}</value>
+            <value>&#x24;&#x7b;plugin_to_dup_dir&#x7d;</value>
             </parameter>            <parameter>            <name>source_pluginId</name>
             <stream_name/>
-            <value>${plugin_to_dup_id}</value>
+            <value>&#x24;&#x7b;plugin_to_dup_id&#x7d;</value>
             </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -295,11 +305,47 @@
       <xloc>756</xloc>
       <yloc>379</yloc>
       </entry>
+    <entry>
+      <name>updateMetadata &#x28;2&#x29;</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;updateMetadata.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>pluginDir</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;dest_pluginDir&#x7d;</value>
+            </parameter>            <parameter>            <name>pluginId</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;dest_pluginId&#x7d;</value>
+            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>593</xloc>
+      <yloc>378</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>Plugin ID not null?</to>
+      <to>Plugin ID not null&#x3f;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -307,7 +353,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Plugin ID not null?</from>
+      <from>Plugin ID not null&#x3f;</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -316,8 +362,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Plugin ID not null?</from>
-      <to>Checks if ${pluginDir} exist</to>
+      <from>Plugin ID not null&#x3f;</from>
+      <to>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -325,7 +371,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${pluginDir} exist</from>
+      <from>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -334,8 +380,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${pluginDir} exist</from>
-      <to>Plugin to duplicate ID not null?</to>
+      <from>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</from>
+      <to>Plugin to duplicate ID not null&#x3f;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -343,8 +389,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Plugin to duplicate ID not null?</from>
-      <to>Checks if ${plugin_to_dupdir} exist</to>
+      <from>Plugin to duplicate ID not null&#x3f;</from>
+      <to>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -352,7 +398,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Plugin to duplicate ID not null?</from>
+      <from>Plugin to duplicate ID not null&#x3f;</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -361,7 +407,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_to_dupdir} exist</from>
+      <from>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -370,7 +416,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if ${plugin_to_dupdir} exist</from>
+      <from>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</from>
       <to>Copy plugin folder</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -380,21 +426,21 @@
     </hop>
     <hop>
       <from>Copy plugin folder</from>
-      <to>updatePluginXML</to>
+      <to>updateMetadata &#x28;2&#x29;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>updatePluginXML</from>
+      <from>updateMetadata &#x28;2&#x29;</from>
       <to>_fixDashboard_cdfde</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
