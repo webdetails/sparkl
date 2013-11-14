@@ -5,11 +5,11 @@
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
-  <directory>&#47;</directory>
+  <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2013&#47;07&#47;11 09:13:54.566</created_date>
+  <created_date>2013&#x2f;07&#x2f;11 09&#x3a;13&#x3a;54.566</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;07&#47;11 09:13:54.566</modified_date>
+  <modified_date>2013&#x2f;07&#x2f;11 09&#x3a;13&#x3a;54.566</modified_date>
     <parameters>
         <parameter>
             <name>dest_pluginDir</name>
@@ -32,6 +32,48 @@
             <description/>
         </parameter>
     </parameters>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>baseline_demo</name>
+    <server>&#x24;&#x7b;BIGWIRELESS_MYSQL_HOST&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>BaselineDemo</database>
+    <port>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -80,7 +122,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_fixDashboard_cdfde_buildlist.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_fixDashboard_cdfde_buildlist.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -99,6 +141,7 @@
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
@@ -112,7 +155,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;_saveDashboardAs_cdfde.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_saveDashboardAs_cdfde.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>Y</params_from_previous>
@@ -131,6 +174,7 @@
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
             <parameter>            <name>dest_dash</name>
             <stream_name>dest_dash</stream_name>
@@ -143,6 +187,20 @@
       <nr>0</nr>
       <xloc>447</xloc>
       <yloc>104</yloc>
+      </entry>
+    <entry>
+      <name>Delete filenames from result</name>
+      <description/>
+      <type>DELETE_RESULT_FILENAMES</type>
+      <foldername/>
+      <specify_wildcard>N</specify_wildcard>
+      <wildcard/>
+      <wildcardexclude/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>643</xloc>
+      <yloc>102</yloc>
       </entry>
   </entries>
   <hops>
@@ -158,6 +216,15 @@
     <hop>
       <from>_fixDashboard_cdfde_buildlist</from>
       <to>_saveDashboardAs_cdfde</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>_saveDashboardAs_cdfde</from>
+      <to>Delete filenames from result</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -188,12 +255,7 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>NAMED PARAMETERS:
-
-source_pluginDir
-source_pluginId
-dest_pluginDir
-dest_pluginId</note>
+      <note>NAMED PARAMETERS&#x3a;&#xa;&#xa;source_pluginDir&#xa;source_pluginId&#xa;dest_pluginDir&#xa;dest_pluginId</note>
       <xloc>96</xloc>
       <yloc>205</yloc>
       <width>149</width>
