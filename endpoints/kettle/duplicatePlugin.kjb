@@ -32,9 +32,24 @@
             <description/>
         </parameter>
         <parameter>
-            <name>cpk.solution.system.dir</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <name>cpk.solution.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.solution.system.dir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.dir&#x7d;&#x2f;system&#x2f;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>dest_pluginDir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;dest_pluginId&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>dest_pluginId</name>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <description>mandatory</description>
         </parameter>
         <parameter>
             <name>instalationFolder</name>
@@ -42,26 +57,58 @@
             <description/>
         </parameter>
         <parameter>
-            <name>pluginDir</name>
-            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;pluginId&#x7d;</default_value>
+            <name>source_pluginDir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;source_pluginId&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>pluginId</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
-            <description>mandatory</description>
-        </parameter>
-        <parameter>
-            <name>plugin_to_dup_dir</name>
-            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;plugin_to_dup_id&#x7d;</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_to_dup_id</name>
+            <name>source_pluginId</name>
             <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description>mandatory</description>
         </parameter>
     </parameters>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>baseline_demo</name>
+    <server>&#x24;&#x7b;BIGWIRELESS_MYSQL_HOST&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>BaselineDemo</database>
+    <port>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -70,7 +117,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>START_JOB_ENTRY</id><enabled>N</enabled><name>START_JOB_ENTRY</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></job-log-table>
+<field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></job-log-table>
 <jobentry-log-table><connection/>
 <schema/>
 <table/>
@@ -110,7 +157,7 @@
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
       <fieldname>&#x24;&#x7b;pluginId&#x7d;</fieldname>
-      <variablename>&#x24;&#x7b;pluginId&#x7d;</variablename>
+      <variablename>&#x24;&#x7b;dest_pluginId&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>&#x24;&#x7b;NULL_VALUE&#x7d;</comparevalue>
@@ -138,13 +185,13 @@
       <yloc>220</yloc>
       </entry>
     <entry>
-      <name>Checks if &#x24;&#x7b;pluginDir&#x7d; exist</name>
+      <name>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>&#x24;&#x7b;pluginDir&#x7d;</name>
+          <name>&#x24;&#x7b;dest_pluginDir&#x7d;</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -159,7 +206,7 @@
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
       <fieldname>&#x24;&#x7b;pluginId&#x7d;</fieldname>
-      <variablename>&#x24;&#x7b;plugin_to_dup_id&#x7d;</variablename>
+      <variablename>&#x24;&#x7b;source_pluginId&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>&#x24;&#x7b;NULL_VALUE&#x7d;</comparevalue>
@@ -176,13 +223,13 @@
       <yloc>290</yloc>
       </entry>
     <entry>
-      <name>Checks if &#x24;&#x7b;plugin_to_dupdir&#x7d; exist</name>
+      <name>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
       <fields>
         <field>
-          <name>&#x24;&#x7b;plugin_to_dup_dir&#x7d;</name>
+          <name>&#x24;&#x7b;source_pluginDir&#x7d;</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -205,8 +252,8 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;plugin_to_dup_dir&#x7d;</source_filefolder>
-          <destination_filefolder>&#x24;&#x7b;pluginDir&#x7d;</destination_filefolder>
+          <source_filefolder>&#x24;&#x7b;source_pluginDir&#x7d;</source_filefolder>
+          <destination_filefolder>&#x24;&#x7b;dest_pluginDir&#x7d;</destination_filefolder>
           <wildcard>.&#x2a;</wildcard>
         </field>
       </fields>
@@ -214,39 +261,6 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>411</xloc>
-      <yloc>379</yloc>
-      </entry>
-    <entry>
-      <name>updatePluginXML</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_updatePluginXML.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>585</xloc>
       <yloc>379</yloc>
       </entry>
     <entry>
@@ -269,10 +283,8 @@
       <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <force_separate_logging>N</force_separate_logging>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
             <parameter>            <name>dest_pluginDir</name>
             <stream_name/>
@@ -292,6 +304,42 @@
       <nr>0</nr>
       <xloc>756</xloc>
       <yloc>379</yloc>
+      </entry>
+    <entry>
+      <name>updateMetadata &#x28;2&#x29;</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;updateMetadata.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>pluginDir</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;dest_pluginDir&#x7d;</value>
+            </parameter>            <parameter>            <name>pluginId</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;dest_pluginId&#x7d;</value>
+            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>593</xloc>
+      <yloc>378</yloc>
       </entry>
   </entries>
   <hops>
@@ -315,7 +363,7 @@
     </hop>
     <hop>
       <from>Plugin ID not null&#x3f;</from>
-      <to>Checks if &#x24;&#x7b;pluginDir&#x7d; exist</to>
+      <to>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -323,7 +371,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if &#x24;&#x7b;pluginDir&#x7d; exist</from>
+      <from>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -332,7 +380,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if &#x24;&#x7b;pluginDir&#x7d; exist</from>
+      <from>Checks if &#x24;&#x7b;dest_pluginDir&#x7d; exist</from>
       <to>Plugin to duplicate ID not null&#x3f;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -342,7 +390,7 @@
     </hop>
     <hop>
       <from>Plugin to duplicate ID not null&#x3f;</from>
-      <to>Checks if &#x24;&#x7b;plugin_to_dupdir&#x7d; exist</to>
+      <to>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -359,7 +407,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if &#x24;&#x7b;plugin_to_dupdir&#x7d; exist</from>
+      <from>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -368,7 +416,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if &#x24;&#x7b;plugin_to_dupdir&#x7d; exist</from>
+      <from>Checks if &#x24;&#x7b;source_pluginDir&#x7d; exist</from>
       <to>Copy plugin folder</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -378,24 +426,23 @@
     </hop>
     <hop>
       <from>Copy plugin folder</from>
-      <to>updatePluginXML</to>
+      <to>updateMetadata &#x28;2&#x29;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>updatePluginXML</from>
+      <from>updateMetadata &#x28;2&#x29;</from>
       <to>_fixDashboard_cdfde</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
   </notepads>
-
 </job>
