@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>setPluginMetadata (subtransf.)</name>
+    <name>setPluginMetadata &#x28;subtransf.&#x29;</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>NULL_VALUE</name>
@@ -30,23 +30,18 @@
             <description/>
         </parameter>
         <parameter>
-            <name>cpk.solution.dir</name>
-            <default_value/>
-            <description/>
-        </parameter>
-        <parameter>
             <name>cpk.solution.system.dir</name>
             <default_value/>
             <description/>
         </parameter>
         <parameter>
             <name>pluginDir</name>
-            <default_value>${cpk.solution.system.dir}&#47;${pluginId}</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;pluginId&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>pluginId</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -57,7 +52,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -74,6 +69,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -102,19 +102,17 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;06&#47;07 14:22:01.523</created_date>
+  <created_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;06&#47;07 14:22:01.523</modified_date>
+  <modified_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</modified_date>
   </info>
   <notepads>
     <notepad>
-      <note>I could have used a Prioritize streams step, but I have this error:
-java.lang.NullPointerException
-(kettle 4.3)</note>
+      <note>I could have used a Prioritize streams step, but I have this error&#x3a;&#xa;java.lang.NullPointerException&#xa;&#x28;kettle 4.3&#x29;</note>
       <xloc>624</xloc>
       <yloc>262</yloc>
-      <width>326</width>
-      <heigth>47</heigth>
+      <width>356</width>
+      <heigth>49</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -134,8 +132,8 @@ java.lang.NullPointerException
       <note>Get new values for the Plugin Metadata and build the Metadata structure                                                                                                                                                         </note>
       <xloc>59</xloc>
       <yloc>15</yloc>
-      <width>882</width>
-      <heigth>24</heigth>
+      <width>1064</width>
+      <heigth>25</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -152,11 +150,11 @@ java.lang.NullPointerException
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>Read the cpk.xml and replace the &lt;info&gt; node with the new Metadata                                                                                                                                                               </note>
+      <note>Read the cpk.xml and replace the &#x3c;info&#x3e; node with the new Metadata                                                                                                                                                               </note>
       <xloc>58</xloc>
       <yloc>180</yloc>
-      <width>884</width>
-      <heigth>24</heigth>
+      <width>1073</width>
+      <heigth>25</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -176,8 +174,8 @@ java.lang.NullPointerException
       <note>If there are new fields, just modify the input and Row Normaliser steps</note>
       <xloc>60</xloc>
       <yloc>544</yloc>
-      <width>381</width>
-      <heigth>24</heigth>
+      <width>436</width>
+      <heigth>25</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -195,18 +193,45 @@ java.lang.NullPointerException
     </notepad>
   </notepads>
   <order>
-  <hop> <from>read cpk.xml as a text file</from><to>row info init&#47;end</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>formatted_field</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; info_init</from><to>&gt; info_end</to><enabled>Y</enabled> </hop>  <hop> <from>row info init&#47;end</from><to>info init&#47;end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; info_init</from><to>lines before</to><enabled>Y</enabled> </hop>  <hop> <from>&gt; info_end</from><to>lines after</to><enabled>Y</enabled> </hop>  <hop> <from>lines before</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>info_start</from><to>Append streams</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>formatted_field</from><to>Append streams 2</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 2</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>info_end</from><to>Append streams 3</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 3</from><to>Append streams 4</to><enabled>Y</enabled> </hop>  <hop> <from>lines after</from><to>Append streams 4</to><enabled>Y</enabled> </hop>  <hop> <from>info init&#47;end</from><to>&lt; cpk_end</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; cpk_end</from><to>&lt; info_init</to><enabled>Y</enabled> </hop>  <hop> <from>&lt; cpk_end</from><to>last line</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 4</from><to>Append streams 5</to><enabled>Y</enabled> </hop>  <hop> <from>last line</from><to>Append streams 5</to><enabled>Y</enabled> </hop>  <hop> <from>Append streams 5</from><to>Block this step until steps finish</to><enabled>Y</enabled> </hop>  <hop> <from>Block this step until steps finish</from><to>update cpk.xml</to><enabled>Y</enabled> </hop>  <hop> <from>field not null</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>input</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>sample row</from><to>Row Normaliser</to><enabled>N</enabled> </hop>  <hop> <from>Row Normaliser</from><to>null_value</to><enabled>Y</enabled> </hop>  <hop> <from>null_value</from><to>field not null</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>read cpk.xml as a text file</from><to>row info init&#x2f;end</to><enabled>Y</enabled> </hop>
+  <hop> <from>xml elements</from><to>formatted_field</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x3c; info_init</from><to>&#x3e; info_end</to><enabled>Y</enabled> </hop>
+  <hop> <from>row info init&#x2f;end</from><to>info init&#x2f;end</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x3c; info_init</from><to>lines before</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x3e; info_end</from><to>lines after</to><enabled>Y</enabled> </hop>
+  <hop> <from>lines before</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>info_start</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams</from><to>Append streams 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>formatted_field</from><to>Append streams 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 2</from><to>Append streams 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>info_end</from><to>Append streams 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 3</from><to>Append streams 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>lines after</from><to>Append streams 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>info init&#x2f;end</from><to>&#x3c; cpk_end</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x3c; cpk_end</from><to>&#x3c; info_init</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x3c; cpk_end</from><to>last line</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 4</from><to>Append streams 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>last line</from><to>Append streams 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 5</from><to>Block this step until steps finish</to><enabled>Y</enabled> </hop>
+  <hop> <from>Block this step until steps finish</from><to>update cpk.xml</to><enabled>Y</enabled> </hop>
+  <hop> <from>field not null</from><to>xml elements</to><enabled>Y</enabled> </hop>
+  <hop> <from>input</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>
+  <hop> <from>sample row</from><to>Row Normaliser</to><enabled>N</enabled> </hop>
+  <hop> <from>Row Normaliser</from><to>null_value</to><enabled>Y</enabled> </hop>
+  <hop> <from>null_value</from><to>field not null</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
-    <name>&lt; cpk_end</name>
+    <name>&#x3c; cpk_end</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>&lt; info_init</send_true_to>
+<send_true_to>&#x3c; info_init</send_true_to>
 <send_false_to>last line</send_false_to>
     <compare>
 <condition>
@@ -215,7 +240,7 @@ java.lang.NullPointerException
   <condition>
    <negated>N</negated>
    <leftvalue>rownum</leftvalue>
-   <function>&lt;</function>
+   <function>&#x3c;</function>
    <rightvalue>cpk_end</rightvalue>
    </condition>
   </conditions>
@@ -230,17 +255,18 @@ java.lang.NullPointerException
     </step>
 
   <step>
-    <name>&lt; info_init</name>
+    <name>&#x3c; info_init</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
 <send_true_to>lines before</send_true_to>
-<send_false_to>&gt; info_end</send_false_to>
+<send_false_to>&#x3e; info_end</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
@@ -248,7 +274,7 @@ java.lang.NullPointerException
   <condition>
    <negated>N</negated>
    <leftvalue>rownum</leftvalue>
-   <function>&lt;</function>
+   <function>&#x3c;</function>
    <rightvalue>info_init</rightvalue>
    </condition>
   </conditions>
@@ -263,10 +289,11 @@ java.lang.NullPointerException
     </step>
 
   <step>
-    <name>&gt; info_end</name>
+    <name>&#x3e; info_end</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -282,7 +309,7 @@ java.lang.NullPointerException
    <negated>N</negated>
    <operator>OR</operator>
    <leftvalue>rownum</leftvalue>
-   <function>&gt;</function>
+   <function>&#x3e;</function>
    <rightvalue>info_end</rightvalue>
    </condition>
   </conditions>
@@ -301,6 +328,7 @@ java.lang.NullPointerException
     <type>Append</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -321,6 +349,7 @@ java.lang.NullPointerException
     <type>Append</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -341,6 +370,7 @@ java.lang.NullPointerException
     <type>Append</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -361,6 +391,7 @@ java.lang.NullPointerException
     <type>Append</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -381,6 +412,7 @@ java.lang.NullPointerException
     <type>Append</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -401,6 +433,7 @@ java.lang.NullPointerException
     <type>BlockUntilStepsFinish</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -425,6 +458,7 @@ java.lang.NullPointerException
     <type>Normaliser</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -474,6 +508,7 @@ java.lang.NullPointerException
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -495,7 +530,7 @@ java.lang.NullPointerException
    <negated>N</negated>
    <operator>AND</operator>
    <leftvalue>field</leftvalue>
-   <function>&lt;&gt;</function>
+   <function>&#x3c;&#x3e;</function>
    <rightvalue>null_value</rightvalue>
    </condition>
   </conditions>
@@ -514,6 +549,7 @@ java.lang.NullPointerException
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -533,10 +569,11 @@ java.lang.NullPointerException
     </step>
 
   <step>
-    <name>info init&#47;end</name>
+    <name>info init&#x2f;end</name>
     <type>GroupBy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -545,7 +582,7 @@ java.lang.NullPointerException
       <all_rows>Y</all_rows>
       <ignore_aggregate>N</ignore_aggregate>
       <field_ignore/>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>grp</prefix>
       <add_linenr>N</add_linenr>
       <linenr_fieldname/>
@@ -585,6 +622,7 @@ java.lang.NullPointerException
     <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -598,12 +636,17 @@ java.lang.NullPointerException
         <currency/>
         <decimal/>
         <group/>
-        <nullif>    &lt;&#47;info&gt;</nullif>
+        <nullif>    &#x3c;&#x2f;info&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms/>
+    <row_time_field/>
+    <last_time_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>892</xloc>
@@ -617,6 +660,7 @@ java.lang.NullPointerException
     <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -630,12 +674,17 @@ java.lang.NullPointerException
         <currency/>
         <decimal/>
         <group/>
-        <nullif>    &lt;info&gt;</nullif>
+        <nullif>    &#x3c;info&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms/>
+    <row_time_field/>
+    <last_time_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>655</xloc>
@@ -649,6 +698,7 @@ java.lang.NullPointerException
     <type>MappingInput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -730,6 +780,7 @@ java.lang.NullPointerException
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -753,6 +804,7 @@ java.lang.NullPointerException
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -776,6 +828,7 @@ java.lang.NullPointerException
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -799,6 +852,7 @@ java.lang.NullPointerException
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -807,7 +861,7 @@ java.lang.NullPointerException
     <fields>
       <field>
         <name>null_value</name>
-        <variable>${NULL_VALUE}</variable>
+        <variable>&#x24;&#x7b;NULL_VALUE&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -831,6 +885,7 @@ java.lang.NullPointerException
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -840,7 +895,7 @@ java.lang.NullPointerException
     <passing_through_fields>N</passing_through_fields>
     <accept_field/>
     <accept_stepname/>
-    <separator>F&quot;#$FWEFHW)($&#47;&quot;HG)&#47;H&quot;=()GH=)#($F)H$&quot;GBE&#47;SBIUGFSDGIUSE</separator>
+    <separator>F&#x22;&#x23;&#x24;FWEFHW&#x29;&#x28;&#x24;&#x2f;&#x22;HG&#x29;&#x2f;H&#x22;&#x3d;&#x28;&#x29;GH&#x3d;&#x29;&#x23;&#x28;&#x24;F&#x29;H&#x24;&#x22;GBE&#x2f;SBIUGFSDGIUSE</separator>
     <enclosure/>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
@@ -863,7 +918,7 @@ java.lang.NullPointerException
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${pluginDir}&#47;cpk.xml</name>
+      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;cpk.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -924,31 +979,32 @@ java.lang.NullPointerException
     </step>
 
   <step>
-    <name>row info init&#47;end</name>
+    <name>row info init&#x2f;end</name>
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>row_info_init</field_name>
-<formula_string>line.trim().equals(&quot;&lt;info&gt;&quot;)?rownum:(new Long(9999))</formula_string>
+<formula_string>line.trim&#x28;&#x29;.equals&#x28;&#x22;&#x3c;info&#x3e;&#x22;&#x29;&#x3f;rownum&#x3a;&#x28;new Long&#x28;9999&#x29;&#x29;</formula_string>
 <value_type>Integer</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>row_info_end</field_name>
-<formula_string>line.trim().equals(&quot;&lt;&#47;info&gt;&quot;)?rownum:(new Long(0))</formula_string>
+<formula_string>line.trim&#x28;&#x29;.equals&#x28;&#x22;&#x3c;&#x2f;info&#x3e;&#x22;&#x29;&#x3f;rownum&#x3a;&#x28;new Long&#x28;0&#x29;&#x29;</formula_string>
 <value_type>Integer</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>row_cpk_end</field_name>
-<formula_string>line.trim().equals(&quot;&lt;&#47;cpk&gt;&quot;)?rownum:(new Long(0))</formula_string>
+<formula_string>line.trim&#x28;&#x29;.equals&#x28;&#x22;&#x3c;&#x2f;cpk&#x3e;&#x22;&#x29;&#x3f;rownum&#x3a;&#x28;new Long&#x28;0&#x29;&#x29;</formula_string>
 <value_type>Integer</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -967,6 +1023,7 @@ java.lang.NullPointerException
     <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -983,6 +1040,7 @@ java.lang.NullPointerException
         <nullif>1.0</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>plugin_description</name>
@@ -994,6 +1052,7 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>plugin_name</name>
@@ -1005,6 +1064,7 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>author_email</name>
@@ -1016,6 +1076,7 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>author_name</name>
@@ -1027,6 +1088,7 @@ java.lang.NullPointerException
         <nullif>maricari</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>company_name</name>
@@ -1038,6 +1100,7 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>company_url</name>
@@ -1049,6 +1112,7 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>creation_date</name>
@@ -1060,6 +1124,7 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>version</name>
@@ -1071,9 +1136,14 @@ java.lang.NullPointerException
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <limit>1</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms/>
+    <row_time_field/>
+    <last_time_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>73</xloc>
@@ -1087,6 +1157,7 @@ java.lang.NullPointerException
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1106,7 +1177,7 @@ java.lang.NullPointerException
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${pluginDir}&#47;cpk.xml</name>
+      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;cpk.xml</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -1150,13 +1221,14 @@ java.lang.NullPointerException
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>formatted_field</field_name>
-<formula_string>&quot;        &lt;&quot;+typefield+&quot;&gt;&quot;+field+&quot;&lt;&#47;&quot;+typefield+&quot;&gt;&quot;</formula_string>
+<formula_string>&#x22;        &#x3c;&#x22;&#x2b;typefield&#x2b;&#x22;&#x3e;&#x22;&#x2b;field&#x2b;&#x22;&#x3c;&#x2f;&#x22;&#x2b;typefield&#x2b;&#x22;&#x3e;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1175,4 +1247,5 @@ java.lang.NullPointerException
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+
 </transformation>

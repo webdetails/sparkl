@@ -7,11 +7,11 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>CPK_version</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -21,82 +21,77 @@
         </parameter>
         <parameter>
             <name>author_email</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>author_name</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>company_name</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>company_url</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>${cpk.solution.system.dir}&#47;${cpk.plugin.id}</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;cpk.plugin.id&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.system.dir</name>
-            <default_value>${cpk.plugin.dir}&#47;system&#47;</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>cpk.solution.dir</name>
-            <default_value>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;..&#47;..&#47;</default_value>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;system&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>${cpk.solution.dir}&#47;system&#47;</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>creation_date</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>dashboard_style</name>
-            <default_value>${NULL_VALUE}</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>plugin_description</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>pluginDir</name>
-            <default_value>${cpk.solution.system.dir}&#47;${pluginId}</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;&#x24;&#x7b;pluginId&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>pluginId</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>plugin_description</name>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>plugin_name</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>version</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -107,7 +102,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -124,6 +119,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -152,17 +152,17 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;06&#47;07 14:22:01.523</created_date>
+  <created_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;06&#47;07 14:22:01.523</modified_date>
+  <modified_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</modified_date>
   </info>
   <notepads>
     <notepad>
       <note>Get the old and new values for the Plugin Metadata, merge the values, and update the metadata in cpk.xml        </note>
       <xloc>66</xloc>
       <yloc>9</yloc>
-      <width>602</width>
-      <heigth>24</heigth>
+      <width>696</width>
+      <heigth>25</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -180,12 +180,19 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>getPluginMetadata</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get ${cpk_filename}</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>
+  <hop> <from>getPluginMetadata</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>
+  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get &#x24;&#x7b;cpk_filename&#x7d;</from><to>getPluginMetadata</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
-    <name>Get ${cpk_filename}</name>
+    <name>Get &#x24;&#x7b;cpk_filename&#x7d;</name>
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -194,7 +201,7 @@
     <fields>
       <field>
         <name>cpk_filename</name>
-        <variable>${pluginDir}&#47;cpk.xml</variable>
+        <variable>&#x24;&#x7b;pluginDir&#x7d;&#x2f;cpk.xml</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -218,6 +225,7 @@
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -226,7 +234,7 @@
     <fields>
       <field>
         <name>CPK_version_param</name>
-        <variable>${CPK_version}</variable>
+        <variable>&#x24;&#x7b;CPK_version&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -238,7 +246,7 @@
       </field>
       <field>
         <name>author_email_param</name>
-        <variable>${author_email}</variable>
+        <variable>&#x24;&#x7b;author_email&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -250,7 +258,7 @@
       </field>
       <field>
         <name>author_name_param</name>
-        <variable>${author_name}</variable>
+        <variable>&#x24;&#x7b;author_name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -262,7 +270,7 @@
       </field>
       <field>
         <name>company_name_param</name>
-        <variable>${company_name}</variable>
+        <variable>&#x24;&#x7b;company_name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -274,7 +282,7 @@
       </field>
       <field>
         <name>company_url_param</name>
-        <variable>${company_url}</variable>
+        <variable>&#x24;&#x7b;company_url&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -286,7 +294,7 @@
       </field>
       <field>
         <name>creation_date_param</name>
-        <variable>${creation_date}</variable>
+        <variable>&#x24;&#x7b;creation_date&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -298,7 +306,7 @@
       </field>
       <field>
         <name>plugin_description_param</name>
-        <variable>${plugin_description}</variable>
+        <variable>&#x24;&#x7b;plugin_description&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -310,7 +318,7 @@
       </field>
       <field>
         <name>plugin_name_param</name>
-        <variable>${plugin_name}</variable>
+        <variable>&#x24;&#x7b;plugin_name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -322,7 +330,7 @@
       </field>
       <field>
         <name>version_param</name>
-        <variable>${version}</variable>
+        <variable>&#x24;&#x7b;version&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -334,7 +342,7 @@
       </field>
       <field>
         <name>dashboard_style_param</name>
-        <variable>${dashboard_style}</variable>
+        <variable>&#x24;&#x7b;dashboard_style&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -346,7 +354,7 @@
       </field>
       <field>
         <name>null_value</name>
-        <variable>${NULL_VALUE}</variable>
+        <variable>&#x24;&#x7b;NULL_VALUE&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -370,6 +378,7 @@
     <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -451,6 +460,7 @@
     <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -459,7 +469,7 @@
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}\_getPluginMetadata.ktr</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;_getPluginMetadata.ktr</filename>
     <directory_path/>
     <mappings>
       <input>
@@ -495,12 +505,13 @@
     <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <cache_size>500</cache_size>
       <main/>
@@ -508,7 +519,7 @@
 <condition>
  <negated>N</negated>
  <leftvalue/>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  </condition>
     </compare>
@@ -525,76 +536,77 @@
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>CPK_version_new</field_name>
-<formula_string>CPK_version_param.equals(null_value)?CPK_version:CPK_version_param</formula_string>
+<formula_string>CPK_version_param.equals&#x28;null_value&#x29;&#x3f;CPK_version&#x3a;CPK_version_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>plugin_description_new</field_name>
-<formula_string>plugin_description_param.equals(null_value)?plugin_description:plugin_description_param</formula_string>
+<formula_string>plugin_description_param.equals&#x28;null_value&#x29;&#x3f;plugin_description&#x3a;plugin_description_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>plugin_name_new</field_name>
-<formula_string>plugin_name_param.equals(null_value)?plugin_name:plugin_name_param</formula_string>
+<formula_string>plugin_name_param.equals&#x28;null_value&#x29;&#x3f;plugin_name&#x3a;plugin_name_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>author_email_new</field_name>
-<formula_string>author_email_param.equals(null_value)?author_email:author_email_param</formula_string>
+<formula_string>author_email_param.equals&#x28;null_value&#x29;&#x3f;author_email&#x3a;author_email_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>author_name_new</field_name>
-<formula_string>author_name_param.equals(null_value)?author_name:author_name_param</formula_string>
+<formula_string>author_name_param.equals&#x28;null_value&#x29;&#x3f;author_name&#x3a;author_name_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>company_name_new</field_name>
-<formula_string>company_name_param.equals(null_value)?company_name:company_name_param</formula_string>
+<formula_string>company_name_param.equals&#x28;null_value&#x29;&#x3f;company_name&#x3a;company_name_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>company_url_new</field_name>
-<formula_string>company_url_param.equals(null_value)?company_url:company_url_param</formula_string>
+<formula_string>company_url_param.equals&#x28;null_value&#x29;&#x3f;company_url&#x3a;company_url_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>creation_date_new</field_name>
-<formula_string>creation_date_param.equals(null_value)?creation_date:creation_date_param</formula_string>
+<formula_string>creation_date_param.equals&#x28;null_value&#x29;&#x3f;creation_date&#x3a;creation_date_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>version_new</field_name>
-<formula_string>version_param.equals(null_value)?version:version_param</formula_string>
+<formula_string>version_param.equals&#x28;null_value&#x29;&#x3f;version&#x3a;version_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>dashboard_style_new</field_name>
-<formula_string>dashboard_style_param.equals(null_value)?dashboard_style:dashboard_style_param</formula_string>
+<formula_string>dashboard_style_param.equals&#x28;null_value&#x29;&#x3f;dashboard_style&#x3a;dashboard_style_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -613,6 +625,7 @@
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -672,4 +685,5 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+
 </transformation>

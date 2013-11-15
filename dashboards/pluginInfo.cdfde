@@ -15,7 +15,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "static/custom/css/sparkl.css",
+      "value": "/pentaho/api/repos/sparkl/static/custom/css/sparkl.css",
       "type": "ResourceFile"
      },
      {
@@ -38,7 +38,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "static/custom/js/sparkl.js",
+      "value": "/pentaho/api/repos/sparkl/static/custom/js/sparkl.js",
       "type": "ResourceFile"
      },
      {
@@ -7982,7 +7982,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n                \n        var successCallback = function (json){      \n            $('.newPluginCell').toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $('.sparklCell').unblock();\n            Dashboards.decrementRunningCalls();\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.decrementRunningCalls();  \n        }\n                \n        Dashboards.incrementRunningCalls();            \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
+      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n                \n        var successCallback = function (json){      \n            $('.newPluginCell').toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $('.sparklCell').unblock();\n            Dashboards.decrementRunningCalls();\n            dialog.open({\n                message:\"The plugin \" + newPluginId + \" was successfully created!\" +\n                \" Please restart the server for full functionality.\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.decrementRunningCalls();  \n        }\n                \n        Dashboards.incrementRunningCalls();            \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -8085,7 +8085,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = Dashboards.getWebAppPath() + '/content/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\n    if ( sparkl.hasUploaderComponent() ){\n        var successCallback = function (){\n            $ph.empty().append( \n                $('<img/>').attr('src', imgUrl + '?' + (new Date()).getTime() ) );\n            Dashboards.log('File uploaded successfully');\n        }\n                \n        var uploadOpts = {\n            root: 'sparkl/plugins/' + pluginId,\n            success: function (filename){\n                sparkl.runEndpoint( 'sparkl' , endpoint, {\n                    params: { pluginId: pluginId, filename: filename },\n                    success: successCallback ,\n                    error: function(){            \n                        Dashboards.log('Error uploading image for ' + pluginId + '!');\n                    }    \n                });  \n            },\n            validationError: function (){\n                dialogComponent.open({\n                    message:\"File type not allowed as plugin logo.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            uploadError: function (){\n                dialogComponent.open({\n                    message:\"Error uploading plugin logo.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            }\n        };\n            \n        var trigger = sparkl.addUploadForm.call( this, $ph.parent(), uploadOpts);\n        $ph.click( function (){\n            trigger();   \n        });\n    } \n    \n    sparkl.testFile( imgUrl, function() {\n        $ph.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
+      "value": "function f(){\n    var $ph = $('#' + this.htmlObject),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'uploadlogo',\n        imgUrl = Dashboards.getWebAppPath() + '/api/repos/' + pluginId + '/static/system/img/pluginLogo.png',\n        myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n\n    if ( sparkl.hasUploaderComponent() ){\n        var successCallback = function (){\n            $ph.empty().append( \n                $('<img/>').attr('src', imgUrl + '?' + (new Date()).getTime() ) );\n            Dashboards.log('File uploaded successfully');\n        }\n                \n        var uploadOpts = {\n            root: 'sparkl/plugins/' + pluginId,\n            success: function (filename){\n                sparkl.runEndpoint( 'sparkl' , endpoint, {\n                    params: { pluginId: pluginId, filename: filename },\n                    success: successCallback ,\n                    error: function(){            \n                        Dashboards.log('Error uploading image for ' + pluginId + '!');\n                    }    \n                });  \n            },\n            validationError: function (){\n                dialogComponent.open({\n                    message:\"File type not allowed as plugin logo.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            uploadError: function (){\n                dialogComponent.open({\n                    message:\"Error uploading plugin logo.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            }\n        };\n            \n        var trigger = sparkl.addUploadForm.call( this, $ph.parent(), uploadOpts);\n        $ph.click( function (){\n            trigger();   \n        });\n    } \n    \n    sparkl.testFile( imgUrl, function() {\n        $ph.empty().append( $('<img/>').attr('src', imgUrl) );\n    });\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -8191,7 +8191,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'packplugin',\n        url = Dashboards.getWebAppPath() + '/content/sparkl/' + endpoint + '?parampluginId=' + pluginId;\n        \n    $('#' + this.htmlObject).append( \n        $('<a/>').attr('href', url).text('Pack') );\n}\n",
+      "value": "function f(){\n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        endpoint = 'packplugin',\n        url = Dashboards.getWebAppPath() + '/plugin/sparkl/api/' + endpoint + '?parampluginId=' + pluginId;\n        \n    $('#' + this.htmlObject).append( \n        $('<a/>').attr('href', url).text('Pack') );\n}\n",
       "type": "JavaScript"
      },
      {
@@ -8882,16 +8882,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colWidths",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -8917,14 +8907,14 @@
       "type": "Array"
      },
      {
-      "name": "displayLength",
-      "value": "",
-      "type": "Integer"
+      "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
      },
      {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "expandOnClick",
@@ -8948,6 +8938,16 @@
      },
      {
       "name": "sort",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "displayLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "lengthChange",
       "value": "false",
       "type": "Boolean"
      },
@@ -9013,7 +9013,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    \n    // Callbacks\n    var successCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    var errorCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    \n    // Actions \n    var deleteElementAction = function (v, st) {\n        var okCallback = function () {\n                dialog.close();\n                Dashboards.incrementRunningCalls();\n                sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                    params: { pluginId: pluginId, elementName: v },\n                    success: sparkl.addRefreshWrapper('pentaho-cdf-dd', successCallback),\n                    error:   sparkl.addRefreshWrapper('pentaho-cdf-dd', errorCallback)\n                });\n            },\n            cancelCallback = function () { \n                dialog.close(); \n            } \n        \n        dialog.open({\n            message:\"You are about to delete \" + v + \". Please, press OK to continue...\",\n            buttons:[\n                { text: \"OK\", click: okCallback },\n                { text: \"Cancel\", click: cancelCallback }\n            ]\n        });\n    }\n\n    \n    // Options\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"actionButtons\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
+      "value": "function f(){\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}');\n    \n    // Callbacks\n    var successCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    var errorCallback = function (){\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    };\n    \n    // Actions \n    var deleteElementAction = function (v, st) {\n        var okCallback = function () {\n                dialog.close();\n                Dashboards.incrementRunningCalls();\n                sparkl.runEndpoint( 'sparkl' , 'deleteElement', {\n                    params: { pluginId: pluginId, elementName: v },\n                    success: sparkl.addRefreshWrapper('pentaho-cdf-dd', successCallback),\n                    error:   sparkl.addRefreshWrapper('pentaho-cdf-dd', errorCallback)\n                });\n            },\n            cancelCallback = function () { \n                dialog.close(); \n            } \n        \n        dialog.open({\n            message:\"You are about to delete \" + v + \". Please, press OK to continue...\",\n            buttons:[\n                { text: \"OK\", click: okCallback },\n                { text: \"Cancel\", click: cancelCallback }\n            ]\n        });\n    }\n\n    \n    // Options\n    var optsLib = {\n        dashboard: {\n            buttons: [\n                {\n                    cssClass: \"viewDashboardButton\",\n                    title: \"View\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/plugin/' + pluginId + '/api/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"editDashboardButton\",\n                    title: \"Edit\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/plugin/' + pluginId + '/api/' + v +'?mode=edit', {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteDashboardButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction\n                }                \n            ]\n        },\n        kettle: {\n            buttons: [\n                {\n                    cssClass: \"runEndpointButton\",\n                    title: \"Run\",\n                    action: function (v, st) {\n                        sparkl.changeLocation(Dashboards.getWebAppPath() + '/plugin/' + pluginId + '/api/' + v, {}, true);\n                    }\n                },\n                {\n                    cssClass: \"deleteEndpointButton\",\n                    title: \"Delete\",\n                    action: deleteElementAction                    \n                }\n            ]\n        }\n    }\n\n    var opts = function (st){\n        var type = st.tableData[st.rowIdx][1].toLowerCase();\n        return optsLib[type] || {}\n    };\n    this.setAddInOptions(\"colType\",\"actionButtons\",opts);\n    \n    var textOpts = {\n        textFormat: function (v){\n            return v ? \"Admin Only\" : \"All Users\";\n        }\n    };\n    this.setAddInOptions(\"colType\",\"formattedText\",textOpts);\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -9071,7 +9071,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    this.$ph = this.$ph ||\n        $('<div/>').addClass('pluginTabContainer').insertAfter( $('.sparklLogo') );\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}') || \"untitledPlugin\",\n        pluginMetadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginName = pluginMetadata.plugin_name || \"Untitled Plugin\";\n    \n    var $pluginName = $('<div>').addClass('pluginName')\n            .text(pluginName),\n        $pluginId = $('<div>').addClass('pluginId')\n            .text(pluginId),\n        $close = $('<div/>').addClass('closeButton')\n            .click( function (){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/content/sparkl/main'); \n            });\n            \n    this.$ph.empty()\n        .append( $pluginName, $pluginId, $close );  \n}",
+      "value": "function f(){\n    \n    this.$ph = this.$ph ||\n        $('<div/>').addClass('pluginTabContainer').insertAfter( $('.sparklLogo') );\n    \n    var pluginId = Dashboards.getParameterValue('${p:pluginIdParam}') || \"untitledPlugin\",\n        pluginMetadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),\n        pluginName = pluginMetadata.plugin_name || \"Untitled Plugin\";\n    \n    var $pluginName = $('<div>').addClass('pluginName')\n            .text(pluginName),\n        $pluginId = $('<div>').addClass('pluginId')\n            .text(pluginId),\n        $close = $('<div/>').addClass('closeButton')\n            .click( function (){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/main'); \n            });\n            \n    this.$ph.empty()\n        .append( $pluginName, $pluginId, $close );  \n}",
       "type": "JavaScript"
      },
      {
@@ -9442,7 +9442,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n  \n    return true;\n  \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
+      "value": "function f(){\n  \n    \n  \n    var $form = $('#'+this.htmlObject).find('input');\n    $form.attr('placeholder','myPluginId');\n       \n    var buttonComponent = Dashboards.getComponentByName('${c:createNewPluginButton}'),\n        $input = $('#' + this.htmlObject).find('input'),\n        $container = $input.parents('.newPlugin'),\n        $buttonContainer = $('#' + buttonComponent.htmlObject),\n        $icon = $container.find(\".validateIconPH\"),\n        $inUse = $container.find(\".inUseLabel\"),\n        $invalid = $container.find(\".invalidLabel\");\n        \n    var callback = function(){\n        var val = $(this).val(),\n            unavailableIdsList = \n                _.pluck( Dashboards.getParameterValue('${p:unavailableIdsParam}') , 'name'),\n            inUse_p = _.contains( unavailableIdsList , val),\n            invalid_p = !sparkl.isValidName(val),\n            isEmpty_p = _.isEmpty(val);\n        $icon.toggleClass('wrong' , (inUse_p || invalid_p) && !isEmpty_p )\n             .toggleClass('correct', !( inUse_p || invalid_p) && !isEmpty_p);\n        $inUse.toggleClass('WDhidden' , !inUse_p || isEmpty_p);\n        $invalid.toggleClass('WDhidden' , !invalid_p || isEmpty_p );\n        $buttonContainer.toggleClass('active', !(inUse_p || invalid_p || isEmpty_p));\n    };\n    \n    $input.change(callback);\n    $input.keyup(callback);\n    \n    callback.apply($input);\n}",
       "type": "JavaScript"
      },
      {
@@ -10769,7 +10769,7 @@
    {
     "id": "60e465f5-cf3e-14ee-1e4d-4d40cdb2a3fc",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10797,7 +10797,7 @@
    {
     "id": "8ca30907-2f5e-80ae-b3c8-30f81b515acc",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10825,7 +10825,7 @@
    {
     "id": "e5e50d36-1e0c-6101-beec-7e7f463a9b6e",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10853,7 +10853,7 @@
    {
     "id": "c3065250-bac9-cc6d-ac23-57e4cf3e017c",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10881,7 +10881,7 @@
    {
     "id": "b4a227aa-9b7b-c736-b174-eaf66b506fc2",
     "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom Parameter",
+    "typeDesc": "Custom parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10909,7 +10909,7 @@
    {
     "id": "610ef9bc-5365-0bd2-1ec7-e63897ca7cc8",
     "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom Parameter",
+    "typeDesc": "Custom parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10937,7 +10937,7 @@
    {
     "id": "6e8127cd-30b6-a213-cc74-4e1121f5d39e",
     "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom Parameter",
+    "typeDesc": "Custom parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10965,7 +10965,7 @@
    {
     "id": "bc85ce31-be23-959c-77bf-81ef042f0349",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -10993,7 +10993,7 @@
    {
     "id": "6812e543-2707-0d37-54b2-505fa0b1f437",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -11021,7 +11021,7 @@
    {
     "id": "bb028ae0-b1e9-b268-eaa5-67cf461c8ca9",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -11049,7 +11049,7 @@
    {
     "id": "721c1130-8afb-076d-d4b3-3edc9f414140",
     "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom Parameter",
+    "typeDesc": "Custom parameter",
     "parent": "GENERIC",
     "properties": [
      {

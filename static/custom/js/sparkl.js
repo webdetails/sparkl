@@ -217,7 +217,7 @@ myself.addUploadForm = function(ph, opts){
       dataType: 'json'
     }
     var opts = $.extend( {}, _opts, opts);
-    var url = Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + endpoint;
+    var url = Dashboards.getWebAppPath() + '/plugin/' + pluginId + '/api/' + endpoint;
 
     function successHandler  (json){
       if ( json && json.result == false){
@@ -230,15 +230,26 @@ myself.addUploadForm = function(ph, opts){
     function errorHandler  (){
       opts.error.apply(this, arguments);
     }
-
-    var ajaxOpts = {
-      url: url,
-      async: true,
-      type: opts.type,
-      dataType: opts.dataType,
-      success: successHandler,
-      error: errorHandler,
-      data: {}
+    if ( endpoint != 'renderer/refresh' ) { //XXX - do this better
+      var ajaxOpts = {
+        url: url,
+        async: true,
+        type: opts.type,
+        dataType: opts.dataType,
+        success: successHandler,
+        error: errorHandler,
+        data: {}
+      }
+    } else {
+      var ajaxOpts = {
+        url: url,
+        async: true,
+        type: 'GET',
+        dataType: opts.dataType,
+        success: successHandler,
+        error: errorHandler,
+        data: {}
+      }
     }
 
     _.each( opts.params , function ( value , key){
@@ -264,7 +275,7 @@ myself.addUploadForm = function(ph, opts){
 
   myself.publishToServer = function (callback){
     $.ajax({
-      url: Dashboards.getWebAppPath() + '/Publish',
+      url: Dashboards.getWebAppPath() + '/plugin/sparkl/api/reloadPlugins',
       type:'POST',
       data: {
         'publish': 'now',
@@ -280,7 +291,11 @@ myself.addUploadForm = function(ph, opts){
     };
   };
   myself.addRefreshWrapper = function (pluginId, callback){
-    var caller = this.getEndpointCaller( pluginId, 'refresh' , { dataType:'text'});
+    if( pluginId != 'pentaho-cdf-dd' ) {//XXX - do this better
+     var caller = this.getEndpointCaller( pluginId, 'refresh' , { dataType:'text'});
+  } else {
+     var caller = this.getEndpointCaller( pluginId, 'renderer/refresh' , { dataType:'text'});
+  }
     return this.addCallWrapper( caller, callback );
   }
   myself.addPublishWrapper = function (callback){
@@ -288,7 +303,7 @@ myself.addUploadForm = function(ph, opts){
     // on cpk is found!!!
     var cb = function (){
       $.ajax({
-        url: Dashboards.getWebAppPath() + '/content/sparkl/getpluginmetadata',
+        url: Dashboards.getWebAppPath() + '/plugin/sparkl/api/getpluginmetadata',
         type: 'GET',
         async: true,
         success: callback,
