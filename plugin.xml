@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin title="sparkl" loader="DEFAULT">
+<plugin title="sparkl" loader="DEFAULT" name="sparkl">
+	<overlays>
+		<overlay id="startup.sparkl" resourcebundle="content/sparkl/lang/messages">
+			<menubar id="toolsmenu">
+	        	<menuitem id="sparkl" label="Sparkl" command="mantleXulHandler.openUrl('Sparkl','Sparkl','plugin/sparkl/api/main')"/>
+	      	</menubar>
+	    </overlay>
+	</overlays>
 	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
 	<static-paths>
 		<static-path url="/sparkl/static" localFolder="static"/>
