@@ -3,6 +3,29 @@
   "title": "CDF - Sample structure",
   "rows": [
    {
+    "id": "40a32b21-a88c-f5b2-56b1-fac01e01c79a",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "hideSparklLogo",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "$(document).ready(function() {\n    $('.sparklLogo').hide();   \n}); ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
     "id": "34814c47-6cb7-a3ed-8e21-af369a056fbf",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
@@ -8627,16 +8650,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colWidths",
-      "value": "[\"40%\",\"20%\",\"20%\",\"0\",\"20%\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -8662,14 +8675,14 @@
       "type": "Array"
      },
      {
-      "name": "displayLength",
-      "value": "",
-      "type": "Integer"
+      "name": "colWidths",
+      "value": "[\"40%\",\"20%\",\"20%\",\"0\",\"20%\"]",
+      "type": "Array"
      },
      {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "expandOnClick",
@@ -8694,6 +8707,16 @@
      {
       "name": "sort",
       "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "displayLength",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "lengthChange",
+      "value": "false",
       "type": "Boolean"
      },
      {
