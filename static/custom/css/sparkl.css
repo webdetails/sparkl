@@ -208,7 +208,8 @@ div.container *{
   width: 100%;
   background: none;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
+  font-family: 'Open Sans';
   font-weight: normal;
   color: #333e48;
   vertical-align: baseline;

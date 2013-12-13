@@ -28,15 +28,15 @@
 }
 .sparklPluginCardContainer .cardHeader .name{
 	cursor:default;
-	height: 50%;
-	padding-bottom: 5px;
+	height: 24px;
+	line-height: 20px;
 	display:inline-block;
 	white-space: nowrap;
 	overflow:hidden;
-   -webkit-transition: all 1.5s ease-in-out;
-  -moz-transition: all 1.5s ease-in-out;
-  -o-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
+   	-webkit-transition: all 1.5s ease-in-out;
+	-moz-transition: all 1.5s ease-in-out;
+	-o-transition: all 1.5s ease-in-out;
+	transition: all 1.5s ease-in-out;
 }
 .sparklPluginCardContainer .cardHeader.overflow .name:hover {
 	text-indent:-50%;
@@ -52,10 +52,10 @@
 	height:20px;
 	background:#EAEDEE;
 	-webkit-transition: all 1.5s ease-in-out;
-  -moz-transition: all 1.5s ease-in-out;
-  -o-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
-  text-align:center;
+	-moz-transition: all 1.5s ease-in-out;
+	-o-transition: all 1.5s ease-in-out;
+	transition: all 1.5s ease-in-out;
+	text-align:center;
 }
 .sparklPluginCardContainer .cardHeader .ellipsis.right{
 	right:0px;
@@ -68,10 +68,11 @@
 	width:20px;
 }
 .sparklPluginCardContainer .cardHeader .id{
-	height: 50%;
+	height: 24px;
 	color: #878685;
 	font-weight: normal;
 	font-size: 15px;
+	line-height: 19px;
 }
 
 .sparklPluginCardContainer .cardBody{
