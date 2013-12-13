@@ -111,14 +111,7 @@ wd.cpk = wd.cpk || {};
 		"			</div>"+
 		"		</div>"+
 		"		<div class='cardFooter'>"+
-		"			<div class='versionLabel'> VER. "+
-		"					{{version}}"+
-		"			</div>"+
-		"		</div>"+
-		"		<div class='optsExternCont'>"+
 		"			<div class='optionsContainer'>"+
-		"			</div>"+
-		"			<div class='optionsIcon'>"+
 		"			</div>"+
 		"		</div>"
 	);

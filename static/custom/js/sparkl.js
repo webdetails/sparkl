@@ -332,6 +332,7 @@ myself.addUploadForm = function(ph, opts){
         {
           cssClass: "viewButton",
           title: "View",
+          tooltip: "View",
             action: function(v, st) {
               Dashboards.log(v);
             }
@@ -348,7 +349,7 @@ myself.addUploadForm = function(ph, opts){
       var $buttonContainer = $('<div/>').addClass('buttonContainer')
         .addClass('numButtons-' + opt.buttons.length);
       _.each(opt.buttons, function(el,idx){
-        var $button = $("<button/>").addClass(el.cssClass||"").text(el.title||"");
+        var $button = $("<button/>").addClass(el.cssClass||"").text(el.title||"").attr('title', el.tooltip||"");
         $button.click(function(){
           if (el.action) {
             el.action(st.value, st);
@@ -409,3 +410,9 @@ myself.addUploadForm = function(ph, opts){
   Dashboards.registerAddIn("Table", "colType", new AddIn(editable));
   
 })();
+
+$(document).ready(function() {
+  $('.chzn-results li').click(function() {
+    $(this).closest('.chzn-results').find('.result-relected').removeClass('result-selected');
+  });
+});

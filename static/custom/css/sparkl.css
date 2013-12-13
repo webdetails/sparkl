@@ -71,10 +71,13 @@ border: 0;
 
 /* Window Background */
 body{
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  background: #ebedee;
+  padding-top: 50px;
+  overflow-y: scroll;
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-  background: #FFFFFF;
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -101,21 +104,23 @@ div.container *{
    ========================================================================== */
 
 .sparklCell {
-  margin-bottom:25px;
+  margin-bottom:0px;
 }
 
 
 /* Data Cells header*/
 .sparklCellHeader{
   height: 20px;
-  color: #878685;
+  color: #333e48;
   font-size: 18px;
   text-align: left;
   position: relative;
-  margin-bottom: 10px;
+  margin-top: -6px;
+  margin-left: 6px;
+  margin-bottom: 15px;
 }
 .sparklCellHeader.underline {
-  border-bottom: 1px solid #41B8EE;
+  /*border-bottom: 1px solid #41B8EE;*/
 }
 .sparklCellHeader .title{
   position: absolute;
@@ -138,16 +143,33 @@ div.container *{
 
 
 .tabsCell .pentaho-toggle-button {
-  width:30%;
+  width: auto;
+  margin-right: 20px;
 }
 .tabsCell .pentaho-toggle-button button {
   background: #EBEDEE;
   font-size: 25px;
-  color: #878685;
+  text-align: left;
+  font-size: 25px;
+  color: #333e48;
+  font-family: 'Open Sans Light';
 }
 .tabsCell .pentaho-toggle-button-down button {
-  color: #41B8EE;
-  background: #FFFFFF;
+  color: #0098c4;
+  background: none;
+  position: relative;
+}
+.tabsCell .pentaho-toggle-button-down button:after {
+  content: '';  
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background: #0098c4;
+}
+.tabsCell .pentaho-toggle-button-up-hovering button {
+  color: #0098c4;
 }
 
 
@@ -167,11 +189,12 @@ div.container *{
   height: 35px;
   line-height: 27px;
   text-align: right;
+  margin-top: -36px;
+  padding-right: 2px;
 }
 
 .actionsCell .actionButton {
   height:100%;
-  width:110px;
   margin-right:10px;
   display:inline-block;
 }
@@ -183,23 +206,21 @@ div.container *{
 .actionButton a{
   height:100%;
   width: 100%;
-  background: #EBEDEE;
+  background: none;
   text-align: center;
   font-size: 11px;
   font-weight: normal;
-  color: #878685;
+  color: #333e48;
   vertical-align: baseline;
-  border: 4px solid #EBEDEE;
   box-shadow: none;
   margin:0px;
-  padding:0px;
+  padding: 4px;
   text-decoration:none;
   float:left;
 }
 .actionButton button:hover,
 .actionButton a:hover{
-  background:#41B8EE;
-  color:#FFFFFF;
+  color:#0098c4;
 }
 
 
@@ -227,7 +248,13 @@ div.container *{
   height: 35px;
   line-height:27px;
   color: #878685; 
-  margin-bottom: 15px;
+  margin-bottom: 0px;
+  margin-left: 6px;
+  margin-top: 25px;
+}
+#pluginsListFilters {
+  margin-top: -79px;
+  margin-bottom: 79px;
 }
 
 .filtersContainer > div {
@@ -237,11 +264,13 @@ div.container *{
 .refreshButton {
   height:100%;
   float:right;
+  margin-top: -70px;
+  position: relative;
 }
 .refreshButton button{
   height:100%;
   width:34px;
-  background: url('../img/refresh.png') -1px 50% no-repeat #EBEDEE;
+  background: url('../img/refresh.png') -1px 50% no-repeat;
   -webkit-border-radius:2px;
   -moz-border-radius:2px;
   -o-border-radius:2px;
@@ -251,14 +280,14 @@ div.container *{
 }
 .refreshButton button:hover{
   background-position: -36px 50%;
-  background-color:#EBEDEE;
 }
 
 .filtersContainer .pentaho-toggle-button {
   display: inline-block;
   margin-right: 5px;
-  height:100%;
+  height:25px;
   width:30%;
+  margin-top: 6px;
 }
 .filtersContainer .pentaho-toggle-button button {
   width: 100%;
@@ -278,16 +307,25 @@ div.container *{
   border: 4px solid #EBEDEE;
 }
 .filtersContainer .pentaho-toggle-button-down button {
-  background: #41B8EE;
+  background: #0098c4;
   color: #FFFFFF;
 }
 
 .filtersContainer .filterLabel{
-  padding:4px;
+  /*padding:4px;
   text-align: right;
+  color: #333e48;
+  font-size: 12px;*/
+  padding: 4px 0px 0px;
+  text-align: left;
+  color: #333e48;
+  font-size: 13px;
+  margin-right: 0px;
 }
 
-
+#pluginsListFilters #sortSelectorObj {
+  margin-left: -21px;
+}
 
 
 
@@ -302,16 +340,15 @@ div.container *{
 
 
 .formRow-1 {
-  height:45px;
+  height:30px;
 }
 .formRow-2{
   height:100px;
 }
 .formContainer {
-  background: #EBEDEE;
   height:100%;
-  color: #878685;
-  padding: 6px;
+  color: #333e48;
+  padding: 0px 6px;
   padding-left:90px;
   position:relative;
   margin-bottom: 10px;
@@ -324,8 +361,7 @@ div.container *{
   user-select: none;
 }
 .formContainer:hover {
-  background: #41B8EE;
-  color: #FFFFFF;
+  background: none;
 }
 .formContainer.inactive:hover {
   background: #EBEDEE;
@@ -353,6 +389,7 @@ div.container *{
   line-height:0;
   top:50%;
   position:absolute;
+  font-size: 12px;
 }
 .formContainer .formInput {
   height:100%;
@@ -360,20 +397,29 @@ div.container *{
 .formContainer .formInput input{
   height:100%;
   width:100%;
-  background: #FFFFFF;
   border: none;
+  border: 1px solid rgba(255,255,255,0);
+  border-bottom: 1px solid #dfdfdf;
   text-align: left;
   font-size: 15px;
   font-weight: normal;
-  color: #939292;
+  color: #0098c4;
   padding-left: 10px;
   margin: 0px;
+  background: none;
+  font-family: 'Open Sans';
+  font-size: 13px;
 }
 .formContainer .formInput input:hover{
   cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fefefe;
 }
-.formContainer .formInput input:focus{
+.formContainer .formInput input:focus {
   cursor: auto;
+  color: #666;
+  border: 1px solid #0098c4;
+  background: #fefefe;
 }
 .formContainer .uploadButton {
   background: #FFFFFF;
@@ -490,7 +536,7 @@ div.container *{
 .newPluginContainer span{
   width: 25%;
   margin:0px;
-  color: #25BAEE;
+  color: #333e48;
 }
 
 .newPluginContainer input{
@@ -527,14 +573,13 @@ div.container *{
 /*  background: #EAEDEE;
   color: #8C8B8B;
 */  width: 19%;
-  height: 55px;
-  max-height: 55px;
-  min-height: 55px;
+  height: 40px;
   float: right;
+  margin-top: 7px;
 }
 .createNewPluginButton button{
   background: #EAEDEE;
-  color: #8C8B8B;
+  color: #aaa;
   font-size: 15px;
   border: 0px none;
   box-shadow: none;
@@ -546,11 +591,11 @@ div.container *{
   cursor: default;  
 }
 .createNewPluginButton.active button{
-  background: #41B8EE;
-  color: #D1EEFC;
+  background: #333e48;
+  color: #ffffff;
 }
 .createNewPluginButton.active:hover button{
-  background: #2C9AE3;
+  background: #0098c4;
   color:#FFFFFF;
   cursor: pointer;
 }
@@ -575,14 +620,19 @@ div.container *{
   padding:6px;
   background: #EBEDEE;
   height:50px;
+  -webkit-box-shadow: 0 0 4px 0 #ccc;
+  -moz-box-shadow: 0 0 4px 0 #ccc;
+  box-shadow: 0 0 4px 0 #ccc;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .newElementContainer > div{
   height: 100%;
   text-align: left;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
-  color: #878685;
+  color: #333e48;
   position: relative;
   float: left;
 
@@ -593,16 +643,17 @@ div.container *{
   display:none;
 }
 .newElementContainer .formButton button{
+  font-family: "Open Sans";
   width:100%;
   height:100%;
   margin:0;
   color:#FFFFFF;
-  font-size: 15px;
+  font-size: 13px;
   border: 0;
   box-shadow: none;
   vertical-align: baseline;  
   cursor:pointer;
-  background: url('../img/add_new.png') 50% 50% no-repeat #25BAED;
+  background: url('../img/add_new.png') 50% 50% no-repeat #0098c4;
 }
 .newElementContainer.notEmpty .formButton button:hover {
   background-color: #009DE2 ;
@@ -617,7 +668,7 @@ div.container *{
 .newElementContainer.notEmpty.reserved .formButton.addElement button:hover,
 .newElementContainer.notEmpty.inUse .formButton.addElement button:hover {
   cursor:default;
-  background-color: #EAEDEE;
+  background-color: #ccc;
 }
 
 
@@ -638,19 +689,32 @@ div.container *{
 }
 .newElementContainer .formInput input {
   height:100%;
-  width: 100%;
-  background: #FFFFFF;
+  width:100%;
   border: none;
+  border: 1px solid rgba(255,255,255,0);
+  border-bottom: 1px solid #dfdfdf;
   text-align: left;
-  font-size: 15px;
   font-weight: normal;
-  color: #939292;
+  color: #aaa;
   padding-left: 10px;
   margin: 0px;
-  cursor: pointer;
-  background: url('../img/validate_disabled.png') no-repeat scroll right center #FFFFFF;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center;
 }
-.newElementContainer.notEmpty  .formInput input{
+
+.newElementContainer .formInput input:hover{
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #fefefe;
+}
+.newElementContainer .formInput input:focus {
+  cursor: auto;
+  color: #666;
+  border: 1px solid #0098c4;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #fefefe;
+}
+.newElementContainer.notEmpty .formInput input{
   background-image: url('../img/validate_correct.png');
 }
 .newElementContainer.inUse.notEmpty  .formInput input,
@@ -700,6 +764,16 @@ div.container *{
   display:inline-block;
 }
 
+.newElementContainer .chzn-container-single .chzn-single,
+.newElementContainer .formSelector .chzn-drop {
+  text-align: left;
+  padding-left: 0px;
+}
+
+.newElementContainer .formSelector .chzn-container span:after {
+  margin-top: 17px;
+}
+
 
 
 
@@ -716,10 +790,10 @@ div.container *{
   width: 23%;
 }
 .newElementContainer  .formButton button{
-  background: url('../img/add_new.png') no-repeat center center #25BAED;
+  background: url('../img/add_new.png') no-repeat center center #333e48;
 }
 .newElementContainer .formButton button:hover{
-  background-color: #009DE2;
+  background-color: #0098c4;
 }
 .newElementContainer .formLabel {
   line-height: 38px;
@@ -742,10 +816,11 @@ div.container *{
   position:absolute;
   background: no-repeat center center transparent;
   top: 3px;
-  left: 5px;
+  left: 1px;
 }
 .newElementContainer .formCheckbox.checked .checkMark{
   background-image: url("../img/checked.png");
+  background-size: 20px;
 }
 .newElementContainer .formSelector .chzn-container{
   /*min-width: 188px;*/
@@ -762,13 +837,14 @@ div.container *{
 }
 .newElementContainer .formSelector .chzn-drop{
   height: auto;
+  top: 26px !important;
+  margin-left: 0;
 }
 .newElementContainer .formSelector .chzn-drop .chzn-results li{
-  height: 38px;
+  height: 20px;
   line-height: 22px;
   text-indent: 8px;
 }
-
 
 
 
@@ -789,8 +865,8 @@ div.container *{
 
  .dataTables_wrapper {
   min-height: 1px;
-  margin-left: -5px;
-  margin-right: -5px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
  .dataTables_wrapper .dataTables_filter{
   display: none;
@@ -802,11 +878,12 @@ table{
   min-width: 100%;
   padding-top: 10px;
   border-collapse:separate;
-  border-spacing:5px 10px;
+  border-spacing:0px;
+  margin-top: 20px;
 }
 table tr{
   background: #EBEDEE;
-  height: 50px;
+  height: 40px;
 }
 
 /* Header */
@@ -814,25 +891,35 @@ thead tr {
   height: 30px;
 }
 thead th {
-  background: #FFFFFF;
-  color: #939292;
+  background: none;
+  color: #333e48;
   font-size: 13px;
-  text-align: center;
+  text-align: left !important;
   font-weight: normal;
   vertical-align: bottom;
+  font-family: 'Open Sans Semibold';
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-left: 10px;
 }
 thead th:last-child {
   text-align: center;
 }
 
 /* Body */
+tbody tr:nth-child(even) {
+  background: #EBEDEE;
+}
+tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
 tbody td{
   text-align: left;
-  color: #939292;
-  font-size: 15px;
-  padding:0px;
+  color: #333e48;
+  font-size: 13px;
+  padding: 0px;
   padding-left: 10px;
-  background:#EBEDEE;
+  font-family: 'Open Sans';
 }
 tbody td:last-child {
   text-align: center;
@@ -840,7 +927,9 @@ tbody td:last-child {
 }
 tbody td.actionButtons {
 	padding: 0px;
-  height:50px; /* Can't work out a percentual height with tables */
+  height: 32px; /* Can't work out a percentual height with tables */
+  text-align: right;
+  width: 126px;
 }
 
 tbody td.actionButtons .buttonContainer {
@@ -848,24 +937,80 @@ tbody td.actionButtons .buttonContainer {
   width:100%;
 }
 tbody td.actionButtons button{
-  background: #41B8EE;
-  color: #D1EEFC;
-  font-size: 15px;
+  color: #333;
+  font-size: 13px;
   border: 0px none;
   box-shadow: none;
   height: 100%;
-  width:100%;
+  width:32px;
   vertical-align: baseline;
-  border-right: 1px solid #D1EEFC;
+  margin-left: 5px;
 }
 tbody td.actionButtons button:last-child {
   border-right:none;
 }
 tbody td.actionButtons button:hover{
-  background: #2C9AE3;
-  color:#FFFFFF;
+  color:#333;
 }
-tbody td.actionButtons .numButtons-1 button{
+tbody tr:nth-child(even) td.actionButtons button {
+  background-color: #EBEDEE;
+}
+tbody tr:nth-child(odd) td.actionButtons button {
+  background-color: #f5f5f5;
+}
+.runEndpointButton {
+  background-image: url(../img/play.png);
+  background-repeat: no-repeat;
+}
+.deleteDashboardButton {
+  background-image: url(../img/trash.png);
+  background-repeat: no-repeat;
+  margin-left: 20px !important;
+}
+.editDashboardButton {
+  background-image: url(../img/edit.png);
+  background-repeat: no-repeat;
+}
+.deleteEndpointButton {
+  background-image: url(../img/trash.png);
+  background-repeat: no-repeat;
+  margin-left: 20px !important;
+}
+.viewDashboardButton {
+  background-image: url(../img/preview.png);
+  background-repeat: no-repeat;
+}
+.runEndpointButton,
+.deleteDashboardButton,
+.editDashboardButton,
+.deleteEndpointButton,
+.viewDashboardButton {
+  background-position: 0px 4px;
+}
+.runEndpointButton:hover,
+.deleteDashboardButton:hover,
+.editDashboardButton:hover,
+.deleteEndpointButton:hover,
+.viewDashboardButton:hover {
+  background-position: -32px 4px;
+}
+tbody tr td.actionButtons button {
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+}
+tbody tr:hover td.actionButtons button {
+  opacity: 1;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+}
+/*tbody td.actionButtons .numButtons-1 button{
   width:100%;
 }
 tbody td.actionButtons .numButtons-2 button{
@@ -876,7 +1021,7 @@ tbody td.actionButtons .numButtons-3 button{
 }
 tbody td.actionButtons .numButtons-4 button{
   width:25%;
-}
+}*/
 
 
 
@@ -933,9 +1078,14 @@ button {
 /**** Chosen Select *****/
 /* All Chosen elements */
 .chzn-container{
-  height:100%;
+  /*height:100%;
   border: 4px solid #EBEDEE;
   min-width:160px;
+  font-size: 12px;*/
+  height: 100%;
+  border-top: 5px solid #EBEDEE;
+  font-size: 13px;
+  margin-left: -5px;
 }
 
 .chzn-container .chzn-drop {
@@ -946,6 +1096,8 @@ button {
   margin: 0px;
   margin-top:2px;
   height:auto;
+  background: rgba(255,255,255,0.5);
+  margin-left: 4px;
 }
 .chzn-container .chzn-results {
   overflow: hidden;
@@ -957,30 +1109,33 @@ button {
   display: none;
 }
 .chzn-drop  .chzn-results li{
-  line-height: 10px;
-  height: 25px;
-  color: #D1EEFC;
+  line-height: 20px;
+  height: 20px;
+  color: #333e48;
   text-indent: 4px;
-  border-bottom: 1px solid #D1EEFC;
-  background: #41B8EE;
+  border-bottom: none;
+  background: none;
+  padding: 0px 7px 8px 0px;
+  display: block;
+  width: auto;
 }
 .chzn-drop .chzn-results li:last-child{
   border-bottom:none;
 }
 .chzn-drop .chzn-results li:hover {
-  background: #2C9AE3;
-  color:#FFFFFF;
+  background: rgba(255,255,255,.5);
+  color:#0098c4;
 }
 
 /* Single Select */
 .chzn-container-single .chzn-single{
-  background: #41B8EE;
-  color: #D1EEFC;
+  background: none;
+  color: #333e48;
   border-radius: 0px;
   border:none;
   height: 100%;
   min-width: 100%;
-  line-height: 26px;
+  line-height: 24px;
 }
 .chzn-container-active .chzn-single {
     box-shadow: none;
@@ -989,15 +1144,28 @@ button {
 .chzn-container-single .chzn-single:hover{
   box-shadow: none;
   border:none;
-  background:#2C9AE3;
-  color:#FFFFFF;
+  background:none;
+  color:#333e48;
 }
 .noResults .chzn-container-single .chzn-single,
 .noResults .chzn-container-single .chzn-single.chzn-single-with-drop,
 .noResults .chzn-container-single .chzn-single:hover{
-  background:#CFCECE;
-  color:#FFFFFF;
+  color:#aaa;
   cursor:default;
+}
+.noResults .chzn-container-single .chzn-single span, .noResults .chzn-container-single .chzn-single.chzn-single-with-drop span, .noResults .chzn-container-single .chzn-single span:hover {
+  color: #aaa;
+}
+
+.noResults .chzn-container-single .chzn-single span:after,
+.noResults .chzn-container-single .chzn-single.chzn-single-with-drop span:after,
+.noResults .chzn-container-single .chzn-single:hover span:after{
+  background-position: -16px 0px;
+}
+
+.chzn-container .chzn-results .highlighted {
+  background: none;
+  color: #333e48;
 }
 
 .chzn-container-single .chzn-single div{ /* Arrow container */
@@ -1021,8 +1189,18 @@ button {
   background-position: -28px 50%;
 }
 
+.chzn-container .chzn-results .active-result.result-selected {
+  background: none;
+  color: #333e48;
+}
 
-
+.chzn-container .chzn-drop {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  top: 26px !important;
+}
 
 
 
@@ -1044,19 +1222,20 @@ button {
    font-size: 18px;
    text-align: left;
    height: auto;
-   padding: 15px 15px 15px 15px; 
+   padding: 15px; 
 
-   border:solid 2px #25B9ED;
+   border: solid 1px #333e48;
+   background: #fefefe;
    -webkit-box-shadow:0px 1px 2px 0px #C4C4C4;
    -moz-box-shadow:0px 1px 2px 0px #C4C4C4;
    -o-box-shadow:0px 1px 2px 0px #C4C4C4;
    -ms-box-shadow:0px 1px 2px 0px #C4C4C4;
    box-shadow:0px 1px 2px 0px #C4C4C4;
-   -webkit-border-radius:2px;
-   -moz-border-radius:2px;
-   -o-border-radius:2px;
-   -ms-border-radius:2px;
-   border-radius:2px;
+   -webkit-border-radius:0;
+   -moz-border-radius:0;
+   -o-border-radius:0;
+   -ms-border-radius:0;
+   border-radius:0;
 
    position: absolute;
 
@@ -1127,16 +1306,22 @@ input.editBox:focus {
   padding: 0px 0px 0px 0px;
 }
 .ui-dialog.ui-widget.ui-widget-content{
-  background: #FFFFFF;
-  color: #8786A4;
-  border: 2px solid #25B9ED;
+  background: #fefefe;
+  color: #aaa;
+  border: 1px solid #333e48;
 }
-
+.ui-dialog .ui-dialog-titlebar{
+  padding: 3px 7px 5px;
+}
 .ui-dialog .ui-dialog-titlebar.ui-widget-header{
   border-radius: 0px;
-  background: #25B9ED;
-  color: #FFFFFF;
+  background: #333e48;
+  color: #fefefe;
   border: none;
+  text-shadow: none;
+  font-family: 'Open Sans Light';
+  font-weight: 300;
+  display: none;
 }
 .ui-dialog .ui-dialog-titlebar.ui-widget-header a{
   display: none;
@@ -1146,19 +1331,22 @@ input.editBox:focus {
 }
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus,
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover{
-  background: #25B9ED;
   border: none;
+  background: none;
 }
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span{
-  background: url('../img/x.png') -45px -10px no-repeat #25B9ED;
+  background: url('../img/x.png') -45px -10px no-repeat #333e48;
 }
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus span,
 .ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover span{
-  background: url('../img/x.png') -11px -9px no-repeat #25B9ED;
+  background: url('../img/x.png') -45px -10px no-repeat #333e48;
 }
 .ui-dialog .ui-dialog-content{
-  color: #8786A4;
-  min-height: 0px;
+  color: #333e48;
+  min-height: 1px !important;
+  padding: 50px 10px 40px;
+  text-align: center;
+  font-size: 20px;
 }
 .ui-dialog .ui-dialog-buttonpane{
   background: #FFFFFF;
@@ -1167,18 +1355,21 @@ input.editBox:focus {
   margin: 0px 0px 0px 0px;
 }
 .ui-dialog .ui-dialog-buttonpane button{
-  background: #25B9ED;
-  color: #FFFFFF;
+  background: none;
+  color: #333e48;
   border-radius: 0px;
   border: none;
+  font-family: 'Open Sans Light';
+  width: 100px;
+  font-weight: 300;
 }
 .ui-dialog .ui-dialog-buttonpane button:hover{
-  background: #2C9AE3;
+  background: #0098c4;
   color:#FFFFFF;
 }
 
 .ui-widget-overlay{
-  background: #FFFFFF;
+  background: #ebedee;
   opacity: 0.8;
 }
 

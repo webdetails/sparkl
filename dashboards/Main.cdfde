@@ -377,6 +377,152 @@
     ]
    },
    {
+    "id": "54fc0ec1-5786-578c-c519-90849d06a51a",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
+    "properties": [
+     {
+      "name": "name",
+      "value": "search",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "5",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fb34824b-983d-d360-da71-7311d0722324",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "15",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "0b82c1c7-15d2-6ba5-2ec3-4ec0cc943c67",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -389,7 +535,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "2",
+      "value": "3",
       "type": "Integer"
      },
      {
@@ -462,7 +608,7 @@
      },
      {
       "name": "html",
-      "value": "Sort by ",
+      "value": "Sort plugins by ",
       "type": "Html"
      },
      {
@@ -496,79 +642,6 @@
      {
       "name": "columnSpan",
       "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "54fc0ec1-5786-578c-c519-90849d06a51a",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "edbbf702-47a9-bef5-477e-6d1334ab03fe",
-    "properties": [
-     {
-      "name": "name",
-      "value": "search",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "5",
       "type": "Integer"
      },
      {
@@ -1099,7 +1172,7 @@
    {
     "id": "e33c7638-acfc-d072-41ff-519cf065df21",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -1127,7 +1200,7 @@
    {
     "id": "c62c9039-e9c0-3bd3-450b-c59347c0c267",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -1155,7 +1228,7 @@
    {
     "id": "439612e7-e2fd-44cb-c45f-c9b4737e4825",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -1183,7 +1256,7 @@
    {
     "id": "a3b7efdf-d5c9-bc7f-4dfb-057c617c6b57",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -1211,7 +1284,7 @@
    {
     "id": "69fb0a24-e79e-af0e-17ae-9477b00f3baf",
     "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
+    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
@@ -1396,7 +1469,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"pluginId\",\"Plugin Id\"],[\"plugin_name\",\"Plugin Name\"],[\"version\",\"Version\"]]",
+      "value": "[[\"pluginId\",\"id\"],[\"plugin_name\",\"name\"],[\"version\",\"version\"]]",
       "type": "ValuesArray"
      },
      {
@@ -1503,7 +1576,7 @@
      },
      {
       "name": "priority",
-      "value": 5,
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -1518,12 +1591,12 @@
      },
      {
       "name": "preExecution",
-      "value": "function f (){\n    \n    var myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n\n    this.newPluginActions = [\n        {\n            id: \"createAction\",\n            label: \"Create\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo');\n            }\n        }\n\t];\n    \n    if ( sparkl.hasUploaderComponent()){\n        this.newPluginActions.push({\n    \t\tid: \"importAction\",\n\t\t\tlabel: \"Unpack\",\n            callback:function(id){\n                if (myself.custom && myself.custom.importTrigger){\n                    myself.custom.importTrigger();\n                }\n            }\n\t\t});\n    }\n    \n    this.pluginActions = [\n        {\n            id: \"runAppAction\",\n            label: \"Run App\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/' + id + '/api/default' , {}, true);\n            }\n        },\n        {\n            id: \"detailsAction\",\n            label: \"Edit App\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo?pluginId=' + id);\n            }\n        },\n        {\n            id: \"separatorDummy\",\n            label: \"\",\n            classes:'noAction'\n        },\n        {\n            id: \"deleteAction\",\n            label: \"Delete\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                dialogComponent.open({\n                    message:\"You are about to delete \"+id+\". Please, press OK to continue...\",\n                    buttons:[\n                        {\n                            text: \"OK\",\n                            click: function () {\n                                Dashboards.incrementRunningCalls();\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                sparkl.runEndpoint( 'sparkl' , 'deletePlugin', {\n                                    params: { pluginId: id },\n                                    success: sparkl.publishToServer(\n                                        function (json){                         \n                                            Dashboards.fireChange('updateTableEvent');\n                                            Dashboards.decrementRunningCalls();\n                                        })\n                                });\n                                \n                            }\n                        },\n                        {\n                            text: \"Cancel\",\n                            click: function () {\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }                               \n                        }\n                    ]\n                });\n            }\n        }\n\t];\n}",
+      "value": "function f (){\n    \n    var myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n\n    this.newPluginActions = [\n        {\n            id: \"createAction\",\n            label: \"Create\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo');\n            }\n        }\n\t];\n    \n    if ( sparkl.hasUploaderComponent()){\n        this.newPluginActions.push({\n    \t\tid: \"importAction\",\n\t\t\tlabel: \"Unpack\",\n            callback:function(id){\n                if (myself.custom && myself.custom.importTrigger){\n                    myself.custom.importTrigger();\n                }\n            }\n\t\t});\n    }\n    \n    this.pluginActions = [\n        {\n            id: \"runAppAction\",\n            label: \"\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/' + id + '/api/default' , {}, true);\n            }\n        },\n        {\n            id: \"detailsAction\",\n            label: \"\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo?pluginId=' + id);\n            }\n        },\n        /*{\n            id: \"separatorDummy\",\n            label: \"\",\n            classes:'noAction'\n        },*/\n        {\n            id: \"deleteAction\",\n            label: \"\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                dialogComponent.open({\n                    message:\"Rly?\",\n                    buttons:[\n                        {\n                            text: \"Cancel\",\n                            id: \"deletePluginButtonCancel\",\n                            click: function () {\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }                               \n                        },\n                        {\n                            text: \"OK\",\n                            id: \"deletePluginButtonOK\",\n                            click: function () {\n                                Dashboards.incrementRunningCalls();\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                sparkl.runEndpoint( 'sparkl' , 'deletePlugin', {\n                                    params: { pluginId: id },\n                                    success: sparkl.publishToServer(\n                                        function (json){                         \n                                            Dashboards.fireChange('updateTableEvent');\n                                            Dashboards.decrementRunningCalls();\n                                        })\n                                });\n                                \n                            }\n                        }\n                    ]\n                });\n            }\n        }\n\t];\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    this.custom = this.custom || {};\n    this.custom.trigger = function (){ return true };\n    \n    if (sparkl.hasUploaderComponent()){\n        var myself = this,\n            dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            $ph = $('#' +  this.htmlObject);\n\n        var successCallback = function (){\n            Dashboards.fireChange('updateTableEvent');\n            Dashboards.decrementRunningCalls();\n            /*dialogComponent.open({\n                message:\"Plugin imported successfully.\",\n                dialogClass:'closeButtonVisible'\n            });*/\n        }\n                \n        var uploadOpts = {\n            root: 'sparkl/import',\n            success: function (filename){\n                Dashboards.incrementRunningCalls();\n                sparkl.runEndpoint( 'sparkl' , 'importPlugin', {\n                    params: { filename: filename },\n                    success: sparkl.addPublishWrapper(successCallback) ,\n                    error: function(){\n                        Dashboards.decrementRunningCalls();\n                        dialogComponent.open({\n                            message:\"Error importing plugin.\",\n                            dialogClass:'closeButtonVisible'\n                        });\n                    }    \n                });  \n            },\n            validationError: function (){\n                Dashboards.decrementRunningCalls();\n                dialogComponent.open({\n                    message:\"File type not allowed. Please pick a .zip file.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            uploadError: function (){\n                Dashboards.decrementRunningCalls();\n                dialogComponent.open({\n                    message:\"Error importing plugin.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            isValidFilename: function(filename){\n                var reg = sparkl.getSettings('expressions','zip');\n                return reg.test(filename);\n            }\n        };\n            \n        var trigger = sparkl.addUploadForm.call( this, $ph, uploadOpts );\n        this.custom.importTrigger = function(){ trigger(); }; \n        \n    }\n    \n         \n}",
+      "value": "function f(){\n    this.custom = this.custom || {};\n    this.custom.trigger = function (){ return true };\n    \n    if (sparkl.hasUploaderComponent()){\n        var myself = this,\n            dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            $ph = $('#' +  this.htmlObject);\n\n        var successCallback = function (){\n            Dashboards.fireChange('updateTableEvent');\n            Dashboards.decrementRunningCalls();\n            /*dialogComponent.open({\n                message:\"Plugin imported successfully.\",\n                dialogClass:'closeButtonVisible'\n            });*/\n        }\n                \n        var uploadOpts = {\n            root: 'sparkl/import',\n            success: function (filename){\n                Dashboards.incrementRunningCalls();\n                sparkl.runEndpoint( 'sparkl' , 'importPlugin', {\n                    params: { filename: filename },\n                    success: sparkl.addPublishWrapper(successCallback) ,\n                    error: function(){\n                        Dashboards.decrementRunningCalls();\n                        dialogComponent.open({\n                            message:\"Error importing plugin.\",\n                            dialogClass:'closeButtonVisible'\n                        });\n                    }    \n                });  \n            },\n            validationError: function (){\n                Dashboards.decrementRunningCalls();\n                dialogComponent.open({\n                    message:\"File type not allowed. Please pick a .zip file.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            uploadError: function (){\n                Dashboards.decrementRunningCalls();\n                dialogComponent.open({\n                    message:\"Error importing plugin.\",\n                    dialogClass:'closeButtonVisible'\n                });\n            },\n            isValidFilename: function(filename){\n                var reg = sparkl.getSettings('expressions','zip');\n                return reg.test(filename);\n            }\n        };\n            \n        var trigger = sparkl.addUploadForm.call( this, $ph, uploadOpts );\n        this.custom.importTrigger = function(){ trigger(); }; \n        \n    }\n    \n    $('.sparklPluginCardContainer').each(function() {\n        $(this).find('#runAppAction').attr('title','Run Plugin');\n        $(this).find('#detailsAction').attr('title','Edit Plugin');\n        $(this).find('#deleteAction').attr('title','Delete Plugin');\n    }) \n    \n}",
       "type": "JavaScript"
      },
      {

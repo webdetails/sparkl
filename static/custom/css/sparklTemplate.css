@@ -72,17 +72,15 @@ time, mark, audio, video {
 
 /* Window Background */
 body{
-    font-family: Gudea;
+    font-family: 'Open Sans Light';
     background: #dee8ec;
 }
 
 .sparklWrapper{
 	width: 1000px;
-	border: 2px solid #25B9ED;
 	margin-right:auto;
   margin-left:auto;
-  background: #FFFFFF;
-  border-top: 0px;
+  background: #ebedee;
 }
 
 /* =============================================================================
@@ -92,7 +90,6 @@ body{
 .sparklHeader {
     height: 56px;
     line-height:56px;
-    background: url('../img/headerShadow.png') 0px 100% no-repeat #25B9ED ;
     position: relative;
     display:block;
     overflow:hidden;
@@ -111,32 +108,34 @@ body{
   height: 100%;
   color: #FFFFFF;
   float:right;
-  margin-right:30px;
+  margin-right:26px;
+  padding-top: 4px;
 }
 
 .sparklMail a{
-  background: url('../img/email.png') 0px 50%;
+  background: url('../img/email.png') -2px 50%;
   width:31px;
   height:21px;
   position:relative;
   display:inline-block;
 }
 .sparklMail a:hover{
-  background-position: -32px 50%;
+  background-position: -34px 50%;
 }
 
 .sparklMail a span {
   width:0px;
   position:absolute;
   right:0px;
-  margin-right:36px;
+  margin-right:34px;
   overflow:hidden;
   line-height: 1;
   text-align: right;
-  color:#FFFFFF;
+  color: #268ee2;
   font-size:13px;
   bottom: 3px;
   white-space: nowrap;
+  margin-bottom: 2px;
 
   -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
      -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
@@ -145,8 +144,8 @@ body{
 
 }
 .sparklMail a:hover span {
-  width:155px;
-  margin-right:31px;
+  width:157px;
+  margin-right:34px;
 }
 
 .sparklHeader .pluginTabContainer {
@@ -155,10 +154,8 @@ body{
   max-width:400px;
   position:relative;
   float:left;
-  padding:15px;
-
-  -webkit-box-shadow:  0px 0px 6px 4px #3C8AB2;
-  box-shadow:  0px 0px 6px 4px #3C8AB2;
+  padding: 14px 15px 15px;
+  margin-left: 150px;
 }
 
 .sparklHeader *{
@@ -168,26 +165,25 @@ body{
 }
 
 .sparklHeader .pluginTabContainer .pluginName{
-  color: #FFFFFF;
-  font-size:14px;
+  color: #333e48;
+  font-size:20px;
   float:left;
   height:0px;
   line-height:0px;
   left:15px;
   margin-right:25px;
-  text-transform:uppercase;
 }
 
 .sparklHeader .pluginTabContainer .pluginId {
   float:left;
-  color: #D1EEFC;
-  font-size:11px;
+  color: #737e88;
+  font-size:13px;
   float:left;
   height:0px;
   line-height:0px;
   position:absolute;
   top:40%;
-  margin-top: 16px;
+  margin-top: 18px;
   left:15px;
   margin-right:25px;
 }
@@ -196,10 +192,10 @@ body{
   position:absolute;
   width:13px;
   height:13px;
-  background: url('../img/x.png') -11px 50% transparent no-repeat;
-  top: 50%;
-  margin-top: -7px;
-  right: 10px;
+  background: url('../img/x2.png') -11px 50% transparent no-repeat;
+  top: 16px;
+  margin-top: -8px;
+  left: -7px;
   cursor:pointer;
 }
 
@@ -239,6 +235,286 @@ body{
 
 }
 
+.sparklPluginCardContainer .cardHeader {
+  height: 60px;
+  font-size: 18px;
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,255,255,.85);
+  border: 0;
+}
+
+.sparklPluginCardContainer .cardBody {
+  height: 100%;
+  position: relative;
+}
+
+.sparklNewPluginCardContainer {
+  background: #d8d8d8;
+}
+
+.sparklPluginCardContainer .descriptionExpandCont:hover .descriptionContainer {
+  height: 60px;
+  padding: 0px 10px 10px;
+}
+
+.sparklPluginCardContainer .descriptionContainer {
+  top: -170px;
+  height: 0px;
+  background: rgba(255,255,255,0.85);
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.sparklPluginCardContainer .cardHeader .name {
+  color: #333e48;
+  height: 18px;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+.sparklPluginCardContainer .cardHeader .id {
+  color: #999999;
+  height: 20px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.sparklPluginCardContainer .descriptionContainer .header {
+  height: 25px;
+  color: #333e48;
+  font-size: 10px;
+  display: none;
+  padding-top: 5px;
+}
+
+.sparklPluginCardContainer .descriptionContainer .body {
+  color: #999999;
+  height: auto;
+  font-size: 12px;
+}
+
+.sparklPluginCardContainer .imageContainer .imagePlaceholder {
+  display: none;
+}
+
+.sparklPluginCardContainer .cardFooter {
+  margin-top: -35px;
+  position: relative;
+  background: rgba(255,255,255,0.85);
+}
+
+.sparklPluginCardContainer .descriptionExpandCont {
+  height: 230px;
+}
+
+.sparklPluginCardContainer .imageContainer:hover {
+  cursor: default;
+}
+
+.chzn-container-single .chzn-single span {
+  display: inline;
+  color: #0098c4;
+}
+
+.chzn-container-single .chzn-single span:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  background-image: url('../img/mini-arrow.png');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.chzn-container-single .chzn-single:hover span:after {
+  background-position: -8px 0px
+}
+
+.chzn-container-single .chzn-single b {
+  display: none !important;
+}
+
+.sparklNewPluginCardContainer .overlay {
+  background: #d8d8d8;
+}
+
+#tabMultiButtonObj {
+  border-bottom: 1px solid #ccc;
+}
+
+#refreshObj {
+  margin-top: 1px;
+}
+
+#aboutAuthorSubcell {
+  margin-top: 30px;
+}
+
+#aboutPluginSubcell {
+  margin-top: 50px;
+}
+
+#elementsCell {
+  margin-top: 15px;
+}
+
+tr.even td.sorting_1 {
+  background: none !important;
+}
+
+tr.odd td.sorting_1 {
+  background: none !important;
+}
+
+.sorting,
+.sorting_asc,
+.sorting_desc {
+  background: none;
+  cursor: pointer;
+}
+
+.sorting:hover {
+  background: url('../img/sort_both.png') no-repeat center right #fefefe;
+}
+
+.sorting_asc:hover {
+  background: url('../img/sort_asc.png') no-repeat center right #fefefe;
+}
+
+.sorting_desc:hover {
+  background: url('../img/sort_desc.png') no-repeat center right #fefefe;
+}
+
+#sendMessageButtonObj {
+  height: 30px;
+}
+
+#sendMessageButtonObj button {
+  font-family: 'Open Sans Light';
+  background: #333e48;
+  color: #fefefe;
+}
+
+#sendMessageButtonObj button:hover {
+  background: #0098c4;
+}
+
+.imgTip {
+  position: relative;
+  font-size: 9px;
+  color: #aaa;
+  margin-top: 12px;
+  display: block;
+  text-align: center;
+  width: 160px;
+  margin: 10px auto;
+}
+
+#newElementTypeSelectorObj {
+  padding-left: 10px;
+}
+
+#newElementTemplateSelectorObj {
+  padding-left: 10px;
+}
+
+.blockUI.blockOverlay {
+  background-color: rgba(235,237,238,0.6) !important;
+  opacity: 1 !important;
+}
+
+#aboutCell .blockUI.blockOverlay {
+  margin-top: -2px !important;
+}
+
+/* plugins */
+
+.sparklPluginCardContainer .optionCont {
+  height: 32px;
+  width: 32px;
+  font-size: 15px;
+  float: left;
+  line-height: 32px;
+  background: none;
+  border-bottom: none;
+}
+.sparklPluginCardContainer .optionCont:hover {
+  background: none;
+}
+
+.sparklPluginCardContainer .optionsContainer {
+  height: 100%;
+  position: relative;
+  z-index: 100;
+  background: none;
+}
+
+.sparklPluginCardContainer .cardFooter {
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  height: 42px;
+  margin-top: -42px;
+}
+
+#deleteAction {
+  float: right;
+  background-image: url(../img/trash.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#runAppAction {
+  background-image: url(../img/play.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#detailsAction {
+  background-image: url(../img/edit.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#deleteAction:hover,
+#runAppAction:hover,
+#detailsAction:hover {
+  background-position: -32px 0px;
+}
+
+#deletePluginButtonOK {
+  width: 184px;
+  background: #333e48;
+  color: #fff;
+}
+#deletePluginButtonOK:hover {
+  width: 184px;
+  background: #0098c4;
+}
+
+#updateLibsButtonObj * {
+  color: #fff;
+}
+#updateLibsButtonObj {
+  background: #333e48;
+}
+#updateLibsButtonObj:hover {
+  background: #0098c4;
+}
+
+/*.sparklPluginCardContainer .optionsContainer {
+  display: none;
+}
+
+.sparklPluginCardContainer:hover .optionsContainer {
+  display: block;
+}*/
 
 /* =============================================================================
    Project Specific Items 
