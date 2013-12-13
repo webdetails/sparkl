@@ -7750,7 +7750,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n                \n        var successCallback = function (json){      \n            $('.newPluginCell').toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $('.sparklCell').unblock();\n            Dashboards.decrementRunningCalls();\n            dialog.open({\n                message:\"The plugin \" + newPluginId + \" was successfully created!\" +\n                \" Please restart the server for full functionality.\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.decrementRunningCalls();  \n        }\n                \n        Dashboards.incrementRunningCalls();            \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
+      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n                \n        var successCallback = function (json){      \n            $('.newPluginCell').toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $('.sparklCell').unblock();\n            Dashboards.decrementRunningCalls();\n            dialog.open({\n                message:\"The plugin \" + newPluginId + \" was successfully created!\" +\n                \"<br><span class='redInfo'>Please restart the server for full functionality.</span>\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.decrementRunningCalls();  \n        }\n                \n        Dashboards.incrementRunningCalls();            \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -8650,11 +8650,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "parameters",
       "value": "[[\"pluginId\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
@@ -8685,9 +8680,9 @@
       "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "paginate",
@@ -8720,6 +8715,11 @@
       "type": "Boolean"
      },
      {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -8735,14 +8735,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",

@@ -509,6 +509,10 @@ tr.odd td.sorting_1 {
   background: #0098c4;
 }
 
+.redInfo {
+  color:#d92f2f;
+}
+
 /*.sparklPluginCardContainer .optionsContainer {
   display: none;
 }

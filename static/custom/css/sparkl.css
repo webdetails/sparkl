@@ -1346,7 +1346,7 @@ input.editBox:focus {
   color: #333e48;
   min-height: 1px !important;
   padding: 50px 10px 40px;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
 }
 .ui-dialog .ui-dialog-buttonpane{
