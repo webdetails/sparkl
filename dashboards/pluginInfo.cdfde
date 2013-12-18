@@ -545,7 +545,7 @@
      },
      {
       "name": "cssClass",
-      "value": "tab1 tabElement actionButton",
+      "value": "tab1 tab2 tabElement actionButton",
       "type": "String"
      }
     ]
@@ -618,7 +618,7 @@
      },
      {
       "name": "cssClass",
-      "value": "tab1 tabElement actionButton",
+      "value": "tab1 tab2 tabElement actionButton",
       "type": "String"
      }
     ]
@@ -8650,11 +8650,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
       "type": "Array"
@@ -8685,9 +8680,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "parameters",
+      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -8720,6 +8715,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -8735,14 +8735,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -9054,7 +9054,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    $('.tabElement').addClass('WDhidden');\n    $('.tabElement.' + this.getValue()).removeClass('WDhidden');\n    \n    if(this.getValue() == 'tab2') {\n        $('#submitChangesButtonObj').hide();\n    } else if(this.getValue() == 'tab1') {        \n        $('#submitChangesButtonObj').show();\n    }\n}",
+      "value": "function f(){\n    $('.tabElement').hide();\n    $('.tabElement.' + this.getValue()).show();\n}",
       "type": "JavaScript"
      },
      {
@@ -9064,7 +9064,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    $('.tabElement').addClass('WDhidden');\n    $('.tabElement.' + this.getValue() ).removeClass('WDhidden');\n    \n    if(this.getValue() == 'tab2') {\n        $('#submitChangesButtonObj').hide();\n    } else if(this.getValue() == 'tab1') {        \n        $('#submitChangesButtonObj').show();\n    }\n}\n",
+      "value": "function f(){\n    $('.tabElement').hide();\n    $('.tabElement.' + this.getValue() ).show();\n}\n",
       "type": "JavaScript"
      },
      {
