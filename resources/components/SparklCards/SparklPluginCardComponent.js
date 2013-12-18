@@ -1,6 +1,17 @@
 
 var SparklPluginCardComponent = (function(){
 
+	function _getHashCode (str){
+    var hash = 0, i, char;
+    if (str.length == 0) return hash;
+    for (i = 0, l = str.length; i < l; i++) {
+        char  = str.charCodeAt(i);
+        hash  = ((hash<<5)-hash)+char;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+	}
+
 
 
 	var MyClass = UnmanagedComponent.extend({
@@ -48,19 +59,24 @@ var SparklPluginCardComponent = (function(){
 			this._views = {};
 			this._models = {};
 		},
-		// construct plugins info based on query data
-	  	handleJsonResponse: function (json){
-	  		var myself = this;
-	    	var	plugins = _.map( json.resultset , function (rawPlugin){
-	      		var plugin = {};
-	      		_.each ( rawPlugin, function(value, idx){
-	        		plugin[ json.metadata[idx].colName ] = value;
-		      		plugin.actionOpts = myself.pluginActions; //append opts data not included in query
-	      		});
-	      		return plugin
-	    	});
-	    	this.redraw(plugins);
-	  	},
+	// construct plugins info based on query data
+  	handleJsonResponse: function (json){
+  		var myself = this;
+    	var	plugins = _.map( json.resultset , function (rawPlugin){
+      		var plugin = {};
+      		_.each ( rawPlugin, function(value, idx){
+        		plugin[ json.metadata[idx].colName ] = value;
+	      		plugin.actionOpts = myself.pluginActions; //append opts data not included in query
+      		});
+      		return plugin
+    	});
+    	this.redraw(plugins);
+  	},
+
+  	getColor: function(str){
+  		var idx = Math.abs(_getHashCode(str)) % this.colorPalette.length;
+  		return this.colorPalette[idx];
+  	},
 
 		redraw: function(plugins) {
 			$('#'+this.htmlObject).empty();
@@ -90,7 +106,7 @@ var SparklPluginCardComponent = (function(){
 
 	    	/* Initialize Plugins Cards models and views */
 	  		_.each( plugins , function(pluginOpts){
-	  			pluginOpts.backgroundColor = _.first( _.shuffle( that.colorPalette));
+	  			pluginOpts.backgroundColor = that.getColor(pluginOpts.pluginId);
 	  			if( !that._models[pluginOpts.pluginId] ){
 	    			that._models[pluginOpts.pluginId] = new wd.cpk.models.sparklPluginCard( pluginOpts );
 	    		} else {
