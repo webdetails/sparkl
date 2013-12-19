@@ -26,53 +26,31 @@
 	position:relative;
 	overflow:hidden;
 }
+.sparklPluginCardContainer .cardHeader .nameContainer{
+	overflow:hidden;
+}
 .sparklPluginCardContainer .cardHeader .name{
 	cursor:default;
 	height: 24px;
 	line-height: 20px;
 	display:inline-block;
 	white-space: nowrap;
+	text-overflow:ellipsis;
 	overflow:hidden;
-   	-webkit-transition: all 1.5s ease-in-out;
-	-moz-transition: all 1.5s ease-in-out;
-	-o-transition: all 1.5s ease-in-out;
-	transition: all 1.5s ease-in-out;
-}
-.sparklPluginCardContainer .cardHeader.overflow .name:hover {
-	text-indent:-50%;
-}
-.sparklPluginCardContainer .cardHeader .ellipsis,
-.sparklPluginCardContainer .cardHeader.overflow .nameContainer:hover .ellipsis.right{
-	overflow: hidden;
-	width:0px;
-	line-height: 12px;
-	padding:0px;
-	position:absolute;
-	top:0px;
-	height:20px;
-	background:#EAEDEE;
-	-webkit-transition: all 1.5s ease-in-out;
-	-moz-transition: all 1.5s ease-in-out;
-	-o-transition: all 1.5s ease-in-out;
-	transition: all 1.5s ease-in-out;
-	text-align:center;
-}
-.sparklPluginCardContainer .cardHeader .ellipsis.right{
-	right:0px;
-}
-.sparklPluginCardContainer .cardHeader .ellipsis.left{
-	left:0px;
-}
-.sparklPluginCardContainer .cardHeader.overflow .nameContainer .ellipsis.right,
-.sparklPluginCardContainer .cardHeader.overflow .nameContainer:hover .ellipsis.left{
-	width:20px;
+	width:100%;
 }
 .sparklPluginCardContainer .cardHeader .id{
+  color: #999999;
+  height: 20px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
 	height: 24px;
-	color: #878685;
-	font-weight: normal;
-	font-size: 15px;
-	line-height: 19px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width:100%;
+
 }
 
 .sparklPluginCardContainer .cardBody{
@@ -111,11 +89,11 @@
 	position: relative;
 	background: #434141;
 	font-size: 15px;
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition:    all 500ms ease-out;
-	-ms-transition:     all 500ms ease-out;
-	-o-transition:      all 500ms ease-out;
-	transition:         all 500ms ease-out;
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
 }
 .sparklPluginCardContainer .cardBody:hover .descriptionContainer{
 	height: 195px;
@@ -145,11 +123,11 @@
 	height: 0px;
 	bottom: 0px;
 	position: relative;
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition:    all 500ms ease-out;
-	-ms-transition:     all 500ms ease-out;
-	-o-transition:      all 500ms ease-out;
-	transition:         all 500ms ease-out;
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
 }
 /*.optsExternCont:hover{
 	height: 160px;
@@ -223,11 +201,11 @@
 	overflow: hidden;
 	position: relative;
 
-	-webkit-transition: all 150ms ease-out;
-	-moz-transition:    all 150ms ease-out;
-	-ms-transition:     all 150ms ease-out;
-	-o-transition:      all 150ms ease-out;
-	transition:         all 150ms ease-out;
+	-webkit-transition: all 150ms linear;
+	-moz-transition:    all 150ms linear;
+	-ms-transition:     all 150ms linear;
+	-o-transition:      all 150ms linear;
+	transition:         all 150ms linear;
 }
 .sparklNewPluginCardContainer:hover{
 	background: #25BAED;
@@ -279,11 +257,11 @@
 	left: 85px;
 	top: 110px;
 
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition:    all 500ms ease-out;
-	-ms-transition:     all 500ms ease-out;
-	-o-transition:      all 500ms ease-out;
-	transition:         all 500ms ease-out;
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
 }
 .sparklNewPluginCardContainer .separator .verticalRectangle{
 	height: 60px;
@@ -293,11 +271,11 @@
 	left: 110px;
 	top: 85px;
 
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition:    all 500ms ease-out;
-	-ms-transition:     all 500ms ease-out;
-	-o-transition:      all 500ms ease-out;
-	transition:         all 500ms ease-out;
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
 }
 .sparklNewPluginCardContainer.numActions-2:hover  .separator .horizontalRectangle{
 	width: 100%;
@@ -319,11 +297,11 @@
 .sparklNewPluginCardContainer:hover .optionCont{
 	visibility: visible;
 
-		-webkit-transition: visibility 500ms 500ms ease-out ;
-	-moz-transition:    visibility 500ms 500ms ease-out ;
-	-ms-transition:     visibility 500ms 500ms ease-out ;
-	-o-transition:      visibility 500ms 500ms ease-out ;
-	transition:         visibility 500ms 500ms ease-out ;
+		-webkit-transition: visibility 500ms 500ms linear ;
+	-moz-transition:    visibility 500ms 500ms linear ;
+	-ms-transition:     visibility 500ms 500ms linear ;
+	-o-transition:      visibility 500ms 500ms linear ;
+	transition:         visibility 500ms 500ms linear ;
 }
 
 .sparklNewPluginCardContainer .overlay{
@@ -332,11 +310,11 @@
 	width:100%;
 	position: absolute;
 
-	-webkit-transition: all 50ms ease-out;
-	-moz-transition:    all 50ms ease-out;
-	-ms-transition:     all 50ms ease-out;
-	-o-transition:      all 50ms ease-out;
-	transition:         all 50ms ease-out;
+	-webkit-transition: all 50ms linear;
+	-moz-transition:    all 50ms linear;
+	-ms-transition:     all 50ms linear;
+	-o-transition:      all 50ms linear;
+	transition:         all 50ms linear;
 }
 
 .sparklNewPluginCardContainer:hover .overlay{

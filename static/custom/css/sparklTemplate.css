@@ -301,13 +301,6 @@ body{
   font-size: 16px;
 }
 
-.sparklPluginCardContainer .cardHeader .id {
-  color: #999999;
-  height: 20px;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
-}
 
 .sparklPluginCardContainer .descriptionContainer .header {
   height: 25px;
