@@ -173,9 +173,27 @@ div.container *{
 }
 
 
+.sparklMainHeader{
+	background: #EBEDEE;
+	font-size: 25px;
+	text-align: left;
+	font-size: 25px;
+	color: #333e48;
+	font-family: 'Open Sans Light';
+}
 
+.sparklMainHeader:after{
+	content: '';  
+	width: 100px;
+	height: 4px;
+	background: #0098c4;
+	margin-bottom: 20px;
 
+}
 
+.sparklMainHeader.clearfix:after{
+	visibility: visible;
+}
 
 
 .pluginsListContainer {
