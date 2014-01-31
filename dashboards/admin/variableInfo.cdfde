@@ -654,9 +654,9 @@
     ]
    },
    {
-    "id": "e2a564f7-2335-ccaf-ca81-4f2cc7c32eb1",
-    "type": "Componentssparkl_getvariableinfo_CPKENDPOINT",
-    "typeDesc": "getvariableinfo Endpoint",
+    "id": "931e5957-4014-1090-146b-b7789eea58df",
+    "type": "Componentssparkl_getVariableInfo_CPKENDPOINT",
+    "typeDesc": "getVariableInfo Endpoint",
     "parent": "SPARKL_CPKENDPOINTS",
     "properties": [
      {
@@ -667,7 +667,7 @@
     ],
     "meta": "CPK",
     "meta_pluginId": "sparkl",
-    "meta_endpoint": "getvariableinfo"
+    "meta_endpoint": "getVariableInfo"
    }
   ]
  },
