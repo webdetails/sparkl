@@ -679,6 +679,8 @@ div.container *{
 }
 
 .newElementContainer.empty .formButton.addElement button,
+.newElementContainer.emptyType .formButton.addElement button,
+.newElementContainer.emptyTemplate .formButton.addElement button,
 .newElementContainer.notEmpty.invalid .formButton.addElement button,
 .newElementContainer.notEmpty.reserved .formButton.addElement button,
 .newElementContainer.notEmpty.inUse .formButton.addElement button,

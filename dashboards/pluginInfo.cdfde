@@ -4779,7 +4779,7 @@
      },
      {
       "name": "cssClass",
-      "value": "newElementContainer inactive",
+      "value": "newElementContainer inactive emptyType emptyTemplate",
       "type": "String"
      }
     ]
@@ -7754,6 +7754,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": "1",
       "type": "Integer"
@@ -7888,6 +7908,26 @@
       "name": "expression",
       "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        endpoint = 'updateMetadata';\n\n        \n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var errorCallback = function (json){        \n        dialog.open({\n            message:\"Error updating \"+pluginId+\" plugin!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();        \n    }\n\n        \n    var endpointParams = $.extend({}, metadata, { pluginId: pluginId });\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    }); \n}\n",
       "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -8026,6 +8066,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -8102,6 +8162,26 @@
       "name": "expression",
       "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:pluginMetadataParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n        endpoint = 'updateLibs';\n\n        \n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Plugin \"+pluginId+\" updated successfully!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();        \n    }\n    \n    var errorCallback = function (json){        \n        dialog.open({\n            message:\"Error updating \"+pluginId+\" plugin libraries!\",\n            dialogClass:'closeButtonVisible'\n        });\n        Dashboards.decrementRunningCalls();        \n    }\n\n        \n    var endpointParams = $.extend({}, metadata, { pluginId: pluginId });\n    Dashboards.incrementRunningCalls();        \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: successCallback ,\n        error: errorCallback    \n    }); \n}\n",
       "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -8260,6 +8340,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -8336,6 +8436,26 @@
       "name": "expression",
       "value": "function f(e){\n    this.custom.toggle();\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -8416,6 +8536,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -8490,8 +8630,28 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    var $newContainer = $('#' + this.htmlObject).parents('.newElementContainer'); \n    if ( !$newContainer.hasClass('activeButton') ){\n        return false\n    }\n    \n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}'),\n        toggleButton = Dashboards.getComponentByName('${c:newElementToggle}'),\n        newElementType = (newElementOpts.type === \"Dashboard\") ? 'dashboard' : 'endpoint',\n        endpoint = 'createElement';\n    \n    var elementName = newElementOpts.name,\n        elementsNamesList = _.map( \n            Dashboards.getParameterValue(\"${p:elementsNamesListParam}\"),\n            function (n){ return n.toLowerCase()}\n        );\n    if ( !(sparkl.isValidName(elementName, 'element')) ){\n        dialog.open({\n            message:\"Invalid name. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n    if ( _.contains ( elementsNamesList, elementName.toLowerCase() ) ){\n        dialog.open({\n            message:\"Name already in use. Please try again with a different name.\",\n            dialogClass:'closeButtonVisible'\n        });\n        return ;\n    }\n\n    var successCallback = function (json){        \n        /*dialog.open({\n            message:\"Element \"+newElementOpts.name+\" created!\",\n            dialogClass:'closeButtonVisible'\n        });*/\n        toggleButton.custom.toggle();\n        Dashboards.fireChange('${p:updateDataEvent}');\n        Dashboards.decrementRunningCalls();\n    }\n    \n    var errorCallback = function (){            \n            dialog.open({\n                message:'Error creating element ' + elementName+ '!',\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        } \n    \n    var endpointParams = { pluginId: pluginId };\n    _.each( newElementOpts, function(el, key) {        \n        endpointParams['element' + capitalize(key)] = el;\n    });\n    \n    Dashboards.incrementRunningCalls();    \n    sparkl.runEndpoint( 'sparkl' , endpoint, {\n        params: endpointParams,\n        success: sparkl.addRefreshWrapper( pluginId,\n            sparkl.addRefreshWrapper( 'pentaho-cdf-dd', successCallback) ),\n        error: errorCallback\n    });\n      \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
+      "value": "function f(){\n    \n    var $newContainer = $('#' + this.htmlObject).parents('.newElementContainer'); \n    if ( !$newContainer.hasClass('activeButton') ||\n          $newContainer.hasClass('emptyType') ||\n          $newContainer.hasClass('emptyTemplate') ){\n        return false\n    }\n    \n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var paramsObj = { pluginId: \"'\" + pluginId + \"'\" };\n    _.each( newElementOpts, function(el, key) {        \n        paramsObj['element' + capitalize(key)] = \"'\" + el + \"'\";\n    });\n    this.actionParameters = Dashboards.objectToPropertiesArray( paramsObj );\n    \n    Dashboards.incrementRunningCalls();   \n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "function f(json){\n    var toggleButton = Dashboards.getComponentByName('${c:newElementToggle}'),\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    \n    sparkl.addRefreshWrapper( pluginId,\n        sparkl.addRefreshWrapper( 'pentaho-cdf-dd', function (json){        \n            toggleButton.custom.toggle();\n            Dashboards.fireChange('${p:updateDataEvent}');\n            Dashboards.decrementRunningCalls();\n        }\n    )).call(this,json);     \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "function f(){\n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),\n        dialog = Dashboards.getComponentByName('${c:dialogGrabComponent}'),\n        elementName = newElementOpts.name;      \n    dialog.open({\n        message:'Error creating element ' + elementName+ '!',\n        dialogClass:'closeButtonVisible'\n    });\n    Dashboards.fireChange('${p:updateDataEvent}');\n    Dashboards.decrementRunningCalls();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "createElementEndpoint",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -8572,6 +8732,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -8650,11 +8830,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
       "type": "colTypesCustom"
@@ -8685,9 +8860,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
+      "type": "Array"
      },
      {
       "name": "info",
@@ -8720,6 +8895,11 @@
       "type": "Boolean"
      },
      {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -8735,14 +8915,14 @@
       "value": "elementsEndpoint"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -10088,7 +10268,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    var v = Dashboards.getParameterValue(this.parameter);\n    $('#'+this.htmlObject).parents('.newElementContainer')\n        .toggleClass('emptyType', _.isEmpty(v));    \n}",
       "type": "JavaScript"
      },
      {
@@ -10098,7 +10278,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var p = Dashboards.getParameterValue('${p:newElementParam}');\n    Dashboards.fireChange(\"${p:newElementParam}\", p);\n}",
+      "value": "function f(v){\n    var p = Dashboards.getParameterValue('${p:newElementParam}');\n    Dashboards.fireChange('${p:newElementParam}',p);\n\n    $('#'+this.htmlObject).parents('.newElementContainer')\n        .toggleClass('emptyType', _.isEmpty(v));\n}",
       "type": "JavaScript"
      },
      {
@@ -10191,7 +10371,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    var v = Dashboards.getParameterValue(this.parameter);\n    $('#'+this.htmlObject).parents('.newElementContainer')\n        .toggleClass('emptyTemplate', _.isEmpty(v));    \n}",
       "type": "JavaScript"
      },
      {
@@ -10201,7 +10381,7 @@
      },
      {
       "name": "postChange",
-      "value": "",
+      "value": "function f(v){\n    $('#'+this.htmlObject).parents('.newElementContainer')\n        .toggleClass('emptyTemplate', _.isEmpty(v));    \n}",
       "type": "JavaScript"
      },
      {
@@ -11027,6 +11207,22 @@
     "meta": "CPK",
     "meta_pluginId": "sparkl",
     "meta_endpoint": "listElements"
+   },
+   {
+    "id": "181a08eb-f42c-132f-a9e9-1a910c402447",
+    "type": "Componentssparkl_createElement_CPKENDPOINT",
+    "typeDesc": "createElement Endpoint",
+    "parent": "SPARKL_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "createElementEndpoint",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "sparkl",
+    "meta_endpoint": "createElement"
    }
   ]
  },
