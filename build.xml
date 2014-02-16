@@ -1,4 +1,4 @@
-<project name="Sparkl - Create and explore pentaho plugins." basedir="." default="jar"
+<project name="Sparkl - Create and explore pentaho plugins." basedir="." default="dist"
          xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <description>
