@@ -4,12 +4,88 @@
     <description>Clean Job</description>
     <extended_description/>
     <job_version/>
-  <directory>&#47;</directory>
+    <job_status>0</job_status>
+  <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2013&#47;07&#47;04 18:48:22.641</created_date>
+  <created_date>2013&#x2f;07&#x2f;04 18&#x3a;48&#x3a;22.641</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;07&#47;04 18:48:22.641</modified_date>
+  <modified_date>2013&#x2f;07&#x2f;04 18&#x3a;48&#x3a;22.641</modified_date>
     <parameters>
+        <parameter>
+            <name>&#x23;cpk.cache.isEnabled</name>
+            <default_value>false</default_value>
+            <description>Enables&#x2f;disables caching of the results. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.cache.timeToLiveSeconds</name>
+            <default_value>3600</default_value>
+            <description>For how many seconds a result will be cached. Setting this value to 0 means the result will be cached forever. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.executeAtStart</name>
+            <default_value>false</default_value>
+            <description>Whether the transformation is to be executed when the plugin is initialized. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.plugin.dir</name>
+            <default_value/>
+            <description>The plugin folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.plugin.id</name>
+            <default_value/>
+            <description>The id of the plugin. This value is automatically set at runtime. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.response.attachmentName</name>
+            <default_value/>
+            <description>The attachment name used when downloading a file from a result. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.response.download</name>
+            <default_value>false</default_value>
+            <description>Whether to &#x28;or not&#x29; mark the http reponse body as an attachment. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.response.kettleOutput</name>
+            <default_value>Infered</default_value>
+            <description>The output format to be used by default. Possible values&#x3a; Infered, Json, SingleCell, ResultFiles, ResultOnly. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.response.mimeType</name>
+            <default_value/>
+            <description>The mimeType of the http response. If this value is not set, the plugin will try to determine it from the file extension. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.result.stepName</name>
+            <default_value>OUTPUT</default_value>
+            <description>The default output job entry where the rows will be fetched for the result. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.session.&#x5b;SessionVarName&#x5d;</name>
+            <default_value/>
+            <description>The value of session variable named &#x5b;sessionVarName&#x5d;. This value is automatically injected here at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.session.roles</name>
+            <default_value/>
+            <description>The roles of the username executing this transformation. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.session.username</name>
+            <default_value/>
+            <description>The username that is executing this transformation. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.solution.system.dir</name>
+            <default_value/>
+            <description>The pentaho-solutions folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>&#x23;cpk.webapp.dir</name>
+            <default_value/>
+            <description>The webapp folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -19,7 +95,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></job-log-table>
+<field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>START_JOB_ENTRY</id><enabled>N</enabled><name>START_JOB_ENTRY</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></job-log-table>
 <jobentry-log-table><connection/>
 <schema/>
 <table/>
@@ -77,4 +153,5 @@
   </hops>
   <notepads>
   </notepads>
+
 </job>
