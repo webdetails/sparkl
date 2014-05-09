@@ -23,6 +23,6 @@
     <info>
         <description>Create and explore pentaho plugins.</description>
         <name>Sparkl</name>
-        <CPK_version>4</CPK_version>
+        <CPK_version>5</CPK_version>
     </info>
 </cpk> 
