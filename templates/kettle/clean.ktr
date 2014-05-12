@@ -26,7 +26,7 @@
         </parameter>
         <parameter>
             <name>&#x23;cpk.plugin.dir</name>
-            <default_value/>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..</default_value>
             <description>The plugin folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
         </parameter>
         <parameter>
@@ -76,12 +76,12 @@
         </parameter>
         <parameter>
             <name>&#x23;cpk.solution.system.dir</name>
-            <default_value/>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;..</default_value>
             <description>The pentaho-solutions folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
         </parameter>
         <parameter>
             <name>&#x23;cpk.webapp.dir</name>
-            <default_value/>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
             <description>The webapp folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
         </parameter>
     </parameters>
@@ -224,5 +224,11 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+<attribute><key>name</key>
+<value/>
+</attribute><attribute><key>stepname</key>
+<value/>
+</attribute></group></attributes>
 
 </transformation>

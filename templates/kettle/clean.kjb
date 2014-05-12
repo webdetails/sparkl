@@ -28,7 +28,7 @@
         </parameter>
         <parameter>
             <name>&#x23;cpk.plugin.dir</name>
-            <default_value/>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..</default_value>
             <description>The plugin folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
         </parameter>
         <parameter>
@@ -83,7 +83,7 @@
         </parameter>
         <parameter>
             <name>&#x23;cpk.webapp.dir</name>
-            <default_value/>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
             <description>The webapp folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
         </parameter>
     </parameters>
@@ -106,6 +106,17 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<checkpoint-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<max_nr_retries/>
+<run_retry_period/>
+<namespace_parameter/>
+<save_parameters/>
+<save_result_rows/>
+<save_result_files/>
+<field><id>ID_JOB_RUN</id><enabled>Y</enabled><name>ID_JOB_RUN</name></field><field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>NAMESPACE</id><enabled>Y</enabled><name>NAMESPACE</name></field><field><id>CHECKPOINT_NAME</id><enabled>Y</enabled><name>CHECKPOINT_NAME</name></field><field><id>CHECKPOINT_COPYNR</id><enabled>Y</enabled><name>CHECKPOINT_COPYNR</name></field><field><id>ATTEMPT_NR</id><enabled>Y</enabled><name>ATTEMPT_NR</name></field><field><id>JOB_RUN_START_DATE</id><enabled>Y</enabled><name>JOB_RUN_START_DATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>RESULT_XML</id><enabled>Y</enabled><name>RESULT_XML</name></field><field><id>PARAMETER_XML</id><enabled>Y</enabled><name>PARAMETER_XML</name></field></checkpoint-log-table>
    <pass_batchid>N</pass_batchid>
    <shared_objects_file/>
   <entries>
@@ -153,5 +164,9 @@
   </hops>
   <notepads>
   </notepads>
+<attributes><group><name>JobRestart</name>
+<attribute><key>UniqueConnections</key>
+<value>N</value>
+</attribute></group></attributes>
 
 </job>
