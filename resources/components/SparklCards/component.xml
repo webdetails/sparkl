@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<DesignerComponent>
+  <Header>
+    <Name>Sparkl Plugin Card</Name>
+    <IName>SparklPluginCardComponent</IName>
+    <Description>Sparkl Plugin Card Component</Description>
+    <Category>CUSTOMCOMPONENTS</Category>
+    <CatDescription>Custom</CatDescription>
+    <Type>PalleteEntry</Type>
+    <Version>1.0</Version>
+  </Header>
+  <Contents>
+    <Model>
+      <Property>parameter</Property>
+      <Property>executeAtStart</Property>
+      <Property>htmlObject</Property>
+      <Property name="parameters">xActionArrayParameter</Property>
+      <Definition name="chartDefinition">
+        <Property type="query">dataSource</Property>
+        <!-- <Property>inputFormat</Property> -->
+      </Definition>
+      <Property>preExecution</Property>
+      <Property>postExecution</Property>
+      <Property>postFetch</Property>
+      <Property>preChange</Property>
+      <Property>postChange</Property>
+      <Property>tooltip</Property>
+      <Property>listeners</Property>
+    </Model>
+    <Implementation>
+      <Code src="SparklPluginCardComponent.js"/>
+      <Styles>
+        <Style version="1.0" src="component.css">SparklPluginCard</Style>
+      </Styles>
+      <Dependencies>
+        <!--<Dependency src="lib/underscore.js" version="1.0">Underscore</Dependency>
+        <Dependency src="lib/backbone.js" version="2.0">Backbone</Dependency>
+        <Dependency src="lib/mustache.js" version="1.0">Mustache</Dependency> -->
+        <Dependency src="component.js" version="1.0">SparklPluginCard</Dependency>
+      </Dependencies>
+      <CustomProperties>
+		<!-- <DesignerProperty>
+		  <Header>
+		    <Name>inputFormat</Name>
+		    <Parent>BaseProperty</Parent>
+		    <DefaultValue>YYYY-MM-DD</DefaultValue>
+		    <Description>Input format</Description>
+		    <Tooltip>Input date format as used by moment.js</Tooltip>
+		    <InputType>String</InputType>
+		    <OutputType>String</OutputType>
+		    <Order>30</Order>
+		    <Version>1.0</Version>
+		  </Header>
+		</DesignerProperty> -->
+	  </CustomProperties>
+    </Implementation>
+  </Contents>
+</DesignerComponent>

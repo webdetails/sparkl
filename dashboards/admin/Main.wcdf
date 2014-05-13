@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdf>
+        <title>Main</title>
+        <author></author>
+        <description>Main dashboard for CPK User Interface</description>
+        <icon/>
+		<style>sparkl - (SPARKL)</style>
+<rendererType>blueprint</rendererType><widget>false</widget></cdf>

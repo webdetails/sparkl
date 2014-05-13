@@ -1,0 +1,323 @@
+/***** Plugin Card *****/
+
+.sparklPluginCardContainer {
+	width: 230px;
+	height: 230px;
+	background: #EAEDEE;
+	color: #434140;
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.sparklPluginCardContainer.lastInRow{
+	margin-right: 0px;
+}
+.sparklPluginCardContainer .descriptionExpandCont{
+	height: 195px;
+	overflow: hidden;
+	position: relative;
+}
+.sparklPluginCardContainer .cardHeader{
+	height: 70px;
+	border:solid 10px #EAEDEE;
+	font-size: 18px;
+	position:relative;
+	overflow:hidden;
+}
+.sparklPluginCardContainer .cardHeader .nameContainer{
+	overflow:hidden;
+}
+.sparklPluginCardContainer .cardHeader .name{
+	cursor:default;
+	height: 24px;
+	line-height: 20px;
+	display:inline-block;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width:100%;
+}
+.sparklPluginCardContainer .cardHeader .id{
+  color: #999999;
+  height: 20px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+	height: 24px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width:100%;
+
+}
+
+.sparklPluginCardContainer .cardBody{
+	height:125px;
+	position: relative;
+}
+.sparklPluginCardContainer .imageContainer{
+	height: 100%;
+}
+.sparklPluginCardContainer .imageContainer:hover{
+	cursor: pointer;
+}
+.sparklPluginCardContainer .imageContainer .image{
+	width: 100%;
+	height: 100%;
+}
+
+.sparklPluginCardContainer .imageContainer .imagePlaceholder{
+	max-width:100%;
+	max-height:100%;
+	bottom:0px;
+	left:0px;
+	padding:10px;
+	font-size: 20px;
+	position:absolute;
+	vertical-align:middle;
+	color:#FFFFFF;
+	line-height:1;
+}
+
+.sparklPluginCardContainer .descriptionContainer{
+	height: 0px;
+	bottom: 0px;
+	padding: 10px 10px;
+	font-size: 15px;
+	position: relative;
+	background: #434141;
+	font-size: 15px;
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
+}
+.sparklPluginCardContainer .cardBody:hover .descriptionContainer{
+	height: 195px;
+	bottom: 195px;
+}
+.sparklPluginCardContainer .descriptionContainer .header{
+	height: 25px;
+	color: #0398DA;
+}
+
+.sparklPluginCardContainer .descriptionContainer .body{
+	height: 140px;
+	color: #EAEDEF;
+}
+.sparklPluginCardContainer .cardFooter{
+	padding: 5px 5px 5px 10px;
+	font-size: 15px;
+	height: 35px;
+
+}
+.sparklPluginCardContainer .cardFooter .versionLabel{
+	float: left;
+	height: 100%;
+	line-height: 25px;
+}
+.sparklPluginCardContainer .optsExternCont{
+	height: 0px;
+	bottom: 0px;
+	position: relative;
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
+}
+/*.optsExternCont:hover{
+	height: 160px;
+	bottom: 160px;
+	left: 0px;
+	cursor: pointer;	
+}*/
+.sparklPluginCardContainer .optsExternCont.expanded{
+	height: 160px;
+	bottom: 160px;
+	left: 0px;
+}
+.sparklPluginCardContainer .optionsIcon{
+  background: url('img/options.png') no-repeat 0px center transparent;
+	float: right;
+	height: 29px;
+	width: 24px;
+	border-bottom: 5px solid transparent;
+	position: absolute;
+	bottom: 0px;
+	right: 5px;
+	z-index:200;
+}
+.sparklPluginCardContainer .optionsIcon:hover{
+  	background-position: -24px center;
+  	cursor: pointer;
+}
+.sparklPluginCardContainer .optsExternCont.expanded .optionsIcon{
+  	background-position: -24px center;
+}
+.sparklPluginCardContainer .optionsContainer{
+	height: 100%;
+	position: relative;
+	background: #25BAED;
+
+	z-index: 100;
+}
+.sparklPluginCardContainer .optionCont{
+	height: 40px;
+	padding: 0px 10px 0px 10px;
+	background: #25BAED;
+	color: #CEEEFC;
+	border-bottom: 1px solid #83D5F4;
+	font-size: 15px;
+	line-height: 40px;
+}
+.sparklPluginCardContainer .optionCont:hover{
+	background: #009DE2;
+	color: #F2FAFD;
+	cursor: pointer;
+}
+.sparklPluginCardContainer .optionCont.noAction:hover{
+	background: #25BAED;
+	color: #CEEEFC;
+	cursor: default;
+}
+
+
+
+/***** New Plugin Card *****/
+
+.sparklNewPluginCardContainer{
+	width: 230px;
+	height: 230px;
+	background: #EAEDEE;
+	color: #434140;
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+
+	-webkit-transition: all 150ms linear;
+	-moz-transition:    all 150ms linear;
+	-ms-transition:     all 150ms linear;
+	-o-transition:      all 150ms linear;
+	transition:         all 150ms linear;
+}
+.sparklNewPluginCardContainer:hover{
+	background: #25BAED;
+}
+.sparklNewPluginCardContainer .optionsContainer {
+	height:100%;
+}
+.sparklNewPluginCardContainer .optionCont{
+	font-size: 20px;
+	color: #CEEEFC;
+	background: #25BAED;
+	cursor: pointer;
+	position: relative;
+}
+.sparklNewPluginCardContainer .optionCont:hover {
+	background: #009DE2;
+	color: #F2FAFD;
+}
+.sparklNewPluginCardContainer .optionCont .label{
+	font-size: 20px;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	height:0;
+	width:100%;
+	line-height: 0;
+	top:50%;
+	left:0px;
+	position: absolute;
+}
+
+.sparklNewPluginCardContainer.numActions-1 .optionCont{
+	height:100%;
+}
+.sparklNewPluginCardContainer.numActions-2 .optionCont{
+	height:50%;
+}
+
+
+
+.sparklNewPluginCardContainer .separator{
+	height: 10px;
+}
+.sparklNewPluginCardContainer .separator .horizontalRectangle{
+	height: 10px;
+	width: 60px;
+	background: #FFFFFF;
+	position: absolute;
+	left: 85px;
+	top: 110px;
+
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
+}
+.sparklNewPluginCardContainer .separator .verticalRectangle{
+	height: 60px;
+	width: 10px;
+	background: #FFFFFF;
+	position: absolute;
+	left: 110px;
+	top: 85px;
+
+	-webkit-transition: all 500ms linear;
+	-moz-transition:    all 500ms linear;
+	-ms-transition:     all 500ms linear;
+	-o-transition:      all 500ms linear;
+	transition:         all 500ms linear;
+}
+.sparklNewPluginCardContainer.numActions-2:hover  .separator .horizontalRectangle{
+	width: 100%;
+	left: 0px;
+}
+.sparklNewPluginCardContainer.numActions-1:hover  .separator .horizontalRectangle{
+	width: 0px;
+	left: 50%;
+}
+.sparklNewPluginCardContainer:hover .separator .verticalRectangle{
+	height: 0px;
+	top: 115px;
+}
+.sparklNewPluginCardContainer .optionCont{
+	visibility: hidden;
+	border-bottom: none;
+	text-align: center;
+}
+.sparklNewPluginCardContainer:hover .optionCont{
+	visibility: visible;
+
+		-webkit-transition: visibility 500ms 500ms linear ;
+	-moz-transition:    visibility 500ms 500ms linear ;
+	-ms-transition:     visibility 500ms 500ms linear ;
+	-o-transition:      visibility 500ms 500ms linear ;
+	transition:         visibility 500ms 500ms linear ;
+}
+
+.sparklNewPluginCardContainer .overlay{
+	background:#EAEDEE;
+	height:100%;
+	width:100%;
+	position: absolute;
+
+	-webkit-transition: all 50ms linear;
+	-moz-transition:    all 50ms linear;
+	-ms-transition:     all 50ms linear;
+	-o-transition:      all 50ms linear;
+	transition:         all 50ms linear;
+}
+
+.sparklNewPluginCardContainer:hover .overlay{
+	background: transparent;
+	z-index:-100;
+}

@@ -1,0 +1,1400 @@
+/*
+ *    Color Pallete
+ *    Fonts
+ *    Style Resets
+ *    Other 
+ *    Project Specific Items  
+ *
+ */
+
+/* =============================================================================
+   Color Pallete
+   ========================================================================== */
+
+.sparkl-blue-light{
+  /* #D1EEFC */
+}
+.sparkl-blue{
+  /* #41B8EE */
+}
+.sparkl-blue-selected{
+  /* #2C9AE3 */
+}
+.sparkl-grey{
+  /* #EBEDEE */
+}
+.sparkl-grey-selected{
+  /* #DBE7ED */
+}
+.sparkl-grey-font{
+  /* #878685 */
+}
+
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+
+
+/* =============================================================================
+   Style Resets
+   ========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+/*margin: 0;
+padding: 0;
+border: 0;
+        font-family: OpenSans, Arial, sans-serif;*/
+  }
+
+
+.WDhidden{
+  display:none;
+}
+
+
+/* =============================================================================
+   BACKGROUND 
+   ========================================================================== */
+
+/* Window Background */
+body{
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  background: #ebedee;
+  padding-top: 50px;
+  overflow-y: scroll;
+}
+/* Dashboard Background / Blueprint Container */
+div.container  {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+div.container *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+/* =============================================================================
+   HEADER 
+   ========================================================================== */
+
+
+
+
+
+
+/* =============================================================================
+   CELLS
+   ========================================================================== */
+
+.sparklCell {
+  margin-bottom:0px;
+}
+
+
+/* Data Cells header*/
+.sparklCellHeader{
+  height: 20px;
+  color: #333e48;
+  font-size: 18px;
+  text-align: left;
+  position: relative;
+  margin-top: -6px;
+  margin-left: 6px;
+  margin-bottom: 15px;
+}
+.sparklCellHeader.underline {
+  /*border-bottom: 1px solid #41B8EE;*/
+}
+.sparklCellHeader .title{
+  position: absolute;
+  bottom: 0px;
+  cursor:default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.tabsCell {
+  height:55px;
+  padding: 10px 5px 0px 5px;
+  background: #EBEDEE;
+}
+
+
+.tabsCell .pentaho-toggle-button {
+  width: auto;
+  margin-right: 20px;
+}
+.tabsCell .pentaho-toggle-button button {
+  background: #EBEDEE;
+  font-size: 25px;
+  text-align: left;
+  font-size: 25px;
+  color: #333e48;
+  font-family: 'Open Sans Light';
+}
+.tabsCell .pentaho-toggle-button-down button {
+  color: #0098c4;
+  background: none;
+  position: relative;
+}
+.tabsCell .pentaho-toggle-button-down button:after {
+  content: '';  
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background: #0098c4;
+}
+.tabsCell .pentaho-toggle-button-up-hovering button {
+  color: #0098c4;
+}
+
+
+.sparklMainHeader{
+	background: #EBEDEE;
+	font-size: 25px;
+	text-align: left;
+	font-size: 25px;
+	color: #333e48;
+	font-family: 'Open Sans Light';
+}
+
+.sparklMainHeader:after{
+	content: '';  
+	width: 100px;
+	height: 4px;
+	background: #0098c4;
+	margin-bottom: 20px;
+
+}
+
+.sparklMainHeader.clearfix:after{
+	visibility: visible;
+}
+
+
+.pluginsListContainer {
+  margin-right:-10px;
+}
+
+
+
+
+.actionsCell{
+  height: 35px;
+  line-height: 27px;
+  text-align: right;
+  margin-top: -36px;
+  padding-right: 2px;
+}
+
+.actionsCell .actionButton {
+  height:100%;
+  margin-right:10px;
+  display:inline-block;
+}
+.actionsCell .actionButton:last-child{
+  margin-right:0px;
+}
+
+.actionButton button,
+.actionButton a{
+  height:100%;
+  width: 100%;
+  background: none;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Open Sans';
+  font-weight: normal;
+  color: #333e48;
+  vertical-align: baseline;
+  box-shadow: none;
+  margin:0px;
+  padding: 4px;
+  text-decoration:none;
+  float:left;
+}
+.actionButton button:hover,
+.actionButton a:hover{
+  color:#0098c4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.multiButton {
+  height:100%;
+}
+.multiButton > div {
+  height:100%;
+}
+
+
+
+
+.filtersContainer {
+  height: 35px;
+  line-height:27px;
+  color: #878685; 
+  margin-bottom: 0px;
+  margin-left: 6px;
+  margin-top: 25px;
+}
+#pluginsListFilters {
+  margin-top: -79px;
+  margin-bottom: 79px;
+}
+
+.filtersContainer > div {
+  height: 100%;
+}
+
+.refreshButton {
+  height:100%;
+  float:right;
+  margin-top: -70px;
+  position: relative;
+}
+.refreshButton button{
+  height:100%;
+  width:34px;
+  background: url('../img/refresh.png') -1px 50% no-repeat;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  -o-border-radius:2px;
+  -ms-border-radius:2px;
+  border-radius:2px;
+  float:right;
+}
+.refreshButton button:hover{
+  background-position: -36px 50%;
+}
+
+.filtersContainer .pentaho-toggle-button {
+  display: inline-block;
+  margin-right: 5px;
+  height:25px;
+  width:30%;
+  margin-top: 6px;
+}
+.filtersContainer .pentaho-toggle-button button {
+  width: 100%;
+  height:100%;
+  background: #EBEDEE;
+  text-align: center;
+  font-size: 11px;
+  font-weight: normal;
+  color: #878685;
+  vertical-align: baseline;
+  border: 4px solid #EBEDEE;
+  box-shadow: none;
+  float: left;
+  margin:0px;
+}
+.boxshadow .filtersContainer .pentaho-toggle-button button{
+  border: 4px solid #EBEDEE;
+}
+.filtersContainer .pentaho-toggle-button-down button {
+  background: #0098c4;
+  color: #FFFFFF;
+}
+
+.filtersContainer .filterLabel{
+  /*padding:4px;
+  text-align: right;
+  color: #333e48;
+  font-size: 12px;*/
+  padding: 4px 0px 0px;
+  text-align: left;
+  color: #333e48;
+  font-size: 13px;
+  margin-right: 0px;
+}
+
+#pluginsListFilters #sortSelectorObj {
+  margin-left: -21px;
+}
+
+
+
+
+
+
+
+
+/* =============================================================================
+   About Plugin Forms UI / Metadata Forms UI
+   ========================================================================== */
+
+
+.formRow-1 {
+  height:30px;
+}
+.formRow-2{
+  height:100px;
+}
+.formContainer {
+  height:100%;
+  color: #333e48;
+  padding: 0px 6px;
+  padding-left:90px;
+  position:relative;
+  margin-bottom: 10px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.formContainer:hover {
+  background: none;
+}
+.formContainer.inactive:hover {
+  background: #EBEDEE;
+}
+.formContainer.noLabel {
+  padding-left:6px;
+}
+.formContainer > div {
+  height:100%;
+}
+.formContainer .formLabel {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor:default;
+  width:80px;
+  margin-left:-84px;
+  display:block;
+  float:left;
+  height:0px;
+  line-height:0;
+  top:50%;
+  position:absolute;
+  font-size: 12px;
+}
+.formContainer .formInput {
+  height:100%;
+}
+.formContainer .formInput input{
+  height:100%;
+  width:100%;
+  border: none;
+  border: 1px solid rgba(255,255,255,0);
+  border-bottom: 1px solid #dfdfdf;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  color: #0098c4;
+  padding-left: 10px;
+  margin: 0px;
+  background: none;
+  font-family: 'Open Sans';
+  font-size: 13px;
+}
+.formContainer .formInput input:hover{
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fefefe;
+}
+.formContainer .formInput input:focus {
+  cursor: auto;
+  color: #666;
+  border: 1px solid #0098c4;
+  background: #fefefe;
+}
+.formContainer .uploadButton {
+  background: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  font-size: 12px;
+  font-weight: normal;
+  color: #939292;
+  padding: 0px;
+  cursor:pointer;
+  position:relative;
+}
+.formContainer.inactive .uploadButton{
+  cursor:default;
+}
+.formContainer .uploadButton img {
+  width:100%;
+  height:100%;
+}
+.formContainer .uploadButton span {
+  height:0px;
+  line-height:0;
+  position:absolute;
+  top:50%;
+  left:0px;
+  width:100%;
+  text-align: center;
+}
+
+
+
+
+/*.formContainer .formButton{
+  width:150px;
+  height:100%;
+  float:right;
+}
+.formContainer .formButton button {
+  height:100%;
+  width:100%;
+  color:#FFFFFF;
+  background:#25BAED;
+}
+.formContainer .formButton button:hover{
+  background-color: #009DE2;
+}*/
+
+
+.updateLibs {
+  height:100%;
+}
+.updateLibs > div {
+  height:100%;
+}
+
+.updateLibs .formContainer:hover {
+  background-color:#EBEDEE;
+  color: #878685;
+}
+.updateLibs .formContainer .formLabel{
+  width:150px;
+}
+.updateLibs .formContainer {
+  background-repeat: no-repeat;
+  background-position: 140px 50%;
+}
+.updateLibs.updated .formContainer{
+  background-image: url('../img/validate_correct.png');
+}
+.updateLibs.outdated .formContainer{
+  background-image: url('../img/validate_wrong.png') ;
+}
+
+
+.updateLibs .actionButton{
+  height:100%;
+}
+.updateLibs.updated .actionButton {
+  display:none;
+}
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   New Plugin UI
+   ========================================================================== */
+
+.newPluginContainer{
+  height: 55px;
+  max-height: 55px;
+  min-height: 55px;
+  font-size: 14px;
+  padding:10px;
+  border-bottom: none;
+  width: 80%;
+  position: relative;
+  float: left;
+  background:#EAEDEE;
+  line-height: 37px;
+}
+ .newPluginContainer *{
+  font-size: inherit;
+  height: 100%;
+  float: left;
+}
+.newPluginContainer span{
+  width: 25%;
+  margin:0px;
+  color: #333e48;
+}
+
+.newPluginContainer input{
+  font-size: 14px;
+  border:none;
+  margin:0;
+  width: 37%;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #FFFFFF;
+  padding-left: 10px;
+}
+.newPluginContainer.notEmpty  input{
+  background-image: url('../img/validate_correct.png');
+}
+.newPluginContainer.inUse.notEmpty  input,
+.newPluginContainer.invalid.notEmpty  input{
+  background-image: url('../img/validate_wrong.png') ;
+}
+
+.newPluginContainer .validityFeedback {
+  width: 38%;
+  padding-left:10px;
+  background: #C31116;
+  color: #FFFFFF;
+  display:none;
+}
+.newPluginContainer.inUse.notEmpty .validityFeedback.inUseLabel{
+  display:inline-block;
+}
+.newPluginContainer.invalid.notEmpty .validityFeedback.invalidLabel{
+  display:inline-block;
+}
+
+.createNewPluginButton {
+/*  background: #EAEDEE;
+  color: #8C8B8B;
+*/  width: 19%;
+  height: 40px;
+  float: right;
+  margin-top: 7px;
+}
+.createNewPluginButton button{
+  background: #EAEDEE;
+  color: #aaa;
+  font-size: 15px;
+  border: 0px none;
+  box-shadow: none;
+  height: 100%;
+  width: 100%;
+  vertical-align: baseline;
+}
+.createNewPluginButton button:hover{
+  cursor: default;  
+}
+.createNewPluginButton.active button{
+  background: #333e48;
+  color: #ffffff;
+}
+.createNewPluginButton.active:hover button{
+  background: #0098c4;
+  color:#FFFFFF;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   New Element UI
+   ========================================================================== */
+
+.newElementContainer {
+  padding:6px;
+  background: #EBEDEE;
+  height:50px;
+  -webkit-box-shadow: 0 0 4px 0 #ccc;
+  -moz-box-shadow: 0 0 4px 0 #ccc;
+  box-shadow: 0 0 4px 0 #ccc;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.newElementContainer > div{
+  height: 100%;
+  text-align: left;
+  font-size: 13px;
+  font-weight: normal;
+  color: #333e48;
+  position: relative;
+  float: left;
+
+  margin-right:6px;
+}
+.newElementContainer.active > .negative,
+.newElementContainer.inactive > .positive {
+  display:none;
+}
+.newElementContainer .formButton button{
+  font-family: "Open Sans";
+  width:100%;
+  height:100%;
+  margin:0;
+  color:#FFFFFF;
+  font-size: 13px;
+  border: 0;
+  box-shadow: none;
+  vertical-align: baseline;  
+  cursor:pointer;
+  background: url('../img/add_new.png') 50% 50% no-repeat #0098c4;
+}
+.newElementContainer.notEmpty .formButton button:hover {
+  background-color: #009DE2 ;
+}
+
+.newElementContainer.empty .formButton.addElement button,
+.newElementContainer.emptyType .formButton.addElement button,
+.newElementContainer.emptyTemplate .formButton.addElement button,
+.newElementContainer.notEmpty.invalid .formButton.addElement button,
+.newElementContainer.notEmpty.reserved .formButton.addElement button,
+.newElementContainer.notEmpty.inUse .formButton.addElement button,
+.newElementContainer.empty .formButton.addElement button:hover,
+.newElementContainer.notEmpty.invalid .formButton.addElement button:hover,
+.newElementContainer.notEmpty.reserved .formButton.addElement button:hover,
+.newElementContainer.notEmpty.inUse .formButton.addElement button:hover {
+  cursor:default;
+  background-color: #ccc;
+}
+
+
+.newElementContainer .toggleNewElement.formButton {
+  width:100%;
+  margin:0;
+}
+.newElementContainer .addElement.formButton {
+  width:38px;
+  float:right;
+}
+.newElementContainer .toggleNewElement.formButton button {
+   background-position: 99% 50%;   
+}
+
+.newElementContainer .formInput{
+  width: 30%;
+}
+.newElementContainer .formInput input {
+  height:100%;
+  width:100%;
+  border: none;
+  border: 1px solid rgba(255,255,255,0);
+  border-bottom: 1px solid #dfdfdf;
+  text-align: left;
+  font-weight: normal;
+  color: #aaa;
+  padding-left: 10px;
+  margin: 0px;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center;
+}
+
+.newElementContainer .formInput input:hover{
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #fefefe;
+}
+.newElementContainer .formInput input:focus {
+  cursor: auto;
+  color: #666;
+  border: 1px solid #0098c4;
+  background: url('../img/validate_disabled.png') no-repeat scroll right center #fefefe;
+}
+.newElementContainer.notEmpty .formInput input{
+  background-image: url('../img/validate_correct.png');
+}
+.newElementContainer.inUse.notEmpty  .formInput input,
+.newElementContainer.invalid.notEmpty  .formInput input,
+.newElementContainer.reserved.notEmpty .formInput input{
+  background-image: url('../img/validate_wrong.png') ;
+}
+
+
+.newElementContainer.inUse.notEmpty .toggleValidation,
+.newElementContainer.invalid.notEmpty .toggleValidation,
+.newElementContainer.reserved.notEmpty .toggleValidation{
+  display:none;
+}
+
+
+.newElementContainer .validityLabels{
+  width:64%;
+  display:none;
+  line-height: 38px;
+}
+.newElementContainer .validityLabels > div{
+  width:100%;
+  height:100%;
+}
+.newElementContainer.inUse.notEmpty .validityLabels,
+.newElementContainer.invalid.notEmpty .validityLabels,
+.newElementContainer.reserved.notEmpty .validityLabels{
+  display:inline-block;
+}
+
+.newElementContainer .validityFeedback {
+  width: 100%;
+  height:100%;
+  background: #C31116;
+  color: #FFFFFF;
+  display:none;
+  padding-left:10px;
+}
+.newElementContainer.inUse.notEmpty .validityFeedback.inUseLabel{
+  display:inline-block;
+}
+.newElementContainer.invalid.notEmpty .validityFeedback.invalidLabel{
+  display:inline-block;
+}
+.newElementContainer.reserved.notEmpty .validityFeedback.reservedLabel{
+  display:inline-block;
+}
+
+.newElementContainer .chzn-container-single .chzn-single,
+.newElementContainer .formSelector .chzn-drop {
+  text-align: left;
+  padding-left: 0px;
+}
+
+.newElementContainer .formSelector .chzn-container span:after {
+  margin-top: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+.newElementContainer .formInput input:focus{
+  cursor: auto;
+}
+.newElementContainer .formSelector{
+  width: 23%;
+}
+.newElementContainer  .formButton button{
+  background: url('../img/add_new.png') no-repeat center center #333e48;
+}
+.newElementContainer .formButton button:hover{
+  background-color: #0098c4;
+}
+.newElementContainer .formLabel {
+  line-height: 38px;
+  padding-left:20px;
+}
+.newElementContainer .formCheckbox{
+  padding-top:6px;
+}
+.newElementContainer .formCheckbox button {
+  background:#FFFFFF;
+  border: solid 1px #D0CFCF;
+  height:26px;
+  width:26px;
+  position: relative;
+}
+.newElementContainer .formCheckbox .checkMark{
+  height:18px;
+  width:23px;
+  border:none;
+  position:absolute;
+  background: no-repeat center center transparent;
+  top: 3px;
+  left: 1px;
+}
+.newElementContainer .formCheckbox.checked .checkMark{
+  background-image: url("../img/checked.png");
+  background-size: 20px;
+}
+.newElementContainer .formSelector .chzn-container{
+  /*min-width: 188px;*/
+  min-width: 100%;
+  height: 100%;
+  border: none;
+}
+.newElementContainer .formSelector .chzn-container span{
+  line-height: 38px;
+  text-indent: 8px;
+}
+.newElementContainer .formSelector .chzn-container .chzn-single div b{
+  height: 100%;
+}
+.newElementContainer .formSelector .chzn-drop{
+  height: auto;
+  top: 26px !important;
+  margin-left: 0;
+}
+.newElementContainer .formSelector .chzn-drop .chzn-results li{
+  height: 20px;
+  line-height: 22px;
+  text-indent: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   TABLES
+   ========================================================================== */
+
+ .dataTables_wrapper {
+  min-height: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+ .dataTables_wrapper .dataTables_filter{
+  display: none;
+}
+
+table{
+  border: none;
+  max-width: 100%;
+  min-width: 100%;
+  padding-top: 10px;
+  border-collapse:separate;
+  border-spacing:0px;
+  margin-top: 20px;
+}
+table tr{
+  background: #EBEDEE;
+  height: 40px;
+}
+
+/* Header */
+thead tr {
+  height: 30px;
+}
+thead th {
+  background: none;
+  color: #333e48;
+  font-size: 13px;
+  text-align: left !important;
+  font-weight: normal;
+  vertical-align: bottom;
+  font-family: 'Open Sans Semibold';
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-left: 10px;
+}
+thead th:last-child {
+  text-align: center;
+}
+
+/* Body */
+tbody tr:nth-child(even) {
+  background: #EBEDEE;
+}
+tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+tbody td{
+  text-align: left;
+  color: #333e48;
+  font-size: 13px;
+  padding: 0px;
+  padding-left: 10px;
+  font-family: 'Open Sans';
+}
+tbody td:last-child {
+  text-align: center;
+  border-right: none;
+}
+tbody td.actionButtons {
+	padding: 0px;
+  height: 32px; /* Can't work out a percentual height with tables */
+  text-align: right;
+  width: 126px;
+}
+
+tbody td.actionButtons .buttonContainer {
+  height:100%;
+  width:100%;
+}
+tbody td.actionButtons button{
+  color: #333;
+  font-size: 13px;
+  border: 0px none;
+  box-shadow: none;
+  height: 100%;
+  width:32px;
+  vertical-align: baseline;
+  margin-left: 5px;
+}
+tbody td.actionButtons button:last-child {
+  border-right:none;
+}
+tbody td.actionButtons button:hover{
+  color:#333;
+}
+tbody tr:nth-child(even) td.actionButtons button {
+  background-color: #EBEDEE;
+}
+tbody tr:nth-child(odd) td.actionButtons button {
+  background-color: #f5f5f5;
+}
+.runEndpointButton {
+  background-image: url(../img/play.png);
+  background-repeat: no-repeat;
+}
+.deleteDashboardButton {
+  background-image: url(../img/trash.png);
+  background-repeat: no-repeat;
+  margin-left: 20px !important;
+}
+.editDashboardButton {
+  background-image: url(../img/edit.png);
+  background-repeat: no-repeat;
+}
+.deleteEndpointButton {
+  background-image: url(../img/trash.png);
+  background-repeat: no-repeat;
+  margin-left: 20px !important;
+}
+.viewDashboardButton {
+  background-image: url(../img/preview.png);
+  background-repeat: no-repeat;
+}
+.runEndpointButton,
+.deleteDashboardButton,
+.editDashboardButton,
+.deleteEndpointButton,
+.viewDashboardButton {
+  background-position: 0px 4px;
+}
+.runEndpointButton:hover,
+.deleteDashboardButton:hover,
+.editDashboardButton:hover,
+.deleteEndpointButton:hover,
+.viewDashboardButton:hover {
+  background-position: -32px 4px;
+}
+tbody tr td.actionButtons button {
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+}
+tbody tr:hover td.actionButtons button {
+  opacity: 1;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+}
+/*tbody td.actionButtons .numButtons-1 button{
+  width:100%;
+}
+tbody td.actionButtons .numButtons-2 button{
+  width:50%;
+}
+tbody td.actionButtons .numButtons-3 button{
+  width:33.3333333%;
+}
+tbody td.actionButtons .numButtons-4 button{
+  width:25%;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   Elements Baseline
+   ========================================================================== */
+
+button {
+  cursor:pointer;
+  border:none;
+  width: 100%;
+  height: 100%;
+}
+
+.pentaho-toggle-button {
+  height:100%;
+  display: inline-block;
+}
+.pentaho-toggle-button button {
+  width: 100%;
+  height:100%;
+  text-align: center;
+  font-weight: lighter;
+  vertical-align: baseline;
+  float: left;
+  cursor: pointer;
+  padding:0;
+}
+.boxshadow .pentaho-toggle-button button {
+  box-shadow: none;
+  border:none;
+}
+
+
+
+
+
+
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+.chzn-container{
+  /*height:100%;
+  border: 4px solid #EBEDEE;
+  min-width:160px;
+  font-size: 12px;*/
+  height: 100%;
+  border-top: 5px solid #EBEDEE;
+  font-size: 13px;
+  margin-left: -5px;
+}
+
+.chzn-container .chzn-drop {
+  background: none;
+  min-width: 100%;
+  border: 0 none;
+  border-radius: 0px;
+  margin: 0px;
+  margin-top:2px;
+  height:auto;
+  background: rgba(255,255,255,0.5);
+  margin-left: 4px;
+}
+.chzn-container .chzn-results {
+  overflow: hidden;
+  padding: 0px;
+  width: 100%;
+  margin:0px;
+}
+.chzn-drop  .chzn-search{
+  display: none;
+}
+.chzn-drop  .chzn-results li{
+  line-height: 20px;
+  height: 20px;
+  color: #333e48;
+  text-indent: 4px;
+  border-bottom: none;
+  background: none;
+  padding: 0px 7px 8px 0px;
+  display: block;
+  width: auto;
+}
+.chzn-drop .chzn-results li:last-child{
+  border-bottom:none;
+}
+.chzn-drop .chzn-results li:hover {
+  background: rgba(255,255,255,.5);
+  color:#0098c4;
+}
+
+/* Single Select */
+.chzn-container-single .chzn-single{
+  background: none;
+  color: #333e48;
+  border-radius: 0px;
+  border:none;
+  height: 100%;
+  min-width: 100%;
+  line-height: 24px;
+}
+.chzn-container-active .chzn-single {
+    box-shadow: none;
+}
+.chzn-container-single .chzn-single.chzn-single-with-drop,
+.chzn-container-single .chzn-single:hover{
+  box-shadow: none;
+  border:none;
+  background:none;
+  color:#333e48;
+}
+.noResults .chzn-container-single .chzn-single,
+.noResults .chzn-container-single .chzn-single.chzn-single-with-drop,
+.noResults .chzn-container-single .chzn-single:hover{
+  color:#aaa;
+  cursor:default;
+}
+.noResults .chzn-container-single .chzn-single span, .noResults .chzn-container-single .chzn-single.chzn-single-with-drop span, .noResults .chzn-container-single .chzn-single span:hover {
+  color: #aaa;
+}
+
+.noResults .chzn-container-single .chzn-single span:after,
+.noResults .chzn-container-single .chzn-single.chzn-single-with-drop span:after,
+.noResults .chzn-container-single .chzn-single:hover span:after{
+  background-position: -16px 0px;
+}
+
+.chzn-container .chzn-results .highlighted {
+  background: none;
+  color: #333e48;
+}
+
+.chzn-container-single .chzn-single div{ /* Arrow container */
+  background: none;
+  border:none;
+  width:22px;
+}
+.chzn-container-single .chzn-single div b{
+  width:18px;
+  height:11px;
+  display:inline-block;
+  background: url('../img/arrow.png') -4px 50% no-repeat transparent;
+}
+.chzn-container-single .chzn-single-with-drop div b,
+.chzn-container-single .chzn-single:hover div b{ /* Arrow */
+  background-position: -28px 50%;
+}
+.noResults .chzn-container-single div b,
+.noResults .chzn-container-single .chzn-single-with-drop div b,
+.noResults .chzn-container-single .chzn-single:hover div b{ /* Arrow */
+  background-position: -28px 50%;
+}
+
+.chzn-container .chzn-results .active-result.result-selected {
+  background: none;
+  color: #333e48;
+}
+
+.chzn-container .chzn-drop {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  top: 26px !important;
+}
+
+
+
+
+
+
+/* =============================================================================
+   Other 
+   ========================================================================== */
+
+
+.container .blockElement img {
+  display:none;
+}
+
+
+.popupComponent{
+   color: #878685;
+   font-size: 18px;
+   text-align: left;
+   height: auto;
+   padding: 15px; 
+
+   border: solid 1px #333e48;
+   background: #fefefe;
+   -webkit-box-shadow:0px 1px 2px 0px #C4C4C4;
+   -moz-box-shadow:0px 1px 2px 0px #C4C4C4;
+   -o-box-shadow:0px 1px 2px 0px #C4C4C4;
+   -ms-box-shadow:0px 1px 2px 0px #C4C4C4;
+   box-shadow:0px 1px 2px 0px #C4C4C4;
+   -webkit-border-radius:0;
+   -moz-border-radius:0;
+   -o-border-radius:0;
+   -ms-border-radius:0;
+   border-radius:0;
+
+   position: absolute;
+
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.popupComponent *{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.popupComponent a{
+   display: none;
+}
+.popupComponent.north .arrow,
+.popupComponent.south .arrow {
+  background-image: none;
+}
+
+
+/*Email Info Popup*/
+.emailInfoPopupCont{
+  width: 500px;
+}
+
+
+
+
+
+input.editBox{
+  background-color: transparent;
+  border: 1px solid transparent;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  vertical-align: middle;
+  resize: none;
+  padding: 0;
+  margin: 0;
+  width: 370px;
+}
+
+input.editBox:hover {
+    background: url("../img/writeUnfocus.png") no-repeat scroll right center transparent;
+    border: 1px solid transparent;
+}
+
+input.editBox:focus {
+    background: url("../img/writeFocus.png") no-repeat scroll right center transparent;
+    border: 1px solid #0F1414;
+}
+
+
+
+.sparklPluginCardContainer .optionsIcon{
+  background-image: url('../img/options.png');
+}
+
+
+
+
+/***** Confirmation Message Dialog *****/
+.ui-dialog{
+}
+.ui-dialog.ui-widget.ui-corner-all{
+  border-radius: 0px;
+  padding: 0px 0px 0px 0px;
+}
+.ui-dialog.ui-widget.ui-widget-content{
+  background: #fefefe;
+  color: #aaa;
+  border: 1px solid #333e48;
+}
+.ui-dialog .ui-dialog-titlebar{
+  padding: 3px 7px 5px;
+}
+.ui-dialog .ui-dialog-titlebar.ui-widget-header{
+  border-radius: 0px;
+  background: #333e48;
+  color: #fefefe;
+  border: none;
+  text-shadow: none;
+  font-family: 'Open Sans Light';
+  font-weight: 300;
+  display: none;
+}
+.ui-dialog .ui-dialog-titlebar.ui-widget-header a{
+  display: none;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a{
+  display: inline;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover{
+  border: none;
+  background: none;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span{
+  background: url('../img/x.png') -45px -10px no-repeat #333e48;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus span,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover span{
+  background: url('../img/x.png') -45px -10px no-repeat #333e48;
+}
+.ui-dialog .ui-dialog-content{
+  color: #333e48;
+  min-height: 1px !important;
+  padding: 50px 10px 40px;
+  text-align: left;
+  font-size: 20px;
+}
+.ui-dialog .ui-dialog-buttonpane{
+  background: #FFFFFF;
+  border: none;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+.ui-dialog .ui-dialog-buttonpane button{
+  background: none;
+  color: #333e48;
+  border-radius: 0px;
+  border: none;
+  font-family: 'Open Sans Light';
+  width: 100px;
+  font-weight: 300;
+}
+.ui-dialog .ui-dialog-buttonpane button:hover{
+  background: #0098c4;
+  color:#FFFFFF;
+}
+
+.ui-widget-overlay{
+  background: #ebedee;
+  opacity: 0.8;
+}
+
+
+
+
+

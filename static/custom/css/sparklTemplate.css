@@ -1,0 +1,543 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+/*
+ * WDStyleGuide Template CSS  
+ *
+ * Use this as a template to format the styles of specific projects. Most of 
+ * the most commonly used classes/rules are already written here. The file is
+ * divided in the following sections:
+ *
+ *    Fonts
+ *    Style Resets
+ *    1. BACKGROUND 
+ *    2. HEADER 
+ *    3. FILTER CELLS
+ *    4. DATA CELLS
+ *    5. TABLES
+ *    6. CHARTS 
+ *    7. SELECTORS AND BUTTONS 
+ *    Other 
+ *    Project Specific Items  
+ *
+*/
+
+
+/* ==========================================================================
+  FONTS
+   =========================================================================== */
+
+@font-face {
+  font-family: 'Open Sans Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans Semibold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Gudea';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gudea'), url('http://themes.googleusercontent.com/static/fonts/gudea/v1/kfCeUiT0HGXHQC8YVeaKy6CWcynf_cDxXwCLxiixG1c.woff') format('woff');
+}
+
+
+/* =============================================================================
+   Style Resets
+   ========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  /*margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Open Sans, Arial, sans-serif;*/
+}
+
+.WDhidden{
+    display:none;
+}
+
+
+
+
+/* =============================================================================
+   1. BACKGROUND 
+   ========================================================================== */
+
+/* Window Background */
+body{
+    font-family: 'Open Sans Light';
+    background: #dee8ec;
+}
+
+.sparklWrapper{
+	width: 1000px;
+	margin-right:auto;
+  margin-left:auto;
+  background: #ebedee;
+}
+
+/* =============================================================================
+   2. HEADER 
+   ========================================================================== */
+   
+.sparklHeader {
+    height: 56px;
+    line-height:56px;
+    position: relative;
+    display:block;
+    overflow:hidden;
+}
+
+.sparklLogo{
+  height:100%;
+  width:200px;
+  float:left;
+  background: url('../img/logo.png') 0px 50% no-repeat transparent;
+  margin-left:30px;
+}
+
+
+.sparklMail {
+  height: 100%;
+  color: #FFFFFF;
+  float:right;
+  margin-right:26px;
+  padding-top: 4px;
+}
+
+.sparklMail a{
+  background: url('../img/email.png') -2px 50%;
+  width:31px;
+  height:21px;
+  position:relative;
+  display:inline-block;
+}
+.sparklMail a:hover{
+  background-position: -34px 50%;
+}
+
+.sparklMail a span {
+  width:0px;
+  position:absolute;
+  right:0px;
+  margin-right:34px;
+  overflow:hidden;
+  line-height: 1;
+  text-align: right;
+  color: #268ee2;
+  font-size:13px;
+  bottom: 3px;
+  white-space: nowrap;
+  margin-bottom: 2px;
+
+  -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+}
+.sparklMail a:hover span {
+  width:157px;
+  margin-right:34px;
+}
+
+.sparklHeader .pluginTabContainer {
+  height:100%;
+  min-width: 1000px;
+  max-width: 1000px;
+  position: relative;
+  float: left;
+  padding: 14px 30px 15px;
+}
+
+.sparklHeader *{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.sparklHeader .pluginTabContainer .pluginName{
+  color: #333e48;
+  font-size: 30px;
+  float: left;
+  height: auto;
+  line-height: 0;
+  left: 15px;
+  font-weight: normal;
+  font-family: 'Open Sans Light';
+  margin-right: 25px;
+}
+
+.sparklHeader .pluginTabContainer .pluginId {
+  float:left;
+  color: #737e88;
+  font-size:14px;
+  float:left;
+  height:0px;
+  line-height:0px;
+  position:absolute;
+  top:24px;
+  margin-top: 18px;
+  left:30px;
+  margin-right:25px;
+}
+
+.sparklHeader .pluginTabContainer .closeButton {
+  position:absolute;
+  width:13px;
+  height:13px;
+  background: url('../img/x2.png') -11px 50% transparent no-repeat;
+  top: 16px;
+  margin-top: -5px;
+  right: 30px;
+  cursor:pointer;
+}
+
+.sparklHeader .pluginTabContainer .closeButton:hover {
+  background-position: -46px 50%;
+}
+
+/* =============================================================================
+   3. FILTER CELLS
+   ========================================================================== */
+
+/* =============================================================================
+   4. DATA CELLS
+   ========================================================================== */
+
+/* =============================================================================
+   5. TABLES
+   ========================================================================== */
+
+/* =============================================================================
+   6. CHARTS 
+   ========================================================================== */
+
+/* =============================================================================
+   7. SELECTORS AND BUTTONS 
+   ========================================================================== */
+
+/* =============================================================================
+   Other 
+   ========================================================================== */
+
+.sparklContent {
+    /*border: 2px solid #25B9ED;
+	border-top: none;*/
+    display: block;
+    padding: 30px 25px;
+
+}
+
+.sparklPluginCardContainer .cardHeader {
+  height: 60px;
+  font-size: 18px;
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,255,255,.85);
+  border: 0;
+}
+
+.sparklPluginCardContainer .cardBody {
+  height: 100%;
+  position: relative;
+}
+
+.sparklNewPluginCardContainer {
+  background: #d8d8d8;
+}
+
+.sparklPluginCardContainer .descriptionExpandCont:hover .descriptionContainer {
+  height: 60px;
+  padding: 0px 10px 10px;
+}
+
+.sparklPluginCardContainer .descriptionContainer {
+  top: -170px;
+  height: 0px;
+  background: rgba(255,255,255,0.85);
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.sparklPluginCardContainer .cardHeader .name {
+  color: #333e48;
+  height: 18px;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+
+.sparklPluginCardContainer .descriptionContainer .header {
+  height: 25px;
+  color: #333e48;
+  font-size: 10px;
+  display: none;
+  padding-top: 5px;
+}
+
+.sparklPluginCardContainer .descriptionContainer .body {
+  color: #999999;
+  height: auto;
+  font-size: 12px;
+}
+
+.sparklPluginCardContainer .imageContainer .imagePlaceholder {
+  display: none;
+}
+
+.sparklPluginCardContainer .cardFooter {
+  margin-top: -35px;
+  position: relative;
+  background: rgba(255,255,255,0.85);
+}
+
+.sparklPluginCardContainer .descriptionExpandCont {
+  height: 230px;
+}
+
+.sparklPluginCardContainer .imageContainer:hover {
+  cursor: default;
+}
+
+.chzn-container-single .chzn-single span {
+  display: inline;
+  color: #0098c4;
+}
+
+.chzn-container-single .chzn-single span:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  background-image: url('../img/mini-arrow.png');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.chzn-container-single .chzn-single:hover span:after {
+  background-position: -8px 0px
+}
+
+.chzn-container-single .chzn-single b {
+  display: none !important;
+}
+
+.sparklNewPluginCardContainer .overlay {
+  background: #d8d8d8;
+}
+
+#tabMultiButtonObj {
+  border-bottom: 1px solid #ccc;
+}
+
+#refreshObj {
+  margin-top: 1px;
+}
+
+#aboutAuthorSubcell {
+  margin-top: 30px;
+}
+
+#aboutPluginSubcell {
+  margin-top: 50px;
+}
+
+#elementsCell {
+  margin-top: 15px;
+}
+
+tr.even td.sorting_1 {
+  background: none !important;
+}
+
+tr.odd td.sorting_1 {
+  background: none !important;
+}
+
+.sorting,
+.sorting_asc,
+.sorting_desc {
+  background: none;
+  cursor: pointer;
+}
+
+.sorting:hover {
+  background: url('../img/sort_both.png') no-repeat center right #fefefe;
+}
+
+.sorting_asc:hover {
+  background: url('../img/sort_asc.png') no-repeat center right #fefefe;
+}
+
+.sorting_desc:hover {
+  background: url('../img/sort_desc.png') no-repeat center right #fefefe;
+}
+
+#sendMessageButtonObj {
+  height: 30px;
+}
+
+#sendMessageButtonObj button {
+  font-family: 'Open Sans Light';
+  background: #333e48;
+  color: #fefefe;
+}
+
+#sendMessageButtonObj button:hover {
+  background: #0098c4;
+}
+
+.imgTip {
+  position: relative;
+  font-size: 9px;
+  color: #aaa;
+  margin-top: 12px;
+  display: block;
+  text-align: center;
+  width: 160px;
+  margin: 10px auto;
+}
+
+#newElementTypeSelectorObj {
+  padding-left: 10px;
+}
+
+#newElementTemplateSelectorObj {
+  padding-left: 10px;
+}
+
+.blockUI.blockOverlay {
+  background-color: rgba(235,237,238,0.6) !important;
+  opacity: 1 !important;
+}
+
+#aboutCell .blockUI.blockOverlay {
+  margin-top: -2px !important;
+}
+
+/* plugins */
+
+.sparklPluginCardContainer .optionCont {
+  height: 32px;
+  width: 32px;
+  font-size: 15px;
+  float: left;
+  line-height: 32px;
+  background: none;
+  border-bottom: none;
+}
+.sparklPluginCardContainer .optionCont:hover {
+  background: none;
+}
+
+.sparklPluginCardContainer .optionsContainer {
+  height: 100%;
+  position: relative;
+  z-index: 100;
+  background: none;
+}
+
+.sparklPluginCardContainer .cardFooter {
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  height: 42px;
+  margin-top: -42px;
+}
+
+#deleteAction {
+  float: right;
+  background-image: url(../img/trash.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#runAppAction {
+  background-image: url(../img/play.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#detailsAction {
+  background-image: url(../img/edit.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#deleteAction:hover,
+#runAppAction:hover,
+#detailsAction:hover {
+  background-position: -32px 0px;
+}
+
+#deletePluginButtonOK {
+  width: 184px;
+  background: #333e48;
+  color: #fff;
+}
+#deletePluginButtonOK:hover {
+  width: 184px;
+  background: #0098c4;
+}
+
+#updateLibsButtonObj * {
+  color: #fff;
+}
+#updateLibsButtonObj {
+  background: #333e48;
+}
+#updateLibsButtonObj:hover {
+  background: #0098c4;
+}
+
+.redInfo {
+  color:#d92f2f;
+}
+
+/*.sparklPluginCardContainer .optionsContainer {
+  display: none;
+}
+
+.sparklPluginCardContainer:hover .optionsContainer {
+  display: block;
+}*/
+
+/* =============================================================================
+   Project Specific Items 
+   ========================================================================== */
