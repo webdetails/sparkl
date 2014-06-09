@@ -3,8 +3,8 @@
   <!-- If the name is empty, CPK engine uses the id of the plugin to set the name of the cache -->
   <cache 
       name=""
-      maxEntriesLocalHeap="100"
-      maxEntriesLocalDisk="10000"
+      maxElementsInMemory="100"
+      maxElementsOnDisk="10000"
       eternal="false"
       overflowToDisk="true"
       timeToLiveSeconds="0"
