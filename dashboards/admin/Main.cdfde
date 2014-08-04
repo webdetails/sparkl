@@ -968,6 +968,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -1044,6 +1064,26 @@
       "name": "expression",
       "value": "function f(){\n    \n    var tableData = Dashboards.getComponentByName(\"render_pluginsTable\").rawData,\n        idsArray = [],\n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    \n    $.each(tableData.resultset, function(idx,el){\n        idsArray.push(el[0]);\n    });\n    \n    if( idsArray.indexOf(pluginId) > -1 ){\n        var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n        dialogComponent.open({\n            message:\"Id \"+pluginId+\" already in use. Please, try again with a different Id.\",\n            buttons:[\n                {\n                    text: \"OK\",\n                    click: function () {\n                        $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                    }                               \n                }\n            ]\n        });\n    }\n    else{\n        sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo', {\n            isNewPluginParam: true,\n            pluginIdParam: pluginId\n        });\n    }\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -1591,7 +1631,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f (){\n    \n    var myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n\n    this.newPluginActions = [\n        {\n            id: \"createAction\",\n            label: \"Create\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo');\n            }\n        }\n\t];\n    \n    if ( sparkl.hasUploaderComponent()){\n        this.newPluginActions.push({\n    \t\tid: \"importAction\",\n\t\t\tlabel: \"Unpack\",\n            callback:function(id){\n                if (myself.custom && myself.custom.importTrigger){\n                    myself.custom.importTrigger();\n                }\n            }\n\t\t});\n    }\n    \n    this.pluginActions = [\n        {\n            id: \"runAppAction\",\n            label: \"\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/' + id + '/api/default' , {}, true);\n            }\n        },\n        {\n            id: \"detailsAction\",\n            label: \"\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo?pluginId=' + id);\n            }\n        },\n        /*{\n            id: \"separatorDummy\",\n            label: \"\",\n            classes:'noAction'\n        },*/\n        {\n            id: \"deleteAction\",\n            label: \"\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                dialogComponent.open({\n                    message:\"Rly?\",\n                    buttons:[\n                        {\n                            text: \"Cancel\",\n                            id: \"deletePluginButtonCancel\",\n                            click: function () {\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }                               \n                        },\n                        {\n                            text: \"OK\",\n                            id: \"deletePluginButtonOK\",\n                            click: function () {\n                                Dashboards.incrementRunningCalls();\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                sparkl.runEndpoint( 'sparkl' , 'deletePlugin', {\n                                    params: { pluginId: id },\n                                    success: sparkl.publishToServer(\n                                        function (json){                         \n                                            Dashboards.fireChange('updateTableEvent');\n                                            Dashboards.decrementRunningCalls();\n                                        })\n                                });\n                                \n                            }\n                        }\n                    ]\n                });\n            }\n        }\n\t];\n}",
+      "value": "function f (){\n    \n    var myself = this,\n        dialogComponent = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\");\n\n    this.newPluginActions = [\n        {\n            id: \"createAction\",\n            label: \"Create\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo');\n            }\n        }\n\t];\n    \n    if ( sparkl.hasUploaderComponent()){\n        this.newPluginActions.push({\n    \t\tid: \"importAction\",\n\t\t\tlabel: \"Unpack\",\n            callback:function(id){\n                if (myself.custom && myself.custom.importTrigger){\n                    myself.custom.importTrigger();\n                }\n            }\n\t\t});\n    }\n    \n    this.pluginActions = [\n        {\n            id: \"runAppAction\",\n            label: \"\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/' + id + '/api/default' , {}, true);\n            }\n        },\n        {\n            id: \"detailsAction\",\n            label: \"\",\n            callback: function(id){\n                sparkl.changeLocation( Dashboards.getWebAppPath() + '/plugin/sparkl/api/plugininfo?pluginId=' + id);\n            }\n        },\n        /*{\n            id: \"separatorDummy\",\n            label: \"\",\n            classes:'noAction'\n        },*/\n        {\n            id: \"deleteAction\",\n            label: \"\",\n            callback:function(id){\n                var dialogComponent = Dashboards.getComponentByName(\"render_dialogGrabComponent\");\n                dialogComponent.open({\n                    message:\"Are you sure you want to delete the plugin ?\",\n                    buttons:[\n                        {\n                            text: \"Cancel\",\n                            id: \"deletePluginButtonCancel\",\n                            click: function () {\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                            }                               \n                        },\n                        {\n                            text: \"OK\",\n                            id: \"deletePluginButtonOK\",\n                            click: function () {\n                                Dashboards.incrementRunningCalls();\n                                $(\"#\"+dialogComponent.htmlObject).dialog(\"close\");\n                                sparkl.runEndpoint( 'sparkl' , 'deletePlugin', {\n                                    params: { pluginId: id },\n                                    success: sparkl.publishToServer(\n                                        function (json){                         \n                                            Dashboards.fireChange('updateTableEvent');\n                                            Dashboards.decrementRunningCalls();\n                                        })\n                                });\n                                \n                            }\n                        }\n                    ]\n                });\n            }\n        }\n\t];\n}",
       "type": "JavaScript"
      },
      {
@@ -1649,6 +1689,16 @@
       "name": "name",
       "value": "listPluginsEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -1657,5 +1707,5 @@
    }
   ]
  },
- "filename": "/system/sparkl/dashboards/Main.cdfde"
+ "filename": "/system/sparkl/dashboards/admin/Main.cdfde"
 }
