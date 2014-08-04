@@ -8630,7 +8630,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    var $newContainer = $('#' + this.htmlObject).parents('.newElementContainer'); \n    if ( !$newContainer.hasClass('activeButton') ||\n          $newContainer.hasClass('emptyType') ||\n          $newContainer.hasClass('emptyTemplate') ){\n        return false\n    }\n    \n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}'),        \n        pluginId = Dashboards.getParameterValue('${p:pluginIdParam}');\n    var paramsObj = { pluginId: \"'\" + pluginId + \"'\" };\n    _.each( newElementOpts, function(el, key) {        \n        paramsObj['element' + capitalize(key)] = \"'\" + el + \"'\";\n    });\n    this.actionParameters = Dashboards.objectToPropertiesArray( paramsObj );\n    \n    Dashboards.incrementRunningCalls();   \n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
+      "value": "function f(){\n    \n    var $newContainer = $('#' + this.htmlObject).parents('.newElementContainer'); \n    if ( !$newContainer.hasClass('activeButton') ||\n          $newContainer.hasClass('emptyType') ||\n          $newContainer.hasClass('emptyTemplate') ){\n        return false\n    }\n    \n    var newElementOpts = Dashboards.getParameterValue('${p:newElementParam}');\n    var paramsObj = { pluginId: \"${p:pluginIdParam}\" };\n    _.each( newElementOpts, function(el, key) {        \n        paramsObj['element' + capitalize(key)] = \"${p:newElementParam}.\" + key;\n    });\n    this.actionParameters = Dashboards.objectToPropertiesArray( paramsObj );\n    \n    Dashboards.incrementRunningCalls();   \n    \n    function capitalize (string) {\n        return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -8830,9 +8830,9 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
-      "type": "colTypesCustom"
+      "name": "language",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "colFormats",
@@ -8842,11 +8842,6 @@
      {
       "name": "colWidths",
       "value": "[\"40%\",\"20%\",\"20%\",\"0\",\"20%\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
       "type": "Array"
      },
      {
@@ -8865,19 +8860,19 @@
       "type": "Array"
      },
      {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colTypes",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
+      "type": "colTypesCustom"
+     },
+     {
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "sort",
       "value": "true",
       "type": "Boolean"
-     },
-     {
-      "name": "displayLength",
-      "value": "",
-      "type": "Integer"
      },
      {
       "name": "lengthChange",
@@ -8900,9 +8895,14 @@
       "type": "Boolean"
      },
      {
-      "name": "colSearchable",
-      "value": "[]",
-      "type": "Array"
+      "name": "info",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "displayLength",
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "drawCallback",
@@ -8910,9 +8910,9 @@
       "type": "JavaScript"
      },
      {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "elementsEndpoint"
+      "name": "colSearchable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "sDom",
@@ -8925,9 +8925,9 @@
       "type": "SortByArray"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "elementsEndpoint"
      },
      {
       "name": "refreshPeriod",
@@ -8935,14 +8935,19 @@
       "type": "Integer"
      },
      {
-      "name": "paginationType",
-      "value": "two_button",
-      "type": "PaginationType"
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
      },
      {
       "name": "tableStyle",
       "value": "classic",
       "type": "TableStyle"
+     },
+     {
+      "name": "paginationType",
+      "value": "two_button",
+      "type": "PaginationType"
      },
      {
       "name": "htmlObject",
@@ -8965,13 +8970,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var elementsNamesList = [];\n        _.each( data.resultset, function (el){\n            elementsNamesList.push(el[0]);\n            el.push(el[0]); \n        });\n        Dashboards.setParameter(\"${p:elementsNamesListParam}\",elementsNamesList);\n        data.metadata.push( $.extend( {} , data.metadata[0] ) );\n        var lastMetadataElIdx = data.metadata.length-1;\n        (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n        // *** Register in sort selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:sortSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n    \n        // *** Register in View selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:viewSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            if(v === 'all'){ v = '' }\n            \n            this.dataTable.fnFilter( v , 1);    \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        //enable filtering and disable sort in the actions column\n        var objOpts = Dashboards.propertiesArrayToObject(this.extraOptions);        \n        objOpts['bFilter'] = true;\n        objOpts['aoColumnDefs'] = [\n            { 'bSortable': false, 'aTargets': [ 4 ] }\n        ]\n        this.extraOptions = Dashboards.objectToPropertiesArray( objOpts );\n        \n        return data;\n    }else{\n        data = sparkl.createElementsTableEmptyRawData();\n        return data;\n    }\n}",
+      "name": "postExecution",
+      "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "",
+      "name": "postFetch",
+      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var elementsNamesList = [];\n        _.each( data.resultset, function (el){\n            elementsNamesList.push(el[0]);\n            el.push(el[0]); \n        });\n        Dashboards.setParameter(\"${p:elementsNamesListParam}\",elementsNamesList);\n        data.metadata.push( $.extend( {} , data.metadata[0] ) );\n        var lastMetadataElIdx = data.metadata.length-1;\n        (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n        // *** Register in sort selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:sortSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n    \n        // *** Register in View selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:viewSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            if(v === 'all'){ v = '' }\n            \n            this.dataTable.fnFilter( v , 1);    \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        //enable filtering and disable sort in the actions column\n        var objOpts = Dashboards.propertiesArrayToObject(this.extraOptions);        \n        objOpts['bFilter'] = true;\n        objOpts['aoColumnDefs'] = [\n            { 'bSortable': false, 'aTargets': [ 4 ] }\n        ]\n        this.extraOptions = Dashboards.objectToPropertiesArray( objOpts );\n        \n        return data;\n    }else{\n        data = sparkl.createElementsTableEmptyRawData();\n        return data;\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -11141,6 +11146,16 @@
       "name": "name",
       "value": "listPluginsEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ]
    },
@@ -11154,6 +11169,16 @@
       "name": "name",
       "value": "listTemplatesEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -11170,6 +11195,16 @@
       "name": "name",
       "value": "unavailableIdsEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -11186,6 +11221,16 @@
       "name": "name",
       "value": "metadataEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -11202,6 +11247,16 @@
       "name": "name",
       "value": "elementsEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -11218,6 +11273,16 @@
       "name": "name",
       "value": "createElementEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -11226,5 +11291,5 @@
    }
   ]
  },
- "filename": "/system/sparkl/dashboards/pluginInfo.cdfde"
+ "filename": "/system/sparkl/dashboards/admin/pluginInfo.cdfde"
 }
