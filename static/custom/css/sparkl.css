@@ -321,6 +321,8 @@ div.container *{
   box-shadow: none;
   float: left;
   margin:0px;
+  line-height: 18px;
+  height: 26px;
 }
 .boxshadow .filtersContainer .pentaho-toggle-button button{
   border: 4px solid #EBEDEE;
@@ -428,6 +430,18 @@ div.container *{
   background: none;
   font-family: 'Open Sans';
   font-size: 13px;
+}
+.formContainer .formInput input::-webkit-input-placeholder {
+  color: #aaa;
+}
+.formContainer .formInput input:-moz-placeholder {
+  color: #777;
+}
+.formContainer .formInput input::-moz-placeholder {
+  color: #777;
+}
+.formContainer .formInput input:-ms-input-placeholder {
+  color: #aaa;
 }
 .formContainer .formInput input:hover{
   cursor: pointer;
@@ -724,6 +738,20 @@ div.container *{
   background: url('../img/validate_disabled.png') no-repeat scroll right center;
 }
 
+
+.newElementContainer .formInput input::-webkit-input-placeholder {
+  color: #aaa;
+}
+.newElementContainer .formInput input:-moz-placeholder {
+  color: #777;
+}
+.newElementContainer .formInput input::-moz-placeholder {
+  color: #777;
+}
+.newElementContainer .formInput input:-ms-input-placeholder {
+  color: #aaa;
+}
+
 .newElementContainer .formInput input:hover{
   cursor: pointer;
   border: 1px solid #ccc;
@@ -893,7 +921,7 @@ div.container *{
   display: none;
 }
 
-table{
+table {
   border: none;
   max-width: 100%;
   min-width: 100%;
@@ -902,16 +930,20 @@ table{
   border-spacing:0px;
   margin-top: 20px;
 }
-table tr{
+table.dataTable.compact tbody tr {
   background: #EBEDEE;
   height: 40px;
 }
+table.dataTable.compact tbody th,
+table.dataTable.compact tbody td {
+  padding: 4px 9px;
+}
 
 /* Header */
-thead tr {
+table.dataTable.compact thead tr {
   height: 30px;
 }
-thead th {
+table.dataTable.compact thead th {
   background: none;
   color: #333e48;
   font-size: 13px;
@@ -923,18 +955,18 @@ thead th {
   padding-top: 12px;
   padding-left: 10px;
 }
-thead th:last-child {
+table.dataTable.compact thead th:last-child {
   text-align: center;
 }
 
 /* Body */
-tbody tr:nth-child(even) {
+table.dataTable.compact tbody tr:nth-child(even) {
   background: #EBEDEE;
 }
-tbody tr:nth-child(odd) {
+table.dataTable.compact tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
-tbody td{
+table.dataTable.compact tbody td{
   text-align: left;
   color: #333e48;
   font-size: 13px;
@@ -942,22 +974,22 @@ tbody td{
   padding-left: 10px;
   font-family: 'Open Sans';
 }
-tbody td:last-child {
+table.dataTable.compact tbody td:last-child {
   text-align: center;
   border-right: none;
 }
-tbody td.actionButtons {
+table.dataTable.compact.compact tbody td.actionButtons {
 	padding: 0px;
   height: 32px; /* Can't work out a percentual height with tables */
   text-align: right;
   width: 126px;
 }
 
-tbody td.actionButtons .buttonContainer {
+table.dataTable.compact tbody td.actionButtons .buttonContainer {
   height:100%;
   width:100%;
 }
-tbody td.actionButtons button{
+table.dataTable.compact tbody td.actionButtons button{
   color: #333;
   font-size: 13px;
   border: 0px none;
@@ -967,16 +999,16 @@ tbody td.actionButtons button{
   vertical-align: baseline;
   margin-left: 5px;
 }
-tbody td.actionButtons button:last-child {
+table.dataTable.compact tbody td.actionButtons button:last-child {
   border-right:none;
 }
-tbody td.actionButtons button:hover{
+table.dataTable.compact tbody td.actionButtons button:hover{
   color:#333;
 }
-tbody tr:nth-child(even) td.actionButtons button {
+table.dataTable.compact tbody tr:nth-child(even) td.actionButtons button {
   background-color: #EBEDEE;
 }
-tbody tr:nth-child(odd) td.actionButtons button {
+table.dataTable.compact tbody tr:nth-child(odd) td.actionButtons button {
   background-color: #f5f5f5;
 }
 .runEndpointButton {
@@ -1006,14 +1038,14 @@ tbody tr:nth-child(odd) td.actionButtons button {
 .editDashboardButton,
 .deleteEndpointButton,
 .viewDashboardButton {
-  background-position: 0px 4px;
+  background-position: 0px center;
 }
 .runEndpointButton:hover,
 .deleteDashboardButton:hover,
 .editDashboardButton:hover,
 .deleteEndpointButton:hover,
 .viewDashboardButton:hover {
-  background-position: -32px 4px;
+  background-position: -32px center;
 }
 tbody tr td.actionButtons button {
   opacity: 0;
@@ -1031,33 +1063,23 @@ tbody tr:hover td.actionButtons button {
   -o-transition: opacity .2s;
   transition: opacity .2s;
 }
-/*tbody td.actionButtons .numButtons-1 button{
-  width:100%;
+table.dataTable.compact thead .sorting_asc,
+table.dataTable.compact thead .sorting_desc,
+table.dataTable.compact thead .sorting {
+  background: none;
 }
-tbody td.actionButtons .numButtons-2 button{
-  width:50%;
+table.dataTable.compact thead .sorting_asc:hover {
+  background: url("../img/sort_asc.png") no-repeat center right 3px;
+  background-color: #fff;
 }
-tbody td.actionButtons .numButtons-3 button{
-  width:33.3333333%;
+table.dataTable.compact thead .sorting_desc:hover {
+  background: url("../img/sort_desc.png") no-repeat center right 3px;
+  background-color: #fff;
 }
-tbody td.actionButtons .numButtons-4 button{
-  width:25%;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+table.dataTable.compact thead .sorting:hover {
+  background: url("../img/sort_both.png") no-repeat center right 3px;
+  background-color: #fff;
+}
 
 
 /* =============================================================================
