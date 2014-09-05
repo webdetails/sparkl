@@ -36,6 +36,9 @@
 			  Creates a distribution of this project's plugin zip
 			  ====================================================================-->
 
+    <target name="init" depends="subfloor.init">
+            <mkdir dir="src"/>
+    </target>
 
   <target name="dist" depends="clean,resolve" description="Creates a distribution">
 
