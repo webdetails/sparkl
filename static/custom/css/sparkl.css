@@ -2,8 +2,8 @@
  *    Color Pallete
  *    Fonts
  *    Style Resets
- *    Other 
- *    Project Specific Items  
+ *    Other
+ *    Project Specific Items
  *
  */
 
@@ -49,8 +49,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 /*margin: 0;
@@ -66,7 +66,7 @@ border: 0;
 
 
 /* =============================================================================
-   BACKGROUND 
+   BACKGROUND
    ========================================================================== */
 
 /* Window Background */
@@ -78,12 +78,12 @@ body{
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 div.container *{
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -91,7 +91,7 @@ div.container *{
 
 
 /* =============================================================================
-   HEADER 
+   HEADER
    ========================================================================== */
 
 
@@ -160,7 +160,7 @@ div.container *{
   position: relative;
 }
 .tabsCell .pentaho-toggle-button-down button:after {
-  content: '';  
+  content: '';
   position: absolute;
   width: 100%;
   height: 4px;
@@ -183,7 +183,7 @@ div.container *{
 }
 
 .sparklMainHeader:after{
-	content: '';  
+	content: '';
 	width: 100px;
 	height: 4px;
 	background: #0098c4;
@@ -266,7 +266,7 @@ div.container *{
 .filtersContainer {
   height: 35px;
   line-height:27px;
-  color: #878685; 
+  color: #878685;
   margin-bottom: 0px;
   margin-left: 6px;
   margin-top: 25px;
@@ -621,7 +621,7 @@ div.container *{
   vertical-align: baseline;
 }
 .createNewPluginButton button:hover{
-  cursor: default;  
+  cursor: default;
 }
 .createNewPluginButton.active button{
   background: #333e48;
@@ -684,7 +684,7 @@ div.container *{
   font-size: 13px;
   border: 0;
   box-shadow: none;
-  vertical-align: baseline;  
+  vertical-align: baseline;
   cursor:pointer;
   background: url('../img/add_new.png') 50% 50% no-repeat #0098c4;
 }
@@ -716,7 +716,7 @@ div.container *{
   float:right;
 }
 .newElementContainer .toggleNewElement.formButton button {
-   background-position: 99% 50%;   
+   background-position: 99% 50%;
 }
 
 .newElementContainer .formInput{
@@ -1251,7 +1251,7 @@ button {
 
 
 /* =============================================================================
-   Other 
+   Other
    ========================================================================== */
 
 
@@ -1265,7 +1265,7 @@ button {
    font-size: 18px;
    text-align: left;
    height: auto;
-   padding: 15px; 
+   padding: 15px;
 
    border: solid 1px #333e48;
    background: #fefefe;
@@ -1282,12 +1282,12 @@ button {
 
    position: absolute;
 
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .popupComponent *{
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -1332,13 +1332,22 @@ input.editBox:focus {
     border: 1px solid #0F1414;
 }
 
-
-
 .sparklPluginCardContainer .optionsIcon{
   background-image: url('../img/options.png');
 }
 
+.sparklPluginCardContainer.restartServer .descriptionExpandCont{
+  opacity: 0.5;
+}
 
+.sparklPluginCardContainer.restartServer .optionsContainer{
+  line-height: 32px;
+}
+
+.sparklPluginCardContainer.restartServer .descriptionExpandCont:hover .descriptionContainer {
+  height: 0;
+  padding: 0;
+}
 
 
 /***** Confirmation Message Dialog *****/
@@ -1415,8 +1424,3 @@ input.editBox:focus {
   background: #ebedee;
   opacity: 0.8;
 }
-
-
-
-
-
