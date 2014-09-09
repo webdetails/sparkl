@@ -7004,7 +7004,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var myself = this;\n    this.custom = this.custom || {};\n    this.custom.toggle = function (predicate){\n        var $container = $('#' + myself.htmlObject).parents('.newElementContainer'),\n            previous = $container.hasClass('active'),\n            newPredicate = _.isBoolean(predicate) ? predicate : !previous;\n        $container.toggleClass('active', newPredicate )\n            .toggleClass('inactive', !newPredicate);\n            \n        if (!newPredicate) {\n            Dashboards.fireChange('${p:newElementParam}', \n                {type: \"\", template: \"\", name: \"\", admin: false });\n        }\n    }\n}",
+      "value": "function f(){\n    var myself = this;\n    this.custom = this.custom || {};\n    this.custom.toggle = function (predicate){\n        var $container = $('#' + myself.htmlObject).parents('.newElementContainer'),\n            previous = $container.hasClass('active'),\n            newPredicate = _.isBoolean(predicate) ? predicate : !previous;\n        $container.toggleClass('active', newPredicate )\n            .toggleClass('inactive', !newPredicate);\n            \n        if (!newPredicate) {\n            Dashboards.fireChange('${p:newElementParam}', \n                {type: \"\", template: \"\", name: \"\", admin: false });\n        }\n    }\n    \n    $(document).click(function(event) { \n        if( $(event.target).parents('.newElementContainer').length === 0) {\n            myself.custom.toggle( false );\n        }        \n    });\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -7047,7 +7047,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:newElementParam}']",
       "type": "Listeners"
      },
      {
@@ -7102,7 +7102,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    this.lifecycle = { silent: true };\n}",
       "type": "JavaScript"
      },
      {
@@ -8456,7 +8456,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f(){\n    this.lifecycle = { silent: true };\n}",
       "type": "JavaScript"
      },
      {
@@ -8549,7 +8549,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    this.defaultIfEmpty = false;\n    this.placeholderText = \"2. Choose Type\"\n}",
+      "value": "function f(){\n    this.defaultIfEmpty = false;\n    this.placeholderText = \"2. Choose Type\";\n    this.lifecycle = { silent: true };\n}",
       "type": "JavaScript"
      },
      {
@@ -8652,7 +8652,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    this.defaultIfEmpty = false;\n    this.placeholderText = \"3. Choose Template\"\n}",
+      "value": "function f(){\n    this.defaultIfEmpty = false;\n    this.placeholderText = \"3. Choose Template\";\n    this.lifecycle = { silent: true };\n}",
       "type": "JavaScript"
      },
      {
@@ -8684,104 +8684,6 @@
       "name": "extraOptions",
       "value": "[]",
       "type": "OptionArray"
-     }
-    ]
-   },
-   {
-    "id": "f8774066-88f5-c383-fdf3-2ca7e490f050",
-    "type": "Componentscheck",
-    "typeDesc": "Check Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "newElementAdminCheckbox",
-      "type": "Id"
-     },
-     {
-      "name": "separator",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameter",
-      "value": "newElementParam.admin",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:newElementParam}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "valueAsId",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": ""
-     },
-     {
-      "name": "valuesArray",
-      "value": "[[\"yes\",\"Admin Only\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:newElementAdminCheckboxObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "function (value) {\n    return !_.isEmpty(value)\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
      }
     ]
    },
@@ -9356,7 +9258,7 @@
     ]
    },
    {
-    "id": "d74c0d55-e26d-3e59-10f2-0c536dccaa5c",
+    "id": "cbaa6b35-8ade-4e02-437a-7cfac38a8022",
     "type": "ComponentsFunction",
     "typeDesc": "JavaScript function",
     "parent": "SCRIPT",
