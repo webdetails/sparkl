@@ -9,6 +9,76 @@
     <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
+        <parameter>
+            <name>cpk.cache.isEnabled</name>
+            <default_value>UNKNOWN</default_value>
+            <description>Enables&#x2f;disables caching of the results. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.cache.timeToLiveSeconds</name>
+            <default_value>UNKNOWN</default_value>
+            <description>For how many seconds a result will be cached. Setting this value to 0 means the result will be cached &#x22;forever&#x22;. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.executeAtStart</name>
+            <default_value>UNKNOWN</default_value>
+            <description>Whether the transformation is to be executed when the plugin is initialized. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.plugin.dir</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The plugin folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.plugin.id</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The id of the plugin. This value is automatically set at runtime if  &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.response.attachmentName</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The attachment name used when downloading a file from a result.  Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.response.download</name>
+            <default_value>UNKNOWN</default_value>
+            <description>Whether to &#x28;or not&#x29; mark the http reponse body as an attachment. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.response.kettleOutput</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The output format to be used by default. Possible values&#x3a; Infered, Json, SingleCell, ResultFiles, ResultOnly. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.response.mimeType</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The mimeType of the http response. If this value is not set, the plugin will try to determine it from the file extension. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.result.stepName</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The default output step where the rows will be fetched for the result. Remove &#x27;&#x23;&#x27; to use variable.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.session.roles</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The roles of the username executing this transformation. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.session.username</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The username that is executing this transformation. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.solution.system.dir</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The pentaho-solutions folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.webapp.dir</name>
+            <default_value>UNKNOWN</default_value>
+            <description>The webapp folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -80,7 +150,7 @@
     <name>Get Variables</name>
     <type>GetVariable</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -88,18 +158,6 @@
            <schema_name/>
            </partitioning>
     <fields>
-      <field>
-        <name>&#x24;&#x7b;cpk.plugin.id&#x7d;</name>
-        <variable>&#x24;&#x7b;cpk.plugin.id&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
       <field>
         <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;</name>
         <variable>&#x24;&#x7b;cpk.plugin.dir&#x7d;</variable>
@@ -113,8 +171,44 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>&#x24;&#x7b;cpk.plugin.system.dir&#x7d;</name>
-        <variable>&#x24;&#x7b;cpk.plugin.system.dir&#x7d;</variable>
+        <name>&#x24;&#x7b;cpk.plugin.id&#x7d;</name>
+        <variable>&#x24;&#x7b;cpk.plugin.id&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</name>
+        <variable>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x24;&#x7b;cpk.session.roles&#x7d;</name>
+        <variable>&#x24;&#x7b;cpk.session.roles&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x24;&#x7b;cpk.session.username&#x7d;</name>
+        <variable>&#x24;&#x7b;cpk.session.username&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -139,42 +233,6 @@
       <field>
         <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;</name>
         <variable>&#x24;&#x7b;cpk.webapp.dir&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x24;&#x7b;cpk.session.username&#x7d;</name>
-        <variable>&#x24;&#x7b;cpk.session.username&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x24;&#x7b;cpk.session.roles&#x7d;</name>
-        <variable>&#x24;&#x7b;cpk.session.roles&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</name>
-        <variable>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -210,9 +268,6 @@
         <norm/>
         </field>      <field>        <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;</name>
         <value>&#x24;&#x7b;cpk.plugin.dir&#x7d;</value>
-        <norm/>
-        </field>      <field>        <name>&#x24;&#x7b;cpk.plugin.system.dir&#x7d;</name>
-        <value>&#x24;&#x7b;cpk.plugin.system.dir&#x7d;</value>
         <norm/>
         </field>      <field>        <name>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</name>
         <value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</value>
