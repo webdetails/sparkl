@@ -401,9 +401,9 @@ var sparkl = {};
             var t = $(tgt);
             var value = st.value;
             var text = $("<input/>").attr({
-                value: value,
-                type: 'text',
-                class: 'editBox'
+                'value': value,
+                'type': 'text',
+                'class': 'editBox'
             })
                 .keyup(function(event) {
                     if (event.keyCode == 13) {
