@@ -2,7 +2,7 @@
 var sparkl = {};
 (function(myself) {
 
-    _settings = {
+    var _settings = {
         expressions: {
             element: /^[A-Za-z][A-Za-z\d]*$/,
             plugin: /^[A-Za-z][A-Za-z\d]*$/,
@@ -322,16 +322,11 @@ var sparkl = {};
         return this.addCallWrapper(this.publishToServer, cb);
     };
 
-
-
-
-
 })(sparkl);
 
 /************************************  AddIns ************************************/
 
 
-;
 (function() {
 
     var actionButtonsOpts = {
