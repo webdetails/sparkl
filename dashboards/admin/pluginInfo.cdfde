@@ -6232,7 +6232,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"pluginId\",\"'sparkl'\"]]",
+      "value": "[[\"pluginId\",\"sparklName\"]]",
       "type": "ValuesArray"
      },
      {
@@ -6423,7 +6423,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "",
+      "value": "${p:}",
       "type": "HtmlObject"
      },
      {
@@ -6443,7 +6443,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var obj = {};\n        \n        //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n        _.each( data.resultset , function(row,i){\n            _.each( row, function(el,j){\n                if ( _.isEmpty(el) ){\n                    row[j] = \"\";\n                }\n            }); \n        });\n        \n        _.each( data.metadata, function(el,idx){\n            obj[el.colName] = data.resultset[0][idx];\n        });\n        \n        Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n        Dashboards.fireChange(\"${p:newMetadataParam}\", $.extend({},obj) );\n    }\n}",
+      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var obj = {};\n        \n        //TODO: Only needed in CDA call. Won't be needed with a CPK direct call.\n        \n        _.each( data.resultset , function(row,i){\n            _.each( row, function(el,j){\n                if ( _.isEmpty(el) ){\n                    row[j] = \"\";\n                }\n            }); \n        });\n        \n        _.each( data.metadata, function(el,idx){\n            obj[el.colName] = data.resultset[0][idx];\n        });\n        \n        Dashboards.fireChange(\"${p:pluginMetadataParam}\",obj);\n        Dashboards.fireChange(\"${p:newMetadataParam}\", $.extend({},obj) );\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -7355,11 +7355,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colWidths",
-      "value": "[\"40%\",\"20%\",\"20%\",\"0\",\"20%\"]",
-      "type": "Array"
-     },
-     {
       "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -7382,6 +7377,11 @@
      {
       "name": "colFormats",
       "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colWidths",
+      "value": "[\"40%\",\"20%\",\"20%\",\"0\",\"20%\"]",
       "type": "Array"
      },
      {
@@ -7440,14 +7440,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "elementsEndpoint"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "elementsEndpoint"
      },
      {
       "name": "refreshPeriod",
@@ -9244,6 +9244,34 @@
     ]
    },
    {
+    "id": "f1ab3816-9db8-da5b-2574-99d6ae87bd0b",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "sparklName",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "sparkl",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "SCRIPT",
     "name": "Scripts",
     "type": "Label",
@@ -9451,5 +9479,5 @@
    }
   ]
  },
- "filename": "/system/sparkl/dashboards/admin/pluginInfo.cdfde"
+ "filename": "/system/sparkl/dashboards/admin/plugininfo.cdfde"
 }
