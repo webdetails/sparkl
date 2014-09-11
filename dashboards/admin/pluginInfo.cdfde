@@ -3,6 +3,29 @@
   "title": "CDF - Sample structure",
   "rows": [
    {
+    "id": "1055f24a-5897-b5c5-9b58-7706ee962205",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "pluginDialogHelperJS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "var setPluginDialogVisibility = function(isVisible){\n    //$('.sparklCell:not(.newPluginCell)').toggleClass(\"WDhidden\", !isVisible);\n    //$('.contentCell').css('visibility', isVisible ? 'visible' : 'hidden');\n    if (isVisible){\n        $('#mainCell').unblock();\n    } else {\n        $('#mainCell').block();            \n    }\n    $('.newPluginCell').toggleClass(\"WDhidden\", isVisible);\n}; ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
     "id": "40a32b21-a88c-f5b2-56b1-fac01e01c79a",
     "type": "LayoutResourceCode",
     "typeDesc": "Resource",
@@ -38,7 +61,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/sparkl/static/custom/css/sparkl.css",
+      "value": "${system:/static/custom/css/sparkl.css}",
       "type": "ResourceFile"
      },
      {
@@ -61,7 +84,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/sparkl/static/custom/js/sparkl.js",
+      "value": "${system:/static/custom/js/sparkl.js}",
       "type": "ResourceFile"
      },
      {
@@ -256,10 +279,121 @@
     ]
    },
    {
-    "id": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
+    "id": "2b217ead-0693-6605-0cba-84ecd4f89f07",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "mainCell",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2173c362-3f75-b4cf-fd20-fb89947ced1e",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "2b217ead-0693-6605-0cba-84ecd4f89f07",
+    "properties": [
+     {
+      "name": "name",
+      "value": "mainRow",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "04dbc861-8eba-df18-7b49-4cd68b8862b6",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "2173c362-3f75-b4cf-fd20-fb89947ced1e",
     "properties": [
      {
       "name": "name",
@@ -370,7 +504,7 @@
     "id": "c89e7f19-7c7e-6caa-5045-e0dcf0896d83",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "UnIqEiD",
+    "parent": "2173c362-3f75-b4cf-fd20-fb89947ced1e",
     "properties": [
      {
       "name": "name",
@@ -554,7 +688,7 @@
     "id": "70d7d37e-8e4a-7e48-bc66-068ba0ec708f",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "UnIqEiD",
+    "parent": "2173c362-3f75-b4cf-fd20-fb89947ced1e",
     "properties": [
      {
       "name": "name",
@@ -4455,7 +4589,7 @@
     "id": "95aed796-eb0c-36de-307b-7d30d431fcd8",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "UnIqEiD",
+    "parent": "2173c362-3f75-b4cf-fd20-fb89947ced1e",
     "properties": [
      {
       "name": "name",
@@ -6355,12 +6489,12 @@
      },
      {
       "name": "postExecution",
-      "value": "function(){\n    var rawList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n        pluginIdsList = _.pluck( _.filter( rawList, function(el){\n            return el.type == 'plugin'   \n        }) , 'name'),\n        pluginId = Dashboards.getParameterValue(\"${p:pluginIdParam}\");\n    \n    if( !_.contains( pluginIdsList, pluginId ) ){\n        $('.sparklCell:not(.newPluginCell)').block();\n        $('.newPluginCell').toggleClass(\"WDhidden\");\n    }\n    else{\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n}",
+      "value": "function(){\n    var rawList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n        pluginIdsList = _.pluck( _.filter( rawList, function(el){\n            return el.type == 'plugin'   \n        }) , 'name'),\n        pluginId = Dashboards.getParameterValue(\"${p:pluginIdParam}\");\n    \n    if( _.contains( pluginIdsList, pluginId ) ){\n        Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n}",
       "type": "JavaScript"
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return { name: row[0] , type: row[1]};\n    });\n    \n    Dashboards.setParameter('${p:unavailableIdsParam}', pluginIdsList);\n}",
+      "value": "function f(data){\n    var pluginIdsList = _.map(data.resultset, function(row){\n        return { name: row[0] , type: row[1]};\n    });\n    \n    Dashboards.fireChange('${p:unavailableIdsParam}', pluginIdsList);\n}",
       "type": "JavaScript"
      },
      {
@@ -6544,7 +6678,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n                \n        var successCallback = function (json){      \n            $('.newPluginCell').toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            $('.sparklCell').unblock();\n            Dashboards.decrementRunningCalls();\n            dialog.open({\n                message:\"The plugin \" + newPluginId + \" was successfully created!\" +\n                \"<br><span class='redInfo'>Please restart the server for full functionality.</span>\",\n                dialogClass:'closeButtonVisible'\n            });\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.decrementRunningCalls();  \n        }\n                \n        Dashboards.incrementRunningCalls();            \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
+      "value": "function f(){\n    \n    function capFirst(string)\n    {\n        return string.charAt(0).toUpperCase() + string.slice(1);\n    }\n        \n    if( $('#'+this.htmlObject).hasClass('active') ){\n        var newPluginId = Dashboards.getParameterValue('${p:pluginIdParam}'),\n            dialog = Dashboards.getComponentByName(\"${c:dialogGrabComponent}\"),\n            endpoint = 'createplugin';\n                \n        var successCallback = function (json){      \n            //$('.newPluginCell').toggleClass(\"WDhidden\");                \n            Dashboards.fireChange('${p:updateDataEvent}');\n            //$('.sparklCell').unblock();\n            Dashboards.decrementRunningCalls();\n            dialog.open({\n                message:\"The plugin \" + newPluginId + \" was successfully created!\" +\n                \"<br><span class='redInfo'>Please restart the server for full functionality.</span>\",\n                dialogClass:'closeButtonVisible'\n            });\n            setPluginDialogVisibility(true);\n        }\n        \n        var errorCallback = function (json){\n            dialog.open({\n                message:\"Error creating \" + newPluginId + \" plugin!\",\n                dialogClass:'closeButtonVisible'\n            });\n            Dashboards.decrementRunningCalls();\n        }\n        \n        $('#mainCell').unblock(); //avoid two spinning wheels\n        Dashboards.incrementRunningCalls();            \n        sparkl.runEndpoint( 'sparkl' , endpoint, {\n            params: { \n                pluginId: newPluginId, \n                plugin_name: capFirst( newPluginId ),\n                creation_date: (new Date()).toISOString().substring(0,10)\n            },\n            success: sparkl.addPublishWrapper( successCallback ),\n            error: errorCallback\n        });\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -7355,16 +7489,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
       "type": "Array"
@@ -7383,6 +7507,16 @@
       "name": "colWidths",
       "value": "[\"40%\",\"20%\",\"20%\",\"0\",\"20%\"]",
       "type": "Array"
+     },
+     {
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"pluginId\",\"pluginIdParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "colSortable",
@@ -7574,6 +7708,99 @@
      },
      {
       "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "270265ea-8e8a-64b4-3bf2-f0c635bcc35e",
+    "type": "Componentsfreeform",
+    "typeDesc": "Freeform Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "toggleVisibilityComponent",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:unavailableIdsParam}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "customfunction",
+      "value": "function(){\n    var rawList = Dashboards.getParameterValue('${p:unavailableIdsParam}'),\n        pluginIdsList = _.pluck( _.filter( rawList, function(el){\n            return el.type == 'plugin'   \n        }) , 'name'),\n        pluginId = Dashboards.getParameterValue(\"${p:pluginIdParam}\");\n    \n    if( !_.contains( pluginIdsList, pluginId ) ){\n        //$('.sparklCell:not(.newPluginCell)').block();\n        //$('.newPluginCell').toggleClass(\"WDhidden\");\n\n        //$('.newPluginCell').toggleClass(\"WDhidden\", false);\n        //$('.sparklCell:not(.newPluginCell)').toggleClass(\"WDhidden\", true);\n        //$('.contentCell').css('visibility', 'hidden');\n        //_.delay( function(){   \n            setPluginDialogVisibility(false);\n        //}, 500);\n    }\n    else{\n        //$('.newPluginCell').toggleClass(\"WDhidden\", true);\n        //$('.sparklCell:not(.newPluginCell)').toggleClass(\"WDhidden\", false);\n        //$('.contentCell').css('visibility', 'visible');\n        setPluginDialogVisibility(true);\n        //Dashboards.fireChange(\"updateDataEvent\");\n    }\n\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "manageCallee",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "width",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
       "value": "",
       "type": "JavaScript"
      },
@@ -8383,7 +8610,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f() {\n    var $container = $('#authorCompanyUrlFormObj');\n    \n    // Add input placeholder\n    var $input = $container.find('input');\n    $input.attr('placeholder','Insert author/company URL');   \n}",
+      "value": "function f() {\n    var $container = $('#authorCompanyUrlFormObj');\n    \n    // Add input placeholder\n    var $input = $container.find('input');\n    $input.attr('placeholder','Insert author/company URL');   \n\n}",
       "type": "JavaScript"
      },
      {
@@ -9479,5 +9706,5 @@
    }
   ]
  },
- "filename": "/system/sparkl/dashboards/admin/plugininfo.cdfde"
+ "filename": "/system/sparkl/dashboards/admin/pluginInfo.cdfde"
 }
