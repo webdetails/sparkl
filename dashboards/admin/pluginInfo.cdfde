@@ -7489,11 +7489,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
       "type": "colTypesCustom"
@@ -7517,6 +7512,11 @@
       "name": "parameters",
       "value": "[[\"pluginId\",\"pluginIdParam\"]]",
       "type": "ValuesArray"
+     },
+     {
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
+      "type": "Array"
      },
      {
       "name": "colSortable",
@@ -7574,14 +7574,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "dataSource",
       "type": "Datasource",
       "value": "elementsEndpoint"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "refreshPeriod",
@@ -7630,7 +7630,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var elementsNamesList = [];\n        _.each( data.resultset, function (el){\n            elementsNamesList.push(el[0]);\n            el.push(el[0]); \n        });\n        Dashboards.setParameter(\"${p:elementsNamesListParam}\",elementsNamesList);\n        data.metadata.push( $.extend( {} , data.metadata[0] ) );\n        var lastMetadataElIdx = data.metadata.length-1;\n        (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n        // *** Register in sort selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:sortSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n    \n        // *** Register in View selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:viewSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            if(v === 'all'){ v = '' }\n            \n            this.dataTable.fnFilter( v , 1);    \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        //enable filtering and disable sort in the actions column\n        var objOpts = Dashboards.propertiesArrayToObject(this.extraOptions);        \n        objOpts['bFilter'] = true;\n        objOpts['aoColumnDefs'] = [\n            { 'bSortable': false, 'aTargets': [ 4 ] }\n        ]\n        this.extraOptions = Dashboards.objectToPropertiesArray( objOpts );\n        \n        return data;\n    }else{\n        data = sparkl.createElementsTableEmptyRawData();\n        return data;\n    }\n}",
+      "value": "function f(data){\n    if(!_.isEmpty(data)){\n        var elementsNamesList = [];\n        _.each( data.resultset, function (el){\n            elementsNamesList.push(el[0]);\n            el.push(el[0]); \n        });\n        Dashboards.setParameter(\"${p:elementsNamesListParam}\",elementsNamesList);\n        data.metadata.push( $.extend( {} , data.metadata[0] ) );\n        var lastMetadataElIdx = data.metadata.length-1;\n        (data.metadata[lastMetadataElIdx]).colIndex = lastMetadataElIdx;\n    \n        // *** Register in View selector events   \n        var myself = this,\n            selector = Dashboards.getComponentByName('${c:viewSelector}');    \n        // create a property to store the present definition of selector callback\n        this.custom =  this.custom || {};\n        \n        selector.off('custom:update', this.custom.selectorCallback);\n        this.custom.selectorCallback = function (v){\n            if(v === 'all'){ v = '' }\n            \n            this.dataTable.fnFilter( v , 1);    \n        };\n        selector.on('custom:update', this.custom.selectorCallback, this);\n    \n        //enable filtering and disable sort in the actions column\n        var objOpts = Dashboards.propertiesArrayToObject(this.extraOptions);        \n        objOpts['bFilter'] = true;\n        objOpts['aoColumnDefs'] = [\n            { 'bSortable': false, 'aTargets': [ 4 ] }\n        ]\n        this.extraOptions = Dashboards.objectToPropertiesArray( objOpts );\n        \n        return data;\n    }else{\n        data = sparkl.createElementsTableEmptyRawData();\n        return data;\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -9014,109 +9014,6 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "52eeab99-3e6d-d969-5cff-5c78d0f027c2",
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component",
-    "parent": "SELECTORS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "sortSelector",
-      "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "${p:sortParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "valueAsId",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "externalPlugin",
-      "value": "chosen",
-      "type": "String"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": ""
-     },
-     {
-      "name": "valuesArray",
-      "value": "[[\"elementName\",\"Element Name\"],[\"elementType\",\"Element Type\"],[\"adminOnly\",\"Permission\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:sortSelectorObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "function f(){\n    this.trigger('custom:update', Dashboards.getParameterValue(this.parameter) );    \n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
      }
     ]
    },
