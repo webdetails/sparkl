@@ -104,7 +104,6 @@ var sparkl = {};
 
 
     myself.addUploadForm = function(ph, opts) {
-        var _myself = myself;
 
         var _opts = {
             root: '.',
@@ -118,7 +117,7 @@ var sparkl = {};
                 Dashboards.log('File type not allowed.');
             },
             isValidFilename: function(filename) {
-                var reg = _myself.getSettings('expressions', 'image');
+                var reg = myself.getSettings('expressions', 'image');
                 return reg.test(filename);
             }
         };
@@ -126,8 +125,7 @@ var sparkl = {};
         opts = _.extend({}, _opts, opts);
 
         var $ph = $(ph),
-            myself = this,
-            $uploadForm = $('<form action="../cfr/store" method="post" enctype="multipart/form-data">').addClass('WDhidden'),
+            $uploadForm = $('<form action="'+ Dashboards.getWebAppPath()+ '/plugin/cfr/api/store" method="post" enctype="multipart/form-data">').addClass('WDhidden'),
             filename = '';
 
         var validateForm = function() {
