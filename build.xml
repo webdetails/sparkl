@@ -28,7 +28,7 @@
 
   <property name="plugin.artifact.id" value="${plugin.name}"/>
   <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
-
+  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${distribution.version}.zip"/>  
 
   <!--=======================================================================
 			  dist
@@ -158,6 +158,16 @@
     <delete dir="${testlib.dir}" />
     <delete dir="${runtimelib.dir}" />
   </target>
+
+
+  <target name="publish-nojar" depends="subfloor.publish-nojar">
+    <ivy:makepom ivyfile="package-ivy-disabled.xml" pomfile="disabled-pom.xml" />   
+    <antcall target="maven-publish-artifact">
+        <param name="publish.pomFile" value="disabled-pom.xml" />
+        <param name="publish.file" value="${dist.dir}/${plugin.disabled.zipfile}" />
+    </antcall>   
+  </target>
+
 
 
 </project>
