@@ -78,6 +78,25 @@
          includes="${plugin.name}/**/*"
          excludes="**/Thumbs.db **/.DS_Store"/>
 
+
+
+    <copy todir="${stage.dir}/${plugin.name}-disabled/${plugin.name}" overwrite="true">
+        <fileset dir="${stage.dir}/${plugin.name}"/>
+    </copy>
+
+
+
+    <copy file="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml.disabled" 
+          tofile="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml" overwrite="true"/>
+
+
+    <!-- create a zip file -->
+    <zip zipfile="${dist.dir}/${plugin.disabled.zipfile}"
+             basedir="${stage.dir}/${plugin.name}-disabled"
+             includes="${plugin.artifact.id}/**/*"
+             excludes="**/Thumbs.db"/>
+
+
     <!-- create marketplace.xml file -->
     <!-- echoxml creates an xml header that might break the automatic build process -->
 
