@@ -28,7 +28,7 @@
 
   <property name="plugin.artifact.id" value="${plugin.name}"/>
   <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
-  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${distribution.version}.zip"/>  
+  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${project.version}.zip"/>  
 
   <!--=======================================================================
 			  dist
