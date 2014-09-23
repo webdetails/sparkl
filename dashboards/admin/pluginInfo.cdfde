@@ -20,7 +20,7 @@
      },
      {
       "name": "resourceCode",
-      "value": "var setPluginDialogVisibility = function(isVisible){\n    //$('.sparklCell:not(.newPluginCell)').toggleClass(\"WDhidden\", !isVisible);\n    //$('.contentCell').css('visibility', isVisible ? 'visible' : 'hidden');\n    if (isVisible){\n        $('#mainCell').unblock();\n    } else {\n        $('#mainCell').block();            \n    }\n    $('.newPluginCell').toggleClass(\"WDhidden\", isVisible);\n}; ",
+      "value": "var setPluginDialogVisibility = function(isVisible){\n    //$('.sparklCell:not(.newPluginCell)').toggleClass(\"WDhidden\", !isVisible);\n    //$('.contentCell').css('visibility', isVisible ? 'visible' : 'hidden');\n    if (isVisible){\n        //$('#mainCell').unblock();\n        $('#mainCell').show();\n    } else {\n        $('#mainCell').hide();\n        //$('#mainCell').block();            \n    }\n    $('.newPluginCell').toggleClass(\"WDhidden\", isVisible);\n}; ",
       "type": "Resource"
      }
     ]
@@ -7489,11 +7489,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"]",
       "type": "Array"
@@ -7517,6 +7512,11 @@
       "name": "colHeaders",
       "value": "[\"Name\",\"Type\",\"Permission\",\"File Name\",\" \"]",
       "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[\"string\",\"string\",\"formattedText\",\"hidden\",\"actionButtons\"]",
+      "type": "colTypesCustom"
      },
      {
       "name": "colSortable",
@@ -7574,14 +7574,14 @@
       "type": "JavaScript"
      },
      {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "elementsEndpoint"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "elementsEndpoint"
      },
      {
       "name": "refreshPeriod",
