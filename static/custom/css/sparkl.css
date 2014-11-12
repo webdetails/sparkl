@@ -813,13 +813,16 @@ div.container *{
   display:inline-block;
 }
 
-.newElementContainer .chzn-container-single .chzn-single,
-.newElementContainer .formSelector .chzn-drop {
+.newElementContainer .chosen-container-single .chosen-single,
+.newElementContainer .formSelector .chosen-drop {
   text-align: left;
   padding-left: 0px;
+  background-image: none;
+  box-shadow: none;
+  border: none;
 }
 
-.newElementContainer .formSelector .chzn-container span:after {
+.newElementContainer .formSelector .chosen-container span:after {
   margin-top: 17px;
 }
 
@@ -871,25 +874,28 @@ div.container *{
   background-image: url("../img/checked.png");
   background-size: 20px;
 }
-.newElementContainer .formSelector .chzn-container{
+.newElementContainer .formSelector .chosen-container{
   /*min-width: 188px;*/
   min-width: 100%;
   height: 100%;
   border: none;
 }
-.newElementContainer .formSelector .chzn-container span{
+.newElementContainer .formSelector .chosen-container span{
   line-height: 38px;
   text-indent: 8px;
 }
-.newElementContainer .formSelector .chzn-container .chzn-single div b{
+.newElementContainer .formSelector .chosen-container .chosen-single div b{
   height: 100%;
 }
-.newElementContainer .formSelector .chzn-drop{
+.newElementContainer .formSelector .chosen-container.chosen-with-drop .chosen-single div b{
+  background-position: -28px 8px;
+}
+.newElementContainer .formSelector .chosen-drop{
   height: auto;
   top: 26px !important;
   margin-left: 0;
 }
-.newElementContainer .formSelector .chzn-drop .chzn-results li{
+.newElementContainer .formSelector .chosen-drop .chosen-results li{
   height: 20px;
   line-height: 22px;
   text-indent: 8px;
@@ -1120,7 +1126,7 @@ button {
 
 /**** Chosen Select *****/
 /* All Chosen elements */
-.chzn-container{
+.chosen-container{
   /*height:100%;
   border: 4px solid #EBEDEE;
   min-width:160px;
@@ -1131,7 +1137,7 @@ button {
   margin-left: -5px;
 }
 
-.chzn-container .chzn-drop {
+.chosen-container .chosen-drop {
   background: none;
   min-width: 100%;
   border: 0 none;
@@ -1139,19 +1145,19 @@ button {
   margin: 0px;
   margin-top:2px;
   height:auto;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255, 0.5);
   margin-left: 4px;
 }
-.chzn-container .chzn-results {
+.chosen-container .chosen-results {
   overflow: hidden;
   padding: 0px;
   width: 100%;
   margin:0px;
 }
-.chzn-drop  .chzn-search{
+.chosen-drop  .chosen-search{
   display: none;
 }
-.chzn-drop  .chzn-results li{
+.chosen-drop  .chosen-results li{
   line-height: 20px;
   height: 20px;
   color: #333e48;
@@ -1162,16 +1168,16 @@ button {
   display: block;
   width: auto;
 }
-.chzn-drop .chzn-results li:last-child{
+.chosen-drop .chosen-results li:last-child{
   border-bottom:none;
 }
-.chzn-drop .chzn-results li:hover {
+.chosen-drop .chosen-results li:hover {
   background: rgba(255,255,255,.5);
   color:#0098c4;
 }
 
 /* Single Select */
-.chzn-container-single .chzn-single{
+.chosen-container-single .chosen-single{
   background: none;
   color: #333e48;
   border-radius: 0px;
@@ -1180,64 +1186,70 @@ button {
   min-width: 100%;
   line-height: 24px;
 }
-.chzn-container-active .chzn-single {
+.chosen-container-active.chosen-single-with-drop .chosen-single {
     box-shadow: none;
+    border:none;
 }
-.chzn-container-single .chzn-single.chzn-single-with-drop,
-.chzn-container-single .chzn-single:hover{
+.chosen-container-single .chosen-single.chosen-single-with-drop,
+.chosen-container-single .chosen-single:hover{
   box-shadow: none;
   border:none;
   background:none;
   color:#333e48;
 }
-.noResults .chzn-container-single .chzn-single,
-.noResults .chzn-container-single .chzn-single.chzn-single-with-drop,
-.noResults .chzn-container-single .chzn-single:hover{
+.noResults .chosen-container-single .chosen-single,
+.noResults .chosen-container-single .chosen-single.chosen-single-with-drop,
+.noResults .chosen-container-single .chosen-single:hover{
   color:#aaa;
   cursor:default;
 }
-.noResults .chzn-container-single .chzn-single span, .noResults .chzn-container-single .chzn-single.chzn-single-with-drop span, .noResults .chzn-container-single .chzn-single span:hover {
+.noResults .chosen-container-single .chosen-single span, 
+.noResults .chosen-container-single .chosen-single.chosen-single-with-drop span,
+.noResults .chosen-container-single .chosen-single span:hover {
   color: #aaa;
 }
 
-.noResults .chzn-container-single .chzn-single span:after,
-.noResults .chzn-container-single .chzn-single.chzn-single-with-drop span:after,
-.noResults .chzn-container-single .chzn-single:hover span:after{
+.noResults .chosen-container-single .chosen-single span:after,
+.noResults .chosen-container-single .chosen-single.chosen-single-with-drop span:after,
+.noResults .chosen-container-single .chosen-single:hover span:after{
   background-position: -16px 0px;
 }
 
-.chzn-container .chzn-results .highlighted {
+.chosen-container .chosen-results .highlighted {
   background: none;
   color: #333e48;
 }
 
-.chzn-container-single .chzn-single div{ /* Arrow container */
+.chosen-container-single .chosen-single div{ /* Arrow container */
   background: none;
   border:none;
   width:22px;
 }
-.chzn-container-single .chzn-single div b{
+.chosen-container-single .chosen-single div b{
   width:18px;
   height:11px;
   display:inline-block;
   background: url('../img/arrow.png') -4px 50% no-repeat transparent;
 }
-.chzn-container-single .chzn-single-with-drop div b,
-.chzn-container-single .chzn-single:hover div b{ /* Arrow */
-  background-position: -28px 50%;
-}
-.noResults .chzn-container-single div b,
-.noResults .chzn-container-single .chzn-single-with-drop div b,
-.noResults .chzn-container-single .chzn-single:hover div b{ /* Arrow */
+.chosen-container-single .chosen-single-with-drop div b,
+.chosen-container-single .chosen-single:hover div b 
+.chosen-container-single.chosen-container-active.chosen-with-drop .chose-single div b {
   background-position: -28px 50%;
 }
 
-.chzn-container .chzn-results .active-result.result-selected {
+.noResults .chosen-container-single div b,
+.noResults .chosen-container-single .chosen-single-with-drop div b,
+.noResults .chosen-container-single .chosen-single:hover div b{ /* Arrow */
+  background-position: -28px 50%;
+}
+
+
+.chosen-container .chosen-results .active-result.result-selected {
   background: none;
   color: #333e48;
 }
 
-.chzn-container .chzn-drop {
+.chosen-container .chosen-drop {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -o-box-shadow: none;
