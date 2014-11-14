@@ -22,13 +22,13 @@
 
 
   <!-- Build the project.revision property -->
-  <property name="distribution.version" value="${project.stage}-${project.version}"/>
+  <property name="distribution.version" value="${project.stage}-${project.revison}"/>
 
   <echo>distribution.version = ${distribution.version}</echo>
 
   <property name="plugin.artifact.id" value="${plugin.name}"/>
   <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
-  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${project.version}.zip"/>  
+  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${project.revision}.zip"/>
 
   <!--=======================================================================
 			  dist
@@ -86,7 +86,7 @@
 
 
 
-    <copy file="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml.disabled" 
+    <copy file="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml.disabled"
           tofile="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml" overwrite="true"/>
 
 
@@ -180,11 +180,11 @@
 
 
   <target name="publish-nojar" depends="subfloor-pkg.publish-nojar">
-    <ivy:makepom ivyfile="package-ivy-disabled.xml" pomfile="disabled-pom.xml" />   
+    <ivy:makepom ivyfile="package-ivy-disabled.xml" pomfile="disabled-pom.xml" />
     <antcall target="maven-publish-artifact">
         <param name="publish.pomFile" value="disabled-pom.xml" />
         <param name="publish.file" value="${dist.dir}/${plugin.disabled.zipfile}" />
-    </antcall>   
+    </antcall>
   </target>
 
 
