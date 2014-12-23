@@ -99,12 +99,12 @@
   <hop> <from>Get plugin names</from><to>cpk_filename</to><enabled>Y</enabled> </hop>
   <hop> <from>PluginXML</from><to>Select plugin names</to><enabled>Y</enabled> </hop>
   <hop> <from>Get &#x2f;system names</from><to>Select &#x2f;system names</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>Select plugin names</from><to>Add type</to><enabled>Y</enabled> </hop>
   <hop> <from>Add type</from><to>Sort rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Select &#x2f;system names</from><to>Add type 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Add type 2</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>reserved is not empty&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>reserved is not empty&#x3f;</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add type</name>
@@ -173,7 +173,7 @@
     </step>
 
   <step>
-    <name>Filter rows</name>
+    <name>reserved is not empty&#x3f;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -183,15 +183,15 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to/>
+<send_true_to>OUTPUT</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>reserved</leftvalue>
- <function>&#x3c;&#x3e;</function>
+ <function>REGEXP</function>
  <rightvalue/>
- <value><name>constant</name><type>String</type><text/><length>-1</length><precision>-1</precision><isnull>Y</isnull><mask/></value> </condition>
+ <value><name>constant</name><type>String</type><text>.&#x2b;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
