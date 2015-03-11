@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-	<info organisation="" module="sparkl" revision="${project.revision}"/>
+	<info organisation="pentaho" module="${ivy.artifact.id}" revision="${project.revision}"/>
 	<configurations>
 		<conf name="default"/>
-		<conf name="source"/>
+		<!--<conf name="source"/>-->
 		<conf name="zip"/>
 		<conf name="test" visibility="private"/>
 		<conf name="codegen" visibility="private"/>
@@ -11,11 +11,11 @@
 		<conf name="dev" visibility="private"/>
 	</configurations>
 	<publications>
-		<artifact name="${ivy.artifact.id}" type="jar" conf="default" />
+		<!--<artifact name="${ivy.artifact.id}" type="jar" conf="default" />-->
 		<artifact name="${ivy.artifact.id}" type="zip" conf="zip" />
-		<artifact name="${ivy.artifact.id}" m:classifier="sources" type="source" ext="jar" conf="source"/>
+		<!--<artifact name="${ivy.artifact.id}" m:classifier="sources" type="source" ext="jar" conf="source"/>-->
 	</publications>
-	<dependencies defaultconf="runtime->default">
+	<dependencies defaultconf="default->default">
  		<dependency org="pentaho" name="cpf-core"
 		  rev="${dependency.pentaho-cpf-plugin.revision}" transitive="false" changing="true" conf='default->default'/>
   		<dependency org="pentaho" name="${cpf.pentaho.artifact}"
