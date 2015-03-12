@@ -71,7 +71,7 @@ wd.cpk = wd.cpk || {};
 
         initialize: function() {
             var pluginId = this.get('pluginId'),
-                imgSrc = Dashboards.getWebAppPath() + '/pentaho/api/repos/' + pluginId + '/static/system/img/pluginLogo___.png';
+                imgSrc = Dashboards.getWebAppPath() + '/api/repos/' + pluginId + '/static/system/img/pluginLogo__.png';
             this.set('imgSrc', imgSrc);
         },
 
