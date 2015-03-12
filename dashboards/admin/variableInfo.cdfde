@@ -15,7 +15,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/sparkl/static/custom/js/sparkl.js",
+      "value": "${system:/static/custom/js/sparkl.js}",
       "type": "ResourceFile"
      },
      {
@@ -38,7 +38,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/sparkl/static/custom/css/sparkl.css",
+      "value": "${system:/static/custom/css/sparkl.css}",
       "type": "ResourceFile"
      },
      {
