@@ -86,16 +86,15 @@ wd.cpk = wd.cpk || {};
 
 
 
-    namespace.templates.sparklNewPluginCard = Mustache.compile(
+    namespace.templates.sparklNewPluginCard =
         "   <div class='overlay'></div>" +
         "		<div class='optionsContainer'></div>" +
         "		<div class='separator'>" +
         "			<div class='horizontalRectangle'></div>" +
         "			<div class='verticalRectangle'></div>" +
-        "		</div>"
-    );
+        "		</div>";
 
-    namespace.templates.sparklPluginCard = Mustache.compile(
+    namespace.templates.sparklPluginCard =
         "		<div class=descriptionExpandCont>" +
         "			<div class='cardHeader'>" +
         "		  	<div class='nameContainer'>" +
@@ -115,8 +114,7 @@ wd.cpk = wd.cpk || {};
         "		<div class='cardFooter'>" +
         "			<div class='optionsContainer'>" +
         "			</div>" +
-        "		</div>"
-    );
+        "		</div>";
 
     /*
      * Views
@@ -133,7 +131,7 @@ wd.cpk = wd.cpk || {};
         },
         render: function(ph) {
             var that = this;
-            that.$el.html(that.template(that.model.toJSON()));
+            that.$el.html(Mustache.render(that.template, that.model.toJSON()));
 
             var $optsContainer = that.$el.find('.optionsContainer');
             _.each(that.model.get('actionOpts'), function(action, idx) {
@@ -180,7 +178,7 @@ wd.cpk = wd.cpk || {};
         render: function(ph) {
             var self = this;
 
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(Mustache.render(this.template, this.model.toJSON()));
 
             _.each(this.model.get('actionOpts'), function(action) {
                 var $optsContainer = self.$el.find('.optionsContainer');
