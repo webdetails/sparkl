@@ -265,25 +265,25 @@
    <typefield>Variable</typefield>
     <fields>      <field>        <name>&#x24;&#x7b;cpk.plugin.id&#x7d;</name>
         <value>&#x24;&#x7b;cpk.plugin.id&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.plugin.id&#x7d;</norm>
         </field>      <field>        <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;</name>
         <value>&#x24;&#x7b;cpk.plugin.dir&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.plugin.dir&#x7d;</norm>
         </field>      <field>        <name>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</name>
         <value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</norm>
         </field>      <field>        <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;</name>
         <value>&#x24;&#x7b;cpk.webapp.dir&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.webapp.dir&#x7d;</norm>
         </field>      <field>        <name>&#x24;&#x7b;cpk.session.username&#x7d;</name>
         <value>&#x24;&#x7b;cpk.session.username&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.session.username&#x7d;</norm>
         </field>      <field>        <name>&#x24;&#x7b;cpk.session.roles&#x7d;</name>
         <value>&#x24;&#x7b;cpk.session.roles&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.session.roles&#x7d;</norm>
         </field>      <field>        <name>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</name>
         <value>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</value>
-        <norm/>
+        <norm>&#x24;&#x7b;cpk.session.SOMETHING&#x7d;</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>416</xloc>
