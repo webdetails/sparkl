@@ -87,8 +87,6 @@
         <fileset dir="${stage.dir}/${plugin.name}"/>
     </copy>
 
-
-
     <copy file="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml.disabled" 
           tofile="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml" overwrite="true"/>
 
@@ -98,6 +96,11 @@
              basedir="${stage.dir}/${plugin.name}-disabled"
              includes="${plugin.artifact.id}/**/*"
              excludes="**/Thumbs.db"/>
+
+    <!-- add a mock jar just so we can publish -->
+    <copy file="${dist.dir}/${plugin.disabled.zipfile}" 
+    tofile="${dist.dir}/${ivy.artifact.id}-${project.revision}.jar" overwrite="true"/>
+
 
 
     <!-- create marketplace.xml file -->
