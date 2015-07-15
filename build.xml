@@ -28,7 +28,7 @@
 
   <property name="plugin.artifact.id" value="${plugin.name}"/>
   <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
-  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${project.version}.zip"/>  
+  <property name="plugin.disabled.zipfile" value="${plugin.artifact.id}-disabled-${project.version}.zip"/>
 
 
   <target name="init" depends="subfloor.init">
@@ -52,10 +52,14 @@
     <mkdir dir="${dist.dir}"/>
 
 
-    <!-- copy the entire plugin to that folder  -->
+    <!-- copy the entire plugin to that folder, excluding dev resources  -->
     <copy todir="${stage.dir}/${plugin.name}/" overwrite="true">
       <fileset dir=".">
 	<include name="**/*"/>
+	<exclude name="build-res/**"/>
+        <exclude name="build.*"/>
+        <exclude name="ivy*"/>
+        <exclude name="package-ivy*"/>
 	<exclude name="bin/**"/>
         <exclude name="dist/**"/>
         <exclude name="src/"/>
@@ -91,7 +95,7 @@
         <fileset dir="${stage.dir}/${plugin.name}"/>
     </copy>
 
-    <copy file="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml.disabled" 
+    <copy file="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml.disabled"
           tofile="${stage.dir}/${plugin.name}-disabled/${plugin.name}/plugin.xml" overwrite="true"/>
 
 
@@ -102,7 +106,7 @@
              excludes="**/Thumbs.db"/>
 
     <!-- add a mock jar just so we can publish -->
-    <copy file="${dist.dir}/${plugin.disabled.zipfile}" 
+    <copy file="${dist.dir}/${plugin.disabled.zipfile}"
     tofile="${dist.dir}/${ivy.artifact.id}-${project.revision}.jar" overwrite="true"/>
 
 
@@ -192,11 +196,11 @@
 
 
   <target name="publish-nojar" depends="subfloor-pkg.publish-nojar">
-    <ivy:makepom ivyfile="package-ivy-disabled.xml" pomfile="disabled-pom.xml" />   
+    <ivy:makepom ivyfile="package-ivy-disabled.xml" pomfile="disabled-pom.xml" />
     <antcall target="maven-publish-artifact">
         <param name="publish.pomFile" value="disabled-pom.xml" />
         <param name="publish.file" value="${dist.dir}/${plugin.disabled.zipfile}" />
-    </antcall>   
+    </antcall>
   </target>
 
 
