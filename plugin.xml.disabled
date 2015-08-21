@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin title="sparkl" loader="DEFAULT" name="sparkl">
-
-
 	<overlays>
+<!--
+			<overlay id="startup.sparkl" resourcebundle="content/sparkl/resources/lang/messages">
+			<menubar id="toolsmenu">
+	        	<menuitem id="sparkl" label="${Launcher.SPARKL}" command="mantleXulHandler.openUrl('${Launcher.SPARKL}','${Launcher.SPARKL_TOOLTIP}','plugin/sparkl/api/main')"/>
+	      	</menubar>
+	    </overlay>
+-->
 	</overlays>
 	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
 	<static-paths>
