@@ -27,7 +27,7 @@
       <Property>tooltip</Property>
       <Property>listeners</Property>
     </Model>
-    <Implementation>
+    <Implementation supportsLegacy="true" supportsAMD="true">
       <Code src="SparklPluginCardComponent.js"/>
       <Styles>
         <Style version="1.0" src="component.css">SparklPluginCard</Style>
