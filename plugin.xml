@@ -28,4 +28,8 @@
 	<menu-items>
 		<!--<menu-item id="sparkl_main" anchor="tools-submenu" label="Sparkl" command="content/sparkl/" type="MENU_ITEM" how="LAST_CHILD"/>-->
 	</menu-items>
+
+	<external-resources>
+        <file context="requirejs">content/sparkl/resources/sparkl-require-js-cfg.js</file>
+    </external-resources>
 </plugin>
