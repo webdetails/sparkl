@@ -21,7 +21,7 @@
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <default_value/>
             <description/>
         </parameter>
         <parameter>
@@ -31,7 +31,7 @@
         </parameter>
         <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <default_value/>
             <description/>
         </parameter>
         <parameter>
@@ -41,7 +41,7 @@
         </parameter>
         <parameter>
             <name>pluginId</name>
-            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
+            <default_value/>
             <description/>
         </parameter>
     </parameters>
@@ -105,13 +105,19 @@
   <created_date>2013&#x2f;05&#x2f;23 12&#x3a;32&#x3a;03.883</created_date>
   <modified_user>-</modified_user>
   <modified_date>2013&#x2f;05&#x2f;23 12&#x3a;32&#x3a;03.883</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from XML</from><to>full path</to><enabled>Y</enabled> </hop>
-  <hop> <from>full path</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>full path</to><enabled>N</enabled> </hop>
+  <hop> <from>full path</from><to>Select values</to><enabled>N</enabled> </hop>
   <hop> <from>Select values</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Split field to rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Split field to rows</from><to>Modified Java Script Value 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2 2</from><to>Select values</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Get data from XML</name>
@@ -222,8 +228,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>115</xloc>
-      <yloc>89</yloc>
+      <xloc>160</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -241,8 +247,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
-      <yloc>89</yloc>
+      <xloc>736</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -277,8 +283,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>421</xloc>
-      <yloc>89</yloc>
+      <xloc>576</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -303,8 +309,151 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>268</xloc>
-      <yloc>89</yloc>
+      <xloc>368</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var fileContent &#x3d; removeCRLF&#x28; loadFileContent&#x28; pluginDir&#x2b;&#x27;&#x2f;cpk.xml&#x27; &#x29; &#x29;&#x3b;&#xa;&#xa;var elements &#x3d; &#x5b;&#x5d;, auxStr &#x3d; str2RegExp&#x28; fileContent, &#x27;&#x28;.&#x2a;&#x29;&#x27;&#x29;&#x5b;0&#x5d;,&#xa;	groupMatches, elementMatches, groupStr, elementStr, name, nameMatches, elementAttributes,&#xa;    hasGroups &#x3d; true, hasElements &#x3d; true&#x3b;&#xa;&#xa;function getMatch&#x28; str, re, index &#x29;&#x7b;&#xa;	var match &#x3d; str2RegExp&#x28;str,re&#x29;&#x3b;&#xa;	return &#x28; match &#x3d;&#x3d; null &#x29; &#x3f; null &#x3a; match&#x5b;index&#x5d;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#xa;while &#x28; hasGroups &#x29;&#x7b;&#xa;	groupMatches &#x3d; str2RegExp&#x28;auxStr,&#x27;.&#x2a;&#x3f;&#x28;&#x3c;elementType.&#x2a;&#x3f;&#x3c;&#x5c;&#x2f;elementType&#x3e;&#x29;&#x28;.&#x2a;&#x29;&#x27;&#x29;&#x3b;&#xa;	&#xa;	if&#x28; groupMatches &#x21;&#x3d; null &#x29;&#x7b;&#xa;		groupStr &#x3d; groupMatches&#x5b;0&#x5d;&#x3b;&#xa;&#xa;		if&#x28; groupStr.length&#x28;&#x29; &#x3e; 0 &#x29;&#x7b;&#xa;			nameMatches &#x3d; str2RegExp&#x28; groupStr, &#x27;.&#x2a;&#x3f;&#x3c;elementType.&#x2a;&#x3f;name&#x3d;&#x22;&#x28;&#x5b;&#x5e;&#x22;&#x5d;&#x2a;&#x29;&#x22;.&#x2a;&#x27; &#x29;&#x3b;&#xa;&#xa;			if &#x28; nameMatches &#x21;&#x3d; null &#x29;&#x7b;&#xa;				name &#x3d; nameMatches&#x5b;0&#x5d;&#x3b;&#xa;				hasElements &#x3d; true&#x3b;&#xa;&#xa;				while &#x28; hasElements &#x29;&#x7b;&#xa;					elementMatches &#x3d; str2RegExp&#x28;groupStr,&#x27;.&#x2a;&#x3f;&#x28;&#x3c;elementLocation.&#x2a;&#x3f;&#x5c;&#x2f;&#x3e;&#x29;&#x28;.&#x2a;&#x29;&#x27;&#x29;&#x3b;&#xa;					elementAttributes &#x3d; &#x5b; name &#x5d;&#x3b;&#xa;	&#xa;					if &#x28; elementMatches &#x21;&#x3d; null &#x29;&#x7b;&#xa;						elementStr &#x3d; elementMatches&#x5b;0&#x5d;&#x3b;&#xa;&#xa;						elementAttributes.push&#x28; getMatch&#x28; elementStr, &#x27;.&#x2a;&#x3f;&#x3c;elementLocation.&#x2a;&#x3f;adminOnly&#x3d;&#x22;&#x28;&#x5b;&#x5e;&#x22;&#x5d;&#x2a;&#x29;&#x22;.&#x2a;&#x27; , 0 &#x29; &#x29;&#x3b;&#xa;						elementAttributes.push&#x28; getMatch&#x28; elementStr, &#x27;.&#x2a;&#x3f;&#x3c;elementLocation.&#x2a;&#x3f;path&#x3d;&#x22;&#x28;&#x5b;&#x5e;&#x22;&#x5d;&#x2a;&#x29;&#x22;.&#x2a;&#x27; , 0 &#x29; &#x29;&#x3b;&#xa;						elementAttributes.push&#x28; getMatch&#x28; elementStr, &#x27;.&#x2a;&#x3f;&#x3c;elementLocation.&#x2a;&#x3f;pattern&#x3d;&#x22;&#x28;&#x5b;&#x5e;&#x22;&#x5d;&#x2a;&#x29;&#x22;.&#x2a;&#x27; , 0 &#x29; &#x29;&#x3b;&#xa;&#xa;						elements.push&#x28; elementAttributes.join&#x28;&#x27;,&#x27;&#x29; &#x29;&#x3b;&#xa;&#xa;						groupStr &#x3d; elementMatches&#x5b;1&#x5d;&#x3b;&#xa;					&#x7d; else &#x7b;&#xa;						hasElements &#x3d; false&#x3b;&#xa;					&#x7d;&#xa;				&#x7d;	&#xa;&#xa;			&#x7d;&#xa;&#xa;		&#x7d; &#xa;&#xa;        auxStr &#x3d; groupMatches&#x5b;1&#x5d;&#x3b;&#xa;	&#x7d; else &#x7b;&#xa;	   hasGroups &#x3d; false&#x3b;&#xa;	&#x7d;&#xa;		&#xa;&#x7d;&#xa;&#xa;out &#x3d; elements.join&#x28;&#x27;&#x3b;&#x27;&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>out</name>
+        <rename>out</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>256</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Variables</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>pluginDir</name>
+        <variable>&#x24;&#x7b;pluginDir&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>96</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Split field to rows</name>
+    <type>SplitFieldToRows3</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>out</splitfield>
+   <delimiter>&#x3b;</delimiter>
+   <newfield>groupedAttributes</newfield>
+   <rownum>N</rownum>
+   <rownum_field/>
+   <resetrownumber>Y</resetrownumber>
+   <delimiter_is_regex>N</delimiter_is_regex>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>432</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var attributes &#x3d; groupedAttributes.split&#x28;&#x27;,&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;var elementType &#x3d; attributes&#x5b;0&#x5d;&#x3b;&#xa;var adminOnly &#x3d; &#x28; attributes&#x5b;1&#x5d; &#x3d;&#x3d; &#x27;true&#x27; &#x29;&#x3b;&#xa;var elementPath &#x3d; attributes&#x5b;2&#x5d;&#x3b;&#xa;var pattern &#x3d; attributes&#x5b;3&#x5d;&#x3b;&#xa;var path &#x3d; pluginDir &#x2b;&#x27;&#x2f;&#x27;&#x2b; elementPath&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>elementType</name>
+        <rename>elementType</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>adminOnly</name>
+        <rename>adminOnly</rename>
+        <type>Boolean</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>elementPath</name>
+        <rename>elementPath</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>pattern</name>
+        <rename>pattern</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>path</name>
+        <rename>path</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>624</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

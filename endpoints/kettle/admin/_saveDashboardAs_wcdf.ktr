@@ -7,7 +7,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>NULL_VALUE</name>
@@ -16,57 +16,57 @@
         </parameter>
         <parameter>
             <name>author</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.plugin.id</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>description</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>dest_dash</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>icon</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>pluginId</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>rendererType</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>source_dash</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>style</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>title</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>widget</name>
-            <default_value>${NULL_VALUE}</default_value>
+            <default_value>&#x24;&#x7b;NULL_VALUE&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -77,7 +77,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -94,6 +94,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -122,13 +127,15 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;06&#47;07 14:22:01.523</created_date>
+  <created_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;06&#47;07 14:22:01.523</modified_date>
+  <modified_date>2013&#x2f;06&#x2f;07 14&#x3a;22&#x3a;01.523</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Get the old and new values for the Dashboard main properties (those saved in wcdf), merge the values, and generate the new wcdf file.</note>
+      <note>Get the old and new values for the Dashboard main properties &#x28;those saved in wcdf&#x29;, merge the values, and generate the new wcdf file.</note>
       <xloc>69</xloc>
       <yloc>10</yloc>
       <width>726</width>
@@ -149,20 +156,7 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>SAMPLE FILE
-
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;cdf&gt;
-        &lt;title&gt;Main&lt;&#47;title&gt;
-        &lt;author&gt;&lt;&#47;author&gt;
-        &lt;description&gt;Main dashboard for CPK User Interface&lt;&#47;description&gt;
-        &lt;icon&#47;&gt;
-        &lt;style&gt;sparkl - (SPARKL)&lt;&#47;style&gt;
-        &lt;rendererType&gt;blueprint&lt;&#47;rendererType&gt;
-        &lt;widget&gt;false&lt;&#47;widget&gt;
-&lt;&#47;cdf&gt;
-
-</note>
+      <note>SAMPLE FILE&#xa;&#xa;&#x3c;&#x3f;xml version&#x3d;&#x22;1.0&#x22; encoding&#x3d;&#x22;UTF-8&#x22;&#x3f;&#x3e;&#xa;&#x3c;cdf&#x3e;&#xa;        &#x3c;title&#x3e;Main&#x3c;&#x2f;title&#x3e;&#xa;        &#x3c;author&#x3e;&#x3c;&#x2f;author&#x3e;&#xa;        &#x3c;description&#x3e;Main dashboard for CPK User Interface&#x3c;&#x2f;description&#x3e;&#xa;        &#x3c;icon&#x2f;&#x3e;&#xa;        &#x3c;style&#x3e;sparkl - &#x28;SPARKL&#x29;&#x3c;&#x2f;style&#x3e;&#xa;        &#x3c;rendererType&#x3e;blueprint&#x3c;&#x2f;rendererType&#x3e;&#xa;        &#x3c;widget&#x3e;false&#x3c;&#x2f;widget&#x3e;&#xa;&#x3c;&#x2f;cdf&#x3e;&#xa;&#xa;</note>
       <xloc>636</xloc>
       <yloc>320</yloc>
       <width>399</width>
@@ -184,8 +178,8 @@
     </notepad>
     <notepad>
       <note>old values                                                                                         </note>
-      <xloc>205</xloc>
-      <yloc>659</yloc>
+      <xloc>768</xloc>
+      <yloc>576</yloc>
       <width>348</width>
       <heigth>24</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -204,8 +198,7 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>I could have used a Prioritize streams step, but I have this error: java.lang.NullPointerException (kettle 4.3)
-I could also have used an XML Output step, but it generates a null Parent XML element.</note>
+      <note>I could have used a Prioritize streams step, but I have this error&#x3a; java.lang.NullPointerException &#x28;kettle 4.3&#x29;&#xa;I could also have used an XML Output step, but it generates a null Parent XML element.</note>
       <xloc>639</xloc>
       <yloc>235</yloc>
       <width>533</width>
@@ -226,32 +219,53 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>  <hop> <from>1 row</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from wcdf</from><to>remove unused fields</to><enabled>Y</enabled> </hop>  <hop> <from>wcdf exist?</from><to>exist?</to><enabled>Y</enabled> </hop>  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>Get data from wcdf</to><enabled>Y</enabled> </hop>  <hop> <from>exist?</from><to>null values</to><enabled>Y</enabled> </hop>  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>  <hop> <from>get wcdf filename</from><to>wcdf exist?</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>  <hop> <from>Row Normaliser</from><to>xml elements</to><enabled>Y</enabled> </hop>  <hop> <from>xml elements</from><to>Select xml_field</to><enabled>Y</enabled> </hop>  <hop> <from>Select xml_field</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>parent xml elements</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>${dest_dash}</to><enabled>Y</enabled> </hop>  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Get capitalized plugin id</to><enabled>Y</enabled> </hop>  <hop> <from>Get capitalized plugin id</from><to>Replace pluginId in style</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Replace pluginId in style</from><to>remove unused fields 2</to><enabled>Y</enabled> </hop>  <hop> <from>remove unused fields 2</from><to>join</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Get parameters</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>join</from><to>new values</to><enabled>Y</enabled> </hop>
+  <hop> <from>new values</from><to>select new values</to><enabled>Y</enabled> </hop>
+  <hop> <from>1 row</from><to>remove unused fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Detect empty stream</from><to>dummy</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from wcdf</from><to>Detect empty stream</to><enabled>N</enabled> </hop>
+  <hop> <from>Get data from wcdf</from><to>remove unused fields</to><enabled>N</enabled> </hop>
+  <hop> <from>wcdf exist&#x3f;</from><to>exist&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>dummy</from><to>1 row</to><enabled>Y</enabled> </hop>
+  <hop> <from>exist&#x3f;</from><to>Get data from wcdf</to><enabled>N</enabled> </hop>
+  <hop> <from>exist&#x3f;</from><to>null values</to><enabled>Y</enabled> </hop>
+  <hop> <from>null values</from><to>dummy</to><enabled>Y</enabled> </hop>
+  <hop> <from>get wcdf filename</from><to>wcdf exist&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>select new values</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>
+  <hop> <from>Row Normaliser</from><to>xml elements</to><enabled>Y</enabled> </hop>
+  <hop> <from>xml elements</from><to>Select xml_field</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select xml_field</from><to>Add sequence</to><enabled>Y</enabled> </hop>
+  <hop> <from>parent xml elements</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add sequence</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>&#x24;&#x7b;dest_dash&#x7d;</to><enabled>Y</enabled> </hop>
+  <hop> <from>select new values</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>Get capitalized plugin id</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get capitalized plugin id</from><to>Replace pluginId in style</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove unused fields</from><to>Get Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace pluginId in style</from><to>remove unused fields 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove unused fields 2</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Content</from><to>Remove Lines</to><enabled>Y</enabled> </hop>
+  <hop> <from>Remove Lines</from><to>Get cdf tag</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get cdf tag</from><to>Get title</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get title</from><to>Get Author</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Author</from><to>Get Description</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Description</from><to>Get Icon</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Icon</from><to>Get rawStyle</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get rawStyle</from><to>Get Renderer</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Renderer</from><to>Get widget</to><enabled>Y</enabled> </hop>
+  <hop> <from>exist&#x3f;</from><to>Get File Content</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get widget</from><to>remove auxiliary fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove auxiliary fields</from><to>remove unused fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove auxiliary fields</from><to>Detect empty stream</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
-    <name>${dest_dash}</name>
+    <name>&#x24;&#x7b;dest_dash&#x7d;</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -271,7 +285,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${dest_dash}</name>
+      <name>&#x24;&#x7b;dest_dash&#x7d;</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -315,6 +329,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SampleRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -324,8 +339,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <linenumfield/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>530</xloc>
-      <yloc>594</yloc>
+      <xloc>480</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -335,6 +350,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Sequence</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -363,6 +379,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>DetectEmptyStream</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -370,8 +387,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>374</xloc>
-      <yloc>510</yloc>
+      <xloc>368</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -381,6 +398,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -389,7 +407,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <fields>
       <field>
         <name>pluginId</name>
-        <variable>${pluginId}</variable>
+        <variable>&#x24;&#x7b;pluginId&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -402,8 +420,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>526</xloc>
-      <yloc>321</yloc>
+      <xloc>560</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -413,13 +431,14 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>capitalizedId</field_name>
-<formula_string>&quot;(&quot; + pluginId.toUpperCase() + &quot;)&quot;</formula_string>
+<formula_string>&#x22;&#x28;&#x22; &#x2b; pluginId.toUpperCase&#x28;&#x29; &#x2b; &#x22;&#x29;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -438,6 +457,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>getXMLData</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -457,7 +477,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>C:\Pentaho\project-brazil2013-solution\system\sparkl\dashboards\Main.wcdf</name>
+      <name>C&#x3a;&#x5c;Pentaho&#x5c;project-brazil2013-solution&#x5c;system&#x5c;sparkl&#x5c;dashboards&#x5c;Main.wcdf</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -571,7 +591,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
     </fields>
     <limit>0</limit>
-    <loopxpath>&#47;cdf</loopxpath>
+    <loopxpath>&#x2f;cdf</loopxpath>
     <IsInFields>Y</IsInFields>
     <IsAFile>Y</IsAFile>
     <XmlField>wcdf_source</XmlField>
@@ -586,8 +606,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>374</xloc>
-      <yloc>425</yloc>
+      <xloc>368</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -597,6 +617,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -605,7 +626,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <fields>
       <field>
         <name>null_value</name>
-        <variable>${NULL_VALUE}</variable>
+        <variable>&#x24;&#x7b;NULL_VALUE&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -617,7 +638,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>author_param</name>
-        <variable>${author}</variable>
+        <variable>&#x24;&#x7b;author&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -629,7 +650,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>description_param</name>
-        <variable>${description}</variable>
+        <variable>&#x24;&#x7b;description&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -641,7 +662,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>icon_param</name>
-        <variable>${icon}</variable>
+        <variable>&#x24;&#x7b;icon&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -653,7 +674,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>rendererType_param</name>
-        <variable>${rendererType}</variable>
+        <variable>&#x24;&#x7b;rendererType&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -665,7 +686,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>title_param</name>
-        <variable>${title}</variable>
+        <variable>&#x24;&#x7b;title&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -677,7 +698,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>widget_param</name>
-        <variable>${widget}</variable>
+        <variable>&#x24;&#x7b;widget&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -689,7 +710,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </field>
       <field>
         <name>style_param</name>
-        <variable>${style}</variable>
+        <variable>&#x24;&#x7b;style&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -713,6 +734,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -723,8 +745,9 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <in_stream_name>rawStyle</in_stream_name>
         <out_stream_name>style</out_stream_name>
         <use_regex>yes</use_regex>
-        <replace_string>\((.*?)\)</replace_string>
+        <replace_string>&#x5c;&#x28;&#x28;.&#x2a;&#x3f;&#x29;&#x5c;&#x29;</replace_string>
         <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
         <replace_field_by_string>capitalizedId</replace_field_by_string>
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
@@ -743,6 +766,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Normaliser</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -783,6 +807,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -806,6 +831,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -869,12 +895,13 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <sort_size>1000000</sort_size>
       <free_memory/>
@@ -886,6 +913,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <name>seq</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
       </field>
     </fields>
      <cluster_schema/>
@@ -901,6 +929,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -908,36 +937,37 @@ I could also have used an XML Output step, but it generates a null Parent XML el
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>374</xloc>
-      <yloc>594</yloc>
+      <xloc>368</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>exist?</name>
+    <name>exist&#x3f;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Get data from wcdf</send_true_to>
+<send_true_to>Get File Content</send_true_to>
 <send_false_to>null values</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>exist</leftvalue>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>218</xloc>
-      <yloc>425</yloc>
+      <xloc>208</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -947,6 +977,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -955,7 +986,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <fields>
       <field>
         <name>wcdf_source</name>
-        <variable>${source_dash}</variable>
+        <variable>&#x24;&#x7b;source_dash&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -979,12 +1010,13 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <cache_size>500</cache_size>
       <main/>
@@ -992,7 +1024,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
 <condition>
  <negated>N</negated>
  <leftvalue/>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  </condition>
     </compare>
@@ -1009,55 +1041,56 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>author_new</field_name>
-<formula_string>author_param.equals(null_value)?author:author_param</formula_string>
+<formula_string>author_param.equals&#x28;null_value&#x29;&#x3f;author&#x3a;author_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>description_new</field_name>
-<formula_string>description_param.equals(null_value)?description:description_param</formula_string>
+<formula_string>description_param.equals&#x28;null_value&#x29;&#x3f;description&#x3a;description_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>icon_new</field_name>
-<formula_string>icon_param.equals(null_value)?icon:icon_param</formula_string>
+<formula_string>icon_param.equals&#x28;null_value&#x29;&#x3f;icon&#x3a;icon_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>rendererType_new</field_name>
-<formula_string>rendererType_param.equals(null_value)?rendererType:rendererType_param</formula_string>
+<formula_string>rendererType_param.equals&#x28;null_value&#x29;&#x3f;rendererType&#x3a;rendererType_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>title_new</field_name>
-<formula_string>title_param.equals(null_value)?title:title_param</formula_string>
+<formula_string>title_param.equals&#x28;null_value&#x29;&#x3f;title&#x3a;title_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>widget_new</field_name>
-<formula_string>widget_param.equals(null_value)?widget:widget_param</formula_string>
+<formula_string>widget_param.equals&#x28;null_value&#x29;&#x3f;widget&#x3a;widget_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>style_new</field_name>
-<formula_string>style_param.equals(null_value)?style:style_param</formula_string>
+<formula_string>style_param.equals&#x28;null_value&#x29;&#x3f;style&#x3a;style_param</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1076,6 +1109,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1092,6 +1126,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>author</name>
@@ -1103,6 +1138,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>description</name>
@@ -1114,6 +1150,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>icon</name>
@@ -1125,6 +1162,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>rawStyle</name>
@@ -1136,6 +1174,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>rendererType</name>
@@ -1147,6 +1186,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>widget</name>
@@ -1158,12 +1198,13 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <nullif/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>218</xloc>
-      <yloc>594</yloc>
+      <xloc>256</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1173,6 +1214,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1188,6 +1230,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <group/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>seq</name>
@@ -1198,12 +1241,13 @@ I could also have used an XML Output step, but it generates a null Parent XML el
         <group/>
         <length>-1</length>
         <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <data>
-      <line> <item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</item><item>-1</item> </line>
-      <line> <item>&lt;cdf&gt;</item><item>0</item> </line>
-      <line> <item>&lt;&#47;cdf&gt;</item><item>999</item> </line>
+      <line> <item>&#x3c;&#x3f;xml version&#x3d;&#x22;1.0&#x22; encoding&#x3d;&#x22;UTF-8&#x22;&#x3f;&#x3e;</item><item>-1</item> </line>
+      <line> <item>&#x3c;cdf&#x3e;</item><item>0</item> </line>
+      <line> <item>&#x3c;&#x2f;cdf&#x3e;</item><item>999</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -1218,6 +1262,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1228,8 +1273,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </remove>      <remove>        <name>exist</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>530</xloc>
-      <yloc>425</yloc>
+      <xloc>560</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1239,6 +1284,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1261,6 +1307,7 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>SelectValues</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1304,10 +1351,11 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     </step>
 
   <step>
-    <name>wcdf exist?</name>
+    <name>wcdf exist&#x3f;</name>
     <type>FileExists</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1320,8 +1368,8 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <addresultfilenames>N</addresultfilenames>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>66</xloc>
-      <yloc>426</yloc>
+      <xloc>64</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1331,13 +1379,14 @@ I could also have used an XML Output step, but it generates a null Parent XML el
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>xml_field</field_name>
-<formula_string>&quot;        &lt;&quot;+typefield+&quot;&gt;&quot;+field+&quot;&lt;&#47;&quot;+typefield+&quot;&gt;&quot;</formula_string>
+<formula_string>&#x22;        &#x3c;&#x22;&#x2b;typefield&#x2b;&#x22;&#x3e;&#x22;&#x2b;field&#x2b;&#x22;&#x3c;&#x2f;&#x22;&#x2b;typefield&#x2b;&#x22;&#x3e;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1351,9 +1400,457 @@ I could also have used an XML Output step, but it generates a null Parent XML el
       </GUI>
     </step>
 
+  <step>
+    <name>Get File Content</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var cpkFileContent &#x3d; loadFileContent&#x28;wcdf_source&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>cpkFileContent</name>
+        <rename>cpkFileContent</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>160</xloc>
+      <yloc>656</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Remove Lines</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>cpkFileContent</in_stream_name>
+        <out_stream_name>newCpkFileContent</out_stream_name>
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>160</xloc>
+      <yloc>752</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get cdf tag</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<cdf>(.*)<\/cdf>.*]]></script>    <matcher>newCpkFileContent</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>info</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>160</xloc>
+      <yloc>832</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get title</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<title>(.*)<\/title>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>title</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>256</xloc>
+      <yloc>832</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Author</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<author>(.*)<\/author>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>author</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>256</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Description</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<description>(.*)<\/description>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>description</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>352</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Icon</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<icon>(.*)<\/icon>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>icon</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>352</xloc>
+      <yloc>832</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get rawStyle</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<rawStyle>(.*)<\/rawStyle>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>rawStyle</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>464</xloc>
+      <yloc>832</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Renderer</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<rendererType>(.*)<\/rendererType>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>rendererType</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>464</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get widget</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.*<widget>(.*)<\/widget>.*]]></script>    <matcher>info</matcher>
+    <resultfieldname/>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>N</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>N</dotall>
+    <multiline>N</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>widget</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>576</xloc>
+      <yloc>912</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove auxiliary fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>cpkFileContent</name>
+      </remove>      <remove>        <name>newCpkFileContent</name>
+      </remove>      <remove>        <name>info</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>576</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step_error_handling>
   </step_error_handling>
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+
 </transformation>
