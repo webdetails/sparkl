@@ -4,8 +4,9 @@
     <Name>Sparkl Plugin Card</Name>
     <IName>SparklPluginCardComponent</IName>
     <Description>Sparkl Plugin Card Component</Description>
-    <Category>CUSTOMCOMPONENTS</Category>
-    <CatDescription>Custom</CatDescription>
+    <Category>OTHERCOMPONENTS</Category>
+    <CatDescription>Others</CatDescription>
+	<Order>550</Order>
     <Type>PalleteEntry</Type>
     <Version>1.0</Version>
   </Header>
