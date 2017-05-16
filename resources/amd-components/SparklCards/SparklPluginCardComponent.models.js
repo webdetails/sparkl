@@ -48,7 +48,7 @@ define([
       },
       initialize: function() {
         var pluginId = this.get('pluginId'),
-            imgSrc = SparklPluginCardComponentExt.webAppPath + '/api/repos/' + pluginId + '/static/system/img/pluginLogo___.png';
+            imgSrc = SparklPluginCardComponentExt.webAppPath + '/api/repos/' + pluginId + '/static/system/img/pluginLogo.png';
         this.set('imgSrc', imgSrc);
       },
       fireAction: function(action) {
