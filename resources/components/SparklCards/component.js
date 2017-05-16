@@ -71,7 +71,7 @@ wd.cpk = wd.cpk || {};
 
         initialize: function() {
             var pluginId = this.get('pluginId'),
-                imgSrc = Dashboards.getWebAppPath() + '/api/repos/' + pluginId + '/static/system/img/pluginLogo__.png';
+                imgSrc = Dashboards.getWebAppPath() + '/api/repos/' + pluginId + '/static/system/img/pluginLogo.png';
             this.set('imgSrc', imgSrc);
         },
 
