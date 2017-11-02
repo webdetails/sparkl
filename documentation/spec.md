@@ -118,7 +118,7 @@ The dashboard contains a set of four *global options*:
 * _Import Plugin_: allows to import a remotely hosted plugin to the local CPK
   plugins folder. Opens a form to be filled with the plugin url/localisation. **This option is not implemented yet and is left for a second stage.**
 * _Refresh List_: updates the list of plugins;
-* _Request Pentaho Services_: sends email requesting Pentaho services/support. **This option is now present in all Sparkl dashboards on the dashboards container's header.**
+* _Request Pentaho Services_: sends email requesting Hitachi Vantara services/support. **This option is now present in all Sparkl dashboards on the dashboards container's header.**
 
 
 The dashboard also contains a *table* listing the existing plugins, each row with the corresponding plugin's Id, name, description and a set of *plugin options*:
