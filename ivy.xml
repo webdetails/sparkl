@@ -19,9 +19,9 @@
 		  rev="${pentaho-cpf-plugin.version}" transitive="false" changing="true" conf='default->default'/>
   		<dependency org="pentaho" name="${cpf.pentaho.artifact}"
 		  rev="${pentaho-cpf-plugin.version}" transitive="false" changing="true" conf='default->default'/>
-		<dependency org="pentaho" name="cpk-core"
+		<dependency org="org.pentaho.ctools" name="cpk-core"
 		  rev="${pentaho-cpk-plugin.version}" transitive="false" changing="true" conf='default->default'/>
-  		<dependency org="pentaho" name="${cpk.pentaho.artifact}"
+  		<dependency org="org.pentaho.ctools" name="${cpk.pentaho.artifact}"
 		  rev="${pentaho-cpk-plugin.version}" transitive="false" changing="true" conf='default->default'/>
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
   </dependencies>
