@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.pentaho.ctools</groupId>
+  <artifactId>sparkl</artifactId>
+  <version>8.1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Sparkl Plugin</name>
+  
+  <parent>
+    <groupId>org.pentaho.ctools</groupId>
+    <artifactId>sparkl-assemblies</artifactId>
+    <version>8.1.0.0-SNAPSHOT</version>
+  </parent>
+  
+  <dependencies>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>cpf-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>cpf-pentaho</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.pentaho.ctools</groupId>
+      <artifactId>cpk-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.pentaho.ctools</groupId>
+      <artifactId>cpk-pentaho5</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.pentaho.ctools</groupId>
+      <artifactId>sparkl-static</artifactId>
+      <version>${pentaho-sparkl-plugin.version}</version>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>
