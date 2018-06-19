@@ -56,11 +56,31 @@ var sparkl = {};
         return reg.test(name);
     };
 
-
     myself.isUpdated = function(srcVersion, pluginVersion) {
-        return (srcVersion == pluginVersion);
+        var srcVersionObj = myself.parseVersion(srcVersion);
+        var pluginVersionObj = myself.parseVersion(pluginVersion);
+
+        if (pluginVersionObj.major < srcVersionObj.major) return false;
+        if (pluginVersionObj.minor < srcVersionObj.minor) return false;
+        if (pluginVersionObj.other < srcVersionObj.other) return false;
+        if (pluginVersionObj.patch < srcVersionObj.patch) return false;
+
+        return true;
     };
 
+    myself.parseVersion = function(version) {
+        // Matches - Major.minor.other.patch
+        var versionRegx = /^([0-9]+)(?:\.([0-9]*)(?:\.([0-9]*))?(?:\.([0-9]*))?)?/;
+
+        var match = versionRegx.exec(version);
+
+        return {
+            major: Number(match[1]),
+            minor: Number(match[2]),
+            other: Number(match[3]),
+            patch: Number(match[4])
+        };
+    };
 
     myself.isJobError = function(json) {
         return (json && json.result === false);
