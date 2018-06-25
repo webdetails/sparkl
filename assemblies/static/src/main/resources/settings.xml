@@ -9,4 +9,10 @@
 	  <path>system/sparkl/resources/components</path>
 	  <path>sparkl/components</path>
 	</cde-components>
+
+	<!-- CDE RenderApi bean id, used by CPK to do a InterPluginCall -->
+	<cde-render-api-bean-id>renderApi</cde-render-api-bean-id>
+
+	<!-- CDE RenderApi render method name, used by CPK to do a InterPluginCall -->
+	<cde-render-api-render-method>render</cde-render-api-render-method>
 </settings>
