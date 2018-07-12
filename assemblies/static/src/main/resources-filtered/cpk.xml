@@ -22,7 +22,7 @@
     </elementTypes> 
     <info>
         <description>Create and explore pentaho plugins.</description>
-        <name>Sparkl</name>
+        <name>App Builder</name>
         <CPK_version>${pentaho-cpk-plugin.version}</CPK_version>
     </info>
     <settings>
