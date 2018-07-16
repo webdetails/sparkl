@@ -9,6 +9,16 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>NULL_VALUE</name>
+        <default_value>not defined</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>pluginId</name>
+        <default_value>${NULL_VALUE}</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
