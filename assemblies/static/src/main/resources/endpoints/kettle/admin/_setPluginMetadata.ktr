@@ -16,17 +16,12 @@
       </parameter>
       <parameter>
         <name>cpk.plugin.dir</name>
-        <default_value>${NULL_VALUE}</default_value>
+        <default_value>${cpk.solution.system.dir}/${cpk.plugin.dir}</default_value>
         <description/>
       </parameter>
       <parameter>
         <name>cpk.plugin.id</name>
         <default_value>sparkl</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>cpk.plugin.system.dir</name>
-        <default_value>${NULL_VALUE}</default_value>
         <description/>
       </parameter>
       <parameter>

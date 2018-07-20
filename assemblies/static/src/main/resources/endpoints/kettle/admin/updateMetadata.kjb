@@ -48,12 +48,7 @@
     </parameter>
     <parameter>
       <name>cpk.plugin.id</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>cpk.plugin.system.dir</name>
-      <default_value>${cpk.plugin.dir}/system</default_value>
+      <default_value>sparkl</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -74,11 +69,6 @@
     <parameter>
       <name>filterRegex</name>
       <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>instalationFolder</name>
-      <default_value>${pluginDir}</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -103,21 +93,6 @@
     </parameter>
     <parameter>
       <name>plugin_name</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>plugin_package_name</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>plugin_package_url</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>stubFolder</name>
       <default_value>${NULL_VALUE}</default_value>
       <description/>
     </parameter>
@@ -589,11 +564,6 @@
           <value>${cpk.plugin.id}</value>
         </parameter>
         <parameter>
-          <name>cpk.plugin.system.dir</name>
-          <stream_name/>
-          <value>${cpk.plugin.system.dir}</value>
-        </parameter>
-        <parameter>
           <name>cpk.solution.system.dir</name>
           <stream_name/>
           <value>${cpk.solution.system.dir}</value>
@@ -631,7 +601,7 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
@@ -748,16 +718,6 @@
           <value>${company_url}</value>
         </parameter>
         <parameter>
-          <name>plugin_package_name</name>
-          <stream_name/>
-          <value>${plugin_package_name}</value>
-        </parameter>
-        <parameter>
-          <name>plugin_package_url</name>
-          <stream_name/>
-          <value>${plugin_package_url}</value>
-        </parameter>
-        <parameter>
           <name>plugin_defaultElement</name>
           <stream_name/>
           <value>${plugin_defaultElement}</value>
@@ -783,19 +743,9 @@
           <value>${cpk.solution.system.dir}</value>
         </parameter>
         <parameter>
-          <name>cpk.plugin.system.dir</name>
+          <name>pluginDir</name>
           <stream_name/>
-          <value>${cpk.plugin.system.dir}</value>
-        </parameter>
-        <parameter>
-          <name>instalationFolder</name>
-          <stream_name/>
-          <value>${instalationFolder}</value>
-        </parameter>
-        <parameter>
-          <name>stubFolder</name>
-          <stream_name/>
-          <value>${stubFolder}</value>
+          <value>${pluginDir}</value>
         </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>

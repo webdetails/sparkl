@@ -52,11 +52,6 @@
       <description/>
     </parameter>
     <parameter>
-      <name>cpk.plugin.system.dir</name>
-      <default_value>${cpk.plugin.dir}/system</default_value>
-      <description/>
-    </parameter>
-    <parameter>
       <name>cpk.solution.system.dir</name>
       <default_value>${NULL_VALUE}</default_value>
       <description/>
@@ -74,11 +69,6 @@
     <parameter>
       <name>filterRegex</name>
       <default_value>.*</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>instalationFolder</name>
-      <default_value>${pluginDir}</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -104,31 +94,6 @@
     <parameter>
       <name>plugin_name</name>
       <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>plugin_package_name</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>plugin_package_url</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>stubFile</name>
-      <default_value>${stubFolder}/plugin.zip</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>stubFolder</name>
-      <default_value>${cpk.plugin.dir}/stub</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>unzipFolder</name>
-      <default_value>${stubFolder}/.${pluginId}</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -556,16 +521,6 @@
           <value>${company_url}</value>
         </parameter>
         <parameter>
-          <name>plugin_package_name</name>
-          <stream_name/>
-          <value>${plugin_package_name}</value>
-        </parameter>
-        <parameter>
-          <name>plugin_package_url</name>
-          <stream_name/>
-          <value>${plugin_package_url}</value>
-        </parameter>
-        <parameter>
           <name>plugin_defaultElement</name>
           <stream_name/>
           <value>${plugin_defaultElement}</value>
@@ -589,16 +544,6 @@
           <name>cpk.solution.system.dir</name>
           <stream_name/>
           <value>${cpk.solution.system.dir}</value>
-        </parameter>
-        <parameter>
-          <name>stubFolder</name>
-          <stream_name/>
-          <value>${stubFolder}</value>
-        </parameter>
-        <parameter>
-          <name>instalationFolder</name>
-          <stream_name/>
-          <value>${instalationFolder}</value>
         </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>
@@ -641,16 +586,13 @@
       <limit_folders>10</limit_folders>
       <fields>
         <field>
-          <name>${instalationFolder}</name>
-        </field>
-        <field>
-          <name>${unzipFolder}</name>
+          <name>${pluginDir}</name>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>752</xloc>
       <yloc>288</yloc>
     </entry>
     <entry>
@@ -714,8 +656,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
-      <yloc>32</yloc>
+      <xloc>864</xloc>
+      <yloc>16</yloc>
     </entry>
     <entry>
       <name>updateLibs</name>
@@ -752,11 +694,6 @@
           <name>cpk.plugin.id</name>
           <stream_name/>
           <value>${cpk.plugin.id}</value>
-        </parameter>
-        <parameter>
-          <name>cpk.plugin.system.dir</name>
-          <stream_name/>
-          <value>${cpk.plugin.system.dir}</value>
         </parameter>
         <parameter>
           <name>cpk.solution.system.dir</name>
@@ -799,7 +736,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>592</xloc>
       <yloc>144</yloc>
     </entry>
     <entry>
@@ -821,7 +758,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
+      <xloc>416</xloc>
       <yloc>144</yloc>
     </entry>
     <entry>

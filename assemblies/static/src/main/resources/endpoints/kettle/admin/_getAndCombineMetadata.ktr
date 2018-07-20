@@ -46,12 +46,7 @@
       </parameter>
       <parameter>
         <name>cpk.plugin.id</name>
-        <default_value>${NULL_VALUE}</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>cpk.plugin.system.dir</name>
-        <default_value>${cpk.plugin.dir}/system/</default_value>
+        <default_value>sparkl</default_value>
         <description/>
       </parameter>
       <parameter>
@@ -1069,33 +1064,43 @@
     <fields>
       <field>
         <name>CPK_version_new</name>
+        <rename/>
       </field>
       <field>
         <name>plugin_description_new</name>
+        <rename/>
       </field>
       <field>
         <name>plugin_name_new</name>
+        <rename/>
       </field>
       <field>
         <name>author_email_new</name>
+        <rename/>
       </field>
       <field>
         <name>author_name_new</name>
+        <rename/>
       </field>
       <field>
         <name>company_name_new</name>
+        <rename/>
       </field>
       <field>
         <name>company_url_new</name>
+        <rename/>
       </field>
       <field>
         <name>creation_date_new</name>
+        <rename/>
       </field>
       <field>
         <name>version_new</name>
+        <rename/>
       </field>
       <field>
         <name>dashboard_style_new</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1120,14 +1125,6 @@
   <attributes>
     <group>
       <name>explorerState</name>
-      <attribute>
-        <key>Get metadata parameters</key>
-        <value/>
-      </attribute>
-      <attribute>
-        <key>Get Plugin cpk.xml location</key>
-        <value/>
-      </attribute>
     </group>
   </attributes>
 </transformation>

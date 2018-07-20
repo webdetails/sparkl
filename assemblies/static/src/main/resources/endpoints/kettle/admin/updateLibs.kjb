@@ -17,11 +17,6 @@
       <description/>
     </parameter>
     <parameter>
-      <name>cpk.lib.dir</name>
-      <default_value>${cpk.plugin.dir}/lib</default_value>
-      <description/>
-    </parameter>
-    <parameter>
       <name>cpk.plugin.dir</name>
       <default_value>${cpk.solution.system.dir}/${cpk.plugin.id}</default_value>
       <description/>
@@ -29,11 +24,6 @@
     <parameter>
       <name>cpk.plugin.id</name>
       <default_value>sparkl</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>cpk.plugin.system.dir</name>
-      <default_value>${cpk.plugin.dir}/system/</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -428,9 +418,9 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>${cpk.lib.dir}</source_filefolder>
+          <source_filefolder>EMPTY_SOURCE_URL-0-${cpk.plugin.dir}/lib</source_filefolder>
           <source_configuration_name/>
-          <destination_filefolder>${pluginDir}/lib</destination_filefolder>
+          <destination_filefolder>EMPTY_DEST_URL-0-${pluginDir}/lib</destination_filefolder>
           <destination_configuration_name/>
           <wildcard>.*\.jar</wildcard>
         </field>
@@ -546,11 +536,6 @@
           <name>cpk.plugin.id</name>
           <stream_name/>
           <value>${cpk.plugin.id}</value>
-        </parameter>
-        <parameter>
-          <name>cpk.plugin.system.dir</name>
-          <stream_name/>
-          <value>${cpk.plugin.system.dir}</value>
         </parameter>
         <parameter>
           <name>cpk.solution.system.dir</name>

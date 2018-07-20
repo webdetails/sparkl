@@ -28,17 +28,12 @@
     </parameter>
     <parameter>
       <name>cpk.plugin.dir</name>
-      <default_value>${NULL_VALUE}</default_value>
+      <default_value>${cpk.solution.system.dir}/${cpk.plugin.dir}</default_value>
       <description/>
     </parameter>
     <parameter>
       <name>cpk.plugin.id</name>
       <default_value>sparkl</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>cpk.plugin.system.dir</name>
-      <default_value>${NULL_VALUE}</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -48,12 +43,17 @@
     </parameter>
     <parameter>
       <name>filterRegex</name>
-      <default_value>.*</default_value>
+      <default_value>${NULL_VALUE}</default_value>
       <description/>
     </parameter>
     <parameter>
       <name>instalationFolder</name>
-      <default_value>${NULL_VALUE}</default_value>
+      <default_value>${pluginDir}</default_value>
+      <description/>
+    </parameter>
+    <parameter>
+      <name>pluginDir</name>
+      <default_value>${cpk.solution.system.dir}/${pluginId}</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -77,23 +77,8 @@
       <description/>
     </parameter>
     <parameter>
-      <name>plugin_package_name</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>plugin_package_url</name>
-      <default_value>${NULL_VALUE}</default_value>
-      <description/>
-    </parameter>
-    <parameter>
       <name>stagingFolder</name>
       <default_value>${tmpFolder}/${cpk.plugin.id}/staging</default_value>
-      <description/>
-    </parameter>
-    <parameter>
-      <name>stubFolder</name>
-      <default_value>${cpk.plugin.dir}/stub</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -577,16 +562,6 @@
           <value>${company_url}</value>
         </parameter>
         <parameter>
-          <name>plugin_package_name</name>
-          <stream_name/>
-          <value>${plugin_package_name}</value>
-        </parameter>
-        <parameter>
-          <name>plugin_package_url</name>
-          <stream_name/>
-          <value>${plugin_package_url}</value>
-        </parameter>
-        <parameter>
           <name>plugin_defaultElement</name>
           <stream_name/>
           <value>${plugin_defaultElement}</value>
@@ -703,7 +678,7 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>EMPTY_SOURCE_URL-0-${stubFolder}</source_filefolder>
+          <source_filefolder>EMPTY_SOURCE_URL-0-${cpk.plugin.dir}/stub</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-0</source_configuration_name>
           <destination_filefolder>EMPTY_DEST_URL-0-${unique_location}</destination_filefolder>
           <destination_configuration_name>LOCAL-DEST-FILE-0</destination_configuration_name>
@@ -715,6 +690,38 @@
       <nr>0</nr>
       <xloc>672</xloc>
       <yloc>64</yloc>
+    </entry>
+    <entry>
+      <name>Write To Log</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>#### Start __loadStub.ktr Logs ####
+ - pluginId: ${pluginId}
+ - plugin_description: ${plugin_description}
+ - plugin_name: ${plugin_name}
+ - plugin_defaultElement: ${plugin_defaultElement}
+
+ - cpk.plugin.dir: ${cpk.plugin.dir}
+
+ - stubFolder: ${stubFolder}
+ - stubFolder1: ${stubFolder1}
+ - unique_location: ${unique_location}
+ - filterRegex: ${filterRegex}
+
+ - company_name: ${company_name}
+ - company_url: ${company_url}
+ - version: ${version}
+
+ - plugin_package_url: ${plugin_package_url}
+ - plugin_package_name: ${plugin_package_name}
+#### End Logs ###</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>288</xloc>
+      <yloc>192</yloc>
     </entry>
   </entries>
   <hops>
@@ -823,6 +830,24 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create Staging Folder</from>
+      <to>Write To Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Write To Log</from>
+      <to>Copy Stub Files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
