@@ -53,7 +53,7 @@
     </parameter>
     <parameter>
       <name>cpk.plugin.system.dir</name>
-      <default_value>${cpk.plugin.dir}/system/</default_value>
+      <default_value>${cpk.plugin.dir}/system</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -496,8 +496,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>46</xloc>
-      <yloc>135</yloc>
+      <xloc>32</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>updateMetadata</name>
@@ -590,13 +590,23 @@
           <stream_name/>
           <value>${cpk.solution.system.dir}</value>
         </parameter>
+        <parameter>
+          <name>stubFolder</name>
+          <stream_name/>
+          <value>${stubFolder}</value>
+        </parameter>
+        <parameter>
+          <name>instalationFolder</name>
+          <stream_name/>
+          <value>${instalationFolder}</value>
+        </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>952</xloc>
-      <yloc>136</yloc>
+      <xloc>960</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>Abort job</name>
@@ -606,8 +616,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>277</xloc>
-      <yloc>248</yloc>
+      <xloc>272</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Write To Log</name>
@@ -619,8 +629,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>952</xloc>
-      <yloc>250</yloc>
+      <xloc>960</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Delete folders</name>
@@ -640,8 +650,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>735</xloc>
-      <yloc>250</yloc>
+      <xloc>736</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Plugin ID not null?</name>
@@ -662,8 +672,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>277</xloc>
-      <yloc>134</yloc>
+      <xloc>272</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>Plugin Name not null?</name>
@@ -684,8 +694,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>735</xloc>
-      <yloc>136</yloc>
+      <xloc>752</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>plugin_name = pluginId</name>
@@ -704,8 +714,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>833</xloc>
-      <yloc>56</yloc>
+      <xloc>848</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>updateLibs</name>
@@ -730,16 +740,46 @@
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
+        <parameter>
+          <name>cpk.plugin.dir</name>
+          <stream_name/>
+          <value>${cpk.plugin.dir}</value>
+        </parameter>
+        <parameter>
+          <name>cpk.plugin.id</name>
+          <stream_name/>
+          <value>${cpk.plugin.id}</value>
+        </parameter>
+        <parameter>
+          <name>cpk.plugin.system.dir</name>
+          <stream_name/>
+          <value>${cpk.plugin.system.dir}</value>
+        </parameter>
+        <parameter>
+          <name>cpk.solution.system.dir</name>
+          <stream_name/>
+          <value>${cpk.solution.system.dir}</value>
+        </parameter>
+        <parameter>
+          <name>pluginDir</name>
+          <stream_name/>
+          <value>${pluginDir}</value>
+        </parameter>
+        <parameter>
+          <name>pluginId</name>
+          <stream_name/>
+          <value>${pluginId}</value>
+        </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1080</xloc>
-      <yloc>136</yloc>
+      <xloc>1088</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>OUTPUT</name>
@@ -748,8 +788,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1225</xloc>
-      <yloc>136</yloc>
+      <xloc>1232</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>${pluginDir} exists?</name>
@@ -759,8 +799,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>594</xloc>
-      <yloc>136</yloc>
+      <xloc>608</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>Is valid plugin id?</name>
@@ -781,8 +821,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>394</xloc>
-      <yloc>135</yloc>
+      <xloc>400</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -801,8 +841,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>153</xloc>
-      <yloc>136</yloc>
+      <xloc>144</xloc>
+      <yloc>144</yloc>
     </entry>
   </entries>
   <hops>

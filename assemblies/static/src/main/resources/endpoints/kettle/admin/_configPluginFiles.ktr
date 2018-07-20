@@ -60,7 +60,7 @@
         <description/>
       </parameter>
       <parameter>
-        <name>unzipFolder</name>
+        <name>unique_location</name>
         <default_value>${NULL_VALUE}</default_value>
         <description/>
       </parameter>
@@ -518,11 +518,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get File Names</from>
-      <to>Get Filter Regex</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Get Filter Regex</from>
       <to>Filter files</to>
       <enabled>Y</enabled>
@@ -555,6 +550,11 @@
     <hop>
       <from>Get Tokenized Files</from>
       <to>Remove token tags from filename</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get File Names</from>
+      <to>Get Filter Regex</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -699,7 +699,7 @@
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${unzipFolder}</name>
+      <name>${unique_location}</name>
       <filemask>.*</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>

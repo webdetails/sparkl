@@ -53,7 +53,7 @@
     </parameter>
     <parameter>
       <name>cpk.plugin.system.dir</name>
-      <default_value>${cpk.plugin.dir}/system/</default_value>
+      <default_value>${cpk.plugin.dir}/system</default_value>
       <description/>
     </parameter>
     <parameter>
@@ -113,6 +113,11 @@
     </parameter>
     <parameter>
       <name>plugin_package_url</name>
+      <default_value>${NULL_VALUE}</default_value>
+      <description/>
+    </parameter>
+    <parameter>
+      <name>stubFolder</name>
       <default_value>${NULL_VALUE}</default_value>
       <description/>
     </parameter>
@@ -776,6 +781,21 @@
           <name>cpk.solution.system.dir</name>
           <stream_name/>
           <value>${cpk.solution.system.dir}</value>
+        </parameter>
+        <parameter>
+          <name>cpk.plugin.system.dir</name>
+          <stream_name/>
+          <value>${cpk.plugin.system.dir}</value>
+        </parameter>
+        <parameter>
+          <name>instalationFolder</name>
+          <stream_name/>
+          <value>${instalationFolder}</value>
+        </parameter>
+        <parameter>
+          <name>stubFolder</name>
+          <stream_name/>
+          <value>${stubFolder}</value>
         </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>
