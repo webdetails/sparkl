@@ -79,10 +79,10 @@ var sparkl = {};
     var match = versionRegx.exec(version);
 
     return {
-      major: Number(match[1]),
-      minor: Number(match[2]),
-      other: Number(match[3]),
-      patch: Number(match[4])
+      major: Number(match[1] || ""),
+      minor: Number(match[2] || ""),
+      other: Number(match[3] || ""),
+      patch: Number(match[4] || "")
     };
   };
 
@@ -265,7 +265,7 @@ var sparkl = {};
       opts.error.apply(this, arguments);
     }
 
-    var ajaxOpts = {
+    var ajaxOpts = { // XXX - do this better
       url: url,
       async: true,
       type: endpoint !== 'renderer/refresh' ? opts.type : 'GET',
@@ -317,7 +317,7 @@ var sparkl = {};
     };
   };
   myself.addRefreshWrapper = function (pluginId, callback) {
-    var endpoint = pluginId !== 'pentaho-cdf-dd' ? 'refresh' : 'renderer/refresh';
+    var endpoint = pluginId !== 'pentaho-cdf-dd' ? 'refresh' : 'renderer/refresh'; // XXX - do this better
 
     var caller = this.getEndpointCaller(pluginId, endpoint, {
       dataType: 'text'
@@ -435,7 +435,6 @@ var sparkl = {};
 
           var obj = this.parentNode.parentNode.children[0].textContent;
 
-          var metadataParam = metadataParam || [];
           metadataParam[obj.toString()] = $(this).val();
         });
 
