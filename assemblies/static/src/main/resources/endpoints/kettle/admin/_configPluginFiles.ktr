@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>unzipFolder</name>
-            <default_value>&#x2f;Users&#x2f;gundisalwa&#x2f;Desktop&#x2f;stub</default_value>
+            <default_value/>
             <description/>
         </parameter>
     </parameters>
