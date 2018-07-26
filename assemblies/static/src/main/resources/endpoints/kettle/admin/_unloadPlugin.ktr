@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_setUniqueLocation</name>
+    <name>_unloadPlugin</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -10,33 +10,13 @@
     <directory>/</directory>
     <parameters>
       <parameter>
-        <name>base_dir</name>
-        <default_value>${cpk.solution.system.dir}/tmp/${cpk.plugin.id}</default_value>
+        <name>NULL_VALUE</name>
+        <default_value>not defined</default_value>
         <description/>
       </parameter>
       <parameter>
-        <name>cpk.plugin.dir</name>
-        <default_value>${cpk.solution.system.dir}/${cpk.plugin.id}</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>cpk.plugin.id</name>
+        <name>pluginId</name>
         <default_value>${NULL_VALUE}</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>cpk.plugin.system.dir</name>
-        <default_value>${cpk.plugin.dir}/system/</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>cpk.solution.system.dir</name>
-        <default_value>${NULL_VALUE}</default_value>
-        <description/>
-      </parameter>
-      <parameter>
-        <name>unique_location</name>
-        <default_value/>
         <description/>
       </parameter>
     </parameters>
@@ -458,9 +438,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2013/06/07 14:22:01.523</created_date>
+    <created_date>2018/07/04 14:08:02.968</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2013/06/07 14:22:01.523</modified_date>
+    <modified_date>2018/07/04 14:08:02.968</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -468,83 +448,16 @@
   </notepads>
   <order>
     <hop>
-      <from>Generate Unique ID</from>
-      <to>Add to base dir</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Add to base dir</from>
-      <to>Set unique_location</to>
+      <from>User defined Java class</from>
+      <to>OUTPUT</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Get Variables</from>
-      <to>Generate Unique ID</to>
+      <to>User defined Java class</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>Add to base dir</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <formula>
-      <field_name>unique_location</field_name>
-      <formula_string>base_dir + '/' + uniqueName</formula_string>
-      <value_type>String</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <replace_field/>
-    </formula>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>544</xloc>
-      <yloc>180</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Generate Unique ID</name>
-    <type>RandomValue</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>uniqueName</name>
-        <type>random uuid</type>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>391</xloc>
-      <yloc>180</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Get Variables</name>
     <type>GetVariable</type>
@@ -558,8 +471,8 @@
     </partitioning>
     <fields>
       <field>
-        <name>base_dir</name>
-        <variable>${base_dir}</variable>
+        <name>pluginId</name>
+        <variable>${pluginId}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -578,14 +491,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>248</xloc>
-      <yloc>177</yloc>
+      <xloc>112</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Set unique_location</name>
-    <type>SetVariable</type>
+    <name>OUTPUT</name>
+    <type>MappingOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -594,15 +507,6 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <field_name>unique_location</field_name>
-        <variable_name>unique_location</variable_name>
-        <variable_type>PARENT_JOB</variable_type>
-        <default_value/>
-      </field>
-    </fields>
-    <use_formatting>N</use_formatting>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -611,8 +515,200 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>711</xloc>
-      <yloc>181</yloc>
+      <xloc>528</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>User defined Java class</name>
+    <type>UserDefinedJavaClass</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <definitions>
+      <definition>
+        <class_type>TRANSFORM_CLASS</class_type>
+        <class_name>Processor</class_name>
+        <class_source>import org.pentaho.platform.api.engine.IPentahoSession;
+import org.pentaho.platform.api.engine.IPluginManager;
+import org.pentaho.platform.engine.core.system.PentahoSessionHolder;
+import org.pentaho.platform.engine.core.system.PentahoSystem;
+import java.net.URLClassLoader;
+import java.io.IOException;
+import java.io.Closeable;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.HashSet;
+import java.util.Vector;
+import java.util.Iterator;
+import java.util.Collections;
+import java.util.jar.JarFile;
+
+public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws KettleException{
+  String pluginId = getParameter("pluginId");
+  unloadPlugin(pluginId);
+  setOutputDone();
+  return false;
+}
+
+private void unloadPlugin(String pluginId){
+  IPentahoSession session = PentahoSessionHolder.getSession();
+  IPluginManager pluginManager = (IPluginManager)PentahoSystem.get( IPluginManager.class, session );
+  ClassLoader cl = pluginManager.getClassLoader( pluginId );
+  if ( cl != null &amp;&amp; cl instanceof URLClassLoader ) {
+    try {
+      URLClassLoader cl1 = (URLClassLoader) cl;
+      clearURLClassLoader( cl1 );
+      Method closeMethod = cl1.getClass().getMethod( "close", null );
+      closeMethod.invoke( cl1, null );
+    } catch ( Throwable e ) {
+      if ( e instanceof IOException ) {
+        logBasic( "Unable to close class loader for plugin. Will try uninstalling plugin anyway");
+      } else {
+        logBasic( "Error while closing class loader");
+      }
+    }
+  }
+}
+
+/**
+  * This method is designed to clear out classloader file locks in windows.
+  *
+  * @param clazzLdr class loader to clean up
+  */
+private void clearURLClassLoader( URLClassLoader clazzLdr ) {
+  try {
+    Object obj = getFieldObject( URLClassLoader.class, "ucp", clazzLdr );
+    ArrayList loaders = (ArrayList) getFieldObject( obj.getClass(), "loaders", obj );
+  for( Iterator it = loaders.iterator(); it.hasNext(); ){
+        Object ldr = it.next();
+        JarFile file = (JarFile) getFieldObject( ldr.getClass(), "jar", ldr );
+        quietClose( file );
+      }
+  } catch ( Exception e ) {
+    // skip
+  }
+
+  try {
+    Vector nativeLibs = (Vector) getFieldObject( ClassLoader.class, "nativeLibraries", clazzLdr );
+    for ( Iterator it = nativeLibs.iterator(); it.hasNext(); ) {
+      Object nativeLib = it.next();
+      try {
+        Method finalizeMethod = nativeLib.getClass().getDeclaredMethod( "finalize", new Class[ 0 ] );
+        finalizeMethod.setAccessible( true );
+        finalizeMethod.invoke( nativeLib, new Object[ 0 ] );
+      } catch ( Exception e ) {
+        // skip
+      }
+    }
+  } catch ( Exception e ) {
+    // skip
+  }
+
+  HashMap urlCache = null;
+  HashMap fileCache = null;
+
+  try {
+
+    Class factory =
+        getFieldObject( classForName( "sun.net.www.protocol.jar.JarURLConnection" ), "factory", null )
+        .getClass();
+    urlCache = getMap( factory, "urlCache" );
+    fileCache = getMap( factory, "fileCache" );
+
+    for ( Iterator it = ( (HashMap) urlCache.clone() ).keySet().iterator(); it.hasNext(); ) {
+      Object file = it.next();
+      if ( file instanceof JarFile ) {
+        JarFile jar = (JarFile) file;
+        quietClose( jar );
+        fileCache.remove( urlCache.get( jar ) );
+        urlCache.remove( jar );
+      }
+    }
+    for ( Iterator it = ( (HashMap) fileCache.clone() ).keySet().iterator(); it.hasNext(); ) {
+      Object key = it.next();
+      Object file = fileCache.get( key );
+      if ( file instanceof JarFile ) {
+        quietClose( (JarFile) file );
+        fileCache.remove( key );
+      }
+    }
+  } catch ( Exception e ) {
+    // skip
+  }
+}
+
+private void quietClose(Closeable closeable ){
+  try {
+    closeable.close();
+  } catch ( IOException e ) {
+    // skip
+  }
+}
+
+private  HashMap  getMap( Class clazz, String fieldName ) {
+  HashMap objMap = null;
+  try { 
+      objMap = (HashMap) getFieldObject( clazz, fieldName, null );
+    } catch ( Exception e ) {
+      // skip
+    }
+
+    if( objMap == null ) {
+      return new HashMap();
+    }
+
+    return objMap;
+}
+
+private Object getFieldObject( Class clazz, String name, Object obj ) throws Exception {
+  Field field = clazz.getDeclaredField( name );
+  field.setAccessible( true );
+  return field.get( obj );
+}
+
+private Class classForName( String name ) throws ClassNotFoundException {
+  try {
+    ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
+    if ( contextClassLoader != null ) {
+      return contextClassLoader.loadClass( name );
+    }
+  } catch ( Throwable ignore ) { }
+  return Class.forName( name );
+}</class_source>
+      </definition>
+    </definitions>
+    <fields>
+    </fields>
+    <clear_result_fields>N</clear_result_fields>
+    <info_steps/>
+    <target_steps/>
+    <usage_parameters>
+      <usage_parameter>
+        <parameter_tag>pluginId</parameter_tag>
+        <parameter_value>${pluginId}</parameter_value>
+        <parameter_description/>
+      </usage_parameter>
+    </usage_parameters>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -621,13 +717,4 @@
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes>
-    <group>
-      <name>explorerState</name>
-      <attribute>
-        <key>Set unique_location</key>
-        <value/>
-      </attribute>
-    </group>
-  </attributes>
 </transformation>

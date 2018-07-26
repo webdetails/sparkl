@@ -17,21 +17,25 @@
 
 (function() {
 
+  var apiReposSparkl = 'api/repos/sparkl/';
+  var sparklComponentsPath = 'resources/amd-components';
+
   var requirePaths = requireCfg.paths;
 
   var prefix;
-  if(typeof KARMA_RUN !== "undefined") { // unit tests
-    prefix = requirePaths['sparkl/components'] = 'resources/amd-components';
+  if (typeof KARMA_RUN !== "undefined") { // unit tests
+    prefix = requirePaths['sparkl/components'] = sparklComponentsPath;
 
-  } else if(typeof CONTEXT_PATH !== "undefined") { // production
-    prefix = requirePaths['sparkl/components']  = CONTEXT_PATH + 'api/repos/sparkl/resources/amd-components';
+  } else if (typeof CONTEXT_PATH !== "undefined") { // production
+    prefix = requirePaths['sparkl/components']  = CONTEXT_PATH + apiReposSparkl + sparklComponentsPath;
 
-  } else if(typeof FULL_QUALIFIED_URL != "undefined") { // embedded production
-    prefix = requirePaths['sparkl/components']  = FULL_QUALIFIED_URL + 'api/repos/sparkl/resources/amd-componentss';
+  } else if (typeof FULL_QUALIFIED_URL !== "undefined") { // embedded production
+    prefix = requirePaths['sparkl/components']  = FULL_QUALIFIED_URL + apiReposSparkl + sparklComponentsPath;
 
   } else { // build
-    prefix = requirePaths['sparkl/components'] = '../resources/amd-components';
+    prefix = requirePaths['sparkl/components'] = '../' + sparklComponentsPath;
   }
 
   requirePaths['sparkl/components/SparklPluginCardComponent'] = prefix + '/SparklCards/SparklPluginCardComponent';
+
 })();

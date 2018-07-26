@@ -1,53 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Pentaho App Builder</title>
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <!--link href="/pentaho-style/dashboard.css" rel="stylesheet" type="text/css" media="screen" /-->        
-        @HEADER@        
-        <link rel="stylesheet" type="text/css" href="../../../api/repos/sparkl/static/custom/css/sparklTemplate.css" />
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Pentaho App Builder</title>
 
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
 
+    @HEADER@
 
-    </head>
-    <body>
+    <link rel="stylesheet" type="text/css" href="../../../api/repos/sparkl/static/custom/css/sparklTemplate.css"/>
+  </head>
 
-        <div class="sparklWrapper">
-            <div class="sparklHeader">
-                <a class='sparklLogo' href='../../../plugin/sparkl/api/main'></a>
-                <!--<div class='sparklMail' >
-					<a href="mailto:services@webdetails.pt"><span class='sparklMailLabel'>Request Pentaho Services</span></a> 
-                </div>-->
+  <body>
+    <div class="sparklWrapper">
+      <div class="sparklHeader">
+        <a class='sparklLogo' href='../../../plugin/sparkl/api/main'></a>
+      </div>
 
-            </div>
-            <!--<div id='sparklSiteMapObj' class='sparklNavigation'>
-                <script type="text/javascript">
-                    var render_sparklSiteMap = {
-                        type: "siteMap",
-                        name: "render_sparklSiteMap",
-                        siteMapSelectedParameter: "Dashboards.context.file",
-                        priority: "5",
-                        parameters: [],
-                        executeAtStart: true,
-                        ajaxUrl:  'getSitemapJson',
-                        htmlObject: "sparklSiteMapObj",
-                        listeners: []
-                    };
-                      
-                    Dashboards.addComponents([render_sparklSiteMap]);
-                </script>
-            </div>-->
-            <div class="sparklContent">
-                @CONTENT@
-            </div>
-            <div class="sparklFooter">
-                @FOOTER@
-            </div>
-        </div>
+      <div class="sparklContent">@CONTENT@</div>
 
-    </body>
+      <div class="sparklFooter">@FOOTER@</div>
+    </div>
+
+  </body>
 </html>
-
-
