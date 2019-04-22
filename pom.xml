@@ -25,8 +25,6 @@
     <pentaho-cpf-plugin.version>8.3.0.0-SNAPSHOT</pentaho-cpf-plugin.version>
     <pentaho-cpf-plugin.version>8.3.0.0-SNAPSHOT</pentaho-cpf-plugin.version>
     <pentaho-cpk-plugin.version>8.3.0.0-SNAPSHOT</pentaho-cpk-plugin.version>
-    <jackson-core-asl.version>1.9.12</jackson-core-asl.version>
-    <jackson-mapper-asl.version>1.9.12</jackson-mapper-asl.version>
   </properties>
 
   <dependencyManagement>
@@ -68,28 +66,6 @@
         <groupId>org.pentaho.ctools</groupId>
         <artifactId>cpk-pentaho5</artifactId>
         <version>${pentaho-cpk-plugin.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>*</groupId>
-            <artifactId>*</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.jackson</groupId>
-        <artifactId>jackson-core-asl</artifactId>
-        <version>${jackson-core-asl.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>*</groupId>
-            <artifactId>*</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.jackson</groupId>
-        <artifactId>jackson-mapper-asl</artifactId>
-        <version>${jackson-mapper-asl.version}</version>
         <exclusions>
           <exclusion>
             <groupId>*</groupId>
