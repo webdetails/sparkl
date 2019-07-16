@@ -13,3 +13,6 @@ bin
 *.war
 *.ear
 .DS_Store
+
+# These jquery files are added/replaced by maven on every build
+/assemblies/static/src/main/resources/resources/components/SparklCards/test/lib/jquery.js
