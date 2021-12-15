@@ -23,7 +23,6 @@
   <properties>
     <pentaho-sparkl-plugin.version>9.3.0.0-SNAPSHOT</pentaho-sparkl-plugin.version>
     <pentaho-cpf-plugin.version>9.3.0.0-SNAPSHOT</pentaho-cpf-plugin.version>
-    <pentaho-cpf-plugin.version>9.3.0.0-SNAPSHOT</pentaho-cpf-plugin.version>
     <pentaho-cpk-plugin.version>9.3.0.0-SNAPSHOT</pentaho-cpk-plugin.version>
   </properties>
 
