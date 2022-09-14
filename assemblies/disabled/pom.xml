@@ -5,14 +5,14 @@
 
   <groupId>org.pentaho.ctools</groupId>
   <artifactId>sparkl-disabled</artifactId>
-  <version>9.4.0.0-SNAPSHOT</version>
+  <version>9.4.0.0-244</version>
   <packaging>pom</packaging>
   <name>Sparkl Disabled</name>
   
   <parent>
     <groupId>org.pentaho.ctools</groupId>
     <artifactId>sparkl-assemblies</artifactId>
-    <version>9.4.0.0-SNAPSHOT</version>
+    <version>9.4.0.0-244</version>
   </parent>
   
   <dependencies>
