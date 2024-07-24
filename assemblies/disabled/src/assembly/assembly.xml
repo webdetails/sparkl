@@ -33,7 +33,6 @@
         <include>org.pentaho.ctools:cpk-core:jar</include>
         <include>org.pentaho.ctools:cpk-pentaho5:jar</include>
         <include>org.codehaus.jackson:jackson-core-asl:jar</include>
-        <include>org.codehaus.jackson:jackson-mapper-asl:jar</include>
       </includes>
       <useProjectArtifact>false</useProjectArtifact>
       <outputDirectory>lib</outputDirectory>
