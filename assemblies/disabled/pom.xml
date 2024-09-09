@@ -37,10 +37,6 @@
       <artifactId>jackson-core-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-mapper-asl</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.pentaho.ctools</groupId>
       <artifactId>sparkl-static</artifactId>
       <version>${pentaho-sparkl-plugin.version}</version>
