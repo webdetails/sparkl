@@ -16,7 +16,7 @@
   </parent>
 
   <properties>
-    <js.project.list>jquery,underscore</js.project.list>
+    <js.project.list>jquery</js.project.list>
     <webjars.target.directory>${build.dependenciesDirectory}/META-INF/resources/webjars</webjars.target.directory>
   </properties>
 
@@ -25,52 +25,28 @@
       <groupId>org.webjars.npm</groupId>
       <artifactId>jquery</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.webjars.npm</groupId>
-      <artifactId>underscore</artifactId>
-    </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
+        <groupId>com.coderplus.maven.plugins</groupId>
+        <artifactId>copy-rename-maven-plugin</artifactId>
+        <version>1.0</version>
         <executions>
           <execution>
             <id>copy-jquery</id>
-            <phase>${javascript_unpack-dependencies-phase}</phase>
+            <phase>process-resources</phase>
             <goals>
-              <goal>copy-resources</goal>
+              <goal>copy</goal>
             </goals>
             <configuration>
-              <outputDirectory>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${webjars.target.directory}/jquery/${jquery.version}/dist</directory>
-                  <includes>
-                    <include>jquery.js</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-underscore</id>
-            <phase>${javascript_unpack-dependencies-phase}</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${webjars.target.directory}/underscore/${underscore.version}</directory>
-                  <includes>
-                    <include>underscore.js</include>
-                  </includes>
-                </resource>
-              </resources>
+              <fileSets>
+                <set>
+                  <sourceFile>${webjars.target.directory}/jquery/${jquery.version}/dist/jquery.js</sourceFile>
+                  <destinationFile>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib/jquery.js</destinationFile>
+                </set>
+              </fileSets>
             </configuration>
           </execution>
         </executions>
