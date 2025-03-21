@@ -27,7 +27,7 @@
     prefix = requirePaths['sparkl/components']  = CONTEXT_PATH + 'api/repos/sparkl/resources/amd-components';
 
   } else if(typeof FULL_QUALIFIED_URL != "undefined") { // embedded production
-    prefix = requirePaths['sparkl/components']  = FULL_QUALIFIED_URL + 'api/repos/sparkl/resources/amd-componentss';
+    prefix = requirePaths['sparkl/components']  = FULL_QUALIFIED_URL + 'api/repos/sparkl/resources/amd-components';
 
   } else { // build
     prefix = requirePaths['sparkl/components'] = '../resources/amd-components';

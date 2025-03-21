@@ -14,5 +14,6 @@ bin
 *.ear
 .DS_Store
 
-# These jquery files are added/replaced by maven on every build
+# These files are added/replaced by maven on every build
 /assemblies/static/src/main/resources/resources/components/SparklCards/test/lib/jquery.js
+/assemblies/static/src/main/resources/resources/components/SparklCards/test/lib/underscore.js
