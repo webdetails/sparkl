@@ -8,7 +8,7 @@
   <version>10.3.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Sparkl Static</name>
-  
+
   <parent>
     <groupId>org.pentaho.ctools</groupId>
     <artifactId>sparkl-assemblies</artifactId>
@@ -16,7 +16,7 @@
   </parent>
 
   <properties>
-    <js.project.list>jquery</js.project.list>
+    <js.project.list>jquery,underscore</js.project.list>
     <webjars.target.directory>${build.dependenciesDirectory}/META-INF/resources/webjars</webjars.target.directory>
   </properties>
 
@@ -25,31 +25,69 @@
       <groupId>org.webjars.npm</groupId>
       <artifactId>jquery</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>underscore</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>com.coderplus.maven.plugins</groupId>
-        <artifactId>copy-rename-maven-plugin</artifactId>
-        <version>1.0</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
             <id>copy-jquery</id>
-            <phase>process-resources</phase>
+            <phase>${javascript_unpack-dependencies-phase}</phase>
             <goals>
-              <goal>copy</goal>
+              <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <fileSets>
-                <set>
-                  <sourceFile>${webjars.target.directory}/jquery/${jquery.version}/dist/jquery.js</sourceFile>
-                  <destinationFile>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib/jquery.js</destinationFile>
-                </set>
-              </fileSets>
+              <outputDirectory>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${webjars.target.directory}/jquery/${jquery.version}/dist</directory>
+                  <includes>
+                    <include>jquery.js</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-underscore</id>
+            <phase>${javascript_unpack-dependencies-phase}</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${webjars.target.directory}/underscore/${underscore.version}</directory>
+                  <includes>
+                    <include>underscore.js</include>
+                  </includes>
+                </resource>
+              </resources>
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${project.basedir}/src/main/resources/resources/components/SparklCards/test/lib</directory>
+              <includes>
+                <include>jquery.js</include>
+                <include>underscore.js</include>
+              </includes>
+            </fileset>
+          </filesets>
+        </configuration>
       </plugin>
     </plugins>
   </build>
