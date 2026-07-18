@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- ******************************************************************************
+ *
+ * Pentaho
+ *
+ * Copyright (C) 2026 by Pentaho Canada Inc. : http://www.pentaho.com
+ *
+ * Use of this software is governed by the Business Source License included
+ * in the LICENSE.TXT file.
+ *
+ * Change Date: 2030-06-15
+ ******************************************************************************* -->
 <ivysettings>
   <properties environment="env" />
   <property name="maven.local.repo" value="${user.home}/.m2/repository" override="false" />
@@ -6,7 +17,7 @@
   <property name="ivy.local.default.artifact.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact]-[revision].[ext]"
     override="false" />
     
-  <!-- Repository for Hitachi Vantara-hosted artifacts -->  
+  <!-- Repository for Pentaho-hosted artifacts -->  
   <property name="pentaho.resolve.repo" value="http://ivy-nexus.pentaho.org/content/groups/omni" override="false" />
   <!-- Repository for External-hosted artifacts (Optional. Defaults to Pentaho-hosted.) -->
   <property name="public.resolve.repo" value="${pentaho.resolve.repo}" override="false" />
